@@ -1,266 +1,300 @@
-# Retrospective POC AFC Reproduction Capsule
+# Retrospective Triage Response-Surface Reproduction
 
-Self-contained, deterministic reproduction of the retrospective dense-posture **AFC (acceptable-floor-choice) proof-of-concept** result. Starting from raw per-problem response JSON, the capsule rebuilds the trial-level extract, parses 87,360 responses, constructs 4,789 AFC cells, replays 77,000 q=12 split masks, re-scores 1,540,000 hidden predictions, and recomputes the 5,000-replicate prevalence-preserving shuffle null — recovering the reported headline metrics within `1e-6` and matching the frozen workbench null row-for-row to `1e-12`.
+This repository reproduces a retrospective proof-of-concept analysis of model triage behavior.
 
-**Reproduction status:** Tier 2B (strict raw-response-to-result). Tier 3 is achieved when an external runner reproduces Tier 2B in a clean environment.
+The analysis asks a simple question:
 
----
+> If we observe part of a structured grid of model responses, can we predict how the same model behaves on the hidden parts of that grid?
 
-## Headline Metrics — what `--strict` should reproduce
+The repository starts from package-local raw and structured response files, rebuilds the analysis tables, reruns the hidden-cell prediction experiment, recomputes the shuffle null, and checks that the final numbers match the reported result.
 
-| Quantity | Reproduced value |
+## Main result reproduced by this repository
+
+Running the full reproduction should recover:
+
+| Quantity | Expected value |
 |---|---:|
-| Mean hidden balanced accuracy | `0.74693002007556464` |
-| Implemented majority baseline | `0.52508604978354989` |
-| Mean lift over majority | `0.22184397029201483` |
-| Shuffle null mean | `0.5225585702623085` |
-| Shuffle exceedances | `0 / 5,000` |
-| Models with positive lift | `10 / 10` |
+| Mean hidden balanced accuracy | 0.746930 |
+| Majority baseline | 0.525086 |
+| Mean lift over majority | 0.221844 |
+| Shuffle null mean | 0.522559 |
+| Shuffle exceedances | 0 / 5,000 |
+| Models with positive lift | 10 / 10 |
 
-These full-precision values are the targets the strict runner regenerates. The assertion bar in `code/src/09_assert_final_reproduction.py` is `FLOAT_TOLERANCE = 1e-6` for floating-point metrics, exact (`COUNT_TOLERANCE = 0`) for integer counts (parsed responses, AFC cells, split masks, hidden predictions, denominator categories), and `1e-12` row-for-row for the recomputed shuffle null against the frozen workbench artifact. See `docs/REPRODUCTION_CLAIM.md` for the full passed-checks list.
+These values are recomputed by the pipeline from the included source artifacts.
 
----
+## Quick start
 
-## Quick Reference — where to find what
+From the repository root:
 
-### Reviewer entry points
+```bash
+bash code/run_full_repro.sh --preflight
+bash code/run_full_repro.sh --strict
+```
 
-| File | Purpose |
+The preflight command checks that the required input files are present and match the expected hashes.
+
+The strict command reruns the full analysis. It regenerates outputs in:
+
+```text
+results/full_repro/
+audit/full_repro/
+```
+
+It does not delete the shipped reference outputs in:
+
+```text
+results/expected/
+audit/expected/
+```
+
+You can also run the final assertion directly:
+
+```bash
+python3 code/src/09_assert_final_reproduction.py --mode strict
+```
+
+Or use the Makefile:
+
+```bash
+make preflight
+make reproduce
+make assert
+```
+
+## What the full run does
+
+The full reproduction pipeline:
+
+1. validates the included source files;
+2. rebuilds the trial-level response extract;
+3. parses 87,360 model responses;
+4. reconstructs 4,789 analysis cells;
+5. verifies that the reconstructed cells match the locked reference artifact;
+6. rebuilds the denominator flow:
+
+   ```text
+   150 candidate model-scenario groups
+     → 4 incomplete groups
+     → 146 complete 32-cell surfaces
+     → 77 eligible nonconstant surfaces
+   ```
+
+7. replays 77,000 train/test split masks;
+8. re-scores 1,540,000 hidden-cell predictions;
+9. recomputes the 5,000-replicate label-shuffle null;
+10. checks that the headline metrics match the expected values.
+
+## What this analysis means
+
+The reproduced result supports a narrow retrospective claim:
+
+> In this retrospective triage dataset, hidden model behavior on a structured 32-cell response surface could be predicted above baseline from partial observation.
+
+The primary endpoint is `acceptable_floor_choice` (AFC), a binary label derived from the model's triage recommendation. The AFC acronym appears throughout the codebase, file names, and audit reports.
+
+The experiment observes 12 cells from each eligible 32-cell surface and predicts the remaining 20 hidden cells.
+
+## What this analysis does not show
+
+This repository does not show that the method works prospectively.
+
+It also does not establish:
+
+- detection of rare high-harm failures;
+- active-search performance;
+- intervention or repair success;
+- clinical validity in a new prospective domain;
+- scaling to larger surfaces (k=10 / q=128);
+- general safety of any model.
+
+Those are separate prospective claims and are not tested by this reproduction package.
+
+## Repository layout
+
+```text
+.
+├── README.md
+├── REPRODUCING.md
+├── MANIFEST.md
+├── CITATION.cff
+├── LICENSE
+├── Makefile
+├── Dockerfile
+├── environment.yml
+│
+├── code/
+│   ├── run_full_repro.sh
+│   ├── run_all.sh
+│   └── src/
+│
+├── data/
+│   ├── raw/
+│   │   ├── raw_input_manifest.csv
+│   │   └── source_artifacts/
+│   ├── canonical/
+│   └── specs/
+│
+├── results/
+│   ├── expected/
+│   └── full_repro/
+│
+├── audit/
+│   ├── expected/
+│   ├── full_repro/
+│   └── preflight/
+│
+├── docs/
+└── metadata/
+```
+
+## Key folders
+
+### `code/`
+
+Contains the executable pipeline. The main entry point is:
+
+```text
+code/run_full_repro.sh
+```
+
+The numbered scripts in `code/src/` run the analysis in order, from input validation through final assertion.
+
+### `data/raw/`
+
+Contains the package-local source artifacts used by the reproduction.
+
+The source boundary is:
+
+| Source | Path |
 |---|---|
-| `docs/SUMMARY_FOR_REVIEWERS.md` | **Start here.** One-page summary: claim, command, passed checks, reproduced values |
-| `docs/REPRODUCTION_CLAIM.md` | Full claim statement, passed-checks list, denominator flow, source-of-truth files |
-| `docs/CLAIM_BOUNDARY.md` | Tier definitions (1 / 2A / 2B / 3); explicit "do not claim" language |
-| `docs/LIMITATIONS_CLAIM_BOUNDARY.md` | What this reproduction does **not** show |
-| `docs/METHODS_QA_CHECKLIST.md` | Reviewer QA checklist |
-| `docs/INDEPENDENT_REPRODUCTION_INSTRUCTIONS.md` | Instructions for an external clean-environment rerun (Tier 3) |
-| `docs/DATA_USE.md` | Permissible use of the released data |
-| `docs/CODEBOOK.md` | Variable-level codebook for released CSVs |
-| `MANIFEST.md` | Capsule layout and artifact-role definitions |
-| `REPRODUCING.md` | Short reproduction recipe |
+| Cross-model response JSON tree | `data/raw/source_artifacts/cross_model/inference/` |
+| Cross-model source labels | `data/raw/source_artifacts/cross_model/DataOriginal_FINAL.csv` |
+| GPT-Health structured source CSV | `data/raw/source_artifacts/gpt_health/DataOriginal_FINAL.csv` |
 
-### Headline result artifacts (in `results/expected/`)
+The GPT-Health source is included as a structured CSV. A per-problem GPT-Health JSON tree is not included in this package.
 
-| File | Description |
-|---|---|
-| `main_result_table.csv` | Headline metrics — mean BA, baseline, lift, null mean, exceedances |
-| `per_model_results.csv` | Per-model BA, majority baseline, and lift (10 models) |
-| `null_distribution.csv` | Frozen 5,000-replicate shuffle null distribution |
-| `null_distribution_raw_recomputed.csv` | Same null **recomputed** from raw-rebuilt labels (matches frozen to 1e-12) |
-| `null_recompute_vs_frozen_summary.csv` | Row-for-row comparison summary |
-| `afc_cell_table_from_raw.csv` | 4,789 AFC cells rebuilt from raw responses |
-| `surface_assembly_table.csv` | 150 model-scenario rows classified `incomplete` / `complete` / `nonconstant_eligible` |
-| `hidden_predictions.csv` | 1,540,000 hidden-cell predictions (Git LFS) |
-| `parsed_responses.csv` | 87,360 parsed responses from raw JSON (Git LFS) |
-| `null_permutation_manifest.csv` | Permutation index manifest for the shuffle null (Git LFS) |
+### `data/canonical/`
 
-### Audit reports (in `audit/expected/`)
+Contains locked reference objects used for validation and comparison, such as canonical cell tables, split-mask references, and comparator outputs.
 
-| Report | What it certifies |
-|---|---|
-| `raw_input_validation_report.md` | Raw inputs hash-validated against `data/raw/raw_input_manifest.csv` |
-| `cell_construction_report.md` | AFC cell construction from parsed raw responses |
-| `raw_rebuild_vs_canonical_artifact_report.md` | 4,789 / 4,789 cell match; 0 endpoint mismatches; 0 axis mismatches |
-| `endpoint_attempt_ledger.md` | Per-response endpoint-extraction attempt ledger |
-| `surface_assembly_report.md` | Surface assembly diagnostics |
-| `null_recompute_report.md` | Shuffle-null recomputation from raw labels |
-| `null_recompute_vs_frozen_report.md` | Raw-recomputed null vs frozen workbench null |
-| `metric_anomaly_replay.md` | Replay of headline metric anomalies |
-| `robustness_report.md` | Sensitivity/robustness checks |
-| `environment_report.md` | Runtime environment captured at run time |
-| `clean_environment_probe.md` | Clean-room dependency probe |
-| `provenance_ledger.csv` | Per-script provenance (inputs, outputs, hashes) |
-| `strict_clean_run_terminal_transcript.txt` | Full terminal transcript of a strict pass |
+### `data/specs/`
 
-### Locked specifications (in `data/specs/`)
+Contains the frozen analysis specifications, including parser rules, endpoint definitions, split-mask rules, metric definitions, and null-shuffle rules.
 
-| Spec | Defines |
-|---|---|
-| `raw_response_schema.yaml` | Schema for raw per-problem response JSON |
-| `parser_spec.yaml` | Response parser contract |
-| `endpoint_definitions.yaml` | Endpoint extraction rules |
-| `axis_book.yaml` | Axis-level vocabulary |
-| `eligibility_rules.yaml` | AFC-cell eligibility predicates |
-| `metric_definitions.yaml` | Balanced accuracy, lift, exceedance |
-| `split_mask_spec.yaml` | q=12 split-mask generation |
-| `reconstructor_spec.yaml` | Hidden-cell reconstructor contract |
-| `null_spec.yaml` | Prevalence-preserving shuffle-null contract |
-| `model_snapshot_manifest.yaml` | Model snapshots covered by the reproduction |
+### `results/expected/`
 
----
+Contains shipped reference outputs from a successful run.
 
-## Setup
+These are used for comparison. The strict reproduction regenerates corresponding outputs under `results/full_repro/`.
 
-### Option A — conda
+### `audit/expected/`
+
+Contains shipped reference audit reports from a successful run.
+
+The strict reproduction regenerates corresponding audit reports under `audit/full_repro/`.
+
+### `docs/`
+
+Contains supporting documentation for reviewers and independent analysts.
+
+Recommended reading order:
+
+1. `REPRODUCING.md`
+2. `docs/SUMMARY_FOR_REVIEWERS.md`
+3. `docs/REPRODUCTION_CLAIM.md`
+4. `docs/METHODS_QA_CHECKLIST.md`
+5. `docs/CLAIM_BOUNDARY.md`
+
+## Environment
+
+The pipeline requires Python 3.11 or later and NumPy.
+
+### Conda
 
 ```bash
 conda env create -f environment.yml
 conda activate retrospective-poc
 ```
 
-Only `python>=3.11` and `numpy` are required.
-
-### Option B — Docker
+### Docker
 
 ```bash
-docker build -t retrospective-poc-afc .
-docker run --rm retrospective-poc-afc          # runs strict reproduction
+docker build -t retrospective-poc .
+docker run --rm retrospective-poc
 ```
 
-The Dockerfile installs `numpy>=2.0` on top of `python:3.11-slim` and defaults to `bash code/run_full_repro.sh --strict`.
+By default, the Docker container runs:
 
-### Note — Git LFS
+```bash
+bash code/run_full_repro.sh --strict
+```
 
-Three reference outputs in `results/expected/` exceed 50 MB and are stored via Git LFS (`hidden_predictions.csv` 276 MB, `parsed_responses.csv` 96 MB, `null_permutation_manifest.csv` 50 MB). After `git clone`, run:
+## Git LFS note
+
+Three reference outputs in `results/expected/` are stored with Git LFS because of file size (`hidden_predictions.csv`, `parsed_responses.csv`, `null_permutation_manifest.csv`).
+
+After cloning, run:
 
 ```bash
 git lfs install
 git lfs pull
 ```
 
-These are reference comparators only — the strict runner regenerates equivalents to `results/full_repro/`. The capsule is fully strict-runnable without pulling LFS (but the diff comparison step has nothing to compare against).
+The strict reproduction can regenerate the large outputs in `results/full_repro/`. The LFS files are primarily useful for comparing regenerated outputs against the shipped reference outputs.
 
----
+## Expected final console output
 
-## Reproducing
+A successful strict run should end with:
 
-### Standard reproduction
+```text
+FULL REPRO PASSED
+
+Mean hidden balanced accuracy: 0.746930
+Majority baseline: 0.525086
+Mean lift: 0.221844
+Shuffle null mean: 0.522559
+Shuffle exceedances: 0 / 5000
+Per-model lift: positive in 10 / 10
+```
+
+## Troubleshooting
+
+### Preflight fails
+
+Run:
 
 ```bash
-bash code/run_full_repro.sh --preflight    # non-destructive: validate raw inputs only
-bash code/run_full_repro.sh --strict       # full strict rerun
-python3 code/src/09_assert_final_reproduction.py --mode strict   # final assertion
+bash code/run_full_repro.sh --preflight
 ```
 
-Equivalent Makefile targets:
+Then check:
+
+```text
+audit/preflight/
+```
+
+Most preflight failures are missing files, path mismatches, or hash mismatches.
+
+### Strict run fails
+
+Check the newest files in:
+
+```text
+audit/full_repro/
+```
+
+The pipeline stops at the first failed validation step.
+
+### Large reference files are missing
+
+Run:
 
 ```bash
-make preflight     # raw input validation
-make strict        # full strict reproduction
-make assert        # post-hoc assertion against EXPECTED targets
-make smoke         # clean-environment probe
-make clean         # remove regenerated outputs only (results/full_repro, audit/full_repro)
+git lfs pull
 ```
 
-### What `--strict` does
-
-1. Validates package-local raw inputs against `data/raw/raw_input_manifest.csv` hashes.
-2. Removes and regenerates **only** `results/full_repro/`, `audit/full_repro/`, and `data/splits/full_repro/`. The shipped reference trees `results/expected/` and `audit/expected/` are preserved untouched.
-3. Runs the numbered pipeline `00..12` end-to-end (parser → AFC cell rebuild → surface assembly → canonical-artifact comparison → denominator/eligibility → split-mask replay → reconstructor fit/score → metric-anomaly replay → baselines and null recompute → sensitivity/robustness → provenance write → endpoint ledger → handoff manifest).
-4. Asserts pass/fail in `code/src/09_assert_final_reproduction.py` against the hardcoded `EXPECTED` targets (floats to `1e-6`, counts exact, row-wise null match to `1e-12`).
-
-The runner is `set -euo pipefail`; failures halt immediately. Partial reports appear in `audit/full_repro/`.
-
-### Alternate run modes
-
-| Command | Mode |
-|---|---|
-| `bash code/run_full_repro.sh --strict` | Recompute the 5,000-replicate shuffle null from raw labels (Tier 2B). |
-| `bash code/run_full_repro.sh --allow-frozen-null` | Replay the frozen workbench null instead of recomputing (Tier 2A). |
-| `bash code/run_full_repro.sh --preflight` | Raw-input validation only, no regeneration. |
-
----
-
-## Repository Structure
-
-```
-.
-├── README.md                          # this file
-├── REPRODUCING.md                     # short reproduction recipe
-├── MANIFEST.md                        # capsule layout + artifact roles
-├── CITATION.cff                       # citation metadata
-├── LICENSE
-├── Makefile                           # preflight / strict / assert / smoke / clean targets
-├── Dockerfile                         # python:3.11-slim + numpy
-├── environment.yml                    # conda env (python>=3.11, numpy)
-│
-├── code/
-│   ├── run_full_repro.sh              # ENTRY POINT (--preflight | --strict | --allow-frozen-null)
-│   ├── run_all.sh                     # legacy artifact-builder
-│   └── src/                           # numbered pipeline scripts 00..12
-│       ├── 00_validate_raw_inputs.py
-│       ├── 00b_build_trial_extract_from_json.py
-│       ├── 01_parse_raw_responses.py
-│       ├── 02_build_afc_cell_table.py
-│       ├── 03_assemble_surfaces.py
-│       ├── 03b_compare_rebuilt_to_canonical_artifacts.py
-│       ├── 04_denominator_and_eligibility.py
-│       ├── 05_generate_or_replay_split_masks.py
-│       ├── 06_fit_and_score_reconstructors.py
-│       ├── 06b_metric_anomaly_replay.py
-│       ├── 07_run_baselines_and_nulls.py
-│       ├── 08_sensitivity_and_robustness.py
-│       ├── 08b_write_environment_and_provenance.py
-│       ├── 09_assert_final_reproduction.py
-│       ├── 10_clean_environment_probe.py
-│       ├── 11_build_endpoint_attempt_ledger.py
-│       └── 12_build_handoff_manifest.py
-│
-├── data/
-│   ├── raw/                           # package-local raw source artifacts (hash-manifest)
-│   │   ├── raw_input_manifest.csv
-│   │   └── source_artifacts/          # cross_model JSON + gpt_health CSV
-│   ├── canonical/                     # locked computational inputs & comparators
-│   └── specs/                         # YAML specs (parser, endpoints, axes, splits, ...)
-│
-├── results/
-│   ├── expected/                      # shipped reference outputs (read-only, for comparison)
-│   └── full_repro/                    # regenerated by --strict (deleted+rewritten each run)
-│
-├── audit/
-│   ├── expected/                      # shipped reference audit reports
-│   ├── full_repro/                    # regenerated audit reports
-│   └── preflight/                     # preflight validation outputs
-│
-├── docs/                              # reviewer-facing method notes (see Quick Reference)
-└── metadata/
-    ├── metadata.yml                   # capsule metadata
-    └── release_checksums.tsv          # payload checksums
-```
-
----
-
-## Denominator Flow
-
-```
-150 AFC model-scenario groups
-  ├── 4   incomplete groups (preserved separately)
-  └── 146 complete 32-cell surfaces
-        └── 77 nonconstant eligible surfaces  → used for boundary recovery
-```
-
-Downstream of the 77 eligible surfaces, the strict run replays 77,000 q=12 split masks, re-scores 1,540,000 hidden-cell predictions, and recomputes a 5,000-replicate prevalence-preserving shuffle null indexed across the 77 surfaces (385,000-row permutation manifest, 5,000 × 77).
-
----
-
-## Scope and Claim Boundary
-
-**This capsule supports:** retrospective dense-posture AFC constructibility from raw responses — i.e., that the reported headline metrics are deterministically recoverable (within the tolerances above) from the per-problem JSON tree under `data/raw/source_artifacts/cross_model/inference`.
-
-**This capsule does not support:**
-- Sparse high-harm recovery
-- Prospective urology validity
-- Active-search success
-- Repair success
-- k=10 / q=128 scaling
-- Universal low-degree structure
-- Population-level inference over all frontier models
-
-See `docs/CLAIM_BOUNDARY.md` for the formal tier definitions and forbidden-phrase list, and `docs/LIMITATIONS_CLAIM_BOUNDARY.md` for the scope-boundary statement and wording constraint.
-
----
-
-## Input Boundary
-
-| Source | Path |
-|---|---|
-| Cross-model raw JSON tree | `data/raw/source_artifacts/cross_model/inference/` |
-| Cross-model gold labels | `data/raw/source_artifacts/cross_model/DataOriginal_FINAL.csv` |
-| GPT-Health raw responses | `data/raw/source_artifacts/gpt_health/DataOriginal_FINAL.csv` |
-| Locked canonical comparators | `data/canonical/` |
-
-GPT-Health is sourced from a structured raw CSV (no per-problem GPT-Health JSON tree is present in this package). Environment variables `REPRO_RAW_ROOT` and `REPRO_CANONICAL_ROOT` are available for advanced alternate layouts.
-
----
+The strict run can still regenerate analysis outputs, but some reference comparisons may be unavailable if LFS files were not pulled.
 
 ## Citation
 
