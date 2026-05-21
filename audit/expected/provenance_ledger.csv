@@ -1,0 +1,12 @@
+stage,file_path,sha256,generated_by_script,input_files,timestamp,notes
+raw_input,data/raw/raw_input_manifest.csv,ad03bd66646e63670f7df48d7b48310fd3d8a72c5b1104eb1cec26c681200ab5,manual_manifest,,2026-05-21T17:28:46.617342+00:00,
+parsed_response,results/full_repro/parsed_responses.csv,517a5458d342f666ac90eadf765c7c6ea54a58f4daae4c9031c634061034acc8,src/01_parse_raw_responses.py,raw inputs,2026-05-21T17:28:46.617342+00:00,
+afc_cell_table,results/full_repro/afc_cell_table_from_raw.csv,daca32e3f7067cc6b669fcaeee86125ae4b22733fa991799c8831ee68b1f6edd,src/02_build_afc_cell_table.py,parsed_responses.csv,2026-05-21T17:28:46.617342+00:00,
+surface_table,results/full_repro/surface_assembly_table.csv,e92545b5ec6db6332cd408418fa176d21c2eb694b8537a1f63633cfc0595a124,src/03_assemble_surfaces.py,afc_cell_table_from_raw.csv,2026-05-21T17:28:46.617342+00:00,
+eligibility_table,results/full_repro/denominator_table.csv,05635ff9ff537be2260ba624120daff521c0b54ba3234b2c609c562e7eed310d,src/04_denominator_and_eligibility.py,surface_assembly_table.csv,2026-05-21T17:28:46.617342+00:00,
+split_manifest,data/splits/full_repro/q12_split_manifest.csv,739432450b95440d0b571b6c445ffa2966e698b06d4c8bff4918bd1fc9cfad81,src/05_generate_or_replay_split_masks.py,data/canonical/afc_q12_split_membership_index.csv,2026-05-21T17:28:46.617342+00:00,replayed locked manifest
+hidden_predictions,results/full_repro/hidden_predictions.csv,faadff722fe65a940b694c32e11347205c1a8242df139b1b880a8f1fb3e3427d,src/06_fit_and_score_reconstructors.py,afc cells and split manifest,2026-05-21T17:28:46.617342+00:00,
+main_metrics,results/full_repro/main_result_table.csv,4475f3332b6a283a613a53e96a26529bfd30bfb689e538364cb0b0d66b3e67a8,src/06_fit_and_score_reconstructors.py,split_level_metrics.csv,2026-05-21T17:28:46.617342+00:00,
+null_distribution,results/full_repro/null_distribution.csv,f206cae8d8a8dd4cc4920bcbc90ef4fc3c13cceedd98334f451d27035ca63537,src/07_run_baselines_and_nulls.py,raw-built AFC labels and original null split rule,2026-05-21T17:28:46.617342+00:00,raw recomputed
+null_permutation_manifest,results/full_repro/null_permutation_manifest.csv,663d65cf45290aee51b405cdab0e0a50d71f9b94d7e7fe01bf784618c5406fde,src/07_run_baselines_and_nulls.py,raw-built AFC labels,2026-05-21T17:28:46.617342+00:00,permutation hashes
+robustness_outputs,results/full_repro/single_axis_dominance_table.csv,85ce665e82ca9c6e490dc2e17e9c9bbf23619217e3ca6141d42dd8d3222cb2e8,src/08_sensitivity_and_robustness.py,afc cells and split metrics,2026-05-21T17:28:46.617342+00:00,

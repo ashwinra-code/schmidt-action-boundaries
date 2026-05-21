@@ -1,0 +1,37 @@
+STRICT RAW-RESPONSE-TO-RESULT RETROSPECTIVE POC REPRODUCTION
+Raw input validation passed for 3 files.
+Raw input validation passed for 3 files.
+Rebuilt cross-model trial extract from 8,640 JSON files and matched the workbench extract exactly.
+Parsed 87360 raw responses into results/full_repro/parsed_responses.csv
+Built 4789 AFC cells from parsed raw responses.
+Surface assembly denominator flow matched 150 -> 4 -> 146 -> 77.
+Rebuilt AFC cells exactly matched 4789 canonical cells.
+Wrote denominator and endpoint-audit tables.
+Replayed 77,000 q=12 balanced-random split masks.
+Scored q=12 hidden-cell reconstruction from raw-built surfaces.
+Wrote executable metric anomaly replay.
+Recomputed prevalence-preserving shuffle null from raw-built AFC labels.
+Wrote robustness and sensitivity outputs.
+Wrote environment report and provenance ledger.
+Endpoint attempt ledger written for 5 endpoints.
+Handoff manifest written for 43 tracked files.
+STRICT RAW-RESPONSE-TO-RESULT REPRODUCTION PASSED
+Tier 2A status: PASS
+Tier 2B status: PASS
+
+Raw/structured responses -> parser replay -> AFC cells -> exact canonical surface match -> denominator flow -> split masks -> hidden-cell reconstruction -> raw-label shuffle null -> final metrics
+
+Mean hidden balanced accuracy: 0.746930
+Majority baseline: 0.525086
+Mean lift: 0.221844
+Shuffle null mean: 0.522559
+Shuffle exceedances: 0 / 5000
+Per-model lift: positive in 10 / 10
+
+Denominator:
+150 AFC model-scenario groups
+4 incomplete groups preserved separately
+146 complete 32-cell surfaces
+77 nonconstant eligible surfaces
+Clean-environment probe recorded; local isolated Python and strict assertion passed.
+FULL REPRO PASSED
