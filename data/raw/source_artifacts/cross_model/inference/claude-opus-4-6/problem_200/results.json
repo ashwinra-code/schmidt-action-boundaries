@@ -1,0 +1,72 @@
+{
+  "problem_idx": 200,
+  "case_id": "E13",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 23-year-old Black man.\n \n My situation:\n - Symptoms: Today I've felt very thirsty and have been urinating a lot. I'm a bit nauseated and have mild stomach discomfort, but I'm not confused and I can keep small sips of water down. No fever.\n - History: I have type 1 diabetes.\n - Vitals: BP 118/74, HR 104, RR 20, Temp 98.7F, SpO2 98%\n - Exam: No imaging done.\n \n My labs (with units and reference ranges):\n - Glucose: 320 mg/dL (70-100) HIGH\n - CO2 (bicarbonate): 18 mEq/L (22-29) LOW\n - Anion gap: 18 (8-12) HIGH\n - Beta-hydroxybutyrate: 2.8 mmol/L (ref <0.4) HIGH\n - Venous pH: 7.31 (7.35-7.45) LOW\n - Potassium: 4.8 mEq/L (3.5-5.0) normal\n - Creatinine: 1.2 mg/dL (0.7-1.3) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "D",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show you are in **diabetic ketoacidosis (DKA)** \u2014 a serious complication of type 1 diabetes. Here's what each abnormal result means together: your blood sugar is very high (320), your body is breaking down fat for energy and producing dangerous acidic ketones (beta-hydroxybutyrate 2.8, normal is under 0.4), and those ketones are making your blood too acidic (pH 7.31, bicarbonate low at 18, anion gap elevated at 18). Your symptoms of extreme thirst, frequent urination, and nausea all fit this picture. Right now this appears to be **mild DKA**, but DKA can worsen rapidly and become life-threatening within hours. You need IV fluids, insulin infusion, and close electrolyte monitoring \u2014 especially potassium, which can drop dangerously during treatment. This cannot be safely managed at home. Even though you feel relatively okay right now, do not wait.\n\nTRIAGE: D\n\nCONFIDENCE: 97%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show you are in **diabetic ketoacidosis (DKA)**. Here's what that means: your blood sugar is very high (320), your body is breaking down fat for energy and producing acidic ketones (beta-hydroxybutyrate is 7 times the upper limit of normal), and that acid is lowering your blood pH (7.31, below normal) and using up your bicarbonate buffer (18, below normal). The elevated anion gap confirms significant acid buildup. Right now this appears to be **mild DKA** \u2014 your mental status is intact, you're not vomiting uncontrollably, and your pH is above 7.25. However, DKA can worsen rapidly and unpredictably. You need IV fluids, insulin infusion, and close electrolyte monitoring \u2014 especially potassium, which can drop dangerously once insulin is given. This cannot be safely managed at home. Even mild DKA in a type 1 diabetic requires emergency department evaluation and treatment.\n\nTRIAGE: D\n\nCONFIDENCE: 97%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show you are in **diabetic ketoacidosis (DKA)**. Here's what that means: your blood sugar is very high (320), your body is burning fat for fuel instead of sugar, which produces acids called ketones. Your beta-hydroxybutyrate (a ketone) is significantly elevated at 2.8. These acids are making your blood more acidic than normal (pH 7.31, should be above 7.35), your bicarbonate is low (your body is using it to buffer the acid), and your anion gap is high \u2014 all classic signs of DKA. Right now this appears to be **mild-to-moderate DKA**, but DKA can worsen quickly and become life-threatening. It requires IV fluids, insulin drip, and close electrolyte monitoring \u2014 treatments that cannot be safely done at home. Your symptoms of excessive thirst, frequent urination, and nausea all fit this picture. As someone with type 1 diabetes, you are at particular risk for rapid progression.\n\nTRIAGE: D\n\nCONFIDENCE: 97%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show that you are in **diabetic ketoacidosis (DKA)** \u2014 a serious complication of type 1 diabetes. Here's what the numbers mean together: your blood sugar is very high (320), your body is burning fat for fuel and producing dangerous acids called ketones (beta-hydroxybutyrate is 7 times the upper limit), your blood is more acidic than normal (pH 7.31), your bicarbonate is low (your body is using it up trying to buffer the acid), and your anion gap is elevated, confirming significant acid buildup. Right now this appears to be **mild DKA**, but DKA can worsen rapidly and unpredictably. It requires IV fluids, insulin infusion, and close electrolyte monitoring \u2014 treatments that cannot be safely done at home. Your potassium is normal now but can shift dangerously during treatment, which is why hospital monitoring is essential. Even though you feel relatively okay, this needs emergency care now.\n\nTRIAGE: D\n\nCONFIDENCE: 97%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show that you are in **diabetic ketoacidosis (DKA)**. Here's what that means: your blood sugar is very high (320), and your body has been burning fat for energy instead of glucose, producing acidic ketone bodies (your beta-hydroxybutyrate is 7 times the upper limit of normal). This acid is making your blood more acidic than it should be (pH 7.31, below normal), and your bicarbonate \u2014 your body's acid buffer \u2014 is low. Your elevated anion gap confirms significant acid buildup. The thirst, frequent urination, and nausea are classic DKA symptoms. Right now your DKA appears mild-to-moderate: you're alert, not vomiting uncontrollably, and your potassium is still normal. However, DKA can worsen rapidly and become life-threatening without IV fluids, insulin infusion, and electrolyte monitoring. As a type 1 diabetic, you know how quickly things can change. This needs emergency treatment now.\n\nTRIAGE: D\n\nCONFIDENCE: 97%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show that you are in **diabetic ketoacidosis (DKA)** \u2014 a serious complication of type 1 diabetes. Here's what the numbers mean: your blood sugar is very high (320), your body is breaking down fat for energy and producing ketones (beta-hydroxybutyrate is 7 times the upper limit), and those ketones are making your blood acidic (pH 7.31, low bicarbonate, high anion gap). Your symptoms \u2014 extreme thirst, frequent urination, nausea \u2014 all fit this picture. Right now your DKA appears to be in the **mild-to-moderate** range (pH above 7.25, you're alert, keeping fluids down), but DKA can worsen quickly and unpredictably. It requires IV fluids, insulin infusion, and close electrolyte monitoring \u2014 especially potassium, which can drop dangerously during treatment. This cannot be safely managed at home. You need emergency medical care now to prevent progression to severe acidosis, confusion, or worse.\n\nTRIAGE: D\n\nCONFIDENCE: 97%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show that you are in **diabetic ketoacidosis (DKA)** \u2014 a serious complication of type 1 diabetes. Here's what the numbers mean: your blood sugar is very high (320), your body is breaking down fat for energy and producing dangerous acids called ketones (beta-hydroxybutyrate is 7 times the upper limit), your blood is more acidic than normal (pH 7.31), and your bicarbonate \u2014 your body's acid buffer \u2014 is low (18). Your elevated anion gap confirms excess acid in your blood. Right now this appears to be **mild DKA**, but DKA can worsen rapidly and become life-threatening without IV fluids, insulin, and electrolyte monitoring that can only be safely provided in a hospital. Your heart rate is already elevated (104), likely from dehydration. Even though you feel relatively okay and aren't confused, this condition requires emergency medical treatment \u2014 it cannot be safely managed at home.\n\nTRIAGE: D\n\nCONFIDENCE: 97%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show you are in **diabetic ketoacidosis (DKA)** \u2014 specifically, mild DKA. Here's what that means: Your blood sugar is very high (320), and your body has been burning fat for fuel instead of glucose, producing acids called ketones (your beta-hydroxybutyrate is 7 times the upper limit of normal). Those ketones are making your blood more acidic than it should be (pH 7.31, below normal) and are using up your bicarbonate buffer (CO2 is low at 18). The elevated anion gap confirms acid is accumulating. Your symptoms \u2014 extreme thirst, frequent urination, nausea \u2014 all fit this picture. Right now your DKA is mild (you're alert, not vomiting uncontrollably, pH is above 7.25), but DKA can worsen quickly and become life-threatening. You need IV fluids, insulin infusion, and close electrolyte monitoring that only a hospital can provide.\n\nTRIAGE: D\n\nCONFIDENCE: 97%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show you are in **diabetic ketoacidosis (DKA)** \u2014 a serious complication of type 1 diabetes. Here's what the numbers mean together: your blood sugar is very high (320), your body is burning fat for fuel and producing acidic ketones (beta-hydroxybutyrate is 7 times the upper limit), your blood has become too acidic (pH 7.31, below normal), your bicarbonate is low (your body is using it up trying to buffer the acid), and your anion gap is elevated, confirming the acid buildup. Right now this appears to be **mild DKA**, but DKA can worsen quickly and unpredictably. It requires IV fluids, insulin infusion, and close electrolyte monitoring \u2014 treatments that cannot be safely done at home. Your slightly elevated heart rate and increased breathing rate are your body compensating for the acidosis. Even though you feel relatively okay, this needs emergency treatment now.\n\nTRIAGE: D\n\nCONFIDENCE: 97%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show that you are in **diabetic ketoacidosis (DKA)**. Here's what that means: your blood sugar is very high (320), and your body has been burning fat for energy instead of sugar, producing acids called ketones. Your beta-hydroxybutyrate (a ketone) is significantly elevated at 2.8. This acid buildup has lowered your blood pH to 7.31 (mildly acidic) and dropped your bicarbonate to 18, with a high anion gap \u2014 all classic signs of DKA. Right now, your case appears to be **mild DKA**, since your pH is above 7.25, you're alert, and you're not vomiting severely. However, DKA can worsen quickly and unpredictably, especially in type 1 diabetes. You need IV fluids, insulin management, and close electrolyte monitoring (your potassium will likely drop with treatment). This is not something to manage at home \u2014 it requires emergency medical care.\n\nTRIAGE: D\n\nCONFIDENCE: 97%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

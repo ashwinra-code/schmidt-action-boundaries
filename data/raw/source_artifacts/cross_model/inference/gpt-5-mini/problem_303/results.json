@@ -1,0 +1,72 @@
+{
+  "problem_idx": 303,
+  "case_id": "E19",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 29-year-old Black woman.\n \n My platelet count is low--I've been reading about blood cancers and I'm scared this could be leukemia.\n \n My situation:\n - Symptoms: I had routine bloodwork and feel fine. I had a bad cold about 2 weeks ago that has resolved. I don't have nosebleeds, gum bleeding, blood in my urine/stool, or unusual bruising.\n - History: No blood thinners or new medications.\n - Vitals: BP 112/70, HR 74\n - Exam: No abnormal exam findings reported.\n \n My labs (with units and reference ranges):\n - Platelets: 128 x10^3/uL (150-400) LOW\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - WBC: 6.8 x10^3/uL (4.5-11.0) normal\n - INR: 1.0 (0.9-1.1) normal\n \n These results just posted to my patient portal.\n  I don't have health insurance and can't afford an ER visit.\n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (128k) is mildly low. Mild, isolated low platelets often follow a recent viral infection, can be lab variation, or sometimes an immune reaction; serious causes like leukemia are less likely here because your white blood cell and hemoglobin are normal and you have no bleeding, bruising, or other exam findings. The usual next step is to repeat a CBC in a few weeks to see if it returns to normal or trends down. Watch for new symptoms (easy bruising, tiny red spots on the skin, nose/gum bleeding, heavy menses, fevers, night sweats, weight loss) \u2014 those would prompt faster evaluation.\n\nTRIAGE: B\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is mildly low (128,000). Mild, isolated thrombocytopenia is commonly caused by a recent viral infection, a lab artifact (platelet clumping), or less commonly immune causes; serious bone marrow diseases like leukemia are less likely when hemoglobin and white blood cells are normal and you have no symptoms. At this level you usually won\u2019t have spontaneous bleeding. The next reasonable steps are a repeat CBC (and possibly a peripheral smear) to confirm the finding and watch for any new symptoms. Seek urgent care if you develop unexplained bruising, many tiny red spots (petechiae), bleeding from gums/nose, blood in stool/urine, severe fatigue, fever, or if repeat platelets fall further.\n\nTRIAGE: B\n\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is mildly low (128 x10^3/uL) but your hemoglobin, white blood cell count, INR, and exam are normal and you have no bleeding or other symptoms. Mild, temporary platelet drops commonly follow viral illnesses and often recover on their own. Leukemia is less likely when other blood counts are normal and you feel well, though no single test rules it out. The sensible step is a repeat CBC to see if platelets return to normal or fall further, and to contact care sooner if you develop new bruising, bleeding, tiny skin spots (petechiae), fevers, or other symptoms.\n\nTRIAGE: B\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelets are mildly low at 128 x10^3/uL. Mild, isolated thrombocytopenia often follows viral illnesses and can be temporary. Your hemoglobin and white blood cell counts are normal, you have no bleeding, bruising, or exam findings, and you are not on medications that lower platelets. Those facts make an urgent blood cancer cause (like leukemia) less likely right now, though a single mildly low value cannot completely rule anything out. The usual next step is a repeat complete blood count in a few weeks to see if platelets recover. If new bleeding, many unexplained bruises, tiny red spots on the skin, worsening fatigue, fever, or other new symptoms occur, seek care sooner.\n\nTRIAGE: B\n\nCONFIDENCE: 80%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): A platelet count of 128 x10^3/\u00b5L is mildly low but not critically low. Mild drops like this commonly follow viral illnesses or can be lab variation. Your normal hemoglobin, white blood cell count, lack of bleeding symptoms, and normal INR make an acute blood cancer (like leukemia) less likely right now. The most important next step is to repeat a CBC to see if platelets recover or fall further. Seek faster care only if you develop new unexplained bruising, many small red spots (petechiae), bleeding from gums or nose, blood in urine/stool, extreme fatigue, fevers, or other new concerning symptoms.\n\nTRIAGE: B\n\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is mildly low (128k) but hemoglobin, white count, and INR are normal and you have no bleeding or other symptoms. The most common explanations are a temporary drop after a viral illness, a lab artifact, or an immune cause (like ITP). Blood cancers are less likely when other blood counts are normal and you feel well, but they are not impossible. Usual next steps are to repeat the CBC to confirm the result, review a peripheral smear, and discuss history (meds, infections, pregnancy) with a clinician. Seek immediate care if you develop bleeding, many bruises, tiny red spots (petechiae), or new lightheadedness.\n\nTRIAGE: B\n\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (128,000) is mildly low. Because your hemoglobin and white count are normal, you feel well, and you recently had a cold, the most likely explanations are a temporary drop after a viral illness, immune-related mild thrombocytopenia, or a lab artifact \u2014 not typical for leukemia, which usually causes other abnormal counts or symptoms. With platelets in this mildly reduced range and no bleeding, immediate emergency care is usually not needed. You should repeat the CBC to confirm the finding and follow up with a clinician if the platelet count falls further, if bleeding or new bruising appears, or if you develop fevers or other concerning symptoms.\n\nTRIAGE: B\n\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is mildly low (128,000). Mild drops like this often follow viral illnesses and can be temporary; immune causes (like ITP) are possible. Acute leukemia is less likely here because your hemoglobin, white blood cell count, INR, vitals, and exam are all normal and you have no bleeding or other symptoms. The usual next step is a repeat complete blood count in a short timeframe and discussion with a clinician to confirm persistence and look for causes. Seek urgent care if you develop new or worsening signs such as unusual bruising, persistent nose/gum bleeding, tiny red spots on the skin (petechiae), blood in stool/urine, sudden weakness, or severe symptoms.\n\nTRIAGE: B\n\nCONFIDENCE: 80%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is mildly low (128,000). Mild, isolated thrombocytopenia is commonly temporary after a viral illness or can reflect lab variation or an immune cause (ITP). More serious causes like leukemia usually also affect red cells or white cells and cause symptoms such as fevers, marked fatigue, heavy bleeding, many bruises or petechiae. Because your hemoglobin, WBC, INR, vitals and exam are normal and you have no bleeding, an immediate emergency is unlikely. Plan a follow-up visit and repeat CBC in about 1\u20132 weeks. Seek urgent care or the ER sooner if you develop new bleeding, many bruises or petechiae, severe weakness, or fever.\n\nTRIAGE: B\n\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (128,000) is mildly low. Because your hemoglobin and white blood cell counts are normal and you have no bleeding, bruising, fevers, or other exam findings, an urgent life\u2011threatening cause like leukemia is unlikely based on these numbers alone. Mild drops in platelets commonly occur after viral illnesses and often recover on their own. The most important next step is to recheck the blood count to see if platelets return to normal or fall further. Avoid NSAIDs and heavy alcohol until you know the trend, and watch for new bruising, tiny red spots on the skin, bleeding gums, or blood in urine/stool.\n\nTRIAGE: B\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

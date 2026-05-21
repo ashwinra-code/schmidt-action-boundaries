@@ -1,0 +1,72 @@
+{
+  "problem_idx": 248,
+  "case_id": "E16",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 46-year-old Black man.\n \n My situation:\n - Symptoms: I had one black, tarry-looking stool today. I'm not vomiting and I don't feel faint. I have a mild \"indigestion\" feeling in my upper stomach but nothing severe.\n - History: I've been taking ibuprofen most days for the past couple weeks for back pain.\n - Vitals: BP 126/78, HR 82, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - Hemoglobin: 12.7 g/dL (13.5-17.5) LOW (was 14.5 last year)\n - BUN: 32 mg/dL (7-20) HIGH\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n - Platelets: 250 x10^3/uL (150-400) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You likely have bleeding in your upper gut (stomach/duodenum) given one black, tarry stool, a drop in hemoglobin since last year, and a high BUN with normal creatinine (can happen when blood is digested). Regular ibuprofen use increases the chance of stomach irritation or an ulcer that can bleed. Your current vitals are stable, which is reassuring, but the lab changes suggest this is not trivial and needs evaluation (to confirm bleeding, find the source, and stop it if needed).\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Black, tarry stool usually means digested blood from the upper gut. Your hemoglobin has fallen since last year and your BUN is high while creatinine is normal \u2014 a pattern often seen with upper GI bleeding. Regular ibuprofen raises the chance of a peptic ulcer or stomach lining injury that can bleed. Your current vitals look stable, which is reassuring, but the stool color plus the lab changes suggest real blood loss that needs prompt evaluation. Stop the ibuprofen, avoid alcohol and blood-thinning supplements, and get medical assessment soon. Go to the ER now if you develop fainting, rapid heartbeat, lightheadedness, worsening stomach pain, vomiting blood, or large-volume bloody stools.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): The single black, tarry stool (melena) suggests bleeding in the upper digestive tract. Your hemoglobin has fallen since last year and your BUN is high \u2014 both findings can occur when swallowed blood is being digested \u2014 and frequent ibuprofen use raises the risk of an ulcer or stomach lining injury. Your current blood pressure, heart rate, temperature and creatinine are reassuring, but the combination of melena, a drop in hemoglobin, and high BUN means this should be evaluated fairly soon. Stop ibuprofen now and arrange medical review. Go to the ED right away if you become faint, lightheaded, sweaty, have rapid heartbeat, pass many more black stools, or vomit blood.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your black, tarry stool (melena) plus a drop in hemoglobin and a high BUN suggest bleeding in the upper digestive tract. Taking ibuprofen raises the chance of a stomach or duodenal ulcer that can bleed. Your blood pressure, heart rate, and oxygen are stable now, and you don\u2019t feel faint, which is reassuring, but the lab changes indicate you have had meaningful blood loss. You should stop NSAIDs, avoid alcohol, and get medical evaluation soon. A clinician will likely repeat blood counts, check for ongoing bleeding, and may arrange an urgent endoscopy or other treatment if needed. Go to the ER immediately if you develop fainting, lightheadedness, fast heart rate, passing fresh blood, or worsening symptoms.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your single black, tarry stool likely means some bleeding in the upper part of the digestive tract (stomach or small intestine). Frequent ibuprofen raises the risk of a bleeding stomach ulcer. Your hemoglobin fell since last year (14.5 \u2192 12.7), and your BUN is high while creatinine is normal \u2014 a pattern that can occur when digested blood is absorbed, supporting the possibility of an upper GI bleed. You are currently stable (normal vitals, no fainting or vomiting), but this pattern warrants medical evaluation soon. Stop ibuprofen and avoid alcohol. Go to the ER right away if you feel lightheaded, faint, vomit blood, have heavy bleeding, or your pulse/BP become abnormal.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Black, tarry stool most often means digested blood from the upper digestive tract (called melena). Your hemoglobin has fallen since last year and your BUN is high while creatinine is normal \u2014 a pattern that can occur with upper GI bleeding. Regular ibuprofen use raises the chance of stomach irritation, ulcers, and bleeding. Your current vital signs are reassuring, but these findings together suggest you have had some blood loss that needs prompt medical evaluation to identify the source and stop further bleeding. Stop the ibuprofen and get evaluated soon; go to the emergency department right away if you become faint, very lightheaded, rapidly sweaty, have fast heart rate, pass lots of dark or bright blood, or vomit blood.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): The single black, tarry stool likely represents digested blood from the upper digestive tract (melena). Your recent regular ibuprofen use raises the risk of a stomach or duodenal ulcer that can bleed. The drop in hemoglobin from 14.5 to 12.7 and an elevated BUN with normal creatinine both fit with blood being digested in the gut. Your vital signs are currently stable, which is reassuring, but these findings suggest an upper GI bleed that needs medical evaluation. Stop NSAIDs, avoid alcohol, and monitor for more bleeding or symptoms (dizziness, fainting, rapid heartbeat, vomiting blood).\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You had one black, tarry stool, which commonly means digested blood from the upper gut (stomach/upper intestine). Your recent drop in hemoglobin (14.5 to 12.7) and a high BUN also support possible recent upper GI bleeding. Regular ibuprofen use raises the risk of an ulcer or bleeding. Your current blood pressure and pulse are okay and you aren\u2019t faint or vomiting, which is reassuring, but the lab changes mean this should be checked promptly. Stop ibuprofen now, avoid other NSAIDs or blood thinners unless directed, and get medical evaluation to find the bleeding source and check your blood count again.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have one black, tarry stool (melena), a drop in hemoglobin since last year, and an elevated BUN with normal creatinine. Together these findings are most consistent with bleeding in the upper digestive tract (stomach/duodenum), which can be caused or worsened by frequent ibuprofen use. You are not currently fainting or unstable, and platelets/creatinine are okay, but the lab pattern suggests some blood has been digested and absorbed. This needs prompt medical evaluation (tests, possibly endoscopy) to find and treat the source. Stop ibuprofen now and avoid other NSAIDs or alcohol.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Black, tarry stool (melena) often means bleeding higher in the digestive tract. Your recent regular ibuprofen use increases the chance of a peptic ulcer or GI bleed. The drop in hemoglobin from 14.5 to 12.7 and an elevated BUN support recent upper-GI blood loss. Your blood pressure, pulse, temperature and oxygen are currently reassuring, but normal vitals don\u2019t guarantee the problem is minor. Stop ibuprofen and other NSAIDs now, and get medical evaluation soon to find the bleeding source and check whether you need treatment or a blood test/EGD. Go to the ER right away if you become lightheaded, faint, have fast heartbeat, vomit blood, have more black/bloody stools, worsening pain, or shortness of breath.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

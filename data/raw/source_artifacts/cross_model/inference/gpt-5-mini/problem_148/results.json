@@ -1,0 +1,72 @@
+{
+  "problem_idx": 148,
+  "case_id": "E10",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 59-year-old woman.\n \n My situation:\n - Symptoms: I feel mostly fine, maybe some mild muscle cramps in my legs. These were routine labs.\n - History: I have high blood pressure and chronic kidney disease.\n - Vitals: BP 136/84, HR 74 (regular)\n - Exam: EKG reportedly \"normal sinus rhythm\" (no major changes noted).\n \n My labs (with units and reference ranges):\n - Potassium: 5.9 mEq/L (3.5-5.0) HIGH\n - Creatinine: 1.9 mg/dL (0.7-1.3) HIGH (last was 1.6)\n - BUN: 34 mg/dL (7-20) HIGH\n - CO2 (bicarbonate): 20 mEq/L (22-29) LOW\n - Glucose: 162 mg/dL (70-100) HIGH\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show moderately high potassium (5.9), a rise in creatinine from 1.6 to 1.9 suggesting worse kidney function, and a low CO2 (bicarbonate) indicating mild metabolic acidosis. High potassium can cause muscle symptoms and, importantly, dangerous heart rhythm problems. The normal sinus rhythm on the EKG is reassuring now, but EKG can change as potassium rises. Your mild cramps may be related. The elevated BUN and creatinine fit with reduced kidney clearance of potassium. The slightly high glucose is less urgent here but worth follow-up. This constellation is concerning and warrants prompt medical evaluation.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 70%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium at 5.9 is above the normal range and can affect heart rhythm; higher levels become more dangerous. Your creatinine and BUN are up from prior, which suggests your kidneys are working less well than before; that can cause potassium to rise. The low CO2 (bicarbonate) suggests a mild metabolic acidosis, which also tends to raise potassium. You feel mostly okay and your EKG reportedly shows normal sinus rhythm, which is reassuring, but lab changes plus chronic kidney disease raise concern. This should be checked and managed promptly to prevent progression.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium (5.9) is above the normal range and can affect muscles and the heart. Because you have chronic kidney disease and your creatinine rose (from 1.6 to 1.9), your kidneys may be clearing potassium less well. The low bicarbonate (20) suggests mild acidosis, which can also raise potassium. A normal EKG is reassuring but does not rule out danger. Mild leg cramps can be a symptom. The high glucose is noted but is less immediately critical for the potassium issue. Given the rising creatinine plus potassium close to 6.0, you should have this rechecked promptly and medications reviewed; urgent treatment may be needed if potassium increases or symptoms/ECG change.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium (5.9) is above the normal range and can affect heart rhythm, especially because your kidneys are not working as well (creatinine rose to 1.9 and BUN is high). The low CO2 (mild acidosis) can also push potassium up. It\u2019s reassuring that you feel mostly okay and the EKG was read as normal, but hyperkalemia can progress and become dangerous. You need prompt re-evaluation to repeat labs, check/remove any medicines or supplements that raise potassium, and decide if treatment is needed.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show moderately high potassium (5.9), a rise in creatinine (1.6 \u2192 1.9) and high BUN, all suggesting your kidneys are clearing waste and potassium less well. The low CO2 (bicarbonate) suggests a mild metabolic acidosis, which can raise blood potassium. Elevated potassium can cause dangerous heart rhythm problems, though your EKG was reported as normal and you have only mild cramps. Because kidney function is worse than before and potassium is near a range that can become dangerous, this needs timely attention to confirm the value, find the cause, and decide if treatment is needed.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium (5.9) is clearly above the normal range and can affect heart rhythm and muscle function. The rise in creatinine (from 1.6 to 1.9) and a low bicarbonate (20) suggest your kidneys are not clearing acid and potassium as well as before, which makes high potassium more concerning. A normal-sinus EKG is somewhat reassuring but does not eliminate risk. Mild leg cramps can be a sign of electrolyte disturbance. Your elevated glucose is noteworthy but less urgent here. Overall this pattern (moderately high potassium, worsening kidney function, mild acidosis) often needs prompt recheck and possible treatment to lower potassium and protect the heart and kidneys.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium of 5.9 is higher than normal and can affect the heart and muscles. The rise in creatinine from 1.6 to 1.9 and a higher BUN show your kidney function is worse than before, which makes it harder for your body to remove potassium. A low bicarbonate suggests mild metabolic acidosis, which can push potassium up further. Your EKG is reported normal now, and symptoms are mild, which is reassuring, but the trend (rising creatinine + K 5.9) raises concern. You should get this rechecked and discussed promptly; seek immediate care if you develop weakness, palpitations, fainting, or any new significant symptoms.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium of 5.9 is higher than normal and can cause dangerous heart rhythm problems, especially because your kidneys aren\u2019t working as well (creatinine rose to 1.9 and BUN is high). The low bicarbonate (CO2 20) suggests mild acidosis, which can raise potassium further. A normal EKG and mild symptoms are somewhat reassuring, but EKG can miss early changes and levels can rise quickly in chronic kidney disease. You need prompt medical review to repeat labs, check or stop medicines that raise potassium, and treat if needed. Go to emergency care sooner if you develop weakness, palpitations, fainting, chest pain, or trouble breathing.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium (5.9) is above normal and can affect heart rhythm and muscles. The creatinine rise from 1.6 to 1.9 with a high BUN suggests your kidney function has worsened, which makes it harder for your body to remove potassium. The low CO2 (bicarbonate 20) suggests a mild metabolic acidosis, which can push potassium out of cells and raise the blood level. A normal-sinus EKG is reassuring but does not guarantee there is no risk. Mild leg cramps could be related to the potassium. Overall this combination (CKD, rising creatinine, acidosis, potassium 5.9) warrants prompt medical evaluation rather than just waiting at home.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium (5.9) is above the normal range and can cause dangerous heart rhythm problems even if the EKG looked normal today. The rise in creatinine (1.9 from 1.6) and high BUN indicate your kidneys are not clearing waste as well, which makes high potassium more likely. The low CO2 (bicarbonate) suggests a mild acidosis, which can push potassium out of cells and raise blood levels. Mild muscle cramps can be a symptom. Because kidney function is worse and potassium is nearly 6.0, this needs prompt medical reassessment \u2014 repeat blood tests and another ECG, and review medications and diet that affect potassium.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

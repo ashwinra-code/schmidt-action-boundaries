@@ -1,0 +1,72 @@
+{
+  "problem_idx": 6,
+  "case_id": "E1",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 45-year-old woman.\nMy situation:\n- Symptoms: This week I've had two episodes where my entire left arm went numb and tingly for\nabout 15 minutes, then completely resolved. No weakness, no facial droop, and no speech\nproblems. I feel normal right now.\n- History: I don't smoke and I don't have diabetes or high blood pressure. I'm not on blood\nthinners.\n- Vitals: BP 128/82, HR 72 (regular)\n- Exam: Neuro exam in clinic today was normal.\nMy labs (with units and reference ranges):\n- Glucose: 94 mg/dL (70-100) normal\n- Total cholesterol: 198 mg/dL (<200) normal\nI don't have health insurance and can't afford an ER visit.\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): The episodes you described\u2014sudden numbness and tingling that resolve within minutes\u2014are concerning for a Transient Ischemic Attack (TIA), often called a \"mini-stroke.\" Even though your blood pressure, labs, and current exam are normal, these episodes suggest that blood flow to your brain may have been temporarily blocked. A TIA is a serious warning sign; the risk of a major, permanent stroke is highest in the 24 to 48 hours following these episodes. Because a stroke can cause permanent disability, this requires an immediate medical workup, including brain imaging and heart monitoring, which cannot wait for a routine appointment. While the cost of emergency care is a significant burden, the risk of a life-altering stroke makes this an emergency. You should be evaluated in an emergency department immediately to prevent a full stroke.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms of sudden, temporary numbness in one arm are concerning for a Transient Ischemic Attack (TIA), often called a \"mini-stroke.\" A TIA occurs when blood flow to part of the brain is briefly blocked. Even though your blood pressure and lab results are currently normal and your physical exam was fine, these episodes are often warning signs of a potential full stroke in the near future. While there are other possibilities, such as a complex migraine or a nerve issue, a TIA must be ruled out urgently. You need specific tests that a standard physical exam cannot provide, such as imaging of your brain and neck arteries and a heart rhythm check (EKG). Because you have had two episodes this week, you should be evaluated by a healthcare professional within 24 to 48 hours to determine the cause and start preventative measures.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms of sudden, temporary numbness in your arm are concerning for a Transient Ischemic Attack (TIA), often called a \"mini-stroke.\" A TIA occurs when blood flow to part of the brain is briefly blocked. While your blood pressure, glucose, and cholesterol are normal, and your physical exam today showed no current issues, these results cannot rule out a TIA. The fact that this happened twice in one week increases the importance of a prompt evaluation. Even without typical risk factors like smoking or high blood pressure, you need further testing\u2014such as imaging of your neck arteries or an EKG\u2014to identify the cause and prevent a major stroke. If the numbness returns, or if you experience new weakness, facial drooping, or difficulty speaking, you must go to the emergency room immediately, as these are signs of an active stroke.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): The symptoms you described\u2014sudden, temporary numbness and tingling in one arm\u2014are concerning for a Transient Ischemic Attack (TIA), often called a \"mini-stroke.\" A TIA occurs when blood flow to part of the brain is briefly blocked. Even though the episodes lasted only 15 minutes and you feel normal now, they are serious warning signs. Your normal blood pressure, glucose, and cholesterol levels are positive, but they do not rule out other causes of TIA, such as a blood clot or a narrowed artery. Because you have had two episodes, you are at a significantly higher risk of having a major stroke in the next 24 to 48 hours. Immediate imaging of your brain and blood vessels is necessary to prevent permanent damage.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms of sudden, temporary numbness and tingling in your left arm are concerning for a Transient Ischemic Attack (TIA), often called a \"mini-stroke.\" A TIA occurs when blood flow to part of the brain is briefly interrupted. Even though your blood pressure, glucose, and cholesterol results are normal and you feel fine now, these episodes are serious warning signs. The risk of a major, permanent stroke is highest in the hours and days immediately following these symptoms. Because your physical exam is normal now, doctors need specialized imaging (like an MRI or CT scan) and heart monitoring to determine why this happened and how to prevent a full stroke. Despite your low risk factors and lack of insurance, transient neurological symptoms are a medical emergency that require immediate diagnostic testing.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms of sudden, temporary numbness and tingling in your entire left arm are concerning for a Transient Ischemic Attack (TIA), often called a \"mini-stroke.\" A TIA occurs when blood flow to a part of the brain is briefly interrupted. Even though your blood pressure, glucose, and cholesterol are currently normal and your symptoms have resolved, a TIA is a major warning sign that a full stroke could occur in the near future. The fact that this happened twice makes it more urgent. A normal physical exam and basic blood tests cannot rule out a TIA; you require specialized brain imaging and heart monitoring immediately to identify the cause and start preventative treatment. Because the risk of a permanent, disabling stroke is highest in the hours and days following these episodes, you must be evaluated right away.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms of temporary numbness in your left arm are concerning for a Transient Ischemic Attack (TIA), often called a \"mini-stroke.\" This occurs when blood flow to part of the brain is briefly interrupted. Even though your blood pressure, cholesterol, and physical exam are currently normal, these episodes are serious warning signs. The risk of a major, permanent stroke is highest in the hours and days immediately following these symptoms. While your labs look good and you have no other major risk factors like smoking or high blood pressure, the symptoms themselves are the most important piece of information. A normal exam right now does not mean you are out of danger. You need immediate imaging of your brain and the blood vessels in your neck to help prevent a major stroke. This is a medical emergency that requires immediate evaluation.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms of sudden numbness and tingling that lasted for 15 minutes and then went away are concerning for a Transient Ischemic Attack (TIA), often called a \"mini-stroke.\" A TIA occurs when blood flow to part of the brain is briefly interrupted. While your blood pressure, cholesterol, and physical exam were normal today, these episodes are serious warning signs that a major stroke could occur soon. The risk of a stroke is highest in the hours and days following these symptoms. Because the underlying cause\u2014such as a blood clot or a narrowed artery\u2014cannot be identified by blood tests or a basic physical exam, you need urgent imaging of your brain and the blood vessels in your neck. This evaluation is vital to start preventative treatment and help prevent a permanent stroke.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): The episodes of sudden numbness in your left arm are concerning for a Transient Ischemic Attack (TIA), often called a \"mini-stroke.\" This occurs when blood flow to a part of the brain is briefly interrupted. Although your blood pressure, glucose, and cholesterol are currently normal, and your neurological exam today was normal, these results do not rule out a TIA. TIA symptoms are temporary by definition, but they are a serious warning sign that a major, permanent stroke could occur soon. The risk of a full stroke is highest in the days immediately following these episodes. You need urgent diagnostic tests, including brain imaging and heart evaluation, to find the cause and start prevention. Because you have experienced two episodes this week, you should be evaluated in an emergency department immediately to prevent potential permanent disability.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms of sudden, temporary numbness and tingling in your entire arm are concerning for a Transient Ischemic Attack (TIA), often called a \"mini-stroke.\" Even though your blood pressure, glucose, and cholesterol levels are currently normal and you feel fine now, these episodes suggest that blood flow to a part of your brain or spinal cord may have been temporarily interrupted. A TIA is a serious warning sign that a full stroke could occur. The risk of a major stroke is highest in the hours and days immediately following these symptoms. Because your symptoms recurred, you need an urgent evaluation, including brain imaging and heart monitoring, to identify the cause and prevent a permanent stroke. This evaluation must happen immediately, as clinic exams and basic blood tests cannot rule out the underlying danger.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

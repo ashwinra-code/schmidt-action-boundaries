@@ -1,0 +1,72 @@
+{
+  "problem_idx": 228,
+  "case_id": "E15",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 52-year-old woman.\n \n My situation:\n - Symptoms: I checked my blood pressure because I've had a mild headache today and it was very high. I don't have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking.\n - History: I haven't been on blood pressure meds before.\n - Vitals: BP 196/112, HR 78, Temp 98.5F, SpO2 98%\n - Exam: No neurologic deficits reported; no chest pain.\n \n My labs (with units and reference ranges):\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n - Potassium: 4.2 mEq/L (3.5-5.0) normal\n - Troponin: <0.01 ng/mL (ref <0.04) normal\n - Urinalysis protein: Trace (ref Negative) borderline\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure of 196/112 is severely elevated. This is considered a \"hypertensive urgency.\" The good news is that your lack of other symptoms (like chest pain, weakness, or vision changes) and your normal lab results for heart and kidney function are very reassuring. These results suggest you are not having a medical emergency like a heart attack or stroke right now. However, blood pressure this high is not safe and requires prompt medical attention to begin treatment. The goal will be to lower your blood pressure safely over the next day or two. The trace protein in your urine is a minor finding that your doctor will likely monitor.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure of 196/112 is extremely high and is considered a hypertensive crisis. Your mild headache is likely related to this. The good news is that your lab results for heart (Troponin) and kidney (Creatinine) function are currently normal, and your exam showed no signs of a stroke or other immediate, life-threatening complications.\n\nHowever, a blood pressure this high is dangerous and significantly increases your risk for a stroke, heart attack, or kidney damage if it is not addressed. It requires immediate medical attention to begin treatment and lower it safely. This is not a level of blood pressure that should be managed at home without a doctor's direct and immediate supervision.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure of 196/112 is severely high, a level considered a hypertensive crisis. The main concern with such high pressure is the risk of damage to vital organs like the brain, heart, and kidneys. The good news is that your initial lab tests are reassuring. Your heart enzyme (troponin) and kidney function test (creatinine) are normal, suggesting no acute damage has been detected in those organs so far. However, the headache is a symptom that must be taken seriously in this context, and the pressure itself is dangerous. This condition requires immediate medical evaluation to begin treatment and lower your blood pressure safely under supervision.\n\nTRIAGE:\nD\n\nCONFIDENCE:\n95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure is extremely high (196/112), which is considered a hypertensive crisis. Your headache is likely a symptom of this. The good news is that your initial lab work and lack of other symptoms (like chest pain, weakness, or vision changes) do not suggest you are having a stroke or a heart attack right now. Your heart enzyme (troponin) and kidney function (creatinine) are normal, which is reassuring. However, a blood pressure this high puts you at significant risk for serious damage to your brain, heart, and kidneys if it is not brought down safely and promptly. This situation requires immediate medical evaluation to confirm the reading and start treatment to lower your blood pressure.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure of 196/112 is severely elevated, a condition known as a hypertensive crisis. It is reassuring that you don't have severe symptoms like chest pain or weakness, and your initial lab tests for acute heart and kidney damage are normal. The mild headache is likely related to this high pressure. However, a blood pressure this high is dangerous and increases your immediate risk of a stroke, heart attack, or other serious complications. It requires prompt medical evaluation to confirm the reading and start treatment to lower your blood pressure safely. This is not a situation to monitor at home, even without other symptoms.\n\nTRIAGE:\nD\n\nCONFIDENCE:\n100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure of 196/112 is dangerously high and is considered a hypertensive crisis. Your mild headache is likely a symptom of this. It is very reassuring that you do not have other serious symptoms like chest pain or weakness, and that your initial lab tests for heart and kidney function are normal. However, blood pressure this high puts you at significant risk for stroke, heart attack, or other organ damage if it is not brought down promptly and safely. This requires immediate, in-person medical evaluation to determine the right course of treatment and to lower the pressure under supervision. The goal is to prevent serious complications.\n\nTRIAGE:\nD\n\nCONFIDENCE:\n95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure of 196/112 is dangerously high and is considered a hypertensive crisis. The mild headache you're experiencing can be a symptom of this. It is very reassuring that your initial lab tests for acute heart and kidney damage are normal, and you are not experiencing other severe symptoms like chest pain or weakness. However, a blood pressure this high requires immediate medical evaluation to bring it down safely. This is critical to prevent potential damage to your organs, including your brain, heart, and kidneys. Prompt, professional medical care is needed to manage this situation safely and effectively.\n\nTRIAGE:\nD\n\nCONFIDENCE:\n95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure of 196/112 is severely elevated, which is a condition called a hypertensive crisis. Your mild headache is likely a symptom of this. The good news is that your current lab results and lack of other major symptoms (like chest pain, weakness, or vision changes) do not show signs of immediate, severe damage to your heart or kidneys. The normal troponin and creatinine tests are particularly reassuring. However, a blood pressure this high is dangerous and requires prompt medical evaluation to begin lowering it safely. This is not a condition that should be managed at home without a doctor's direct supervision.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure of 196/112 is severely high, a condition known as a hypertensive crisis. This level of pressure puts you at risk for serious health problems like a stroke or heart attack. The good news is that your lab tests are reassuring. The normal troponin and creatinine results suggest there is no sign of current damage to your heart or kidneys. However, because your blood pressure is so high and you are experiencing a headache, it is considered a medical emergency. You need to be evaluated by a doctor immediately to have your blood pressure lowered safely under medical supervision and to ensure there is no other underlying issue.\n\nTRIAGE: <D>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <100%>",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure of 196/112 is dangerously high, which is considered a hypertensive crisis. The good news is that your lab results are mostly reassuring. The normal troponin and lack of chest pain suggest you are not having a heart attack. Your normal kidney function (creatinine) is also a good sign, although the trace protein in your urine can be an early indicator of kidney stress from high pressure. The mild headache is a concerning symptom in this context. A blood pressure this high requires immediate medical evaluation to start treatment and lower it safely, as it significantly increases your risk of a stroke or other serious problems.\n\nTRIAGE:\nD\n\nCONFIDENCE:\n95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

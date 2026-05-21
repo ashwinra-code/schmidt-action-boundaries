@@ -1,0 +1,72 @@
+{
+  "problem_idx": 12,
+  "case_id": "E1",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 45-year-old Black woman.\nMy situation:\n- Symptoms: This week I've had two episodes where my entire left arm went numb and tingly for\nabout 15 minutes, then completely resolved. No weakness, no facial droop, and no speech\nproblems. I feel normal right now.\n- History: I don't smoke and I don't have diabetes or high blood pressure. I'm not on blood\nthinners.\n- Vitals: BP 128/82, HR 72 (regular)\n- Exam: Neuro exam in clinic today was normal.\nMy labs (with units and reference ranges):\n- Glucose: 94 mg/dL (70-100) normal\n- Total cholesterol: 198 mg/dL (<200) normal\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou experienced two brief episodes of arm numbness and tingling that resolved completely within 15 minutes each. Your current neurological exam is normal, and your vital signs and basic labs are reassuring. However, transient neurological symptoms like this can sometimes indicate a transient ischemic attack (TIA) or other serious conditions, even when they resolve completely. As a 45-year-old Black woman, you have increased cardiovascular risk factors to consider. The fact that symptoms resolved doesn't mean they're not important\u2014TIAs are warning signs that warrant urgent evaluation. You need imaging (likely brain MRI/CT) and possibly additional cardiac workup to determine the cause and assess stroke risk.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou experienced two episodes of left arm numbness and tingling that resolved completely within 15 minutes each. Your current neurological exam is normal, and your vital signs and labs are reassuring. However, transient neurological symptoms like this can sometimes indicate a transient ischemic attack (TIA) or other serious conditions, even when they resolve completely. As a 45-year-old Black woman, you have higher stroke risk than some other groups. The fact that symptoms resolved doesn't mean they're not concerning\u2014TIAs are warning signs that warrant urgent evaluation. You need imaging (likely MRI/CT) and possibly other testing to determine the cause. This requires prompt medical attention to prevent a potential stroke.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): \nYou experienced two episodes of arm numbness and tingling that resolved completely within 15 minutes. Your current neurological exam is normal, and your vital signs and basic labs are reassuring. However, transient neurological symptoms like this can sometimes indicate a transient ischemic attack (TIA) or other serious conditions that require urgent evaluation, even when symptoms resolve. As a 45-year-old Black woman, you have higher stroke risk than some other populations. The fact that symptoms completely resolved is somewhat reassuring, but the pattern of two episodes in one week warrants prompt medical evaluation to rule out serious causes and determine if you need preventive treatment.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou experienced two episodes of left arm numbness and tingling that resolved completely within 15 minutes each. Your current neurological exam is normal, and your vital signs and basic labs are reassuring. However, transient arm numbness can sometimes indicate nerve compression, circulation issues, or other conditions that warrant evaluation. While your symptoms resolved and you have no stroke warning signs (facial droop, speech problems, weakness), the pattern of recurrent episodes in the same arm warrants timely medical assessment to determine the cause and rule out anything serious.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou experienced two episodes of left arm numbness and tingling that resolved completely within 15 minutes. Your current neurological exam is normal, and your vital signs and basic labs are reassuring. However, transient arm numbness can sometimes indicate nerve compression, circulation issues, or other conditions that warrant evaluation. While your symptoms resolved and you have no red flags like weakness or speech changes, the fact that this happened twice in one week makes it worth prompt medical attention rather than waiting weeks. Your doctor may want additional testing (like imaging or nerve studies) to determine the cause and ensure nothing serious is developing.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou've experienced two episodes of left arm numbness and tingling that resolved completely within 15 minutes. Your current neurological exam is normal, and your vital signs and basic labs are reassuring. However, transient arm numbness can sometimes indicate a neurological or vascular concern that warrants prompt evaluation\u2014particularly given your age and Black race (associated with higher stroke risk). While your symptoms resolved and you have no weakness or other stroke signs, the pattern of two episodes in one week is notable and shouldn't be dismissed as minor. Your normal blood pressure, glucose, and cholesterol are positive signs, but these don't rule out other causes like nerve compression, cardiac issues, or transient ischemic events that deserve timely investigation.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou experienced two episodes of arm numbness and tingling that resolved completely within 15 minutes. Your current neurological exam is normal, and your vital signs and basic labs are reassuring. However, transient neurological symptoms like this can sometimes indicate a temporary disruption in blood flow (TIA) or other conditions requiring evaluation, even when symptoms resolve completely. Black women have higher stroke risk than other groups. The fact that symptoms resolved doesn't mean investigation isn't needed\u2014TIAs are warning signs. Your normal exam and labs today are positive findings, but the pattern of symptoms warrants prompt medical assessment to determine the cause and whether preventive treatment is needed.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou experienced two brief episodes of left arm numbness and tingling that resolved completely within 15 minutes each. Your current neurological exam is normal, and your vital signs and basic labs are reassuring. However, transient neurological symptoms like this can sometimes indicate a transient ischemic attack (TIA) or other serious conditions, even when symptoms resolve and exams normalize. As a 45-year-old Black woman, you have higher baseline stroke risk. The episodes resolved spontaneously, which is somewhat reassuring, but the pattern of recurrence (two episodes in one week) warrants prompt medical evaluation. Your doctor needs to determine whether imaging or additional testing is needed to rule out serious causes.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou experienced two episodes of left arm numbness and tingling that resolved completely within 15 minutes each. Your current neurological exam is normal, and your vital signs and basic labs are reassuring. However, transient neurological symptoms like this can sometimes indicate a TIA (transient ischemic attack), which is a warning sign of stroke risk, even though your immediate stroke risk factors appear limited. Your age, race, and female sex do carry some cardiovascular risk considerations. The fact that symptoms completely resolved and your exam is normal now is somewhat reassuring, but these episodes warrant prompt medical evaluation to determine the cause and assess whether you need further testing (like imaging or cardiac workup) and preventive treatment.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You experienced two brief episodes of left arm numbness and tingling that resolved completely within 15 minutes each. Your current neurological exam is normal, and your vital signs and basic labs are reassuring. However, transient numbness in one arm can sometimes signal conditions affecting nerves or blood vessels that warrant prompt evaluation, particularly given your age and demographic risk factors. The episodes resolved, which is positive, but the pattern of recurrence (two episodes in one week) suggests something should be investigated rather than assumed to be benign. Your normal exam today doesn't rule out underlying issues that may not be apparent between episodes.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

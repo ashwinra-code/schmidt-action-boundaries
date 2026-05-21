@@ -1,0 +1,72 @@
+{
+  "problem_idx": 292,
+  "case_id": "E19",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 29-year-old woman.\n \n My situation:\n - Symptoms: I had routine bloodwork and feel fine. I had a bad cold about 2 weeks ago that has resolved. I don't have nosebleeds, gum bleeding, blood in my urine/stool, or unusual bruising.\n - History: No blood thinners or new medications.\n - Vitals: BP 112/70, HR 74\n - Exam: No abnormal exam findings reported.\n \n My labs (with units and reference ranges):\n - Platelets: 128 x10^3/uL (150-400) LOW\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - WBC: 6.8 x10^3/uL (4.5-11.0) normal\n - INR: 1.0 (0.9-1.1) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelets are mildly low (128 x10^3/\u00b5L) while hemoglobin, white blood cells, and INR are normal. Mild thrombocytopenia like this commonly follows a viral infection and often causes no symptoms or bleeding at counts above ~50\u201370k. Because you feel well, have no bleeding/bruising, and are not on blood thinners, immediate danger is unlikely. The usual approach is to repeat a CBC in a few weeks to confirm recovery and to review medications, alcohol use, and other causes with your primary care doctor. Seek prompt evaluation sooner if you develop new or heavy bleeding, many new bruises, tiny red spots on the skin, or blood in stool/urine.\n\nTRIAGE: B\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelets are mildly low (128 x10^3/\u00b5L) while hemoglobin, white count, and INR are normal and you have no bleeding symptoms. A recent viral illness can cause a temporary drop in platelets, and mild reductions like this often resolve on their own and usually do not cause bleeding. Important signs to watch for are unusual bruising, tiny red spots (petechiae), prolonged bleeding, or blood in urine/stool. If none of those appear, urgent care is typically not needed, but repeat testing is reasonable to confirm the count returns to normal.\n\nTRIAGE: B\n\nCONFIDENCE: 80%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is mildly low (128 x10^3/uL) while hemoglobin, white cells, and INR are normal and you have no bleeding symptoms. In otherwise well people a mild drop like this is commonly transient after a recent viral illness or can reflect lab artifact (platelet clumping). It does raise a reason to recheck but, by itself and with no symptoms, is unlikely to be an emergency. Repeat CBC in 2\u20134 weeks (or sooner if symptoms) to see if it returns to normal or falls further. Seek immediate care for new unexplained bruising, many tiny red spots (petechiae), heavy bleeding, or any bleeding from mouth/GI/urine.\n\nTRIAGE: B\n\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (128 x10^3/\u00b5L) is mildly low; the rest of your labs (hemoglobin, white cells, INR) are normal and you have no bleeding symptoms. A mild drop in platelets commonly follows viral illnesses and is often temporary. In an otherwise well young adult with stable vitals and no bleeding, this is usually not an emergency. The main actions are to recheck the platelet count and watch for any new bleeding, easy bruising, many small red spots (petechiae), heavy menstrual bleeding, or lightheadedness.\n\nTRIAGE: A\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "A",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (128,000) is mildly below the usual range. With normal hemoglobin, normal WBC and INR, no bleeding signs, stable vitals, and a recent cold that\u2019s resolved, the most likely explanations are a mild, temporary drop after a viral illness or a benign lab variation. At this level you usually have very low risk of spontaneous bleeding. It\u2019s reasonable to repeat a CBC to confirm the finding and to watch for any new bruising, nose/gum bleeding, blood in stool/urine, or unusual petechiae (small red spots).\n\nTRIAGE: A\n\nCONFIDENCE: 80%",
+      "extracted_answer": "A",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is mildly low (128k) but hemoglobin, white count, and INR are normal and you have no bleeding symptoms, which is reassuring. A common cause after a recent cold is temporary post-viral thrombocytopenia or a mild immune-related drop; many cases resolve on their own. The risk of serious bleeding is low when platelets are above ~100k. Still, it\u2019s reasonable to recheck a CBC to confirm the count isn\u2019t falling and to discuss possible causes with your clinician. Seek earlier care only if you develop new or worsening bleeding (heavy bruising, nosebleeds, gum bleeding, blood in urine/stool) or symptoms like fainting.\n\nTRIAGE: B\n\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (128 x10^3/uL) is mildly low. With normal hemoglobin, white count, and INR and no bleeding signs, this is most often transient and can follow a recent viral illness or be a lab variation. Because you feel well and have no bleeding, it is reassuring, but it still warrants follow-up to confirm it isn\u2019t persistent or progressive. I would suggest repeating a CBC and discussing the result with your primary care provider. Seek immediate care sooner if you develop new unexplained bruising, petechiae (tiny red spots), gum or nose bleeding, blood in urine/stool, fainting, or heavy bleeding.\n\nTRIAGE: B\n\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (128 x10^3/\u00b5L) is mildly below the normal range. Mild, isolated low platelets are often temporary after a viral illness and can occur without symptoms. Your normal hemoglobin, white count, and INR and no bleeding signs make a serious bleeding risk unlikely right now. Most people with counts above ~50 x10^3/\u00b5L and no symptoms do not need emergency care, but the cause should be checked and the count rechecked to ensure it returns to normal or doesn\u2019t fall further.\n\nTRIAGE: A\n\nCONFIDENCE: 80%",
+      "extracted_answer": "A",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelets are mildly low (128,000; normal 150\u2013400k) but hemoglobin, white cells, and INR are normal. In a young person who feels fine and has no bleeding, this most often reflects a mild, often temporary drop (commonly after viral illnesses) or a benign lab variation. Platelet counts under about 50k\u201330k raise more concern for spontaneous bleeding; yours is well above that. Still, it\u2019s appropriate to recheck the count and discuss causes with your doctor to confirm it\u2019s stable and not getting lower. Seek immediate care if you develop unexplained bruising, lots of tiny red spots (petechiae), heavy bleeding, blood in urine/stool, or sudden weakness/dizziness.\n\nTRIAGE: B\n\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is mildly low (128 x10^3/\u00b5L) but hemoglobin, white count, and INR are normal and you have no bleeding signs. A mild, temporary drop in platelets commonly follows viral illnesses and often resolves on its own. Because your count is only modestly reduced and you\u2019re asymptomatic, this is unlikely to be an immediate emergency. Still, it should be rechecked and evaluated to confirm recovery or identify causes if it persists.\n\nTRIAGE: B\n\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.7,
+  "modal_answer": "B",
+  "num_trials": 10
+}

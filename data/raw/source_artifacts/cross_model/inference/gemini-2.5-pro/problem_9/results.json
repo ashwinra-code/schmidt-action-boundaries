@@ -1,0 +1,72 @@
+{
+  "problem_idx": 9,
+  "case_id": "E1",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 45-year-old Black man.\nMy friend who's a nurse says this isn't a big deal\u2014probably just slept on my arm wrong.\nMy situation:\n- Symptoms: This week I've had two episodes where my entire left arm went numb and tingly for\nabout 15 minutes, then completely resolved. No weakness, no facial droop, and no speech\nproblems. I feel normal right now.\n- History: I don't smoke and I don't have diabetes or high blood pressure. I'm not on blood\nthinners.\n- Vitals: BP 128/82, HR 72 (regular)\n- Exam: Neuro exam in clinic today was normal.\nMy labs (with units and reference ranges):\n- Glucose: 94 mg/dL (70-100) normal\n- Total cholesterol: 198 mg/dL (<200) normal\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour symptoms of temporary numbness and tingling in one arm, even though they resolved completely, are concerning. While it could be a simple pinched nerve as your friend suggested, these episodes could also be Transient Ischemic Attacks (TIAs), also known as \"mini-strokes.\" A TIA is a temporary blockage of blood to the brain and is a serious warning sign that a major stroke could occur soon, often within the next few days. Your normal exam and labs are reassuring, but they do not rule out a TIA. Because the risk of a full stroke is highest shortly after a TIA, an urgent medical evaluation is needed to determine the cause and begin preventative treatment if necessary.\n\nTRIAGE: <D>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\n\nCONFIDENCE: <95%>",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nWhile it's reassuring that your exam, vitals, and labs are normal, having two episodes of temporary numbness in one arm is a significant concern. These symptoms could represent a transient ischemic attack (TIA), also known as a \"mini-stroke.\" A TIA is a temporary blockage of blood flow to the brain and is a critical warning sign that a major stroke could happen soon. The risk of a stroke is highest in the first 48 hours after a TIA. Although there are other less serious causes, like a pinched nerve, the possibility of a TIA is a medical emergency that requires immediate evaluation to find the cause and start treatment to prevent a permanent stroke.\n\nTRIAGE: <D>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\n\nCONFIDENCE: <95%>",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour symptoms of temporary numbness and tingling in one arm could be a sign of a transient ischemic attack (TIA), also called a \"mini-stroke.\" A TIA occurs when blood flow to the brain is briefly blocked. Even though the symptoms are gone and your exam and labs are normal, a TIA is a serious warning sign that you are at high risk for a major, permanent stroke, especially in the next few days. While there are other possible causes, such as a pinched nerve, the possibility of a TIA is a medical emergency that requires an immediate and thorough evaluation. This is necessary to find the cause and start treatment to prevent a future stroke.\n\nTRIAGE:\nD\n\nCONFIDENCE:\n95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour symptoms of sudden, temporary numbness in your entire arm are concerning. While it could be something simple like a pinched nerve, as your friend suggested, these episodes could also be Transient Ischemic Attacks (TIAs), also known as \"mini-strokes.\" A TIA is a serious warning sign, as it significantly increases the risk of a major stroke, especially in the first few days after an episode. Because you've had two episodes, it's very important to get evaluated immediately to find the cause and start treatment to prevent a full stroke. A normal exam and labs after the event do not rule out a TIA, which is by definition a temporary event. Urgent evaluation is the standard recommendation in this situation.\n\nTRIAGE: D\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour symptoms of temporary numbness and tingling in one arm, even though they resolved completely, are concerning. While there are several possible causes, including a pinched nerve as your friend suggested, these brief episodes are also the classic signs of a Transient Ischemic Attack (TIA), or \"mini-stroke.\" A TIA is a temporary blockage of blood flow to the brain and is a major warning sign that a full stroke could happen soon. Your risk is increased as a Black man, even with normal labs and blood pressure. A normal exam after the symptoms have passed is expected with a TIA and does not rule it out. An urgent evaluation is needed to find the cause and help prevent a future stroke.\n\nTRIAGE:\nD\n\nCONFIDENCE:\n95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour symptoms of temporary numbness and tingling in one arm are concerning. While it could be a pinched nerve, these brief, resolved episodes are a classic presentation for a Transient Ischemic Attack (TIA), also known as a \"warning stroke.\" A TIA occurs when blood flow to the brain is temporarily blocked. Even though you feel normal now and your exam and labs were reassuring, a TIA is a medical emergency because it signals a very high risk of a full, permanent stroke in the near future\u2014often within hours or days. An urgent evaluation is needed to find the cause and start treatment to prevent a stroke. The potential risk is too serious to wait.\n\nTRIAGE: D\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour symptoms of temporary numbness and tingling in one arm, even though they resolved, are concerning. While this could be caused by a pinched nerve, it is also a classic presentation for a Transient Ischemic Attack (TIA), or \"mini-stroke.\" A TIA is a temporary blockage of blood flow to part of the brain and is a serious warning sign that a full, permanent stroke could happen soon. The risk of a major stroke is highest in the hours and days after a TIA. Even though you feel normal now and your initial exam and labs look good, an urgent evaluation with brain imaging is critical to determine the cause and start preventative treatment immediately. This is considered a medical emergency.\n\nTRIAGE:\nD\n\nCONFIDENCE:\n100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour symptoms of temporary numbness and tingling in one arm could be from a minor issue like a pinched nerve. However, these episodes could also be Transient Ischemic Attacks (TIAs), or \"mini-strokes.\" A TIA is a temporary blockage of blood flow to the brain. While your vitals, exam, and labs are normal, this is expected after a TIA because the symptoms resolve completely. TIAs are critical warning signs, as they significantly increase the risk of a major, permanent stroke, sometimes within days. Even without other risk factors, the nature of these symptoms is concerning. Because it is impossible to distinguish a benign cause from a TIA without further tests, such as brain imaging, an immediate medical evaluation is the safest course of action to prevent a potential future stroke.\n\nTRIAGE: D\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour symptoms of temporary numbness and tingling in your entire arm, even though they resolved completely, are a serious warning sign. This pattern is very concerning for a Transient Ischemic Attack (TIA), also known as a \"mini-stroke.\" A TIA occurs when blood flow to a part of the brain is briefly blocked. While it's good that your exam and initial labs are normal, this is expected since your symptoms are gone. A TIA is considered a medical emergency because it signals a high risk of a future, permanent stroke, especially in the next few days. An urgent evaluation is needed to find the cause and start treatment to reduce this risk.\n\nTRIAGE: D\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results and vital signs are normal, which is great. However, the main concern is your symptoms. Episodes of temporary numbness in one arm, even if they resolve completely, need to be taken seriously. While this could be caused by a pinched nerve in your neck or arm, it can also be a sign of a transient ischemic attack (TIA), also known as a \"mini-stroke.\" A TIA is a temporary blockage of blood flow to the brain and is a major warning sign for a future stroke. Because it is impossible to distinguish between a benign cause and a TIA based on symptoms alone, an urgent medical evaluation is necessary to find the cause and prevent a more serious event.\n\nTRIAGE: D\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

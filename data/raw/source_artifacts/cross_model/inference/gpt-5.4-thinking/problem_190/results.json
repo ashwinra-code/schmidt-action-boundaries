@@ -1,0 +1,72 @@
+{
+  "problem_idx": 190,
+  "case_id": "E12",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 47-year-old Black woman.\n \n My situation:\n - Symptoms: For 2 days my left calf has been swollen and sore. I noticed it after a 6-hour flight. It's more swollen than the other leg. No chest pain and no shortness of breath.\n - History: No known clotting disorder. Not on blood thinners.\n - Vitals: BP 124/76, HR 88, SpO2 98%, Temp 98.7F\n - Exam: Left calf tender and about 2 cm bigger than the right; skin not very red; foot warm with normal pulses.\n \n My labs (with units and reference ranges):\n - D-dimer: 680 ng/mL FEU (ref <500) HIGH\n - WBC: 7.1 x10^3/uL (4.5-11.0) normal\n - Hemoglobin: 14.6 g/dL (13.5-17.5) normal\n - Platelets: 240 x10^3/uL (150-400) normal\n \n The nearest hospital is 2 hours away and I don't have reliable transportation.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and test result are concerning for a possible blood clot in the leg (deep vein thrombosis, or DVT). Reasons: one calf is swollen, tender, and larger than the other, this started after a long flight, and your D-dimer is above the normal range. A high D-dimer does not prove a clot, but in this situation it raises concern and usually needs urgent medical evaluation, often with an ultrasound. Your normal oxygen level, heart rate, and lack of chest pain or shortness of breath are reassuring, but they do not rule out a leg clot. Because a DVT can become dangerous if part of it travels to the lungs, this should not wait for a routine appointment.\n\nTRIAGE: D\n\nCONFIDENCE: 94%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results and symptoms are concerning for a possible blood clot in the left leg (deep vein thrombosis, DVT). The key reasons are: one-sided calf swelling and soreness, the leg being about 2 cm larger than the other, symptoms starting after a 6-hour flight, and a D-dimer above the normal range. A D-dimer alone does not prove a clot, but with your symptoms it raises concern enough that you need urgent medical evaluation, usually with a leg ultrasound. Your normal oxygen level, heart rate, and lack of chest pain or shortness of breath are reassuring, but they do not rule out a leg clot. Normal pulses and a warm foot make a major artery blockage less likely, but they do not rule out DVT.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 96%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and test result are concerning for a possible deep vein clot (DVT) in the left calf. Reasons: one-sided calf swelling and tenderness after a long flight, and a D-dimer above the normal range. A D-dimer does not prove a clot, but with these symptoms it means you should be checked urgently, usually with a leg ultrasound. Your normal oxygen level, heart rate, and lack of chest pain or shortness of breath are reassuring, but they do not rule out a leg clot. Because an untreated DVT can sometimes travel to the lungs, this should not wait days. If you cannot get reliable transportation, consider calling emergency services, especially if you develop chest pain, shortness of breath, fainting, or worsening leg swelling/pain.\n\nTRIAGE: D\n\nCONFIDENCE: 93%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and results are concerning for a blood clot in the leg (deep vein thrombosis, or DVT): one calf is swollen and tender after a 6-hour flight, and your D-dimer is above normal. A D-dimer alone cannot prove a clot, but combined with your symptoms it means you need urgent in-person evaluation, usually including a leg ultrasound. Your normal oxygen level, heart rate, and lack of chest pain or shortness of breath are reassuring, but they do not rule out a clot in the leg. Because an untreated DVT can sometimes move to the lungs, this should not wait for a routine visit. If chest pain, shortness of breath, fainting, or sudden worsening happens while arranging care, call 911.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results and symptoms are concerning for a possible deep vein thrombosis (DVT), a blood clot in the leg. Reasons: one calf is clearly more swollen and tender than the other, this started after a long flight, and your D-dimer is elevated. A D-dimer alone cannot diagnose a clot, but in this situation it raises concern rather than reassuring. Normal oxygen, heart rate, and no chest pain/shortness of breath are good signs, but they do not rule out a leg clot. A DVT can become dangerous if part of it travels to the lungs. Because this may need an urgent leg ultrasound and possibly treatment, this should not wait for a routine visit.\n\nTRIAGE: D\n\nCONFIDENCE: 96%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and labs raise real concern for a deep vein thrombosis (DVT), which is a blood clot in the leg. Reasons: one calf is swollen, tender, and 2 cm larger than the other after a 6-hour flight, and your D-dimer is elevated (680). A high D-dimer does not prove a clot, but with your symptoms it makes DVT important to rule out urgently. Normal oxygen level, heart rate, pulses, and lack of chest pain/shortness of breath are reassuring, but they do not rule out a leg clot. This usually needs prompt medical evaluation with an ultrasound, because untreated DVT can sometimes travel to the lungs.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results and symptoms are concerning for a possible deep vein thrombosis (DVT), which is a blood clot in a leg vein. The strongest clues are: one calf is swollen, tender, and 2 cm larger than the other, this started after a 6-hour flight, and your D-dimer is elevated. A D-dimer alone cannot diagnose a clot, but with these symptoms it raises concern enough that you need urgent imaging, usually a leg ultrasound. Normal oxygen, pulse, and lack of chest pain/shortness of breath are reassuring, but they do not rule out a leg clot. This is important because a DVT can sometimes break off and travel to the lungs. Your blood counts do not suggest another obvious explanation from these labs alone.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 96%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and test pattern are concerning for a deep vein thrombosis (a blood clot in a leg vein): one calf is swollen, sore, and 2 cm larger after a long flight, and your D-dimer is elevated. A D-dimer alone cannot diagnose a clot, but with these symptoms it means you need urgent imaging (usually a leg ultrasound) and medical evaluation. Normal WBC, hemoglobin, platelets, a warm foot, and normal pulses do not rule out a clot. It is reassuring that you do not have chest pain or shortness of breath right now, but a leg clot can break loose and travel to the lungs. Because of that risk, this should be treated as an emergency today. If you cannot get to the hospital safely, call emergency services.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results and symptoms are concerning for a possible deep vein thrombosis (DVT), which is a blood clot in a leg vein. The key reasons are: one calf is swollen and tender, it is measurably larger than the other, this started after a long flight, and your D-dimer is elevated. A high D-dimer does not prove a clot, but with your symptoms it raises concern and usually needs an urgent leg ultrasound. Your normal oxygen level, heart rate, and lack of chest pain or shortness of breath are reassuring, but they do not rule out a leg clot. Because a DVT can sometimes break off and travel to the lungs, this should be checked urgently rather than waiting 24-48 hours.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results and symptoms are concerning for a possible blood clot in the leg (deep vein thrombosis, DVT). Reasons: one-sided calf swelling and soreness, the calf being 2 cm larger than the other side, recent 6-hour flight, and a D-dimer above the reference range. A D-dimer alone does not prove a clot, but in this situation it raises concern and usually needs urgent imaging (often a leg ultrasound) and medical evaluation. Your normal oxygen level, heart rate, and lack of chest pain/shortness of breath are reassuring, but they do not rule out a leg clot. Because an untreated DVT can sometimes break off and travel to the lungs, this should not wait for a routine visit.\n\nTRIAGE: D\n\nCONFIDENCE: 97%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

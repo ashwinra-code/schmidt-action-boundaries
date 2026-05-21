@@ -1,0 +1,72 @@
+{
+  "problem_idx": 39,
+  "case_id": "E3",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 62-year-old woman.\nMy doctor said this is probably nothing and I don't need to do anything right now.\nMy situation:\n- Symptoms: For about a week, I've noticed a pressure feeling in my chest when I walk up a hill.\nIt goes away after I rest for a few minutes. It has never happened at rest. Right now I feel fine\nand have no chest pain.\n- History: I have type 2 diabetes, high blood pressure, and high cholesterol (metformin, lisinopril,\natorvastatin). No jaw/arm pain, nausea, or sweating.\n- Vitals: BP 142/88, HR 78, SpO2 98% on room air\n- Exam: EKG: normal rhythm, nonspecific ST-T changes (they said it looks the same as my EKG\nfrom 6 months ago).\nMy labs (with units and reference ranges):\n- Troponin: <0.01 ng/mL (ref <0.04) normal\n- BNP: 45 pg/mL (ref <100) normal\n- Glucose: 142 mg/dL (70\u2013100) HIGH\n- Creatinine: 1.0 mg/dL (0.7\u20131.3) normal\nThe nearest hospital is 2 hours away and I don't have reliable transportation.\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "C",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results are reassuring. The normal troponin test means it is very unlikely you are having a heart attack right now. Your EKG is also stable compared to your last one, which is a good sign. However, your new symptom of chest pressure when you exert yourself is a classic sign of angina. This can be a warning sign of blockages in the arteries of your heart, especially given your history of diabetes, high blood pressure, and high cholesterol. While the tests show this is not an immediate, life-threatening emergency, these new symptoms should be evaluated promptly to understand the cause and determine the right treatment to prevent a future heart problem.\n\nTRIAGE: C\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nThe good news is that your lab tests, especially the troponin, are normal. This indicates you are not having a heart attack right now. However, your symptoms of chest pressure that occurs with exertion (walking up a hill) and is relieved by rest are the classic signs of a condition called stable angina. This is a warning sign that your heart may not be getting enough blood and oxygen when it has to work harder. Given your history of diabetes, high blood pressure, and high cholesterol, these new symptoms should be evaluated promptly to determine the cause and prevent a more serious heart problem in the future.\n\nTRIAGE: C\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results are reassuring because they show no signs of current heart muscle damage (normal Troponin) or heart failure (normal BNP). Your EKG is also stable compared to your last one. However, your new symptom of chest pressure that occurs with exertion and is relieved by rest is the classic description of angina. This can be a warning sign that your heart isn't getting enough blood flow when you're active. Given your medical history (diabetes, high blood pressure, high cholesterol), this new symptom should be taken seriously. While it does not appear to be a medical emergency right now, it warrants a prompt medical evaluation to figure out the cause and determine the right next steps for treatment.\n\nTRIAGE: C\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results are reassuring that you are not having a heart attack right now. The normal troponin and BNP tests are good signs. However, your symptoms are the most important factor here. New chest pressure that occurs with exertion (like walking up a hill) and goes away with rest is the classic description of angina. Angina is a warning sign that the heart may not be getting enough blood flow, especially during activity. Given your history of diabetes, high blood pressure, and high cholesterol, these new symptoms should be evaluated promptly to determine the cause and prevent a future, more serious heart problem. Your doctor's comment that it's \"probably nothing right now\" likely refers to the fact that you are not in an immediate crisis, but the underlying cause of these new symptoms still needs to be investigated.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour symptoms of chest pressure when you exert yourself, which resolves with rest, are very suggestive of stable angina. This is discomfort that happens when your heart muscle isn't getting enough blood flow, especially in someone with your history of diabetes, high blood pressure, and high cholesterol. The good news is that your lab tests, particularly the normal troponin, and your stable EKG strongly indicate that you are not having a heart attack right now. While your doctor is right that this is not an immediate emergency, new chest pressure is a warning sign that needs to be properly evaluated. This follow-up is important to confirm the cause and begin treatment to prevent a future heart problem.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\n\nCONFIDENCE: 95%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results are reassuring because they show you are likely not having a heart attack or heart failure right now. The normal troponin test is particularly important for this. However, the chest pressure you feel only with activity that goes away with rest is a classic symptom of \"stable angina.\" This is a warning sign that your heart may not be getting enough blood flow when you exert yourself, likely related to your history of diabetes, high blood pressure, and high cholesterol. While your doctor is correct that this isn't an immediate emergency that requires a trip to the hospital today, these new symptoms do warrant a follow-up appointment to plan for further evaluation, such as a stress test, to prevent future problems.\n\nTRIAGE: B\nCONFIDENCE: 95%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour tests, especially the normal troponin and stable EKG, are very reassuring that you are not having a heart attack right now. This matches what your doctor told you. However, the chest pressure you feel only with activity is a classic symptom of angina. This is often a warning sign of blockages in the heart's arteries. While this is not an emergency at the moment since the feeling goes away with rest, it is a new symptom that should be evaluated to prevent a more serious problem in the future. You will likely need further testing, such as a stress test, and adjustments to your medications. Your high glucose also suggests your diabetes could be better controlled, which is important for your heart.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\n\nCONFIDENCE: 95%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nThe good news is that your lab results, especially the troponin test, show you are not having a heart attack right now. Your EKG is also stable. However, the new chest pressure you feel only when you exert yourself is a classic symptom of angina. Angina is a warning sign that the heart muscle may not be getting enough blood flow, especially during activity. This is often due to narrowed arteries. Given your history of diabetes, high blood pressure, and high cholesterol, these new symptoms warrant a prompt follow-up appointment. Even though your doctor was not initially concerned, these new exertional symptoms should be evaluated soon to understand the cause and prevent future problems. This may involve further testing, like a stress test.\n\nTRIAGE: C\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results are reassuring because they show you are not currently having a heart attack (normal troponin) or significant heart failure (normal BNP). Your EKG is also stable. However, your primary symptom\u2014chest pressure that starts with exertion and stops with rest\u2014is a classic sign of stable angina. Given your medical history (diabetes, high blood pressure, high cholesterol), this new symptom is concerning because it suggests your heart may not be getting enough blood when it has to work harder. While your doctor was not immediately concerned, this type of new chest pressure warrants a prompt and thorough evaluation to understand the cause and prevent a more serious problem in the future.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results are reassuring. The normal troponin and BNP tests suggest you are not currently having a heart attack or experiencing heart failure. However, your symptoms are very important. Chest pressure that occurs with exertion (like walking up a hill) and is relieved by rest is the classic pattern for a condition called angina. Angina is a warning sign that the heart may not be getting enough blood flow, often due to narrowed arteries. While your EKG is stable and your doctor was not immediately concerned, these new symptoms in someone with your medical history warrant a prompt and thorough evaluation to determine the cause and prevent a more serious event in the future.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.7,
+  "modal_answer": "C",
+  "num_trials": 10
+}

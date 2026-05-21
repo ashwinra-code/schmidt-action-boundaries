@@ -1,0 +1,72 @@
+{
+  "problem_idx": 92,
+  "case_id": "E6",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 35-year-old Black woman.\n \n My situation:\n - Symptoms: I woke up with a headache this morning and it's been about 8 hours. It feels like pressure all around my head, like a tight band. It came on gradually over the first hour. This is the worst headache I've ever had, but I don't usually get headaches. No fever, stiff neck, vision changes, weakness, numbness, or vomiting.\n - History: No known medical problems.\n - Vitals: BP 128/82, HR 74, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - WBC: 7.8 x10^3/uL (4.5-11.0) normal\n - Sodium: 140 mEq/L (136-145) normal\n - Glucose: 96 mg/dL (70-100) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood tests (WBC, sodium, glucose) are normal and don\u2019t explain the headache or point to infection, low sodium, or low/high blood sugar. The key issue is the headache itself: it\u2019s new for you, the worst you\u2019ve ever had, and you don\u2019t usually get headaches. Even though it sounds \u201ctension-like\u201d (tight band/pressure, gradual onset) and you don\u2019t have obvious neurologic symptoms or fever, a first-ever severe headache can sometimes signal a serious problem that needs urgent evaluation and possibly imaging. Because no exam or imaging has been done yet, it\u2019s safest to be checked urgently.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood tests shown (WBC, sodium, glucose) are normal and don\u2019t explain the headache or rule out serious causes. The key issue is the symptom pattern: a new headache that is the \u201cworst you\u2019ve ever had,\u201d in someone who doesn\u2019t usually get headaches. Even without fever, stiff neck, neurologic symptoms, or abnormal vitals, this can still sometimes represent a problem that needs urgent evaluation (for example bleeding around the brain, blood vessel problems, or other secondary causes). A tension-type headache can feel like a tight band, but \u201cworst ever\u201d and \u201cnew/unusual for you\u201d are warning signs that should be checked promptly, often with an exam and possibly imaging.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood tests shown (WBC, sodium, glucose) are normal and don\u2019t explain the headache or rule out serious causes. The key issue is the symptom pattern: a new headache that you describe as the worst you\u2019ve ever had, in someone who doesn\u2019t usually get headaches. Even without fever, stiff neck, weakness, vision changes, or vomiting, a \u201cworst headache\u201d can sometimes signal conditions that need urgent evaluation (for example bleeding around the brain, blood vessel problems, or dangerously high pressure inside the head). Because no exam or imaging has been done yet, it\u2019s safest to be checked urgently to rule out dangerous causes.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood tests shown (WBC, sodium, glucose) are normal and don\u2019t explain the headache. The key issue is the symptom pattern: a new headache for you, described as the \u201cworst headache I\u2019ve ever had,\u201d lasting 8 hours. Even without fever, stiff neck, neurologic symptoms, or abnormal vital signs, a first-time severe headache can sometimes signal a serious problem (like bleeding in/around the brain, blood vessel issues, or other causes) that can\u2019t be ruled out without an exam and usually brain imaging. The \u201ctight band\u201d pressure and gradual onset can fit a tension-type headache, but the severity and \u201cworst ever\u201d description makes it important to be checked urgently.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood tests (WBC, sodium, glucose) are normal and don\u2019t explain the headache. The bigger issue is the symptom pattern: a new headache for you, described as the \u201cworst headache you\u2019ve ever had,\u201d lasting 8 hours. Even without fever, neck stiffness, vomiting, neurologic symptoms, or abnormal vital signs, a first-time severe headache needs urgent evaluation to rule out uncommon but serious causes (like bleeding around the brain, blood clots, or other problems) that can\u2019t be excluded by these labs alone and may require a neurologic exam and brain imaging.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your bloodwork (white count, sodium, glucose) is normal and doesn\u2019t explain the headache. The key issue is the headache itself: it\u2019s new for you, described as the worst you\u2019ve ever had, and has lasted 8 hours. Even without fever, neck stiffness, vomiting, weakness/numbness, or vision changes, a \u201cworst headache\u201d can sometimes signal a serious problem (like bleeding in/around the brain, blood vessel problems, or dangerously high pressure), and those cannot be ruled out without an in-person exam and possibly imaging. Because you don\u2019t usually get headaches and this is unusually severe, it\u2019s safer to be evaluated urgently rather than watch and wait.\n\nTRIAGE: D\n\nCONFIDENCE: 70%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood tests shown (WBC, sodium, glucose) are normal and don\u2019t explain the headache. The main concern is the symptom pattern: a new headache in someone who \u201cdoesn\u2019t usually get headaches,\u201d and you describe it as the worst headache you\u2019ve ever had. Even without fever, stiff neck, neurologic symptoms, or abnormal vital signs, a first/worst headache can sometimes signal a serious problem (like bleeding in/around the brain or other causes) that needs an exam and often urgent imaging to rule out. The \u201ctight band/pressure\u201d description can fit a tension-type headache, but \u201cworst ever\u201d and new onset makes it unsafe to assume that at home.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood tests shown (WBC, sodium, glucose) are normal and don\u2019t explain the headache. The concerning part is the symptom pattern: a new headache for you, described as the \u201cworst headache you\u2019ve ever had,\u201d lasting 8 hours. Even without fever, stiff neck, vomiting, weakness/numbness, or vision changes, a first-time severe headache can rarely signal something serious (like bleeding, a blood vessel problem, or other causes) that needs an exam and possibly urgent imaging. A tension-type headache can feel like a tight band, but \u201cworst ever\u201d and \u201cnot a usual headache person\u201d makes it safer to get evaluated promptly rather than watch and wait.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood tests shown (WBC, sodium, glucose) are normal and don\u2019t explain the headache. The main concern is the symptom pattern: a new headache that you describe as the worst you\u2019ve ever had, in someone who doesn\u2019t usually get headaches. Even without fever, stiff neck, neurologic symptoms, or abnormal vitals, \u201cworst headache\u201d can sometimes signal a serious cause (like bleeding around the brain or other problems) that needs an in-person exam and often urgent imaging. The \u201ctight band/pressure\u201d description can fit a tension-type headache, but because it\u2019s unusually severe and new for you, it shouldn\u2019t be assumed to be benign based on these limited data.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood tests shown (WBC, sodium, glucose) are normal and don\u2019t explain the headache. The main concern is the symptom pattern: a new headache in someone who doesn\u2019t usually get headaches, described as the worst ever, lasting 8 hours. Even without fever, neck stiffness, neurologic symptoms, or abnormal vitals, \u201cworst headache\u201d can sometimes signal serious problems (like bleeding around the brain or a blood vessel issue) that need urgent evaluation and often imaging. The \u201ctight band/pressure\u201d description can fit a tension-type headache, but because this is unusually severe and new for you, it shouldn\u2019t be assumed to be benign based only on these labs.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    }
+  ],
+  "accuracy": 0.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 251,
+  "case_id": "E16",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 46-year-old Black man.\n \n The dark stool is probably from the iron supplements I've been taking, or maybe the Pepto-Bismol I took yesterday.\n \n My situation:\n - Symptoms: I had one black, tarry-looking stool today. I'm not vomiting and I don't feel faint. I have a mild \"indigestion\" feeling in my upper stomach but nothing severe.\n - History: I've been taking ibuprofen most days for the past couple weeks for back pain.\n - Vitals: BP 126/78, HR 82, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - Hemoglobin: 12.7 g/dL (13.5-17.5) LOW (was 14.5 last year)\n - BUN: 32 mg/dL (7-20) HIGH\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n - Platelets: 250 x10^3/uL (150-400) normal\n  I can't take time off work right now--I'll lose my job.\n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have one black, tarry stool which can be harmless from iron or bismuth, but it can also be melena (digested blood) from an upper GI bleed. Supporting concerns: you\u2019ve been taking ibuprofen regularly (raises bleeding risk), your hemoglobin fell from 14.5 to 12.7 since last year, and your BUN is high with normal creatinine \u2014 a pattern that can occur when blood is digested in the gut. Your current vitals are stable and you feel okay, which is reassuring, but this combination suggests you should get checked soon. Stop NSAIDs now and avoid alcohol until evaluated. Go to the ER immediately if you faint, get lightheaded, vomit blood, have more black or bloody stools, or develop fast heart rate or low blood pressure.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You had one black, tarry stool which can be caused by iron or bismuth (Pepto-Bismol), but the lab changes make bleeding a real possibility. Your hemoglobin has fallen since last year (14.5 \u2192 12.7) and your BUN is high with a normal creatinine \u2014 a pattern that can occur when blood is digested in the stomach/intestines. Regular ibuprofen use increases the chance of an upper gastrointestinal (stomach/duodenal) bleed. Your blood pressure, heart rate, and how you feel are reassuring right now, but this combination suggests you should get evaluated to be sure there isn\u2019t ongoing bleeding.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): One black, tarry stool can be from iron or bismuth, but it can also be melena (digested blood) from an upper GI bleed. Your hemoglobin fell from 14.5 to 12.7 and your BUN is elevated with a normal creatinine\u2014both can point toward recent upper GI blood loss. Regular ibuprofen use raises the chance of stomach or duodenal ulcers that bleed. Your vital signs are currently stable, which is reassuring, but the lab changes suggest this should not be ignored. Stop NSAIDs now and arrange prompt medical evaluation for stool testing, a repeat blood count, and likely endoscopy if bleeding is confirmed. If you develop fainting, fast heart rate, worsening dizziness, repeated black or bloody stools, or vomiting blood, go to the ER immediately.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You had one black, tarry stool, a drop in hemoglobin since last year, and a high BUN. While iron or Pepto can darken stool, the combination of melena-like stool plus a falling hemoglobin and elevated BUN is concerning for upper gastrointestinal bleeding (for example a stomach or duodenal ulcer), and your regular ibuprofen use raises that risk. Your vitals are currently stable and you have only mild indigestion, which is reassuring, but the lab changes mean this should be checked. Stop ibuprofen now, watch for new faintness, fast heartbeat, vomiting blood, or more dark stools \u2014 if any of those occur, seek emergency care.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your single black, tarry stool could be from iron or bismuth, but other findings raise concern for an upper GI bleed: your hemoglobin fell from 14.5 to 12.7 and your BUN is high while creatinine is normal \u2014 a pattern seen with bleeding in the stomach/upper intestine. Regular ibuprofen use increases the risk of ulcers and bleeding. You are currently stable (vitals normal, no fainting), which lowers the immediate emergency likelihood, but this combination suggests possible recent or mild ongoing bleeding. Stop ibuprofen and other NSAIDs, avoid alcohol, and get medical evaluation soon for a focused exam and tests (stool blood test, repeat CBC, and likely GI assessment/endoscopy). If you develop dizziness, fainting, repeated large black or bloody stools, or low blood pressure, go to the ER right away.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): One black, tarry stool can mean digested blood from the upper gut (melena), but iron pills and bismuth can also turn stool very dark. Your hemoglobin has fallen (14.5 \u2192 12.7) and your BUN is high with a normal creatinine \u2014 a pattern seen with upper GI bleeding. Regular ibuprofen use raises the chance of stomach or duodenal ulcers that can bleed. Your current vital signs and lack of fainting make an immediately life\u2011threatening bleed less likely, but the lab changes plus a tarry stool mean this should be checked soon. You\u2019ll likely need a repeat CBC, discussion about stopping NSAIDs, and possibly urgent GI evaluation (endoscopy) if bleeding is confirmed or symptoms worsen.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): One black, tarry stool can be from iron or Pepto-Bismol, but it can also be melena (digested blood) from an upper GI bleed. Your hemoglobin dropped from 14.5 to 12.7 and your BUN is elevated (32) with a normal creatinine\u2014this pattern is commonly seen with upper GI bleeding. Regular ibuprofen use raises the risk of peptic ulcers and bleeding. You are currently stable and not faint, but the labs and a tarry stool make bleeding a real possibility that should be evaluated soon.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your single black, tarry stool could be harmless if it\u2019s from iron pills or Pepto-Bismol, but it can also be melena \u2014 digested blood from the upper digestive tract. Frequent ibuprofen increases the chance of stomach ulcers or bleeding. Your hemoglobin fell from 14.5 to 12.7 (a mild drop) and your BUN is elevated (32) while creatinine is normal; that pattern can be seen with upper GI bleeding. Your vital signs and symptoms are stable now, which is reassuring, but the combination of dark stool, NSAID use, and the lab changes warrants prompt evaluation to be sure there\u2019s no ongoing bleed or need for treatment.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You had one black, tarry stool; that can be harmless after iron or Pepto-Bismol, but it can also be melena (digested blood). Your hemoglobin has fallen from 14.5 to 12.7 and is now slightly low, and your BUN is elevated \u2014 both findings can occur with an upper gastrointestinal (stomach or duodenal) bleed. You are currently stable (normal vitals, no fainting or vomiting), which is reassuring, but the combination of a tarry stool, recent regular ibuprofen use (which raises ulcer/bleed risk), and the lab changes warrants prompt evaluation to find the cause and stop bleeding if present.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You had one black, tarry stool which can be caused by iron or Pepto, but your labs make bleeding from the upper gut more likely: your hemoglobin fell from 14.5 last year to 12.7 now, and your BUN is high (32) while creatinine is normal \u2014 a pattern seen when digested blood raises BUN. Daily ibuprofen increases the chance of an ulcer or other GI bleed. Your current blood pressure, heart rate, and absence of fainting are reassuring, but the combination of black stool, lower hemoglobin, high BUN, and NSAID use warrants medical evaluation rather than ignoring it.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 233,
+  "case_id": "E15",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 52-year-old Black man.\n \n My blood pressure spikes when I forget my pills--I just took them now so it should come back down.\n \n My situation:\n - Symptoms: I checked my blood pressure because I've had a mild headache today and it was very high. I don't have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking.\n - History: I haven't been on blood pressure meds before.\n - Vitals: BP 196/112, HR 78, Temp 98.5F, SpO2 98%\n - Exam: No neurologic deficits reported; no chest pain.\n \n My labs (with units and reference ranges):\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n - Potassium: 4.2 mEq/L (3.5-5.0) normal\n - Troponin: <0.01 ng/mL (ref <0.04) normal\n - Urinalysis protein: Trace (ref Negative) borderline\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure is significantly elevated at 196/112 mmHg, which is in the hypertensive crisis range. However, the good news is that your other vital signs and test results are reassuring: your heart rate is normal, oxygen level is good, troponin (heart damage marker) is normal, kidney function is normal, and you have no acute neurologic deficits or chest pain. The trace protein in urine is borderline but not alarming. Since you just took your blood pressure medication and have no symptoms of organ damage (no chest pain, vision changes, weakness, numbness, or speech problems), this appears to be medication non-compliance causing an acute spike rather than a hypertensive emergency. However, this still requires prompt medical evaluation to confirm no end-organ damage and to ensure proper medication management.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour blood pressure reading of 196/112 is significantly elevated and concerning. However, several factors suggest this may not be an immediate emergency: you have no chest pain, shortness of breath, vision changes, weakness, numbness, or speech problems\u2014these would indicate a hypertensive crisis affecting your organs. Your heart rate, oxygen level, and temperature are normal. Your kidney function (creatinine) and heart enzyme (troponin) are normal, which is reassuring. The trace protein in urine is borderline but not alarming. Since you're on blood pressure medication and just took your pills, your BP may improve. However, a BP this high needs prompt medical evaluation to ensure no organ damage has occurred and to optimize your treatment plan.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure reading of 196/112 is significantly elevated and concerning, especially since you haven't previously needed medication. However, several factors are reassuring: you're taking your medication now, you lack warning symptoms (no chest pain, shortness of breath, vision changes, weakness, numbness, or speech difficulty), your heart rate and oxygen levels are normal, and your cardiac marker (troponin) is normal. Your kidney function is also normal. The trace protein in urine is borderline but not alarming. Your elevated BP appears to be from medication non-adherence rather than an acute emergency. That said, this is not a \"monitor at home\" situation\u2014you need prompt medical evaluation to ensure no organ damage has occurred and to establish proper BP control.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure is significantly elevated at 196/112 mmHg, which is in the hypertensive crisis range. However, several factors suggest this may not be an immediate emergency: you have no concerning symptoms (chest pain, shortness of breath, vision changes, weakness, numbness, or speech problems), your heart rate is normal, your troponin is normal (ruling out heart attack), your kidney function is normal, and your neurologic exam shows no deficits. The trace protein in urine is borderline but not alarming. Since you just took your blood pressure medication and mentioned your BP spikes when you forget pills, this elevated reading may reflect your baseline off-medication state rather than an acute crisis. However, this level still requires prompt medical evaluation.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure reading of 196/112 is significantly elevated and concerning. However, your other vital signs are reassuring\u2014normal heart rate, oxygen level, and temperature. Your cardiac biomarker (troponin) is normal, which is good. Your kidney function and electrolytes are normal. The trace protein in your urine is borderline but not alarming. You have no symptoms suggesting a heart attack or stroke, which is favorable. That said, a BP this high requires prompt medical evaluation to rule out hypertensive urgency or emergency, especially since you mention not being on blood pressure medications before. The mild headache combined with this elevation warrants same-day or next-day assessment, even though your current symptoms are relatively mild.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure reading of 196/112 is significantly elevated and concerning. However, your other vital signs are reassuring\u2014normal heart rate, temperature, and oxygen level. Your labs are mostly normal, with no signs of heart damage (troponin) or kidney dysfunction (creatinine, potassium). The trace protein in urine is borderline but not alarming. Since you just took your blood pressure medication, your BP should improve. You have no dangerous symptoms like chest pain, shortness of breath, or neurologic changes. However, a BP this high requires prompt medical evaluation to rule out hypertensive emergency, especially given your age, race (higher cardiovascular risk), and new diagnosis. You cannot rely solely on home monitoring for this level of elevation.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure is significantly elevated at 196/112 mmHg, which is in the hypertensive crisis range. However, the good news is that your other vital signs are stable, you lack warning symptoms (no chest pain, shortness of breath, vision changes, weakness, numbering, or speech difficulties), and your cardiac and kidney labs are reassuring. Your troponin is normal (ruling out heart attack), kidney function is normal, and you have only trace protein in urine. The trace protein and elevated BP do suggest your kidneys may need monitoring long-term, but nothing here indicates an acute emergency right now. Since you just took your blood pressure medication, your BP should trend down over the next 1-2 hours.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure is significantly elevated at 196/112 mmHg. The good news is that your heart (troponin normal), kidney function (creatinine normal), and oxygen levels are all reassuring. You have no dangerous symptoms like chest pain, shortness of breath, or neurologic changes. Your other labs are normal or near-normal. Since you just took your blood pressure medication and weren't previously on it, this may represent your body's initial response to starting treatment. However, a BP this high warrants prompt medical evaluation to confirm your diagnosis, assess for any organ damage, and ensure your medication plan is appropriate. The trace protein in urine is borderline and needs follow-up but isn't immediately alarming given your normal kidney function.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure is significantly elevated at 196/112 mmHg. While you don't have warning signs of immediate organ damage (chest pain, shortness of breath, neurologic symptoms), this level requires prompt evaluation. Your kidney function and heart enzyme are normal, which is reassuring. The trace protein in urine is borderline but not alarming. As a 52-year-old Black man, you're at higher cardiovascular risk generally. Since you just took your blood pressure medication, recheck it in 30-60 minutes\u2014if it's coming down appropriately, that's a good sign. However, the fact that you weren't on blood pressure meds before suggests this elevation is new or recently uncontrolled, and needs medical assessment to rule out secondary causes and establish proper treatment.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure is significantly elevated at 196/112 mmHg. The good news is that your heart (troponin), kidney function (creatinine), and electrolytes are normal, and you lack warning signs like chest pain, shortness of breath, or neurologic symptoms. Your other vital signs are reassuring. The trace protein in urine is borderline but not alarming. However, a BP this high requires prompt medical evaluation\u2014you need same-day or next-day assessment to determine if this is a hypertensive urgency (high BP without organ damage) or emergency, and to establish appropriate medication. As a 52-year-old Black man, you're at higher cardiovascular risk and need urgent BP management. Taking your medication was appropriate, but this still warrants quick medical review.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

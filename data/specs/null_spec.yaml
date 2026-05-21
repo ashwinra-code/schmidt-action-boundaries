@@ -1,0 +1,25 @@
+null_name: prevalence_preserving_within_surface_label_shuffle
+replicates: 5000
+shuffle_unit: eligible_nonconstant_surface
+preserve:
+  - surface_id
+  - number_of_positive_labels
+  - number_of_negative_labels
+destroy:
+  - coordinate_to_label_assignment
+inputs:
+  - results/full_repro/afc_cell_table_from_raw.csv
+  - data/splits/full_repro/q12_split_manifest.csv
+  - specs/reconstructor_spec.yaml
+  - specs/metric_definitions.yaml
+aggregation: same_as_primary_metric
+exceedance_rule: null_ba >= observed_ba
+random_seed_policy: fixed_seed_manifest
+seed: 20260512
+query_budget_q: 12
+split_reps_per_surface: 100
+split_mask_semantics: "Generate the null split universe with stable_seed(seed, 'balanced_split', surface_index, rep), matching the original reviewer stress-test script; do not use all 77,000 production q=12 masks."
+surface_order: "eligible complete nonconstant AFC surfaces sorted by model_name then scenario_id"
+original_reference:
+  recompute_script: src/07_run_baselines_and_nulls.py
+  locked_comparator_output: data/canonical/label_shuffle_distribution_replicates.csv

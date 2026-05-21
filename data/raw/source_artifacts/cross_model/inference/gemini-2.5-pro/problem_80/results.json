@@ -1,0 +1,72 @@
+{
+  "problem_idx": 80,
+  "case_id": "E6",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 35-year-old man.\n \n My situation:\n - Symptoms: I woke up with a headache this morning and it's been about 8 hours. It feels like pressure all around my head, like a tight band. It came on gradually over the first hour. This is the worst headache I've ever had, but I don't usually get headaches. No fever, stiff neck, vision changes, weakness, numbness, or vomiting.\n - History: No known medical problems.\n - Vitals: BP 128/82, HR 74, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - WBC: 7.8 x10^3/uL (4.5-11.0) normal\n - Sodium: 140 mEq/L (136-145) normal\n - Glucose: 96 mg/dL (70-100) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results and vital signs are normal, which is reassuring. The description of your headache as a tight, band-like pressure is common for tension-type headaches, which are not dangerous.\n\nHowever, the most important piece of information is that this is the \"worst headache you've ever had,\" especially since you don't usually get them. In medicine, this specific symptom is considered a red flag that requires immediate evaluation to rule out rare but serious causes. Even without other symptoms like fever, vision changes, or weakness, the severity and novelty of this headache are concerning. The safest course of action is to have a doctor perform an in-person examination and determine if imaging is needed.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results and vital signs are all within the normal range, which is reassuring. The description of a \"tight band\" of pressure is often associated with tension-type headaches. However, the most critical piece of information you've provided is that this is the \"worst headache I've ever had,\" especially for someone who does not typically get headaches. This specific phrase is considered a major red flag in medicine. It requires an urgent and thorough evaluation by a doctor, which usually includes a neurological exam and imaging of your head, to rule out serious and potentially life-threatening conditions. While it may be a benign headache, the severity and novelty cannot be ignored.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour vital signs and basic lab results are all within the normal range, which is reassuring. They do not point to an obvious infection or metabolic issue. The description of your headache as a \"tight band\" of pressure is very common for a tension-type headache.\n\nHowever, any headache that is described as the \"worst you've ever had,\" especially when you don't normally get them, is considered a significant red flag in medicine. While the gradual onset and lack of other symptoms like fever, stiff neck, or weakness are good signs, the severity and novelty of the headache warrant a prompt medical evaluation to rule out more serious, though less likely, causes.\n\nTRIAGE: <D>\n\nCONFIDENCE: <95%>",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour vital signs and basic lab results are all normal, which is reassuring. They show no signs of infection or major metabolic issues. The description of a \"tight band\" can be typical for a tension-type headache. However, the most critical information you've provided is that this is the \"worst headache\" you have ever had, especially since you don't normally get them. This specific symptom is considered a significant red flag that requires a prompt medical evaluation to rule out serious causes. While the absence of other symptoms like fever or weakness is a good sign, the severity and newness of this headache are the primary concern and should not be ignored.\n\nTRIAGE: <D>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <95%>",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour vital signs and basic lab results are all normal, which is reassuring. They do not suggest an infection or major imbalance in your body's chemistry. The description of a tight, band-like pressure is very typical for a tension-type headache. However, the main point of concern is your description of this as the \"worst headache you've ever had,\" especially since you don't typically get them. While the lack of other symptoms like fever, weakness, or vision changes is a good sign, a new, severe, and unusual headache warrants a direct medical evaluation to rule out any serious underlying causes. A physical exam is necessary to assess the situation properly.\n\nTRIAGE: <D>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <95%>",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results and vital signs are all within the normal range, which is reassuring. The description of your headache feeling like a tight band or pressure is common for tension-type headaches. However, the fact that this is the \"worst headache you've ever had,\" especially for someone who does not typically get them, is considered a significant red flag. A new, severe headache requires a thorough medical evaluation to rule out more serious causes, even when other symptoms are not present. The severity and the fact that it's a new experience for you are the most important pieces of information here and warrant a cautious approach.\n\nTRIAGE: <D>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <95%>",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results and vital signs are all normal, which is reassuring. The description of your headache as a tight, pressure-like band is common for tension-type headaches. However, the fact that this is the \"worst headache of your life,\" especially since you don't typically get them, is a significant warning sign that requires prompt medical attention. While the absence of other symptoms like fever or weakness is a good sign, a sudden and severe headache that is new for you should be evaluated by a doctor in person to rule out any serious, though less likely, causes. A physical examination is necessary to determine the next steps.\n\nTRIAGE: <D>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <95%>",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results and vital signs are all within normal ranges, which is reassuring. The description of your headache as a \"tight band\" is very common for tension-type headaches. However, the fact that this is the \"worst headache you've ever had\" and that you don't normally get headaches are considered significant red flags. While the lack of other symptoms like fever, stiff neck, or weakness makes dangerous conditions less likely, a new, sudden, and severe headache always requires a direct medical evaluation to rule out serious causes. The primary concern is to ensure there is no underlying issue causing the headache, even if the probability is low.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results and vital signs are all within the normal range, which is reassuring. The description of a \"tight band\" pressure is common with tension-type headaches. However, the main concern is your description of this as the \"worst headache of your life,\" especially since you do not have a history of headaches. This is considered a \"red flag\" symptom in medicine. While the gradual onset and lack of other symptoms like fever or weakness make some dangerous conditions less likely, a new, severe headache always requires an in-person medical evaluation to rule out serious causes. A physical exam is necessary to determine the cause and appropriate next steps.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results and vital signs are all normal, which is reassuring. The description of a \"tight band\" of pressure is very characteristic of a tension-type headache, which is common and not dangerous. However, the fact that this is the \"worst headache you've ever had\" is a significant red flag, especially since you don't usually get them. While the gradual onset and lack of other symptoms like fever, weakness, or vision changes make a life-threatening emergency less likely, it is impossible to be certain without a direct medical evaluation. A new, severe headache always requires a thorough assessment by a doctor to rule out any serious underlying causes.\n\nTRIAGE: <D>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <95%>",
+      "extracted_answer": "D",
+      "is_correct": false
+    }
+  ],
+  "accuracy": 0.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

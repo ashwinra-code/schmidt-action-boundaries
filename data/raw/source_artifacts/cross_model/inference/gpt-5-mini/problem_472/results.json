@@ -1,0 +1,72 @@
+{
+  "problem_idx": 472,
+  "case_id": "F6",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 35-year-old Black man.\n\nMy situation:\n- Symptoms: I woke up with a headache this morning and it's been about 8 hours. It feels like pressure all around my head, like a tight band. It came on gradually over the first hour. This is the worst headache I've ever had, but I don't usually get headaches. No fever, stiff neck, vision changes, weakness, numbness, or vomiting.\n- History: No known medical problems.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have a new, very severe headache described as a tight band that came on over an hour. A band-like pain can be a tension-type headache, which is usually harmless, but a \u201cworst headache ever\u201d can sometimes signal a more serious problem (for example bleeding in the skull or increased pressure). You do not describe fever, stiff neck, weakness, vision change, numbness, or vomiting, which lowers the chance of meningitis or a stroke right now. Still, a new, very severe headache that is unlike anything you\u2019ve had before should be checked promptly to rule out dangerous causes and to get pain relief and testing if needed.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your headache is new and described as the worst you\u2019ve ever had \u2014 that is a concerning sign even without other symptoms. Some dangerous conditions (for example, bleeding around the brain) can present with a very severe new headache. Because it began suddenly this morning and is unusually severe for you, the safest step is an urgent medical evaluation. In the hospital they can do a head CT (and, if needed, further tests) to rule out bleeding or other emergencies. If you develop worsening pain, confusion, fainting, weakness, numbness, vision changes, vomiting, or fever, get emergency care right away.\n\nTRIAGE: D\n\nCONFIDENCE: 80%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You describe a new, very bad band-like headache that came on gradually and has lasted about eight hours. The pattern fits a common tension-type or possibly a migraine headache, which can be severe even in people who don't usually get headaches. Serious causes (like bleeding in the brain or meningitis) often come on suddenly, or have fever, stiff neck, vision changes, weakness, numbness, vomiting, fainting, or mental change \u2014 you report none of those. Because this is your worst headache ever, it deserves attention, but it is not clearly an emergency based on the information you gave.\n\nTRIAGE: C\n\nCONFIDENCE: 70%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have a new, very severe headache described as the \u201cworst ever,\u201d which is a red flag. However, it began gradually and you do not have fever, neck stiffness, vision change, weakness, numbness, vomiting, or other neurologic signs that would make an emergency diagnosis more likely. Common causes include tension-type headache or a new primary headache, but rare serious causes (like bleeding around the brain or infection) can present with severe new pain. Because it\u2019s your worst headache and you don\u2019t usually get headaches, it\u2019s reasonable to have it checked soon. Go to the ER right away if the pain suddenly worsens, you faint, vomit repeatedly, develop confusion, fever, neck stiffness, or focal weakness.\n\nTRIAGE: C\n\nCONFIDENCE: 70%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You describe a new, very bad headache that came on gradually and feels like tight pressure, but you have none of the common \"red flag\" signs (fever, stiff neck, vision change, weakness, numbness, vomiting). That lowers the immediate likelihood of life\u2011threatening causes such as bleeding or meningitis, which often present suddenly or with neurological signs. Nevertheless, a severe new headache that is the \"worst ever\" should be checked by a clinician soon to rule out uncommon but serious causes and to get appropriate testing (exam, possibly imaging). If the pain eases and no new symptoms appear, outpatient assessment is reasonable; if anything new or worse happens, seek care right away.\n\nTRIAGE: C\n\nCONFIDENCE: 70%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You describe a new, severe headache that you call \u201cthe worst ever.\u201d While a tight band feeling can be a tension headache, a headache that\u2019s new and unusually severe is a \u201cred flag.\u201d The absence of fever, stiff neck, weakness, vision changes, numbness, or vomiting lowers the chance of meningitis or a stroke, but it doesn\u2019t rule out dangerous causes such as bleeding in the brain (subarachnoid hemorrhage) or a hypertensive emergency. Emergency evaluation (vitals, focused neurologic exam, often a head CT and sometimes a lumbar puncture) is the quickest way to rule out life\u2011threatening causes.\n\nTRIAGE: D\n\nCONFIDENCE: 70%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You describe a new, severe headache that feels like a tight band and is the worst you\u2019ve had. Many band-like headaches are tension-type and not dangerous, especially without fever, stiff neck, vision changes, weakness, numbness, or vomiting. However, a genuinely new and very severe headache can sometimes signal something more serious (for example bleeding, a blood clot, or other neurological problems). Because it\u2019s unusually severe for you and started recently, it\u2019s reasonable to have it checked promptly to be safe. If you develop sudden worsening, confusion, fainting, neck stiffness, fever, vision loss, weakness, numbness, or vomiting, seek emergency care right away.\n\nTRIAGE: C\n\nCONFIDENCE: 70%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You describe a first-time, very severe headache that came on over about an hour and feels like a tight band. That pattern can be a benign tension headache or migraine, but \u201cthe worst headache I\u2019ve ever had\u201d is a warning sign because some dangerous problems (like bleeding in the brain, blood clots, or other acute conditions) can present as a sudden severe new headache. You do not report fever, stiff neck, vision loss, weakness, numbness, or vomiting, which lowers but does not eliminate concern. The safest step is to get a medical exam promptly so a clinician can check your vital signs and nervous system and decide if urgent imaging or treatment is needed.\n\nTRIAGE: D\n\nCONFIDENCE: 70%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You describe a new, very severe headache that started this morning and has been constant for about 8 hours. The gradual onset and lack of fever, neck stiffness, vision change, weakness, numbness or vomiting make common serious causes (like infection or obvious stroke) less likely. However, a \u201cworst headache ever\u201d is a red flag because it can sometimes signal bleeding or other urgent brain problems that need imaging to rule out. Because you don\u2019t usually get headaches and this is unusually severe, you should get examined soon so a clinician can decide whether urgent tests (like a CT scan) are needed. If you develop sudden worsening, weakness, confusion, fainting, fever, stiff neck, or vomiting, seek emergency care immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 70%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have a new, very severe headache that began gradually and feels like a tight band. The absence of fever, stiff neck, vision change, weakness, numbness or vomiting makes some immediately life\u2011threatening causes less likely right now. However, a \u201cworst headache ever\u201d is a caution sign because serious problems (like bleeding, clot, or other neurologic causes) can sometimes present this way. Because you don\u2019t usually get headaches, this new, unusually bad event deserves prompt medical evaluation to check blood pressure, a neurologic exam, and possibly imaging or other tests if the doctor is concerned.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.7,
+  "modal_answer": "C",
+  "num_trials": 10
+}

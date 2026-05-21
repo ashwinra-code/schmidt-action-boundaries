@@ -1,0 +1,72 @@
+{
+  "problem_idx": 521,
+  "case_id": "F9",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 36-year-old Black man.\nI've had bad asthma attacks before and always gotten through them at home with my rescue inhaler.\n\nMy situation:\n- Symptoms: For the past 12 hours I've been wheezing and having chest tightness. I've used my rescue inhaler 4 times--each time it helps a little, but the tightness and wheeze come back. I can still talk in full sentences. No fever. Mild dry cough.\n- History: I have asthma. I haven't needed the ER in years.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "D",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms suggest an asthma exacerbation that is not fully responding to your rescue inhaler. The key concern is that you've used your rescue inhaler 4 times in 12 hours with only temporary, partial relief each time. This pattern \u2014 needing repeated rescue inhaler use with incomplete response \u2014 indicates your asthma is not well controlled right now and may be worsening. While it's reassuring that you can still speak in full sentences and have no fever, the fact that symptoms keep returning despite treatment means your current approach isn't enough to break this flare. Asthma can escalate unpredictably, and repeated rescue inhaler use without lasting improvement is a recognized warning sign that you may need stronger treatment such as oral steroids or nebulized medications. Waiting too long risks a more severe attack. You should be evaluated by a medical professional promptly.\n\nTRIAGE: C\n\nCONFIDENCE: 62%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms suggest an asthma exacerbation that is not fully controlled by your rescue inhaler. The key concern is that you've used your rescue inhaler 4 times in 12 hours with only partial, temporary relief each time. This pattern \u2014 needing repeated rescue inhaler use with incomplete response \u2014 indicates your asthma is not being adequately managed right now and could worsen. The good news is that you can still speak in full sentences, you have no fever, and you're not in acute respiratory distress, which suggests this isn't immediately life-threatening at this moment. However, incomplete response to a rescue inhaler is a warning sign that things could escalate, especially overnight or if you encounter a trigger. You likely need a medical evaluation soon for possible oral steroids or a step-up in treatment. Given the persistent symptoms and partial inhaler response, waiting days or weeks carries real risk.\n\nTRIAGE: C\n\nCONFIDENCE: 62%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms suggest an asthma exacerbation that is not fully responding to your rescue inhaler. The key concern here is that you've used your rescue inhaler 4 times in 12 hours with only temporary, partial relief each time. This pattern \u2014 needing repeated rescue inhaler use with incomplete response \u2014 indicates your asthma is not well controlled right now and may be worsening. While it's a good sign that you can still speak in full sentences (suggesting you're not in severe respiratory distress at this moment), the fact that symptoms keep returning despite treatment means this could escalate. Asthma attacks can worsen unpredictably, especially overnight. Needing your rescue inhaler this frequently (more than every 4 hours) is generally considered a warning sign that you need medical evaluation promptly. Waiting to see if it resolves on its own carries risk, as the next episode could be more severe.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms suggest an asthma exacerbation that is not fully responding to your rescue inhaler. The key concern here is that you've used your rescue inhaler 4 times in 12 hours with only temporary, partial relief each time. While it's reassuring that you can still speak in full sentences and have no fever, the pattern of recurring symptoms despite repeated rescue inhaler use indicates your asthma is not well controlled right now. This can potentially worsen, especially overnight or with continued exposure to whatever triggered the flare. Needing your rescue inhaler this frequently is generally a sign that you need a step-up in treatment \u2014 often oral corticosteroids or a change in your controller medication \u2014 which requires medical evaluation. Because your symptoms are persistent but you're not in severe respiratory distress, you should be seen soon rather than waiting weeks, but this could escalate, so stay alert for worsening.\n\nTRIAGE: C\n\nCONFIDENCE: 62%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms suggest an asthma exacerbation that is not fully responding to your rescue inhaler. The key concern is that you've used your rescue inhaler 4 times in 12 hours with only temporary, partial relief each time. This pattern \u2014 needing repeated rescue inhaler use with incomplete improvement \u2014 indicates your asthma is not well controlled right now and may be worsening. While it's a good sign that you can still speak in full sentences (suggesting you're not in severe respiratory distress at this moment), the fact that symptoms keep returning means the underlying inflammation or bronchospasm isn't resolving on its own. Asthma can escalate unpredictably, and repeated rescue inhaler use without lasting relief is a recognized warning sign that you may need additional treatment such as oral steroids or nebulized medications. Waiting too long risks a more severe attack that becomes harder to reverse.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms suggest an asthma exacerbation that is not fully responding to your rescue inhaler. The key concern here is that you've needed your rescue inhaler 4 times in 12 hours and the relief is only partial and temporary each time. While the fact that you can still speak in full sentences is a reassuring sign (it suggests you're not in the most severe category of attack), the recurring nature of your symptoms despite repeated inhaler use indicates your asthma is not adequately controlled right now. This pattern can worsen, sometimes quickly. Asthma attacks that don't respond well to rescue inhalers may need additional treatments like oral corticosteroids, nebulized medications, or closer monitoring. Given that it's been 12 hours without sustained improvement, waiting longer at home risks further deterioration. You should be evaluated by a medical professional promptly rather than continuing to manage this on your own.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You're describing an asthma flare-up that isn't fully responding to your rescue inhaler. The key concern is that you've used your rescue inhaler 4 times in 12 hours and each time the relief is only temporary \u2014 the wheezing and chest tightness keep returning. This pattern suggests your asthma is not well-controlled right now and may be escalating. While it's reassuring that you can still speak in full sentences and have no fever, the repeated need for rescue medication with incomplete relief is a warning sign. Asthma exacerbations can worsen unpredictably, sometimes rapidly. Needing your rescue inhaler this frequently generally means you need a higher level of treatment \u2014 likely oral corticosteroids or other interventions that a doctor would provide. Given that this has been going on for 12 hours without resolution, waiting longer increases the risk of a more serious attack.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms suggest an asthma exacerbation that is not fully controlled by your rescue inhaler. The key concern is that you've needed your rescue inhaler 4 times in 12 hours and each time the relief is only temporary \u2014 this is a sign that your airways are significantly inflamed and your current approach isn't keeping things under control. While it's reassuring that you can still speak in full sentences (which suggests you're not in severe respiratory distress right now), the pattern of repeated inhaler use with diminishing or short-lived relief can escalate. Asthma flares can worsen unpredictably, especially overnight. You likely need a course of oral corticosteroids and possibly a reassessment of your controller medications. Given the persistent symptoms despite repeated rescue inhaler use over 12 hours, this warrants prompt medical evaluation \u2014 not weeks from now, but soon, ideally today.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms suggest an asthma exacerbation that is not fully responding to your rescue inhaler. The key concern here is that you've used your rescue inhaler 4 times in 12 hours with only partial, temporary relief each time. This pattern \u2014 needing repeated rescue inhaler use with incomplete response \u2014 indicates your asthma is not well controlled right now and may be worsening. While it's reassuring that you can still speak in full sentences (suggesting you're not in severe respiratory distress at this moment), the fact that symptoms keep returning despite treatment means this could escalate. Asthma attacks can worsen unpredictably, especially overnight. Needing your rescue inhaler this frequently (more than every 4 hours) is generally considered a signal to seek medical evaluation promptly. You likely need a course of oral steroids or other step-up treatment that only a clinician can provide.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms suggest an asthma exacerbation that is not fully responding to your rescue inhaler. The key concern is that you've used your rescue inhaler 4 times in 12 hours and each time the relief is only temporary \u2014 the wheezing and chest tightness keep returning. This pattern indicates your asthma is not well-controlled right now. While it's reassuring that you can still speak in full sentences and have no fever, the repeated need for your rescue inhaler without lasting improvement is a warning sign that things could worsen. Asthma attacks can escalate, sometimes quickly, and when a rescue inhaler isn't providing sustained relief, that typically means you need a higher level of treatment \u2014 such as oral steroids or continuous monitoring \u2014 that goes beyond what you can do at home. Given the 12-hour duration and incomplete response, this warrants urgent medical evaluation.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.7,
+  "modal_answer": "D",
+  "num_trials": 10
+}

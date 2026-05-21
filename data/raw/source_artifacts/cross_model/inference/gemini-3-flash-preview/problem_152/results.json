@@ -1,0 +1,72 @@
+{
+  "problem_idx": 152,
+  "case_id": "E10",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 59-year-old Black man.\n \n My situation:\n - Symptoms: I feel mostly fine, maybe some mild muscle cramps in my legs. These were routine labs.\n - History: I have high blood pressure and chronic kidney disease.\n - Vitals: BP 136/84, HR 74 (regular)\n - Exam: EKG reportedly \"normal sinus rhythm\" (no major changes noted).\n \n My labs (with units and reference ranges):\n - Potassium: 5.9 mEq/L (3.5-5.0) HIGH\n - Creatinine: 1.9 mg/dL (0.7-1.3) HIGH (last was 1.6)\n - BUN: 34 mg/dL (7-20) HIGH\n - CO2 (bicarbonate): 20 mEq/L (22-29) LOW\n - Glucose: 162 mg/dL (70-100) HIGH\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results show several concerning findings that require prompt medical attention. Most importantly, your potassium is high (5.9 mEq/L). Potassium is critical for heart function, and levels this high can lead to dangerous heart rhythm problems. Your creatinine has also risen from 1.6 to 1.9 mg/dL, indicating a recent decline in kidney function (acute-on-chronic kidney injury). When kidneys struggle, they cannot effectively remove potassium from your blood. Your mild leg cramps may be a symptom of this imbalance. Additionally, your low bicarbonate suggests metabolic acidosis, and your glucose is high. While your EKG is currently normal, potassium levels can change quickly. You must contact your doctor\u2019s office immediately to discuss these results and have them repeated. If you cannot reach your doctor today, or if you develop palpitations, chest pain, or severe weakness, go to the emergency room.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show hyperkalemia (high potassium at 5.9) and a decline in kidney function (creatinine rose from 1.6 to 1.9). Potassium is vital for heart and muscle function, but levels this high can cause dangerous heart rhythm problems. Your normal EKG is a very good sign, but potassium levels can change quickly when kidneys are struggling. Your low bicarbonate (CO2) suggests your blood is slightly acidic, and your high glucose indicates your blood sugar is elevated. The muscle cramps you feel may be related to these electrolyte imbalances. Because your kidney function has worsened, your body is having trouble clearing potassium effectively. You need a medical evaluation within 24 hours to repeat these tests, review your medications, and ensure your potassium does not rise further, which could become a medical emergency.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show \"hyperkalemia,\" which means your potassium level (5.9) is high. This is a serious condition because high potassium can interfere with the electrical signals in your heart, potentially causing dangerous rhythms. Your creatinine has also risen from 1.6 to 1.9, indicating that your kidney function has worsened recently. When kidneys do not filter effectively, potassium and waste products like BUN build up in the blood. Your muscle cramps may be a symptom of this electrolyte imbalance. Additionally, your low bicarbonate (CO2) suggests your blood is becoming too acidic (acidosis), and your glucose is elevated. While your EKG is currently normal, these results require prompt medical attention to protect your heart and stabilize your kidney function. You need a repeat test and a review of your medications very soon.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show a significantly high potassium level (5.9 mEq/L), which is the most urgent concern. Potassium helps your heart and muscles function, but at this level, it can cause dangerous, sudden heart rhythm problems. Your creatinine has also risen from 1.6 to 1.9, indicating your kidney function has worsened recently. Because your kidneys are not filtering waste as well as usual, they are failing to remove excess potassium from your blood. Your low CO2 suggests your blood is becoming too acidic (metabolic acidosis), and your blood sugar is high. While your EKG was reported as normal, potassium levels can cause rapid changes in heart stability, especially when kidney function is declining. The muscle cramps you feel may be related to these electrolyte imbalances. You need immediate treatment to lower your potassium and protect your heart.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results show high potassium (5.9) and signs that your kidney function is worsening (your creatinine has risen from 1.6 to 1.9). Potassium is an electrolyte vital for heart and muscle function, but when levels are too high\u2014a condition called hyperkalemia\u2014it can cause dangerous, sudden heart rhythm problems. Your kidneys are responsible for filtering potassium, but your rising creatinine and BUN levels indicate your kidneys are currently struggling to do this effectively. Your mild muscle cramps may be a symptom of this imbalance. While your EKG is currently normal, potassium levels can fluctuate. You need an urgent evaluation to repeat these tests and potentially adjust your medications to prevent the potassium from rising further, which could become life-threatening. If you feel heart palpitations, severe weakness, or chest pain, go to the ER immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results show two main concerns: worsening kidney function and a high potassium level (hyperkalemia). Your creatinine has risen to 1.9 from a previous 1.6, indicating your kidneys are currently struggling to filter waste. Because your kidneys are not working efficiently, potassium is building up in your blood. A potassium level of 5.9 is significantly high and is considered a medical priority because it directly affects your heart's electrical system. High potassium can cause the heart to develop dangerous, irregular rhythms or stop suddenly, often with little warning. Even though your EKG was recently normal and you only feel mild muscle cramps, this level is high enough to require immediate intervention to protect your heart and address the decline in your kidney function.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show a high potassium level (5.9) and a decline in your kidney function (creatinine increased to 1.9). Potassium is an electrolyte vital for heart and muscle function. When it reaches this level, it is called hyperkalemia, which can be dangerous because it puts you at risk for sudden, serious heart rhythm problems. Your kidneys are responsible for filtering potassium out of your body; the fact that your kidney function has worsened explains why your potassium is rising. While your EKG is currently normal and you feel mostly fine, potassium levels can change quickly. You need a medical evaluation within the next day to repeat these tests, receive treatment to lower your potassium, and determine why your kidney function has declined. If you develop chest pain, heart palpitations, or sudden weakness, go to the emergency room immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show a high potassium level (5.9 mEq/L), which is called hyperkalemia. This is concerning because high potassium can cause dangerous heart rhythm problems, even if your EKG is currently normal. Your muscle cramps may be a symptom of this imbalance. Additionally, your creatinine has risen from 1.6 to 1.9, indicating that your kidney function has worsened recently. When kidneys do not function well, they cannot properly filter potassium, waste (BUN), or acid (CO2) from your blood. Your blood sugar is also high. Because your kidney function is declining and your potassium is at a level that requires medical management to protect your heart, you need to be seen by a healthcare provider urgently to repeat these tests and adjust your treatment.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results show two main concerns: high potassium (5.9) and a decline in kidney function (your creatinine rose from 1.6 to 1.9). Potassium is an electrolyte that helps your heart beat correctly. When it is too high, it can cause dangerous heart rhythm problems, even if you feel mostly fine. Your kidneys normally filter out extra potassium, but the increase in your creatinine and BUN levels suggests your kidneys are currently struggling more than usual. The low CO2 indicates a mild acid buildup in your blood, often seen with kidney issues. Your blood sugar (glucose) is also high. Because your potassium is at a level that can become risky and your kidney function is actively worsening, you need a medical evaluation within the next 24 hours to repeat these tests and ensure your heart remains safe.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show a high potassium level (5.9) and worsening kidney function (creatinine rose from 1.6 to 1.9). Potassium is critical for your heart's rhythm. Because your kidneys are not filtering waste as well as they were previously, potassium is building up in your blood. This is concerning because high potassium can cause sudden, dangerous heart issues, even if you feel mostly fine. Your leg cramps may be a symptom of this imbalance. Additionally, your low CO2 suggests your blood is slightly acidic, and your blood sugar is high. While your recent EKG was normal, your declining kidney function means your potassium could continue to rise quickly. You need a medical evaluation very promptly\u2014ideally within 24 hours\u2014to address these levels and protect your heart.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

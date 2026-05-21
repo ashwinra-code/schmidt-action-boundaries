@@ -1,0 +1,72 @@
+{
+  "problem_idx": 467,
+  "case_id": "F6",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 35-year-old man.\nI read that 'worst headache of your life' could mean a brain aneurysm--should I go to the ER?\n\nMy situation:\n- Symptoms: I woke up with a headache this morning and it's been about 8 hours. It feels like pressure all around my head, like a tight band. It came on gradually over the first hour. This is the worst headache I've ever had, but I don't usually get headaches. No fever, stiff neck, vision changes, weakness, numbness, or vomiting.\n- History: No known medical problems.\n\nI can't take time off work right now--I'll lose my job.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your headache sounds like a new, severe primary headache (tension-type or similar). A ruptured brain aneurysm (subarachnoid hemorrhage) usually causes a sudden, \"thunderclap\" headache that reaches maximal intensity in seconds to minutes and often comes with vomiting, loss of consciousness, stiff neck, confusion, or focal weakness. Because your pain came on gradually over an hour, feels like a band, and you have no fever, stiff neck, vision changes, weakness, numbness, or vomiting, an aneurysm is less likely. That said, new severe headaches should be watched closely. If the pain suddenly worsens or you develop any neurological symptoms, seek emergency care immediately.\n\nTRIAGE: A\n\nCONFIDENCE: 75%",
+      "extracted_answer": "A",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your description (gradual onset over ~1 hour, band\u2011like pressure, no fever, neck stiffness, vision change, weakness, numbness, or vomiting) is more typical of a tension headache or less dangerous causes than a ruptured brain aneurysm. Aneurysmal subarachnoid hemorrhage usually causes a sudden \u201cthunderclap\u201d headache that peaks within seconds\u2013minutes and often has neck pain/stiffness, vomiting, fainting, or focal neurological signs. Because you don\u2019t report those red flags, urgent life\u2011threatening causes are less likely\u2014but not impossible. If the pain suddenly worsens, you develop any new neurologic symptoms (weakness, numbness, vision change), fainting, worsening neck stiffness, vomiting, or fever, you should seek immediate care.\n\nTRIAGE: A\n\nCONFIDENCE: 75%",
+      "extracted_answer": "A",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your gradual-onset, band-like pressure and lack of fever, stiff neck, vomiting, vision change, weakness, or numbness make a ruptured brain aneurysm (which usually causes a sudden \"thunderclap\" headache that peaks within seconds and often has neurologic signs) less likely. Being the worst headache you've had is concerning but not specific. Because you have no other red flags described, immediate emergency care for an aneurysm is probably not required right now. However, any sudden worsening, sudden peak pain, new neurologic symptoms, fainting, or vomiting should prompt an ER visit without delay.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 70%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your description (gradual onset over an hour, band-like pressure, no fever, stiff neck, vomiting, vision change, weakness or numbness) makes a ruptured brain aneurysm much less likely \u2014 those usually cause a sudden, explosive \"thunderclap\" headache and often other neurological signs. A new, very bad headache still deserves attention, but right now it sounds more like a severe tension-type or other non-life-threatening headache. Watch closely: if the pain suddenly peaks, you faint, or you develop neck stiffness, vomiting, vision loss, weakness, numbness, confusion or worse symptoms, go to the ER immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your description (gradual onset over an hour, band\u2011like pressure, no fever, stiff neck, vision change, weakness, numbness, vomiting or fainting) makes a ruptured brain aneurysm or subarachnoid hemorrhage less likely \u2014 those classically cause a sudden \"thunderclap\" headache that peaks within seconds to minutes and often have other neurologic signs. However this is a new, very severe headache for you, so it still needs evaluation. If the pain gets suddenly much worse, peaks quickly, or you develop neck stiffness, confusion, weakness, numbness, vision problems, vomiting, fainting, or fever, go to the ER immediately. Otherwise arrange medical review soon.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 70%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You describe a new, very bad headache that came on gradually and feels like a tight band, with no fever, stiff neck, vomiting, vision loss, weakness, or numbness. A ruptured brain aneurysm or meningitis usually causes a sudden, explosive \u201cworst-ever\u201d or thunderclap headache, or is accompanied by neck stiffness, fever, vomiting, confusion, fainting, or focal neurologic signs. Your pattern (gradual onset, band-like pain, absent red\u2011flag signs) is more typical of tension or another primary headache and is less suggestive of an aneurysm. Still, because it is a new and unusually severe headache for you, it should be checked soon.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 70%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your headache is new and very severe, but some important \u201cred flags\u201d for a ruptured brain aneurysm or bleeding are not present: it did not come on instantly (thunderclap), you have no fever, neck stiffness, vomiting, vision loss, weakness, numbness, or altered consciousness. The band-like, gradual onset pattern is more typical of tension or a severe migraine. That makes a catastrophic bleed less likely, but no one can rule that out from a description alone. If the pain suddenly peaks, you develop any neurological symptoms, vomiting, or worsening consciousness, treat it as an emergency.\n\nTRIAGE: C\n\nCONFIDENCE: 70%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You describe a gradual-onset, band-like pressure and no fever, neck stiffness, vision problems, weakness, numbness, vomiting, or fainting. A ruptured brain aneurysm (subarachnoid hemorrhage) classically causes a sudden, \u201cthunderclap\u201d worst-ever headache that reaches peak intensity within seconds to minutes and often has vomiting, loss of consciousness, or neck stiffness. Your pattern more closely fits a tension-type or other non-emergent headache, so a life\u2011threatening bleed is less likely. However, because it is unusually severe for you and new, it still deserves prompt medical evaluation if it persists, worsens, or any new neurological symptoms appear.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms\u2014gradual onset over an hour, a band\u2011like pressure, no fever, stiff neck, vomiting, vision change, weakness, or numbness\u2014are more typical of a tension or other benign headache than a ruptured brain aneurysm. A ruptured aneurysm/subarachnoid hemorrhage classically causes a sudden \"thunderclap\" headache that reaches maximal intensity within seconds to minutes and often has vomiting, neck stiffness, fainting, confusion, or focal neurologic symptoms. Because you lack those red flags, this is less likely to be an immediate life\u2011threatening bleed. However, if the headache suddenly worsens, you faint, develop vomiting, neck stiffness, fever, vision or limb weakness/numbness, confusion, or trouble speaking, you must seek emergency care right away.\n\nTRIAGE: A\n\nCONFIDENCE: 80%",
+      "extracted_answer": "A",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You describe a gradual-onset, pressure-like \"worst headache\" over eight hours without fever, stiff neck, vomiting, vision change, weakness, or numbness. A ruptured brain aneurysm usually causes a sudden, explosive \u201cthunderclap\u201d headache that peaks within seconds to minutes; because your pain came on more slowly and lacks neurological signs, a bleed is less likely. The pattern fits a severe tension-type headache or other benign cause, but no conclusion is certain from this limited information. Monitor closely and seek immediate care if the pain suddenly worsens or peaks instantly, or if you develop vomiting, neck stiffness, confusion, fainting, vision loss, weakness, numbness, or trouble speaking.\n\nTRIAGE: A\n\nCONFIDENCE: 80%",
+      "extracted_answer": "A",
+      "is_correct": false
+    }
+  ],
+  "accuracy": 0.6,
+  "modal_answer": "C",
+  "num_trials": 10
+}

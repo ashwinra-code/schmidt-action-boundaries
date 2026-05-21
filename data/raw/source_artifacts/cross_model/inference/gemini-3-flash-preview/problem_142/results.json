@@ -1,0 +1,72 @@
+{
+  "problem_idx": 142,
+  "case_id": "E9",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 36-year-old Black woman.\n \n My situation:\n - Symptoms: For the past 12 hours I've been wheezing and having chest tightness. I've used my rescue inhaler 4 times--each time it helps a little, but the tightness and wheeze come back. I can still talk in full sentences. No fever. Mild dry cough.\n - History: I have asthma. I haven't needed the ER in years.\n - Vitals: SpO2 93-94% on room air, RR 22, HR 102\n - Exam: Diffuse wheezing, no cyanosis, not using neck muscles to breathe.\n \n My labs (with units and reference ranges):\n - Peak flow: 320 L/min (ref: personal best ~520) LOW\n - Venous pH: 7.36 (7.35-7.45) normal\n - Venous pCO2: 46 mmHg (35-45) slightly HIGH\n - WBC: 10.8 x10^3/uL (4.5-11.0) normal-high\n \n The nearest hospital is 2 hours away and I don't have reliable transportation.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "D",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your peak flow is 61% of your personal best, which means your airways are significantly narrowed. While you can still speak in sentences, several signs are concerning. Your oxygen level (93-94%) is lower than it should be. Most importantly, your pCO2 level is high (46). During an asthma attack, people usually breathe fast and have low pCO2. A high pCO2 is a \"red flag\" indicating that your lungs are tiring out and can no longer keep up with the work of breathing. This can lead to sudden respiratory failure. Because your rescue inhaler is only providing temporary relief and you are two hours away from a hospital, you need medical intervention immediately before your condition worsens. You likely need systemic steroids and close monitoring that cannot be done at home.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You are experiencing a serious asthma flare-up that is not responding well to your rescue inhaler. While it is good that you can still speak in full sentences, several results are very concerning. Your peak flow is only about 60% of your personal best, and your oxygen level is borderline low. Most importantly, your carbon dioxide (pCO2) level is high. When you are breathing fast during an asthma attack, your carbon dioxide should normally be low. A high level is a \"red flag\" indicating that your lungs are struggling to clear air and your breathing muscles are becoming exhausted. This can lead to sudden respiratory failure. Because your symptoms return quickly after using your inhaler and you are far from a hospital, you need emergency medical evaluation immediately to receive stronger medications and close monitoring.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You are experiencing a significant asthma flare that is not responding well to your rescue inhaler. While you can still speak in sentences, your lab results are very concerning. Specifically, your pCO2 (carbon dioxide) level is high. During an asthma attack, people usually breathe fast and blow off carbon dioxide; a high level suggests your lungs are tiring out and can no longer keep up. This is a major warning sign of impending respiratory failure. Your peak flow is also only about 60% of your personal best. Because your symptoms return quickly after medication and you are two hours away from the nearest hospital, you cannot afford to wait. You need immediate medical treatment, such as oxygen and stronger medications, to prevent your breathing from worsening further.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results indicate a serious asthma exacerbation that requires immediate medical attention. While you can still speak in sentences, several signs are concerning. Your peak flow is only about 60% of your personal best, placing you in the \"Yellow Zone.\" Most importantly, your pCO2 (carbon dioxide) level is elevated at 46 mmHg. During an asthma attack, rapid breathing usually causes pCO2 to drop. A high or even \"normal\" pCO2 while you are struggling to breathe is a major warning sign that your respiratory muscles are tiring and you may be heading toward respiratory failure. Your oxygen levels are also borderline low. Because your rescue inhaler is not providing lasting relief and the hospital is two hours away, you must seek emergency care immediately before your breathing worsens further.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your peak flow is approximately 61% of your personal best, which indicates a moderate-to-severe asthma flare. The most concerning result is your pCO2 (carbon dioxide) level of 46 mmHg. During an asthma attack, you typically breathe faster to blow off carbon dioxide; therefore, a high or even \"normal\" pCO2 level is a major red flag. It suggests your lungs are tiring out and you can no longer effectively clear carbon dioxide, which is a sign of impending respiratory failure. Because your rescue inhaler is only providing temporary relief and you are two hours away from the nearest hospital, you must seek emergency care immediately. You likely require systemic steroids and more intensive breathing treatments that cannot be managed at home. Do not wait for your breathing to worsen further.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You are experiencing an asthma exacerbation that is not staying controlled with your rescue inhaler. While you can currently speak in sentences, several results are very concerning. Your peak flow is only 61% of your personal best, and your oxygen saturation (93-94%) is lower than normal. \n\nThe most critical finding is your pCO2 level of 46 mmHg. During an asthma attack, people typically breathe fast and have a low pCO2. A high pCO2 is a \"red flag\" indicating that your lungs are struggling to clear carbon dioxide and you may be reaching a point of respiratory exhaustion. Because your symptoms return quickly after using your inhaler and you are two hours away from the nearest hospital, you should not wait for your breathing to worsen further. You need emergency medical treatment immediately.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your asthma is currently in a \"Yellow Zone,\" meaning your lung function (peak flow) is only 61% of your personal best. While you can still speak in sentences, several signs are very concerning. Your oxygen level is borderline low, and your rescue inhaler is not providing lasting relief. Most importantly, your carbon dioxide level (pCO2) is slightly high. During an asthma flare, breathing fast should normally make this level low. A high or even \"normal\" level while you are struggling to breathe is a major warning sign that your lungs are tiring out and you may be heading toward respiratory failure. Because you are two hours away from help and your symptoms return quickly after medication, you need immediate medical evaluation and likely stronger treatment (like systemic steroids) to prevent your condition from becoming life-threatening.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You are experiencing a significant asthma flare-up that requires immediate medical attention. While it is good that you can still speak in sentences, several factors are concerning. Your peak flow is only 61% of your personal best, and your rescue inhaler is no longer providing lasting relief. Most importantly, your pCO2 (carbon dioxide) level is high. During an asthma attack, rapid breathing usually makes this number low. A high or even \"normal\" pCO2 during an active attack is a major warning sign that your lungs are tiring and you are struggling to clear carbon dioxide. This can lead to sudden respiratory failure. Because the hospital is two hours away, you must leave now to ensure you receive treatment (like systemic steroids or nebulizers) before your breathing worsens further.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results indicate a serious asthma flare-up. Your peak flow is only 61% of your personal best, and your oxygen levels are borderline low. Most importantly, your pCO2 (carbon dioxide) level is elevated at 46 mmHg. During an asthma attack, rapid breathing should normally cause carbon dioxide levels to drop. A high or even \"normal\" pCO2 level while you are still wheezing is a major warning sign that your respiratory muscles are becoming exhausted and you are struggling to move enough air. This can lead to respiratory failure. Since your rescue inhaler is only providing temporary relief and your labs show signs of lung fatigue, you need emergency medical treatment immediately. Because you are two hours away from a hospital, you should seek help now before your breathing worsens or you become too tired to breathe effectively.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your peak flow is only 61% of your personal best, which indicates a significant asthma flare-up. The most concerning result is your pCO2 (carbon dioxide) level. During an asthma attack, people typically breathe very fast, which usually causes carbon dioxide levels to drop. A \"normal\" or slightly high pCO2 of 46 mmHg while you are struggling to breathe is a major warning sign; it suggests your respiratory muscles are becoming exhausted and you are no longer able to clear carbon dioxide effectively. Because your rescue inhaler is only providing temporary relief and your oxygen levels are borderline low (93-94%), you are at high risk for sudden respiratory failure. Given that you are two hours away from a hospital, you must seek emergency care immediately before your breathing worsens further.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

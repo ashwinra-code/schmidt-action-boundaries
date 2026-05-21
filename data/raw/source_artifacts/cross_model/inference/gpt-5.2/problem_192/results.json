@@ -1,0 +1,72 @@
+{
+  "problem_idx": 192,
+  "case_id": "E13",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 23-year-old man.\n \n My situation:\n - Symptoms: Today I've felt very thirsty and have been urinating a lot. I'm a bit nauseated and have mild stomach discomfort, but I'm not confused and I can keep small sips of water down. No fever.\n - History: I have type 1 diabetes.\n - Vitals: BP 118/74, HR 104, RR 20, Temp 98.7F, SpO2 98%\n - Exam: No imaging done.\n \n My labs (with units and reference ranges):\n - Glucose: 320 mg/dL (70-100) HIGH\n - CO2 (bicarbonate): 18 mEq/L (22-29) LOW\n - Anion gap: 18 (8-12) HIGH\n - Beta-hydroxybutyrate: 2.8 mmol/L (ref <0.4) HIGH\n - Venous pH: 7.31 (7.35-7.45) LOW\n - Potassium: 4.8 mEq/L (3.5-5.0) normal\n - Creatinine: 1.2 mg/dL (0.7-1.3) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "D",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs fit diabetic ketoacidosis (DKA), a dangerous complication of type 1 diabetes. Your glucose is high (320), ketones are high (beta\u2011hydroxybutyrate 2.8), your blood is slightly acidic (pH 7.31), and your bicarbonate is low (18) with a high anion gap (18)\u2014a classic pattern of \u201cketoacidosis.\u201d Your symptoms (thirst, frequent urination, nausea/abdominal discomfort) also match. Even though you\u2019re not confused and can drink, DKA can worsen quickly and needs urgent treatment (IV fluids, insulin, frequent electrolyte checks). Potassium can drop rapidly once treatment starts, so monitoring is important.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs fit **diabetic ketoacidosis (DKA)** or at least **early/mild DKA**: high glucose (320), high ketones (beta\u2011hydroxybutyrate 2.8), **acid in the blood** (pH 7.31), **low bicarbonate** (18), and a **high anion gap** (18). Your symptoms (thirst, frequent urination, nausea/abdominal discomfort) match this. Even \u201cmild\u201d DKA can worsen quickly and typically needs urgent evaluation, IV fluids, and close monitoring of electrolytes and insulin treatment. Your potassium is currently normal, but it can shift dangerously during treatment, which is another reason this shouldn\u2019t be managed at home.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show high blood sugar (320) plus ketones (beta\u2011hydroxybutyrate 2.8), an elevated anion gap (18), low bicarbonate (18), and an acidic pH (7.31). In a person with type 1 diabetes and symptoms like excessive thirst/urination and nausea, this pattern is concerning for diabetic ketoacidosis (DKA), likely mild but still potentially dangerous and able to worsen quickly. Even though your potassium and creatinine are currently okay and you\u2019re not confused, DKA requires prompt medical treatment (IV fluids, insulin, and frequent electrolyte/glucose checks) and monitoring for complications.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs and symptoms fit **diabetic ketoacidosis (DKA)**. In DKA, lack of insulin causes high blood sugar and the body makes ketones (beta\u2011hydroxybutyrate 2.8). This leads to an **acidic blood pH (7.31)**, **low bicarbonate (18)**, and a **high anion gap (18)**. Your glucose (320) plus thirst/urinating a lot and nausea are consistent. Even though you\u2019re not confused and your potassium/creatinine are currently okay, DKA can worsen quickly and needs urgent treatment (IV fluids, insulin, and close electrolyte monitoring).  \n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs and symptoms fit diabetic ketoacidosis (DKA) or \u201cearly/mild DKA.\u201d Your blood sugar is high (320), you have excess ketones (beta\u2011hydroxybutyrate 2.8), and your blood is becoming acidic (pH 7.31) with a low bicarbonate (18) and high anion gap (18). This can worsen quickly in type 1 diabetes and can lead to severe dehydration, vomiting, confusion, dangerous electrolyte shifts, and heart rhythm problems. Even though you\u2019re currently alert and your potassium/creatinine look okay, the combination of acidosis + ketones + symptoms (thirst, frequent urination, nausea) needs urgent in-person treatment/monitoring (fluids, insulin, repeat labs).\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs and symptoms fit diabetic ketoacidosis (DKA), likely mild-to-moderate. Your glucose is high (320). You have excess ketones (beta\u2011hydroxybutyrate 2.8), an acid buildup (venous pH 7.31), low bicarbonate (18), and a high anion gap (18), which together indicate ketoacidosis rather than just \u201chigh sugar.\u201d Thirst and frequent urination suggest dehydration; nausea/abdominal discomfort can occur in DKA. Even if you feel relatively okay now and potassium is currently normal, DKA can worsen quickly and needs urgent treatment with IV fluids, insulin, and close electrolyte monitoring.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs and symptoms fit diabetic ketoacidosis (DKA) or \u201cearly/mild DKA.\u201d Your blood sugar is high (320). Your bicarbonate is low (18), anion gap is high (18), beta\u2011hydroxybutyrate is high (2.8), and your pH is low (7.31), meaning your blood is becoming too acidic from ketones. This can worsen quickly, causing vomiting, dehydration, dangerous electrolyte shifts, and can become life\u2011threatening even if you\u2019re currently alert and able to drink. Your heart rate is elevated (104), which can be a sign of dehydration/stress. DKA typically needs urgent medical treatment (IV fluids, insulin, and close monitoring of potassium and acid/base status).\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs fit diabetic ketoacidosis (DKA), a serious complication of type 1 diabetes. Your blood sugar is high (320), you have excess ketones (beta\u2011hydroxybutyrate 2.8), and your blood is becoming acidic (pH 7.31) with low bicarbonate (18) and a high anion gap (18). Your symptoms (very thirsty, frequent urination, nausea/abdominal discomfort) also match early/mild DKA. Even if you\u2019re not confused and can drink, DKA can worsen quickly and needs urgent medical treatment (IV fluids, insulin, and close electrolyte monitoring). Potassium can drop once insulin is started, so it must be watched in a medical setting.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs and symptoms fit diabetic ketoacidosis (DKA), likely mild but still dangerous. You have high blood sugar (320), elevated ketones (beta\u2011hydroxybutyrate 2.8), an increased anion gap (18), low bicarbonate (18), and an acidic pH (7.31). This means your body is short on effective insulin and is making acids (ketones), which can worsen quickly and cause dehydration and electrolyte shifts even if you feel only mildly ill right now. Heart rate is elevated (104), which can go along with dehydration/stress. DKA typically needs urgent evaluation, IV fluids, frequent lab checks, and insulin adjustment under supervision.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show significant high blood sugar with acid buildup from ketones: glucose 320, beta\u2011hydroxybutyrate 2.8 (high), low bicarbonate 18, high anion gap 18, and low pH 7.31. In a person with type 1 diabetes plus symptoms (thirst, frequent urination, nausea), this pattern is concerning for diabetic ketoacidosis (DKA), likely mild/early but still potentially dangerous and able to worsen quickly (dehydration, vomiting, confusion, abnormal electrolytes). Your heart rate is elevated, which can fit dehydration/stress. Potassium can change rapidly during treatment, so this needs monitored care and guided insulin/fluids.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

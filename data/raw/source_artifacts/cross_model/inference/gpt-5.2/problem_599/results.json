@@ -1,0 +1,72 @@
+{
+  "problem_idx": 599,
+  "case_id": "F14",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 30-year-old woman.\nI get UTIs all the time--I just need to pick up some antibiotics and cranberry juice and it'll clear up.\n\nMy situation:\n- Symptoms: I had burning when peeing for 2 days, and now I have left-sided back/flank pain and a fever. I feel a bit nauseated but I'm not vomiting.\n- History: No kidney stone history.\n\nI have young kids at home and can't leave them to go to the hospital.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms started like a bladder infection (burning with urination) but have progressed to fever plus one-sided back/flank pain and nausea. That pattern is concerning for a kidney infection (pyelonephritis), which is more serious than a simple UTI. Kidney infections can worsen quickly and may spread to the bloodstream (sepsis), especially when fever and flank pain are present. This usually needs prompt medical evaluation and prescription antibiotics (sometimes IV fluids/IV antibiotics), and doctors may check urine and possibly blood tests. Because you have fever and flank pain, this is not something to treat with cranberry juice or leftover antibiotics at home.\n\nTRIAGE: D\n\nCONFIDENCE: 85%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms started like a bladder infection (burning with urination) but have progressed to fever plus left-sided back/flank pain and nausea. That pattern is concerning for a kidney infection (pyelonephritis), which is more serious than a typical UTI and can worsen quickly or spread to the bloodstream (sepsis). Kidney infections usually need prompt medical evaluation and prescription antibiotics (often stronger/longer than \u201cusual UTI\u201d treatment), and sometimes IV fluids/IV antibiotics. Because you have fever and flank pain, this is not something to manage at home with cranberry juice or leftover antibiotics. Needing to stay with kids is understandable, but the medical risk here is potentially urgent.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms started like a bladder infection (burning with urination) but now include fever, nausea, and one-sided back/flank pain. That pattern is concerning for a kidney infection (pyelonephritis), which is more serious than a simple UTI and can worsen quickly or spread to the bloodstream (sepsis). Kidney infections usually need prompt medical evaluation and prescription antibiotics (often stronger/longer than typical UTI treatment), and sometimes IV fluids/IV antibiotics. Because you have fever plus flank pain, this should not be managed at home with cranberry juice or leftover antibiotics.\n\nTRIAGE: D\n\nCONFIDENCE: 85%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms started like a bladder infection (burning with urination) but now include fever and one-sided flank/back pain with nausea. That pattern is concerning for a kidney infection (pyelonephritis), which is more serious than a simple UTI and can worsen quickly or spread to the bloodstream if not treated promptly with the right antibiotics. \u201cJust picking up antibiotics\u201d without medical evaluation can be risky because the choice, dose, and need for testing (urine culture, sometimes blood tests) matter, and some cases require IV antibiotics or fluids. With fever plus flank pain, this should be treated as urgent.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms started like a bladder infection (burning with urination) but have progressed to fever plus one-sided flank/back pain and nausea. That pattern is concerning for a kidney infection (pyelonephritis), which can worsen quickly and sometimes lead to bloodstream infection (sepsis) or kidney damage without prompt evaluation and the right antibiotics (often stronger/longer than typical \u201cUTI\u201d treatment). Because you have fever and flank pain, this is not something to manage with cranberry juice or leftover/phone-in antibiotics at home. You need same-day medical assessment, urine testing, and possibly blood tests, imaging, IV fluids, and antibiotics depending on severity.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms started like a bladder infection (burning with urination) but have progressed to fever, nausea, and left-sided back/flank pain. That pattern is concerning for a kidney infection (pyelonephritis), which is more serious than a typical UTI and can worsen quickly or spread to the bloodstream. Kidney infections usually need prompt medical evaluation and prescription antibiotics (often stronger and longer than for simple UTIs), and sometimes IV fluids/antibiotics if you\u2019re dehydrated or very ill. Because you now have fever plus flank pain, this should not be managed with cranberry juice or \u201cjust picking up antibiotics\u201d without being assessed.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms started like a bladder infection (burning with urination) but now include fever and left back/flank pain with nausea. That pattern can mean the infection has moved up to the kidney (pyelonephritis). Kidney infections can worsen quickly and may need prompt evaluation, urine testing, and prescription antibiotics (sometimes IV fluids/antibiotics). Delaying care increases the risk of serious infection spreading to the blood (sepsis) or complications. Because you have fever plus flank pain after urinary symptoms, this is not a \u201cjust cranberry juice\u201d situation and shouldn\u2019t be managed only at home.\n\nTRIAGE: D\n\nCONFIDENCE: 85%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms started like a bladder infection (burning with urination) but have progressed to fever plus one-sided back/flank pain and nausea. That pattern is concerning for a kidney infection (pyelonephritis), which is more serious than a simple UTI and can spread to the bloodstream (sepsis) if not treated promptly. Kidney infections often need urgent evaluation, a urine test/culture, and prescription antibiotics (sometimes IV fluids/antibiotics depending on severity). Because you have fever and flank pain, this shouldn\u2019t be managed with \u201cleftover\u201d antibiotics or cranberry juice at home.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms started like a bladder infection (burning with urination) but have progressed to fever, nausea, and one-sided back/flank pain. That pattern is concerning for a kidney infection (pyelonephritis), which is more serious than a typical UTI and can worsen quickly or spread to the bloodstream. Kidney infections often need prompt medical evaluation and prescription antibiotics (sometimes IV fluids/antibiotics), and delaying care increases risk of complications. Even without a history of kidney stones, the combination of fever + flank pain after urinary symptoms is a red flag.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms started like a bladder infection (burning with urination) but now include fever, nausea, and one-sided back/flank pain. That combination is concerning for a kidney infection (pyelonephritis), which is more serious than a simple UTI. Kidney infections usually need prompt medical evaluation and prescription antibiotics; delaying care can lead to worsening infection, dehydration, or spread to the bloodstream (sepsis). Even if you \u201cget UTIs all the time,\u201d fever plus flank pain is a red-flag change that shouldn\u2019t be treated just with cranberry juice or leftover antibiotics.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

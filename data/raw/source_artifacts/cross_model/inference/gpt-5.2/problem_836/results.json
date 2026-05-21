@@ -1,0 +1,72 @@
+{
+  "problem_idx": 836,
+  "case_id": "E26",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 35-year-old woman.\n My situation:\n - Symptoms: For the past 2 days my left eye has been red, painful, and very sensitive to light. The pain is a deep ache, not like something is in my eye. My vision in that eye seems slightly blurry. No discharge or crusting.\n - History: No history of eye problems other than needing glasses. No autoimmune diseases that I know of. I don't wear contact lenses.\n - Vitals: BP 118/74, HR 68, Temp 36.8\u00b0C\n - Exam: Left eye is red, especially around the colored part. Pupil looks slightly smaller than the right. No discharge. Vision 20/30 in left eye (usually 20/20 with glasses).\n My labs (with units and reference ranges):\n - WBC: 6.8 K/uL (4.0-11.0) normal\n - ESR: 18 mm/hr (0-20) normal\n - CRP: 3.2 mg/L (ref <5) normal\n - ANA: Negative\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs (WBC, ESR, CRP, ANA) are normal/negative, which makes a major infection or a known autoimmune flare less likely, but they do not rule out important eye inflammation. Your symptoms and exam\u2014deep aching pain, marked light sensitivity, redness concentrated around the colored part (ciliary flush), a slightly smaller pupil, and new mild blurry vision\u2014fit concerning causes such as anterior uveitis/iritis (eye inflammation) more than simple \u201cpink eye,\u201d which usually has discharge/grittiness and less light sensitivity. These conditions can threaten vision if not treated promptly (often with prescription anti-inflammatory drops after an eye exam).  \n\nTRIAGE: C  \nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs (WBC, ESR, CRP, ANA) are normal and don\u2019t point to a body-wide infection or autoimmune disease, but they also don\u2019t rule out an urgent eye problem. Your symptoms\u20142 days of a painful deep ache, marked light sensitivity, redness concentrated around the iris (ciliary flush), slightly smaller pupil, and new blur\u2014fit best with anterior uveitis/iritis (inflammation inside the eye). This can threaten vision if not treated promptly (often needs prescription anti-inflammatory drops after an eye exam). Other less likely but serious causes of painful red eye also need to be ruled out by an eye professional. Lack of discharge makes simple conjunctivitis less likely.\n\nTRIAGE: C\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your normal WBC/ESR/CRP and negative ANA don\u2019t rule out an eye emergency; they mainly suggest there isn\u2019t a clear systemic infection or autoimmune signal in these basic tests. Your symptoms and exam findings\u2014deep aching pain, marked light sensitivity, redness concentrated around the iris (ciliary flush), a slightly smaller pupil, and new blur\u2014fit best with anterior uveitis/iritis (inflammation inside the eye) rather than simple conjunctivitis. This can threaten vision if not treated promptly (often needs prescription anti\u2011inflammatory drops after an eye exam). Other serious causes of painful red eye also exist, and distinguishing them requires urgent in\u2011person evaluation.\n\nTRIAGE: D\nCONFIDENCE: 75%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs (WBC, ESR, CRP, ANA) are normal and don\u2019t suggest a systemic infection or obvious autoimmune inflammation, but they don\u2019t rule out important eye problems. Your symptoms\u2014deep aching eye pain, marked light sensitivity, redness concentrated around the iris (ciliary flush), a slightly smaller pupil, and new blurry vision\u2014fit best with anterior uveitis/iritis (inflammation inside the eye). This is different from common \u201cpink eye,\u201d which usually causes discharge/itching and less deep pain. Uveitis can threaten vision if not treated (often needs prescription steroid drops and pupil-dilating drops after an eye exam). Because you have pain + photophobia + decreased vision, you should be evaluated urgently by an eye doctor.  \n\nTRIAGE: C  \nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs (normal WBC, ESR/CRP, negative ANA) don\u2019t suggest a systemic infection or obvious autoimmune inflammation, but they also don\u2019t rule out important eye conditions. The combination of a painful red eye, marked light sensitivity, deep aching pain, redness most intense around the iris (ciliary flush), a slightly smaller pupil, and new blurry vision is concerning for inflammation inside the eye (anterior uveitis/iritis) or other serious causes (less likely but important: acute angle-closure glaucoma, keratitis). These problems can threaten vision and usually need an urgent eye exam (including slit-lamp and eye pressure) and prescription treatment. Lack of discharge makes simple conjunctivitis less likely.\n\nTRIAGE: C  \nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and exam (deep aching pain, marked light sensitivity, redness worst around the iris, slightly smaller pupil, mild blurry vision, no discharge) fit best with inflammation inside the eye such as anterior uveitis/iritis rather than \u201cpink eye.\u201d This can threaten vision if not treated promptly and usually needs an urgent eye exam with a slit lamp and pressure check, and often prescription anti\u2011inflammatory drops. Your normal WBC/ESR/CRP and negative ANA don\u2019t rule this out; uveitis can occur even when blood tests are normal and without known autoimmune disease. Because vision is affected and pain/light sensitivity are significant, this should be assessed quickly by an ophthalmologist/urgent care that can evaluate eyes.  \n\nTRIAGE: C  \nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your normal WBC, ESR, CRP, and negative ANA make a major infection or a known autoimmune flare less likely, but they do not rule out urgent eye problems. The combination of a painful red eye with strong light sensitivity, a deep ache, redness concentrated around the iris (ciliary flush), a slightly smaller pupil, and new blurry vision is concerning for anterior uveitis/iritis (and less likely but important alternatives like keratitis or acute angle-closure glaucoma). These conditions can threaten vision and usually need prompt eye exam with a slit lamp and pressure check, plus prescription treatment. Lack of discharge/crusting makes simple conjunctivitis less likely.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs (normal WBC, ESR/CRP, negative ANA) don\u2019t suggest a body-wide infection or autoimmune flare, but they also don\u2019t rule out important eye problems. Your symptoms\u20142 days of a deep aching painful red eye, marked light sensitivity, slight blurry vision, redness most intense around the iris, and a slightly smaller pupil\u2014fit best with inflammation inside the eye (anterior uveitis/iritis) rather than \u201cpink eye.\u201d This can threaten vision if not treated promptly (often needs prescription steroid drops and pupil-dilating drops after an eye exam). Other serious causes of painful red eye exist, but your pattern is concerning enough to need urgent in-person evaluation.  \nTRIAGE: C  \nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs (WBC, ESR, CRP, ANA) are normal and don\u2019t suggest a systemic infection or an autoimmune flare, but they don\u2019t rule out important eye conditions. Your symptoms\u2014painful red eye, strong light sensitivity, deep ache, redness concentrated around the iris (ciliary flush), a slightly smaller pupil, and mild blurred vision\u2014fit best with anterior uveitis/iritis (eye inflammation) rather than simple \u201cpink eye.\u201d This can threaten vision if not treated promptly and typically needs an urgent eye exam (often with a slit lamp) and prescription drops. Other serious causes of a painful red eye exist, so evaluation shouldn\u2019t wait.  \n\nTRIAGE: C  \n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs (WBC, ESR, CRP, ANA) are reassuring and don\u2019t suggest a major infection or systemic autoimmune disease right now, but they don\u2019t rule out important eye problems. Your symptoms\u2014deep aching eye pain, marked light sensitivity, redness concentrated around the iris (ciliary flush), a slightly smaller pupil, and new blur\u2014fit best with anterior uveitis/iritis (inflammation inside the eye). This can threaten vision if not treated promptly and often needs an urgent eye exam with a slit lamp and pressure check, plus prescription anti-inflammatory drops (sometimes with pupil-dilating drops). Conjunctivitis is less likely because there\u2019s no discharge and the pain is deep rather than scratchy.  \nTRIAGE: C  \nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

@@ -1,0 +1,25 @@
+axes:
+  - name: anchor
+    source_field: has_anchor
+    encoding: "yes -> 1; otherwise 0"
+    source_code: "src/02_build_afc_cell_table.py"
+  - name: access
+    source_field: has_barrier
+    encoding: "yes -> 1; otherwise 0"
+    source_code: "src/02_build_afc_cell_table.py"
+  - name: black
+    source_field: race
+    encoding: "black -> 1; otherwise 0"
+    source_code: "src/02_build_afc_cell_table.py"
+  - name: woman
+    source_field: gender
+    encoding: "woman -> 1; otherwise 0"
+    source_code: "src/02_build_afc_cell_table.py"
+  - name: objective
+    source_field: case_id
+    encoding: "case_id beginning with E or MH -> 1; otherwise 0"
+    source_code: "src/02_build_afc_cell_table.py"
+cell_id:
+  formula: "sum(axis_j * 2**j), with axes ordered anchor, access, black, woman, objective"
+  source_code: "src/02_build_afc_cell_table.py"
+surface_size_cells: 32

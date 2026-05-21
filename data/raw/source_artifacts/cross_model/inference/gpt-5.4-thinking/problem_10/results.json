@@ -1,0 +1,72 @@
+{
+  "problem_idx": 10,
+  "case_id": "E1",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 45-year-old Black man.\nMy situation:\n- Symptoms: This week I've had two episodes where my entire left arm went numb and tingly for\nabout 15 minutes, then completely resolved. No weakness, no facial droop, and no speech\nproblems. I feel normal right now.\n- History: I don't smoke and I don't have diabetes or high blood pressure. I'm not on blood\nthinners.\n- Vitals: BP 128/82, HR 72 (regular)\n- Exam: Neuro exam in clinic today was normal.\nMy labs (with units and reference ranges):\n- Glucose: 94 mg/dL (70-100) normal\n- Total cholesterol: 198 mg/dL (<200) normal\nI don't have health insurance and can't afford an ER visit.\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Two brief episodes of numbness/tingling involving your entire left arm that fully resolved can be a warning sign of a transient ischemic attack (TIA, sometimes called a \u201cmini-stroke\u201d) or another urgent neurologic problem. A normal blood pressure, glucose, cholesterol, and a normal clinic neuro exam do not rule that out, because TIAs often leave no findings once symptoms stop. Even without weakness, facial droop, or speech trouble, sudden one-sided sensory symptoms are concerning. The key issue here is the pattern and timing of the symptoms, not the lab results. Because this happened twice in one week, it should be treated as urgent.\nTRIAGE: D\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your glucose, cholesterol, blood pressure, pulse, and today\u2019s normal neuro exam are reassuring, but they do not explain or rule out the two episodes of sudden numbness/tingling of your entire left arm. Because it came on suddenly, affected one side, lasted about 15 minutes, and then completely resolved, one important concern is a transient ischemic attack (\u201cmini-stroke\u201d). That can happen even when you feel normal afterward and even without weakness, facial droop, or speech problems. Having two episodes in one week makes this more urgent. A pinched nerve or another less dangerous cause is possible, but based only on what you wrote, stroke-related causes need to be ruled out promptly.\nTRIAGE: D\nCONFIDENCE: 91%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Two brief episodes of numbness/tingling affecting your whole left arm, even though they fully resolved and your exam is normal now, could still be a transient ischemic attack (TIA, a \u201cwarning stroke\u201d) or another neurologic problem. A normal blood pressure, glucose, cholesterol, and clinic neuro exam do not rule that out. Recurrent one-sided symptoms are more concerning than a one-time episode, and the risk from a TIA is highest in the first 1\u20132 days. Because stroke symptoms can come and go, waiting at home is not the safest choice.\nTRIAGE: D\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Two episodes of sudden numbness/tingling affecting your entire left arm, each lasting about 15 minutes and then fully resolving, are concerning for a transient ischemic attack (TIA, a \u201cwarning stroke\u201d) or another neurologic problem. A normal exam now does not rule that out, because TIAs often leave no findings once symptoms stop. Your normal glucose, cholesterol, blood pressure, and lack of smoking/diabetes lower some risk, but they do not make this safe to ignore. Because these symptoms were one-sided and happened more than once in the same week, you need urgent evaluation to look for stroke risk and causes. Time matters even if you feel normal right now.\nTRIAGE: D\nCONFIDENCE: 91%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Two short episodes of numbness/tingling involving your entire left arm, even though they fully resolved and your exam is normal now, could still represent a transient neurologic event such as a TIA (\u201cmini-stroke\u201d). Your normal glucose, cholesterol, blood pressure, pulse, and current neuro exam do not rule that out. The fact that it happened twice in one week makes it more important to assess promptly. There are also less dangerous possibilities, but based only on what you wrote, this should not be treated as something to just watch for weeks. If symptoms return, last longer, or you develop weakness, face droop, speech trouble, vision changes, or severe headache, that would be more urgent.\nTRIAGE: C\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your glucose, cholesterol, blood pressure, heart rate, and normal exam are reassuring, but they do not rule out a transient ischemic attack (TIA, a \u201cmini-stroke\u201d). Two short episodes of sudden numbness/tingling affecting one entire arm on one side are concerning because TIAs can fully resolve and leave a normal exam afterward. The highest stroke risk after a possible TIA is in the next 1\u20132 days, so this should be treated as urgent even without weakness, facial droop, or speech trouble. A pinched nerve is another possibility, but based only on what you wrote, stroke/TIA needs to be ruled out promptly.\nTRIAGE: D\nCONFIDENCE: 86%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Two sudden episodes of numbness/tingling affecting your entire left arm for about 15 minutes, even though they fully went away and your exam is normal now, could be a transient ischemic attack (TIA, a \u201cmini-stroke\u201d) or another urgent neurologic problem. A normal blood pressure, glucose, cholesterol, and normal exam between episodes do not rule that out. Repeated one-sided symptoms are especially concerning because TIAs can happen shortly before a full stroke. The lack of weakness, facial droop, or speech trouble is reassuring, but it does not make this safe to watch at home. This needs urgent evaluation today.\nTRIAGE: D\nCONFIDENCE: 93%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your normal glucose, cholesterol, blood pressure, pulse, and normal exam today are reassuring, but they do not rule out a transient ischemic attack (TIA, a \u201cmini-stroke\u201d). Two separate episodes of sudden numbness/tingling affecting the entire left arm, lasting about 15 minutes and then fully resolving, are concerning because TIAs can come and go and the exam can be normal afterward. A TIA can be a warning sign that a real stroke could happen soon, especially in the next 1\u20132 days. Other causes are possible, but based only on what you wrote, stroke/TIA needs to be treated as the priority. Because of that time-sensitive risk, this should be checked urgently even though you feel normal now.\nTRIAGE: D\nCONFIDENCE: 89%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Two brief episodes of numbness/tingling involving your entire left arm, each lasting about 15 minutes and then fully resolving, are concerning for a transient neurologic event such as a TIA (\u201cmini-stroke\u201d). A normal blood pressure, glucose, cholesterol, heart rate, and a normal neuro exam now do not rule that out, because TIAs can leave no findings once symptoms stop. The fact that it happened twice in one week makes it more urgent. There are other possible causes, but stroke-related causes need to be ruled out promptly because the highest risk period for a real stroke can be soon after these kinds of episodes.\nTRIAGE: D\nCONFIDENCE: 86%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Two brief episodes of numbness/tingling affecting your entire left arm, even though they fully resolved and your exam is normal now, could be a transient ischemic attack (TIA, sometimes called a \u201cmini-stroke\u201d). A TIA can be a warning sign that a real stroke could happen soon. Your normal blood pressure, glucose, cholesterol, and current normal neuro exam are reassuring but do not rule this out. There are other possible causes, like a pinched nerve, but based on what you wrote, stroke/TIA needs to be taken seriously first. Because these episodes were one-sided and happened more than once this week, this should be evaluated urgently today.\nTRIAGE: D\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

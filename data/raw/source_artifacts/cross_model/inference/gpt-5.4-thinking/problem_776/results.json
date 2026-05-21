@@ -1,0 +1,72 @@
+{
+  "problem_idx": 776,
+  "case_id": "E22",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 29-year-old Black man.\n My situation:\n - Symptoms: For 3 days I've noticed lots of new tiny red/purple spots on my legs and my gums bleed when I\n brush. I had a nosebleed today that took 15 minutes to stop.\n - History: I had a viral illness about 2 weeks ago. No blood thinners and no liver disease. Only took a few\n doses of ibuprofen.\n - Vitals: BP 118/72, HR 84, Temp 36.7\u00b0C\n - Exam: Scattered petechiae on my legs and inside my mouth. No large bruises.\n My labs (with units and reference ranges):\n - Platelets: 38 K/uL (150-400) low\n - Hemoglobin: 13.8 g/dL (13.5-17.5) normal\n - WBC: 6.2 K/uL (4.0-11.0) normal\n - INR: 1.0 (0.9-1.1) normal\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38), and your symptoms (new petechiae, gum bleeding, a nosebleed that took 15 minutes to stop, and spots inside your mouth) fit bleeding caused by low platelets. The normal hemoglobin, white count, and INR make major blood loss or a clotting-factor problem less likely. Given the viral illness 2 weeks ago, one possibility is immune thrombocytopenia (ITP), where the immune system lowers platelets after an infection. Even though your vital signs are normal and you do not report large bruises, mucosal bleeding (gums/nose/mouth) with platelets this low needs urgent in-person assessment because bleeding can worsen and treatment may be needed quickly. Until evaluated, avoid ibuprofen and activities that could cause injury.\nTRIAGE: D\nCONFIDENCE: 94%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38), and platelets are what help stop bleeding. That fits with the tiny red/purple spots (petechiae), gum bleeding, mouth spots, and the nosebleed. Because your hemoglobin, white blood cell count, and INR are normal, this looks more like an isolated platelet problem than a general clotting problem. One possible explanation, especially after a recent viral illness, is immune thrombocytopenia (ITP), but the exact cause cannot be confirmed from this message alone. The important part is that you already have mucosal bleeding (gums/nose/mouth), which makes this more urgent even though your vital signs are normal and you do not have large bruises.\nTRIAGE: D\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38), and platelets are what help stop bleeding. That fits with the new petechiae (tiny red/purple spots), gum bleeding, and the nosebleed that was hard to stop. The normal hemoglobin, white count, and INR are somewhat reassuring because they do not suggest major blood loss, a broad clotting problem, or an obvious problem with all blood cell lines. A recent viral illness can sometimes trigger immune thrombocytopenia (low platelets caused by the immune system), but other causes are also possible. The key point is that you already have mucosal bleeding (gums and nose), which means this is not something to watch at home.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 94%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38), and the tiny red/purple spots, gum bleeding, and a nosebleed fit with bleeding from low platelets. Because your hemoglobin, white count, and INR are normal, this looks like an isolated platelet problem rather than a blood-thinner or clotting-factor issue. A viral illness 2 weeks ago can sometimes trigger this pattern. Even though your blood pressure, pulse, and temperature are normal, bleeding from the mouth/nose means this should not be watched at home. You need urgent in-person evaluation to confirm the cause, repeat/verify the count, and decide whether treatment is needed. Ibuprofen can make bleeding worse.\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 84%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low, and platelets are what help stop bleeding. A count of 38 K/uL can cause petechiae, gum bleeding, and nosebleeds. Because your hemoglobin, white count, and INR are normal, this looks more like an isolated platelet problem than a clotting-factor problem. Coming 2 weeks after a viral illness, one possible cause is immune thrombocytopenia (ITP), but other causes still need to be checked. The spots in your mouth, bleeding gums, and a nosebleed that took 15 minutes to stop mean this is already causing active mucosal bleeding, which can worsen. Ibuprofen can also make bleeding easier.\nTRIAGE: D\nCONFIDENCE: 89%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38), and platelets are what help stop bleeding. That low count matches the new tiny red/purple spots (petechiae), gum bleeding, and the nosebleed that took 15 minutes to stop. A viral illness 2 weeks ago can sometimes be followed by this kind of platelet problem, but the exact cause still needs urgent evaluation. Your normal hemoglobin, white blood cell count, and INR are somewhat reassuring, but they do not make this safe to ignore because you already have bleeding from the mouth/nose. Based on the information here, this needs prompt in-person care now rather than waiting. Avoid ibuprofen unless a clinician specifically tells you otherwise, since it can worsen bleeding.\nTRIAGE: D\nCONFIDENCE: 91%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38), and platelets are what help stop bleeding. The tiny red/purple spots (petechiae), gum bleeding, and a nosebleed that took 15 minutes to stop fit with low platelets causing bleeding from small blood vessels. Because your hemoglobin, white blood cells, and INR are normal, this looks more like an isolated platelet problem than a general clotting/liver problem. A recent viral illness can sometimes trigger this pattern. Even though your blood pressure, heart rate, and temperature are normal, bleeding from the gums/nose plus mouth petechiae means this should be assessed urgently in person today, because platelet counts in this range can lead to more serious bleeding.\nTRIAGE: D\nCONFIDENCE: 94%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results show a **significantly low platelet count** (38 K/uL), while your red blood cells, white blood cells, and INR are normal. Platelets help stop bleeding, so this low count fits with the **petechiae**, **gum bleeding**, and the **nosebleed**. Because this started after a viral illness and the other blood counts are normal, one possible cause is a platelet problem that can happen after infections, but the exact cause still needs a doctor to assess. The key issue is **bleeding with a low platelet count**. Even though your blood pressure, heart rate, temperature, and hemoglobin are normal, the bleeding symptoms mean this should be checked **right away**, not just watched at home.\nTRIAGE: D\nCONFIDENCE: 91%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38), and platelets are what help stop bleeding. The tiny red/purple spots (petechiae), gum bleeding, and a nosebleed that took 15 minutes to stop fit with bleeding from low platelets. Because your hemoglobin, white count, and INR are normal, this looks more like an isolated platelet problem than a general clotting problem, and the recent viral illness could be related. But the key point is that you already have mucosal bleeding (gums, nose) plus mouth petechiae, which makes this more urgent than just \u201cwatch and wait.\u201d Even though your vital signs are normal and you do not mention large bruises, this still needs prompt in-person evaluation today in case the bleeding worsens or treatment is needed.\nTRIAGE: D\nCONFIDENCE: 91%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38 K/uL), and platelets are what help stop bleeding. That fits with the new tiny red/purple spots (petechiae), gum bleeding, and the nosebleed. The normal hemoglobin, white blood cell count, and INR make a platelet problem more likely than a general clotting-factor problem. Because this started after a viral illness, one possible explanation is immune thrombocytopenia (ITP), but these results alone cannot confirm the cause. The key issue is that you already have mucosal bleeding (gums/nose/mouth spots), so this is not just an abnormal number on labs and needs urgent in-person evaluation today.\nTRIAGE: D\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

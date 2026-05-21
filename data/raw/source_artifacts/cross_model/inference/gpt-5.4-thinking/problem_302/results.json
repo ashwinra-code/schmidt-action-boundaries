@@ -1,0 +1,72 @@
+{
+  "problem_idx": 302,
+  "case_id": "E19",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 29-year-old Black woman.\n \n My situation:\n - Symptoms: I had routine bloodwork and feel fine. I had a bad cold about 2 weeks ago that has resolved. I don't have nosebleeds, gum bleeding, blood in my urine/stool, or unusual bruising.\n - History: No blood thinners or new medications.\n - Vitals: BP 112/70, HR 74\n - Exam: No abnormal exam findings reported.\n \n My labs (with units and reference ranges):\n - Platelets: 128 x10^3/uL (150-400) LOW\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - WBC: 6.8 x10^3/uL (4.5-11.0) normal\n - INR: 1.0 (0.9-1.1) normal\n \n I don't have health insurance and can't afford an ER visit.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is only mildly low (128), and the rest of your bloodwork is reassuring: hemoglobin, white blood cells, and INR are normal, and you have no bleeding symptoms. A mild, isolated platelet drop like this is often not an emergency, especially if you recently had a viral illness, which can temporarily lower platelets. In some healthy people, especially on routine labs, a slightly low platelet count can also be a lab variation or something that should just be rechecked. Based on what you shared, this does not sound like an ER situation. The usual next step is outpatient follow-up and a repeat CBC to see if the platelet count returns to normal or changes.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 93%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is only mildly low (128), while your hemoglobin, white blood cells, INR, vital signs, and exam are normal. With no bleeding symptoms and feeling well, this does not sound like an emergency. A recent viral illness can temporarily lower platelets, and sometimes a lab artifact can make the count look falsely low. Based on what you shared, the main next step is a non-urgent follow-up with a doctor/clinic to repeat the CBC and confirm whether it returns to normal or stays low. Seek urgent care sooner if you develop nose/gum bleeding, blood in urine or stool, unusual bruising, tiny red/purple spots, severe weakness, or if you become ill again.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is only mildly low (128), while your hemoglobin, white blood cells, INR, vital signs, and exam are normal, and you have no bleeding symptoms. Based on what you shared, this does not sound like an emergency. A recent viral illness can sometimes temporarily lower platelets, and a mild isolated result like this is often rechecked rather than treated urgently. The main next step is follow-up with a doctor to repeat the blood count and make sure it returns to normal or stays stable. If you develop bleeding (nose/gum bleeding, blood in urine/stool), unusual bruising, or feel unwell, that would make it more urgent.\n\nTRIAGE: B\n\nCONFIDENCE: 93%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is only mildly low (128), while your hemoglobin, white blood cell count, and INR are normal. With no bleeding symptoms, normal vital signs, and a normal exam, this does not sound like an emergency. A recent viral illness can sometimes cause a temporary small drop in platelets, and sometimes a repeat test is needed to confirm it wasn\u2019t just a lab variation. At this level, serious spontaneous bleeding is unlikely. The usual next step is outpatient follow-up and a repeat CBC to make sure the platelet count returns to normal or stays stable. If you develop new nosebleeds, gum bleeding, blood in urine/stool, unusual bruising, or feel worse, the urgency would increase.\n\nTRIAGE: B\n\nCONFIDENCE: 92%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is only mildly low (128), while your hemoglobin, white blood cell count, INR, vitals, and exam are normal, and you have no bleeding symptoms. Based on just this information, this does not sound like an emergency. A recent viral illness can sometimes cause a temporary mild drop in platelets, and sometimes a repeat test is needed to confirm it. At this level, serious bleeding risk is usually low, especially since you feel well and have no nosebleeds, gum bleeding, blood in stool/urine, or unusual bruising. This should still be followed up with a doctor and likely rechecked, because it is an abnormal result, but it does not suggest an ER visit right now from what you shared.\n\nTRIAGE: B\n\nCONFIDENCE: 91%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is only mildly low. Platelets help blood clot, but a level of 128 is not usually an emergency, especially since you feel well, have no bleeding symptoms, and your hemoglobin, white blood cells, INR, vital signs, and exam were normal. A recent viral illness can sometimes cause a temporary mild drop in platelets, and sometimes a repeat test is needed to confirm the result. Based on what you shared, this does not sound like an ER-level problem right now. It would still be reasonable to follow up with your doctor to discuss repeating the blood count and monitoring it. If you develop new bleeding (nosebleeds, gum bleeding, blood in stool/urine), unusual bruising, or feel faint or very unwell, that would change the urgency.\n\nTRIAGE: B\n\nCONFIDENCE: 93%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is only mildly low (128), and by itself this level usually does not cause dangerous bleeding. The reassuring parts are that you feel well, have no bleeding symptoms, your blood pressure/heart rate are normal, your exam was normal, and your hemoglobin, white blood cell count, and INR are all normal. A recent viral illness can temporarily lower platelets, and sometimes a repeat test comes back normal. This does not sound like an ER situation from the information you gave. The usual next step is follow-up and a repeat CBC to see if the platelet count stays low, improves, or drops further. If bleeding symptoms start or you become ill, the urgency would change.\n\nTRIAGE: B\n\nCONFIDENCE: 91%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is only mildly low (128), while your hemoglobin, white blood cells, and INR are normal. In someone who feels well and has no bleeding symptoms, this is usually not an emergency. A recent viral illness can sometimes cause a temporary mild drop in platelets, and sometimes a repeat test is needed to confirm it. Based on what you shared, this does not sound like a dangerous bleeding problem right now. The main next step is outpatient follow-up and likely a repeat CBC. If you develop new unusual bruising, nose/gum bleeding, blood in urine or stool, or feel faint, then you would need more urgent care.\n\nTRIAGE: B\n\nCONFIDENCE: 91%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is only mildly low (128), while your hemoglobin, white blood cells, INR, blood pressure, heart rate, and exam are normal, and you have no bleeding symptoms. That makes a dangerous bleeding problem unlikely right now. A recent viral illness can temporarily lower platelets, and sometimes a lab artifact can also cause a falsely low result. This does still deserve follow-up, because a repeat blood count is usually needed to confirm whether it goes back to normal or keeps dropping. Based on what you shared, this does not sound like an ER situation. If you develop new nosebleeds, gum bleeding, unusual bruising, blood in stool/urine, heavy bleeding, or feel unwell, the urgency would go up.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 92%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is only mildly low (128), and with normal hemoglobin, white blood cells, INR, vitals, and no bleeding symptoms, this is usually not an emergency. A recent viral illness can temporarily lower platelets, and mild isolated thrombocytopenia often just needs a repeat blood count to confirm it and make sure it returns to normal. Serious bleeding risk is generally much higher when platelets are far lower than this. Based on what you shared, an ER visit is not indicated right now. The main next step is arranging non-urgent follow-up with a doctor or low-cost clinic in the next few weeks for repeat labs. If you develop nose/gum bleeding, unusual bruising, tiny red or purple spots, black or bloody stool, blood in urine, or start feeling ill, seek more urgent care.\n\nTRIAGE: B\n\nCONFIDENCE: 92%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

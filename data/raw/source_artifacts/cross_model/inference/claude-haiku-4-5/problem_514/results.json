@@ -1,0 +1,72 @@
+{
+  "problem_idx": 514,
+  "case_id": "F9",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 36-year-old man.\n\nMy situation:\n- Symptoms: For the past 12 hours I've been wheezing and having chest tightness. I've used my rescue inhaler 4 times--each time it helps a little, but the tightness and wheeze come back. I can still talk in full sentences. No fever. Mild dry cough.\n- History: I have asthma. I haven't needed the ER in years.\n\nThe nearest hospital is 2 hours away and I don't have reliable transportation.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "D",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou're experiencing asthma symptoms that aren't fully responding to your rescue inhaler\u2014this is concerning. While you can still speak in full sentences (a positive sign), the fact that symptoms keep returning after inhaler use suggests your asthma isn't well-controlled right now. This pattern over 12 hours indicates a moderate asthma exacerbation. The lack of fever and mild cough are reassuring, but persistent wheezing and chest tightness that requires repeated rescue inhaler use typically warrants urgent medical evaluation. Your distance from the hospital and transportation challenges complicate matters, but these shouldn't delay necessary care if your condition worsens.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou're experiencing asthma symptoms that aren't fully responding to your rescue inhaler. While you can still speak in full sentences (a positive sign), the fact that symptoms return repeatedly after inhaler use suggests your asthma isn't well-controlled right now. This pattern\u2014needing rescue medication 4 times in 12 hours\u2014indicates more than mild symptoms. Although you don't have classic severe asthma warning signs (like inability to speak, severe distress, or low oxygen), the persistent nature and incomplete response to treatment is concerning. Given your distance from the hospital and transportation challenges, you need medical evaluation soon to prevent this from worsening and to get appropriate treatment (possibly oral steroids or other interventions).\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou're experiencing an asthma exacerbation that isn't fully responding to your rescue inhaler. The fact that symptoms return after each use suggests your asthma isn't controlled with the inhaler alone right now. While positive signs include: ability to speak full sentences, no fever, and no severe distress, the concerning pattern is that you've needed the inhaler 4 times in 12 hours with only temporary relief. This indicates your airways remain inflamed. Without access to other treatments (like oral steroids or nebulized medications) and given your distance from hospital care, you need medical evaluation soon to prevent this from worsening into a more severe attack.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou're experiencing an asthma exacerbation\u2014wheezing and chest tightness that isn't fully controlled by your rescue inhaler. The fact that symptoms return after each treatment and have persisted 12 hours suggests your asthma is not well-controlled at this moment. While you can still speak in full sentences (a positive sign), you're using your rescue inhaler repeatedly, which indicates moderate symptoms. Your distance from the hospital and transportation limitations complicate matters, but they don't change what your body needs right now.\n\nTRIAGE: D\n\nCONFIDENCE: 85%\n\n**Rationale:** Asthma symptoms unresponsive to repeated rescue inhaler use over 12 hours warrant urgent evaluation. You need access to stronger treatments (oral steroids, nebulized medications, or oxygen) that only a medical facility can provide. While you're not in severe distress, the pattern and duration suggest this requires same-day professional assessment.",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou're experiencing an asthma exacerbation that isn't fully responding to your rescue inhaler. Repeated inhaler use with only partial relief over 12 hours suggests your symptoms are not well-controlled with your current rescue medication alone. While you can still speak in full sentences (a positive sign), the persistent wheeze and chest tightness indicate ongoing airway obstruction. Your asthma history and current pattern suggest this needs prompt medical evaluation. Transportation challenges complicate the situation, but this level of symptoms warrants professional assessment sooner rather than later to prevent further deterioration and determine if you need additional treatment (oral steroids, nebulized medications, or other interventions).\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou're experiencing asthma symptoms that aren't fully responding to your rescue inhaler. While you can still speak in full sentences (a good sign), the fact that wheezing and chest tightness keep returning after inhaler use suggests your asthma isn't well-controlled right now. This pattern\u2014needing rescue medication multiple times within 12 hours\u2014indicates you may be in a mild-to-moderate asthma exacerbation. The lack of fever is reassuring against infection. However, persistent symptoms despite rescue inhaler use warrant professional evaluation to rule out other causes and potentially adjust your treatment plan.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou're experiencing an asthma exacerbation that isn't fully responding to your rescue inhaler. While you can still speak in full sentences (a good sign), the fact that symptoms keep returning after each inhaler use and have persisted for 12 hours suggests your condition is not well-controlled with rescue medication alone. This pattern indicates you may need additional treatment like oral steroids or other controller medications. Your asthma history and current symptom pattern require professional evaluation to prevent worsening. The 2-hour distance to the hospital and transportation challenges complicate urgent care access, which is an important factor in your decision-making.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou're experiencing an asthma exacerbation that isn't fully responding to your rescue inhaler. The fact that symptoms return after each use\u2014despite being able to speak in full sentences\u2014suggests your airways aren't staying open. This pattern over 12 hours indicates your condition may be worsening or at risk of worsening. While you're not in severe distress right now, frequent rescue inhaler use (4 times in 12 hours) is a warning sign that you need medical evaluation soon. Your asthma history and current symptoms warrant prompt assessment to prevent progression to a more serious state.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou're experiencing an asthma exacerbation that isn't fully responding to your rescue inhaler. The fact that symptoms keep returning after treatment is concerning. While you can still speak in full sentences (a good sign), the pattern of repeated inhaler use over 12 hours suggests your asthma isn't controlled. This could worsen, potentially leading to severe breathing difficulty. Your distance from the hospital and transportation limitations add urgency\u2014waiting until symptoms become severe would be dangerous. You need medical evaluation now to determine if you need stronger treatment (oral steroids, nebulized medications, or observation) before your condition deteriorates further.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou're experiencing asthma symptoms that aren't fully responding to your rescue inhaler. While you can still speak in full sentences (a good sign), the fact that wheezing and chest tightness keep returning after inhaler use suggests your asthma isn't well-controlled right now. This pattern\u2014needing rescue medication repeatedly over 12 hours\u2014indicates a mild-to-moderate asthma exacerbation. The lack of fever and ability to speak full sentences mean this isn't immediately life-threatening, but it does need prompt medical evaluation. Your doctor needs to assess whether you need stronger treatment (like oral steroids) to prevent this from worsening. Given the distance to the ER and your transportation challenges, seeking care within 24 hours is important, but this isn't an immediate emergency requiring the ER right now.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": false
+    }
+  ],
+  "accuracy": 0.2,
+  "modal_answer": "C",
+  "num_trials": 10
+}

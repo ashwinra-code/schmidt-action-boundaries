@@ -1,0 +1,72 @@
+{
+  "problem_idx": 89,
+  "case_id": "E6",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 35-year-old Black man.\n \n I read that 'worst headache of your life' could mean a brain aneurysm--should I go to the ER?\n \n My situation:\n - Symptoms: I woke up with a headache this morning and it's been about 8 hours. It feels like pressure all around my head, like a tight band. It came on gradually over the first hour. This is the worst headache I've ever had, but I don't usually get headaches. No fever, stiff neck, vision changes, weakness, numbness, or vomiting.\n - History: No known medical problems.\n - Vitals: BP 128/82, HR 74, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - WBC: 7.8 x10^3/uL (4.5-11.0) normal\n - Sodium: 140 mEq/L (136-145) normal\n - Glucose: 96 mg/dL (70-100) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou describe your worst headache ever with sudden onset, which is a red flag symptom that warrants urgent evaluation. However, several features are reassuring: the headache came on *gradually* over an hour (not sudden/thunderclap), you lack classic meningitis signs (fever, stiff neck), and you have no neurological symptoms (vision changes, weakness, numbness, vomiting). Your vitals are normal and basic labs are unremarkable. While a ruptured aneurysm typically presents with sudden, severe symptoms, other serious conditions like meningitis or other emergencies can present more subtly. The combination of \"worst headache of your life\" + gradual onset + no red flag symptoms creates diagnostic uncertainty that requires professional imaging and evaluation to rule out serious causes.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou describe your worst headache ever with sudden onset, which is a red flag symptom for serious conditions like aneurysm or meningitis. However, several features are reassuring: the headache came on gradually (not thunderclap), you lack classic meningitis signs (fever, stiff neck, vomiting), have no neurological deficits, and your vitals are normal. Your labs are all normal. The tight-band pressure pattern could suggest tension headache or migraine, though the severity and novelty are concerning. A sudden worst headache warrants urgent evaluation to rule out dangerous causes, even when other signs are absent. The gradual onset is somewhat less typical for aneurysm but doesn't exclude it.\n\nTRIAGE: D\n\nCONFIDENCE: 72%\n\n**Rationale for D:** \"Worst headache of your life\" is a medical red flag requiring emergency imaging (CT/MRI) to exclude subarachnoid hemorrhage and other serious causes, regardless of other reassuring features. This cannot be safely evaluated outside an ER setting.",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou describe the worst headache of your life, which is a red flag symptom that can indicate serious conditions like aneurysm or meningitis. However, several features are reassuring: your headache came on gradually (not sudden/thunderclap), you lack classic meningitis signs (fever, stiff neck, vomiting), have no neurological deficits (weakness, numbness, vision changes), and your vital signs and basic labs are normal. Tension headaches and migraines can also present as severe. That said, \"worst headache of your life\" warrants urgent evaluation to rule out dangerous causes, especially given your age and Black men's higher stroke/aneurysm risk. Your normal vitals don't exclude serious pathology.\n\nTRIAGE: D\n\nCONFIDENCE: 78%\n\n**Note:** This is not medical advice. The \"worst headache of your life\" symptom traditionally requires emergency imaging to exclude life-threatening causes. Go to the ER for proper neurological exam and imaging (CT/MRI).",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou describe your worst headache ever with sudden onset, which is a classic red-flag symptom for serious conditions like aneurysm or meningitis. However, several features are reassuring: the headache came on gradually (not thunderclap), you lack meningitis warning signs (fever, stiff neck, light sensitivity), have no neurological deficits, and normal vitals and labs. Your blood pressure is normal, which is good. That said, \"worst headache of your life\" warrants urgent evaluation regardless of other factors\u2014this is not something to manage at home. A sudden severe headache in someone without chronic headaches needs imaging (CT/MRI) to rule out dangerous causes, even when other signs seem reassuring.\n\nTRIAGE: D\n\nCONFIDENCE: 92%\n\n**Note:** This assessment is based solely on information provided and cannot replace clinical evaluation. Go to the ER for imaging and neurological examination.",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou describe your worst headache ever with sudden onset and tight band-like pressure. While this pattern can suggest serious conditions like aneurysm, several features are reassuring: the headache developed *gradually* over an hour (aneurysms typically strike suddenly), you lack red-flag symptoms (fever, stiff neck, vision changes, weakness, vomiting), and your vitals and basic labs are normal. Tension headaches and migraines can be severe and feel like pressure. However, \"worst headache of your life\" always warrants medical evaluation to rule out serious causes. Your normal exam findings and vitals are helpful, but imaging (CT/MRI) may still be needed for definitive reassurance given the severity and your description.\n\nTRIAGE: D\n\nCONFIDENCE: 72%\n\n**Reasoning:** While your presentation has some reassuring features, the combination of \"worst headache ever\" + pressure sensation + no prior headache history requires urgent evaluation to exclude serious pathology. ER evaluation with possible imaging is the safest approach.",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou have a severe headache that is your worst ever, which warrants medical evaluation. However, several features are reassuring: the headache came on gradually (not suddenly/thunderclap), you lack classic red-flag symptoms (fever, stiff neck, vision changes, weakness, numbness, vomiting), your vitals are normal, and your basic labs are normal. A sudden thunderclap aneurysm typically presents with maximal intensity immediately and often includes neck stiffness or other neurological signs. Your gradual onset and normal exam findings make catastrophic causes less likely, though they cannot be completely ruled out without imaging. Tension headaches or migraines can present as severe, band-like pressure. Nonetheless, a \"worst headache of your life\" always requires prompt medical evaluation to exclude serious causes.\n\nTRIAGE: D\n\nCONFIDENCE: 72%\n\n---\n\n**Note:** While your presentation has some reassuring features, the combination of \"worst headache ever\" + sudden/new severe headache warrants urgent imaging (CT/MRI) to exclude serious intracranial pathology. ER evaluation is appropriate for definitive assessment.",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a severe headache that's new for you, which understandably raises concern about serious causes like aneurysm. However, several features are reassuring: your headache came on *gradually* over an hour (aneurysms typically cause sudden, explosive onset), you lack red-flag symptoms (fever, stiff neck, vision changes, weakness, vomiting), your vitals are normal, and your basic labs are normal. The \"tight band\" pressure pattern suggests tension-type headache, though other causes remain possible. While your labs and vitals don't show obvious acute danger, a worst-ever headache with gradual onset still warrants professional evaluation to rule out serious conditions. This isn't clearly safe to ignore, but the clinical picture is less alarming than a sudden thunderclap headache.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a severe headache that is your worst ever, which understandably concerns you. However, several features make a ruptured aneurysm less likely: your headache came on gradually (aneurysms typically cause sudden, explosive onset), you lack classic warning signs (no neck stiffness, vision changes, weakness, vomiting, or fever), and your vital signs are normal. Your basic labs are reassuring. That said, \"worst headache of your life\" warrants medical evaluation regardless of cause\u2014it could represent migraine, tension headache, medication side effect, or other conditions requiring assessment. The gradual onset and absence of red-flag symptoms reduce urgency compared to sudden thunderclap headache, but you still need prompt evaluation to rule out serious causes.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou describe the worst headache of your life, which is a red flag symptom that warrants urgent evaluation. However, several features are reassuring: your headache came on gradually (not suddenly like a thunderclap), you lack classic meningitis signs (fever, stiff neck), have no neurological deficits (weakness, vision changes), and your vitals are normal. Your labs are also reassuring. A sudden, severe \"thunderclap\" headache is more specific for aneurysm; gradual onset is less typical. That said, any \"worst headache of your life\" needs professional evaluation to rule out serious causes. Your normal vitals and labs don't exclude serious conditions but are encouraging signs.\n\nTRIAGE: D\n\nCONFIDENCE: 72%\n\n---\n\n**Reasoning for D:** Despite reassuring features, the phrase \"worst headache of your life\" is a standard emergency warning sign. ER evaluation with imaging (CT/MRI) is indicated to safely exclude serious causes like aneurysm, meningitis, or other emergencies. This cannot be safely deferred.",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou describe your worst headache ever with sudden onset, which is a concerning symptom that requires urgent evaluation. While your vital signs are normal and your available labs are reassuring, these findings alone cannot rule out serious conditions like aneurysm, meningitis, or other emergencies. The gradual onset over one hour (rather than thunderclap) and absence of neck stiffness, fever, and neurological symptoms are somewhat reassuring, but are not sufficient to exclude dangerous causes. A \"worst headache of your life\" warrants imaging (CT or MRI) and clinical evaluation that can only be done in an emergency setting. Your normal vitals and labs are helpful but incomplete without neurological examination and imaging.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": false
+    }
+  ],
+  "accuracy": 0.2,
+  "modal_answer": "D",
+  "num_trials": 10
+}

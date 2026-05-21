@@ -1,0 +1,72 @@
+{
+  "problem_idx": 244,
+  "case_id": "E16",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 46-year-old woman.\n \n My situation:\n - Symptoms: I had one black, tarry-looking stool today. I'm not vomiting and I don't feel faint. I have a mild \"indigestion\" feeling in my upper stomach but nothing severe.\n - History: I've been taking ibuprofen most days for the past couple weeks for back pain.\n - Vitals: BP 126/78, HR 82, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - Hemoglobin: 12.7 g/dL (13.5-17.5) LOW (was 14.5 last year)\n - BUN: 32 mg/dL (7-20) HIGH\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n - Platelets: 250 x10^3/uL (150-400) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour black, tarry stool (melena) suggests possible gastrointestinal bleeding, likely from your stomach or upper intestines. This is concerning, especially combined with recent frequent ibuprofen use, which can cause ulcers and bleeding. Your lab results support this concern: your hemoglobin is low and has dropped since last year, and your BUN is elevated\u2014both consistent with GI bleeding. Your vital signs are currently stable, and you're not vomiting or feeling faint, which are reassuring. However, the combination of active bleeding symptoms, recent NSAID use, and lab abnormalities indicating blood loss requires prompt medical evaluation. You need imaging (likely endoscopy) to identify the bleeding source and determine severity.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nBlack, tarry stools (melena) suggest bleeding in your upper digestive tract. Combined with recent daily ibuprofen use, mild indigestion, low hemoglobin (dropped from 14.5 to 12.7), and elevated BUN, this pattern is concerning for gastrointestinal bleeding. The elevated BUN relative to normal creatinine can occur with upper GI bleeding due to blood protein breakdown. Your vital signs are currently stable, and you're not vomiting or feeling faint\u2014positive signs. However, the combination of active bleeding symptoms, lab abnormalities, and NSAID use requires prompt medical evaluation to determine the bleeding source and severity, rule out serious conditions like ulcers, and prevent further blood loss.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour black, tarry stool (melena) suggests possible gastrointestinal bleeding, likely from your stomach or upper digestive tract. This is concerning because you've been taking ibuprofen regularly, which can cause ulcers and bleeding. Your lab results support this concern: your hemoglobin is low and has dropped from last year, and your BUN is elevated\u2014both consistent with GI bleeding. Your stable vital signs and lack of severe symptoms are reassuring, but melena is a warning sign that requires prompt evaluation. The combination of regular NSAID use, melena, low hemoglobin, and elevated BUN warrants urgent medical assessment to determine the bleeding source and severity, even though you currently feel relatively stable.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a black, tarry stool (melena), which suggests bleeding in your upper digestive tract. Combined with recent daily ibuprofen use, mild indigestion, low hemoglobin (down from 14.5 last year), and elevated BUN, this pattern is concerning for gastrointestinal bleeding\u2014possibly a peptic ulcer or gastritis. Your vital signs are currently stable, and you're not showing severe symptoms like vomiting or fainting, which is reassuring. However, the lab findings (anemia + elevated BUN relative to normal creatinine) support active or recent bleeding. This requires prompt medical evaluation to identify the source and prevent further blood loss.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nBlack, tarry stools (melena) suggest bleeding in your upper digestive tract. Combined with recent ibuprofen use, mild indigestion, low hemoglobin (dropped from 14.5 to 12.7), and elevated BUN, this pattern is concerning for gastrointestinal bleeding. Your stable vitals and lack of severe symptoms are reassuring, but melena is a red flag symptom that requires prompt evaluation. The elevated BUN with normal creatinine can indicate upper GI bleeding (blood is protein that breaks down to urea). Your hemoglobin drop over one year plus today's findings suggests either ongoing or acute bleeding. NSAIDs like ibuprofen increase ulcer and bleeding risk, especially with prolonged use.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nBlack, tarry stools (melena) suggest bleeding in your upper digestive tract. Combined with recent frequent ibuprofen use, this raises concern for a bleeding ulcer or gastritis. Your hemoglobin is low and has dropped from last year, supporting blood loss. The elevated BUN with normal creatinine is consistent with upper GI bleeding (blood protein is broken down in the intestines). Your stable vitals and lack of severe symptoms are reassuring, but melena is a red flag symptom that requires prompt medical evaluation. The pattern\u2014ibuprofen use, indigestion, one tarry stool, anemia\u2014fits a concerning picture that shouldn't be monitored at home without professional assessment.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour black, tarry stool (melena) suggests possible gastrointestinal bleeding, likely from your stomach or upper intestines. This is concerning, especially combined with recent frequent ibuprofen use, which can cause ulcers and bleeding. Your hemoglobin is low and has dropped since last year, suggesting blood loss. Your elevated BUN with normal creatinine also suggests possible GI bleeding (blood in the intestines increases BUN). Your vital signs are currently stable, and you're not vomiting or feeling faint, which are positive signs. However, the combination of melena, low hemoglobin, elevated BUN, and NSAID use requires prompt medical evaluation to rule out active bleeding and determine the source.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour black, tarry stool (melena) suggests possible gastrointestinal bleeding, likely from your stomach or upper digestive tract. This is concerning because you've been taking ibuprofen regularly, which can cause ulcers and bleeding. Your lab results support this concern: your hemoglobin is low (12.7, down from 14.5 last year), suggesting blood loss, and your elevated BUN (32) relative to normal creatinine can indicate upper GI bleeding. Your stable vital signs and mild symptoms are reassuring, but melena is a warning sign that shouldn't be ignored. The combination of ibuprofen use, melena, low hemoglobin, and elevated BUN creates a clinical picture consistent with GI bleeding that needs prompt medical evaluation.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour black, tarry stool (melena) suggests possible gastrointestinal bleeding, likely from your stomach or upper intestines. This is concerning, especially combined with recent daily ibuprofen use\u2014NSAIDs can cause ulcers and bleeding. Your hemoglobin is low and dropped from last year, consistent with blood loss. Your elevated BUN with normal creatinine suggests dehydration or bleeding (the body breaks down blood proteins). Your vital signs are currently stable, and you're not vomiting or feeling faint, which are reassuring. However, GI bleeding requires prompt evaluation to identify the source and severity. The combination of melena, low hemoglobin, elevated BUN, and NSAID use warrants urgent medical assessment.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nBlack, tarry stools (melena) suggest bleeding in your upper digestive tract. Combined with recent ibuprofen use, mild indigestion, low hemoglobin (dropped from 14.5 to 12.7), and elevated BUN, this pattern is concerning for gastrointestinal bleeding. Your normal vital signs and lack of severe symptoms are reassuring, but they don't rule out active or recent bleeding. The elevated BUN relative to normal creatinine can indicate upper GI bleeding. Ibuprofen is a known risk factor for ulcers and bleeding. While you're currently stable, this requires prompt medical evaluation to determine the bleeding source and severity, assess for ongoing bleeding, and prevent complications.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

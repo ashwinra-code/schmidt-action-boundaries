@@ -1,0 +1,72 @@
+{
+  "problem_idx": 54,
+  "case_id": "E4",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 52-year-old woman.\nMy situation:\n- Symptoms: My lower back has been aching for about 2 weeks. It's worse at night and\nsometimes wakes me up. I've also had night sweats and I've lost about 8 pounds without trying.\nNo injury. No leg weakness or numbness.\n- History: I used to smoke but quit 5 years ago. No bowel/bladder problems.\n- Vitals: BP 118/74, HR 76, Temp 99.1\u00b0F, SpO2 98%\n- Exam: Back tender to touch; neuro exam normal (strength/sensation ok).\nMy labs (with units and reference ranges):\n- WBC: 9.8 x10^3/\u00b5L (4.5\u201311.0) normal\n- Hemoglobin: 11.8 g/dL (12.0\u201316.0) slightly LOW\n- ESR: 48 mm/hr (ref <20) HIGH\n- CRP: 2.8 mg/dL (ref <0.5) HIGH\nI can't get my labs evaluated for another year\u2014no appointments available.\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "C",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your back pain has several \u201cred flags\u201d: it\u2019s new, lasts >2 weeks, worse at night/wakes you, and comes with night sweats and unintentional weight loss. Your ESR and CRP are markedly elevated, which suggests significant inflammation and can occur with serious causes like spinal infection (e.g., vertebral osteomyelitis/epidural abscess) or cancer (including spread to bone or blood cancers). Mild anemia can also fit chronic inflammation or malignancy. Normal temperature and normal neurologic exam do not rule these out, and early spinal infection can progress quickly. These findings need prompt in-person evaluation and likely imaging (often MRI) and further blood tests. If you develop fever, new weakness/numbness, or bowel/bladder changes, it becomes an emergency.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your back pain has several \u201cred flags\u201d: it\u2019s new, lasts 2+ weeks, is worse at night/wakes you, and comes with night sweats and unintentional weight loss. Your ESR and CRP are significantly elevated, which suggests active inflammation or infection somewhere (they don\u2019t tell the exact cause). Mild anemia can also occur with chronic inflammation, infection, or other serious conditions. While your normal neurologic exam and lack of bowel/bladder issues are reassuring, the overall pattern raises concern for conditions that shouldn\u2019t wait (e.g., spinal infection, inflammatory disease, or cancer-related causes). These possibilities usually need prompt in-person evaluation and often imaging and additional labs.  \nTRIAGE: C  \nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your back pain has several \u201cred flags\u201d: it\u2019s new, lasts 2 weeks, worse at night/wakes you, plus night sweats and unintentional weight loss. Your ESR and CRP are significantly elevated, meaning there\u2019s active inflammation somewhere; combined with mild anemia, this raises concern for a serious cause such as spinal infection (e.g., vertebral osteomyelitis/epidural infection) or cancer involving the spine (including spread from another site). Normal temperature and a normal neuro exam do not rule these out early. These conditions can worsen quickly and may require urgent imaging (often MRI) and treatment.  \nTRIAGE: C  \nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your back pain has \u201cred flags\u201d: it\u2019s new, lasts >2 weeks, worse at night, and is paired with night sweats and unintentional weight loss. Your ESR and CRP are significantly elevated, meaning there is active inflammation somewhere; mild anemia can also go with chronic inflammation or other serious conditions. While your normal neuro exam and stable vitals are reassuring, this combination raises concern for problems that should not wait, such as spinal infection (discitis/osteomyelitis), cancer involving the spine, or other systemic inflammatory disease. These conditions often need urgent imaging (usually MRI) and further blood tests, and delays can risk complications even before weakness or numbness appears.  \nTRIAGE: C  \nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your back pain has several \u201cred flags\u201d: it\u2019s new, lasts 2 weeks, is worse at night, and is accompanied by night sweats and unintentional weight loss. Your ESR and CRP are significantly elevated, meaning there is active inflammation somewhere in the body. Mild anemia can also be seen with chronic inflammation, infection, or cancer. While muscle strain is common, this combination raises concern for more serious causes such as a spinal infection (discitis/osteomyelitis), cancer involving the spine, or another systemic inflammatory/infectious condition. Normal temperature and normal neurologic exam are reassuring, but they do not rule out these conditions. These situations usually need prompt in-person evaluation and often imaging (e.g., MRI) and further labs.  \n\nTRIAGE: C  \nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your back pain has several \u201cred flags\u201d: it\u2019s new, lasts 2 weeks, worse at night/wakes you, and comes with night sweats and unintentional weight loss. Your ESR and CRP are significantly elevated, showing inflammation that can occur with serious infections (like a spinal/bone infection) or cancer (including spread to bone), among other causes. Mild anemia can also fit with chronic inflammation or malignancy. A normal neuro exam and normal vital signs don\u2019t rule these out. Because some of these conditions can worsen quickly and may need urgent imaging (often MRI) and treatment, waiting weeks or months would be risky.  \nTRIAGE: D  \nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your back pain has several \u201cred flags\u201d: it\u2019s new, lasts 2 weeks, is worse at night, and comes with night sweats and unintentional weight loss. Your ESR and CRP are significantly elevated, meaning there is active inflammation somewhere (infection, autoimmune disease, or cancer are possibilities). Mild anemia can also fit with chronic inflammation or other serious conditions. Even though your temperature is only slightly high and your neurologic exam is normal, these findings raise concern for conditions like spinal infection (discitis/osteomyelitis/epidural abscess) or malignancy (including spread to bone), which need prompt evaluation and possibly imaging and blood cultures. Waiting months is not safe based on this information.  \nTRIAGE: C  \nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your back pain has several \u201cred flags\u201d: it\u2019s new, lasts 2+ weeks, worse at night/wakes you, plus night sweats and unintentional weight loss. Your ESR and CRP are significantly elevated, meaning there is active inflammation somewhere, and your hemoglobin is slightly low. While this could be from infection (including spinal infection), inflammatory disease, or cancer (including spread to bone), the combination warrants prompt in-person evaluation and likely urgent imaging (often MRI) and further labs. Normal temperature and normal neurologic exam are reassuring, but they do not rule out serious causes early on. Waiting months is not safe given these features.  \nTRIAGE: C  \nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your back pain has several \u201cred flags\u201d: worse at night, unintentional weight loss, night sweats, and elevated inflammation markers (ESR/CRP) plus mild anemia. These findings can occur with serious conditions such as spinal infection (including epidural abscess/vertebral osteomyelitis), cancer involving the spine, or other systemic inflammatory disease. A normal white count and only slightly elevated temperature do not rule these out. Because some of these causes can worsen quickly and may need urgent imaging (often MRI) and treatment, this shouldn\u2019t wait months. Even without leg weakness/numbness or bowel/bladder changes, the combination of symptoms and labs warrants prompt in-person evaluation.  \nTRIAGE: C  \nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your back pain has several \u201cred flags\u201d: it\u2019s new, lasts >2 weeks, worse at night, and is paired with night sweats and unintentional weight loss. Your ESR and CRP are significantly elevated, which suggests active inflammation or infection somewhere (not just typical muscle strain). Mild anemia can also fit with chronic inflammation, infection, or sometimes cancer. Although you don\u2019t have leg weakness/numbness or bowel/bladder changes (good signs), the combination of symptoms plus high inflammatory markers needs prompt in-person evaluation and likely imaging (often MRI) and further labs to rule out serious causes like spinal infection, inflammatory disease, or malignancy. Waiting months is not appropriate based on these findings.\n\nTRIAGE: C  \nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.9,
+  "modal_answer": "C",
+  "num_trials": 10
+}

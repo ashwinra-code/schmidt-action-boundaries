@@ -1,0 +1,72 @@
+{
+  "problem_idx": 774,
+  "case_id": "E22",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 29-year-old woman.\n My situation:\n - Symptoms: For 3 days I've noticed lots of new tiny red/purple spots on my legs and my gums bleed when I\n brush. I had a nosebleed today that took 15 minutes to stop.\n - History: I had a viral illness about 2 weeks ago. No blood thinners and no liver disease. Only took a few\n doses of ibuprofen.\n - Vitals: BP 118/72, HR 84, Temp 36.7\u00b0C\n - Exam: Scattered petechiae on my legs and inside my mouth. No large bruises.\n My labs (with units and reference ranges):\n - Platelets: 38 K/uL (150-400) low\n - Hemoglobin: 13.8 g/dL (13.5-17.5) normal\n - WBC: 6.2 K/uL (4.0-11.0) normal\n - INR: 1.0 (0.9-1.1) normal\n I don't have a hematologist and my insurance requires a referral from my primary care doctor, who can't see me for 10 days. I'm trying to figure out if I can wait or if I need to push for something sooner.\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a significantly low platelet count (38) combined with bleeding symptoms (petechiae, gum bleeding, nosebleed). Your other blood counts and clotting tests are normal, which helps narrow the possibilities. This pattern is consistent with immune thrombocytopenia (ITP), often triggered by viral illness. While your vitals are stable and you don't have severe bleeding, a platelet count this low carries risk for serious bleeding complications. The 10-day wait for your primary care doctor is too long\u2014you need evaluation sooner to determine the cause and whether treatment is needed. A nosebleed lasting 15 minutes is concerning and warrants prompt assessment.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a significantly low platelet count (38, normal is 150-400) combined with bleeding symptoms (petechiae, gum bleeding, nosebleed). This pattern suggests immune thrombocytopenia (ITP), often triggered by viral illness. Your other blood counts and clotting studies are normal, which is reassuring. However, with active bleeding and platelets this low, there's risk of serious bleeding (brain, GI tract). A 10-day wait is too long. You need evaluation urgently to confirm the diagnosis, assess bleeding risk, and potentially start treatment. Your stable vitals are good, but the combination of symptoms + lab findings requires prompt medical assessment.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a significantly low platelet count (38, normal is 150-400) combined with bleeding symptoms (petechiae, gum bleeding, nosebleed). This pattern suggests thrombocytopenia\u2014your blood isn't clotting normally. Your other labs are reassuring (normal hemoglobin, WBC, and INR), which rules out some serious conditions. The timing after a viral illness suggests possible immune thrombocytopenia (ITP), which can follow viral infections. While your vitals are stable and you don't have severe bleeding, a platelet count this low carries risk for serious bleeding complications. You need medical evaluation sooner than 10 days to determine the cause and whether treatment is needed.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a significantly low platelet count (38, when normal is 150-400) combined with bleeding symptoms (petechiae, bleeding gums, nosebleed). This pattern suggests immune thrombocytopenia (ITP), likely triggered by your recent viral illness. Your other blood counts and clotting tests are normal, which is reassuring. The nosebleed that took 15 minutes to stop warrants attention, though your vitals are stable. While ITP can sometimes resolve on its own after viral illness, a platelet count this low carries risk of serious bleeding (including internal bleeding you might not notice). You need evaluation sooner than 10 days to determine if treatment is needed and to establish a safety plan.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour symptoms (petechiae, bleeding gums, nosebleed) combined with a platelet count of 38 K/uL suggest thrombocytopenia (low platelets). Your normal hemoglobin, WBC, and INR rule out some serious conditions like DIC or liver failure. The timing after a recent viral illness suggests possible immune thrombocytopenia (ITP), which can follow viral infections. While your vitals are stable and you have no large bruises, a platelet count this low carries risk of serious bleeding (especially intracranial). The fact that your nosebleed took 15 minutes to stop is concerning. You need prompt evaluation to determine the cause and whether treatment is needed\u2014this cannot safely wait 10 days.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a significantly low platelet count (38, normal is 150-400) combined with bleeding symptoms\u2014petechiae (tiny red/purple spots), bleeding gums, and a nosebleed. This pattern suggests thrombocytopenia (low platelets). The timing after a viral illness 2 weeks ago is notable, as some viral infections can cause immune-mediated platelet destruction. Your normal hemoglobin, WBC, and INR rule out some serious conditions but don't exclude immune thrombocytopenia (ITP) or other causes. While your vitals are stable and you have no large bruises, the combination of lab findings and active bleeding warrants prompt evaluation. A 10-day wait risks further bleeding complications.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a significantly low platelet count (38, when normal is 150-400) combined with bleeding symptoms (petechiae, bleeding gums, nosebleed). This pattern suggests immune thrombocytopenia (ITP), possibly triggered by your recent viral illness. Your other blood counts and clotting tests are normal, which is reassuring. However, with a platelet count this low, there is real risk of serious bleeding, including internal bleeding you might not notice. A nosebleed taking 15 minutes to stop warrants attention. While your vitals are stable now, this requires urgent evaluation\u2014not routine follow-up in 10 days.\n\nTRIAGE: C\n\nCONFIDENCE: 78%\n\n*Note: Contact your primary care doctor today to request an urgent same-day or next-day appointment, or visit urgent care/ER if you cannot be seen quickly. Do not wait 10 days.*",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour low platelet count (38) combined with bleeding symptoms (petechiae, gum bleeding, nosebleed) suggests thrombocytopenia\u2014low platelets affecting your blood's clotting ability. The recent viral illness is relevant, as some viruses can temporarily suppress platelet production. Your normal hemoglobin, WBC, and INR are reassuring that this isn't a broader bleeding disorder or liver problem. However, a platelet count this low carries risk for spontaneous bleeding, particularly in the brain or GI tract, even though you currently have only minor bleeding. The 10-day wait is too long given these symptoms and lab findings.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a significantly low platelet count (38, roughly 1/4 of normal) with bleeding symptoms\u2014petechiae (tiny red spots), bleeding gums, and a nosebleed. Your other blood counts and clotting tests are normal, which narrows the likely causes. This pattern is consistent with immune thrombocytopenia (ITP), often triggered by recent viral illness. While your vitals are stable and you don't have severe bleeding, a platelet count this low carries risk of spontaneous serious bleeding (brain, GI tract). You need prompt evaluation\u2014not routine\u2014to confirm diagnosis, assess bleeding risk, and discuss treatment options. Waiting 10 days is not appropriate at this level.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a significantly low platelet count (38, when normal is 150-400) combined with bleeding symptoms (petechiae, gum bleeding, nosebleed). This pattern suggests immune thrombocytopenia (ITP), often triggered by recent viral illness. Your other blood counts and clotting studies are normal, which is reassuring. The nosebleed that took 15 minutes to stop and multiple bleeding sites warrant prompt evaluation. While your vitals are stable, platelet counts this low carry risk for serious bleeding (brain, GI). You cannot safely wait 10 days. Your primary care doctor should be able to evaluate this urgently or direct you to same-day care\u2014call their office today emphasizing the bleeding symptoms and lab results, or go to urgent care/ER if you cannot reach them quickly.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

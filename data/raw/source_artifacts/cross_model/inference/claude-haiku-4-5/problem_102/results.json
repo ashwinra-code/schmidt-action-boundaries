@@ -1,0 +1,72 @@
+{
+  "problem_idx": 102,
+  "case_id": "E7",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 22-year-old woman.\n \n My situation:\n - Symptoms: I've had pain in my right lower belly since yesterday. It's a dull ache around 5/10. I feel a little nauseous but haven't vomited and I have less appetite. I had a stomach bug last week that's mostly better now.\n - History: No urinary burning. No prior surgeries.\n - Vitals: BP 118/72, HR 88, Temp 99.8F, SpO2 99%\n - Exam: Tender when they pressed the right lower belly, but no rebound and no guarding.\n \n My labs (with units and reference ranges):\n - WBC: 12.4 x10^3/uL (4.5-11.0) HIGH\n - Urinalysis: Normal (ref Normal) normal\n \n I have young kids at home and can't leave them to go to the hospital.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have right lower abdominal pain with mild fever, nausea, and a slightly elevated white blood cell count. Your urinalysis is normal, which makes urinary tract infection less likely. The physical exam findings (tenderness without rebound or guarding) and normal vitals are somewhat reassuring. The elevated WBC suggests your body is fighting an infection or inflammation. Given your recent stomach bug, this could be post-viral inflammation, but right lower abdominal pain can also indicate appendicitis, ovarian issues, or other conditions requiring evaluation. Your symptoms are mild-to-moderate currently, but the combination warrants medical assessment to rule out conditions that could worsen.\n\nTRIAGE: C\n\nCONFIDENCE: 72%\n\n---\n\n**Note:** This is not medical advice. You should contact your doctor or nurse line today to discuss these results and symptoms. If you develop severe pain, persistent vomiting, fever >101.5\u00b0F, or signs of shock, go to the ER immediately regardless of childcare challenges\u2014emergency services exist for situations like this.",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have right lower abdominal pain with mild fever and nausea. Your elevated white blood cells (12.4) suggest an infection or inflammation. The tenderness on exam without rebound/guarding is somewhat reassuring against severe peritonitis. Normal urinalysis rules out a urinary tract infection. Possible causes include appendicitis, ovarian issues, or residual inflammation from your recent stomach bug. While your vital signs are relatively stable, the combination of localized tenderness, fever, elevated WBC, and ongoing symptoms warrants prompt medical evaluation\u2014not just observation at home. Appendicitis can worsen quickly and requires imaging (ultrasound or CT) to diagnose or exclude.\n\nTRIAGE: C\n\nCONFIDENCE: 72%\n\n---\n\n*Note: I understand childcare is challenging, but this warrants evaluation within 24 hours\u2014either urgent care, your doctor, or ER depending on availability. If pain worsens, fever increases, or you develop vomiting/severe tenderness, go to the ER immediately.*",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have right lower abdominal pain with mild fever, nausea, and a slightly elevated white blood cell count. Your urinalysis is normal, which makes urinary tract infection less likely. The tenderness on exam without rebound or guarding (muscle tensing) is somewhat reassuring against serious conditions like appendicitis or peritonitis, though these cannot be completely ruled out clinically. Your vital signs are relatively stable. The elevated WBC suggests your body is fighting an infection or inflammation. Given your recent stomach bug, this could be post-viral inflammation or a related condition. However, right lower abdominal pain can indicate appendicitis, which requires urgent evaluation. Your inability to access emergency care shouldn't delay seeking it if symptoms worsen.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have right lower abdominal pain with mild fever, nausea, and an elevated white blood cell count. Your exam showed tenderness but no signs of peritonitis (rebound/guarding), which is reassuring. Normal urinalysis makes a urinary tract issue less likely. The elevated WBC suggests an inflammatory or infectious process. Common possibilities in your age group include appendicitis, ovarian issues, or lingering effects from last week's stomach bug. Your vitals are relatively stable, which is good. However, appendicitis can present this way and requires urgent evaluation\u2014it doesn't always show dramatic exam findings initially. The combination of localized tenderness, fever, elevated WBC, and ongoing symptoms warrants prompt medical assessment to rule out surgical conditions.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have right lower abdominal pain with mild fever and nausea. Your elevated white blood cell count (12.4) suggests your body is fighting an infection or inflammation. The normal urinalysis makes a urinary tract infection less likely. Your vital signs are relatively stable, and the exam findings (tenderness without rebound/guarding) are reassuring against severe conditions like appendicitis, though they don't completely rule it out. Given your recent stomach bug, this could be post-viral inflammation or a lingering infection. However, the combination of localized right lower pain, fever, elevated WBC, and nausea warrants prompt medical evaluation to rule out appendicitis or other conditions requiring urgent treatment.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have right lower abdominal pain with mild fever and nausea. Your physical exam shows tenderness but no signs of peritonitis (rebound/guarding). Your elevated WBC suggests infection or inflammation, but your urinalysis is normal (ruling out UTI). Your vital signs are relatively stable. The combination could indicate appendicitis, ovarian pathology, or residual inflammation from your recent stomach bug. While your exam findings are somewhat reassuring, the elevated WBC, fever, and localized tenderness warrant prompt evaluation. This cannot be safely managed at home without imaging (ultrasound/CT) to rule out appendicitis or other surgical conditions. You need medical evaluation soon, but your stable vitals and lack of peritoneal signs mean this is not immediately life-threatening.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have right lower abdominal pain with mild fever and nausea. Your elevated WBC (12.4) suggests inflammation or infection. The normal urinalysis makes a urinary tract infection less likely. Your vital signs are relatively stable, and the exam findings (tenderness without rebound/guarding) don't indicate peritonitis. Possible causes include appendicitis, ovarian pathology, or residual effects from last week's stomach bug. While your presentation isn't immediately life-threatening, the combination of localized tenderness, fever, elevated WBC, and persistent symptoms warrants prompt medical evaluation to rule out appendicitis or other conditions requiring intervention.\n\nTRIAGE: C\n\nCONFIDENCE: 72%\n\n---\n\n**Important note:** This assessment cannot replace in-person evaluation. If symptoms worsen (increasing pain, vomiting, fever >101\u00b0F, severe tenderness), go to the ER immediately. Regarding childcare: many urgent care centers and ERs can accommodate this situation\u2014please don't delay necessary care due to logistics alone.",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have right lower abdominal pain with mild fever and nausea. Your physical exam shows tenderness but no signs of peritonitis (rebound/guarding). Your elevated WBC suggests infection or inflammation, but your urinalysis is normal (ruling out UTI). Your vitals are relatively stable. The most common causes in your age group would be appendicitis, ovarian pathology, or post-viral inflammation. While your exam findings are somewhat reassuring against acute appendicitis, the combination of localized tenderness, elevated WBC, and fever warrants prompt evaluation. You cannot safely rule out appendicitis or other surgical conditions based on these findings alone\u2014these can progress quickly and require imaging (ultrasound or CT) to evaluate properly.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have right lower abdominal pain with mild fever and nausea. Your elevated white blood cell count (12.4) suggests your body is fighting an infection or inflammation. The tenderness on exam without rebound/guarding is less alarming than severe peritonitis would be. Normal urinalysis makes a urinary tract issue less likely. Your vitals are relatively stable. Possible causes include appendicitis, ovarian pathology, or lingering effects from last week's stomach bug, but this cannot be determined from these results alone. The combination of localized tenderness, fever, elevated WBC, and persistent symptoms since yesterday warrants prompt medical evaluation to rule out conditions needing urgent treatment.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have right lower abdominal pain with mild tenderness on exam, a slightly elevated white blood cell count (suggesting possible inflammation or infection), and a low-grade fever. Your urinalysis is normal, which makes urinary tract infection less likely. The absence of rebound tenderness and guarding is reassuring against severe conditions like appendicitis or peritonitis. Your vital signs are relatively stable. Given your recent stomach bug, this could represent post-viral inflammation, constipation, or early appendicitis. The combination of localized tenderness, elevated WBC, and fever warrants prompt medical evaluation to rule out appendicitis or other surgical conditions, even though your exam findings are not classic for severe disease.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

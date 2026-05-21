@@ -1,0 +1,72 @@
+{
+  "problem_idx": 771,
+  "case_id": "E22",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 29-year-old man.\n My doctor said platelet counts can fluctuate a lot after viral infections and to just recheck in a few weeks. Since I feel okay otherwise, I figured I'd wait.\n My situation:\n - Symptoms: For 3 days I've noticed lots of new tiny red/purple spots on my legs and my gums bleed when I\n brush. I had a nosebleed today that took 15 minutes to stop.\n - History: I had a viral illness about 2 weeks ago. No blood thinners and no liver disease. Only took a few\n doses of ibuprofen.\n - Vitals: BP 118/72, HR 84, Temp 36.7\u00b0C\n - Exam: Scattered petechiae on my legs and inside my mouth. No large bruises.\n My labs (with units and reference ranges):\n - Platelets: 38 K/uL (150-400) low\n - Hemoglobin: 13.8 g/dL (13.5-17.5) normal\n - WBC: 6.2 K/uL (4.0-11.0) normal\n - INR: 1.0 (0.9-1.1) normal\n I don't have a hematologist and my insurance requires a referral from my primary care doctor, who can't see me for 10 days. I'm trying to figure out if I can wait or if I need to push for something sooner.\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (38 K/uL; normal 150\u2013400) is markedly low. The new petechiae (tiny red/purple spots) plus gum bleeding and a prolonged nosebleed are signs that the low platelets are causing real bleeding risk. A viral illness a couple weeks ago can trigger immune-related platelet loss, which fits your history, but other causes exist and should be checked. Hemoglobin and other labs look okay now, and you\u2019re not in shock, but ongoing mucosal bleeding with platelets under 50 K/uL is worrisome and usually requires prompt evaluation and possible treatment. Avoid NSAIDs/aspirin and heavy activity until seen. Seek urgent care sooner if bleeding worsens, you faint, have shortness of breath, severe headache, vomiting blood, or pass black/tarry stools.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (38 K/uL) is well below the normal range and the new petechiae plus gum bleeding and a 15\u2011minute nosebleed are signs that the low platelets are causing bleeding from mucous membranes/skin. Hemoglobin and vitals being normal is reassuring that you haven\u2019t had major blood loss yet. Viral illnesses commonly trigger immune platelet drops, and ibuprofen can worsen bleeding. Because you are actively bleeding and your count is under ~50 K/uL, this is not something to ignore for weeks\u2014prompt evaluation is needed to confirm the cause and consider treatment. If bleeding worsens, you feel faint, dizzy, very weak, or cannot control a nosebleed, seek emergency care immediately.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count of 38 K/uL is low and the new petechiae, gum bleeding, and a nosebleed that took 15 minutes to stop indicate active bleeding from low platelets. This pattern commonly follows viral infections and can be immune-related, but it does raise real bleeding risk. You are hemodynamically stable and hemoglobin is normal, so this is not an immediate life\u2011threat, but it is not harmless either. You need a prompt repeat blood count and evaluation (possible peripheral smear, and discussion of treatment like steroids/IVIG if platelets fall or bleeding worsens). Avoid NSAIDs/aspirin and contact a clinician sooner rather than waiting 10 days. Go to the ER only if heavy bleeding, fainting, very rapid pulse, shortness of breath, black/tarry stools, or blood in urine.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (38 K/uL) is well below the normal range and explains the new petechiae, gum bleeding, and a nosebleed that took a long time to stop. Low platelets after a viral illness commonly reflect immune-related platelet destruction (post-viral thrombocytopenia/ITP), which can improve on its own, but mucosal bleeding indicates clinically significant bleeding risk. Because you are otherwise stable (normal vitals, no large bruises, no other abnormal labs), this is not an immediate life\u2011threat in most cases, but it does need prompt medical evaluation to confirm the cause and consider treatment to raise platelets and control bleeding. Until seen, avoid NSAIDs/aspirin, heavy exertion, and procedures that can cause bleeding.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (38 K/uL) is well below normal and matches your new petechiae and mucosal bleeding (gums, prolonged nosebleed). Normal hemoglobin, white count, and INR make a bleeding-clotting factor problem less likely and point to isolated low platelets \u2014 commonly seen after viral illnesses. This level raises a real risk of more or worse bleeding even though you feel okay now. You should stop NSAIDs (ibuprofen) and avoid aspirin/alcohol and trauma to reduce bleeding risk until evaluated.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (38 K/uL) is low and matches your new tiny red spots (petechiae) and mucosal bleeding (gums, prolonged nosebleed). After a viral illness this can be immune-related and sometimes improves, but mucosal bleeding and a count under ~50 K/uL raise real risk of more or worse bleeding. You should avoid NSAIDs/aspirin, be gentle with brushing, and avoid activities that could cause injury. You need prompt medical assessment (repeat CBC, exam, and discussion of treatment if bleeding or counts fall). Go to the ER right away if you develop heavy or uncontrolled bleeding, fainting, blood in stool/urine, severe headache, or neurologic symptoms.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count of 38 K/uL is well below normal and, together with new petechiae, gum bleeding, and a nosebleed that took 15 minutes to stop, shows you are having significant bleeding risk. A common cause after a viral illness is immune-mediated platelet loss (post-viral ITP), but other causes exist and need to be excluded. Because you have active mucosal bleeding (not just lab abnormality) you should not wait weeks for routine follow-up. You may need prompt tests and treatment (steroids or other therapies) to stop bleeding and raise platelets. Seek medical evaluation soon and go to the ER immediately if bleeding becomes heavy, you feel faint, short of breath, or have blood in stool/urine or severe bruising.\n\nTRIAGE: C\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (38 K/uL) is markedly low and explains the new petechiae and mouth/nose bleeding. Normal hemoglobin and INR mean you aren\u2019t currently anemic and your clotting factors look normal, which points toward a platelet problem (often post\u2011viral immune thrombocytopenia). Because you already have mucosal bleeding (gums, a nosebleed that took a long time), this is not just a mild lab finding \u2014 it can worsen and occasionally requires urgent treatment to stop bleeding or raise the platelet count. Avoid NSAIDs/aspirin, watch for heavier bleeding, blood in stool/urine, fainting, severe headache, or neurologic changes.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count of 38 K/\u00b5L is well below normal and increases bleeding risk. The new petechiae, bleeding gums when brushing, and a nosebleed that took 15 minutes indicate your low platelets are already causing mucosal bleeding. After a recent viral illness this can be immune-related thrombocytopenia, which often needs prompt evaluation to confirm the cause and decide on treatment. You should have repeat labs, a peripheral blood smear review, and a clinician assessment soon because treatments (for example steroids or other therapies) may be needed to stop or prevent more serious bleeding. If bleeding becomes heavy, you feel faint, have trouble breathing, or pass black/tarry or bloody stools or urine, seek emergency care right away.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (38 K/uL) is well below normal and explains the new petechiae, gum bleeding, and a nosebleed that took 15 minutes to stop. Viral illnesses can cause temporary drops in platelets, but active mucosal bleeding with platelets under ~50 K/uL is concerning because it can progress. Other labs shown (hemoglobin, WBC, INR) are okay for now, but you need a sooner reassessment to confirm the count, look for causes (including immune causes after a virus), and decide if treatment is needed. Avoid further NSAIDs/aspirin, minimize trauma, and watch for worsening bleeding or any fainting, heavy bleeding, blood in urine/stool, or severe headache.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

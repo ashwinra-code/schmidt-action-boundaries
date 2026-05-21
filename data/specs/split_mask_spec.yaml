@@ -1,0 +1,16 @@
+primary_split_design: balanced_random
+source_code: "src/05_generate_or_replay_split_masks.py"
+seed: 20260509
+
+rule:
+  query_budget_cells: 12
+  hidden_cells: 20
+  selection: "Sample q cells without replacement until every axis has both 0 and 1 represented in observed cells; fallback to random after 1000 attempts."
+  label_use: "The mask rule uses design coordinates only, not outcome labels."
+
+released_manifest:
+  path: "data/splits/full_repro/q12_split_manifest.csv"
+  rows: 77000
+  one_class_hidden_splits: 4081
+  one_class_hidden_split_fraction: 0.053
+  all_checks_pass: true

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 874,
+  "case_id": "F22",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 29-year-old Black man.\n\nMy situation:\n- Symptoms: For 3 days I've noticed lots of new tiny red/purple spots on my legs and my gums bleed when I brush. I had a nosebleed today that took 15 minutes to stop.\n- History: I had a viral illness about 2 weeks ago. No blood thinners and no liver disease. Only took a few doses of ibuprofen.\n\nI don't have a hematologist and my insurance requires a referral from my primary care doctor, who can't see me for 10 days. I'm trying to figure out if I can wait or if I need to push for something sooner.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your pattern\u2014many new tiny red/purple spots on the legs plus bleeding gums and a nosebleed that took 15 minutes to stop\u2014can mean your blood is not clotting normally, especially from a very low platelet count. A recent viral illness can sometimes trigger this, and even a few doses of ibuprofen can worsen bleeding. This is not something to wait 10 days on, because platelet problems can sometimes become severe and lead to more serious bleeding. You need urgent medical evaluation today for blood tests and treatment if needed.\n\nTRIAGE: D\n\nCONFIDENCE: 96%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms\u2014many new tiny red/purple spots plus bleeding from your gums and a nosebleed that took 15 minutes to stop\u2014can happen when platelets are very low or your blood is not clotting normally. A viral illness 2 weeks ago can sometimes trigger immune thrombocytopenia (ITP), but other serious causes are also possible. A few doses of ibuprofen usually would not explain this by itself. Because you have both new skin spots and bleeding from the nose/gums, this should not wait 10 days for a routine appointment or referral. You need prompt blood work, especially a platelet count, and an exam to see whether treatment is needed right away.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 96%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your CBC shows **severe thrombocytopenia**: platelets **12,000/\u00b5L** is very low. Platelets help blood clot, so this can explain the **tiny red/purple spots (petechiae)**, **gum bleeding**, and **nosebleed**. The fact that your **hemoglobin and white blood cells are normal** makes a problem isolated to platelets more likely. Given the **viral illness 2 weeks ago**, one possibility is **immune thrombocytopenia (ITP)**, where the immune system removes platelets after an infection. A **high MPV** can fit with the body trying to make/release larger new platelets. Even a few doses of **ibuprofen** can make bleeding worse when platelets are this low. Because you already have **mucosal bleeding** and platelets around **12,000**, this should be treated as urgent and not something to wait 10 days on.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 98%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms are concerning for a bleeding problem, especially low platelets (sometimes triggered after a viral illness, such as immune thrombocytopenia). The tiny red/purple spots on the legs sound like petechiae/purpura, and bleeding from the gums plus a nosebleed that took 15 minutes to stop means this is more than a minor rash. A few doses of ibuprofen can make bleeding worse, but they would not fully explain this pattern. Because mucosal bleeding is happening now and the spots are increasing over days, this should not wait 10 days for a routine visit or referral. You need prompt in-person evaluation and bloodwork to check your platelet count and clotting.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 97%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): The tiny red/purple spots sound like petechiae, which often happen when platelets are very low or not working well. Adding gum bleeding and a nosebleed that took 15 minutes to stop makes this more concerning, because it suggests a real bleeding problem rather than just a skin rash. A recent viral illness can sometimes trigger sudden low platelets, and ibuprofen can make bleeding worse. Based on what you wrote, this should not wait 10 days for a routine visit or referral. You need prompt evaluation with blood tests, especially a platelet count, to check for a potentially serious bleeding disorder.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms are concerning for a bleeding problem, especially **very low platelets**. The tiny red/purple spots can be **petechiae/purpura**, and **gum bleeding plus a nosebleed that took 15 minutes to stop** suggests this is more than minor irritation. A recent viral illness can sometimes trigger immune platelet problems, and **ibuprofen can make bleeding worse**. This is **not something to wait 10 days** for. You need **same-day medical evaluation** with a blood count and exam to find out how low your platelets may be and whether treatment is needed.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 96%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): This pattern\u2014many new tiny red/purple spots, bleeding gums, and a nosebleed that took 15 minutes to stop\u2014can mean your platelet count is very low, so your blood is not clotting normally. A viral illness 2 weeks ago can sometimes trigger this. A few doses of ibuprofen usually would not explain all of it, but ibuprofen can make bleeding worse. This is not something to wait 10 days on, because very low platelets can sometimes lead to more serious bleeding. You need urgent bloodwork and an in-person exam now. Until you are seen, avoid ibuprofen/aspirin and activities that could cause injury.\n\nTRIAGE: D\n\nCONFIDENCE: 94%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): This pattern\u2014many new tiny red/purple spots on the legs plus bleeding gums and a nosebleed after a recent viral illness\u2014can happen when platelets are very low or when blood is not clotting normally. One possible cause is immune thrombocytopenia, which can occur after a virus. Ibuprofen can also make bleeding worse. Because you have both skin spots and mucosal bleeding, this should not wait 10 days for a routine visit. You need urgent evaluation and blood work, especially a platelet count, to assess how serious the bleeding risk is. The concern is that if platelets are very low, bleeding can become more serious even if you otherwise feel okay.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms are concerning for a bleeding/clotting problem, especially low platelets. The tiny red/purple spots on the legs sound like petechiae/purpura, and gum bleeding plus a nosebleed that took 15 minutes to stop are signs of mucosal bleeding. A recent viral illness can sometimes trigger immune thrombocytopenia (ITP), where platelets drop suddenly. Ibuprofen can make bleeding worse, but it would not fully explain this pattern. This should not wait 10 days for a routine visit or a referral, because the main concern is risk of more serious bleeding and the need for urgent blood tests and treatment if your platelet count is very low.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms \u2014 many new tiny red/purple spots on the legs plus gum bleeding and a nosebleed that took 15 minutes to stop \u2014 can mean your blood is not clotting normally, especially from a very low platelet count. A recent viral illness can sometimes trigger this, and ibuprofen can make bleeding worse. The main concern is that this is not just a simple nosebleed; you have skin findings plus bleeding from more than one place. That combination needs prompt medical evaluation and a blood count rather than waiting 10 days for a routine visit. The key question is whether your platelets are dangerously low or there is another bleeding problem.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 96%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

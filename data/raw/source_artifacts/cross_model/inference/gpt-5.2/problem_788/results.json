@@ -1,0 +1,72 @@
+{
+  "problem_idx": 788,
+  "case_id": "E23",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 31-year-old woman.\n My situation:\n - Symptoms: I had a cold last week (sore throat and congestion) but I still feel more tired than usual - my energy hasn't fully bounced back. No current\n fever.\n - History: No autoimmune disease and not on any regular medications.\n - Vitals: BP 112/68, HR 70, Temp 36.7\u00b0C\n - Exam: Normal exam at my visit.\n My labs (with units and reference ranges):\n - WBC: 3.3 K/uL (4.0-11.0) low\n - Absolute neutrophil count (ANC): 1.5 K/uL (1.5-7.0) borderline\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - Platelets: 220 K/uL (150-400) normal\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "A/B",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3), with a borderline-low neutrophil count (ANC 1.5). Neutrophils help fight bacterial infections; an ANC of 1.5 is at the low end of normal and usually does not, by itself, cause major infection risk. After a recent viral illness (like a cold), it\u2019s common for WBC/ANC to dip temporarily and then recover over days to a few weeks. The rest of your blood counts (hemoglobin and platelets) are normal, which is reassuring and makes serious bone marrow problems less likely based on this snapshot. Ongoing fatigue after a cold can also be part of post-viral recovery. A reasonable next step is to repeat a CBC soon to confirm it\u2019s improving and review any new symptoms.\n\nTRIAGE: B  \nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophils\u2014the infection\u2011fighting white cells\u2014are at the lower edge of normal (ANC 1.5). With normal hemoglobin and platelets, this looks like an isolated, mild leukopenia/neutropenia. A common cause is temporary bone\u2011marrow \u201csuppression\u201d after a recent viral illness (like your cold), and it often returns to normal over days to a few weeks. Your normal vitals and normal exam, plus no fever now, make an emergency problem less likely. The main concern would be if counts drop further or you develop fever or recurrent infections. Typically the next step is a repeat CBC soon to confirm recovery.\n\nTRIAGE: B\n\nCONFIDENCE: 74%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3), with a borderline-low neutrophil count (ANC 1.5). With normal hemoglobin and platelets and a normal exam/vitals, this pattern most commonly happens temporarily after a recent viral illness (like a cold) and often returns to normal over days to a few weeks. Your ongoing fatigue can also persist after viral infections. The main concern with low neutrophils is higher infection risk, but that risk is usually significant when ANC is well below 1.0, especially <0.5. Based on what you shared (no fever, stable vitals, otherwise normal labs), this looks like mild/borderline neutropenia likely related to recent illness and is not an emergency, but it should be rechecked to confirm recovery.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3), with an ANC at the very low end of normal (1.5). Because your hemoglobin and platelets are normal and you recently had a viral \u201ccold,\u201d this pattern most often reflects temporary bone-marrow suppression from a recent viral infection and usually recovers on its own. An ANC of 1.5 is not in the range that typically causes serious infection risk by itself, especially if you feel generally well and have no fever. The main next step is usually a repeat CBC to confirm it normalizes. Seek urgent care sooner if you develop fever, worsening illness, mouth sores, or new infections.\n\nTRIAGE: B\nCONFIDENCE: 74%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophil count is at the lower edge of normal (ANC 1.5). With normal hemoglobin and platelets and a normal exam/vitals, this pattern often happens temporarily after a recent viral illness (like a cold) and usually recovers on its own over days to a few weeks. The main concern with low neutrophils is higher risk of bacterial infection, but your ANC is not in the high\u2011risk range, and you have no fever or signs of serious infection right now. The usual next step is repeating a CBC after you\u2019ve fully recovered (often in 2\u20134 weeks) to confirm it\u2019s improving. Seek urgent care sooner if you develop fever or feel significantly worse.  \nTRIAGE: B  \nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3), with a borderline-low neutrophil count (ANC 1.5). Neutrophils help fight bacterial infections. This pattern\u2014mild leukopenia with borderline neutropenia while hemoglobin and platelets are normal\u2014often happens temporarily after a recent viral illness (like a cold) and usually recovers on its own. Your normal vital signs and normal exam lower concern for a serious acute problem right now. The main risk would be if the neutrophils drop further or if you develop signs of infection. A repeat CBC is commonly done to confirm it\u2019s improving and to rule out persistent causes if it doesn\u2019t normalize.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophil count is at the low end of normal/borderline (ANC 1.5). With a recent cold and a normal exam/vitals, this pattern commonly happens transiently after viral infections and often returns to normal over days to a few weeks. The rest of your blood counts (hemoglobin and platelets) are normal, which is reassuring and makes a serious bone-marrow problem less likely based on this snapshot. The main concern with low neutrophils is infection risk, but ANC 1.5 is not in the high-risk range; urgent action is usually needed if counts are much lower or if you develop fever or feel acutely ill.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3), with a borderline-low neutrophil count (ANC 1.5). Neutrophils help fight bacterial infections. After a recent viral illness (like a cold), it\u2019s common for WBC/ANC to dip temporarily and then recover over days to a few weeks. The rest of your blood counts (hemoglobin and platelets) are normal, which is reassuring and makes a serious bone marrow problem less likely based on this snapshot. With normal vital signs, a normal exam, and no current fever, this looks most consistent with a mild, likely transient post-viral leukopenia. Usual next step is a repeat CBC to confirm it returns to normal and to review any new symptoms.  \nTRIAGE: B  \nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3) with a borderline-low neutrophil count (ANC 1.5). With normal hemoglobin and platelets and a normal exam/vitals, this pattern is often temporary after a recent viral illness (like the cold you had) and commonly returns to normal over days to a few weeks. An ANC of 1.5 is at the lower limit of normal and usually does not significantly raise infection risk by itself, especially without fever or worsening symptoms. The main concern would be if counts keep dropping, don\u2019t recover, or if you develop signs of infection (especially fever). A repeat CBC is commonly done to confirm recovery.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3), with an absolute neutrophil count at the low end of normal (1.5). Because your hemoglobin and platelets are normal and you recently had a viral \u201ccold,\u201d this pattern can happen from temporary bone-marrow suppression after a viral infection and often improves on its own over days to a few weeks. Your normal temperature, stable vital signs, and normal exam lower concern for a serious infection right now. The main risk with low neutrophils is infection, but your ANC is not in the high-risk range. A reasonable next step is repeat bloodwork with your doctor to confirm it returns to normal and to review any other possible causes if it doesn\u2019t.\n\nTRIAGE: B\n\nCONFIDENCE: 74%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

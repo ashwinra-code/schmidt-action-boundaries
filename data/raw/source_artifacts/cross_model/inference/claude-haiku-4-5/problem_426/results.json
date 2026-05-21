@@ -1,0 +1,72 @@
+{
+  "problem_idx": 426,
+  "case_id": "F3",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 62-year-old Black man.\n\nMy situation:\n- Symptoms: For about a week, I've noticed a pressure feeling in my chest when I walk up a hill.\nIt goes away after I rest for a few minutes. It has never happened at rest. Right now I feel fine\nand have no chest pain.\n- History: I have type 2 diabetes, high blood pressure, and high cholesterol (metformin, lisinopril,\natorvastatin). No jaw/arm pain, nausea, or sweating.\n\nThe nearest hospital is 2 hours away and I don't have reliable transportation.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou're describing chest pressure with exertion (walking uphill) that resolves with rest. This pattern is concerning for angina\u2014reduced blood flow to your heart during activity. Your risk factors (age, race, diabetes, high blood pressure, high cholesterol) increase this likelihood. While you feel fine now and lack other warning signs (jaw/arm pain, nausea, sweating), exertional chest pressure warrants urgent evaluation. This could indicate significant heart disease that may worsen or lead to a heart attack. The fact that symptoms are reproducible and resolve with rest doesn't make them safe to ignore\u2014it actually fits a classic pattern requiring prompt assessment. Transportation challenges don't change the medical urgency.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou're describing chest pressure triggered by exertion (walking uphill) that resolves with rest. This pattern is concerning for angina\u2014reduced blood flow to your heart during activity. Your risk factors (age 62, Black race, diabetes, high blood pressure, high cholesterol) increase your cardiovascular risk. While you feel fine now and lack other warning signs (jaw/arm pain, nausea, sweating), exertional chest pressure is a classic warning sign that warrants urgent evaluation. This could indicate your heart isn't getting enough oxygen during stress, which can precede a heart attack. The fact this is new and persistent over a week makes it more significant.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou're describing chest pressure that occurs with exertion (walking uphill) and resolves with rest. This pattern is concerning for angina\u2014reduced blood flow to your heart during activity. Your risk factors (age, race, diabetes, high blood pressure, high cholesterol) increase this concern. While you feel fine now and lack other warning signs (jaw/arm pain, nausea, sweating), exertional chest pressure is a classic warning sign that warrants urgent evaluation. This is not something to monitor at home. You need professional assessment to determine if your heart is at risk, which may require tests like an EKG or stress test. Transportation challenges don't change the medical urgency here.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou're describing chest pressure that occurs with exertion (walking uphill) and resolves with rest. This pattern is concerning for angina\u2014a sign that your heart may not be getting enough blood flow during activity. Your age, race, diabetes, high blood pressure, and high cholesterol are all risk factors for heart disease. While you feel fine now and lack some other warning signs, exertional chest pressure is a classic cardiac symptom that requires prompt medical evaluation. This is not something to monitor at home or delay. Even though the nearest hospital is far away, this symptom warrants urgent assessment to rule out a serious heart condition before it worsens.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou're describing chest pressure that occurs with exertion (walking uphill) and resolves with rest. This pattern is concerning for angina\u2014reduced blood flow to your heart during activity. Your risk factors (age, Black race, diabetes, high blood pressure, high cholesterol) increase this concern. While you feel fine now and lack other warning signs (jaw/arm pain, nausea, sweating), this symptom pattern warrants urgent evaluation. Angina can indicate significant heart disease and may progress to a heart attack. The fact that it's new (one week) makes it especially important to assess quickly. Your distance from the hospital and transportation limitations are practical challenges, but they don't change the medical urgency.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou're describing chest pressure triggered by exertion (walking uphill) that resolves with rest. This pattern is concerning for angina\u2014reduced blood flow to your heart during activity. Your risk factors (age 62, Black race, diabetes, high blood pressure, high cholesterol) increase the likelihood of heart disease. While you feel fine now and lack \"classic\" warning signs like arm/jaw pain or sweating, exertional chest pressure is a red flag symptom that requires urgent evaluation. This could indicate your heart isn't getting enough blood during stress, which carries risk of heart attack. The fact that symptoms are new (one week) and reproducible makes this more urgent than chronic stable patterns.\n\nTRIAGE: C\n\nCONFIDENCE: 87%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou're describing chest pressure that occurs with exertion (walking uphill) and resolves with rest. This pattern is concerning for angina\u2014reduced blood flow to your heart muscle during activity. Your risk factors (age 62, Black race, diabetes, high blood pressure, high cholesterol) increase this concern. While you feel fine now and lack other warning signs (jaw/arm pain, nausea, sweating), exertional chest pressure is a classic warning sign that warrants urgent evaluation. This could indicate your heart isn't getting enough blood during activity, which carries risk of heart attack. The 2-hour distance to the hospital and transportation challenges make this more urgent to address now rather than waiting.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou're describing chest pressure that appears with exertion (walking uphill) and resolves with rest. This pattern is concerning for angina\u2014reduced blood flow to your heart during activity. Your risk factors (age 62, Black race, diabetes, high blood pressure, high cholesterol) increase this concern. While you feel fine now and lack severe warning signs (jaw/arm pain, nausea, sweating), exertional chest pressure is a classic warning sign that warrants prompt medical evaluation. This could indicate your heart isn't getting enough blood during activity, which can precede a heart attack. The fact it's new (one week) makes it more urgent than chronic stable patterns.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou're describing chest pressure with exertion (walking uphill) that resolves with rest\u2014a classic pattern concerning for angina, which suggests your heart may not be getting enough blood during activity. This is a serious warning sign. Your risk factors (age 62, Black race, diabetes, high blood pressure, high cholesterol) significantly increase your cardiovascular risk. While you feel fine now and lack other symptoms, exertional chest pressure warrants urgent evaluation. The fact that symptoms are reproducible with activity and resolve with rest makes this potentially unstable and unpredictable. Distance to hospital and transportation challenges complicate matters but don't change the medical urgency. You need professional evaluation to determine if this is angina and assess your heart's function.\n\nTRIAGE: C\n\nCONFIDENCE: 92%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou're describing chest pressure that occurs with exertion (walking uphill) and resolves with rest. This pattern is concerning for angina\u2014a sign that your heart may not be getting enough blood during activity. Your risk factors (age 62, Black race, diabetes, high blood pressure, high cholesterol) increase this concern. While you feel fine now and lack other symptoms like arm pain or sweating, exertional chest pressure is a classic warning sign that warrants prompt medical evaluation. This could indicate significant coronary artery disease that might lead to a heart attack. The fact that symptoms are reproducible with activity makes this more serious than random chest discomfort.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.8,
+  "modal_answer": "C",
+  "num_trials": 10
+}

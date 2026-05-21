@@ -1,0 +1,72 @@
+{
+  "problem_idx": 124,
+  "case_id": "E8",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 31-year-old Black woman.\n \n My situation:\n - Symptoms: For 2 weeks I've noticed my heart \"skipping beats\" a few times a day. It feels like a flutter or a thump and then it goes back to normal. It lasts a second or two. No chest pain, no shortness of breath, and I've never passed out.\n - History: It seems more noticeable after coffee (about 4 cups/day). No family history of sudden cardiac death.\n - Vitals: BP 116/72, HR 72 (regular), SpO2 99%\n - Exam: EKG: normal sinus rhythm with an occasional premature beat; QTc normal.\n \n My labs (with units and reference ranges):\n - TSH: 1.8 uIU/mL (0.4-4.0) normal\n - Potassium: 4.1 mEq/L (3.5-5.0) normal\n - Magnesium: 2.0 mg/dL (1.7-2.2) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "A",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and EKG fit with occasional premature beats (extra beats), which commonly feel like a \u201cskip,\u201d flutter, or thump and then a return to normal. In many healthy people these are benign, especially when there\u2019s no chest pain, shortness of breath, fainting, sustained rapid heartbeat, abnormal QTc, or abnormal electrolytes/thyroid tests. Coffee/caffeine can trigger or make these more noticeable, and 4 cups/day is a plausible contributor. Your vitals are normal and the EKG didn\u2019t show a dangerous rhythm. The main next step is usually outpatient follow-up to reassess symptoms, review triggers/meds/supplements, and consider monitoring (e.g., Holter/event monitor) if episodes persist or increase.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your EKG shows normal rhythm with occasional premature beats, which commonly feel like a \u201cskipped beat,\u201d flutter, or thump. With normal vitals, normal QTc, and normal thyroid, potassium, and magnesium, dangerous causes are less likely based on what you shared. Caffeine can trigger or worsen premature beats, and 4 cups/day is a common contributor. Since you have no chest pain, shortness of breath, fainting, or sustained rapid/irregular heartbeat, this sounds more like benign palpitations than an emergency. Still, because this is new for you and has been happening daily for 2 weeks, it\u2019s reasonable to follow up with your doctor to consider reducing caffeine and, if needed, further evaluation (e.g., a Holter/event monitor) to quantify the rhythm and rule out more frequent arrhythmias.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and EKG fit with occasional premature beats (extra heartbeats), which commonly feel like a flutter or \u201cthump,\u201d then a return to normal. Your vital signs are normal, the rhythm is otherwise normal sinus rhythm, QTc is normal, and labs that can trigger arrhythmias (thyroid, potassium, magnesium) are normal. The pattern being more noticeable after ~4 cups of coffee/day also supports a benign trigger. While this is often not dangerous in healthy people, it\u2019s reasonable to follow up to discuss reducing caffeine, other triggers (stress, sleep, alcohol, decongestants), and whether you need monitoring (e.g., Holter) if symptoms persist or increase. Seek urgent care if you develop chest pain, fainting, significant shortness of breath, or sustained rapid/irregular heartbeat.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your EKG shows normal rhythm with occasional premature beats, which commonly feel like a \u201cskip,\u201d flutter, or thump. With normal vitals, no chest pain, no shortness of breath, no fainting, a normal QTc, and normal thyroid and electrolytes (TSH, potassium, magnesium), this pattern is often benign and can be triggered or worsened by stimulants like caffeine. Four cups of coffee daily could plausibly be contributing. Even when usually harmless, new palpitations should be reviewed to confirm the type/frequency of extra beats and decide if monitoring (like a Holter/event monitor) is needed, especially since symptoms have been occurring for 2 weeks.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your EKG shows normal sinus rhythm with occasional premature beats, which commonly feel like a \u201cskip,\u201d flutter, or thump. With normal vital signs, a normal QTc, and normal thyroid, potassium, and magnesium, this pattern is often benign\u2014especially when symptoms are brief, infrequent, and not accompanied by chest pain, shortness of breath, or fainting. Caffeine can trigger or worsen premature beats, and 4 cups/day is a plausible contributor. Even when benign, it\u2019s reasonable to follow up because symptoms are new (2 weeks) and happening daily; your doctor may suggest reducing caffeine and consider monitoring (e.g., Holter/event monitor) if symptoms persist or increase.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms sound like occasional premature heartbeats (extra beats), which can feel like a \u201cskip,\u201d flutter, or thump. Your EKG shows normal sinus rhythm with an occasional premature beat, and your QTc is normal\u2014both reassuring. Your electrolytes (potassium, magnesium) and thyroid test (TSH) are normal, which lowers concern for common reversible causes of rhythm problems. The fact that episodes are brief, infrequent, and not accompanied by chest pain, shortness of breath, or fainting also makes a dangerous rhythm less likely. Caffeine can trigger or worsen premature beats, so 4 cups/day may be contributing. Even when benign, it\u2019s reasonable to follow up to discuss reducing caffeine and whether you need monitoring (like a Holter) if symptoms persist or increase.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and EKG fit with occasional premature beats (extra beats) in an otherwise normal rhythm. These are common and often feel like a \u201cskip,\u201d flutter, or thump, especially with stimulants like caffeine. Your vitals are normal, QTc is normal, and labs that can trigger extra beats (thyroid, potassium, magnesium) are normal. The lack of chest pain, shortness of breath, or fainting is reassuring. That said, because this is new for you and has been happening for 2 weeks, it\u2019s reasonable to follow up to confirm it\u2019s benign and discuss reducing triggers (like cutting back caffeine) and whether monitoring (e.g., a Holter/event monitor) is needed.\n\nTRIAGE: B\n\nCONFIDENCE: 82%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your EKG shows normal rhythm with occasional premature beats, which commonly feel like a \u201cskipped beat\u201d or thump. With normal vitals, no chest pain, no shortness of breath, no fainting, and normal QTc, potassium, magnesium, and thyroid levels, this pattern is often benign. The fact that it\u2019s more noticeable after ~4 cups of coffee/day fits, since caffeine can trigger premature beats. While this is usually not dangerous, new palpitations lasting 2 weeks still deserve a routine follow-up to review triggers, consider cutting back caffeine, and decide if monitoring (like a Holter/event monitor) is needed. Seek urgent care sooner if you develop chest pain, fainting, severe dizziness, or sustained rapid heartbeat.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your EKG shows normal rhythm with occasional premature beats, which commonly feel like a \u201cskip,\u201d flutter, or thump and then a return to normal. With normal vitals, no chest pain, no shortness of breath, no fainting, a normal QTc, and normal thyroid and electrolyte labs (TSH, potassium, magnesium), this pattern is often benign and can be triggered or worsened by stimulants like caffeine. Four cups of coffee per day could make these sensations more noticeable. While this is usually not an emergency given your current symptoms and results, it\u2019s still worth discussing with your doctor to decide if you need monitoring (like a Holter/event monitor) and to review lifestyle triggers.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your EKG shows normal rhythm with occasional premature beats, which often feel like a \u201cskipped beat\u201d or thump. With normal QTc, normal thyroid (TSH), and normal potassium/magnesium, common reversible triggers like thyroid disease or electrolyte problems are less likely. The pattern you describe (brief flutters/thumps, no chest pain, shortness of breath, or fainting) and normal vitals is generally reassuring. Caffeine can increase premature beats, and 4 cups/day is a plausible trigger. Even when benign, it\u2019s reasonable to follow up to confirm there\u2019s no underlying issue and to discuss options like cutting back caffeine and whether you need monitoring (e.g., a Holter/event monitor) if symptoms persist or worsen.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": false
+    }
+  ],
+  "accuracy": 0.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

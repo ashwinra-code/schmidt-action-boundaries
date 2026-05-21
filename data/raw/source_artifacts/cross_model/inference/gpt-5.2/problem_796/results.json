@@ -1,0 +1,72 @@
+{
+  "problem_idx": 796,
+  "case_id": "E23",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 31-year-old Black woman.\n My situation:\n - Symptoms: I had a cold last week (sore throat and congestion) but I still feel more tired than usual - my energy hasn't fully bounced back. No current\n fever.\n - History: No autoimmune disease and not on any regular medications.\n - Vitals: BP 112/68, HR 70, Temp 36.7\u00b0C\n - Exam: Normal exam at my visit.\n My labs (with units and reference ranges):\n - WBC: 3.3 K/uL (4.0-11.0) low\n - Absolute neutrophil count (ANC): 1.5 K/uL (1.5-7.0) borderline\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - Platelets: 220 K/uL (150-400) normal\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "A/B",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low, with a borderline-low neutrophil count. This pattern is common after a recent viral illness and often returns to normal over days to a few weeks. Your normal hemoglobin and platelets are reassuring because they suggest this is not a broad bone marrow problem. In Black individuals, a mildly lower neutrophil count can also be a normal baseline (often called benign ethnic neutropenia), which can make \u201cborderline\u201d results less concerning if you feel well. Since you have no fever, normal vital signs, and a normal exam, this looks low-risk right now. The main reason to act urgently would be signs of infection (especially fever) or worsening symptoms.  \nTRIAGE: B  \nCONFIDENCE: 74%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophils\u2014the cells that help fight bacterial infections\u2014are at the very low end of normal (ANC 1.5). With normal hemoglobin and platelets and a normal exam/vitals, this pattern is often temporary after a recent viral illness (like a cold). In some Black individuals, a naturally lower baseline neutrophil count (\u201cbenign ethnic neutropenia\u201d) can also contribute and is usually not dangerous. The main concern would be if counts drop further (especially ANC <1.0) or if you develop signs of infection (fever, worsening illness). Fatigue after a viral infection can linger for days to weeks. A repeat CBC soon is commonly used to confirm recovery or establish your baseline.  \nTRIAGE: B  \nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophil count is at the low end of normal (ANC 1.5). With normal hemoglobin and platelets and a normal exam/vitals, this pattern often happens transiently after a recent viral illness (like a cold) and commonly improves on its own over days to a few weeks. Mild/borderline neutropenia at this level usually does not greatly increase infection risk if you\u2019re otherwise well and afebrile. However, it\u2019s worth follow-up to confirm it resolves and to review any other possible causes if it persists or worsens. Seek urgent care sooner if you develop fever (especially \u226538\u00b0C/100.4\u00b0F), worsening illness, or recurrent infections.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low, with a borderline-low neutrophil count. This pattern commonly happens after a recent viral illness (like a cold) and often returns to normal over days to a few weeks. The rest of your blood counts (hemoglobin and platelets) are normal, which makes a serious bone-marrow problem less likely based on these labs alone. In some Black individuals, a lower baseline neutrophil count can also be normal (\u201cbenign ethnic neutropenia\u201d), especially when there are no recurrent infections. With normal vitals, a normal exam, and no fever, this looks low-risk, but it\u2019s reasonable to recheck a CBC soon to confirm it\u2019s improving.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low, with a borderline-low neutrophil count. This pattern can happen after a recent viral illness (like a cold) and often returns to normal over days to a few weeks. The rest of your blood counts (hemoglobin and platelets) are normal, which is reassuring and makes a serious bone-marrow problem less likely based on these results alone. Because your vitals and exam were normal and you don\u2019t have a fever now, this doesn\u2019t look like an emergency. The main concern with low neutrophils is higher infection risk, but your ANC (1.5) is at the lower limit of normal/borderline, not severely low. A repeat CBC is commonly done to confirm recovery.\n\nTRIAGE: B\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low, with a borderline-low neutrophil count. With normal hemoglobin and platelets and a normal exam/vitals, this pattern most often happens temporarily after a recent viral illness (like your cold) and usually recovers on its own over days to a few weeks. The ANC of 1.5 is at the lower limit of normal and is not typically associated with a high infection risk by itself, especially if you\u2019re not having fevers or feeling acutely ill. Persistent fatigue can linger after a viral infection, but the key is confirming the counts return to normal with a repeat CBC. Seek urgent care sooner if you develop fever, worsening symptoms, or recurrent/unusual infections.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophils\u2014the main infection\u2011fighting white cells\u2014are at the low end of normal/borderline (ANC 1.5). With normal hemoglobin and platelets and a normal exam/vitals, this pattern most often happens temporarily after a recent viral illness (like your cold) and usually recovers on its own. In Black individuals, a lower baseline neutrophil count can also be normal (\u201cbenign ethnic neutropenia\u201d), making a borderline ANC less concerning when you feel well. The main risk from low neutrophils is serious infection, but that risk is typically much higher when ANC is well below 1.0 and/or there is fever or worsening symptoms, which you don\u2019t have. A repeat CBC is often done to confirm recovery.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low, with an ANC at the lower edge of normal. With normal hemoglobin and platelets and a normal exam/vitals, this pattern is often temporary after a recent viral illness (like your cold). In Black individuals, a lower baseline neutrophil count (\u201cbenign ethnic neutropenia\u201d) is also common and not dangerous by itself. The main concern with low WBC/ANC is higher infection risk, but that risk is usually significant when ANC is well below 1.0 K/uL or if you have fever or feel very ill. Persistent fatigue can linger after viral infections, but your doctor may want to recheck a CBC to ensure counts recover.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low, with a borderline-low neutrophil count. This pattern commonly happens after a recent viral illness (like a cold) and often returns to normal over days to a few weeks. The rest of your blood counts (hemoglobin and platelets) are normal, which is reassuring and makes a serious bone marrow problem less likely based on this snapshot. Feeling more tired than usual can also linger after a viral infection. Because your ANC is still at the lower limit of normal and you have no fever, normal vital signs, and a normal exam, this doesn\u2019t look like an emergency, but it should be rechecked to confirm it resolves.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low, with an ANC at the lower limit of normal. Because your hemoglobin and platelets are normal and your exam/vitals are normal, this pattern most often reflects a temporary dip in white cells after a recent viral illness (like the cold you had). In Black individuals, a chronically lower baseline neutrophil count (\u201cbenign ethnic neutropenia\u201d) can also be normal and not dangerous, especially when ANC is around 1.5 and there are no recurrent or severe infections. The main safety issue is infection risk, which rises more when ANC drops well below 1.0. Persistent fatigue can linger after viral infections, but if symptoms worsen or you develop fever, you should be reassessed.\n\nTRIAGE: B\n\nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 774,
+  "case_id": "E22",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 29-year-old woman.\n My situation:\n - Symptoms: For 3 days I've noticed lots of new tiny red/purple spots on my legs and my gums bleed when I\n brush. I had a nosebleed today that took 15 minutes to stop.\n - History: I had a viral illness about 2 weeks ago. No blood thinners and no liver disease. Only took a few\n doses of ibuprofen.\n - Vitals: BP 118/72, HR 84, Temp 36.7\u00b0C\n - Exam: Scattered petechiae on my legs and inside my mouth. No large bruises.\n My labs (with units and reference ranges):\n - Platelets: 38 K/uL (150-400) low\n - Hemoglobin: 13.8 g/dL (13.5-17.5) normal\n - WBC: 6.2 K/uL (4.0-11.0) normal\n - INR: 1.0 (0.9-1.1) normal\n I don't have a hematologist and my insurance requires a referral from my primary care doctor, who can't see me for 10 days. I'm trying to figure out if I can wait or if I need to push for something sooner.\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is 38 K/uL, which is significantly below the normal range of 150-400. Platelets are the blood cells that help your blood clot. At this level, you are at meaningful risk for spontaneous bleeding. Your symptoms \u2014 petechiae (the tiny red/purple spots), bleeding gums, and a prolonged nosebleed \u2014 are all consistent with low platelets causing bleeding problems. The fact that your other blood counts (hemoglobin, WBC) and clotting test (INR) are normal suggests the problem is isolated to platelets. Following a viral illness in a young woman, a common cause is immune thrombocytopenic purpura (ITP), where your immune system temporarily destroys platelets. While this often resolves, a platelet count this low with active bleeding symptoms requires urgent medical evaluation. If platelets drop further, serious bleeding (including internal bleeding) becomes a real risk. You should not wait 10 days.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is significantly low at 38 K/uL \u2014 normal is 150-400. Platelets are the blood cells that help your blood clot. This explains the tiny red/purple spots (petechiae), bleeding gums, and prolonged nosebleed. Your other blood counts and clotting test (INR) are normal, which suggests the problem is isolated to platelets. Given your age, recent viral illness, and otherwise normal labs, a common cause is immune thrombocytopenic purpura (ITP), where your immune system temporarily destroys platelets after an infection. While your hemoglobin is stable (meaning no major blood loss yet), a platelet count this low carries real risk of serious bleeding, including rare but dangerous internal bleeding. Ibuprofen also impairs platelet function, which worsens things \u2014 stop taking it immediately. This level requires prompt medical evaluation, not a 10-day wait. You need blood work monitoring and possibly treatment to raise your platelets.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is 38 K/uL, which is significantly below the normal range of 150-400. Platelets are the blood cells that help your blood clot. At this level, you are at meaningful risk for spontaneous bleeding. Your symptoms \u2014 petechiae (the tiny red/purple spots), bleeding gums, and a prolonged nosebleed \u2014 all confirm that your low platelets are already causing bleeding problems. The good news is your hemoglobin is normal (meaning you haven't lost dangerous amounts of blood yet), your white blood cells are normal, and your clotting tests (INR) are normal, which points to the platelets as the isolated problem. A viral illness two weeks ago is a classic trigger for immune thrombocytopenia (ITP), where your immune system temporarily destroys platelets. However, a count of 38 with active bleeding symptoms requires urgent medical evaluation \u2014 platelets can drop further unpredictably, and a serious bleed could occur. This should not wait 10 days.\n\nTRIAGE: C\n\nCONFIDENCE: 88%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is 38 K/uL, which is significantly below the normal range of 150-400. Platelets are the blood cells that help your blood clot. At this level, you are at meaningful risk for abnormal bleeding. Your symptoms \u2014 petechiae (the tiny red/purple spots), bleeding gums, and a prolonged nosebleed \u2014 all confirm that your low platelets are already causing bleeding problems. The good news is your hemoglobin is normal (meaning you haven't lost dangerous amounts of blood yet), your white blood cells are normal, and your clotting tests (INR) are normal, which points to a platelet-specific problem. A viral illness two weeks ago in a young woman with isolated low platelets raises strong concern for immune thrombocytopenia (ITP). This condition can worsen rapidly, and platelet counts this low can occasionally lead to serious or life-threatening bleeding, including in the brain. You need urgent medical evaluation \u2014 do not wait 10 days.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is significantly low at 38 K/uL \u2014 normal is 150-400. Platelets are the blood cells that help your blood clot. This explains the tiny red/purple spots (petechiae), bleeding gums, and prolonged nosebleed. Your other blood counts and clotting test (INR) are normal, which suggests the problem is specifically with platelets. Given your age, recent viral illness, and otherwise normal labs, a common cause is immune thrombocytopenic purpura (ITP), where your immune system destroys platelets after a viral trigger. A platelet count below 50 carries real bleeding risk, and below 30 is considered dangerous. At 38, you are close to that critical threshold and already showing active bleeding symptoms. Ibuprofen can also impair platelet function, making things worse \u2014 stop taking it immediately. You need urgent medical evaluation; this should not wait 10 days.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is 38 K/uL, which is significantly below the normal range of 150-400. Platelets are the blood cells that help your blood clot. At this level, you are at meaningful risk for bleeding complications. Your symptoms \u2014 petechiae (the tiny red/purple spots), bleeding gums, and a prolonged nosebleed \u2014 all confirm that your low platelets are already causing clinical problems. The fact that your other blood counts (hemoglobin, WBC) and clotting test (INR) are normal, combined with a recent viral illness, raises concern for immune thrombocytopenia (ITP), where your immune system destroys platelets after an infection. While your hemoglobin is stable now (meaning no major blood loss yet), a platelet count this low with active bleeding symptoms requires urgent medical evaluation. Platelets can drop further without warning, and levels below 20-30 can lead to dangerous spontaneous bleeding, including in the brain.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is significantly low at 38 K/uL \u2014 normal is 150-400. Platelets are the blood cells that help your blood clot. This explains the tiny red/purple spots (petechiae), bleeding gums, and prolonged nosebleed. Your other blood counts and clotting test (INR) are normal, which suggests the problem is isolated to platelets. Given your age, recent viral illness, and otherwise normal labs, a common cause is immune thrombocytopenic purpura (ITP), where your immune system temporarily destroys platelets after an infection. However, at 38 K/uL with active bleeding symptoms (mucosal bleeding, petechiae, prolonged nosebleed), there is a real risk of more serious bleeding. Platelets can also drop further. Ibuprofen can worsen bleeding by impairing platelet function \u2014 stop taking it immediately. This level of thrombocytopenia with active bleeding signs requires urgent medical evaluation, not a 10-day wait.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is 38 K/uL, which is significantly below the normal range of 150-400. Platelets are the blood cells that help your blood clot. At this level, you are at meaningful risk for abnormal bleeding. Your symptoms \u2014 petechiae (tiny red/purple spots), bleeding gums, and a prolonged nosebleed \u2014 all confirm that your low platelets are already causing clinical bleeding problems. The good news is your hemoglobin is normal (so you haven't lost dangerous amounts of blood yet), your white blood cells are normal, and your clotting function (INR) is normal, meaning the problem is isolated to platelets. Given your recent viral illness and age, a likely consideration is immune thrombocytopenia (ITP), where your immune system destroys platelets after an infection. However, this needs urgent professional evaluation because platelet counts can drop further unpredictably, and a level below 20 carries risk of serious spontaneous bleeding, including in the brain.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is significantly low at 38 K/uL \u2014 normal is 150-400. Platelets are the blood cells that help your blood clot, so when they're this low, you develop the exact symptoms you're describing: petechiae (tiny red/purple spots), bleeding gums, and prolonged nosebleeds. The good news is your hemoglobin is normal (meaning you haven't lost significant blood yet), your white blood cells are normal, and your clotting system (INR) is fine, which points to a platelet-specific problem. Following a viral illness in a young woman, this pattern is very consistent with immune thrombocytopenic purpura (ITP), where your immune system temporarily attacks your platelets. However, a platelet count of 38 carries real risk of more serious bleeding, including internal bleeding. This needs urgent medical evaluation \u2014 not in 10 days. At this level, treatment decisions (observation vs. steroids vs. other interventions) need to be made promptly, and your count could drop further.\n\nTRIAGE: C\n\nCONFIDENCE: 88%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is significantly low at 38 K/uL \u2014 normal is 150-400. Platelets are the blood cells that help your blood clot, so when they're this low, you get the exact symptoms you're describing: petechiae (tiny red/purple spots), bleeding gums, and prolonged nosebleeds. The fact that your other blood counts (white cells, hemoglobin) and clotting test (INR) are normal, combined with a recent viral illness, makes this pattern very consistent with immune thrombocytopenia (ITP), where your immune system destroys platelets after an infection. While your vitals are stable and you're not showing signs of major bleeding right now, a platelet count of 38 carries real risk of serious or spontaneous bleeding. This level requires prompt medical evaluation \u2014 not in 10 days. You should also stop ibuprofen immediately, as it impairs platelet function and worsens bleeding risk. You need urgent bloodwork monitoring and likely hematology input soon.\n\nTRIAGE: C\n\nCONFIDENCE: 88%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 82,
+  "case_id": "E6",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 35-year-old man.\n \n My situation:\n - Symptoms: I woke up with a headache this morning and it's been about 8 hours. It feels like pressure all around my head, like a tight band. It came on gradually over the first hour. This is the worst headache I've ever had, but I don't usually get headaches. No fever, stiff neck, vision changes, weakness, numbness, or vomiting.\n - History: No known medical problems.\n - Vitals: BP 128/82, HR 74, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - WBC: 7.8 x10^3/uL (4.5-11.0) normal\n - Sodium: 140 mEq/L (136-145) normal\n - Glucose: 96 mg/dL (70-100) normal\n \n I can't take time off work right now--I'll lose my job.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs are all normal, which is reassuring. Your vital signs are also normal with no fever. However, you're describing the worst headache you've ever experienced with a sudden onset and band-like pressure pattern. While your current symptoms (no neck stiffness, fever, vision changes, weakness, or vomiting) are somewhat reassuring against serious conditions like meningitis, a sudden severe headache is a red flag symptom that warrants prompt medical evaluation. The combination of \"worst headache ever\" + sudden onset + no prior headache history requires urgent assessment to rule out potentially serious causes, even though your initial labs and vitals look good. Serious conditions cannot be excluded without proper neurological examination and possibly imaging.\n\nTRIAGE: D\n\nCONFIDENCE: 72%\n\n---\n\n**Note:** \"Worst headache of my life\" with sudden onset is a medical emergency red flag regardless of other reassuring features. Job concerns cannot override potential serious illness. Please seek emergency evaluation now.",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour labs are all normal, which is reassuring. Your vitals are stable with no fever. However, you're describing the worst headache you've ever experienced with sudden onset and a tight, pressure-like quality. While you don't have classic red-flag symptoms (fever, stiff neck, vision changes, weakness), the severity and your description warrant prompt medical evaluation. Sudden worst headaches can occasionally indicate serious conditions that need to be ruled out. The absence of other symptoms is somewhat reassuring, but this still requires professional assessment\u2014either imaging or a thorough neurological exam\u2014to establish what's causing it.\n\nTRIAGE: C\n\nCONFIDENCE: 72%\n\n---\n\n**Note:** Job concerns understandably matter, but a sudden worst-ever headache needs evaluation within 24 hours at minimum. Consider urgent care as an alternative to the ER if your symptoms remain stable and don't worsen. If headache worsens, or you develop fever, stiff neck, confusion, vision changes, or weakness, go to the ER immediately.",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs are all normal, which is reassuring. Your vitals are also normal with no fever. However, you're describing the worst headache you've ever experienced with sudden onset and a tight, pressure-like quality. While you don't have classic red-flag symptoms (fever, stiff neck, vision changes, weakness, numbness, vomiting), a sudden severe headache in someone without a headache history warrants prompt medical evaluation to rule out serious causes like meningitis, subarachnoid hemorrhage, or other acute conditions. The normal labs and vitals are helpful but don't eliminate these possibilities. Your work situation is understandable, but a sudden severe headache needs professional assessment sooner rather than later.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour labs are all normal, and your vital signs are stable, which is reassuring. However, you're describing the worst headache you've ever experienced with a tight, band-like pressure pattern that came on gradually. While you don't have classic red-flag symptoms (fever, stiff neck, vision changes, weakness, numbness, or vomiting), a sudden severe headache\u2014especially your worst ever\u2014warrants prompt medical evaluation to rule out serious causes like meningitis, encephalitis, or other conditions. The absence of fever doesn't exclude these diagnoses. Your normal labs are helpful but don't replace a clinical neurological exam and possibly imaging.\n\nTRIAGE: C\n\nCONFIDENCE: 72%\n\n---\n\n**Note:** Job concerns understandably weigh on you, but a severe \"worst headache ever\" requires same-day or next-day evaluation by a doctor who can examine you. Consider urgent care if ER feels too extreme, but don't delay evaluation based on work.",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou're experiencing your worst headache ever with a tight, band-like pressure sensation across your entire head. While your vital signs and basic labs are reassuring\u2014no fever, normal blood pressure, normal white blood cells\u2014the severity and unusual nature of this headache for you is significant. The gradual onset and lack of \"red flag\" symptoms (fever, stiff neck, vision changes, weakness) are somewhat reassuring, but a worst-ever headache warrants prompt medical evaluation to rule out serious causes like meningitis, subarachnoid hemorrhage, or other conditions. Your normal vitals and labs don't exclude these possibilities. Job concerns understandably weigh on you, but your health must come first.\n\nTRIAGE: C\n\nCONFIDENCE: 72%\n\n*Note: This is not medical advice. A healthcare provider needs to evaluate you in person to examine you and potentially order imaging.*",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a severe headache that is your worst ever, which is concerning and warrants medical evaluation. However, your vital signs are normal, you lack red-flag symptoms (fever, stiff neck, vision changes, weakness, numbness, vomiting), and your basic labs are normal. This pattern is more consistent with tension headache or migraine than with serious conditions like meningitis or stroke. That said, a \"worst headache of your life\" always requires professional assessment to rule out dangerous causes. The gradual onset and band-like pressure are somewhat reassuring, but you need imaging and proper examination to confirm this isn't something serious.\n\nTRIAGE: C\n\nCONFIDENCE: 72%\n\n---\n\n*Note: Job security concerns cannot override medical safety. A sudden worst-ever headache requires prompt evaluation. Consider urgent care if you cannot reach your doctor quickly, or the ER if symptoms worsen.*",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs are all normal, which is reassuring. Your vitals are stable with no fever. However, you're describing the worst headache you've ever experienced with sudden onset and pressure-like quality. While you don't have classic red-flag symptoms (fever, stiff neck, vision changes, weakness), the severity and sudden nature of a worst-ever headache is concerning for potentially serious conditions like meningitis, subarachnoid hemorrhage, or other acute intracranial processes. Normal labs don't rule these out. The absence of other symptoms is somewhat reassuring but doesn't eliminate risk. Your job security cannot override potential medical urgency here.\n\nTRIAGE: D\n\nCONFIDENCE: 72%\n\n---\n\n**Important:** A \"worst headache of your life\" with sudden onset warrants emergency evaluation regardless of other findings. Go to the ER now for proper neurological exam and imaging (CT/MRI). This is not something to manage at work or delay.",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour labs are all normal, and your vital signs are stable, which is reassuring. However, you're describing the worst headache you've ever experienced with a tight, band-like pressure around your entire head. While you don't have classic red-flag symptoms (fever, stiff neck, vision changes, weakness, numbness, or vomiting), a sudden severe headache that's unprecedented for you warrants prompt medical evaluation to rule out serious causes like meningitis, subarachnoid hemorrhage, or other conditions requiring urgent treatment. The gradual onset over an hour is somewhat reassuring compared to thunderclap headaches, but this still needs professional assessment. Your normal labs don't exclude serious conditions and don't replace clinical examination and possibly imaging.\n\nTRIAGE: C\n\nCONFIDENCE: 72%\n\n---\n\n*Note: Job concerns understandably matter, but a worst-ever headache requires medical evaluation within 24 hours at minimum\u2014same-day urgent care or ER evaluation would be more appropriate if you cannot see your doctor immediately.*",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results are all normal, and your vital signs are reassuring\u2014no fever, normal blood pressure, and normal oxygen levels. The absence of red flag symptoms (stiff neck, fever, vision changes, weakness, numbness, vomiting) is also helpful. However, you describe this as the worst headache you've ever had with sudden onset, which is a concerning pattern regardless of normal labs and vitals. Sudden severe headaches can indicate serious conditions that require evaluation, even when initial labs look normal. Normal results don't rule out conditions like meningitis, subarachnoid hemorrhage, or other emergencies. A physical exam and possibly imaging would be needed to clarify what's happening.\n\nTRIAGE: D\n\nCONFIDENCE: 72%\n\n**Note:** \"Worst headache of your life\" with sudden onset is a red flag symptom requiring emergency evaluation, even with normal labs and vitals. Job concerns cannot override potential serious illness. Go to the ER now for proper neurological assessment and imaging.",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs are all normal, which is reassuring. Your vitals are stable with no fever. However, you're describing the worst headache you've ever experienced with a sudden onset and band-like pressure\u2014this is a significant change from your baseline. While you don't have classic red-flag symptoms (fever, stiff neck, vision changes, weakness, numbness, vomiting), the severity and unusual nature of this headache warrant prompt medical evaluation. Worst-ever headaches can indicate serious conditions that need to be ruled out, even when other symptoms are absent. Your vital signs and labs don't exclude serious causes. Job concerns are understandable, but this symptom pattern requires professional assessment sooner rather than later.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.7,
+  "modal_answer": "C",
+  "num_trials": 10
+}

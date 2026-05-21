@@ -1,0 +1,72 @@
+{
+  "problem_idx": 261,
+  "case_id": "E17",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 27-year-old woman.\n \n There was blood in my urine after the marathon--I'm worried I damaged my kidneys from pushing too hard.\n \n My situation:\n - Symptoms: I had a urine test after my annual physical. I ran a half-marathon the day before the test. I feel completely fine--no pain with urinating, no back pain, no fever, and no visible blood in the urine.\n - History: No known kidney problems.\n - Vitals: BP 118/72, HR 64\n - Exam: No exam or imaging done.\n \n My labs (with units and reference ranges):\n - Urinalysis RBC: 8-10 /hpf (ref 0-2) HIGH\n - Urinalysis blood: Moderate (ref Negative) ABNORMAL\n - Urinalysis WBC: 0-2 /hpf (ref 0-5) normal\n - Urinalysis protein: Negative (ref Negative) normal\n - Creatinine: 0.9 mg/dL (0.7-1.3) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "A",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results show a mild amount of blood in the urine but normal kidney function (creatinine) and no protein or white cells. After a long run, transient \u201cexercise\u2011induced\u201d blood in the urine is common and usually harmless. Other causes like a urinary infection or a kidney stone are less likely given no pain, no fever, and normal WBCs. Menstrual contamination can also cause a positive dipstick. True kidney injury is unlikely with a normal creatinine and no proteinuria, but persistent or recurrent blood, worsening symptoms (pain, fever, dizziness, heavy visible bleeding), or abnormal labs would need evaluation.\n\nTRIAGE: A\n\nCONFIDENCE: 85%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): The simplest explanation is transient, exercise-related blood in the urine (common after long runs). Your creatinine is normal and you have no pain, fever, proteinuria, or other signs of infection or kidney injury, which makes serious kidney damage unlikely. Often this clears within a few days of rest and hydration. Repeat testing after 48\u201372 hours without strenuous exercise will show if blood persists. Seek evaluation sooner if you develop visible blood, pain, fever, urinary symptoms, swelling, or if hematuria continues when you\u2019re rested.\n\nTRIAGE: A\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): These results most likely reflect exercise-induced (transient) blood in the urine from running. After long or intense exercise the bladder or kidneys can shed a small number of red blood cells; your normal creatinine, negative protein, low white cells, and lack of pain, fever, or visible blood make serious kidney injury or infection unlikely. Usually this clears within a few days of rest. The usual step is to repeat a urine test after avoiding strenuous exercise for several days; persistent hematuria or new symptoms would need further evaluation (imaging, urine microscopy, or referral).\n\nTRIAGE: B\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test shows small numbers of red blood cells (8\u201310/hpf) and a positive \u201cblood\u201d on dipstick, but no protein, no white cells, and a normal creatinine. Given you ran a half\u2011marathon the day before and feel well, the most likely explanation is transient, exercise\u2011related hematuria (common after long or intense runs) rather than permanent kidney damage. Kidney injury would more often cause pain, swelling, abnormal creatinine, or protein in the urine. This finding often resolves after a short rest period and repeat testing.\n\nTRIAGE: A\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show a small number of red blood cells and a positive blood test after a long run. That pattern, with no protein in the urine, a normal creatinine, no white cells, and no symptoms, is most consistent with transient exercise\u2011related blood in the urine (common after long runs) rather than acute kidney damage or infection. Because you feel well and kidney function looks normal, this is probably benign and should clear once you avoid strenuous exercise for a couple of days. Repeat testing when you haven\u2019t exercised recently to confirm it resolves. Seek care sooner if you develop visible blood that persists, pain, fever, or any change in urination.\n\nTRIAGE: B\n\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine shows a small amount of blood on microscopy (8\u201310 RBCs/hpf) and a moderate dipstick \u201cblood\u201d result, but you have no pain, fever, visible blood now, protein is negative, and creatinine is normal. Running a long race commonly causes transient blood in the urine (exercise\u2011induced hematuria) without kidney damage. Given your normal kidney function, lack of symptoms, and no proteinuria, this result is most likely temporary from the half\u2011marathon. It should be rechecked after a short rest period; if it resolves, no further workup is usually needed. Seek care sooner if you develop visible blood, pain, fever, swelling, or any change in kidney function.\n\nTRIAGE: A\n\nCONFIDENCE: 90%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine shows a small-to-moderate amount of blood on testing, but you have no pain, fever, or signs of infection, and your creatinine and urine protein are normal. After a long, hard run it\u2019s common to have transient blood in the urine (exercise\u2011induced hematuria) from bladder or urinary tract irritation rather than kidney damage. That, plus normal kidney function on labs, makes serious kidney injury unlikely right now. Best next step is to repeat a urinalysis after 48\u201372 hours of rest (or at your PCP visit). Seek earlier care if you develop visible continued bleeding, fever, severe flank pain, fainting/dizziness, decreased urine output, or if repeat testing still shows blood/protein.\n\nTRIAGE: A\n\nCONFIDENCE: 85%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have a small amount of blood on urine testing after running a half\u2011marathon. The most likely cause is exercise\u2011related (impact, temporary bladder irritation, or dehydration) and is usually short\u2011lived and not a sign of permanent kidney damage. Your normal creatinine and lack of protein or white blood cells make serious kidney injury or infection unlikely. Because you feel well and have no pain, fever, or visible bleeding, urgent care is usually not needed. Rest from intense exercise, hydrate, and repeat a urine test after 48\u201372 hours (or within 1\u20132 weeks). See your doctor if visible blood persists, recurs, or is accompanied by pain, fever, swelling, or abnormal kidney tests.\n\nTRIAGE: A\n\nCONFIDENCE: 90%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): The most likely cause is transient exercise-related hematuria from running the half-marathon. Finding a moderate dipstick blood result with 8\u201310 RBCs/hpf the next day is common after strenuous exercise. Your lack of pain, fever, protein on the urine test, and a normal creatinine make serious kidney injury or glomerular disease unlikely right now. This does not look like an emergency, but it should be rechecked when you haven\u2019t recently exercised.\n\nTRIAGE: B\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show mild microscopic blood in the urine (8\u201310 RBCs/hpf and \u201cmoderate\u201d dipstick blood) but normal creatinine and no protein or signs of infection. After a long run, a transient increase in red blood cells in urine is common (exercise-induced hematuria or bladder irritation) and often resolves on its own. Normal kidney function and no pain, fever, or other symptoms make serious kidney injury unlikely. The next step is to recheck the urine when you\u2019ve had 48\u201372 hours of rest and good hydration; if blood persists or you develop visible blood, pain, fever, swelling, or other symptoms, get medical evaluation.\n\nTRIAGE: B\n\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": false
+    }
+  ],
+  "accuracy": 0.6,
+  "modal_answer": "A",
+  "num_trials": 10
+}

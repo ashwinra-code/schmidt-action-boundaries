@@ -1,0 +1,72 @@
+{
+  "problem_idx": 786,
+  "case_id": "E23",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 31-year-old man.\n My situation:\n - Symptoms: I had a cold last week (sore throat and congestion) but I still feel more tired than usual - my energy hasn't fully bounced back. No current\n fever.\n - History: No autoimmune disease and not on any regular medications.\n - Vitals: BP 112/68, HR 70, Temp 36.7\u00b0C\n - Exam: Normal exam at my visit.\n My labs (with units and reference ranges):\n - WBC: 3.3 K/uL (4.0-11.0) low\n - Absolute neutrophil count (ANC): 1.5 K/uL (1.5-7.0) borderline\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - Platelets: 220 K/uL (150-400) normal\n My doctor's office said they can't fit me in for 3 weeks for a follow-up, and I'd have to go to urgent care and pay out of pocket if I want labs rechecked sooner.\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "A/B",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3 K/\u00b5L) and your neutrophils are at the low end of normal (ANC 1.5 K/\u00b5L). That pattern is often seen after viral illnesses and can be transient. With normal vital signs, a normal exam, no fever now, and normal hemoglobin and platelets, there is low immediate concern for a dangerous infection. The main precautions are to watch for fever, new infections, or worsening symptoms. Repeating a CBC in a couple of weeks is reasonable to confirm recovery; if counts fall further or you develop fever or signs of infection sooner, seek care promptly.\n\nTRIAGE: B\n\nCONFIDENCE: 80%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show a mildly low white blood cell count (WBC 3.3 K/\u00b5L) with a borderline neutrophil count (ANC 1.5 K/\u00b5L). Hemoglobin and platelets are normal, and your exam and vital signs are reassuring. After a viral cold it\u2019s common for white counts to dip temporarily; this pattern often resolves on its own. Because you have no fever, no obvious infection, and no other abnormal counts, this does not appear to be an emergency. Monitor symptoms and plan to recheck with your doctor as arranged. Seek earlier care if you develop fever, worsening fatigue, new infections, mouth sores, unexplained bruising/bleeding, or rapid clinical decline.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 80%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (WBC 3.3) and your neutrophil count is right at the lower limit of normal (ANC 1.5). This pattern commonly follows a recent viral infection and is often temporary. Because you have no fever, normal vital signs, a normal exam, and no active infections, there\u2019s low immediate concern. The usual step is to recheck a CBC in a couple of weeks to ensure counts recover. Come back sooner if you develop fever, chills, worsening sore throat, mouth sores, unexplained new infections, or rapidly worsening fatigue.\n\nTRIAGE: B\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low and the neutrophil count is at the low end of normal. This pattern often follows a viral illness and can take days to weeks to recover. Your red cells and platelets are normal, you have no fever now, and your exam and vital signs are stable, so there is no clear immediate danger from these numbers alone. The main concern would be if neutrophils drop further or you develop fever or signs of infection. Rechecking bloodwork in a few weeks is reasonable unless new symptoms occur.\n\nTRIAGE: B\n\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3) and your neutrophils are at the lower limit (ANC 1.5). That pattern is commonly seen after viral illnesses and often improves on its own. Because you\u2019re afebrile, have a normal exam and stable vitals, and your hemoglobin and platelets are normal, this does not look to be an emergency. Still, neutrophils help fight bacterial infections, so watch for fever, chills, new or worsening sore throat, mouth sores, or other signs of infection. If any of those occur, seek care right away. A repeat CBC in a few weeks (as your doctor planned) is reasonable to confirm recovery.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 80%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (WBC 3.3 K/uL) and your neutrophils are right at the lower limit (ANC 1.5 K/uL). After a recent viral cold this is commonly a temporary effect; normal hemoglobin and platelets, normal vitals and no fever make a serious problem less likely now. The main concern would be if neutrophils drop much lower or if you develop fever or signs of infection, which would raise the urgency. Reasonable next steps are repeat bloodwork in 1\u20133 weeks and watching for new or worsening symptoms (fever, chills, mouth sores, increasing fatigue, or infections).\n\nTRIAGE: B\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show a mild drop in total white blood cells (WBC 3.3) with a borderline neutrophil count (ANC 1.5). This pattern is common after a recent viral illness and, given your normal exam, stable vitals and no fever, is most likely temporary. Because neutrophils help fight bacteria, counts well below 1.0 are more concerning; 1.5 is at the lower limit but not clearly dangerous. The usual approach is watchful waiting with a repeat CBC in a few weeks and to return sooner if new or worsening symptoms appear (fever, worsening fatigue, mouth sores, unexplained bruising/bleeding, signs of infection).\n\nTRIAGE: B\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have mild low white blood cells (WBC 3.3 K/uL) with a borderline neutrophil count (ANC 1.5 K/uL). In a healthy 31\u2011year\u2011old who just had a viral cold, this pattern is commonly temporary\u2014viruses can briefly lower white cell counts. Because your hemoglobin and platelets are normal, you feel mostly well, and you have no fever or abnormal exam, this does not look immediately dangerous. It\u2019s reasonable to have the CBC rechecked in a few weeks to confirm recovery. However, if you develop fever, chills, new or worsening sore throat, mouth sores, increasing fatigue, or signs of infection, you should seek medical attention sooner.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your WBC is mildly low and your neutrophil count is right at the lower limit. In a young, well-appearing person who just had a viral cold, this pattern is most commonly a transient effect of the infection and often recovers on its own. Because you have no fever, normal vital signs, and a normal exam, immediate danger is unlikely. Still, watch for fever, increasing fatigue, new or worsening sore throat, mouth sores, easy bruising/bleeding, or signs of infection \u2014 those would need prompt evaluation. Plan to recheck a CBC in about 1\u20132 weeks; if counts stay low or fall, your doctor may order further tests.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show a mild decrease in total white blood cells (WBC 3.3) and neutrophils right at the low-normal/borderline level (ANC 1.5). That pattern commonly follows viral infections and, with your normal exam, stable vitals, and no fever, is most often transient and not immediately dangerous. The usual plan is to repeat labs in a few weeks to confirm recovery and watch symptoms. Seek medical attention sooner if you develop fever, chills, mouth sores, new or worsening infections, easy bruising/bleeding, or marked worsening fatigue.\n\nTRIAGE: A\nCONFIDENCE: 80%",
+      "extracted_answer": "A",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

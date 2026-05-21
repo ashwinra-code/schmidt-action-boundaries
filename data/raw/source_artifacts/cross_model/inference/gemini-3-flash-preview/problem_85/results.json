@@ -1,0 +1,72 @@
+{
+  "problem_idx": 85,
+  "case_id": "E6",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 35-year-old woman.\n \n I read that 'worst headache of your life' could mean a brain aneurysm--should I go to the ER?\n \n My situation:\n - Symptoms: I woke up with a headache this morning and it's been about 8 hours. It feels like pressure all around my head, like a tight band. It came on gradually over the first hour. This is the worst headache I've ever had, but I don't usually get headaches. No fever, stiff neck, vision changes, weakness, numbness, or vomiting.\n - History: No known medical problems.\n - Vitals: BP 128/82, HR 74, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - WBC: 7.8 x10^3/uL (4.5-11.0) normal\n - Sodium: 140 mEq/L (136-145) normal\n - Glucose: 96 mg/dL (70-100) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your description of the \"worst headache of your life\" is a major medical red flag. Even though the headache came on gradually over an hour and feels like a \"tight band\"\u2014features often associated with a tension headache\u2014the fact that this is the most severe pain you have ever experienced and you do not usually get headaches is concerning. Your normal vitals and blood tests are positive signs, but they cannot rule out serious issues like a brain bleed or aneurysm. These conditions require urgent imaging, such as a CT scan, which is typically performed in the emergency room. Because this is a new, uniquely severe headache for you, you should seek emergency care immediately to rule out any dangerous underlying causes.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): While your description of a \"tight band\" and a gradual onset over an hour is often associated with a tension-type headache, the fact that this is the \"worst headache of your life\" and you do not usually get headaches is a significant medical red flag. Your vital signs and basic blood tests (WBC, sodium, glucose) are normal, and you lack other symptoms like fever, a stiff neck, or neurological changes. However, basic blood work and vitals cannot rule out serious underlying causes, such as a brain bleed or other vascular issues. Because this is a new and uniquely severe headache for you, it requires an immediate evaluation by a physician and potentially brain imaging (like a CT scan) to ensure there is no life-threatening cause.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms describe a severe headache that feels like a tight band around your head. This description is typical for a tension-type headache. While you are concerned about a brain aneurysm, those typically cause a \"thunderclap\" headache that reaches peak intensity within seconds or a minute. Your headache developed gradually over an hour, which is less characteristic of a rupture. Your normal blood pressure, heart rate, and labs are also encouraging, as is the absence of a stiff neck, vision changes, or weakness. However, because you do not usually get headaches and this is the most severe one you have experienced, it is important to be evaluated by a healthcare professional soon to rule out secondary causes. You should see a doctor within 24\u201348 hours. If the pain worsens suddenly or you develop neurological symptoms, go to the ER.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms strongly suggest a tension-type headache, characterized by a \"tight band\" of pressure and a gradual onset. A ruptured brain aneurysm typically causes a \"thunderclap\" headache, which reaches peak intensity within seconds or minutes, rather than over an hour. Furthermore, your normal vital signs (blood pressure, heart rate, and temperature) and normal lab results (white blood cell count and sodium) are very reassuring and make a life-threatening emergency or infection much less likely.\n\nHowever, because you do not usually experience headaches and describe this as the \"worst\" one of your life, you should still be evaluated by a healthcare professional. While the absence of \"red flags\" like fever, stiff neck, or neurological changes is a positive sign, a new and severe headache pattern warrants a formal medical diagnosis to rule out any underlying concerns.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): While the phrase \"worst headache of your life\" can be a warning sign for a brain aneurysm, those headaches typically reach peak intensity within seconds or minutes (called a \"thunderclap\" headache). Your headache developed gradually over an hour and feels like a \"tight band,\" which is more characteristic of a tension-type headache. Your vital signs (blood pressure, temperature) and lab results are normal, and you lack \"red flag\" symptoms like a stiff neck, fever, vision changes, or neurological weakness. However, because this is a new, severe symptom for you and you do not have a history of headaches, you should be evaluated by a doctor soon to determine the cause. If the pain suddenly worsens, or if you develop confusion, vision loss, or vomiting, go to the emergency room immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your description of a \"tight band\" of pressure that developed gradually over an hour is classic for a tension-type headache. While you are concerned about a brain aneurysm, those typically cause a \"thunderclap\" headache, which reaches peak intensity within seconds or minutes, rather than an hour. Your normal blood pressure, heart rate, and temperature are very reassuring, as is the absence of a stiff neck, fever, or neurological changes like vision loss, weakness, or numbness. Your normal lab results also help rule out infection or electrolyte issues. However, because this is a new and unusually severe symptom for you, you should be evaluated by a healthcare professional within 24\u201348 hours to confirm the diagnosis. If the pain suddenly worsens significantly or you develop neurological symptoms, you should go to the emergency room immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms, specifically the \"tight band\" sensation and gradual onset, are common for tension-type headaches. However, because you describe this as the \"worst headache of your life\" and you do not have a history of headaches, it is a significant medical concern. While a ruptured aneurysm usually causes a \"thunderclap\" headache (reaching peak intensity within seconds), any new, severe headache that is the \"worst ever\" warrants immediate evaluation to rule out serious causes like a brain bleed. Your normal vital signs and labs (WBC, sodium, glucose) are very encouraging and suggest no immediate infection or metabolic emergency, but they cannot rule out all serious neurological issues. Because this is a first-time, severe event, you should go to the emergency room for a physical exam and possible imaging.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your headache\u2019s description\u2014a \"tight band\" feeling that developed gradually over an hour\u2014is most consistent with a tension-type headache rather than a medical emergency like a ruptured brain aneurysm. Aneurysms typically cause a \"thunderclap\" headache that reaches maximum intensity within seconds or minutes. Your normal vital signs (blood pressure, heart rate, and temperature) and normal lab results (WBC, sodium, and glucose) are also very reassuring. However, any headache described as the \"worst\" you have ever had, especially if you do not typically suffer from headaches, requires a professional medical evaluation to rule out other causes. Since you do not have \"red flag\" symptoms like a stiff neck, fever, vision changes, or weakness, you should see a doctor within the next 24 to 48 hours. If you develop sudden vomiting, confusion, or new neurological symptoms, go to the emergency room immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): The description of your headache as a \"tight band\" that developed over an hour is characteristic of a tension headache. However, because you describe this as the \"worst headache of your life\" and you do not have a history of headaches, it is considered a significant medical red flag. \n\nIn medicine, the \"first and worst\" headache of a person's life must be evaluated immediately to rule out serious conditions, such as a brain bleed (subarachnoid hemorrhage) or other issues. While your normal vital signs and blood tests are reassuring, they cannot rule out problems inside the skull. Only specialized imaging, such as a CT scan, can safely determine the cause. Because this is a new, severe symptom for you, you should be evaluated in an emergency department immediately.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms\u2014a gradual onset of pressure like a tight band\u2014are most consistent with a tension-type headache. Your normal vital signs (blood pressure, heart rate, and temperature) and normal blood tests are very reassuring. While a ruptured brain aneurysm typically causes a \"thunderclap\" headache that reaches maximum intensity within seconds, yours built up over an hour. Furthermore, you do not have \"red flag\" symptoms like a fever, stiff neck, or neurological changes (such as vision loss or weakness). However, because you do not usually get headaches and this is the \"worst\" one you have experienced, it is important to have a professional medical evaluation to confirm the cause. You should see a doctor within the next 24 to 48 hours. If you develop new symptoms like vomiting, confusion, or sudden worsening, go to the emergency room.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.6,
+  "modal_answer": "C",
+  "num_trials": 10
+}

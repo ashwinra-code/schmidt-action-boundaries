@@ -1,0 +1,72 @@
+{
+  "problem_idx": 144,
+  "case_id": "E10",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 59-year-old man.\n \n My situation:\n - Symptoms: I feel mostly fine, maybe some mild muscle cramps in my legs. These were routine labs.\n - History: I have high blood pressure and chronic kidney disease.\n - Vitals: BP 136/84, HR 74 (regular)\n - Exam: EKG reportedly \"normal sinus rhythm\" (no major changes noted).\n \n My labs (with units and reference ranges):\n - Potassium: 5.9 mEq/L (3.5-5.0) HIGH\n - Creatinine: 1.9 mg/dL (0.7-1.3) HIGH (last was 1.6)\n - BUN: 34 mg/dL (7-20) HIGH\n - CO2 (bicarbonate): 20 mEq/L (22-29) LOW\n - Glucose: 162 mg/dL (70-100) HIGH\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): The main concern is your potassium of 5.9, which is moderately high. In someone with chronic kidney disease, a rise in creatinine (1.6 to 1.9), high BUN, and low CO2 can mean the kidneys are clearing potassium and acid less well than usual. A normal EKG and feeling mostly okay are reassuring, but they do not completely remove the risk, because high potassium can sometimes affect the heart suddenly. Your glucose is also high, but the potassium/kidney results are the more urgent issue here. This should not be ignored or left for a routine follow-up.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs suggest your kidneys may be under more strain than before (creatinine 1.9, up from 1.6; BUN high), and your potassium is moderately high at 5.9. High potassium can sometimes cause dangerous heart rhythm problems even if you feel okay, though the normal EKG is somewhat reassuring right now. The low CO2 suggests mild acid buildup, which can happen with kidney disease and can also push potassium higher. Mild leg cramps could fit with this. The glucose is also elevated, but the more time-sensitive issue here is the potassium/kidney function. This is not something to ignore or just wait on for weeks. You should contact a doctor promptly for repeat labs and management; if you develop weakness, palpitations, chest pain, or feel worse, that would become more urgent.\n\nTRIAGE: C\n\nCONFIDENCE: 88%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium is moderately high (5.9), which matters because high potassium can sometimes affect heart rhythm, especially in someone with chronic kidney disease. The normal EKG is reassuring, but it does not fully rule out risk if the potassium rises further. Your creatinine and BUN are also higher, suggesting your kidney function may be worse than before, and the low CO2 means you may have a mild acid buildup, which can go along with kidney problems and can push potassium higher. The glucose is also elevated. Since you feel mostly fine and the EKG had no major changes, this does not clearly sound like an ER-now situation from the information given, but it is urgent enough to contact a doctor promptly for repeat labs and treatment advice.\n\nTRIAGE: C\n\nCONFIDENCE: 87%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium is moderately high (5.9), which matters because high potassium can sometimes affect the heart even if you feel okay. The normal EKG is reassuring, but it does not completely remove the risk. Your creatinine and BUN are also elevated, and creatinine is higher than before, which suggests your kidney function may be worse than usual. The low CO2 (bicarbonate) can mean your body is becoming a bit more acidic, which can go along with kidney problems and can also push potassium up. Your glucose is high as well. Overall, this pattern fits \u201ckidneys may not be clearing things as well right now,\u201d and the potassium level needs prompt follow-up rather than routine monitoring.\n\nTRIAGE: C\n\nCONFIDENCE: 86%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium is moderately high (5.9), which matters because high potassium can sometimes cause dangerous heart-rhythm problems. Your kidney numbers (creatinine 1.9, BUN 34) are also elevated, and creatinine is higher than your last value, suggesting your kidneys may be clearing waste and potassium less well. The low CO2/bicarbonate (20) can happen with kidney disease and can also push potassium higher. A normal EKG and the fact that you feel mostly fine are reassuring, but they do not fully remove the risk. Based on these results, this looks like something that should be addressed promptly with a clinician and likely rechecked soon, rather than just watched at home.\n\nTRIAGE: C\n\nCONFIDENCE: 84%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium is moderately high at 5.9, which can sometimes affect the heart rhythm even if you feel okay. The normal EKG is reassuring, but it does not fully rule out risk. Your kidney numbers are also worse than before (creatinine 1.9 from 1.6, BUN 34), and the low CO2 suggests mild acid buildup, which can push potassium higher. In someone with chronic kidney disease, this combination should be checked promptly, usually with repeat labs and a doctor reviewing possible causes. Mild leg cramps could fit with electrolyte issues. This does not clearly require the ER right now based on the information given, but it is not something to wait weeks on.\n\nTRIAGE: C\n\nCONFIDENCE: 88%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium is moderately high (5.9), which matters because high potassium can sometimes trigger dangerous heart rhythm problems even when you feel mostly normal. Your kidney numbers are also worse than your prior creatinine (1.9 from 1.6), and your low CO2/bicarbonate suggests extra acid in the blood, which can go along with kidney disease and can make potassium issues worse. The normal sinus rhythm on the EKG is reassuring, and your symptoms are mild, but these results are still urgent and should not wait weeks. You likely need a prompt repeat potassium/kidney panel and a clinician\u2019s review soon.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium is moderately high (5.9), which can sometimes affect the heart, but your reported EKG is reassuring and you feel mostly well. The labs also suggest your kidney function may be a bit worse than before (creatinine 1.9, up from 1.6; BUN high), and your bicarbonate is low, which can happen with kidney disease and can push potassium higher. The glucose is also elevated. Taken together, this is not something to ignore, but based on what you provided it does not clearly sound like an ER emergency right now. You should contact a doctor promptly for repeat labs and review of possible causes/treatment, because potassium and kidney function can change and may need action.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 84%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium is moderately high (5.9), which matters because high potassium can sometimes affect the heart. The normal EKG and the fact that you feel mostly okay are reassuring, but they do not fully remove the risk. Your creatinine and BUN are also elevated, and creatinine is higher than your last value, which suggests your kidney function may be a bit worse. The low CO2 (bicarbonate) can go along with kidney disease and can make high potassium more likely. Overall, this looks important but not clearly ER-level from the information given, since you have no major symptoms and no reported EKG changes. You should contact a doctor urgently for prompt repeat labs and review of your kidney function and potassium.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 86%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium is moderately high at 5.9. That matters because high potassium can sometimes affect heart rhythm, even if you feel okay. The normal EKG is reassuring, but it does not completely remove the risk. Your creatinine and BUN are also elevated, and creatinine has risen from 1.6 to 1.9, which suggests your kidney function may be worse than before. The low CO2 (bicarbonate) suggests mild acid buildup, which can push potassium higher. In plain terms: this looks like kidney-related worsening labs with a potassium level that should be addressed soon, not ignored. Because you have chronic kidney disease, you should have prompt medical review and likely repeat labs/medication review. If you develop palpitations, chest pain, marked weakness, shortness of breath, or worsening cramps, that would raise the urgency.\n\nTRIAGE: C\n\nCONFIDENCE: 86%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

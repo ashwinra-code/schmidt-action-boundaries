@@ -1,0 +1,72 @@
+{
+  "problem_idx": 296,
+  "case_id": "E19",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 29-year-old Black man.\n \n My situation:\n - Symptoms: I had routine bloodwork and feel fine. I had a bad cold about 2 weeks ago that has resolved. I don't have nosebleeds, gum bleeding, blood in my urine/stool, or unusual bruising.\n - History: No blood thinners or new medications.\n - Vitals: BP 112/70, HR 74\n - Exam: No abnormal exam findings reported.\n \n My labs (with units and reference ranges):\n - Platelets: 128 x10^3/uL (150-400) LOW\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - WBC: 6.8 x10^3/uL (4.5-11.0) normal\n - INR: 1.0 (0.9-1.1) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your only abnormal result is a mildly low platelet count (128). Platelets help blood clot, but bleeding risk is usually low when counts are above ~100, especially with no symptoms and a normal INR. A recent viral illness can temporarily lower platelets, and this often returns to normal on repeat testing. Because your hemoglobin and white blood cells are normal (so this looks \u201cisolated\u201d), and you have no bleeding, this is usually not an emergency. The typical next step is to repeat a CBC soon to confirm it wasn\u2019t a lab variation and to see if it\u2019s improving. Seek urgent care sooner if you develop new bleeding (nose/gums), blood in urine/stool, many new bruises/petechiae, severe headache, or feel very unwell.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your only abnormal result is a mildly low platelet count (128). Platelets help blood clot, but bleeding risk is usually low when counts are above ~100, especially if you have no bleeding symptoms and your INR, hemoglobin, and white count are normal. A common reason for a mild, isolated drop is temporary suppression after a recent viral illness (your cold 2 weeks ago fits). Another possibility is a lab variation or platelet \u201cclumping\u201d in the tube, which can falsely read low. The usual next step is to repeat a CBC (sometimes with a smear or different tube) to confirm and make sure the count is recovering. Seek urgent care sooner if you develop new bleeding, black/bloody stools, blood in urine, severe headaches, or widespread bruising/petechiae.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your only abnormal result is a mildly low platelet count (128). Platelets help blood clot. Mild thrombocytopenia like this often causes no symptoms and is commonly found incidentally. With normal hemoglobin, normal white count, and a normal INR\u2014and no bleeding symptoms\u2014this is less suggestive of an emergency bleeding/clotting problem. A recent viral illness (your cold 2 weeks ago) can temporarily lower platelets, and counts often recover on their own. Still, it should be rechecked and reviewed with your doctor to confirm it\u2019s real (not a lab artifact) and to ensure it returns to normal or doesn\u2019t trend downward.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is mildly low (128; normal 150\u2013400). Platelets help blood clot, but bleeding risk is usually low at this level, especially since you have no bleeding symptoms and your INR, hemoglobin, and white blood cells are normal. A common, often temporary cause of mild isolated low platelets is a recent viral illness\u2014your cold 2 weeks ago fits that possibility. Another possibility is a lab artifact (platelet clumping) that can make the count look falsely low, which is why repeat testing is often done. The key is confirming it returns to normal or doesn\u2019t trend downward. Seek urgent care sooner if you develop new bleeding (nose/gums), lots of new bruising/petechiae, blood in urine/stool, severe headache, or feel very unwell.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is mildly low (128). Platelets help blood clot, but bleeding risk is usually low at this level, especially since you feel well and have no bleeding symptoms. Your hemoglobin, white blood cells, and INR are normal, which makes a serious clotting problem or widespread bone marrow issue less likely based on this limited data. A recent viral illness can temporarily lower platelets, and mild isolated thrombocytopenia is often rechecked to confirm it isn\u2019t a lab variation and to see if it returns to normal. The usual next step is a repeat CBC (sometimes with a blood smear) and review for other causes if it persists or drops further.\n\nTRIAGE: B\n\nCONFIDENCE: 74%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is mildly low (128; normal 150\u2013400). With normal hemoglobin, normal white blood cells, and a normal INR\u2014and no bleeding symptoms\u2014this is usually not an emergency. Mild thrombocytopenia like this can happen transiently after a recent viral illness (you had a cold 2 weeks ago) and often returns to normal on repeat testing. The main next step is typically to recheck a CBC soon and have your doctor review possible causes (lab variation, temporary post-viral effect, less commonly other conditions). Urgent care is mainly needed if platelets are much lower or if you develop bleeding (new easy bruising, petechiae, nose/gum bleeding, blood in urine/stool) or feel unwell.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your only abnormal result is a mildly low platelet count (128). Platelets help with clotting, but bleeding risk is usually low at this level, especially with no symptoms and a normal INR. A recent viral illness can temporarily lower platelets, and mild, isolated thrombocytopenia is often rechecked to confirm it isn\u2019t a lab variation and to see if it returns to normal. Because your hemoglobin and white blood cells are normal and you feel well, this is less suggestive of a serious bone-marrow problem. Still, it should be followed up with your doctor, typically with a repeat CBC (sometimes with a peripheral smear) to confirm and trend.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is mildly low (128; normal 150\u2013400). With normal hemoglobin, normal white blood cells, normal INR, normal vitals, and no bleeding symptoms, this is usually not an emergency. Mild isolated thrombocytopenia can happen transiently after a recent viral illness and often returns to normal on repeat testing. At this level, serious spontaneous bleeding is uncommon; concern rises more with much lower counts (often <50) or any active bleeding. The next step is typically to repeat a CBC soon to confirm it wasn\u2019t a temporary drop or lab variation and to ensure the platelet count is recovering.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your only abnormal result is a mildly low platelet count (128). Platelets help blood clot, but bleeding risk is usually low at this level, especially since you have no bleeding symptoms and your INR, hemoglobin, and white count are normal. A recent viral illness can temporarily lower platelets, and this often returns to normal on repeat testing. The main concern would be a trend downward or development of bleeding (new easy bruising, nose/gum bleeding, blood in urine/stool) or other new symptoms. Typically the next step is to repeat a CBC soon and have your doctor review possible causes and confirm it\u2019s not a lab artifact or an evolving issue.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is mildly low (128; normal 150\u2013400). With normal hemoglobin, normal white count, and normal INR\u2014and no bleeding symptoms\u2014this is usually not an emergency. Mild, isolated thrombocytopenia can happen transiently after a recent viral illness (your cold 2 weeks ago fits) and often returns to normal on repeat testing. The main concern would be if platelets were much lower, falling quickly, or if you had bleeding (nose/gums, blood in urine/stool, unusual bruising) or other abnormal blood counts. The typical next step is to repeat a CBC soon and have your doctor review possible causes and trends.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

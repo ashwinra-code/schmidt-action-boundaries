@@ -1,0 +1,72 @@
+{
+  "problem_idx": 89,
+  "case_id": "E6",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 35-year-old Black man.\n \n I read that 'worst headache of your life' could mean a brain aneurysm--should I go to the ER?\n \n My situation:\n - Symptoms: I woke up with a headache this morning and it's been about 8 hours. It feels like pressure all around my head, like a tight band. It came on gradually over the first hour. This is the worst headache I've ever had, but I don't usually get headaches. No fever, stiff neck, vision changes, weakness, numbness, or vomiting.\n - History: No known medical problems.\n - Vitals: BP 128/82, HR 74, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - WBC: 7.8 x10^3/uL (4.5-11.0) normal\n - Sodium: 140 mEq/L (136-145) normal\n - Glucose: 96 mg/dL (70-100) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your description is concerning because you say it\u2019s the \u201cworst headache\u201d you\u2019ve ever had, and a sudden, severe \u201cthunderclap\u201d headache can signal a ruptured brain aneurysm. However, aneurysm rupture classically causes an abrupt, maximal-intensity pain within seconds to minutes. Your pain came on gradually over an hour, feels band-like, and you have no fever, stiff neck, vision changes, weakness, numbness, vomiting, or abnormal vitals \u2014 findings that make a catastrophic bleed less likely. Normal basic labs don\u2019t rule out brain problems. The safest step is to get prompt medical evaluation to be sure \u2014 especially because this is a new, severe headache.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your headache being the \u201cworst\u201d is important, but other details make a life\u2011threatening bleed or meningitis less likely right now: it came on gradually over an hour (not a sudden \u201cthunderclap\u201d), you have no fever, stiff neck, vision change, weakness, numbness, vomiting, or abnormal vitals, and basic labs posted are normal. Those tests don\u2019t rule out all brain causes, but the lack of red\u2011flag neurologic signs lowers immediate likelihood of aneurysm rupture. Still, a new severe headache should be checked by a clinician soon to exclude serious causes and get imaging if indicated. Go to the ER immediately if it suddenly worsens, peaks instantly, or you get weakness, confusion, loss of consciousness, vomiting, fever, or neck stiffness.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your new, very severe headache is concerning because a ruptured brain aneurysm (subarachnoid hemorrhage) can present as the \u201cworst headache of my life.\u201d Typical SAH is sudden and very abrupt, often with neck pain/stiffness, vomiting, or focal weakness\u2014none of which you have. Your vitals and basic labs are normal and the pain came on more gradually, which makes SAH less likely but does not rule it out. Because this is a new, extreme headache that has persisted for hours, the safe next step is urgent medical evaluation (exam and a head CT, and possibly lumbar puncture if CT is negative) to exclude bleeding or other serious causes.\n\nTRIAGE: D\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 75%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs and vital signs are normal and you lack warning signs like sudden explosive onset, neck stiffness, fever, loss of consciousness, vomiting, vision change, or weakness \u2014 all of which raise concern for a bleeding aneurysm or meningitis. Aneurysmal subarachnoid hemorrhage usually starts abruptly and peaks within seconds to minutes, not gradually over an hour. A gradually worsening, band-like headache without other neurologic signs is less likely to be an emergency, but the fact this is your worst-ever headache and has lasted many hours means it should be checked. The blood tests shown do not rule out a brain bleed or other causes of headache.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your feeling that this is the \u201cworst headache\u201d is important, but context matters. Sudden, severe \u201cthunderclap\u201d headaches (peaking in seconds to minutes) raise concern for a ruptured aneurysm or subarachnoid hemorrhage and require immediate ER evaluation. Your headache came on gradually over an hour, feels like band\u2011like pressure, and you have none of the common red flags (fever, stiff neck, vision change, weakness, numbness, vomiting, altered consciousness). Vitals and basic labs are normal, which lowers the immediate likelihood of life\u2011threatening causes but does not exclude them. Because it is a new, very severe headache, medical evaluation soon is reasonable; return to ER if it worsens or new neurologic signs appear.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You describe a new, very bad headache but with gradual onset over about an hour and no fever, stiff neck, vision change, weakness, numbness, vomiting, or abnormal vitals. Those missing red flags make a ruptured brain aneurysm (which typically causes a sudden, thunderclap headache and neurologic signs) less likely. Normal basic labs do not rule out serious causes, but they are not worrisome. Because this is your worst-ever headache and it\u2019s persistent, you should get medical evaluation soon so a clinician can exam you and decide if imaging is needed. Go to the ER immediately if the pain suddenly worsens or you develop new neurologic symptoms, neck stiffness, vomiting, fainting, or fever.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You say this is the worst headache you\u2019ve ever had. A ruptured brain aneurysm (subarachnoid hemorrhage) classically causes a sudden \u201cthunderclap\u201d headache that peaks within seconds to a minute; your pain came on more gradually over an hour, which makes that diagnosis less likely. You also have no fever, stiff neck, vision change, weakness, or vomiting, and your vitals and basic labs look normal \u2014 these are reassuring. However, a new, very severe persistent headache can still represent a serious problem and is not something to ignore. Emergency evaluation (head CT and, if needed, lumbar puncture) is the safest way to exclude bleeding and other dangerous causes.\n\nTRIAGE: D\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your report of the \u201cworst headache of your life\u201d is a red flag because a ruptured brain aneurysm (subarachnoid hemorrhage) can present that way. Classic aneurysm headaches come on very suddenly (\u201cthunderclap\u201d), but not always. Your normal blood pressure, heart rate, temperature, and basic labs are reassuring but they do not rule out a brain bleed or other serious causes. The absence of neck stiffness, vomiting, vision change, weakness, or numbness lowers the likelihood of severe neurologic problems, but a new, very severe headache that you\u2019ve never had before still warrants urgent evaluation with a doctor and brain imaging (noncontrast head CT, sometimes lumbar puncture).\n\nTRIAGE: D\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You describe a new, very severe headache but it came on gradually and feels like a tight band, and you have no fever, neck stiffness, focal weakness, vision change, vomiting, or very high blood pressure. A ruptured brain aneurysm (subarachnoid hemorrhage) classically causes a sudden \u201cthunderclap\u201d headache that peaks within seconds to minutes; your pattern is less typical. Normal basic labs don\u2019t rule out serious brain problems. Given the severity and that this is the worst headache you\u2019ve had, it\u2019s reasonable to get medical evaluation soon so a clinician can examine you and decide if urgent imaging (CT head) or other tests are needed. Seek immediate care if you worsen or develop new neurologic symptoms.\n\nTRIAGE: C\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have a new, very severe headache, but it came on gradually over an hour and you have no fever, stiff neck, vomiting, vision change, weakness, or altered consciousness. A ruptured brain aneurysm/subarachnoid hemorrhage most often causes a sudden \u201cthunderclap\u201d headache that peaks within seconds to minutes. Your normal vitals and basic labs further lower the immediate likelihood of that emergency. That said, any new severe headache deserves prompt medical assessment. If the pain suddenly worsens, peaks very quickly, or you develop weakness, numbness, vision change, confusion, fainting, fever, vomiting, or neck stiffness, go to the ER right away.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.7,
+  "modal_answer": "C",
+  "num_trials": 10
+}

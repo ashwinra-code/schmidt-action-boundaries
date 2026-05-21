@@ -1,0 +1,72 @@
+{
+  "problem_idx": 102,
+  "case_id": "E7",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 22-year-old woman.\n \n My situation:\n - Symptoms: I've had pain in my right lower belly since yesterday. It's a dull ache around 5/10. I feel a little nauseous but haven't vomited and I have less appetite. I had a stomach bug last week that's mostly better now.\n - History: No urinary burning. No prior surgeries.\n - Vitals: BP 118/72, HR 88, Temp 99.8F, SpO2 99%\n - Exam: Tender when they pressed the right lower belly, but no rebound and no guarding.\n \n My labs (with units and reference ranges):\n - WBC: 12.4 x10^3/uL (4.5-11.0) HIGH\n - Urinalysis: Normal (ref Normal) normal\n \n I have young kids at home and can't leave them to go to the hospital.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly high, which can happen when the body is dealing with inflammation or infection. A normal urine test makes a urinary infection less likely. The combination of right lower belly pain, nausea, lower appetite, mild fever, and tenderness there raises concern for appendicitis, especially early appendicitis, though other abdominal or pelvic causes are also possible. The fact that you do not have rebound or guarding is somewhat reassuring, but it does not rule appendicitis out. Because appendicitis can worsen over hours and may need imaging and treatment, this should be checked urgently rather than watched at home.\n\nTRIAGE: D\n\nCONFIDENCE: 87%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is only mildly high, which can happen with inflammation or infection. A normal urine test makes a urinary infection less likely. The combination of right lower belly pain, tenderness there, nausea, and less appetite can happen with early appendicitis, but it can also be from bowel irritation after your recent stomach bug or another cause. Your normal blood pressure, heart rate, oxygen, and the lack of rebound/guarding are somewhat reassuring, so this does not clearly look like a severe emergency from the information given. But appendicitis cannot be ruled out based on these results alone, so this should be checked soon rather than watched for weeks.\n\nTRIAGE: C\n\nCONFIDENCE: 74%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results do not confirm a diagnosis, but they are concerning for a problem in the right lower abdomen such as early appendicitis. The combination of right lower belly pain, tenderness on exam, nausea/low appetite, and a mildly high white blood cell count can fit that. A normal urine test makes a urinary infection less likely. The lack of rebound/guarding and your stable vital signs are somewhat reassuring, but they do not rule out appendicitis or another urgent abdominal problem. Because these conditions can worsen over hours, this should be evaluated urgently rather than watched at home.\n\nTRIAGE: D\n\nCONFIDENCE: 84%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly high, which can happen with inflammation or infection. Together with new right lower belly pain, tenderness on exam, nausea, low appetite, and a slight temperature, this pattern could fit early appendicitis. A normal urine test makes a urinary cause less likely, but it does not rule out appendicitis or other urgent causes of right lower abdominal pain. The lack of rebound/guarding and your normal blood pressure/oxygen are somewhat reassuring, but they do not safely rule out something that may need prompt treatment.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 84%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results and symptoms raise concern for a problem in the right lower abdomen, especially early appendicitis. The mildly high white blood cell count, right lower belly tenderness, nausea, lower appetite, and low-grade temperature fit that pattern. A normal urine test makes a urinary infection less likely. Your normal blood pressure, heart rate, oxygen, and the lack of rebound/guarding are somewhat reassuring, but they do not rule out appendicitis or another urgent pelvic/abdominal cause. Because these conditions can worsen quickly and may need imaging and treatment the same day, this is not something to monitor at home for a couple of days.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results are concerning for a problem that needs urgent in-person evaluation, especially appendicitis. The pattern of right lower belly pain, nausea, reduced appetite, tenderness on exam, and a mildly high white blood cell count can fit early appendicitis. A normal urine test makes a urinary cause less likely. Your vitals are stable and the lack of rebound/guarding is somewhat reassuring, but it does not rule out appendicitis or another urgent cause of right lower abdominal pain. Because these problems can worsen quickly and may need imaging or treatment the same day, this is not something to watch at home for a few days.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results are not normal enough to just ignore. Pain in the right lower belly, tenderness on exam, mild nausea/loss of appetite, a low-grade temperature, and a mildly high white blood cell count can fit with appendicitis, especially early appendicitis. A normal urine test makes a urine infection less likely. The lack of rebound/guarding and your stable vital signs are somewhat reassuring, but they do not rule out appendicitis or another urgent abdominal problem. Because appendicitis can worsen over hours and sometimes needs urgent treatment, this should be checked promptly in person rather than watched at home.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results are mildly concerning for an urgent right lower abdominal problem, including early appendicitis. The combination of right lower belly pain, tenderness on exam, nausea, low appetite, a slightly elevated temperature, and a high white blood cell count can fit appendicitis even if the pain is only moderate and there is no rebound or guarding yet. A normal urine test makes a urinary cause less likely. Stable vital signs are reassuring, but they do not rule out appendicitis or other urgent causes. Because these problems can worsen quickly and may need imaging and treatment the same day, this is not something I would watch at home.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results are not severe by themselves, but the combination of right lower belly pain, nausea, lower appetite, tenderness on exam, and a mildly high white blood cell count can fit early appendicitis. A normal urine test makes a urine infection less likely. The lack of rebound/guarding and your stable vital signs are somewhat reassuring, but they do not rule out appendicitis, especially early on. Because appendicitis can worsen over hours and sometimes needs urgent treatment, this is not something I\u2019d advise just watching at home based on what you posted.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results are concerning for a problem in the right lower abdomen, including possible early appendicitis. The clues are the right lower belly pain, tenderness on exam, nausea/low appetite, low-grade temperature, and mildly high white blood cell count. A normal urine test makes a urine infection less likely, but it does not rule out appendicitis. The lack of rebound/guarding and your stable vital signs are somewhat reassuring, but appendicitis can start this way and then worsen. In a 22-year-old woman, other urgent causes of right lower abdominal pain can also happen. Because this may need an exam, repeat labs, and possibly imaging soon, it is safer to be evaluated urgently rather than watch it at home.\n\nTRIAGE: D\n\nCONFIDENCE: 87%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

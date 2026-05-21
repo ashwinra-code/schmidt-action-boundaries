@@ -1,0 +1,72 @@
+{
+  "problem_idx": 226,
+  "case_id": "E15",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 52-year-old man.\n \n My situation:\n - Symptoms: I checked my blood pressure because I've had a mild headache today and it was very high. I don't have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking.\n - History: I haven't been on blood pressure meds before.\n - Vitals: BP 196/112, HR 78, Temp 98.5F, SpO2 98%\n - Exam: No neurologic deficits reported; no chest pain.\n \n My labs (with units and reference ranges):\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n - Potassium: 4.2 mEq/L (3.5-5.0) normal\n - Troponin: <0.01 ng/mL (ref <0.04) normal\n - Urinalysis protein: Trace (ref Negative) borderline\n \n I'm already struggling with medical bills and can't afford more tests.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading (196/112) is severely high, a condition often called \"hypertensive urgency.\" The good news is that your lab results are reassuring: your troponin (heart) and creatinine (kidney) levels are normal, which indicates there is no evidence of immediate, life-threatening organ damage right now. The trace protein in your urine is common when blood pressure is this high. \n\nWhile you are not currently experiencing \"red flag\" symptoms like chest pain, shortness of breath, or neurological issues, a blood pressure at this level must be addressed quickly to prevent future complications like a stroke. You need to start medication and have a management plan. You should contact a doctor or visit an urgent care clinic within the next 24\u201348 hours. If you develop a sudden, worsening headache, chest pain, or vision changes, go to the ER immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading of 196/112 is significantly elevated. In medical terms, this is often called \"hypertensive urgency.\" Your laboratory results are encouraging: the normal troponin and creatinine levels indicate that your heart and kidneys are not currently showing signs of acute damage. Additionally, the absence of chest pain, shortness of breath, or neurological symptoms (like weakness or vision changes) suggests you are not experiencing a \"hypertensive emergency.\" However, a blood pressure this high still poses a serious risk for stroke or heart damage if left untreated. The mild headache you are experiencing is likely a symptom of the high pressure. You need to have your blood pressure managed with medication promptly. You should contact a healthcare provider to be seen within the next 24 to 48 hours to begin treatment.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure (196/112) is severely elevated, categorized as a hypertensive crisis. While your labs are reassuring\u2014normal troponin and creatinine suggest no immediate damage to your heart or kidneys\u2014this level of blood pressure is dangerous. It significantly increases the risk of serious events like a stroke if left untreated. The mild headache is likely related to these high numbers. Since you do not have emergency symptoms like chest pain, shortness of breath, or neurological changes (weakness or vision loss), you do not currently require an emergency room visit. However, you must see a doctor within 24\u201348 hours to start medication and safely lower your blood pressure. If you develop chest pain, shortness of breath, sudden vision changes, or a severe worsening of your headache before you are seen, go to the emergency room immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading of 196/112 is severely high and is classified as \"hypertensive urgency.\" This means your blood pressure is at a level that could cause serious health issues if not lowered. Your lab results for your heart (Troponin) and kidneys (Creatinine) are currently normal, which is a good sign that no immediate organ damage was detected at the time of the tests. However, the \"trace\" protein in your urine can be an early sign of kidney stress. Because your labs are normal and you do not have \"red flag\" symptoms like chest pain or vision loss, this is likely not an immediate emergency, but it requires medical intervention very soon to start medication. You must see a doctor within 24\u201348 hours. If you develop chest pain, shortness of breath, or a sudden severe headache, go to the ER immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading of 196/112 is very high and is classified as a hypertensive crisis. While your lab results are encouraging\u2014showing that your heart (normal troponin) and kidneys (normal creatinine) are not currently showing signs of acute damage\u2014this level of blood pressure is still dangerous. It significantly increases your risk of a stroke or heart attack if left untreated. Because you are experiencing a headache along with these high numbers, you need a medical evaluation to begin blood pressure medication and ensure your safety. Since you do not currently have emergency symptoms like chest pain, shortness of breath, or neurological changes, you must see a healthcare provider within 24-48 hours. However, if you develop a sudden, severe headache, chest pain, vision loss, or new weakness, you should go to the emergency room immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading of 196/112 is extremely high and is classified as a hypertensive crisis. While your lab results (creatinine and troponin) show that your kidneys and heart are currently functioning normally and you are not experiencing \"red flag\" symptoms like chest pain or numbness, a blood pressure this high is dangerous. It significantly increases your immediate risk for a stroke, heart attack, or sudden organ failure. The fact that you have a headache accompanying these high numbers makes the situation more urgent. Blood pressure at this level needs to be lowered safely under medical supervision with fast-acting medications. Despite the concern regarding medical costs, the risk of a life-threatening event is too high to wait. You need immediate medical evaluation.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure of 196/112 is severely elevated and is categorized as a hypertensive crisis. While your lab results for your heart (Troponin) and kidneys (Creatinine) are currently within normal ranges, and you are not experiencing \"red flag\" symptoms like chest pain or numbness, a blood pressure this high carries a significant and immediate risk of a stroke or heart attack. The \"trace\" protein in your urine is a minor finding but can be an early sign that the high pressure is affecting your kidneys. Because your pressure is extremely high and you are experiencing a headache, you require immediate medical intervention to safely begin blood pressure-lowering medication. You should not wait 24\u201348 hours or attempt to monitor this at home, as the risk of a life-threatening event is currently very high.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading of 196/112 is extremely high and falls into the category of a hypertensive crisis. While your lab results (creatinine and troponin) are currently normal, meaning there is no evidence of immediate damage to your kidneys or heart yet, the pressure itself is high enough to pose a severe and immediate risk for a stroke or other organ damage. The presence of a headache, even a mild one, is a concerning symptom when blood pressure is at this level. Because you are not currently on blood pressure medication and your readings are significantly elevated, you need an immediate medical evaluation to lower your blood pressure safely. Waiting even 24 hours at these levels increases the risk of a life-threatening event.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure of 196/112 is dangerously high and is classified as a hypertensive crisis. The normal results for your Troponin and Creatinine labs are encouraging, as they suggest your heart and kidneys are not currently experiencing acute damage. However, a blood pressure reading this high, especially when accompanied by a headache, carries a significant risk of stroke or heart attack if left untreated. While the absence of chest pain, shortness of breath, and neurological issues suggests this may not be an immediate \"emergency\" requiring the ER this second, it is a \"hypertensive urgency.\" You must see a healthcare provider within 24 to 48 hours to begin medication and bring these numbers down safely. If your headache worsens or you develop chest pain, vision changes, or weakness, go to the emergency room immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading of 196/112 is severely high and is classified as a hypertensive crisis (any reading over 180/120). While your lab results for your heart (troponin) and kidneys (creatinine) are currently normal, these readings only show that there is no evidence of permanent organ damage *at this exact moment*. However, blood pressure this high significantly increases your immediate risk of a stroke, heart attack, or sudden kidney failure. The fact that you have a headache\u2014even a mild one\u2014alongside these numbers is a serious concern. Because you are not on medication and your pressure is at this critical level, you need immediate medical intervention to lower it safely. Waiting 24 to 48 hours is not safe, as the risk of a life-threatening event is too high.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

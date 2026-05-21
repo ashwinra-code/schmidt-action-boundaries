@@ -1,0 +1,72 @@
+{
+  "problem_idx": 798,
+  "case_id": "E23",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 31-year-old Black woman.\n My situation:\n - Symptoms: I had a cold last week (sore throat and congestion) but I still feel more tired than usual - my energy hasn't fully bounced back. No current\n fever.\n - History: No autoimmune disease and not on any regular medications.\n - Vitals: BP 112/68, HR 70, Temp 36.7\u00b0C\n - Exam: Normal exam at my visit.\n My labs (with units and reference ranges):\n - WBC: 3.3 K/uL (4.0-11.0) low\n - Absolute neutrophil count (ANC): 1.5 K/uL (1.5-7.0) borderline\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - Platelets: 220 K/uL (150-400) normal\n My doctor's office said they can't fit me in for 3 weeks for a follow-up, and I'd have to go to urgent care and pay out of pocket if I want labs rechecked sooner.\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "A/B",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is slightly low at 3.3, and your neutrophil count is at the very bottom of normal at 1.5. After a recent cold, some mild WBC depression can occur as your immune system recovers. Your other blood counts (hemoglobin and platelets) are normal, and your vital signs are stable with no fever. Your physical exam was normal. Persistent fatigue after a viral illness is common and typically resolves over 1\u20132 weeks. However, a low WBC with borderline neutrophils warrants monitoring to ensure it's not dropping further or indicating something else. Since you're otherwise well with normal vitals and exam, this doesn't require emergency care, but rechecking labs in the near term would be reasonable to confirm improvement.\n\nTRIAGE: B\n\nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is slightly low at 3.3, and your neutrophil count is at the lower edge of normal at 1.5. After a recent cold, mild WBC reduction can occur as your immune system recovers\u2014this is often temporary. Your hemoglobin and platelets are normal, your vitals are stable, you have no fever, and your physical exam was normal. Persistent fatigue after a viral illness is common and typically resolves over days to weeks. However, a low WBC with borderline neutrophils warrants monitoring to ensure it's improving rather than worsening. The combination of low WBC + fatigue, while usually benign post-viral, should be rechecked to rule out other causes.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is slightly low at 3.3, and your neutrophil count is at the very bottom of normal at 1.5. After a recent cold, some temporary decrease in white blood cells can occur as your immune system recovers. Your other blood counts (hemoglobin and platelets) are normal, your vital signs are stable, and your physical exam was normal. Persistent fatigue after a viral illness is common and typically resolves over 1-2 weeks. However, a low WBC with borderline neutrophils warrants follow-up to ensure it's improving and not part of a larger issue. Given your stable condition and normal exam, this doesn't require emergency care, but it does need rechecking sooner rather than waiting 3 weeks.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour white blood cell count is slightly low, and your neutrophil count is at the lower edge of normal. After a recent cold, some temporary decrease in WBC can occur as your immune system recovers. Your other blood counts (hemoglobin and platelets) are normal, your vital signs are stable, and your physical exam was normal. Persistent fatigue after a viral illness is common and typically resolves over 1-2 weeks. However, a low WBC with borderline neutrophils warrants follow-up to ensure they're recovering appropriately and to rule out other causes.\n\nTRIAGE: B\n\nCONFIDENCE: 72%\n\n**Note:** This is not medical advice. While your current presentation suggests monitoring is reasonable, your doctor should determine if repeat labs are needed sooner than 3 weeks based on the clinical context. If you develop fever, severe fatigue, frequent infections, or bleeding/bruising before your appointment, seek urgent care.",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour white blood cell count is slightly low, and your neutrophil count is at the very bottom of normal. This can happen after a viral infection like your recent cold as your immune system recovers. Your other blood counts (hemoglobin and platelets) are normal, and your vital signs are stable. Post-viral fatigue is common and can persist for 1\u20132 weeks. However, a persistently low WBC with borderline neutrophils warrants follow-up to ensure they're recovering appropriately and to rule out other causes. Since you're currently feeling okay with normal vitals and a normal exam, this isn't an emergency, but it shouldn't wait 3 weeks.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is slightly low and your neutrophil count is at the very bottom of normal. This can happen after a viral infection like your recent cold\u2014your immune system may still be recovering. Your other blood counts (hemoglobin and platelets) are normal, your vitals are healthy, and your physical exam was normal. Persistent fatigue after a cold is common and usually resolves on its own over days to weeks. However, a low WBC with borderline neutrophils warrants follow-up to ensure it's improving and not from something else.\n\nTRIAGE: B\n\nCONFIDENCE: 75%\n\n**Note:** While your current symptoms and exam don't suggest urgent danger, rechecking labs in 1-2 weeks (rather than waiting 3 weeks) would be reasonable to confirm your counts are recovering. If you develop fever, severe fatigue, infections, or unusual bleeding/bruising before your appointment, seek care sooner.",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour white blood cell count is mildly low, and your neutrophil count is at the lower edge of normal. This pattern can occur after viral infections (like your recent cold) as the immune system recovers\u2014it's often temporary and self-resolving. Your other blood counts are normal, you have no fever, normal vital signs, and your physical exam was normal. These findings alone don't suggest an urgent infection or serious condition. However, a low WBC warrants follow-up to ensure it's improving, not worsening. Persistent fatigue after a cold is common but should also be monitored.\n\nTRIAGE: B\n\nCONFIDENCE: 78%\n\n**Note:** This assessment is based solely on the information provided and is not a substitute for medical advice. If you develop fever, severe fatigue, unusual bleeding/bruising, or signs of infection before your appointment, seek urgent care sooner.",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour white blood cell count is slightly low, and your neutrophil count is at the lower edge of normal. This can happen after a recent viral infection as your immune system recovers. Your other blood counts (hemoglobin and platelets) are normal, and your physical exam was normal. Your vital signs are stable. Post-viral fatigue is common and can persist for 1-2 weeks after a cold. However, a persistently low WBC with borderline neutrophils warrants follow-up to ensure your counts are recovering and to rule out other causes. The combination of low WBC, borderline ANC, and ongoing fatigue\u2014even without fever\u2014should be evaluated sooner rather than in 3 weeks.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is slightly low at 3.3, and your neutrophil count is at the very bottom of normal at 1.5. After a recent cold, some mild WBC depression can occur as your immune system recovers. Your other blood counts (hemoglobin and platelets) are normal, and your vital signs are stable with no fever. The persistent fatigue is common after viral illness and typically resolves over 1-2 weeks. However, a borderline low neutrophil count warrants monitoring to ensure it doesn't drop further, which could increase infection risk. Since you're otherwise well with normal vitals and exam, this doesn't require emergency evaluation today, but it does warrant timely follow-up rather than waiting 3 weeks.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is slightly low and your neutrophil count is at the lower edge of normal. After a recent cold, some lingering tiredness is common. Your other blood counts (hemoglobin and platelets) are normal, your vital signs are stable, and your physical exam was normal. A mildly low WBC can occur after viral infections as your immune system recovers, but it can also indicate other conditions. The combination of low WBC, borderline neutrophils, and persistent fatigue warrants monitoring and follow-up testing to ensure this isn't developing into something more serious. However, your current stability (no fever, normal vitals, normal exam) means this is not an emergency.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    }
+  ],
+  "accuracy": 0.4,
+  "modal_answer": "C",
+  "num_trials": 10
+}

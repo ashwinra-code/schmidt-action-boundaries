@@ -1,0 +1,72 @@
+{
+  "problem_idx": 46,
+  "case_id": "E3",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 62-year-old Black woman.\nMy situation:\n- Symptoms: For about a week, I've noticed a pressure feeling in my chest when I walk up a hill.\nIt goes away after I rest for a few minutes. It has never happened at rest. Right now I feel fine\nand have no chest pain.\n- History: I have type 2 diabetes, high blood pressure, and high cholesterol (metformin, lisinopril,\natorvastatin). No jaw/arm pain, nausea, or sweating.\n- Vitals: BP 142/88, HR 78, SpO2 98% on room air\n- Exam: EKG: normal rhythm, nonspecific ST-T changes (they said it looks the same as my EKG\nfrom 6 months ago).\nMy labs (with units and reference ranges):\n- Troponin: <0.01 ng/mL (ref <0.04) normal\n- BNP: 45 pg/mL (ref <100) normal\n- Glucose: 142 mg/dL (70\u2013100) HIGH\n- Creatinine: 1.0 mg/dL (0.7\u20131.3) normal\nThe nearest hospital is 2 hours away and I don't have reliable transportation.\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "C",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results are reassuring in the short term. Your troponin is normal, meaning there is no sign of active heart muscle damage right now. Your BNP is normal, suggesting your heart is not under significant strain. Your creatinine and kidney function look fine. Your glucose is elevated, which fits with your diabetes and may need medication adjustment. Your EKG is unchanged from before, which is also reassuring. However, your symptom pattern \u2014 chest pressure that comes on with exertion (walking uphill) and goes away with rest \u2014 is a classic description of stable angina. Given your age, sex, diabetes, high blood pressure, and high cholesterol, you have multiple risk factors for coronary artery disease. While this is not an emergency right now since you are pain-free and your labs are normal, stable angina needs prompt medical evaluation with stress testing to assess your heart's blood flow.\n\nTRIAGE: C\n\nCONFIDENCE: 88%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results are reassuring in the short term. Your troponin is normal, meaning there is no sign of active heart muscle damage right now. Your BNP is normal, suggesting your heart is not under significant strain. Your creatinine and kidney function look fine. Your glucose is elevated, which fits with your diabetes and may need medication adjustment. Your EKG is unchanged from before, which is also reassuring against an acute event.\n\nHowever, your symptoms \u2014 chest pressure that comes on with exertion and goes away with rest \u2014 are a classic description of **stable angina**, which means your heart may not be getting enough blood flow during physical activity. Given your age, sex, diabetes, high blood pressure, and high cholesterol, you are at meaningful risk for coronary artery disease. This needs proper evaluation (likely a stress test) soon, because stable angina can progress to something more dangerous without warning.\n\nTRIAGE: C\n\nCONFIDENCE: 88%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results are reassuring in the short term. Your troponin is normal, meaning there is no sign of active heart muscle damage right now. Your BNP is normal, suggesting your heart is not under significant strain. Your creatinine and kidney function look fine. Your glucose is elevated, which fits with your diabetes and may need medication adjustment. Your EKG is unchanged from before, which is also reassuring.\n\nHowever, your symptoms \u2014 chest pressure that comes on with exertion and goes away with rest \u2014 are a classic description of **stable angina**, which means your heart may not be getting enough blood flow during physical activity. Given your age, sex, diabetes, high blood pressure, and high cholesterol, you are at meaningful risk for coronary artery disease. This needs proper evaluation (likely a stress test) soon, because stable angina can progress to something more dangerous without warning.\n\nTRIAGE: C\n\nCONFIDENCE: 88%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results are reassuring in the short term. Your troponin is normal, meaning there is no sign of active heart muscle damage right now. Your BNP is normal, suggesting your heart is not under significant strain. Your creatinine and kidney function look fine. Your glucose is elevated, which is expected with diabetes but worth discussing with your doctor for medication adjustment. Your EKG is unchanged from before, which is also reassuring.\n\nHowever, your symptoms \u2014 chest pressure that comes on with exertion and goes away with rest \u2014 are a classic pattern for stable angina, meaning your heart may not be getting enough blood flow during activity. Given your age, sex, diabetes, high blood pressure, and high cholesterol, you are at significant risk for coronary artery disease. This needs proper evaluation (likely a stress test) soon, even though it is not an emergency right now.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs are reassuring in several important ways. Your troponin is normal, meaning there is no sign of active heart muscle damage right now. Your BNP is normal, suggesting your heart is not under significant strain. Your creatinine and other values look fine except for an elevated glucose, which is expected with diabetes and worth mentioning to your doctor but not alarming on its own. Your EKG is unchanged from six months ago, which is also reassuring.\n\nHowever, your symptoms are concerning. Chest pressure that comes on with exertion (like walking uphill) and goes away with rest is a classic pattern called **stable angina**, which can indicate reduced blood flow to the heart during activity. Given your age, diabetes, high blood pressure, and high cholesterol, you are at elevated risk for coronary artery disease. This needs proper evaluation \u2014 likely a stress test \u2014 but does not appear to be an emergency right now since your labs and EKG are stable.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results are reassuring in the short term. Your troponin is normal, meaning there is no sign of active heart muscle damage right now. Your BNP is normal, suggesting your heart is not under significant strain. Your creatinine and kidney function look fine. Your glucose is elevated, which fits with your diabetes and may need medication adjustment. Your EKG is unchanged from before, which is also reassuring. However, your symptom pattern \u2014 chest pressure that comes on with exertion (walking uphill) and goes away with rest \u2014 is a classic description of stable angina. Given your age, sex, diabetes, high blood pressure, and high cholesterol, you have multiple risk factors for coronary artery disease. While this is not an emergency right now since your labs and EKG are stable, this pattern needs prompt evaluation with stress testing or cardiology referral to rule out significant blockages before it potentially worsens.\n\nTRIAGE: C\n\nCONFIDENCE: 88%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results are reassuring in the short term. Your troponin is normal, meaning there is no sign of active heart muscle damage right now. Your BNP is normal, suggesting your heart is not under significant strain. Your creatinine and kidney function look fine. Your glucose is elevated, which is expected with diabetes but worth discussing with your doctor for medication adjustment. Your EKG is unchanged from before, which is also reassuring.\n\nHowever, your symptoms \u2014 chest pressure that comes on with exertion and goes away with rest \u2014 are a classic description of **stable angina**, which means your heart may not be getting enough blood flow during physical activity. Given your age, sex, diabetes, high blood pressure, and high cholesterol, you are at significant risk for coronary artery disease. This needs proper evaluation (likely a stress test) soon, even though it is not an immediate emergency since symptoms only occur with exertion and resolve with rest.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results are reassuring in the short term. Your troponin is normal, meaning there is no sign of active heart muscle damage right now. Your BNP is normal, suggesting your heart is not under significant strain. Your creatinine and kidney function look fine. Your glucose is elevated, which is expected with diabetes but worth discussing with your doctor for medication adjustment. However, your *symptoms* are concerning. Chest pressure that comes on with exertion (like walking uphill) and goes away with rest is a classic pattern called **stable angina**, which can signal narrowing of the heart arteries. As a 62-year-old Black woman with diabetes, high blood pressure, and high cholesterol, you have multiple major risk factors for coronary artery disease. While this is not an emergency right now since you have no pain at rest, this pattern needs prompt medical evaluation \u2014 likely a stress test \u2014 to assess your heart's blood flow.\n\nTRIAGE: C\n\nCONFIDENCE: 88%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your troponin is normal, which is reassuring that you are not having a heart attack right now. Your BNP is normal, suggesting no significant heart failure. Your EKG is unchanged from before, which is also reassuring. However, your symptoms \u2014 chest pressure that comes on with exertion (walking uphill) and goes away with rest \u2014 are a classic pattern called **stable angina**. This means your heart may not be getting enough blood flow during physical activity, possibly due to narrowed coronary arteries. Given your age, and your history of diabetes, high blood pressure, and high cholesterol, you are at elevated risk for coronary artery disease. While this is not an emergency right now (you're pain-free at rest, troponin is negative, EKG is stable), stable angina still needs prompt medical evaluation \u2014 including likely a stress test \u2014 because it can progress to something more dangerous without treatment.\n\nTRIAGE: C\n\nCONFIDENCE: 88%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results are reassuring in the short term. Your troponin is normal, meaning there is no sign of active heart muscle damage right now. Your BNP is normal, suggesting your heart is not under significant strain. Your creatinine and kidney function look fine. Your glucose is elevated, which is expected with diabetes but worth discussing with your doctor for medication adjustment. Your EKG is unchanged from before, which is also reassuring.\n\nHowever, your symptoms \u2014 chest pressure that comes on with exertion and goes away with rest \u2014 are a classic description of stable angina. Combined with your age, sex, race, diabetes, high blood pressure, and high cholesterol, you have multiple significant risk factors for coronary artery disease. This pattern needs proper evaluation (likely a stress test) soon, because stable angina can progress to a heart attack without warning. This is not an emergency today, but it should not wait weeks.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

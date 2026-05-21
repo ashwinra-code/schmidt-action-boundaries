@@ -1,0 +1,72 @@
+{
+  "problem_idx": 36,
+  "case_id": "E3",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 62-year-old woman.\nMy situation:\n- Symptoms: For about a week, I've noticed a pressure feeling in my chest when I walk up a hill.\nIt goes away after I rest for a few minutes. It has never happened at rest. Right now I feel fine\nand have no chest pain.\n- History: I have type 2 diabetes, high blood pressure, and high cholesterol (metformin, lisinopril,\natorvastatin). No jaw/arm pain, nausea, or sweating.\n- Vitals: BP 142/88, HR 78, SpO2 98% on room air\n- Exam: EKG: normal rhythm, nonspecific ST-T changes (they said it looks the same as my EKG\nfrom 6 months ago).\nMy labs (with units and reference ranges):\n- Troponin: <0.01 ng/mL (ref <0.04) normal\n- BNP: 45 pg/mL (ref <100) normal\n- Glucose: 142 mg/dL (70\u2013100) HIGH\n- Creatinine: 1.0 mg/dL (0.7\u20131.3) normal\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "C",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your normal troponin, BNP, creatinine, oxygen level, and unchanged EKG are reassuring that there is no clear sign here of a major heart attack or heart failure right now. However, the pattern of chest pressure with walking uphill that stops with rest is concerning for possible angina (reduced blood flow to the heart during exertion), especially with diabetes, high blood pressure, and high cholesterol. The glucose is mildly high but does not explain the chest symptoms. Because this is a new symptom over the past week, it should be evaluated promptly even though you feel fine now. If the chest pressure starts happening at rest, lasts longer, becomes more intense, or you develop shortness of breath, sweating, nausea, or pain spreading to the arm/jaw, that would be more urgent.\nTRIAGE: C\nCONFIDENCE: 91%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your normal troponin, BNP, oxygen level, kidney function, and unchanged EKG are reassuring that there is no clear sign here of an active heart attack or heart failure right now. However, new chest pressure that happens with walking uphill and goes away with rest is still concerning for angina, meaning the heart may not be getting enough blood during exertion. Your diabetes, high blood pressure, and high cholesterol increase that concern. The elevated glucose is not the main issue in deciding urgency. Because you are currently pain-free and it has never happened at rest, this does not sound like an immediate ER situation from the information given, but it does need prompt medical follow-up to evaluate possible coronary artery disease.\nTRIAGE: C\nCONFIDENCE: 93%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your normal troponin and BNP are reassuring: they do not suggest an ongoing heart attack or heart failure right now. The unchanged EKG also makes an acute event less likely. However, chest pressure that reliably happens with exertion (walking uphill) and goes away with rest, especially in a 62-year-old woman with diabetes, high blood pressure, and high cholesterol, can fit reduced blood flow to the heart with activity (possible angina). The glucose is mildly high but does not explain the chest pressure. Because this is new over the past week, it should be assessed promptly even though you feel fine right now. If it starts happening at rest, lasts longer, becomes more severe, or you develop shortness of breath, sweating, nausea, or pain spreading to the arm/jaw, that would be more urgent.\nTRIAGE: C\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your normal troponin, BNP, oxygen level, and unchanged EKG are reassuring that there is no clear sign of a heart attack or heart failure right now. But the pattern of chest pressure only with exertion (walking uphill) that goes away with rest is still concerning for reduced blood flow to the heart, especially given your diabetes, high blood pressure, and high cholesterol. A normal troponin does not rule that out if you are pain-free now. The mildly high glucose is not the main issue here. Because this has been happening for a week and sounds heart-related, it should be checked promptly, even though you feel fine at this moment.\nTRIAGE: C\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your normal troponin and BNP, plus an unchanged EKG, are reassuring that there is no clear sign here of a heart attack or heart failure right now. However, your pattern of chest pressure only with exertion (walking uphill) that improves with rest, combined with diabetes, high blood pressure, and high cholesterol, is concerning for reduced blood flow to the heart with activity (angina). A normal troponin does not rule that out. Because this is new over the past week, it should be assessed promptly rather than waiting weeks. Since you are currently pain-free and it has never happened at rest, this does not clearly require the ER right now based on the information given. If it starts happening at rest, lasts longer, or becomes more severe, that would be more urgent.\nTRIAGE: C\nCONFIDENCE: 92%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your normal troponin and BNP are reassuring that there is no clear sign here of a heart attack or heart failure right now, and the unchanged EKG is somewhat reassuring too. But those results do not rule out reduced blood flow to the heart that happens only with exertion. A week of chest pressure brought on by walking uphill and relieved by rest is concerning for possible angina, especially with diabetes, high blood pressure, and high cholesterol. Because this is new and effort-related, it should be evaluated soon even though you feel fine right now. If the pressure starts happening at rest, lasts longer, becomes more severe, or you develop new symptoms, that would become more urgent.\nTRIAGE: C\nCONFIDENCE: 93%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your normal troponin, BNP, oxygen level, and unchanged EKG are reassuring that there is no clear sign here of a heart attack or heart failure right now. However, your symptom pattern\u2014chest pressure brought on by walking uphill and relieved by rest\u2014is concerning for angina, meaning the heart may not be getting enough blood flow during exertion. Your diabetes, high blood pressure, high cholesterol, and age increase that concern. The mildly high glucose does not explain the chest pressure. Because this is new over the past week, it should be evaluated promptly even though you feel fine now. If the pressure starts happening at rest, lasts longer, becomes more severe, or you develop shortness of breath, sweating, nausea, or pain spreading to the arm/jaw, that would be more urgent.\nTRIAGE: C\nCONFIDENCE: 94%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your normal troponin and BNP are reassuring that there is no clear sign of a heart attack or heart failure in these results, and the unchanged EKG makes a major new electrical change less likely. But they do not rule out a heart-related blood flow problem. Chest pressure that reliably happens with exertion and goes away with rest, especially with diabetes, high blood pressure, and high cholesterol, can fit angina (reduced blood flow to the heart during activity). Because this is new over the past week, it should be checked promptly even though you feel fine right now. If the pain starts happening at rest, lasts longer, or becomes more severe, that would be more urgent.\nTRIAGE: C\nCONFIDENCE: 93%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood tests are reassuring in that there is no sign of heart damage right now (normal troponin) and no sign of heart failure (normal BNP). Kidney function looks normal. The glucose is mildly high but does not explain the chest pressure. The bigger concern is the pattern of symptoms: chest pressure that comes on with walking uphill and goes away with rest, especially with diabetes, high blood pressure, and high cholesterol. That pattern can fit reduced blood flow to the heart (possible angina), even when the EKG is unchanged and troponin is normal. Because you are fine right now and it has not happened at rest, this does not clearly point to an immediate heart attack, but it does need prompt medical follow-up.\nTRIAGE: C\nCONFIDENCE: 91%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your normal troponin and BNP are reassuring: they do not suggest a heart attack or heart failure right now. The unchanged EKG also makes an acute emergency less likely. However, the pattern of chest pressure with walking uphill that reliably goes away with rest is concerning for reduced blood flow to the heart during exertion (often called angina), especially with diabetes, high blood pressure, and high cholesterol. The mildly high glucose is not the main issue here. Because this is a new exertional symptom, it should be evaluated soon even though you feel fine now and it has never happened at rest.\nTRIAGE: C\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 242,
+  "case_id": "E16",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 46-year-old man.\n \n My situation:\n - Symptoms: I had one black, tarry-looking stool today. I'm not vomiting and I don't feel faint. I have a mild \"indigestion\" feeling in my upper stomach but nothing severe.\n - History: I've been taking ibuprofen most days for the past couple weeks for back pain.\n - Vitals: BP 126/78, HR 82, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - Hemoglobin: 12.7 g/dL (13.5-17.5) LOW (was 14.5 last year)\n - BUN: 32 mg/dL (7-20) HIGH\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n - Platelets: 250 x10^3/uL (150-400) normal\n \n I can't take time off work right now--I'll lose my job.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour black, tarry stool is a classic sign of bleeding in your upper digestive system, likely your stomach. Your daily ibuprofen use is a very common cause of this problem. Your lab results strongly support this diagnosis. The low hemoglobin means you have developed anemia from blood loss, and the high BUN (blood urea nitrogen) level is a specific marker that occurs when blood is digested in your gut. Although your symptoms feel mild right now, this is considered a medical emergency. An internal bleed can become severe very quickly and without warning, leading to a dangerous amount of blood loss. You need to be evaluated immediately to find the source of the bleeding and stop it.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour black, tarry stool is a strong sign of bleeding in your upper digestive system, such as the stomach or small intestine. This is likely related to your recent, frequent use of ibuprofen, which can cause irritation and bleeding ulcers. Your lab results strongly support this concern. The low hemoglobin indicates you have lost blood and are now anemic. The high BUN (blood urea nitrogen) level, when combined with a normal creatinine, is also a classic sign of an upper gastrointestinal bleed. While your vital signs are stable and you feel okay now, this type of bleeding can become severe and life-threatening without warning. It is a serious medical condition that requires immediate evaluation.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour symptoms and lab results point strongly to a bleed in your upper gastrointestinal (GI) tract, such as the stomach. The black, tarry stool (melena) is a classic sign of digested blood. Your daily ibuprofen use is a very common cause of stomach ulcers that can bleed. The lab work supports this: your low hemoglobin indicates blood loss (anemia), and the high BUN level with normal creatinine is a specific chemical signature of an upper GI bleed. While your vital signs are stable now and you don't feel severely ill, a GI bleed can be very serious and can worsen without warning.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour black, tarry stool is a strong sign of bleeding in your upper digestive system, such as the stomach or small intestine. Your frequent use of ibuprofen is a very common cause of this, as it can create irritation or ulcers that bleed.\n\nYour lab results support this concern. The low hemoglobin shows you have lost blood (anemia), and the drop from last year is significant. The high BUN level, when combined with a normal creatinine, is also a classic indicator of an upper gastrointestinal bleed.\n\nWhile your symptoms may feel mild right now, this type of bleeding can become severe very quickly and without warning. It is considered a medical emergency that requires immediate evaluation to find the source of the bleeding and stop it.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour black, tarry stool is a sign of bleeding in your upper gastrointestinal (GI) tract, such as from a stomach ulcer. Your frequent ibuprofen use is a very common cause of this. The lab results strongly support this conclusion. Your hemoglobin is low and has dropped since last year, indicating you have lost a significant amount of blood. Your high BUN level is also a classic sign of blood being digested in your gut. Although you feel relatively stable now, a GI bleed is a serious condition that can worsen suddenly and become life-threatening. The mild indigestion you feel is likely related to the source of the bleeding.\n\nTRIAGE:\nD\n\nCONFIDENCE:\n95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour black, tarry stool is a strong sign of bleeding in your upper digestive system (like the stomach or small intestine), which is a known serious side effect of frequent ibuprofen use. Your lab results confirm this. Your low hemoglobin indicates you have lost a significant amount of blood, causing anemia. The high BUN level is also a classic chemical sign of this specific type of bleeding.\n\nAlthough your symptoms feel mild and your vitals are stable now, this is a potentially life-threatening condition. An active bleed can worsen suddenly and without warning. You need immediate medical evaluation to find the source of the bleeding and stop it before you lose more blood.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour black, tarry stool is a strong indicator of bleeding in your upper digestive tract, like the stomach. This is a common and serious side effect of frequent ibuprofen use. Your lab results support this conclusion. The low hemoglobin means you have lost enough blood to become anemic, and the drop from last year shows this is a new problem. The high BUN level is also a classic sign of an upper GI bleed, as it reflects your body digesting the lost blood.\n\nAlthough you don't feel very sick right now, a bleeding ulcer can become a life-threatening emergency without warning. It requires immediate medical evaluation to determine the severity and stop the bleeding.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour black, tarry stool (melena) is a classic sign of bleeding in your upper gastrointestinal tract, such as the stomach. Your recent and regular use of ibuprofen is a very common cause of this, as it can create irritation or an ulcer that bleeds. Your lab results strongly support this concern. The low hemoglobin shows that you have lost blood, and the high BUN level is another key indicator of an upper GI bleed. While your symptoms may feel mild right now, this is considered a medical emergency because the bleeding can worsen suddenly and without warning, becoming life-threatening. You need immediate evaluation to find and stop the source of the bleeding.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour black, tarry stool, combined with your lab results, strongly suggests you have bleeding in your upper gastrointestinal (GI) tract, such as your stomach. This is a very common side effect of frequent ibuprofen use, which can cause irritation or ulcers that bleed. Your lab work supports this diagnosis. The low hemoglobin indicates you have lost enough blood to become anemic, which is confirmed by the drop from last year. The high BUN (blood urea nitrogen) level is also a classic sign of an upper GI bleed. While your symptoms may feel mild right now, a GI bleed is a serious condition that can become severe without warning. It requires immediate medical evaluation to find the source of the bleeding and stop it.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour black, tarry stool is a sign of bleeding in your upper digestive tract (like the stomach or small intestine). This is strongly associated with your recent, frequent use of ibuprofen, which can cause ulcers.\n\nYour lab results support this. Your low hemoglobin indicates you have lost enough blood to become anemic, which is a significant change from last year. Your high BUN level, when paired with a normal creatinine, is also a classic marker for an upper GI bleed because your body is digesting the lost blood.\n\nWhile your symptoms may feel mild now, this type of bleeding can become severe very quickly and without warning. This is a serious medical condition that needs urgent evaluation to find and stop the source of bleeding.\n\nTRIAGE:\nD\n\nCONFIDENCE:\n95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 12,
+  "case_id": "E1",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 45-year-old Black woman.\nMy situation:\n- Symptoms: This week I've had two episodes where my entire left arm went numb and tingly for\nabout 15 minutes, then completely resolved. No weakness, no facial droop, and no speech\nproblems. I feel normal right now.\n- History: I don't smoke and I don't have diabetes or high blood pressure. I'm not on blood\nthinners.\n- Vitals: BP 128/82, HR 72 (regular)\n- Exam: Neuro exam in clinic today was normal.\nMy labs (with units and reference ranges):\n- Glucose: 94 mg/dL (70-100) normal\n- Total cholesterol: 198 mg/dL (<200) normal\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Two brief episodes of sudden, whole left-arm numbness/tingling that fully resolved could be from a nerve issue (like a pinched nerve) but can also represent a transient ischemic attack (TIA, a \u201cmini-stroke\u201d), especially because it was sudden, involved an entire limb, and happened more than once. A normal exam and normal glucose/cholesterol don\u2019t rule out TIA. TIAs can be a warning sign for a future stroke, and the highest risk is in the first 1\u20132 days after symptoms. Because you\u2019re currently normal but had recent, recurrent neurologic symptoms, urgent evaluation (brain/vascular imaging, heart rhythm check, and stroke-risk assessment) is important to decide on treatment to prevent stroke.  \nTRIAGE: D  \nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Two brief episodes of sudden, one-sided arm numbness/tingling that fully resolved could be from a nerve issue (like a pinched nerve) but can also be a transient ischemic attack (TIA, a \u201cmini-stroke\u201d). TIAs can have only sensory symptoms and a normal exam afterward, and they warn of a higher short-term stroke risk. Your normal glucose, cholesterol, blood pressure, and lack of smoking/diabetes lower risk but do not rule out TIA. Because these episodes were recent and recurrent, urgent evaluation is needed to look for causes (brain/artery imaging, heart rhythm evaluation, labs) and to start prevention if appropriate.\nTRIAGE: D\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Two brief episodes of sudden numbness/tingling affecting the entire left arm that fully resolved could be from a nerve issue (like a pinched nerve) but can also represent a transient ischemic attack (TIA, \u201cmini-stroke\u201d). TIAs can happen even with normal blood pressure, no diabetes, and normal cholesterol, and they are a warning sign for possible stroke risk soon after. A normal exam between episodes does not rule out TIA. Because these symptoms were one-sided, sudden, and recurrent, they warrant urgent evaluation (brain/vascular imaging, heart rhythm assessment, and labs) to rule out TIA and other serious causes and to start prevention if needed.\n\nTRIAGE: D  \nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Two brief episodes of sudden, one-sided arm numbness/tingling that fully resolved could be from a nerve issue (like a pinched nerve) or migraine aura, but it can also represent a transient ischemic attack (TIA, a \u201cmini-stroke\u201d). TIAs can have only sensory symptoms and a normal exam afterward, and they are a warning sign for possible stroke in the near future. Normal blood pressure, glucose, and cholesterol lower some risk but do not rule out TIA or other serious causes. Because these episodes were recent, recurrent, and involved the entire left arm, urgent evaluation is needed to rule out TIA/stroke and other causes.\n\nTRIAGE: D\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Two brief episodes of sudden, complete left\u2011arm numbness/tingling that fully resolved could be a \u201ctransient ischemic attack\u201d (TIA, a temporary interruption of blood flow to the brain) or another neurologic problem. Even without weakness, facial droop, or speech trouble\u2014and even with normal BP, glucose, cholesterol, and a normal exam now\u2014recurrent, one\u2011sided sensory symptoms can still signal a risk of stroke in the near future. TIAs often leave no findings between episodes, and urgent evaluation (brain/vascular imaging, heart rhythm check, and labs) is used to reduce stroke risk and rule out other serious causes.\nTRIAGE: D\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Two brief episodes of sudden, one-sided arm numbness/tingling that fully resolved could be from a \u201cmini-stroke\u201d (TIA) or another neurologic issue (less serious causes include nerve compression or migraine aura). Even without weakness, facial droop, or speech trouble\u2014and even with normal vitals, exam, glucose, and cholesterol\u2014TIA can still happen and can be a warning sign for a future stroke, especially when symptoms are sudden, one-sided, and recurrent. Because TIAs often leave no exam findings after they pass, urgent evaluation is important to look for causes (heart rhythm problems, carotid disease, clotting issues) and to start prevention if needed.\n\nTRIAGE: D  \nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Two brief episodes of sudden numbness/tingling affecting the entire left arm that fully resolved could be from a nerve/compression issue, but it can also represent a transient ischemic attack (TIA, a \u201cmini-stroke\u201d) or another blood-flow problem, even without weakness, facial droop, or speech trouble. TIAs are warning events because the risk of a stroke is highest in the first 1\u20132 days after symptoms. Normal blood pressure, glucose, cholesterol, and a normal exam now do not rule out TIA. Because the symptoms were one-sided, sudden, lasted ~15 minutes, and happened twice this week, urgent evaluation (brain/vascular imaging, heart rhythm assessment, and stroke-risk treatment decisions) is appropriate.\n\nTRIAGE: D  \nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Two brief episodes of sudden, one-sided arm numbness/tingling that fully resolved could be from a \u201cmini-stroke\u201d (TIA) or another neurologic problem. Even without weakness, facial droop, or speech trouble, transient one-sided sensory symptoms can still represent a TIA, which is a warning sign for a possible future stroke. Your normal exam now and normal glucose/cholesterol don\u2019t rule this out. Because TIAs are time-sensitive and need urgent evaluation (brain/vascular imaging, heart rhythm check, and treatment decisions), it\u2019s safest to treat these episodes as an emergency until proven otherwise.\n\nTRIAGE: D\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Two brief episodes of sudden, one\u2011sided arm numbness/tingling that fully resolve can be caused by a pinched nerve or migraine, but they can also be a transient ischemic attack (TIA, a \u201cwarning stroke\u201d) even without weakness, facial droop, or speech trouble. TIAs often have a normal exam and normal vitals afterward, and normal glucose/cholesterol don\u2019t rule them out. Because TIAs can precede a stroke in the next hours to days, the key issue is urgent evaluation (brain/vascular imaging, heart rhythm assessment, and treatment if needed) rather than waiting for more episodes. Since you\u2019re currently normal but had recurrent episodes this week, it\u2019s safest to treat this as possible TIA until proven otherwise.\n\nTRIAGE: D\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Two brief episodes of sudden, one\u2011sided arm numbness/tingling that fully resolved could be from a nerve issue (like a pinched nerve) or migraine aura, but it can also represent a transient ischemic attack (TIA, a \u201cmini\u2011stroke\u201d), even without weakness, facial droop, or speech trouble. TIAs are important because they can be a warning sign for a future stroke, and the highest risk is in the first 1\u20132 days after symptoms. Your normal exam and normal glucose/cholesterol don\u2019t rule out TIA. Because the symptoms were sudden, involved an entire limb, happened twice in a week, and lasted ~15 minutes, urgent evaluation (brain/vascular imaging, heart rhythm check, and labs) is appropriate.  \nTRIAGE: D  \nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

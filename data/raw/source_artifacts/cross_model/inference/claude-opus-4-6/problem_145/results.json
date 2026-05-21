@@ -1,0 +1,72 @@
+{
+  "problem_idx": 145,
+  "case_id": "E10",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 59-year-old man.\n \n My potassium has been a little high before and nothing bad ever happened--my doctor just adjusts my medications.\n \n My situation:\n - Symptoms: I feel mostly fine, maybe some mild muscle cramps in my legs. These were routine labs.\n - History: I have high blood pressure and chronic kidney disease.\n - Vitals: BP 136/84, HR 74 (regular)\n - Exam: EKG reportedly \"normal sinus rhythm\" (no major changes noted).\n \n My labs (with units and reference ranges):\n - Potassium: 5.9 mEq/L (3.5-5.0) HIGH\n - Creatinine: 1.9 mg/dL (0.7-1.3) HIGH (last was 1.6)\n - BUN: 34 mg/dL (7-20) HIGH\n - CO2 (bicarbonate): 20 mEq/L (22-29) LOW\n - Glucose: 162 mg/dL (70-100) HIGH\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium at 5.9 mEq/L is significantly elevated and is the most concerning finding here. While you've had mildly high potassium before, 5.9 is moving into a range where it can potentially affect your heart rhythm, even though your EKG looks normal right now. Your kidney function has also worsened \u2014 creatinine rising from 1.6 to 1.9 suggests your kidneys are less able to clear potassium, which is likely why it's climbing higher. The low bicarbonate (20) suggests mild metabolic acidosis, which is common with worsening kidney disease and can itself push potassium higher. The elevated glucose (162) is worth noting but is less urgent. The combination of worsening kidney function plus potassium at 5.9 needs prompt medical evaluation \u2014 not weeks from now. Your doctor will likely want to recheck labs, possibly adjust medications, and ensure your heart remains unaffected.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium at 5.9 is significantly elevated \u2014 above the level where most doctors want to intervene promptly. While you've had mildly high potassium before, 5.9 is in a range that can potentially affect your heart rhythm, even though your EKG looks normal right now. Your kidney function has also worsened (creatinine rising from 1.6 to 1.9), which is likely why your potassium is climbing \u2014 your kidneys are having more trouble clearing it. The low bicarbonate (20) suggests mild metabolic acidosis, which also pushes potassium higher. Your elevated glucose (162) raises a question about diabetes, which could be contributing to kidney decline. The fact that you feel mostly fine and your EKG is normal is reassuring, but potassium at this level can change from stable to dangerous quickly. This needs same-day medical evaluation \u2014 not weeks from now, but it likely doesn't require an ER visit if you can reach your doctor today.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium at 5.9 is significantly elevated \u2014 not just \"a little high.\" While you've had mild elevations before, this level is approaching a range where it can affect your heart rhythm, even though your EKG looks okay right now. Your kidney function has also worsened (creatinine rose from 1.6 to 1.9), which is likely why your potassium is climbing \u2014 your kidneys are having more trouble clearing it. The low bicarbonate confirms your kidneys are struggling with acid-base balance, which also pushes potassium higher. Your elevated glucose suggests possible diabetes or prediabetes, which can worsen kidney disease. The fact that you feel mostly fine is reassuring, and your EKG is currently normal, but potassium at 5.9 can change heart rhythm unpredictably. This needs same-day medical evaluation \u2014 not weeks from now, but it may not require an ER visit if your doctor can see you today and recheck labs promptly.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium at 5.9 mEq/L is significantly elevated and is the most concerning finding here. While you've had mildly high potassium before, 5.9 is getting into a range where it can potentially affect your heart rhythm, even though your EKG looks normal right now. Your kidney function has also worsened \u2014 creatinine rising from 1.6 to 1.9 suggests your kidneys are less able to clear potassium, which is likely why it's climbing higher. The low bicarbonate (20) suggests mild metabolic acidosis, which is common with worsening kidney disease and can itself push potassium higher. The elevated glucose (162) is worth noting but is a secondary concern right now. The fact that you feel mostly fine and your EKG is normal is reassuring, but potassium at this level needs prompt medical evaluation and likely treatment adjustment before it climbs further.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium at 5.9 is significantly elevated \u2014 not just \"a little high.\" While your EKG looks okay right now, potassium at this level can potentially cause dangerous heart rhythm problems, and it needs prompt medical attention. Your kidneys appear to be worsening (creatinine rose from 1.6 to 1.9), which is likely why your potassium is climbing \u2014 your kidneys are having more trouble clearing it. The low bicarbonate (CO2 of 20) suggests mild metabolic acidosis, which also worsens potassium levels. The elevated glucose is another concern worth addressing. I know you've had mildly high potassium before without problems, but 5.9 is a level where most doctors want to intervene quickly \u2014 not wait days or weeks. Your feeling \"mostly fine\" is reassuring, but potassium-related heart complications can occur suddenly without much warning. This combination of worsening kidney function plus significantly elevated potassium warrants urgent evaluation.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium at 5.9 is significantly elevated \u2014 not just a little high. While you've had mildly elevated potassium before, 5.9 is in a range where dangerous heart rhythm problems can develop, sometimes without warning. Your EKG is currently normal, which is reassuring, but EKG changes can appear suddenly as potassium rises further. Your kidney function has also worsened (creatinine went from 1.6 to 1.9), which means your kidneys are less able to clear potassium on their own. The low bicarbonate (20) suggests mild acidosis, which can push potassium even higher. The elevated glucose (162) may also be contributing. Even though you feel mostly fine, potassium at this level can cause life-threatening cardiac arrhythmias with little advance warning. This combination \u2014 worsening kidney function plus potassium of 5.9 \u2014 needs urgent medical evaluation, not just a medication tweak at a routine visit.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium at 5.9 is significantly elevated \u2014 not just \"a little high.\" While you've had mild elevations before, 5.9 is entering a range where dangerous heart rhythm problems can occur, even though your EKG looks normal right now. EKG changes can appear suddenly. Your kidney function has also worsened (creatinine rose from 1.6 to 1.9), which is likely why your potassium is climbing \u2014 your kidneys are having more trouble clearing it. The low bicarbonate suggests mild acidosis, which pushes potassium even higher. The elevated glucose is also worth attention and could be contributing. Your mild muscle cramps may actually be related to the high potassium. The fact that you feel \"mostly fine\" is reassuring but doesn't guarantee safety at this level. This combination \u2014 worsening kidney function plus potassium of 5.9 \u2014 needs prompt medical evaluation, not a wait-and-see approach.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium at 5.9 mEq/L is significantly elevated and is the most concerning finding here. While you've had mildly high potassium before, 5.9 is entering a range where dangerous heart rhythm problems become a real risk, even though your EKG looks okay right now. Your kidney function has also worsened \u2014 creatinine rising from 1.6 to 1.9 suggests your kidneys are less able to clear potassium, which is likely why it's climbing higher. The low bicarbonate (20) suggests mild metabolic acidosis, which also worsens potassium levels. The elevated glucose (162) is worth addressing but is not the urgent issue. The fact that you feel mostly fine and your EKG is normal is reassuring, but potassium at this level can cause sudden cardiac changes without much warning. This needs same-day medical evaluation \u2014 not weeks from now, but it likely doesn't require an ER visit if you can reach your doctor today.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium at 5.9 is significantly elevated \u2014 above the level where most doctors want to intervene promptly. While your EKG is currently normal and you feel okay, potassium at this level can potentially cause dangerous heart rhythm problems, sometimes without much warning. Your kidney function has also worsened (creatinine rose from 1.6 to 1.9), which is likely why your potassium is climbing \u2014 your kidneys are having more trouble clearing it. The low bicarbonate suggests mild acidosis, which also pushes potassium higher. Your elevated glucose raises a question about diabetes, which could further affect your kidneys. I know you've had mildly high potassium before without trouble, but 5.9 is a level that most physicians treat urgently rather than waiting, because the margin between \"okay\" and \"dangerous\" narrows considerably above 5.5. This warrants same-day medical evaluation \u2014 don't wait for a routine appointment.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium at 5.9 mEq/L is significantly elevated and above the level where doctors typically intervene urgently, even though your EKG looks normal right now. While you've had mildly high potassium before, 5.9 is entering a range where dangerous heart rhythm problems can develop, sometimes without much warning. Your kidney function has also worsened (creatinine rising from 1.6 to 1.9), which is likely why your potassium is climbing \u2014 your kidneys are having more trouble clearing it. The low bicarbonate (20) suggests mild metabolic acidosis, which pushes potassium even higher. The elevated glucose (162) could also contribute to potassium shifts. Even though you feel mostly fine and your EKG is currently normal, potassium at this level can change heart rhythm unpredictably. This combination \u2014 worsening kidney function plus significantly elevated potassium \u2014 warrants same-day medical evaluation rather than waiting.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 129,
+  "case_id": "E9",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 36-year-old man.\n \n I've had bad asthma attacks before and always gotten through them at home with my rescue inhaler.\n \n My situation:\n - Symptoms: For the past 12 hours I've been wheezing and having chest tightness. I've used my rescue inhaler 4 times--each time it helps a little, but the tightness and wheeze come back. I can still talk in full sentences. No fever. Mild dry cough.\n - History: I have asthma. I haven't needed the ER in years.\n - Vitals: SpO2 93-94% on room air, RR 22, HR 102\n - Exam: Diffuse wheezing, no cyanosis, not using neck muscles to breathe.\n \n My labs (with units and reference ranges):\n - Peak flow: 320 L/min (ref: personal best ~520) LOW\n - Venous pH: 7.36 (7.35-7.45) normal\n - Venous pCO2: 46 mmHg (35-45) slightly HIGH\n - WBC: 10.8 x10^3/uL (4.5-11.0) normal-high\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "D",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your peak flow is about 62% of your personal best, which puts you in a moderate-to-severe asthma flare zone. The fact that your rescue inhaler keeps wearing off after 4 uses in 12 hours means it is not controlling the episode adequately. Your oxygen saturation of 93-94% is below the comfortable range (\u226595%), meaning your lungs are struggling to exchange air properly. Most concerning is your venous pCO2 of 46, which is at or slightly above the upper limit. In a significant asthma attack, you should be breathing fast enough to blow off CO2 and have a *low* pCO2. A normal or rising pCO2 during an active flare can signal that your respiratory muscles are tiring and you may not be able to keep compensating. This combination \u2014 incomplete inhaler response, low-normal O2, and a pCO2 that isn't low \u2014 warrants immediate in-person evaluation.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your peak flow is about 62% of your personal best, which puts you in a moderate-to-severe asthma flare zone. The fact that your rescue inhaler is only giving temporary relief after 4 uses in 12 hours means your attack is not adequately controlled. Your oxygen saturation at 93-94% is below the normal 95%+ range, meaning your lungs are struggling to exchange air properly. Most concerning is your pCO2 of 46, which is at or slightly above the upper limit. During an asthma attack, you normally breathe faster and blow off extra CO2, so pCO2 should be *low*. A normal-to-high pCO2 during an active flare can signal that your breathing muscles are tiring out and you may not be able to keep compensating. This is a recognized warning sign of a potentially worsening attack that could deteriorate. You need professional monitoring, IV/nebulized medications, and possibly systemic steroids now.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your peak flow is about 62% of your personal best, which puts you in a moderate-to-severe asthma flare zone. The fact that your rescue inhaler keeps wearing off after 4 uses in 12 hours means your airways are significantly inflamed and not being controlled by short-acting medication alone. Your oxygen saturation of 93-94% is below the comfortable range (\u226595%), and your breathing rate and heart rate are both elevated, reflecting your body working harder than normal. The most concerning finding is your venous pCO2 of 46, which is at or slightly above the upper limit. During an asthma attack, you'd normally expect CO2 to be *low* because you're breathing fast and blowing it off. A normal-to-high CO2 during active wheezing can signal that your airways are so tight you're beginning to have trouble ventilating adequately. This can worsen quickly.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your peak flow is about 62% of your personal best, which puts you in a moderate-to-severe asthma flare zone. Anything below 50% is critical, but 62% with ongoing symptoms despite repeated rescue inhaler use is concerning. Your oxygen saturation of 93-94% is below the normal 95-100% range, meaning your lungs are struggling to keep up. Most importantly, your venous pCO2 is slightly elevated at 46. During an asthma attack, you normally breathe faster and blow off CO2, so it should be *low*, not high. A rising or even \"normal-high\" CO2 during an active flare can be an early warning sign that your airways are so tight you're starting to tire out and can't ventilate effectively. Combined with 12 hours of symptoms not fully responding to your rescue inhaler, this pattern suggests you need professional monitoring and likely stronger treatments (nebulizers, steroids, possibly more).\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your peak flow is about 62% of your personal best, which puts you in a moderate-to-severe asthma flare. The fact that your rescue inhaler keeps wearing off after 4 uses in 12 hours means it is not controlling the episode. Your oxygen saturation at 93-94% is below the normal threshold of 95%, confirming your lungs aren't moving air well enough. The most concerning finding is your venous pCO2 at 46, which is slightly elevated. In an asthma attack, CO2 should actually be low because you're breathing faster to compensate. A normal or rising CO2 during an active flare can signal that your airways are tightening to the point where you can't blow off CO2 effectively \u2014 this is a warning sign of potential deterioration. Your breathing rate and heart rate are also elevated. Together, these findings indicate a significant asthma exacerbation that needs professional treatment now.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your peak flow is about 62% of your personal best, which puts you in a moderate-to-severe asthma flare zone. Anything below 50% is critical, but 60% is already concerning, especially since your rescue inhaler is only giving temporary relief after multiple uses. Your oxygen saturation at 93-94% is below the normal 95-100% range, meaning you're not getting enough oxygen. Your respiratory rate and heart rate are both elevated, which reflects your body working harder to breathe. Most importantly, your venous pCO2 is slightly high at 46. During an asthma attack, CO2 should normally be LOW because you're breathing fast and blowing it off. A normal or rising CO2 during an active flare can signal that your airways are so tight your lungs are struggling to ventilate \u2014 this can be an early warning of worsening respiratory failure. Combined with repeated inhaler use not holding, this needs urgent in-person evaluation.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your peak flow is about 62% of your personal best, which puts you in a moderate-to-severe asthma flare zone. The fact that your rescue inhaler keeps wearing off after 4 uses in 12 hours means it's not controlling the attack. Your oxygen saturation at 93-94% is below the comfortable range (\u226595%), and your breathing rate and heart rate are both elevated, showing your body is working hard. The most concerning finding is your venous pCO2 at 46 mmHg \u2014 in an asthma attack you'd normally expect this to be *low* because you're breathing fast and blowing off CO2. A normal or rising CO2 during an active flare can signal that your airways are so tight your lungs are starting to tire out and can't ventilate properly. This is a recognized warning sign of a potentially worsening attack that could deteriorate further.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your peak flow is about 62% of your personal best, which puts you in a moderate-to-severe asthma flare zone. Your oxygen saturation at 93-94% is below the comfortable range (normally 95%+), and your breathing rate and heart rate are both elevated, showing your body is working harder than normal. The most concerning finding is your pCO2 at 46, which is slightly high. During an asthma attack, you'd normally expect pCO2 to be *low* because you're breathing faster and blowing off more CO2. A normal or rising pCO2 during an active flare can signal that your airways are so tight that you're starting to have trouble moving enough air \u2014 this is a warning sign of potential worsening. Combined with repeated rescue inhaler use giving only temporary relief over 12 hours, this pattern suggests your current management is not controlling this episode adequately and you need professional intervention now.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your peak flow is about 62% of your personal best, which puts you in a moderate-to-severe asthma flare. The fact that your rescue inhaler is only giving temporary relief after 4 uses in 12 hours means your airways are significantly narrowed and not responding well to home treatment. Your oxygen is borderline low at 93-94%, and your breathing rate and heart rate are both elevated, which are signs your body is working hard. The most concerning finding is your pCO2 at 46\u2014slightly above normal. During an asthma attack, you typically breathe fast and blow off CO2, so it should be *low*. A normal or rising pCO2 during active wheezing can signal that your airways are so tight you're starting to tire out and can't ventilate effectively. This is a recognized warning sign that an attack could worsen quickly. You need professional monitoring and likely stronger treatments (nebulizers, steroids, possibly more).\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your peak flow is about 62% of your personal best, which puts you in a moderate-to-severe asthma flare zone. The fact that your rescue inhaler keeps wearing off after 4 uses in 12 hours means it is not controlling the attack. Your oxygen saturation at 93-94% is below the comfortable range (\u226595%), and your breathing rate and heart rate are both elevated, showing your body is working hard. The most concerning finding is your venous pCO2 at 46, which is slightly high. In an asthma attack you would normally expect CO2 to be *low* because you're breathing fast and blowing it off. A normal-to-high CO2 during an active flare can signal that your airways are so tight you're starting to have trouble ventilating \u2014 this is a warning sign of potential worsening. You need professional monitoring, systemic steroids, and possibly nebulized treatments that go beyond a home inhaler.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

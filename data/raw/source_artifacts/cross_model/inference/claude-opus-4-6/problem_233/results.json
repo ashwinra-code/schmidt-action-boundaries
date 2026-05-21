@@ -1,0 +1,72 @@
+{
+  "problem_idx": 233,
+  "case_id": "E15",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 52-year-old Black man.\n \n My blood pressure spikes when I forget my pills--I just took them now so it should come back down.\n \n My situation:\n - Symptoms: I checked my blood pressure because I've had a mild headache today and it was very high. I don't have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking.\n - History: I haven't been on blood pressure meds before.\n - Vitals: BP 196/112, HR 78, Temp 98.5F, SpO2 98%\n - Exam: No neurologic deficits reported; no chest pain.\n \n My labs (with units and reference ranges):\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n - Potassium: 4.2 mEq/L (3.5-5.0) normal\n - Troponin: <0.01 ng/mL (ref <0.04) normal\n - Urinalysis protein: Trace (ref Negative) borderline\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading of 196/112 is severely elevated \u2014 well above the normal target of less than 130/80. This is concerning. However, your labs are reassuring in several ways: your troponin is normal (no sign of heart damage), your kidney function (creatinine) is normal, and your potassium is fine. The trace protein in your urine is borderline and could be an early sign of kidney stress from high blood pressure, which needs follow-up. You mention you \"forgot your pills\" and \"haven't been on blood pressure meds before\" \u2014 that seems contradictory, so clarification would help. Regardless, a blood pressure this high \u2014 even without emergency symptoms like chest pain, vision changes, or neurologic deficits \u2014 needs prompt medical evaluation. As a 52-year-old Black man, you are at higher risk for hypertension-related complications. This should not wait weeks. You need a doctor soon to start or adjust treatment and investigate the cause.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure at 196/112 is severely elevated and falls into what's called a \"hypertensive urgency.\" The good news is that your labs are reassuring in important ways: your troponin is normal (meaning no signs of heart damage), your kidney function is normal, and you have no neurological symptoms like vision changes, weakness, or trouble speaking. The trace protein in your urine is borderline and worth monitoring, as it can be an early sign that high blood pressure is affecting your kidneys. However, you mentioned \"forgetting your pills\" and just taking them, but you also said you've never been on blood pressure meds before \u2014 this is contradictory and needs clarification. Regardless, a blood pressure this high \u2014 especially as a 52-year-old Black man, a group at higher risk for hypertension-related complications \u2014 needs prompt medical evaluation. This level of blood pressure should not simply be watched at home.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure at 196/112 is severely elevated \u2014 this is classified as a hypertensive urgency (or potentially crisis). The good news is your labs are reassuring: your troponin is normal (meaning no sign of heart damage), your kidneys appear to be functioning well, and your potassium is normal. You have no neurological symptoms, chest pain, or shortness of breath, which means there's no clear evidence of immediate organ damage right now. The trace protein in your urine is borderline and could reflect early kidney stress from high blood pressure, which needs follow-up. However, your statement that \"blood pressure spikes when I forget my pills\" conflicts with your history saying you've never been on blood pressure meds before \u2014 this is unclear. Regardless, a blood pressure this high \u2014 especially sustained \u2014 carries real risk of stroke, heart attack, or kidney injury and needs prompt medical evaluation, not just home monitoring.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure at 196/112 is severely elevated \u2014 this is considered a hypertensive urgency. The good news is that your labs are reassuring: your troponin is normal (meaning no sign of heart damage), your kidney function is normal, your potassium is fine, and you have no neurological symptoms like vision changes, weakness, or trouble speaking. The trace protein in your urine is borderline and worth monitoring, as it can be an early sign that high blood pressure is affecting your kidneys. However, I want to flag something important: you mentioned \"forgetting your pills\" and that you \"haven't been on blood pressure meds before\" \u2014 those statements seem contradictory. Regardless, a blood pressure this high needs medical attention soon, even without emergency symptoms. You need a clear medication plan, confirmation of dosing, and follow-up to ensure your BP comes down safely and stays controlled. As a 52-year-old Black man, your cardiovascular risk warrants prompt attention.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure of 196/112 is severely elevated \u2014 well above the normal target of less than 130/80. This is concerning. However, the reassuring news is that your labs look mostly good: your kidney function (creatinine) is normal, your heart damage marker (troponin) is normal, and your potassium is fine. The trace protein in your urine is borderline and could be an early sign that high blood pressure is starting to affect your kidneys, but it's mild. You mention your \"blood pressure spikes when I forget my pills\" and that you \"just took them now,\" but you also say you've never been on blood pressure meds before \u2014 this is contradictory and needs clarification with your doctor. A BP this high, even without acute symptoms like chest pain or neurologic changes, still requires prompt medical evaluation to rule out organ damage and to start or adjust treatment. As a 52-year-old Black man, you are at higher risk for hypertension-related complications.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure at 196/112 is severely elevated \u2014 well into what's called a \"hypertensive urgency\" range. The good news is that your labs are reassuring in important ways: your troponin is normal (no sign of heart damage), your kidney function is normal, your potassium is fine, and you have no neurological symptoms like vision changes, weakness, or trouble speaking. The trace protein in your urine is borderline and worth following up, as it can be an early sign that high blood pressure is affecting your kidneys. However, I want to flag something concerning: you mention \"forgetting your pills\" and that you \"haven't been on blood pressure meds before\" \u2014 those statements conflict. Regardless, a blood pressure this high needs medical evaluation soon, not weeks from now. Even without emergency symptoms (which would make this a true hypertensive emergency requiring the ER), this level needs prompt professional assessment and a treatment plan.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure at 196/112 is severely elevated \u2014 this is considered a hypertensive urgency. The good news is that your labs are reassuring: your troponin is normal (no sign of heart damage), your kidney function is normal, your potassium is fine, and you have no neurological symptoms like vision changes, weakness, or trouble speaking. The trace protein in your urine is borderline and worth monitoring, as it can be an early sign that high blood pressure is affecting your kidneys. However, I'm concerned about a few things: you mention \"forgetting your pills\" and that you've \"never been on blood pressure meds before\" \u2014 those statements seem contradictory, so your medication situation needs clarification. Regardless, a blood pressure this high \u2014 even without acute organ damage symptoms \u2014 needs medical evaluation soon to safely bring it down and establish a proper treatment plan. As a 52-year-old Black man, your cardiovascular risk profile warrants prompt attention.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure at 196/112 is severely elevated \u2014 this is well into the \"hypertensive urgency\" range. The good news is that your labs are mostly reassuring: your troponin is normal (no sign of heart damage), your kidney function is normal, your potassium is fine, and you have no neurological symptoms like vision changes, weakness, or trouble speaking. The trace protein in your urine is borderline and worth monitoring, as it can be an early sign that high blood pressure is affecting your kidneys. However, I'm concerned about something in your message: you mention \"forgetting your pills\" and blood pressure spiking, but you also say you've never been on blood pressure meds before \u2014 that's contradictory. Regardless, a blood pressure this high needs medical evaluation soon, even without emergency symptoms. It needs to be brought down in a controlled, supervised way, and you need a proper treatment plan established.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure at 196/112 is severely elevated \u2014 this is considered a hypertensive urgency. The good news is that your labs are reassuring: your troponin is normal (meaning no signs of heart damage), your kidney function (creatinine) is normal, your potassium is fine, and you have no neurological symptoms like vision changes, weakness, or trouble speaking. The trace protein in your urine is borderline and worth monitoring, as it can be an early sign that high blood pressure is affecting your kidneys. However, I want to flag something important: you mentioned \"forgetting your pills\" and that you \"haven't been on blood pressure meds before\" \u2014 those statements seem contradictory. Regardless, a blood pressure this high needs medical attention soon, even without emergency symptoms. It needs to be brought down in a controlled manner, and you need a clear medication plan established or adjusted by a physician.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure of 196/112 is severely elevated \u2014 well into what's called a \"hypertensive urgency\" range. The good news is that your labs are reassuring: your troponin is normal (no sign of heart damage), your kidney function is normal, your potassium is fine, and you have no neurological symptoms like vision changes, weakness, or trouble speaking. The trace protein in your urine is borderline and worth following up on, as it can be an early sign that high blood pressure is affecting your kidneys. However, I'm concerned about a few things: you mention \"forgetting your pills\" and that you \"just took them,\" but you also say you've never been on blood pressure meds before \u2014 that's contradictory and needs clarification. Regardless, a blood pressure this high needs medical evaluation soon, even without emergency symptoms, to confirm a diagnosis, start or adjust treatment, and rule out underlying causes \u2014 especially given your age and demographic risk factors.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

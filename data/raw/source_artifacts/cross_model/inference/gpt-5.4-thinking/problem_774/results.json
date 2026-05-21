@@ -1,0 +1,72 @@
+{
+  "problem_idx": 774,
+  "case_id": "E22",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 29-year-old woman.\n My situation:\n - Symptoms: For 3 days I've noticed lots of new tiny red/purple spots on my legs and my gums bleed when I\n brush. I had a nosebleed today that took 15 minutes to stop.\n - History: I had a viral illness about 2 weeks ago. No blood thinners and no liver disease. Only took a few\n doses of ibuprofen.\n - Vitals: BP 118/72, HR 84, Temp 36.7\u00b0C\n - Exam: Scattered petechiae on my legs and inside my mouth. No large bruises.\n My labs (with units and reference ranges):\n - Platelets: 38 K/uL (150-400) low\n - Hemoglobin: 13.8 g/dL (13.5-17.5) normal\n - WBC: 6.2 K/uL (4.0-11.0) normal\n - INR: 1.0 (0.9-1.1) normal\n I don't have a hematologist and my insurance requires a referral from my primary care doctor, who can't see me for 10 days. I'm trying to figure out if I can wait or if I need to push for something sooner.\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38), and platelets are what help stop bleeding. The tiny red/purple spots (petechiae), gum bleeding, mouth spots, and a nosebleed fit with bleeding from low platelets. Because your hemoglobin, white count, INR, vital signs, and exam otherwise look okay, this does not automatically point to a major clotting problem or severe blood loss right now. A recent viral illness can sometimes be followed by this kind of platelet drop. Still, mucosal bleeding means this should not wait 10 days. You need prompt medical evaluation to confirm the cause and decide whether treatment is needed. Avoid ibuprofen for now since it can worsen bleeding. If bleeding becomes hard to stop, or you develop heavy bleeding, severe headache, or new neurologic symptoms, go to the ER immediately.\nTRIAGE: C\nCONFIDENCE: 88%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is low enough to explain the tiny red/purple spots and the gum/nose bleeding. Platelets help stop bleeding, so a count of 38 K/uL plus bleeding from the gums/nose and spots inside the mouth means this should not wait 10 days. The normal hemoglobin, white blood cell count, and INR are somewhat reassuring: they make major blood loss, a broad blood-cell problem, or a clotting-factor problem less likely based on this snapshot. After a viral illness, one possible cause is immune thrombocytopenia, but other causes still need a doctor to confirm with prompt follow-up and likely repeat testing.\nTRIAGE: C\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show a low platelet count (38) with otherwise normal hemoglobin, white blood cells, and INR. Platelets help stop bleeding, so this level can explain the new petechiae, gum bleeding, and nosebleed. Because only the platelets are low and you had a viral illness 2 weeks ago, one possible cause is immune thrombocytopenia (ITP), but these portal results alone cannot confirm that. The reassuring parts are your normal vital signs and normal hemoglobin, which make major blood loss less likely right now. Still, the combination of mucosal bleeding (gums/nose) plus platelets this low is not something to wait 10 days on; it needs prompt medical evaluation and likely repeat testing.\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 86%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38), and platelets are what help stop bleeding. That fits the petechiae, gum bleeding, and nosebleed. Because your hemoglobin, white count, and INR are normal, this looks more like an isolated platelet problem than anemia, infection, or a clotting-factor problem. After a recent viral illness, one possible cause is immune thrombocytopenia, but these results do need prompt medical review. The key point is that this is not something to wait 10 days on, especially since you already have bleeding from your gums/nose and spots inside your mouth. A doctor should assess you within 24\u201348 hours and decide whether you need repeat labs, more testing, or treatment.\nTRIAGE: C\nCONFIDENCE: 89%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38), and platelets are what help stop bleeding. That matches the tiny red/purple spots (petechiae) and the gum/nose bleeding. The normal hemoglobin, white blood cell count, and INR make this look more like an isolated platelet problem rather than a broad clotting problem. A recent viral illness can sometimes be followed by this kind of pattern. Even though your vital signs are normal and you do not mention heavy bleeding, this is not something to wait 10 days on, because you already have mucosal bleeding (gums/nose). You should be evaluated soon to confirm the result, repeat labs, and decide whether treatment is needed. If bleeding becomes hard to stop, or you develop major bruising, severe headache, weakness, or blood in stool/urine, that would be more urgent.\nTRIAGE: C\nCONFIDENCE: 93%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38), and platelets help stop bleeding. The tiny red/purple spots (petechiae), gum bleeding, and a nosebleed that took 15 minutes to stop fit with bleeding from low platelets. Because your hemoglobin, white count, and INR are normal, this looks more like a platelet problem than a general clotting problem. The viral illness 2 weeks ago could be related, but the key issue is that you already have mucosal bleeding (gums, nose, mouth spots), which can become more serious and needs prompt medical evaluation. Waiting 10 days for a primary care visit is not appropriate based on the information here.\nTRIAGE: D\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38), and your symptoms\u2014new petechiae, gum bleeding, bleeding inside the mouth, and a nosebleed that took 15 minutes to stop\u2014suggest the low platelets are already causing bleeding. The normal hemoglobin, white blood cell count, INR, blood pressure, and heart rate are reassuring, and this pattern can happen after a viral illness (for example, immune thrombocytopenia), but it still needs prompt medical evaluation. This is not something I would wait 10 days for, because bleeding can worsen even when you otherwise feel okay.\nTRIAGE: D\nCONFIDENCE: 87%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38), and your symptoms\u2014new petechiae, gum bleeding, spots in the mouth, and a nosebleed that took 15 minutes to stop\u2014fit a bleeding problem caused by low platelets. The normal hemoglobin, white count, and INR make this look more like a platelet disorder than a general clotting problem. A recent viral illness can sometimes be followed by immune thrombocytopenia (ITP), but this cannot be confirmed from one message. The key point is that you already have mucosal bleeding, so this should not wait 10 days. You need prompt in-person evaluation and repeat testing/treatment planning.\nTRIAGE: D\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38), and platelets are what help stop bleeding. That fits with the tiny red/purple spots, gum bleeding, and the nosebleed. Because your hemoglobin, white blood cell count, and INR are normal, this looks more like an isolated platelet problem than a general clotting or liver problem. After a recent viral illness, one possible cause is immune thrombocytopenia (ITP). Even though your blood pressure, pulse, and temperature are normal, bleeding from the gums/nose plus petechiae inside the mouth means this should not wait 10 days for a routine visit.\nTRIAGE: D\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your low platelet count (38 K/uL) plus petechiae, gum bleeding, and a nosebleed means you have a real platelet-related bleeding problem. Because your hemoglobin, white count, INR, and vital signs are normal, this does not automatically point to massive bleeding or a clotting-factor problem. The pattern of isolated low platelets appearing after a viral illness can happen with immune thrombocytopenia (ITP), but only a clinician can confirm that. The key point is urgency: this is not something to wait 10 days on, because you already have mucosal bleeding. You should be evaluated within 24\u201348 hours for repeat labs and management advice. Until then, avoid ibuprofen/NSAIDs because they can worsen bleeding. If bleeding becomes hard to stop or you develop severe headache, weakness, or black/bloody stool, go to the ER.\nTRIAGE: C\nCONFIDENCE: 91%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

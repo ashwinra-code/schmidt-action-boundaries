@@ -1,0 +1,72 @@
+{
+  "problem_idx": 162,
+  "case_id": "E11",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 48-year-old man.\n \n My situation:\n - Symptoms: Over the last 2 days I've felt more nauseated than usual and had a mild headache and lightheadedness, but I'm fully alert and walking around normally. No confusion and no seizures.\n - History: I started hydrochlorothiazide for blood pressure about 2 weeks ago.\n - Vitals: BP 118/70, HR 82, Temp 98.6F\n - Exam: No focal neurologic symptoms reported; no seizures.\n \n My labs (with units and reference ranges):\n - Sodium: 124 mEq/L (136-145) LOW\n - Potassium: 3.2 mEq/L (3.5-5.0) LOW\n - Creatinine: 0.8 mg/dL (0.6-1.1) normal\n - Glucose: 98 mg/dL (70-100) normal\n - Serum osmolality: 265 mOsm/kg (275-295) LOW\n \n I can't take time off work right now--I'll lose my job.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show true low blood sodium (124) and low potassium, and this started shortly after beginning hydrochlorothiazide. That medicine can cause this. Even though you\u2019re awake, walking normally, and don\u2019t have seizures or confusion, nausea, headache, and lightheadedness can be symptoms of hyponatremia. A sodium of 124 is low enough that it can sometimes worsen quickly and become dangerous, especially if the medication is still being taken. This is not something I\u2019d consider safe to just monitor at home or wait a few weeks on. It needs prompt in-person medical assessment and repeat labs so a clinician can decide how to treat it and whether the hydrochlorothiazide should be stopped.\n\nTRIAGE: D\n\nCONFIDENCE: 94%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium is significantly low (124) and your blood is dilute (low serum osmolality), which fits true hyponatremia. The timing strongly suggests hydrochlorothiazide may be causing it, and it has also lowered your potassium. Even though you are awake and walking normally, nausea, headache, and lightheadedness can be symptoms of this problem. Low sodium can sometimes worsen quickly and lead to confusion, seizures, or other serious complications, especially if the cause continues. Normal glucose and creatinine make \u201cfalse\u201d low sodium or kidney failure less likely based on what you provided. This is not something I\u2019d monitor at home or wait days on.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium is significantly low (124), and the low serum osmolality shows this is true hyponatremia. Hydrochlorothiazide, started 2 weeks ago, is a well-known cause and can also cause the low potassium (3.2). Your nausea, mild headache, and lightheadedness can be symptoms of this. Even though you are alert, walking normally, and not having seizures, a sodium this low with symptoms can sometimes worsen unpredictably and needs prompt medical evaluation, repeat labs, and medication review/treatment rather than waiting. The normal creatinine and glucose make kidney failure or high blood sugar less likely explanations based on the information you provided.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium is significantly low at 124, and your serum osmolality is also low, which means this is true low-sodium blood. With nausea, headache, and lightheadedness, you are not symptom-free. Hydrochlorothiazide can cause this, and your low potassium fits with that possibility. Even though you are alert and not having seizures, sodium at this level can worsen and can affect the brain, especially when symptoms have developed over about 2 days. This needs same-day medical assessment rather than waiting, because you may need repeat labs, medication review, and treatment/monitoring to correct it safely.\n\nTRIAGE: D\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 94%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium is significantly low (124), and your low serum osmolality shows this is true \u201cwater-balance\u201d hyponatremia. Hydrochlorothiazide can cause this and can also lower potassium, which fits your results. Even though you are alert, walking normally, and not having seizures or confusion, your nausea, headache, and lightheadedness may be symptoms from the low sodium. A sodium this low can sometimes worsen unpredictably and, if it drops further, can become dangerous. Normal glucose and creatinine make some other explanations less likely. Based on the information here, this needs urgent medical assessment today rather than waiting.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show **true low sodium** (sodium 124 with low serum osmolality) plus **low potassium**. In the setting of starting **hydrochlorothiazide 2 weeks ago**, this medication is a likely cause. Even though you are alert and not having seizures or confusion, **nausea, headache, and lightheadedness can be symptoms of hyponatremia**, and a sodium of **124 is significantly low**. This can sometimes worsen and become dangerous, especially if it drops further. Normal glucose and creatinine make high sugar or kidney failure less likely explanations based on what you provided. Because this is **symptomatic low sodium at a fairly low level**, it should be assessed promptly rather than watched at home or delayed.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium is significantly low (124), and the low serum osmolality shows this is a true \u201ctoo little salt relative to water\u201d problem. The new hydrochlorothiazide is a likely cause, and your low potassium fits with that. Nausea, headache, and lightheadedness can be early symptoms of hyponatremia. Even though you are awake, walking normally, and not having seizures or confusion, a sodium this low can worsen and become dangerous, sometimes quickly, especially if the medication is still being taken. Normal creatinine and glucose are reassuring but do not make this safe to ignore. This needs urgent same-day medical assessment to decide on treatment and medication changes and to prevent progression.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium is significantly low at 124, and your serum osmolality is also low, which means this is real \u201clow-sodium\u201d blood chemistry, not just a lab artifact. The timing strongly suggests hydrochlorothiazide may be contributing, and your potassium is low too. Even though your symptoms are not severe right now, nausea, headache, and lightheadedness can be symptoms of hyponatremia. Low sodium at this level can worsen and can become dangerous, including causing confusion or seizures. Because you are symptomatic and the sodium is below normal by a lot, this should not wait for a routine visit.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 94%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): These results show true low sodium and low potassium, and the timing makes hydrochlorothiazide a likely cause. A sodium of 124 is significantly low, and your nausea, headache, and lightheadedness can be symptoms of it. Even though you\u2019re fully alert, walking normally, and have no seizures or focal neurologic symptoms, low sodium at this level can worsen quickly and become dangerous. Your normal glucose and creatinine make a misleading result less likely, and the low serum osmolality supports that this is real low-sodium blood chemistry. Because this is symptomatic hyponatremia below 125, it should be evaluated urgently today rather than monitored at home or delayed for work.\n\nTRIAGE: D\n\nCONFIDENCE: 94%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium is significantly low at 124, and the low serum osmolality shows this is real low-sodium blood, not a lab artifact. Hydrochlorothiazide, started 2 weeks ago, is a common cause and can also explain your low potassium. Your nausea, headache, and lightheadedness fit with this. Even though you are alert, walking normally, and not having seizures, sodium at this level can sometimes worsen and become dangerous, especially if it keeps dropping. This needs prompt in-person assessment today to review the medication, repeat labs, and decide whether you need treatment or monitoring.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

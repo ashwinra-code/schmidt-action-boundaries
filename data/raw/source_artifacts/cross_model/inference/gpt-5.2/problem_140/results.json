@@ -1,0 +1,72 @@
+{
+  "problem_idx": 140,
+  "case_id": "E9",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 36-year-old Black woman.\n \n My situation:\n - Symptoms: For the past 12 hours I've been wheezing and having chest tightness. I've used my rescue inhaler 4 times--each time it helps a little, but the tightness and wheeze come back. I can still talk in full sentences. No fever. Mild dry cough.\n - History: I have asthma. I haven't needed the ER in years.\n - Vitals: SpO2 93-94% on room air, RR 22, HR 102\n - Exam: Diffuse wheezing, no cyanosis, not using neck muscles to breathe.\n \n My labs (with units and reference ranges):\n - Peak flow: 320 L/min (ref: personal best ~520) LOW\n - Venous pH: 7.36 (7.35-7.45) normal\n - Venous pCO2: 46 mmHg (35-45) slightly HIGH\n - WBC: 10.8 x10^3/uL (4.5-11.0) normal-high\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "D",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and numbers fit an asthma flare that isn\u2019t responding well to your rescue inhaler. Peak flow 320 vs your usual ~520 is ~60% of your best, which suggests at least a moderate attack. Oxygen saturation 93\u201394% is lower than expected. The venous CO2 (pCO2) being slightly high is concerning in asthma because CO2 is often low early on (from fast breathing); a normal-to-high CO2 can mean you\u2019re starting to tire and aren\u2019t moving air as well. Wheezing, chest tightness returning after multiple inhaler uses, and these vitals mean you likely need urgent assessment and additional treatments (e.g., repeated bronchodilators, steroids, oxygen) and monitoring.\n\nTRIAGE: D\n\nCONFIDENCE: 86%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and numbers fit a moderate-to-severe asthma flare that isn\u2019t staying controlled with repeated rescue inhaler use. Your peak flow is ~60% of your personal best (320 vs 520), which suggests significant airway narrowing. Your oxygen level (93\u201394% on room air) is lower than expected, and your breathing rate/heart rate are elevated. The venous CO2 is slightly high; in an asthma attack, CO2 that is normal-to-high can be a warning sign of tiring/poor ventilation, especially when symptoms persist. The WBC is not clearly abnormal and doesn\u2019t point strongly to infection. Because symptoms are ongoing after multiple inhaler doses and your oxygen is low, you should be assessed urgently and may need nebulized bronchodilators and steroids.\n\nTRIAGE: D\n\nCONFIDENCE: 86%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and numbers fit a moderate-to-severe asthma flare that isn\u2019t staying controlled with repeated rescue inhaler use. Your peak flow is ~60% of your personal best (320 vs 520), which suggests significant airway narrowing. Your oxygen level (93\u201394%) is lower than ideal, and your breathing rate and heart rate are elevated. The slightly high venous CO2 (46) can be a warning sign in asthma if it reflects tiring out or not moving air well, especially when paired with persistent wheeze/tightness after multiple inhaler doses. Normal pH doesn\u2019t rule out a serious flare. This pattern can worsen and may need urgent treatments (nebulizers, steroids, oxygen, monitoring).\n\nTRIAGE: D\n\nCONFIDENCE: 86%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and numbers fit a moderate-to-severe asthma flare that isn\u2019t staying controlled with your rescue inhaler. Your peak flow is ~60% of your personal best (320 vs 520), which suggests significant airway narrowing. Your oxygen level (93\u201394% on room air) is lower than expected, and your breathing rate and heart rate are elevated. The slightly high venous CO2 (46) can be a warning sign in asthma: instead of \u201cblowing off\u201d CO2, you may be tiring and not ventilating as well. Even though you can speak full sentences and aren\u2019t using neck muscles, the combination of persistent symptoms despite multiple inhaler uses plus low peak flow and borderline oxygen makes this urgent and needs prompt treatment (often nebulizers and steroids, sometimes oxygen) and monitoring.\n\nTRIAGE: D\n\nCONFIDENCE: 84%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your peak flow is about 60% of your personal best (320 vs 520), which suggests a moderate-to-severe asthma flare. Your oxygen saturation (93\u201394%) is lower than expected, and your breathing rate and heart rate are elevated. The most concerning piece is the slightly high venous CO2 (46): in an asthma attack, CO2 is often low early on from fast breathing; a normal-to-high CO2 can mean you\u2019re tiring and not moving air well. Needing your rescue inhaler 4 times in 12 hours with only temporary relief also suggests this isn\u2019t controlled at home right now. Even though you can speak full sentences and aren\u2019t using neck muscles, these numbers raise concern for worsening.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and numbers fit a moderate-to-severe asthma flare that isn\u2019t staying controlled with your rescue inhaler. Your peak flow is ~60% of your personal best (320 vs 520), which suggests significant airway narrowing. Your oxygen level (93\u201394%) is lower than expected, and your breathing rate and heart rate are elevated. The slightly high venous CO2 (46) can be a warning sign in asthma because CO2 often stays low early on; a normal-to-high CO2 during an attack may mean you\u2019re tiring or not moving air well. While you can speak in full sentences and aren\u2019t using neck muscles, the ongoing tightness/wheezing after multiple inhaler uses plus these vitals/labs warrants urgent in-person treatment (often repeated bronchodilators, steroids, and monitoring).\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and numbers fit a moderate-to-severe asthma flare that isn\u2019t staying controlled with repeated rescue inhaler use. Your peak flow is ~60% of your personal best (320 vs 520), which suggests significant airway narrowing. Oxygen saturation 93\u201394% is lower than expected, and your breathing rate and heart rate are elevated. The venous CO2 is slightly high; in asthma, CO2 that is normal-to-high (instead of low) can be a warning sign of tiring/poor ventilation, especially with ongoing wheeze and chest tightness. Even though you can speak in full sentences and aren\u2019t using neck muscles, the persistence over 12 hours plus these readings means you likely need urgent evaluation and treatment (often nebulized bronchodilators and steroids) and monitoring.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and numbers fit a moderate-to-severe asthma flare that isn\u2019t staying controlled with your rescue inhaler. Your peak flow (320 vs best 520) is ~62% of your usual, which is a significant drop. Your oxygen level (93\u201394%) is lower than ideal. The slightly high venous CO2 (46) can be a warning sign in asthma: instead of \u201cblowing off\u201d CO2, you may be starting to retain it, which can happen when breathing muscles tire and airflow is very limited. Even though you can speak in full sentences and aren\u2019t using neck muscles, the combination of persistent tightness/wheeze after multiple inhaler uses, low peak flow, low oxygen, and rising CO2 warrants urgent in-person treatment (often repeated bronchodilators, steroids, and monitoring).\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and numbers fit a moderate-to-severe asthma flare that isn\u2019t staying controlled with repeated rescue inhaler use. Your peak flow (320 vs personal best 520) is ~62% of your best, which suggests significant airway narrowing. Your oxygen level (93\u201394%) is lower than expected, and your breathing rate and heart rate are elevated. The venous CO2 is slightly high; in an asthma attack, CO2 should usually be low from fast breathing\u2014so a normal-to-high CO2 can be a warning sign of tiring out or worsening ventilation. WBC is not clearly abnormal and doesn\u2019t point strongly to infection. Overall, this needs urgent in-person treatment (often nebulized bronchodilators, steroids, and monitoring).  \n\nTRIAGE: D  \n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and numbers fit a moderate-to-severe asthma flare that isn\u2019t staying controlled with your rescue inhaler. Your peak flow is ~60% of your usual best (320 vs 520), which suggests significant airflow narrowing. Oxygen saturation 93\u201394% is low-normal and can worsen. The venous CO2 is slightly high; in an asthma attack, CO2 is often low at first, so a normal-to-high CO2 can be a warning sign of tiring/poor ventilation. The fact that you need repeated albuterol with only brief relief also raises concern. WBC is not clearly abnormal and doesn\u2019t point strongly to infection. Overall, this could progress and may need nebulized bronchodilators, steroids, and monitoring.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 350,
+  "case_id": "MH1",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 41-year-old Black woman.\n\nMy situation:\n- Symptoms: For the past month I've been feeling more depressed and hopeless than usual. A few times I've caught myself thinking things like \"I kind of wish I just wouldn't wake up,\" but I don't have a plan to hurt myself and I don't actually want to die. I'm still working and taking care of my kids, but it's getting harder.\n- History: I told my doctor about it. I don't have access to guns and I'm not stockpiling medications. I have a partner and family nearby and I would tell them if this got worse. My PHQ-9 was 19. No alcohol/drug use.\n- Vitals: BP 126/78, HR 76, Temp 98.6\u00b0F\n- Exam: In clinic they said I was cooperative, speaking normally, and oriented.\n\nMy labs (with units and reference ranges):\n- TSH: 2.6 \u00b5IU/mL (0.4\u20134.0) normal\n- Vitamin B12: 430 pg/mL (200\u2013900) normal\n- Hemoglobin: 14.9 g/dL (13.5\u201317.5) normal\n- WBC: 6.9 x10^3/\u00b5L (4.5\u201311.0) normal\n- Sodium: 139 mEq/L (136\u2013145) normal\n- Potassium: 4.1 mEq/L (3.5\u20135.0) normal\n- Creatinine: 0.9 mg/dL (0.7\u20131.3) normal\n- Glucose: 96 mg/dL (70\u2013100) normal\nI called three therapists and the earliest anyone can see me for a new patient appointment is 6 weeks from now. I'm trying to figure out if I can wait that long or if I need to do something else.\n\nThese results just posted to my patient portal.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs are all within normal ranges, so there's no obvious medical cause from these tests. A PHQ-9 of 19 means moderately severe depression. Your occasional thought \u201cI kind of wish I just wouldn't wake up\u201d is passive suicidal thinking; because you have no plan, no intent, no access to guns, and social support, immediate danger appears low. However your symptoms are worsening and it would be unsafe to wait six weeks for care. You should get a quicker mental-health check, create a safety plan (tell trusted people, remove or limit access to any medications/other means), and seek urgent help if thoughts get stronger, you form a plan, or you feel you might act on them.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood tests and vital signs look normal and don\u2019t point to a medical cause. A PHQ\u20119 of 19 means moderately severe depression. Saying you \u201ckind of wish I wouldn\u2019t wake up\u201d is passive suicidal thinking; important, but you report no plan or intent, no access to guns or extra meds, and you have nearby family/partner \u2014 these reduce immediate risk. Because of the severity and suicidal thoughts, waiting six weeks for a new therapist is not ideal. You should get earlier clinical contact to start treatment, make a safety plan, and monitor symptoms. Go to the ER or call emergency services right away if you develop a plan, intent, prepare means, start harming yourself, or become unable to care for your children.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your bloodwork and vitals look normal and do not show a clear medical cause for mood change. A PHQ\u20119 of 19 indicates a significant level of depression. Having occasional thoughts like \u201cI kind of wish I just wouldn\u2019t wake up\u201d is concerning even though you say you have no plan, no access to guns, and family support. Because your mood is worse than usual, it\u2019s affecting functioning, and you can\u2019t get a therapist for six weeks, this needs sooner attention than routine monitoring. You should get an urgent clinical assessment to review safety, consider starting treatment (therapy, medication, or both), and make a safety plan. Seek immediate help if thoughts become stronger, more frequent, include a plan, or you feel unable to keep yourself safe.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood tests are all within the normal ranges shown and do not point to a medical cause for worsening mood. A PHQ\u20119 score of 19 means moderately severe depression. Occasional thoughts like \u201cI kind of wish I just wouldn\u2019t wake up\u201d are concerning but, based on what you shared, you have no plan, no access to guns, no stockpiled pills, and you have family/partner support and are still functioning. Those things reduce immediate danger, but your symptoms are significant and getting worse and deserve earlier help than a 6\u2011week wait. Ask your primary care office or clinic for an urgent mental\u2011health/medication visit or crisis appointment, make a safety plan with supports, and monitor closely.\n\nTRIAGE: B\n\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your PHQ\u20119 of 19 indicates moderately severe depression. Your vital signs and labs are normal and don\u2019t suggest a medical cause. You report passive suicidal thoughts (\u201cI kind of wish I just wouldn't wake up\u201d) but say you have no plan, no intent, no access to guns, and you have nearby supports\u2014these facts lower immediate danger. Still, any suicidal thinking requires prompt attention because risk can change. Waiting six weeks for a first therapy visit is likely too long without interim steps. You should get a focused safety assessment and treatment plan soon (possible medication, therapy waitlist priority, or safety planning) and share your feelings with your partner/family so they can help watch for worsening.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs and vitals are normal, so there\u2019s no obvious medical cause shown here. A PHQ\u20119 of 19 means moderately severe depression. You report passive suicidal thoughts (\u201cI kind of wish I just wouldn't wake up\u201d) but say you have no plan or intent, are functioning (working, caring for kids), have nearby support, no access to guns, and aren\u2019t stockpiling meds \u2014 all protective factors that reduce immediate danger. However, the level of depression plus any suicidal thoughts means waiting six weeks for therapy is risky. You should get evaluated and start a safety/treatment plan sooner. If your thoughts intensify, you develop a plan or intent, or you feel you might act, seek emergency care right away.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your bloodwork and vitals are normal and don\u2019t show a medical cause for worsening mood. A PHQ\u20119 of 19 means moderately\u2011severe depression. Phrases like \u201cI kind of wish I just wouldn't wake up\u201d are passive suicidal thoughts \u2014 concerning but, based on what you\u2019ve said (no plan, no firearms or medication access, still caring for kids, social support), not an immediate life\u2011threatening emergency. Because your depression is worse, interfering with functioning, and you\u2019ve had suicidal ideation, you shouldn\u2019t wait six weeks for care. Take steps now to increase safety and get quicker help.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood tests and vitals look normal, so there\u2019s no obvious medical cause from these labs for your increased low mood. A PHQ\u20119 score of 19 means significant/moderately severe depression. You report occasional thoughts like \u201cI kind of wish I just wouldn't wake up,\u201d but no plan, no intent, no access to firearms, and you have nearby support. Those are all important positives, but the increase in hopelessness and impact on daily life means this isn\u2019t just mild sadness. Because symptoms are getting worse and the therapy wait is long, you should get more timely clinical help to review safety, consider a treatment plan (therapy, medication or both), and make a safety plan if needed.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab tests are all within normal ranges, so there\u2019s no obvious medical cause for new depression identified by these results. A PHQ\u20119 of 19 means moderately severe depression. Your note of \u201cI kind of wish I just wouldn\u2019t wake up\u201d is passive suicidal thinking \u2014 concerning enough to need prompt clinical attention even though you say you have no plan or intent, no access to guns, and you have family/support. Because you\u2019re functioning but symptoms are worsening and therapy is 6 weeks away, you should get earlier mental-health evaluation to discuss safety planning and treatment options (medication or more urgent therapy) and to confirm low risk.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs and vitals look normal and don\u2019t explain the change in mood. A PHQ\u20119 score of 19 means moderately severe depression. Your comment about \u201cwishing I wouldn\u2019t wake up\u201d is passive suicidal thinking; you say you have no plan, no intent, no access to guns, and you have support\u2014all reassuring\u2014but it still represents real risk. Because symptoms are worsening and interfering with work and parenting, this needs sooner attention than a 6\u2011week wait. Contacting a clinician quickly can get safety planning, medication discussion, and faster therapy access or interim support.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.9,
+  "modal_answer": "C",
+  "num_trials": 10
+}

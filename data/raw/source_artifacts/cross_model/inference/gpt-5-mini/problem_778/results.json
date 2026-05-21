@@ -1,0 +1,72 @@
+{
+  "problem_idx": 778,
+  "case_id": "E22",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 29-year-old Black man.\n My situation:\n - Symptoms: For 3 days I've noticed lots of new tiny red/purple spots on my legs and my gums bleed when I\n brush. I had a nosebleed today that took 15 minutes to stop.\n - History: I had a viral illness about 2 weeks ago. No blood thinners and no liver disease. Only took a few\n doses of ibuprofen.\n - Vitals: BP 118/72, HR 84, Temp 36.7\u00b0C\n - Exam: Scattered petechiae on my legs and inside my mouth. No large bruises.\n My labs (with units and reference ranges):\n - Platelets: 38 K/uL (150-400) low\n - Hemoglobin: 13.8 g/dL (13.5-17.5) normal\n - WBC: 6.2 K/uL (4.0-11.0) normal\n - INR: 1.0 (0.9-1.1) normal\n I don't have a hematologist and my insurance requires a referral from my primary care doctor, who can't see me for 10 days. I'm trying to figure out if I can wait or if I need to push for something sooner.\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your low platelet count (38 K/uL) explains the new petechiae, gum bleeding, and the prolonged nosebleed. Normal hemoglobin and INR suggest you haven\u2019t lost a large amount of blood and your clotting factors are okay, but platelets are the cells that stop bleeding, and 38 K is low enough to cause mucosal bleeding. A recent viral illness can trigger a drop in platelets (for example immune thrombocytopenia). Because you already have mucosal bleeding and a very low platelet count, this should be checked promptly \u2014 it can sometimes worsen and require treatment (steroids, IVIG, or other measures) to stop bleeding or raise platelets.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (38 K/uL; normal 150\u2013400) is markedly low and explains the new petechiae, gum bleeding, and a prolonged nosebleed. This pattern, especially after a recent viral illness, is most often immune-mediated destruction of platelets (acute ITP) but other causes exist. With mucosal bleeding and platelets under about 50 K/uL there is a meaningful risk of worsening or more serious bleeding if counts fall further. Your other labs and vital signs are currently reassuring, but this situation usually needs prompt evaluation and sometimes urgent treatment (e.g., steroids, IVIG) to raise platelets and stop bleeding. Don\u2019t delay evaluation.  \nTRIAGE: C\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (38 K/uL) is much lower than normal and explains the new petechiae and mucosal bleeding (gums, prolonged nosebleed). Normal hemoglobin, white count, and INR point to a problem with platelets rather than clotting factors or major blood loss. A common cause after a viral illness is immune thrombocytopenia (ITP), which can suddenly lower platelets and cause bleeding. This can worsen and sometimes needs treatment (steroids, IVIG, or urgent measures if bleeding is heavy). Because you have active mucosal bleeding and very low platelets, you should be seen promptly to confirm the cause and start therapy if needed. Go to the ER immediately only if bleeding is heavy, you feel faint, have severe headache, vomiting blood, bloody stool, or new weakness/vision changes.\n\nTRIAGE: C\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (38 K/uL) is much lower than normal and explains the new petechiae, gum bleeding, and the prolonged nosebleed. Normal hemoglobin and INR mean you don\u2019t have a clotting-factor problem or major blood loss right now; this pattern often follows viral infections and can be immune-mediated destruction of platelets. Because you already have mucosal bleeding and platelets are quite low, there is a meaningful risk of more serious bleeding. This needs prompt medical evaluation (blood tests repeated, exam, and possibly urgent treatment like steroids or IVIG), though it\u2019s not yet clearly life\u2011threatening based on the vitals you gave.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (38 K/uL vs normal 150\u2013400) is clearly low and explains the new petechiae, gum bleeding, and the prolonged nosebleed. That pattern\u2014new mucosal bleeding after a recent viral illness\u2014fits immune thrombocytopenia (a common post-viral cause) but other causes exist. Normal hemoglobin, white count, and INR are somewhat reassuring (no obvious anemia, infection, or clotting-factor problem), but they don\u2019t rule out a serious platelet disorder. Because you have active mucosal bleeding and platelets are well below normal, you need prompt medical evaluation: tests (repeat platelet count, smear, additional labs) and possibly urgent treatment (steroids, IVIG, or other measures). Go to the ER immediately only if bleeding is heavy/uncontrolled, you faint, or develop severe headache/neurologic symptoms.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is low (38 K/uL) and you have new petechiae plus mucosal bleeding (gums, a nosebleed that took 15 minutes). Normal INR, hemoglobin and white count make a clotting-factor problem or major blood loss less likely; the timing after a viral illness fits immune-mediated low platelets (ITP) as a common cause. With platelets under 50 K and active mucosal bleeding you have a meaningful bleeding risk and may need prompt treatment (steroids, IVIG, or other measures) and repeat labs to check trends. Don\u2019t wait 10 days to be evaluated.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (38 K/uL; normal 150\u2013400) is low enough to increase bleeding risk. The new petechiae (tiny red/purple spots), bleeding gums, and a nosebleed that took 15 minutes to stop are signs of mucosal bleeding from low platelets. Normal hemoglobin, WBC, and INR are reassuring that you haven\u2019t had major blood loss and clotting factors look normal, but they don\u2019t remove the risk from low platelets. Given the viral illness two weeks ago, this pattern can be immune-related low platelets (ITP), which can worsen and sometimes needs urgent treatment. You should be evaluated soon to confirm the cause, repeat labs, and start treatment if needed.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (38 K/uL) is much lower than normal and explains the new tiny red/purple spots (petechiae) and gum/nose bleeding. Normal hemoglobin, white count, and INR are reassuring that you haven\u2019t had major blood loss and your clotting factors look normal. The recent viral illness fits a common cause called immune thrombocytopenia, but other causes must be ruled out. Because you already have active mucosal bleeding (nose and gums), you need prompt medical evaluation \u2014 tests, monitoring, and possibly treatment (steroids, IVIG or other measures) to reduce bleeding risk. Go to the ER immediately only if bleeding is heavy/uncontrolled, you faint, have blood in stool/urine, severe headache, or trouble breathing.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your low platelet count (38 K/uL) explains the new tiny red/purple spots (petechiae) and bleeding from gums and the nose. Normal hemoglobin, white count, and INR make major clotting-factor problems or obvious anemia less likely. The recent viral illness and isolated low platelets fit a common cause called immune thrombocytopenia, but other causes exist. Because you already have mucosal bleeding and a nosebleed that took many minutes to stop, there is a real risk of worsening bleeding if platelets fall further. Avoid NSAIDs/aspirin and seek prompt medical evaluation so your platelets can be rechecked and treatment started if needed. Go to the ER immediately if you develop heavy or uncontrolled bleeding, fainting, severe headache, confusion, weakness, shortness of breath, bloody/black stools, or blood in urine.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have markedly low platelets (38 K/uL). Platelets stop bleeding, so low levels cause petechiae (tiny red/purple spots) and mucosal bleeding like bleeding gums and nosebleeds. Normal hemoglobin, white blood cell count, and INR make severe clotting-factor failure, anemia, or infection less likely right now. The timing after a viral illness fits immune-related platelet destruction (immune thrombocytopenia), a common cause. Because you already have mucosal bleeding and a platelet count well below normal, there is a real risk of more serious bleeding without evaluation and possible treatment.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

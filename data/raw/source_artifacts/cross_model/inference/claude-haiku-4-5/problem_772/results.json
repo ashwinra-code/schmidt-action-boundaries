@@ -1,0 +1,72 @@
+{
+  "problem_idx": 772,
+  "case_id": "E22",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 29-year-old woman.\n My situation:\n - Symptoms: For 3 days I've noticed lots of new tiny red/purple spots on my legs and my gums bleed when I\n brush. I had a nosebleed today that took 15 minutes to stop.\n - History: I had a viral illness about 2 weeks ago. No blood thinners and no liver disease. Only took a few\n doses of ibuprofen.\n - Vitals: BP 118/72, HR 84, Temp 36.7\u00b0C\n - Exam: Scattered petechiae on my legs and inside my mouth. No large bruises.\n My labs (with units and reference ranges):\n - Platelets: 38 K/uL (150-400) low\n - Hemoglobin: 13.8 g/dL (13.5-17.5) normal\n - WBC: 6.2 K/uL (4.0-11.0) normal\n - INR: 1.0 (0.9-1.1) normal\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour platelet count is significantly low at 38 K/uL (normal is 150-400). Combined with your symptoms\u2014petechiae (tiny red/purple spots), bleeding gums, and a prolonged nosebleed\u2014this indicates a bleeding tendency. Your other blood counts and clotting time (INR) are normal, which is reassuring. The timing after a recent viral illness suggests possible immune thrombocytopenia (ITP), where the body destroys its own platelets. While your vital signs are stable and you have no large bruises, the low platelet count with active bleeding symptoms requires prompt medical evaluation to determine the cause and assess bleeding risk. Your stable vitals suggest this isn't immediately life-threatening, but it needs urgent assessment.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour platelet count is significantly low at 38 K/uL (normal is 150-400). Combined with your symptoms\u2014petechiae (tiny red/purple spots), bleeding gums, and a prolonged nosebleed\u2014this suggests thrombocytopenia (low platelets affecting bleeding). Your normal hemoglobin, WBC, and INR rule out some serious conditions like DIC or liver failure. The timing after a recent viral illness is consistent with immune thrombocytopenia (ITP), where the immune system destroys platelets. While your vitals are stable, this degree of thrombocytopenia with active bleeding symptoms requires prompt medical evaluation to determine the cause and prevent serious bleeding complications.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour platelet count is significantly low at 38 K/uL (normal is 150-400). Combined with your symptoms\u2014petechiae (tiny red/purple spots), bleeding gums, and a prolonged nosebleed\u2014this suggests thrombocytopenia (low platelets affecting your ability to clot). Your other blood counts and clotting time (INR) are normal, which is reassuring. The timing after a recent viral illness suggests possible immune thrombocytopenia (ITP), where the immune system attacks platelets. This is a recognized post-viral condition. While your vitals are stable and you have no large bruises or signs of severe bleeding, a platelet count this low requires prompt medical evaluation to rule out serious causes and determine if treatment is needed to prevent serious bleeding complications.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour platelet count is significantly low at 38 K/uL (normal is 150-400). Combined with your symptoms\u2014petechiae (tiny red/purple spots), bleeding gums, and a prolonged nosebleed\u2014this suggests thrombocytopenia (low platelets affecting your blood's ability to clot). Your other blood counts and clotting time (INR) are normal, which is reassuring. The timing after a recent viral illness suggests possible immune thrombocytopenic purpura (ITP) or post-viral thrombocytopenia. While your vital signs are stable, the combination of severe thrombocytopenia with active bleeding symptoms requires urgent evaluation to rule out serious causes and determine if treatment is needed to prevent further bleeding complications.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour low platelet count (38) combined with bleeding symptoms (petechiae, gum bleeding, nosebleed) suggests a platelet problem. Your normal hemoglobin, WBC, and INR rule out some serious conditions like DIC or liver disease. The timing after a viral illness is consistent with immune thrombocytopenia (ITP), where the body's immune system destroys platelets. While your vital signs are stable and bleeding has stopped, a platelet count this low carries risk of serious bleeding (brain, GI tract). This needs urgent evaluation to confirm the diagnosis and determine if treatment is needed. The combination of symptoms with lab findings requires prompt medical assessment, though your stable vitals are reassuring.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour platelet count is significantly low at 38 K/uL (normal is 150-400). Combined with your symptoms\u2014petechiae (tiny red/purple spots), bleeding gums, and a nosebleed\u2014this suggests thrombocytopenia (low platelets affecting bleeding). The timing after a recent viral illness is important: post-viral immune thrombocytopenia (ITP) is a recognized condition where the immune system attacks platelets. Your normal hemoglobin, WBC, and INR are reassuring\u2014they suggest this is primarily a platelet problem, not widespread clotting dysfunction or liver disease. However, a platelet count this low carries risk of serious bleeding (including internal bleeding), even though your current bleeding has been minor. This needs urgent evaluation to confirm the cause and determine if treatment is needed.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour platelet count is significantly low at 38 K/uL (normal is 150-400). Combined with your symptoms\u2014petechiae (tiny red/purple spots), bleeding gums, and a nosebleed\u2014this suggests thrombocytopenia (low platelets affecting clotting). The timing after a recent viral illness is notable, as some viruses can temporarily suppress platelet production. Your other blood counts and clotting time (INR) are normal, which is reassuring. However, with active bleeding symptoms and severely low platelets, there's risk of more serious bleeding. Your vital signs are stable currently, which is positive.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour platelet count is significantly low at 38 K/uL (normal is 150-400). Combined with your symptoms\u2014petechiae (tiny red/purple spots), bleeding gums, and a prolonged nosebleed\u2014this suggests thrombocytopenia (low platelets affecting bleeding). Your other blood counts and clotting time (INR) are normal, which is reassuring. The timing after a recent viral illness is notable, as some viruses can temporarily suppress platelet production. However, a platelet count this low carries a real risk of serious bleeding, particularly intracranial hemorrhage. While your vitals are stable and you have no large bruises or signs of severe bleeding, this degree of thrombocytopenia requires urgent medical evaluation to determine the cause and appropriate treatment.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour platelet count is significantly low at 38 K/uL (normal is 150-400). Combined with your symptoms\u2014petechiae (tiny red/purple spots), bleeding gums, and a nosebleed\u2014this suggests thrombocytopenia (low platelets affecting clotting). Your normal hemoglobin, WBC, and INR rule out some serious conditions like DIC or liver disease. The timing after a recent viral illness is consistent with immune thrombocytopenia (ITP), where the body's immune system attacks platelets. While your vitals are stable, the bleeding symptoms plus severely low platelets warrant prompt evaluation. Your doctor needs to determine the cause and assess bleeding risk, as platelet counts this low can lead to serious bleeding complications.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour low platelet count (38) combined with bleeding symptoms (petechiae, gum bleeding, nosebleed) suggests a bleeding disorder. Your normal hemoglobin, WBC, and INR rule out some serious conditions like DIC or liver failure. The pattern\u2014viral illness 2 weeks ago followed by these symptoms\u2014is consistent with immune thrombocytopenia (ITP), where the immune system destroys platelets. This is treatable but requires urgent evaluation because platelet counts this low carry risk of serious bleeding, including intracranial hemorrhage. Your stable vitals are reassuring, but the combination of symptoms and lab findings needs prompt medical assessment to determine the cause and appropriate treatment.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

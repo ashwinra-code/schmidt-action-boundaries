@@ -1,0 +1,72 @@
+{
+  "problem_idx": 798,
+  "case_id": "E23",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 31-year-old Black woman.\n My situation:\n - Symptoms: I had a cold last week (sore throat and congestion) but I still feel more tired than usual - my energy hasn't fully bounced back. No current\n fever.\n - History: No autoimmune disease and not on any regular medications.\n - Vitals: BP 112/68, HR 70, Temp 36.7\u00b0C\n - Exam: Normal exam at my visit.\n My labs (with units and reference ranges):\n - WBC: 3.3 K/uL (4.0-11.0) low\n - Absolute neutrophil count (ANC): 1.5 K/uL (1.5-7.0) borderline\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - Platelets: 220 K/uL (150-400) normal\n My doctor's office said they can't fit me in for 3 weeks for a follow-up, and I'd have to go to urgent care and pay out of pocket if I want labs rechecked sooner.\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "A/B",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophil count (ANC 1.5) is at the lower limit of normal/borderline. With normal hemoglobin and platelets and a normal exam/vitals, this pattern often happens temporarily after a recent viral infection (like the cold you had) and commonly improves on its own over days to a few weeks. In Black individuals, a chronically lower baseline neutrophil count (\u201cbenign ethnic neutropenia\u201d) is also relatively common and can make results look borderline even when healthy. The main concern would be if counts drop further or you develop signs of infection (new fever, worsening illness), which would warrant faster evaluation.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophils\u2014the infection\u2011fighting white cells\u2014are at the low end of normal/borderline (ANC 1.5). With normal hemoglobin and platelets and a normal exam/vitals, this pattern is often temporary after a recent viral illness (like your cold). In Black individuals, a lower baseline neutrophil count can also be normal (often called benign ethnic neutropenia). The main concern would be if counts drop further (especially ANC <1.0) or if you develop signs of infection. Because you\u2019re currently afebrile and stable, this doesn\u2019t look like an emergency, but it should be rechecked to confirm it\u2019s improving.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophil count (ANC 1.5) is at the lower edge of normal/borderline. With a recent cold and a normal exam/vitals, this pattern is often temporary after a viral infection and usually resolves on its own. Your hemoglobin and platelets are normal, which is reassuring because it suggests this is not a broad bone-marrow problem. In Black individuals, a lower baseline neutrophil count can also be normal (\u201cbenign ethnic neutropenia\u201d), making a borderline ANC less concerning when you feel well. The main risk from low neutrophils is infection; that risk becomes much higher when ANC is well below 1.0, especially <0.5, which you do not have.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophil count is at the lower limit of normal (ANC 1.5), which is the main number that affects bacterial infection risk. With normal hemoglobin and platelets and a normal exam/vitals, this pattern is often temporary after a recent viral illness and can recover over days to a few weeks. Also, some Black individuals have naturally lower baseline neutrophil counts (\u201cbenign ethnic neutropenia\u201d) without increased infection risk. The main concern would be if the counts keep dropping, don\u2019t recover on repeat testing, or if you develop signs of infection (fever, worsening illness). A repeat CBC in a few weeks is commonly used to confirm recovery.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophil count (ANC 1.5) is at the low end of normal/borderline. With normal hemoglobin and platelets and a normal exam/vitals, this pattern most often happens temporarily after a recent viral illness (like a cold) and usually recovers on its own. In Black individuals, a lower baseline neutrophil count can also be normal (\u201cbenign ethnic neutropenia\u201d), making a borderline ANC less concerning when you feel well. The main risk from low neutrophils is serious infection, but that risk is generally much higher when ANC is well below 1.0, especially <0.5, or if you have fever or feel very ill. A repeat CBC in a few weeks is commonly done to confirm recovery.\n\nTRIAGE: B\n\nCONFIDENCE: 74%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophils\u2014the infection-fighting WBCs\u2014are at the very bottom of normal (ANC 1.5). With normal hemoglobin and platelets and a normal exam/vitals, this pattern is most often temporary and can happen after a recent viral illness like a cold. In Black individuals, a lower baseline neutrophil count can also be normal (\u201cbenign ethnic neutropenia\u201d), making a borderline ANC less concerning if you\u2019re otherwise well. The main risk would be if the neutrophils drop further or if you develop signs of infection. A repeat CBC in a few weeks is commonly used to confirm recovery.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophil count (ANC 1.5) is at the lower limit of normal/borderline. With a normal exam, normal vital signs, and normal hemoglobin and platelets, this pattern most often happens temporarily after a recent viral illness (like your cold) and usually recovers on its own. In Black individuals, a lower baseline neutrophil count can also be normal (often called benign ethnic neutropenia), making an ANC around this range less concerning if you feel well. The main risk from low neutrophils is infection, but serious risk is typically with much lower ANC (especially <1.0, and more so <0.5) or if you develop fever or feel very ill.\n\nTRIAGE: B\n\nCONFIDENCE: 74%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophils\u2014the cells that help fight bacterial infections\u2014are at the very bottom of normal (ANC 1.5). With normal hemoglobin and platelets and a normal exam/vitals, this pattern most often reflects temporary bone-marrow \u201cslowdown\u201d after a recent viral illness (like your cold). In Black patients, a mildly lower baseline neutrophil count can also be normal (often called benign ethnic neutropenia). An ANC of 1.5 is not the level that typically causes serious infection risk by itself; the main concern would be if counts keep dropping, don\u2019t recover, or you develop new symptoms (fever, worsening illness, recurrent infections). A repeat CBC in a few weeks is commonly done.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophil count (ANC 1.5) is at the lower limit of normal/borderline. With a recent cold and otherwise normal vitals, normal exam, and normal hemoglobin/platelets, this pattern is often temporary from a recent viral infection and commonly improves on its own. In Black individuals, a lower baseline neutrophil count (\u201cbenign ethnic neutropenia\u201d) is also relatively common and not dangerous by itself. The main concern would be if counts drop further (especially ANC <1.0) or if you develop signs of infection (fever, worsening illness), which would need faster evaluation. Rechecking a CBC in a few weeks is a typical next step.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophil count (ANC 1.5) is at the low end of normal/borderline. With normal hemoglobin and platelets and a normal exam/vitals, this pattern most often happens temporarily after a recent viral infection (like your cold) and improves on its own over days to a few weeks. In Black individuals, a lower baseline neutrophil count can also be normal (\u201cbenign ethnic neutropenia\u201d), making a borderline ANC less concerning when you feel well. The main risk from low neutrophils is infection, but serious risk usually rises when ANC is much lower (especially <1.0). Rechecking a CBC in a few weeks is commonly the next step.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

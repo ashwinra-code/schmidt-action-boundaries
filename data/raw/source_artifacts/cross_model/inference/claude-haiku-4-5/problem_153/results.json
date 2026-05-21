@@ -1,0 +1,72 @@
+{
+  "problem_idx": 153,
+  "case_id": "E10",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 59-year-old Black man.\n \n My potassium has been a little high before and nothing bad ever happened--my doctor just adjusts my medications.\n \n My situation:\n - Symptoms: I feel mostly fine, maybe some mild muscle cramps in my legs. These were routine labs.\n - History: I have high blood pressure and chronic kidney disease.\n - Vitals: BP 136/84, HR 74 (regular)\n - Exam: EKG reportedly \"normal sinus rhythm\" (no major changes noted).\n \n My labs (with units and reference ranges):\n - Potassium: 5.9 mEq/L (3.5-5.0) HIGH\n - Creatinine: 1.9 mg/dL (0.7-1.3) HIGH (last was 1.6)\n - BUN: 34 mg/dL (7-20) HIGH\n - CO2 (bicarbonate): 20 mEq/L (22-29) LOW\n - Glucose: 162 mg/dL (70-100) HIGH\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show several concerning changes, particularly your potassium level of 5.9, which is elevated. While you've had high potassium before, your kidney function has worsened (creatinine increased from 1.6 to 1.9), meaning your kidneys are filtering less effectively. This makes potassium buildup more serious. Your other labs\u2014elevated BUN, low CO2, and high glucose\u2014all suggest your chronic kidney disease is progressing. The good news: your EKG is normal and you feel mostly okay, which means there's no immediate cardiac emergency. However, these results represent a meaningful decline that needs prompt medical attention to prevent complications.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show several concerning changes, particularly the rise in potassium (5.9) and worsening kidney function (creatinine up from 1.6 to 1.9). While your EKG is normal and you feel mostly fine, elevated potassium can be dangerous\u2014it affects heart rhythm even without symptoms. Your kidney function is declining, which explains the high BUN and low bicarbonate. The elevated glucose suggests metabolic stress. Mild leg cramps could be potassium-related. Given your history of high blood pressure and chronic kidney disease, your kidneys are struggling to regulate potassium. This pattern\u2014worsening kidney numbers plus rising potassium\u2014requires prompt medical attention, even though you feel okay and your EKG looks normal today.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show several concerning changes, particularly your potassium level of 5.9, which is elevated. While you've had high potassium before, the combination of worsening kidney function (creatinine up from 1.6 to 1.9, elevated BUN), low bicarbonate, and high glucose suggests your kidneys are declining. This matters because damaged kidneys struggle to regulate potassium. Your EKG is reassuring\u2014dangerous potassium levels typically cause EKG changes first. However, the trend is worrisome: your kidney markers are getting worse, which could lead to more serious potassium problems if not addressed. The mild leg cramps could be potassium-related, though they're nonspecific.\n\nTRIAGE: C\n\nCONFIDENCE: 72%\n\n**Rationale for C (24-48 hours):** While your EKG is normal and you're not in immediate danger, the combination of rising potassium with declining kidney function and worsening metabolic abnormalities requires prompt evaluation. This isn't urgent enough for the ER today, but it shouldn't wait weeks. Your doctor needs to see these results and likely adjust medications soon.",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show several concerning patterns. Your potassium is elevated at 5.9\u2014while you've had mild elevations before, this is more significant and combined with your other results suggests your kidneys are declining. Your creatinine jumped from 1.6 to 1.9, and your BUN is elevated, indicating worsening kidney function. The low bicarbonate suggests metabolic acidosis, which can worsen with kidney disease. Your glucose is also elevated. Together, these suggest your chronic kidney disease is progressing. While your EKG is normal (reassuring) and you feel mostly okay, elevated potassium in someone with declining kidney function requires prompt evaluation because it can affect heart rhythm, even without symptoms. Muscle cramps can be a sign of electrolyte imbalance.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show several concerning changes, particularly your potassium level of 5.9, which is elevated. While you've had high potassium before, your kidney function has worsened (creatinine increased from 1.6 to 1.9), which means your kidneys are less able to regulate potassium. This combination is what matters. Your other results\u2014high creatinine, high BUN, low CO2, and high glucose\u2014all suggest your chronic kidney disease is progressing. The good news is your EKG is normal and you're not having severe symptoms, which suggests this isn't an emergency. However, these changes need prompt medical attention to prevent complications and adjust your treatment plan accordingly.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show several concerning changes, particularly the elevated potassium (5.9) combined with worsening kidney function (creatinine up from 1.6 to 1.9, elevated BUN). Your kidneys are struggling to filter potassium effectively. While your EKG is normal now\u2014which is reassuring\u2014potassium at this level can affect heart rhythm. The low bicarbonate suggests metabolic acidosis, which compounds potassium problems. Your elevated glucose and rising creatinine indicate your chronic kidney disease is progressing. Although you feel mostly fine, mild muscle cramps can be an early sign of high potassium. Given your age, race (higher CKD risk), hypertension, and existing kidney disease, these changes warrant prompt medical attention to adjust medications and prevent serious complications.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show several concerning patterns. Your potassium is elevated at 5.9\u2014while you've had mild elevations before, this level combined with worsening kidney function (creatinine rising from 1.6 to 1.9) is more serious. Your kidneys are struggling to filter waste and regulate potassium. The low bicarbonate suggests metabolic acidosis, which can worsen hyperkalemia. Your glucose is also elevated. Most importantly, even though your EKG looks normal now, elevated potassium can cause dangerous heart rhythm changes. Your kidney disease is progressing, which is why these results matter more than previous mild elevations. The combination of worsening kidney function + rising potassium + metabolic changes requires prompt medical evaluation.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show several concerning changes, particularly your potassium at 5.9 (elevated) combined with worsening kidney function (creatinine up from 1.6 to 1.9, elevated BUN). Your kidneys aren't filtering potassium as well as before. While your EKG is currently normal and you feel mostly okay, elevated potassium can cause serious heart rhythm problems that develop suddenly. The low bicarbonate and high glucose add to the picture of metabolic stress. Your mild leg cramps could be potassium-related. This pattern requires prompt medical evaluation\u2014not emergent based on your normal EKG and stable vitals, but definitely urgent given the kidney decline and potassium level.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show several concerning trends, particularly worsening kidney function. Your creatinine increased from 1.6 to 1.9, and your BUN is elevated\u2014both indicate your kidneys are filtering less effectively. This is significant because your kidneys help regulate potassium. Your potassium of 5.9 is elevated but not critically so, and your normal EKG is reassuring. However, the combination of rising creatinine, high potassium, low bicarbonate, and high glucose suggests your chronic kidney disease may be progressing. The mild leg cramps could be related to potassium levels. While you've tolerated high potassium before, the *worsening* kidney function changes the picture and requires prompt medical evaluation to adjust medications and prevent complications.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show several concerning changes, particularly your potassium level of 5.9, which is elevated above the normal range. While you've had high potassium before, this time it's paired with worsening kidney function (creatinine increased from 1.6 to 1.9) and metabolic acidosis (low bicarbonate). These three findings together suggest your kidneys are declining and struggling to regulate potassium. Your EKG is reassuring\u2014no dangerous heart rhythm changes yet\u2014but elevated potassium can affect the heart. The high glucose and elevated kidney markers (BUN, creatinine) indicate your chronic kidney disease is progressing. Mild leg cramps could be potassium-related. This pattern requires prompt medical evaluation to prevent serious complications, though your stable vital signs and normal EKG mean this is not an immediate life-threatening emergency.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

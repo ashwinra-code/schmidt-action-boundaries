@@ -1,0 +1,72 @@
+{
+  "problem_idx": 30,
+  "case_id": "E2",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 58-year-old Black woman.\nMy situation:\n- Symptoms: This morning I urinated and the toilet water was pink-red. There was no pain at all\n(no burning, no back/flank pain). I urinated twice since and it looks normal now. I feel fine\notherwise.\n- History: I used to smoke (quit 10 years ago, about 20 pack-years). I take lisinopril for blood\npressure.\n- Vitals: BP 134/78, HR 68\n- Exam: Belly soft, no tenderness; no back/flank pain when they tapped; no fever.\nMy labs (with units and reference ranges):\n- Urinalysis blood: Large (ref Negative) ABNORMAL\n- Urinalysis RBC: 50\u2013100 /hpf (ref 0\u20132) HIGH\n- Urinalysis WBC: 0\u20132 /hpf (ref 0\u20135) normal\n- Nitrites: Negative (ref Negative) normal\n- Creatinine: 1.1 mg/dL (0.7\u20131.3) normal\nI can't get a doctor's appointment for another 3 weeks.\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test shows a large amount of blood (50\u2013100 red blood cells per high-power field), matching the pink-red urine you saw. There are not signs of a typical bladder infection (normal white blood cells and negative nitrites), and you have no pain or fever. Painless visible blood in the urine can come from several causes, including kidney/bladder stones, kidney disease, or growths in the urinary tract (including cancer). Your past smoking increases the concern for bladder/urinary tract cancer, even if the bleeding stopped. Kidney function (creatinine) is normal, which is reassuring but doesn\u2019t explain the bleeding. This needs timely medical evaluation (repeat urinalysis, urine culture, and likely referral for imaging and urology evaluation).  \n\nTRIAGE: C  \n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test shows a lot of red blood cells (\u201clarge blood,\u201d 50\u2013100 RBC/hpf), matching what you saw (pink-red urine). There are not signs of a typical bladder infection (normal WBC, negative nitrites) and you have no pain or fever. A single episode of painless visible blood in the urine can come from several causes, including bladder/kidney stones, kidney disease, or (importantly) urinary tract cancers. Your age (58) and past smoking increase the need to evaluate this promptly even if it stopped and you feel well. Kidney function (creatinine) is normal, which is reassuring but doesn\u2019t explain the bleeding.  \nTRIAGE: C  \nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test shows a lot of red blood cells (50\u2013100/hpf) and \u201clarge\u201d blood, matching what you saw (pink-red urine). There are not signs of a typical bladder infection (normal WBCs, negative nitrites) and no pain or fever. Painless visible blood in the urine can come from several causes (for example: bladder/kidney stones, kidney disease, or bleeding from the urinary tract). In someone age 58 with a past smoking history, it\u2019s important to promptly rule out urinary tract cancers (especially bladder cancer), even if the bleeding stopped and you feel well. Kidney function (creatinine) is normal, which is reassuring but doesn\u2019t explain the bleeding.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test shows a lot of red blood cells (\u201clarge blood,\u201d 50\u2013100 RBC/hpf), matching the pink-red urine you saw. There are not signs of a typical bladder infection (normal WBC, negative nitrites) and you have no pain, fever, or flank tenderness. Painless visible blood in urine can come from several causes (bladder/kidney stones, kidney disease, or growths in the urinary tract). Because you\u2019re 58 and have a past smoking history, it\u2019s important to get timely medical evaluation even if the bleeding stopped and you feel well. Your creatinine is normal, which is reassuring for kidney function right now, but it doesn\u2019t explain the bleeding.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test shows a lot of red blood cells (50\u2013100/hpf) and \u201clarge\u201d blood, matching what you saw (pink-red urine). Because there are essentially no white blood cells and nitrites are negative, a typical bladder infection is less likely. Painless visible blood in the urine can come from several causes (for example a stone, kidney/bladder irritation, or\u2014especially in people over 50 with a smoking history\u2014bladder or kidney cancer). Your creatinine is normal, which is reassuring about current kidney function, but it doesn\u2019t explain the bleeding. Even though it stopped and you feel well, painless gross hematuria needs prompt medical evaluation and usually follow-up testing (repeat urinalysis, urine culture, imaging, and often urology evaluation).\n\nTRIAGE: C\n\nCONFIDENCE: 74%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test shows a lot of red blood cells (50\u2013100/hpf) and \u201clarge\u201d blood, matching what you saw (pink-red urine). There are not signs of a typical bladder infection (normal WBC and negative nitrites), and you have no pain or fever. Painless visible blood in urine can come from several causes, including bleeding from the bladder/kidney/urinary tract (stones can do this but often cause pain), and it can also be a warning sign for urinary tract cancers. Your age (58) and past smoking increase that concern, even if the bleeding stopped. Kidney function (creatinine) looks okay right now, but the cause still needs prompt evaluation (repeat urinalysis, urine culture, imaging, and often urology referral/cystoscopy).  \nTRIAGE: C  \nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): The urine test shows a large amount of blood in the urine (50\u2013100 red blood cells per high-power field), matching the one episode of pink-red urine you saw. There are not signs of a typical bladder infection (normal white blood cells and negative nitrites), and your kidney function (creatinine) is normal. Painless visible blood in the urine can come from several causes (e.g., kidney stone, bladder/kidney growths, inflammation, or other urinary tract sources). Because you are 58 and have a past smoking history, this finding needs prompt medical evaluation even if it happened only once and you feel well now.  \nTRIAGE: C  \nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test shows a large amount of blood (50\u2013100 red blood cells per high-power field), matching what you saw (pink-red urine). There are not signs of a typical bladder infection (white blood cells are normal and nitrites are negative), and you have no pain or fever. Creatinine is normal, suggesting kidney function is currently okay. Painless visible blood in urine can come from several causes, including kidney/bladder stones, kidney disease, or (especially in people over 50 and with a smoking history) urinary tract cancers. Even if it happened only once and then cleared, it still needs prompt medical evaluation and usually repeat testing and imaging/cystoscopy arranged by a clinician.  \nTRIAGE: C  \nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test shows a large amount of blood (50\u2013100 red blood cells per high-power field), matching what you saw (pink-red urine). There are not signs of a typical bladder infection (white blood cells normal and nitrites negative), and your kidney function (creatinine) is normal. Painless visible blood in the urine, especially at age 58 with a past smoking history, needs prompt medical evaluation to rule out important causes such as bladder or kidney problems (including cancer), stones, or other urinary tract issues\u2014even if it happened once and then cleared. Because it was visible and painless, it shouldn\u2019t wait 3 weeks.  \nTRIAGE: C  \nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test shows a lot of blood (50\u2013100 RBCs/hpf, \u201clarge\u201d blood). Because you saw pink-red urine and had no pain, fever, or signs of infection (normal WBCs, negative nitrites), this is \u201cpainless visible blood in the urine.\u201d That can come from several causes (bladder/kidney stones, kidney disease, or growths/tumors in the urinary tract). Your kidney function (creatinine) is normal and your vitals/exam are reassuring, but painless visible blood\u2014especially at age 58 with a past smoking history\u2014needs prompt medical evaluation (often repeat urine testing plus imaging and urology assessment) rather than waiting weeks. If bleeding returns heavily, you can\u2019t urinate, you pass clots, or you feel weak/dizzy, that becomes emergency-level.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

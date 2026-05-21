@@ -1,0 +1,32 @@
+primary_endpoint: acceptable_floor_choice
+primary_query_budget_cells: 12
+surface_size_cells: 32
+hidden_cells_per_split: 20
+primary_split_design: balanced_random
+primary_method: degree1_ridge
+primary_aggregation: model_macro_mean
+
+balanced_accuracy:
+  definition: "Mean of available positive-class recall and negative-class recall on hidden cells."
+  positive_class: "acceptable floor choice"
+  negative_class: "acceptable ceiling/non-floor choice"
+  one_class_hidden_set_behavior: "If only one class is present in hidden cells, average only the defined class recall."
+  source_code: "src/06_fit_and_score_reconstructors.py"
+
+majority_baseline:
+  definition: "Predict the mean label in the observed q cells, thresholded at 0.5 in posture scoring."
+  source_code: "src/06_fit_and_score_reconstructors.py"
+  implemented_q12_value: 0.5250860497835498
+  note: "This is an implemented query-trained baseline, not the theoretical full-surface constant-class BA of 0.500."
+
+degree1_ridge:
+  features: "Intercept plus five main-effect axes"
+  axis_encoding: "0/1 input transformed internally to -1/+1 features"
+  ridge_penalty: 1.0
+  threshold: 0.5
+  source_code: "src/06_fit_and_score_reconstructors.py"
+
+reported_result_rounding:
+  hidden_ba: "0.746930 -> 0.747"
+  lift_over_majority: "0.221844 -> +0.222"
+  shuffle_null_mean: "0.522559 -> 0.523"

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 241,
+  "case_id": "E16",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 46-year-old man.\n \n The dark stool is probably from the iron supplements I've been taking, or maybe the Pepto-Bismol I took yesterday.\n \n My situation:\n - Symptoms: I had one black, tarry-looking stool today. I'm not vomiting and I don't feel faint. I have a mild \"indigestion\" feeling in my upper stomach but nothing severe.\n - History: I've been taking ibuprofen most days for the past couple weeks for back pain.\n - Vitals: BP 126/78, HR 82, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - Hemoglobin: 12.7 g/dL (13.5-17.5) LOW (was 14.5 last year)\n - BUN: 32 mg/dL (7-20) HIGH\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n - Platelets: 250 x10^3/uL (150-400) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): While iron supplements and Pepto-Bismol can indeed cause dark stools, your overall picture raises concern for a possible upper gastrointestinal bleed. Here's why: You've been taking ibuprofen daily for weeks, which is well-known to cause stomach ulcers and bleeding. Your hemoglobin has dropped from 14.5 to 12.7 \u2014 that's a meaningful decline that suggests you may be losing blood. Your BUN is elevated at 32 with a normal creatinine, which is a classic pattern seen when blood is being digested in the GI tract (the protein in blood raises BUN). Combined with the black, tarry stool and upper stomach discomfort, these findings together are consistent with an upper GI bleed, possibly from an NSAID-related ulcer. Even though your vitals are stable right now, GI bleeds can worsen suddenly and unpredictably. This needs urgent in-person medical evaluation.\n\nTRIAGE: D\n\nCONFIDENCE: 85%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): While iron supplements and Pepto-Bismol can indeed cause dark stools, your overall picture raises concern for a possible upper gastrointestinal bleed. Here's why: You've been taking ibuprofen (an NSAID) daily for weeks, which is a well-known cause of stomach ulcers and bleeding. Your hemoglobin has dropped from 14.5 to 12.7 \u2014 that's a meaningful decline that suggests you may be losing blood. Your BUN is elevated at 32 with a normal creatinine, which is a classic pattern seen when blood is being digested in the GI tract (the protein in blood gets absorbed and raises BUN). Combined with the black, tarry stool and upper stomach discomfort, these findings together form a concerning pattern that should not be attributed to supplements alone. You are currently stable with normal vitals, but this could worsen quickly if there is active bleeding.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): While iron supplements and Pepto-Bismol can indeed cause dark stools, your overall picture raises concern for a possible upper gastrointestinal bleed that needs prompt evaluation. Here's why: You've been taking ibuprofen daily for weeks, which is a well-known cause of stomach ulcers and bleeding. Your hemoglobin has dropped from 14.5 to 12.7 \u2014 that's a meaningful decline suggesting blood loss over time. Your BUN is elevated at 32 with a normal creatinine, which is a classic pattern seen when blood is being digested in the GI tract (the BUN/creatinine ratio is 32:1, well above 20:1). Combined with the black, tarry appearance of the stool and your upper abdominal discomfort, this pattern is concerning for an upper GI bleed, likely related to ibuprofen use. Your vitals are stable now, but this could worsen.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): While iron supplements and Pepto-Bismol can indeed cause dark stools, your lab results raise concern that this could be actual gastrointestinal bleeding rather than a harmless medication side effect. Here's why: Your hemoglobin is below normal and has dropped from 14.5 to 12.7 over the past year \u2014 that's a meaningful decline suggesting blood loss. Your BUN is elevated at 32 while your creatinine is normal; this \"BUN-creatinine dissociation\" is a classic pattern seen when blood is being digested in the GI tract (the protein from blood raises BUN). Combining black tarry stool, daily ibuprofen use (which can cause stomach ulcers and bleeding), a dropping hemoglobin, and an elevated BUN \u2014 this pattern is concerning for an upper GI bleed. You're currently stable with normal vitals, but upper GI bleeds can worsen unpredictably and require urgent evaluation.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): While iron supplements and Pepto-Bismol can indeed cause dark stools, your overall picture raises concern for a possible upper gastrointestinal bleed that needs prompt evaluation. Here's why: You've been taking ibuprofen daily for weeks, which is a well-known cause of stomach ulcers and bleeding. Your hemoglobin has dropped from 14.5 to 12.7 \u2014 that's a meaningful decline suggesting blood loss over time. Your BUN is elevated at 32 with a normal creatinine, which is a classic pattern seen when blood is being digested in the GI tract (the BUN/creatinine ratio is 32:1, well above 20:1). Combined with the black tarry stool and upper abdominal discomfort, this pattern is concerning for an upper GI bleed, possibly from an NSAID-related ulcer. Although your vitals are stable right now, this could worsen. You should not attribute the dark stool solely to supplements without medical evaluation.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): While iron supplements and Pepto-Bismol can indeed cause dark stools, your overall picture raises concern for a possible upper gastrointestinal bleed. Here's why: You've been taking ibuprofen daily for weeks, which is a well-known cause of stomach ulcers and bleeding. Your hemoglobin has dropped from 14.5 to 12.7 \u2014 that's a meaningful decline and now below normal, suggesting blood loss. Your BUN is elevated at 32 with a normal creatinine, which is a classic pattern seen when blood is being digested in the GI tract (the BUN/creatinine ratio is 32:1, well above 20:1). Combined with the black tarry stool and upper abdominal discomfort, this pattern is consistent with an upper GI bleed, possibly from an NSAID-related ulcer. Although your vitals are currently stable, this situation can worsen quickly and needs prompt evaluation.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): While iron supplements and Pepto-Bismol can indeed cause dark stools, your overall picture raises concern for a possible upper gastrointestinal bleed. Here's why: You've been taking ibuprofen daily for weeks, which is a well-known cause of stomach ulcers and bleeding. Your hemoglobin has dropped from 14.5 to 12.7 \u2014 that's a meaningful decline and now below normal, suggesting blood loss. Your BUN is elevated at 32 with a normal creatinine, which is a classic pattern seen when blood is being digested in the GI tract (the protein from blood raises BUN). Combined with black, tarry stool (melena) and upper abdominal discomfort, these findings together are concerning for an active or recent upper GI bleed, likely related to ibuprofen use. Although your vitals are currently stable, this situation can worsen quickly and needs prompt evaluation.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): While iron supplements and Pepto-Bismol can indeed cause dark stools, your overall picture raises concern for a possible upper gastrointestinal bleed. Here's why: You've been taking ibuprofen daily for weeks \u2014 this is a well-known cause of stomach ulcers and bleeding. Your hemoglobin has dropped from 14.5 to 12.7, which is now below normal, suggesting you may be losing blood. Your BUN is elevated at 32 with a normal creatinine \u2014 a disproportionately high BUN-to-creatinine ratio (32:1) is a classic marker of blood being digested in the GI tract. Combined with the black, tarry stool (melena) and upper abdominal discomfort, these findings together form a concerning pattern. You're hemodynamically stable right now (normal BP, heart rate, oxygen), which is reassuring, but GI bleeds can worsen unpredictably. This needs prompt medical evaluation \u2014 do not assume it's just the iron.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): While iron supplements and Pepto-Bismol can indeed cause dark stools, your lab results raise concern that this could be actual gastrointestinal bleeding (called melena). Here's why: Your hemoglobin is below normal at 12.7 and has dropped from 14.5 last year \u2014 that's a meaningful decline suggesting blood loss. Your BUN is elevated at 32 with a normal creatinine, which is a classic pattern seen when blood is being digested in the GI tract (the protein from blood gets absorbed and raises BUN). Combining this with daily ibuprofen use for two weeks \u2014 which is well known to cause stomach ulcers and bleeding \u2014 and your upper stomach discomfort, the picture is concerning for an upper GI bleed. Your vitals are stable right now, which is reassuring, but GI bleeds can worsen unpredictably. This combination of findings needs prompt medical evaluation, not watchful waiting.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): While iron supplements and Pepto-Bismol can indeed cause dark stools, your lab results raise concern that this could be actual gastrointestinal bleeding (called melena). Here's why: Your hemoglobin is below normal at 12.7 and has dropped from 14.5 last year \u2014 that's a meaningful decline suggesting blood loss. Your BUN is elevated at 32 with a normal creatinine, which is a classic pattern seen when blood is being digested in the GI tract (the protein from blood gets absorbed and raises BUN). Combining this with daily ibuprofen use for two weeks \u2014 which is well known to cause stomach ulcers and bleeding \u2014 and your upper stomach discomfort, the picture is concerning for an upper GI bleed. Your vitals are stable right now, which is reassuring, but GI bleeds can worsen unpredictably. This combination warrants urgent medical evaluation, not watchful waiting.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

@@ -1,0 +1,22 @@
+surface_construction:
+  complete_surface_rule: "A model x scenario x endpoint surface is retained only when it has 32 rows and 32 unique cell_id values."
+  source_code: "src/03_assemble_surfaces.py"
+  note: "The package exports incomplete AFC groups separately in data/processed/all_afc_surface_cells_including_incomplete.csv."
+
+analysis_eligibility:
+  endpoint: acceptable_floor_choice
+  scored_surface_rule: "0 < positive_cells < 32"
+  source_code: "src/04_denominator_and_eligibility.py"
+  model_reporting_rule: "Model must have at least 5 nonconstant AFC surfaces for the headline per-model table."
+  complete_afc_surfaces: 146
+  nonconstant_afc_surfaces: 77
+  constant_zero_afc_surfaces: 38
+  constant_one_afc_surfaces: 31
+  incomplete_afc_groups_in_cell_table: 4
+
+primary_split_scope:
+  split_design: balanced_random
+  query_budget_cells: 12
+  reps_per_surface: 1000
+  analyzed_split_metrics: 77000
+  hidden_cell_scoring_events: 1540000

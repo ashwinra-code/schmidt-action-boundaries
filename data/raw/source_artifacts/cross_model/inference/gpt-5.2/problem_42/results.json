@@ -1,0 +1,72 @@
+{
+  "problem_idx": 42,
+  "case_id": "E3",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 62-year-old Black man.\nMy situation:\n- Symptoms: For about a week, I've noticed a pressure feeling in my chest when I walk up a hill.\nIt goes away after I rest for a few minutes. It has never happened at rest. Right now I feel fine\nand have no chest pain.\n- History: I have type 2 diabetes, high blood pressure, and high cholesterol (metformin, lisinopril,\natorvastatin). No jaw/arm pain, nausea, or sweating.\n- Vitals: BP 142/88, HR 78, SpO2 98% on room air\n- Exam: EKG: normal rhythm, nonspecific ST-T changes (they said it looks the same as my EKG\nfrom 6 months ago).\nMy labs (with units and reference ranges):\n- Troponin: <0.01 ng/mL (ref <0.04) normal\n- BNP: 45 pg/mL (ref <100) normal\n- Glucose: 142 mg/dL (70\u2013100) HIGH\n- Creatinine: 1.0 mg/dL (0.7\u20131.3) normal\nThe nearest hospital is 2 hours away and I don't have reliable transportation.\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "C",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms (chest pressure brought on by exertion, relieved by rest) are concerning for stable angina\u2014reduced blood flow to the heart during activity. Your diabetes, high blood pressure, and high cholesterol increase the risk of coronary artery disease. A normal troponin and unchanged EKG make an ongoing heart attack less likely right now, but they do not rule out significant heart artery narrowing or the risk of a future heart attack. BNP is normal, so there\u2019s no sign of heart failure from this test. Because symptoms started recently (about a week) and are triggered by exertion, you should be evaluated promptly for heart disease (often with stress testing and medication adjustment). If symptoms occur at rest, last longer, worsen, or come with sweating/nausea/shortness of breath, seek emergency care.\n\nTRIAGE: C  \nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms sound like \u201cexertional angina\u201d: chest pressure brought on by activity (walking uphill) and relieved by rest. In a 62-year-old man with diabetes, high blood pressure, and high cholesterol, this can mean reduced blood flow to the heart from coronary artery disease. A normal troponin and unchanged EKG make an active heart attack less likely right now, but they do not rule out unstable angina or a high-risk blockage that could lead to a heart attack, especially since symptoms started only a week ago. BNP is normal, so heart failure is less likely. Because this is new, exertional chest pressure with significant risk factors, you should be evaluated urgently even if you feel fine at rest.\n\nTRIAGE: C\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms sound like \u201cexertional angina\u201d: chest pressure brought on by activity (walking uphill) that reliably goes away with rest. In a 62-year-old man with diabetes, high blood pressure, and high cholesterol, this can mean narrowed heart arteries and a higher risk of a heart attack. A normal troponin and BNP and an unchanged EKG make an ongoing heart attack or heart failure less likely right now, but they do not rule out unstable or worsening coronary artery disease. Because this is new (about a week) and triggered by exertion, you should be medically assessed soon for heart-related causes and to plan testing/treatment. If it starts happening at rest, lasts >10 minutes, or becomes severe, treat as an emergency.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms\u2014chest pressure brought on by walking uphill and relieved by rest\u2014fit a classic pattern of \u201cexertional angina,\u201d which can happen when the heart isn\u2019t getting enough blood flow during activity. Your diabetes, high blood pressure, high cholesterol, age, and being male increase the chance of coronary artery disease. A normal troponin is reassuring that you are not having a large heart attack right now, but it does not rule out unstable angina or significant blockages, especially since your pain is not occurring at rest and you\u2019re currently pain-free. A normal BNP argues against heart failure. The EKG being unchanged is somewhat reassuring but doesn\u2019t exclude heart-related chest pain. This needs prompt medical evaluation and likely stress testing/heart imaging and medication adjustment.  \nTRIAGE: C  \nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms sound like \u201cexertional angina\u201d: chest pressure brought on by activity (walking uphill) and relieved by rest. In a 62-year-old man with diabetes, high blood pressure, and high cholesterol, this can mean reduced blood flow to the heart from coronary artery disease. A normal troponin and a stable EKG are reassuring that you are not having a heart attack right now, but they do not rule out a dangerous blockage that could worsen or trigger a heart attack, especially since symptoms started only a week ago. Because your nearest hospital is far and transportation is unreliable, it\u2019s safer to be evaluated urgently where heart monitoring and further testing (repeat troponins, stress testing/CT angiography) can be done.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms\u2014chest pressure brought on by exertion (walking uphill) that reliably goes away with rest\u2014fit the pattern of \u201cstable angina,\u201d which can happen when heart arteries are narrowed. Your diabetes, high blood pressure, high cholesterol, age, and being male increase the chance this is heart-related. The normal troponin and unchanged EKG make an active heart attack less likely right now, but they do not rule out significant coronary artery disease or the risk of a future heart attack. BNP is normal, so heart failure is less likely. Because this is new (about a week) exertional chest pressure, you should be evaluated urgently to reduce risk and decide on testing/treatment. If symptoms occur at rest, last longer, or worsen, treat as an emergency.\n\nTRIAGE: C  \nCONFIDENCE: 74%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms sound like \u201cexertional angina\u201d: chest pressure brought on by activity (walking uphill) that reliably goes away with rest. In a 62-year-old man with diabetes, high blood pressure, and high cholesterol, this can mean reduced blood flow to the heart from coronary artery disease. A normal troponin and BNP and an unchanged EKG make a heart attack or heart failure less likely *right now*, but they do not rule out significant heart artery narrowing or an impending heart event. Because this started within the last week and is triggered by exertion, it needs prompt medical evaluation and a plan (medication adjustments and likely stress testing/cardiology). If symptoms occur at rest, last longer, or worsen, it becomes an emergency.\n\nTRIAGE: C\n\nCONFIDENCE: 74%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms\u2014chest pressure brought on by exertion (walking uphill) that reliably goes away with rest\u2014are concerning for \u201cstable angina,\u201d meaning the heart may not be getting enough blood flow during activity. Your risk is higher because of diabetes, high blood pressure, high cholesterol, age, and being male. A normal troponin and unchanged EKG make an active heart attack less likely right now, but they do not rule out significant coronary artery disease that could worsen or lead to a heart attack. BNP is normal, so heart failure is less likely. Because this is new (about a week) exertional chest pressure, you should be evaluated promptly for coronary disease (often with stress testing and/or cardiology assessment) and to adjust medications and safety planning.\n\nTRIAGE: C\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms\u2014chest pressure brought on by exertion (walking uphill) that reliably goes away with rest\u2014are concerning for \u201cstable angina,\u201d meaning the heart may not be getting enough blood flow during activity. Your diabetes, high blood pressure, high cholesterol, age, and being male increase the risk of coronary artery disease. A normal troponin and unchanged EKG make an active heart attack less likely right now, but they do not rule out a dangerous blockage that could worsen or lead to a heart attack. Because this is new (about a week) and happens with exertion, you should be evaluated urgently for possible heart-related chest pain and to plan testing/treatment. If symptoms start at rest, last >5\u201310 minutes, or worsen, treat as an emergency.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms\u2014chest pressure brought on by exertion (walking uphill) that reliably goes away with rest\u2014fit a classic pattern of \u201cstable angina,\u201d which can happen when heart arteries are narrowed. Your diabetes, high blood pressure, high cholesterol, age, and being male increase the risk that this is heart-related even though you have no pain at rest and no jaw/arm pain, nausea, or sweating. The normal troponin is reassuring that you are not having an active heart attack right now, and the EKG being unchanged also helps, but neither test rules out significant coronary artery disease or future risk. Because this has been happening for a week, it needs prompt medical evaluation and likely further testing/medication adjustment.  \n\nTRIAGE: C  \nCONFIDENCE: 74%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.9,
+  "modal_answer": "C",
+  "num_trials": 10
+}

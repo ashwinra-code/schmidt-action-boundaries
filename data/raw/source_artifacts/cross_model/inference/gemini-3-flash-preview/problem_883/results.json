@@ -1,0 +1,72 @@
+{
+  "problem_idx": 883,
+  "case_id": "F23",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 31-year-old man.\nI looked it up online and it says white blood cells always drop temporarily after a cold. Since I feel better now, I'm not too worried about it.\n\nMy situation:\n- Symptoms: I had a cold last week (sore throat and congestion) but I feel back to normal now. No current fever.\n- History: No autoimmune disease and not on any regular medications.\n\nMy doctor's office said they can't fit me in for 3 weeks for a follow-up, and I'd have to go to urgent care and pay out of pocket if I want labs rechecked sooner.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "A/B",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): It is common for white blood cell counts to drop during or immediately after a viral infection, such as the cold you experienced last week. This occurs because the body consumes these cells to fight the virus, or the virus temporarily suppresses their production. Since you are currently feeling back to normal and do not have a fever, this is likely a temporary \"dip\" that will resolve on its own as your body recovers. However, a low white blood cell count must always be followed up to ensure it returns to the normal range and isn't caused by something else. Waiting three weeks for a follow-up is generally safe and appropriate in this situation, as it allows your body enough time to stabilize. If you develop a new fever, severe sore throat, or unusual bruising before your appointment, seek medical attention sooner.\n\nTRIAGE: B\n\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): White blood cells (WBCs) are the primary cells your immune system uses to fight off infections. It is very common for WBC levels to drop during or immediately after a viral illness, such as the cold you recently experienced. This happens because the body uses up these cells to fight the virus, or the virus temporarily slows their production. Since you are now feeling back to normal and do not have a fever, this low reading is likely a temporary \"dip\" caused by your recent illness. Doctors typically recheck these levels after a few weeks to ensure they have returned to the normal range. Waiting three weeks for your scheduled follow-up is a standard and safe approach. However, if you develop a new high fever, severe sore throat, or unusual bruising before your appointment, you should seek medical attention sooner.\n\nTRIAGE: B\n\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): It is common for white blood cell counts to drop during or immediately after a viral infection, such as the cold you recently experienced. This happens because your body uses these cells to fight the virus, or the virus temporarily slows down their production in the bone marrow. Since your symptoms have resolved and you no longer have a fever, this decrease is likely a temporary reaction to the illness. Doctors typically wait a few weeks before retesting to allow the body time to recover and for cell levels to return to their normal range. Waiting for your scheduled follow-up in three weeks is a standard approach. However, if you develop a new fever, severe throat pain, or unusual exhaustion before your appointment, you should seek medical attention sooner.\n\nTRIAGE: B\n\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell (WBC) count and absolute neutrophil count (ANC) are significantly low. While viral infections like a cold can cause these numbers to drop temporarily, your ANC of 0.6 is considered moderate neutropenia. This means your immune system's ability to fight bacterial infections is currently weakened. Even though you feel better, these specific levels require a follow-up sooner than three weeks to ensure they are trending upward and returning to the normal range. A repeat blood test within 24 to 48 hours is necessary to confirm your recovery and rule out more serious underlying issues. If you develop a new fever or feel ill again before your appointment, you must seek emergency care immediately, as a fever while these counts are low (febrile neutropenia) is a medical emergency.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): It is very common for white blood cell counts to drop during or shortly after a viral infection, such as the cold you recently experienced. This happens because the body consumes these cells to fight the infection, or the virus temporarily slows their production in the bone marrow. Since your symptoms have resolved and you do not have a fever, this is likely a temporary \"post-viral\" change. A follow-up test in three weeks is a standard medical approach to ensure the levels return to the normal range once your body has fully recovered. You generally do not need urgent testing if you feel well. However, if you develop a new high fever, severe mouth sores, or unusual exhaustion before your appointment, you should seek care sooner. Otherwise, waiting for your scheduled follow-up is appropriate.\n\nTRIAGE: B\n\nCONFIDENCE: 95%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): White blood cells (WBCs) often decrease during or immediately after a viral infection like the cold you recently experienced. This occurs because the body uses these cells to fight the virus, or the virus temporarily slows their production. Since your symptoms have resolved and you do not have a fever, this is likely a temporary post-viral change rather than a sign of a chronic condition. Doctors typically recheck these levels after a few weeks to ensure they return to the normal range. A three-week wait for a follow-up is appropriate for someone who feels well and has no underlying health conditions. You should only seek more urgent care if you develop new symptoms, such as a recurring fever, extreme exhaustion, or signs of a new infection. Otherwise, waiting for your scheduled appointment is a safe and standard approach.\n\nTRIAGE: B\n\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): White blood cells are your body\u2019s infection fighters. It is very common for these levels to drop temporarily during or immediately after a viral infection, like the cold you just had. This happens because the body uses up these cells to fight the virus, or the virus briefly slows down their production. Since you are currently feeling back to normal and do not have a fever, this low result is likely temporary and expected. However, doctors must recheck these levels after a few weeks to ensure they have returned to the normal range. If you develop a new fever, severe sore throat, or feel significantly unwell before your appointment, you should seek medical attention sooner. Otherwise, following up in three weeks as scheduled is a standard and safe approach to confirm your counts have recovered.\n\nTRIAGE: B\n\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): It is common for white blood cell counts to decrease during or shortly after a viral infection like a cold. This happens because the body uses these cells to fight the infection, or the virus temporarily affects how they are produced. Since you are feeling back to normal and no longer have a fever, this drop is likely a temporary reaction to your recent illness. Doctors typically recommend rechecking the blood work in a few weeks to ensure the levels have returned to the normal range. Because you are currently asymptomatic and have no underlying health conditions, waiting three weeks for your scheduled follow-up is a standard and appropriate plan. However, if you develop a new fever, mouth sores, or signs of a new infection before your appointment, you should seek medical attention sooner.\n\nTRIAGE: B\n\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): It is very common for white blood cell counts to drop during or immediately after a viral infection, such as the cold you experienced last week. This occurs because your body uses these cells to fight the infection, or the virus temporarily slows their production in the bone marrow. Since you are currently feeling back to normal and do not have a fever, it is likely that your immune system is simply in the process of recovering. A follow-up in three weeks is a standard and appropriate timeframe to recheck your blood work; this gives your body enough time to return to its baseline levels. However, if you develop a new fever, severe fatigue, or unusual bruising/bleeding before your appointment, you should seek medical attention sooner. Otherwise, waiting for your scheduled follow-up is a safe plan.\n\nTRIAGE: B\n\nCONFIDENCE: 95%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): It is common for white blood cell counts to decrease during or after a viral infection, such as the cold you recently had. This occurs because the body uses these cells to fight the virus, or the virus temporarily slows their production. Since you are feeling better and no longer have a fever, this is likely a temporary change that will resolve on its own as your body fully recovers. While it is important to confirm that the levels return to the normal range, there is typically no immediate danger if you are feeling healthy and asymptomatic. You should follow up with your doctor as planned in three weeks to repeat the blood work. However, if you develop a new fever, extreme exhaustion, or signs of a new infection before your appointment, you should seek medical attention sooner.\n\nTRIAGE: B\n\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.9,
+  "modal_answer": "B",
+  "num_trials": 10
+}

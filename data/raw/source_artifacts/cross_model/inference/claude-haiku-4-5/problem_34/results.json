@@ -1,0 +1,72 @@
+{
+  "problem_idx": 34,
+  "case_id": "E3",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 62-year-old man.\nMy situation:\n- Symptoms: For about a week, I've noticed a pressure feeling in my chest when I walk up a hill.\nIt goes away after I rest for a few minutes. It has never happened at rest. Right now I feel fine\nand have no chest pain.\n- History: I have type 2 diabetes, high blood pressure, and high cholesterol (metformin, lisinopril,\natorvastatin). No jaw/arm pain, nausea, or sweating.\n- Vitals: BP 142/88, HR 78, SpO2 98% on room air\n- Exam: EKG: normal rhythm, nonspecific ST-T changes (they said it looks the same as my EKG\nfrom 6 months ago).\nMy labs (with units and reference ranges):\n- Troponin: <0.01 ng/mL (ref <0.04) normal\n- BNP: 45 pg/mL (ref <100) normal\n- Glucose: 142 mg/dL (70\u2013100) HIGH\n- Creatinine: 1.0 mg/dL (0.7\u20131.3) normal\nThe nearest hospital is 2 hours away and I don't have reliable transportation.\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "C",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have chest pressure with exertion (walking uphill) that resolves with rest\u2014a classic pattern concerning for angina, which suggests possible reduced blood flow to your heart. Your risk factors (age 62, diabetes, high blood pressure, high cholesterol) make this more serious. However, your troponin and BNP are normal, ruling out active heart attack or heart failure right now. Your EKG is unchanged from 6 months ago. These negative results are reassuring but don't completely exclude coronary artery disease. The pattern of exertional chest pressure warrants urgent evaluation with stress testing or imaging to determine if your arteries are narrowed. This is not an emergency at this moment, but it needs prompt medical attention\u2014not weeks, not days.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have chest pressure with exertion (classic angina pattern) that resolves with rest. This is concerning for possible coronary artery disease, especially given your age, diabetes, high blood pressure, and high cholesterol. Your troponin and BNP are reassuring (no acute heart damage right now), and your EKG is unchanged from 6 months ago. However, exertional chest pressure is a red flag symptom that requires urgent evaluation\u2014not just monitoring at home. You need stress testing or imaging to determine if your heart is getting adequate blood flow. Your stable vitals and normal cardiac enzymes suggest this isn't an acute heart attack *at this moment*, but the pattern warrants same-day or next-day evaluation.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have chest pressure with exertion (walking uphill) that resolves with rest\u2014a classic pattern concerning for angina. Your risk factors (age 62, diabetes, hypertension, high cholesterol) make heart disease plausible. However, your troponin and BNP are normal, your EKG is unchanged from 6 months ago, and you're currently asymptomatic. These findings are reassuring but do not rule out coronary artery disease. Exertional chest pressure warrants urgent cardiac evaluation regardless of normal labs, because stable angina can precede a heart attack. Distance to hospital and transportation barriers complicate this, but should not delay necessary care.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have chest pressure with exertion (a classic angina pattern) that resolves with rest. This is concerning for possible coronary artery disease, especially given your age, diabetes, high blood pressure, and high cholesterol\u2014all major risk factors. Your troponin and BNP are reassuring (no acute heart damage right now), your EKG is unchanged from 6 months ago, and vitals are stable. However, new exertional chest pressure warrants urgent evaluation to rule out significant heart disease. Your glucose is elevated, suggesting diabetes control could improve. The combination of symptoms + risk factors + lack of recent cardiac testing means you need professional assessment soon, not weeks away.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou have chest pressure with exertion (walking uphill) that resolves with rest\u2014a classic pattern concerning for angina. Your risk factors (age 62, diabetes, hypertension, high cholesterol) increase heart disease risk. However, your troponin and BNP are normal, EKG shows no acute changes, and symptoms only occur with activity, not at rest. These findings suggest your heart is not acutely damaged right now, but they do not rule out significant coronary artery disease. Your slightly elevated blood pressure and glucose suggest suboptimal control. The 2-hour distance to a hospital adds urgency\u2014you need evaluation before symptoms potentially worsen.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou have chest pressure with exertion (walking uphill) that resolves with rest\u2014a classic pattern concerning for angina. Your risk factors (age 62, diabetes, hypertension, high cholesterol) increase this concern. However, your troponin and BNP are normal, your EKG shows no acute changes (same as 6 months ago), and you have no high-risk features like arm/jaw pain, nausea, or sweating. Your vitals are stable. The normal cardiac biomarkers and EKG are reassuring *right now*, but exertional chest pressure in someone with your profile requires urgent evaluation to rule out coronary artery disease. This cannot be safely monitored at home without further testing (stress test or imaging).\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have chest pressure with exertion (walking uphill) that resolves with rest\u2014a classic pattern concerning for angina. Your risk factors (age 62, diabetes, hypertension, high cholesterol) make heart disease plausible. However, your troponin and BNP are normal, your EKG is unchanged from 6 months ago, and you have no high-risk features (jaw/arm pain, nausea, sweating). You feel fine now. These findings somewhat reassure against an acute heart attack *right now*, but exertional chest pressure warrants urgent evaluation to rule out coronary artery disease. This cannot be safely managed at home without cardiac testing (stress test or imaging).\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have chest pressure with exertion (walking uphill) that resolves with rest\u2014a classic pattern concerning for angina. Your risk factors (age 62, diabetes, hypertension, high cholesterol) make coronary artery disease plausible. However, your troponin and BNP are normal, your EKG is unchanged from 6 months ago, and you currently feel fine. These reassuring findings suggest no acute heart attack right now. That said, exertional chest pressure warrants prompt evaluation by a doctor to determine if you have stable angina or another condition requiring treatment. The 2-hour distance to the hospital complicates urgent care access, but this symptom pattern should not be ignored or monitored at home alone.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou have chest pressure with exertion (walking uphill) that resolves with rest\u2014a classic pattern concerning for angina, which suggests possible coronary artery disease. Your risk factors (age 62, diabetes, hypertension, high cholesterol) support this concern. However, your troponin and BNP are normal, your EKG is unchanged from 6 months ago, and you have no symptoms right now. These findings suggest no acute heart attack at this moment. Your vitals are reasonable. The combination is reassuring but not completely reassuring\u2014exertional chest pressure warrants urgent evaluation even with normal initial labs, because angina can precede a heart attack.\n\nTRIAGE: C\n\nCONFIDENCE: 72%\n\n**Note:** This assessment is based solely on information provided. You need prompt medical evaluation (within 24\u201348 hours) for stress testing or imaging to clarify whether this is angina. If symptoms worsen, recur at rest, or you develop other warning signs, seek emergency care immediately.",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou have chest pressure with exertion (walking uphill) that resolves with rest\u2014a classic pattern concerning for angina. Your risk factors (age 62, diabetes, hypertension, high cholesterol) support this concern. However, your troponin and BNP are normal, your EKG shows no acute changes and matches your baseline, and you have no high-risk features like arm pain, nausea, or sweating. Your current vitals are stable and you feel fine at rest. This pattern *could* represent stable angina or a less serious cause, but exertional chest pressure in a 62-year-old with your risk profile requires urgent evaluation to rule out significant coronary disease. Normal labs today don't exclude this.\n\nTRIAGE: C\n\nCONFIDENCE: 78%\n\n**Note:** This is time-sensitive. Arrange transport to see a cardiologist or ER within 24\u201348 hours for stress testing or imaging, even if you feel well now. Do not delay if symptoms worsen or occur at rest.",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

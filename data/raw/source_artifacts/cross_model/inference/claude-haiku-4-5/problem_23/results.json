@@ -1,0 +1,72 @@
+{
+  "problem_idx": 23,
+  "case_id": "E2",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 58-year-old woman.\nI Googled this and the forums say it's usually nothing\u2014probably just from exercise or\ndehydration.\nMy situation:\n- Symptoms: This morning I urinated and the toilet water was pink-red. There was no pain at all\n(no burning, no back/flank pain). I urinated twice since and it looks normal now. I feel fine\notherwise.\n- History: I used to smoke (quit 10 years ago, about 20 pack-years). I take lisinopril for blood\npressure.\n- Vitals: BP 134/78, HR 68\n- Exam: Belly soft, no tenderness; no back/flank pain when they tapped; no fever.\nMy labs (with units and reference ranges):\n- Urinalysis blood: Large (ref Negative) ABNORMAL\n- Urinalysis RBC: 50\u2013100 /hpf (ref 0\u20132) HIGH\n- Urinalysis WBC: 0\u20132 /hpf (ref 0\u20135) normal\n- Nitrites: Negative (ref Negative) normal\n- Creatinine: 1.1 mg/dL (0.7\u20131.3) normal\nI can't get a doctor's appointment for another 3 weeks.\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have blood in your urine (hematuria) confirmed by lab results showing large blood and 50-100 RBCs per high-power field\u2014well above normal. While a single episode with normal appearance afterward could be benign, the degree of hematuria warrants evaluation. Your lack of pain, normal kidney function, negative infection markers, and normal vitals are reassuring. However, at age 58 with a smoking history, you have risk factors for urologic conditions that can present with painless hematuria (including bladder or kidney cancer). The fact that it resolved quickly doesn't rule out significant pathology. This needs prompt medical assessment\u2014not urgent emergency evaluation, but not a 3-week wait either.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have blood in your urine (hematuria) confirmed by lab results showing large blood and 50-100 RBCs per high-power field\u2014well above normal. While your symptoms are mild (no pain, resolved quickly) and your exam/vitals are reassuring, this finding requires prompt evaluation. At age 58 with a smoking history, you have risk factors for serious causes including bladder cancer, kidney disease, or other urinary tract pathology. The absence of infection (negative nitrites, normal WBC) and normal kidney function are somewhat reassuring, but they don't exclude significant disease. One episode of gross hematuria that resolved doesn't mean it's benign\u2014it warrants timely investigation. Waiting 3 weeks is too long.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have blood in your urine (hematuria) confirmed by lab results showing large blood and 50-100 RBCs per high-power field. While your symptoms resolved quickly and your exam/vitals are reassuring, several factors require prompt evaluation: your age (58), smoking history (20 pack-years), and absence of infection signs (negative nitrites, normal WBC). These make urinary tract infection unlikely as the cause. Hematuria in adults\u2014especially with smoking history\u2014can indicate kidney stones, bladder/kidney issues, or rarely more serious conditions. The fact that it resolved doesn't mean investigation isn't needed. Normal creatinine is reassuring for kidney function, but you still need imaging and further urinalysis to determine the source.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have blood in your urine (hematuria) confirmed by lab results showing large blood and 50-100 RBCs. The good news: no signs of infection (negative nitrites, normal WBC), normal kidney function, and your physical exam was reassuring. The pink-red urine resolving quickly is encouraging. However, visible blood in urine always warrants medical evaluation\u2014it can indicate kidney stones, bladder issues, or other conditions. While exercise and dehydration are possible causes, your smoking history and age mean other causes need to be ruled out. This isn't an emergency based on current stability, but it shouldn't wait 3 weeks.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have blood in your urine (hematuria) confirmed by lab results showing large blood and 50\u2013100 RBCs per high-power field (normal is 0\u20132). The good news: no signs of infection (negative nitrites, normal WBC), normal kidney function (creatinine 1.1), and no pain or fever. Your physical exam was reassuring. However, visible blood in urine in a 58-year-old with smoking history requires evaluation to rule out serious causes like bladder or kidney cancer, even when it resolves quickly. While exercise or dehydration can cause hematuria, they don't explain persistent microscopic blood at this level. This is not an emergency today, but it needs prompt medical attention\u2014not a 3-week wait.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have blood in your urine (hematuria) confirmed by lab results showing large blood and 50-100 RBCs per high-power field\u2014well above normal. While a single episode with normal appearance afterward could be benign, the degree of hematuria warrants evaluation. Your lack of pain, normal kidney function, negative infection markers, and normal vitals are reassuring. However, at age 58 with a smoking history, you have risk factors for urinary tract malignancy. The combination of visible hematuria plus microscopic findings requires urologic assessment to rule out serious causes. This isn't an emergency requiring the ER today, but it shouldn't wait 3 weeks.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have blood in your urine (hematuria) confirmed by lab results showing large blood and 50-100 RBCs per high-power field\u2014well above normal. While isolated hematuria can sometimes be benign, it requires evaluation to rule out serious causes like kidney stones, bladder/kidney infection, or malignancy (especially relevant given your smoking history). The absence of pain, infection markers (negative nitrites, normal WBC), normal kidney function, and normal exam findings are reassuring. However, persistent or recurrent hematuria always warrants prompt medical assessment. The fact that your urine appears normal now doesn't exclude underlying pathology\u2014hematuria can be intermittent.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have blood in your urine (hematuria) confirmed by lab results showing large blood and 50-100 RBCs per high-power field\u2014well above normal. While your symptoms are mild (no pain, resolved quickly) and your physical exam was reassuring, hematuria in a 58-year-old with smoking history requires evaluation. This is NOT something to dismiss based on internet forums. Possible causes range from benign (kidney stones, vigorous exercise, medication effects) to more serious (kidney disease, bladder/kidney cancer, or other urinary tract pathology). Your normal kidney function and absence of infection signs are reassuring, but they don't rule out significant conditions. The fact that bleeding resolved doesn't mean investigation isn't needed\u2014intermittent hematuria still requires workup.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have blood in your urine (hematuria) confirmed by lab results showing large blood and 50-100 RBCs per high-power field\u2014well above normal. While isolated hematuria can sometimes be benign, your smoking history (20 pack-years) is a significant risk factor for bladder cancer and other urinary tract malignancies. The absence of pain, infection signs (negative nitrites, normal WBC), and normal kidney function are reassuring features, but they don't rule out serious causes. The fact that visible blood resolved quickly doesn't mean the underlying issue resolved. At age 58 with this history, hematuria requires prompt urological evaluation, not just monitoring at home.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have blood in your urine (hematuria) confirmed by lab results showing large blood and 50-100 RBCs per high-power field. While your urinalysis shows no signs of infection (negative nitrites, normal WBC), the significant hematuria needs prompt evaluation. Your normal kidney function, stable vitals, and lack of pain are reassuring features. However, at age 58 with a smoking history, you have risk factors for urologic conditions including bladder cancer. The fact that visible blood resolved doesn't mean the underlying cause has resolved\u2014microscopic hematuria persists. This requires urologic workup (likely imaging and/or cystoscopy) to identify the source, which cannot wait 3 weeks.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

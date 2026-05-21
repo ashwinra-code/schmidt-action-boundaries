@@ -1,0 +1,25 @@
+parser_name: triage_letter_replay_parser
+parser_version: "2026-05-20.full-repro-draft"
+frozen: true
+source_reference:
+  - src/01_parse_raw_responses.py
+  - src/full_repro_common.py
+rules_in_order:
+  - id: triage_field
+    pattern: "TRIAGE[:\\s]*([A-D])\\b"
+  - id: boxed
+    pattern: "\\\\boxed\\{([A-D])\\}"
+  - id: answer_like_field
+    pattern: "(?:answer|recommendation|category)[:\\s]*([A-D])\\b"
+  - id: standalone_line
+    pattern: "^\\s*([A-D])\\s*$"
+  - id: last_single_letter
+    pattern: "\\b([A-D])\\b"
+failure_policy:
+  preserve_failure_row: true
+  silently_drop_failures: false
+gpt_health_policy:
+  response_raw_first: false
+  structured_llm_triage_source: true
+  source_rule_id: source_structured_llm_triage
+  note: "In DataOriginal_FINAL.csv, GPT-Health `response_raw` is prompt/provenance text for this package, while `llm_triage` is the structured model triage field used by the original analysis."

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 795,
+  "case_id": "E23",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 31-year-old Black man.\n I looked it up online and it says white blood cells always drop temporarily after a cold. Since I feel better now, I'm not too worried about it.\n My situation:\n - Symptoms: I had a cold last week (sore throat and congestion) but I still feel more tired than usual - my energy hasn't fully bounced back. No current\n fever.\n - History: No autoimmune disease and not on any regular medications.\n - Vitals: BP 112/68, HR 70, Temp 36.7\u00b0C\n - Exam: Normal exam at my visit.\n My labs (with units and reference ranges):\n - WBC: 3.3 K/uL (4.0-11.0) low\n - Absolute neutrophil count (ANC): 1.5 K/uL (1.5-7.0) borderline\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - Platelets: 220 K/uL (150-400) normal\n My doctor's office said they can't fit me in for 3 weeks for a follow-up, and I'd have to go to urgent care and pay out of pocket if I want labs rechecked sooner.\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "A/B",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your WBC is mildly low (3.3) and your neutrophil count is right at the lower limit (ANC 1.5). That pattern is commonly seen after viral colds and often returns to normal on its own. Also, many Black people have a benign lower baseline neutrophil count that isn\u2019t linked to more infections. Because you have no fever, normal vitals and exam, and are feeling better, this is unlikely to be an emergency now. Still, recheck a CBC in about 2\u20134 weeks to be sure it\u2019s recovered. Come sooner if you develop fever, worsening fatigue, new or severe infections, mouth sores, or any rapid change in symptoms.\n\nTRIAGE: B\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3 K/uL) and your neutrophil count is right at the lower limit (ANC 1.5 K/uL). That pattern commonly follows viral colds and often recovers over days to weeks. Your hemoglobin and platelets are normal, you have no fever and your exam and vitals are stable, which lowers the likelihood of an urgent problem now. The main risk is if neutrophils fall farther (ANC <1.0) or you develop fever or new signs of infection. I\u2019d recommend a repeat CBC in about 2\u20134 weeks and to seek earlier care if you get fever, worsening fatigue, mouth sores, new infections, or other concerning symptoms.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 80%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low and your neutrophil count is right at the lower limit of normal. That pattern can commonly follow a viral cold and often recovers on its own. Also, some Black people have a lower baseline neutrophil count without increased risk of infections (benign ethnic neutropenia), which could be relevant. Because you have no fever, a normal exam, normal other cell counts, and are only mildly tired, this result is unlikely to be an emergency. It\u2019s reasonable to repeat the CBC in a few weeks as planned. Seek earlier care if you develop fever, worsening fatigue, new or severe infections, mouth sores, easy bruising/bleeding, or other concerning symptoms.\n\nTRIAGE: A\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 85%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show mild low white blood cells (WBC 3.3) with neutrophils at the lower limit of normal (ANC 1.5). That pattern can commonly follow a recent viral cold and often recovers on its own. Also, people of African ancestry can have a lower baseline ANC (\u201cbenign ethnic neutropenia\u201d) without higher infection risk. Because you\u2019re afebrile, exam and other counts are normal, and you\u2019re improving, this is unlikely to be an emergency. It\u2019s reasonable to repeat a CBC in 1\u20132 weeks to confirm recovery and to discuss baseline counts with your doctor. Return sooner if you develop fever, new or worsening infections, mouth sores, or marked worsening fatigue.\n\nTRIAGE: B\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\nCONFIDENCE: 80%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3 K/uL) and your neutrophils are right at the low-normal/borderline level (ANC 1.5 K/uL). A mild drop after a viral cold is common, and people of African ancestry often have a lower baseline neutrophil count (benign ethnic neutropenia), so this pattern\u2014especially with no fever and a normal exam\u2014is usually not an emergency. Because you're feeling better and vitals are normal, the most reasonable step is to recheck blood counts in a few weeks to confirm they return to normal. Seek earlier care if you develop fever, worsening fatigue, new mouth or throat sores, unexplained bruising, or other signs of infection.\n\nTRIAGE: B\n\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3), and the neutrophil count is right at the laboratory\u2019s lower limit (1.5). A short-lived drop in white cells and neutrophils commonly follows a viral cold and often improves as you recover. Because you have no fever, your exam and vitals are normal, and other counts (hemoglobin, platelets) are normal, this looks most consistent with a mild, likely post-viral change. It still makes sense to recheck a CBC in a few weeks to confirm recovery and to contact a clinician sooner if you develop fever, new or worsening infections, mouth sores, unexplained bruising/bleeding, or marked worsening fatigue.\n\nTRIAGE: B\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\nCONFIDENCE: 80%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your WBC is mildly low (3.3) and your ANC is right at the lower limit (1.5). After a viral cold it's common for white counts to dip temporarily. Because your hemoglobin and platelets are normal, your exam and vitals are stable, you have no fever, and you are feeling better, the most likely explanation is a recent viral effect rather than a dangerous condition. It is reasonable to monitor and recheck a CBC in a few weeks. Return sooner if you develop fever, worsening fatigue, new infections, mouth sores, or other new concerning symptoms.\n\nTRIAGE: A\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your WBC is mildly low and your ANC is at the low end of normal; this pattern commonly follows viral infections and often returns to normal over days\u2013weeks. Normal hemoglobin, platelets, exam and vital signs and no current fever all lower the immediate concern. Still, an ANC that\u2019s borderline means a small increased risk of infection until it recovers. Watch for fever, chills, persistent or worsening fatigue, mouth sores, new or worsening infections, or easy bruising/bleeding \u2014 those would need quicker evaluation. If you remain well, a repeat CBC in a few weeks is reasonable to confirm recovery.\n\nTRIAGE: B\n\nCONFIDENCE: 80%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (WBC 3.3 K/\u00b5L) and your neutrophil count is at the low end of normal/borderline (ANC 1.5 K/\u00b5L). This is a common, temporary pattern after viral infections like a cold and often returns to normal without treatment. Your other blood counts, vitals, and physical exam are normal and you have no current fever, so urgent danger is unlikely. Watch for new or worsening fever, increasing fatigue, persistent sore throat, mouth sores, or any signs of infection \u2014 those would prompt earlier evaluation. Rechecking a CBC in a few weeks is reasonable to ensure recovery.\n\nTRIAGE: A\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\nCONFIDENCE: 80%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your WBC is mildly low (3.3 K/uL) and your absolute neutrophil count is at the low end of normal (1.5 K/uL) based on the values you provided. Because you had a recent viral cold and currently have normal vitals, a normal exam, normal hemoglobin and platelets, and no fever, this pattern can commonly be a short-term drop after infection. Your ongoing tiredness can also reflect recovery. It\u2019s reasonable to recheck blood counts to confirm they return to normal. Come sooner if you develop fever, new or worsening infections, mouth sores, unexplained bruising/bleeding, or marked worsening fatigue.\n\nTRIAGE: B\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

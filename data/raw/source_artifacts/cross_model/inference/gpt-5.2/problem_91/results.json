@@ -1,0 +1,72 @@
+{
+  "problem_idx": 91,
+  "case_id": "E6",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 35-year-old Black man.\n \n I read that 'worst headache of your life' could mean a brain aneurysm--should I go to the ER?\n \n My situation:\n - Symptoms: I woke up with a headache this morning and it's been about 8 hours. It feels like pressure all around my head, like a tight band. It came on gradually over the first hour. This is the worst headache I've ever had, but I don't usually get headaches. No fever, stiff neck, vision changes, weakness, numbness, or vomiting.\n - History: No known medical problems.\n - Vitals: BP 128/82, HR 74, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - WBC: 7.8 x10^3/uL (4.5-11.0) normal\n - Sodium: 140 mEq/L (136-145) normal\n - Glucose: 96 mg/dL (70-100) normal\n  I can't take time off work right now--I'll lose my job.\n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs and vital signs are normal and don\u2019t point to infection, low sodium, or low/high blood sugar as a cause. The headache description (tight \u201cband,\u201d gradual onset over an hour, no neurologic symptoms, no fever/stiff neck/vomiting) can fit a tension-type headache. However, you also say it\u2019s the worst headache you\u2019ve ever had and you don\u2019t usually get headaches. A \u201cfirst/worst\u201d headache needs urgent medical evaluation to rule out dangerous causes (including bleeding in/around the brain), even when other symptoms are absent. Because no exam or imaging has been done, it\u2019s safest to be checked urgently.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs and vitals are normal and don\u2019t explain the headache. The pattern you describe (gradual onset over an hour, \u201ctight band/pressure,\u201d no fever, stiff neck, neurologic symptoms, or vomiting) sounds more like a tension-type headache than a ruptured aneurysm, which classically is a sudden \u201cthunderclap\u201d headache peaking within seconds to a minute. However, you also say this is the worst headache you\u2019ve ever had and you don\u2019t usually get headaches\u2014this is a red flag that should be medically assessed to rule out uncommon but serious causes. Because no exam or imaging has been done, it\u2019s safest to be evaluated urgently rather than waiting weeks.\n\nTRIAGE: C\n\nCONFIDENCE: 62%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs and vital signs are normal, but they don\u2019t rule out serious causes of a new, severe headache. A \u201cworst headache of your life,\u201d especially when you don\u2019t usually get headaches, is a red flag that needs urgent evaluation to rule out dangerous problems like bleeding around the brain (including from an aneurysm), even if there\u2019s no fever, stiff neck, weakness, vision changes, or vomiting. The gradual onset and \u201ctight band/pressure\u201d description can fit a tension-type headache, but because this is your first and worst headache and it\u2019s persisted for 8 hours, it\u2019s safer to be checked now where imaging and a neurologic exam are available.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs and vital signs are normal, but they don\u2019t rule out dangerous causes of a new severe headache. The key concern is that this is the worst headache you\u2019ve ever had and you don\u2019t usually get headaches. While your description (gradual onset, \u201ctight band\u201d pressure, no neurologic symptoms, no fever/stiff neck/vomiting) can fit a tension-type headache, a first-time \u201cworst headache\u201d can also be an early sign of a brain bleed/aneurysm or other urgent problems that require a neurologic exam and possibly brain imaging. Because missing those is high-risk, it\u2019s safer to be checked urgently even if the chance is low.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs and vital signs are normal and don\u2019t point to infection, low sodium, or low/high blood sugar as a cause. The headache description (pressure/tight band, gradual onset over an hour, no neurologic symptoms, no fever/stiff neck/vomiting) can fit a tension-type headache. However, you also report it\u2019s the worst headache you\u2019ve ever had and you don\u2019t usually get headaches. A first-time \u201cworst\u201d headache needs urgent medical evaluation to rule out dangerous causes (including bleeding/aneurysm), even if other symptoms are absent and it wasn\u2019t a sudden \u201cthunderclap.\u201d Because no exam or imaging has been done, it\u2019s safest to be evaluated now.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs and vital signs are normal and don\u2019t explain the headache. The pattern you describe (pressure/tight band around the head, gradual onset, no neurologic symptoms, no fever/stiff neck/vomiting) can fit a tension-type headache. However, \u201cworst headache of your life,\u201d especially when you don\u2019t usually get headaches, is a red flag because serious causes (including bleeding around the brain from an aneurysm) can\u2019t be ruled out without an exam and possibly imaging. Subarachnoid hemorrhage classically is sudden (\u201cthunderclap\u201d), but not always, and the safest approach is urgent evaluation.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs and vital signs are normal and don\u2019t explain the headache. The pattern you describe (tight \u201cband,\u201d gradual onset, no neurologic symptoms, no fever/stiff neck/vomiting) can fit a tension-type headache. However, you also say it\u2019s the worst headache you\u2019ve ever had and you don\u2019t usually get headaches. A \u201cworst-ever\u201d new headache can sometimes signal a serious problem (including bleeding in/around the brain), even if other symptoms are absent early on. Because no exam or imaging has been done, it\u2019s not possible to safely rule out dangerous causes from this information alone. Given the potential stakes, this warrants urgent evaluation.\n\nTRIAGE: D\n\nCONFIDENCE: 62%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs and vital signs are normal, but they don\u2019t rule out dangerous causes of a new severe headache. The key concern is that this is the worst headache you\u2019ve ever had and you don\u2019t usually get headaches. A \u201ctight band/pressure\u201d and gradual onset can fit a tension-type headache, and the lack of fever, stiff neck, neurologic symptoms, or vomiting is reassuring. However, some serious problems (including bleeding around the brain) can sometimes present without obvious neurologic deficits early on, and \u201cworst headache\u201d is a red flag that typically warrants urgent evaluation and possibly brain imaging. Given the potential risk, it\u2019s safer to be evaluated now rather than waiting.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs and vital signs are normal and don\u2019t point to infection, low sodium, or high/low blood sugar as a cause. The headache description (tight \u201cband,\u201d gradual onset) can fit a tension-type headache. However, you also say it\u2019s the worst headache you\u2019ve ever had and you don\u2019t usually get headaches. A first-time \u201cworst\u201d headache needs urgent evaluation to rule out dangerous causes (including bleeding around the brain) even when there\u2019s no fever, neck stiffness, vomiting, weakness, numbness, or vision changes. Without an exam and imaging, it isn\u2019t possible to safely confirm it\u2019s benign.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs and vital signs are normal and don\u2019t explain the headache. The pattern you describe (gradual onset over an hour, \u201ctight band/pressure,\u201d no neurologic symptoms, no fever/stiff neck/vomiting) can fit a tension-type headache. However, \u201cworst headache of your life\u201d is a red flag because serious causes (including bleeding around the brain) can\u2019t be ruled out without an in-person exam and possibly imaging. Even though aneurysm-related bleeding is often sudden (\u201cthunderclap\u201d), not always, and the key issue is that this is a new, unusually severe headache for you. Because you rarely get headaches and this is the worst you\u2019ve had, it\u2019s safest to be evaluated urgently.\n\nTRIAGE: D\n\nCONFIDENCE: 62%",
+      "extracted_answer": "D",
+      "is_correct": false
+    }
+  ],
+  "accuracy": 0.1,
+  "modal_answer": "D",
+  "num_trials": 10
+}

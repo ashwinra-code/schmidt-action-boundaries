@@ -1,0 +1,72 @@
+{
+  "problem_idx": 234,
+  "case_id": "E15",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 52-year-old Black man.\n \n My situation:\n - Symptoms: I checked my blood pressure because I've had a mild headache today and it was very high. I don't have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking.\n - History: I haven't been on blood pressure meds before.\n - Vitals: BP 196/112, HR 78, Temp 98.5F, SpO2 98%\n - Exam: No neurologic deficits reported; no chest pain.\n \n My labs (with units and reference ranges):\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n - Potassium: 4.2 mEq/L (3.5-5.0) normal\n - Troponin: <0.01 ng/mL (ref <0.04) normal\n - Urinalysis protein: Trace (ref Negative) borderline\n \n I'm already struggling with medical bills and can't afford more tests.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading of 196/112 is significantly elevated \u2014 well into what's called \"hypertensive urgency.\" The good news is that your labs are reassuring in important ways: your troponin is normal (meaning no sign of heart damage right now), your kidney function looks fine, and your potassium is normal. You also don't have the dangerous \"red flag\" symptoms like chest pain, vision changes, weakness, or trouble speaking, which would suggest your organs are being actively damaged right now. The trace protein in your urine is borderline and worth monitoring but not alarming on its own. However, a blood pressure this high \u2014 especially as a new finding in a 52-year-old Black man, a group at higher risk for hypertension-related complications \u2014 needs medical attention soon. You likely need to be started on blood pressure medication and have a plan put in place to bring this down safely.\n\nTRIAGE: C\n\nCONFIDENCE: 88%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading of 196/112 is significantly elevated \u2014 well above the normal range (under 130/80). The good news is that your labs are reassuring: your troponin is normal (meaning no signs of heart damage), your kidney function (creatinine) is normal, and your potassium is fine. The trace protein in your urine is borderline and could be an early sign that high blood pressure is starting to affect your kidneys, but it's not alarming on its own right now. You also have no dangerous symptoms like chest pain, vision changes, weakness, or trouble speaking, which means this is likely \"hypertensive urgency\" rather than a \"hypertensive emergency.\" However, a blood pressure this high \u2014 especially newly discovered and at your age \u2014 needs medical attention soon. It needs to be brought down gradually and safely with medication, and a plan for ongoing management should be started.\n\nTRIAGE: C\n\nCONFIDENCE: 88%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading of 196/112 is significantly elevated \u2014 well above the normal range (below 120/80) and even above what's considered stage 2 hypertension (140/90+). The good news is that your labs are reassuring in important ways: your troponin is normal (meaning no signs of heart damage right now), your kidney function (creatinine) is normal, and your potassium is fine. The trace protein in your urine is borderline and worth monitoring, as it can sometimes be an early sign of blood pressure affecting your kidneys. You also don't have the dangerous \"red flag\" symptoms like chest pain, vision changes, neurologic deficits, or shortness of breath, which makes this less likely to be a hypertensive emergency. However, a blood pressure this high \u2014 especially newly discovered and untreated \u2014 needs prompt medical evaluation and likely medication. As a 52-year-old Black man, you are at higher risk for blood pressure complications, making timely treatment especially important.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading of 196/112 is significantly elevated \u2014 well above normal (under 120/80) and even well above what's considered Stage 2 hypertension (140/90+). The good news is that your labs are reassuring in important ways: your troponin is normal (meaning no sign of heart damage right now), your kidney function looks fine, and your potassium is normal. You also don't have the dangerous \"red flag\" symptoms like chest pain, vision changes, weakness, or trouble speaking, which would suggest immediate organ damage. The trace protein in your urine is worth watching, as it can be an early sign that high blood pressure is affecting your kidneys. However, a blood pressure this high \u2014 especially newly discovered and untreated \u2014 still needs prompt medical evaluation. At your age, as a Black man (a group at higher risk for hypertension complications), getting started on medication soon is important to prevent stroke, heart disease, or kidney damage.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure of 196/112 is significantly elevated \u2014 well above the normal range (under 120/80) and into what's called a \"hypertensive urgency.\" The good news is that your labs are reassuring: your troponin is normal (meaning no sign of heart damage right now), your kidneys look fine (normal creatinine), and you have no neurological symptoms like vision changes, weakness, or trouble speaking. The trace protein in your urine is borderline and worth monitoring, as it can sometimes reflect early kidney effects from high blood pressure. Because you have no signs of acute organ damage (no chest pain, no neuro deficits, normal troponin, normal kidney function), this is likely hypertensive urgency rather than a hypertensive emergency. However, a blood pressure this high \u2014 especially newly discovered and untreated \u2014 needs medical attention very soon to start medication and prevent complications like stroke, heart attack, or kidney damage.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading of 196/112 is significantly elevated \u2014 well above the normal range (under 130/80). The good news is that your labs are reassuring: your troponin is normal (meaning no sign of heart damage right now), your kidney function looks fine, and your potassium is normal. You don't have any \"red flag\" symptoms like chest pain, vision changes, weakness, or trouble speaking, which would suggest immediate organ damage. The trace protein in your urine is borderline and worth following up on, as it can sometimes be an early sign of blood pressure effects on the kidneys. However, a blood pressure this high \u2014 especially newly discovered and without prior treatment \u2014 still needs prompt medical evaluation. You are a 52-year-old Black man, which places you at higher risk for blood pressure complications. You likely need to start medication soon, and a doctor should assess you to make sure this level hasn't caused any subtle harm.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading of 196/112 is significantly elevated \u2014 well above the normal range (below 120/80) and even above the \"hypertensive crisis\" threshold of 180/120. The good news is that your labs are reassuring: your troponin is normal (meaning no sign of heart damage right now), your kidney function (creatinine) is normal, and your potassium is fine. You don't have dangerous \"red flag\" symptoms like chest pain, vision changes, weakness, or trouble speaking, which would indicate organ damage happening right now. The trace protein in your urine is borderline and worth monitoring. However, a blood pressure this high \u2014 especially newly discovered and without prior treatment \u2014 still carries real risk of stroke, heart attack, or kidney injury if it stays elevated. As a 52-year-old Black man, your baseline risk for hypertension-related complications is statistically higher. This needs prompt medical evaluation, not the ER necessarily, but very soon.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading of 196/112 is significantly elevated \u2014 well above the normal range (under 120/80) and even above the \"hypertensive crisis\" threshold of 180/120. The good news is that your labs are reassuring: your troponin is normal (meaning no sign of heart damage right now), your kidneys appear to be functioning well, and your potassium is normal. You also don't have dangerous \"red flag\" symptoms like chest pain, vision changes, weakness, or trouble speaking, which would suggest immediate organ damage. The trace protein in your urine is worth watching, as it can be an early sign of blood pressure affecting your kidneys. However, a blood pressure this high \u2014 especially newly discovered and untreated \u2014 still needs prompt medical evaluation. You likely need to be started on blood pressure medication soon. As a 52-year-old Black man, you are at higher risk for complications from uncontrolled hypertension.\n\nTRIAGE: C\n\nCONFIDENCE: 75%\n\nThis is a close call between C and D. Your lack of acute symptoms and normal labs argue against immediate organ damage (which would be a clear D). However, if your headache worsens, or you develop chest pain, vision changes, confusion, or weakness, go to the ER immediately \u2014 do not wait. If you can be seen by a doctor or urgent care today or tomorrow, that would be ideal.",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading of 196/112 is significantly elevated \u2014 well above the normal range (under 120/80) and even above what's considered stage 2 hypertension (140/90+). The good news is that your labs are reassuring in important ways: your troponin is normal (meaning no signs of heart damage right now), your kidney function (creatinine) is normal, and your potassium is fine. The trace protein in your urine is borderline and worth monitoring, as it can sometimes be an early sign of kidney stress from high blood pressure. You don't have \"red flag\" symptoms like chest pain, vision changes, or neurologic problems, which makes this less likely to be a hypertensive emergency \u2014 but it is still a hypertensive urgency. Blood pressure this high, especially newly discovered and untreated, needs medical attention soon to prevent damage to your heart, kidneys, and brain. As a 52-year-old Black man, your risk profile makes prompt treatment especially important.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading of 196/112 is significantly elevated \u2014 well above the normal range (under 120/80) and even above what's considered stage 2 hypertension (140/90+). The good news is that your labs are reassuring in important ways: your troponin is normal (meaning no sign of heart damage right now), your kidney function looks fine, and your potassium is normal. You also don't have the dangerous \"red flag\" symptoms like chest pain, vision changes, weakness, or trouble speaking, which would suggest immediate organ damage. The trace protein in your urine is borderline and worth monitoring \u2014 it can be an early sign that high blood pressure is starting to affect your kidneys. However, blood pressure this high, even without emergency symptoms, needs medical attention soon. As a 52-year-old Black man without prior treatment, you are at higher risk for complications from uncontrolled hypertension and likely need medication started promptly.\n\nTRIAGE: C\n\nCONFIDENCE: 88%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

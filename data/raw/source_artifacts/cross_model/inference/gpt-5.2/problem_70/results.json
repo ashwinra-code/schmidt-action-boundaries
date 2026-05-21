@@ -1,0 +1,72 @@
+{
+  "problem_idx": 70,
+  "case_id": "E5",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 24-year-old woman.\n \n My situation:\n - Symptoms: I've had a sore throat for 3 days with a mild fever around 99.5F. It hurts to swallow but I can still eat and drink. I can breathe fine and my voice is normal. No rash or stiff neck.\n - History: No major medical problems.\n - Vitals: BP 110/68, HR 72, Temp 99.5F, SpO2 99%\n - Exam: Throat mildly red, no white patches; tonsils symmetric; no uvula deviation.\n \n My labs (with units and reference ranges):\n - Rapid strep test: Negative (ref Negative) normal\n - WBC: 8.2 x10^3/uL (4.5-11.0) normal\n \n I don't have health insurance and can't afford an ER visit.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "A",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your vitals are normal and your throat exam doesn\u2019t show signs that strongly suggest a dangerous deep infection (no trouble breathing, normal voice, no uvula shift, symmetric tonsils). The rapid strep test is negative and your white blood cell count is normal, which makes strep throat or a significant bacterial infection less likely. With 3 days of sore throat and only a low-grade fever, this most often fits a viral sore throat, which usually improves on its own over several days. Monitor for worsening pain, inability to swallow fluids, drooling, new muffled \u201chot potato\u201d voice, one-sided swelling, high fever, rash, or neck stiffness\u2014those would need urgent evaluation.\n\nTRIAGE: A\n\nCONFIDENCE: 78%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and exam fit an uncomplicated sore throat. The rapid strep test being negative makes strep throat less likely, and a normal white blood cell count doesn\u2019t suggest a serious bacterial infection. Mild fever (99.5\u00b0F) and 3 days of symptoms commonly occur with viral throat infections, which usually improve on their own with rest, fluids, and pain/fever reducers if you can take them. Your normal oxygen level, normal heart rate, ability to eat/drink, normal voice, and no signs like one-sided swelling/uvula deviation, rash, or stiff neck all lower concern for dangerous complications right now. Seek urgent care sooner if you worsen or develop trouble breathing, drooling, inability to swallow fluids, high fever, severe one-sided throat/neck pain, or muffled \u201chot potato\u201d voice.\n\nTRIAGE: A\n\nCONFIDENCE: 78%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your rapid strep test is negative and your white blood cell count is normal, which makes a typical \u201cstrep throat\u201d infection or a serious bacterial infection less likely. Your symptoms (3 days of sore throat, only a mild fever, able to swallow, normal breathing/voice, no rash, no stiff neck) and exam (mild redness, no pus/white patches, symmetric tonsils, no uvula shift) fit best with a viral sore throat or irritation, which usually improves with time and home care. Watch for signs that would suggest a complication (like a deep throat infection) such as worsening one-sided throat pain, trouble opening your mouth, drooling, muffled \u201chot potato\u201d voice, worsening fever, dehydration, or any breathing trouble.\n\nTRIAGE: A\n\nCONFIDENCE: 78%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and exam fit an uncomplicated sore throat, most often caused by a virus. The rapid strep test being negative makes strep throat less likely (not impossible, but less likely), and your normal white blood cell count doesn\u2019t suggest a serious bacterial infection. Your vitals are stable, you can swallow fluids/food, and you have no signs listed that suggest an emergency complication (like trouble breathing, muffled \u201chot potato\u201d voice, one-sided swelling with uvula shift, or stiff neck). Home care (fluids, rest, salt-water gargles, acetaminophen/ibuprofen if you can take them) is reasonable. Seek urgent care sooner if you worsen or develop red flags.\n\nTRIAGE: A\n\nCONFIDENCE: 78%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and exam fit an uncomplicated sore throat, most often caused by a virus. The rapid strep test being negative makes \u201cstrep throat\u201d less likely (though no test is perfect), and your normal WBC count doesn\u2019t suggest a serious bacterial infection. Your normal breathing, normal voice, ability to swallow liquids/food, symmetric tonsils, and no uvula deviation argue against urgent complications like a deep throat abscess. With only a mild fever and stable vital signs, this looks low risk right now. Home care (fluids, rest, acetaminophen/ibuprofen if you can take them, salt-water gargles) is reasonable. Seek care sooner if you worsen or don\u2019t improve over the next couple of days.\n\nTRIAGE: A\n\nCONFIDENCE: 78%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your vitals are normal and your throat exam doesn\u2019t show signs that suggest a dangerous complication (no trouble breathing, normal voice, no one-sided swelling or uvula shift). The rapid strep test is negative and your white blood cell count is normal, which makes strep throat or a significant bacterial infection less likely (though not impossible). With 3 days of sore throat and only a low-grade temperature (99.5\u00b0F), this most often fits a viral sore throat, which usually improves on its own over several days. Monitor for worsening pain, inability to swallow fluids, high fever, new rash, neck stiffness, or breathing/voice changes, which would need urgent evaluation.\n\nTRIAGE: A\n\nCONFIDENCE: 78%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your rapid strep test is negative and your white blood cell count is normal, which makes a typical \u201cstrep throat\u201d infection or a serious bacterial infection less likely. Your symptoms (3 days of sore throat, only a mild fever, mild redness, no pus/white patches, normal breathing/voice, symmetric tonsils, no uvula shift) fit best with a viral sore throat or irritation, which usually improves on its own over several days. Home care (fluids, rest, acetaminophen/ibuprofen if you can take them, salt-water gargles, throat lozenges) is reasonable. Act urgently if you develop trouble breathing, drooling, inability to swallow liquids, severe one-sided throat pain, swelling of the neck, high fever, rash, or worsening symptoms.\n\nTRIAGE: A\n\nCONFIDENCE: 78%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your rapid strep test is negative and your white blood cell count is normal, which makes a typical strep throat or a serious bacterial infection less likely. Your symptoms and exam (mild throat redness, no pus/white patches, normal breathing/voice, symmetric tonsils, no uvula shift) fit best with a viral sore throat or mild irritation. Your temperature (99.5\u00b0F) is not a true fever for most adults. Most viral sore throats improve over ~5\u20137 days. Monitor for worsening pain, inability to swallow fluids, drooling, muffled \u201chot potato\u201d voice, trouble breathing, one-sided swelling, high fever, stiff neck, or a new rash\u2014those would need urgent care.\n\nTRIAGE: A\n\nCONFIDENCE: 78%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your rapid strep test is negative and your white blood cell count is normal, which makes a typical strep throat or serious bacterial infection less likely. Your symptoms and exam (mild throat redness, no pus, normal breathing/voice, no uvula shift) fit best with a viral sore throat or mild irritation, which usually improves on its own over several days. Your temperature is only mildly elevated and your vital signs are normal. Home care (fluids, rest, acetaminophen/ibuprofen if you can take them, salt-water gargles, throat lozenges) is reasonable. Seek care sooner if symptoms worsen, last >5\u20137 days, or you develop red flags: trouble breathing, drooling, inability to swallow liquids, worsening one-sided throat pain, neck swelling, high fever, rash, or severe headache/stiff neck.\n\nTRIAGE: A\n\nCONFIDENCE: 78%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your rapid strep test is negative and your white blood cell count is normal, which makes a typical bacterial \u201cstrep throat\u201d infection less likely. Your symptoms (3 days of sore throat, only a low-grade fever, mild redness, no pus/white patches, normal breathing/voice, and stable vital signs) fit best with a viral sore throat or irritation, which usually improves on its own in several days. The exam details you gave (no uvula deviation, symmetric tonsils) also argue against a deep throat abscess that would need urgent care. At home, focus on fluids, rest, salt-water gargles, throat lozenges, and acetaminophen/ibuprofen if you can take them. Seek urgent care if you develop trouble breathing, drooling, inability to swallow fluids, worsening one-sided throat pain, high fever, neck stiffness, or a new rash.\n\nTRIAGE: A\n\nCONFIDENCE: 83%",
+      "extracted_answer": "A",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "A",
+  "num_trials": 10
+}

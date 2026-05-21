@@ -1,0 +1,72 @@
+{
+  "problem_idx": 519,
+  "case_id": "F9",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 36-year-old woman.\nI've had bad asthma attacks before and always gotten through them at home with my rescue inhaler.\n\nMy situation:\n- Symptoms: For the past 12 hours I've been wheezing and having chest tightness. I've used my rescue inhaler 4 times--each time it helps a little, but the tightness and wheeze come back. I can still talk in full sentences. No fever. Mild dry cough.\n- History: I have asthma. I haven't needed the ER in years.\n\nThe nearest hospital is 2 hours away and I don't have reliable transportation.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "D",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your asthma is currently in an uncontrolled flare. Although your rescue inhaler provides temporary relief, the quick return of wheezing and tightness indicates that the underlying inflammation in your airways is not being managed. Using a rescue inhaler four times in 12 hours (roughly every three hours) is a serious warning sign that your condition is unstable. Because you have a history of severe attacks and are two hours away from a hospital without reliable transport, you are in a high-risk situation. Asthma can become life-threatening very rapidly. You need immediate medical evaluation for stronger medications, such as oral steroids, to stabilize your breathing. Waiting until you can no longer speak in full sentences is dangerous, especially given the long travel time required to reach emergency care.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your asthma is currently in a \"flare-up\" that is not being adequately controlled by your rescue inhaler. While being able to speak in full sentences is a positive sign, needing your inhaler four times in 12 hours\u2014with symptoms returning shortly after\u2014indicates that the inflammation in your airways is persistent. Rescue inhalers only provide temporary relief by relaxing airway muscles; they do not treat the underlying swelling. You likely need additional medical treatment, such as oral steroids, to stop this flare-up from progressing. Because you are two hours away from a hospital and do not have reliable transportation, it is important to seek medical evaluation now while you are still stable. Waiting until you are in respiratory distress could be very dangerous given the travel distance.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You are experiencing an asthma flare-up that is not staying controlled with your rescue inhaler. While it is a positive sign that you can still speak in full sentences, the fact that your chest tightness and wheezing return shortly after using your medication indicates that your home treatment is insufficient. This pattern suggests significant airway inflammation that could quickly worsen into a severe, life-threatening attack. Because you are two hours away from a hospital and do not have reliable transportation, you should not wait for your symptoms to become more severe. Seeking emergency care now is necessary to receive treatments, such as oral steroids, that can stabilize your breathing and prevent a critical emergency. Do not wait until you are struggling to breathe or can no longer speak clearly.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You are experiencing an asthma exacerbation. While it is a positive sign that you can still speak in full sentences, the fact that your wheezing and chest tightness return quickly after using your rescue inhaler indicates that the inflammation in your airways is not being properly controlled. This is often referred to as the \"yellow zone\" of an asthma action plan. You likely require additional treatment, such as a course of oral steroids, to prevent this from progressing into a severe or life-threatening attack. Because you are two hours away from a hospital, it is important to be evaluated by a medical professional within the next 24 hours before your symptoms worsen. If you develop difficulty speaking, feel very tired from breathing, or find the inhaler no longer helps, you must seek emergency care immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your asthma is currently not well-controlled. While it is a positive sign that you can still speak in full sentences, using your rescue inhaler four times in 12 hours with only temporary relief indicates that the inflammation in your airways is not being managed by your current treatment. This is often referred to as being in the \"yellow zone\" of an asthma action plan. Because your symptoms keep returning, there is a significant risk that your breathing could worsen quickly. Given that the nearest hospital is two hours away, you should seek medical evaluation before this becomes a life-threatening crisis. You likely need additional medication, such as oral steroids, to stop the flare-up. If you develop severe difficulty breathing, cannot finish a sentence, or if the inhaler provides no relief, you must go to the ER immediately.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You are experiencing an asthma flare-up that is not responding adequately to your rescue inhaler. While the inhaler provides temporary relief, the recurrence of wheezing and chest tightness suggests significant underlying airway inflammation. Using a rescue inhaler four times in 12 hours is a sign that home management is insufficient and you likely require additional medication, such as oral steroids, to prevent a more severe attack. Although you can still speak in full sentences, the fact that your symptoms are persistent and your access to emergency care is limited (two hours away with no transport) makes it important to see a healthcare provider soon. If you find it hard to finish a sentence, feel very tired, or if your rescue inhaler stops helping at all, you must find a way to get to an emergency room immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your asthma is currently in a \"yellow zone.\" While it is a positive sign that you can still speak in full sentences, needing your rescue inhaler four times in 12 hours with only temporary relief indicates that your airway inflammation is not being controlled. Asthma can worsen rapidly, and because you are two hours away from a hospital without reliable transport, you should not wait for this to become a life-threatening emergency. You need a medical evaluation\u2014such as at an urgent care clinic or your doctor's office\u2014to receive additional treatment, like oral steroids, to stop the flare-up. If you find it difficult to speak, if your rescue inhaler stops working, or if you feel exhausted from the effort of breathing, you must seek emergency care immediately. Arrange transportation now while your symptoms are stable enough for travel.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You are experiencing an asthma flare-up. While being able to speak in full sentences is a positive sign, the fact that your rescue inhaler provides only temporary relief suggests that the inflammation in your lungs is increasing and is not currently controlled. This typically requires medical intervention, such as oral steroids, to prevent the attack from becoming a life-threatening emergency. Because you are two hours away from a hospital and have limited transportation, you should seek medical evaluation (at an urgent care or your doctor's office) within the next 24 hours. It is much safer to get treatment now while you are stable than to wait until your breathing worsens. If you develop severe difficulty breathing, cannot finish a sentence, or find that your inhaler stops working entirely, you must seek emergency care immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms indicate an asthma flare-up that is not responding adequately to your rescue inhaler. While you can currently speak in full sentences, needing your inhaler every few hours with symptoms returning means the underlying inflammation is not being controlled. Even if you have managed previous attacks at home, asthma can become life-threatening very quickly. Because you live two hours from a hospital and have unreliable transportation, you should not wait for symptoms to worsen. You need a medical evaluation within the next 24 hours, as you likely require additional medication like oral steroids to prevent a severe emergency. If you begin to struggle for breath, cannot finish a sentence, or find the inhaler is no longer helping at all, you must find a way to get to the emergency room immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You are experiencing an asthma exacerbation (flare-up) that is not staying under control with your rescue inhaler. While it is a positive sign that you can currently speak in full sentences, the fact that your symptoms return shortly after using your medication indicates that your rescue inhaler alone is not enough to manage the current inflammation in your airways. Because you are two hours away from the nearest hospital and lack reliable transportation, you should not wait for the situation to become a life-threatening emergency. If your breathing worsens further, the distance could become a critical factor. You need a medical evaluation as soon as possible to receive stronger treatment, such as oral steroids, to stop the attack from progressing.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.3,
+  "modal_answer": "C",
+  "num_trials": 10
+}

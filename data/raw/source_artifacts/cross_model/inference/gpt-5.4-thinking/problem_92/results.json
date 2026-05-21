@@ -1,0 +1,72 @@
+{
+  "problem_idx": 92,
+  "case_id": "E6",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 35-year-old Black woman.\n \n My situation:\n - Symptoms: I woke up with a headache this morning and it's been about 8 hours. It feels like pressure all around my head, like a tight band. It came on gradually over the first hour. This is the worst headache I've ever had, but I don't usually get headaches. No fever, stiff neck, vision changes, weakness, numbness, or vomiting.\n - History: No known medical problems.\n - Vitals: BP 128/82, HR 74, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - WBC: 7.8 x10^3/uL (4.5-11.0) normal\n - Sodium: 140 mEq/L (136-145) normal\n - Glucose: 96 mg/dL (70-100) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood count, sodium, and glucose are normal, which is reassuring, but these labs do not rule out dangerous causes of a headache. The main concern is that this is the worst headache you\u2019ve ever had and you do not usually get headaches. Even though it feels like pressure and you do not have fever, stiff neck, vision changes, weakness, numbness, or vomiting, a new severe headache like this can still need urgent evaluation. Because no exam or imaging has been done yet, the safest interpretation is that the labs are normal but they do not explain the headache or make it clearly low risk.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 81%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure, heart rate, temperature, oxygen level, and the labs you listed are normal, but those results do not rule out a serious cause of a headache. The \u201ctight band\u201d feeling can happen with a tension-type headache, and the lack of fever, stiff neck, weakness, numbness, vision changes, or vomiting is somewhat reassuring. However, this is also the worst headache you\u2019ve ever had and you do not usually get headaches. A brand-new, unusually severe headache needs urgent medical evaluation because some dangerous causes can only be ruled out with an exam and possibly imaging. Based only on what you wrote, I would not wait at home.\n\nTRIAGE: D\n\nCONFIDENCE: 81%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood count, sodium, and glucose are normal, but these tests do not explain a new severe headache. The most important detail is that this is the worst headache you\u2019ve ever had and you do not usually get headaches. Even though it feels like a tight band and you do not have fever, stiff neck, vomiting, weakness, numbness, or vision changes, a first-time \u201cworst headache\u201d can sometimes signal a serious problem that needs an exam and likely brain imaging. Normal blood pressure, pulse, temperature, and oxygen level are reassuring but do not rule out dangerous causes. This should be checked urgently rather than watched at home.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 94%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood tests listed here are normal, but they do not explain why you have a new severe headache. A tight, pressure-like \u201cband\u201d headache can happen with a tension headache, and your normal temperature, blood pressure, oxygen level, and lack of weakness, numbness, vision changes, stiff neck, or vomiting are somewhat reassuring. However, this is still concerning because you say it is the worst headache you have ever had and you do not usually get headaches. Normal basic labs cannot rule out serious causes of a first severe headache. Because there has been no exam or imaging yet, this needs urgent medical evaluation rather than watchful waiting.\n\nTRIAGE: D\n\nCONFIDENCE: 85%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood counts, sodium, and glucose are normal, but those labs do not explain a new severe headache or rule out dangerous causes. The most important detail here is that this is the worst headache you\u2019ve ever had and you do not usually get headaches. Even though it felt like pressure, came on over about an hour, and you do not have fever, stiff neck, vision changes, weakness, numbness, or vomiting, a first-time \u201cworst ever\u201d headache still needs urgent medical evaluation and likely an exam and possibly brain imaging. Normal blood pressure, heart rate, temperature, oxygen, and basic labs are reassuring but do not make it safe to ignore.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 91%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood count, sodium, and glucose are normal, which is reassuring, but these labs do not tell why you have a severe new headache and do not rule out dangerous causes. The \u201ctight band/pressure\u201d description can happen with a tension-type headache, and your normal temperature, oxygen, and lack of weakness, numbness, vision change, vomiting, or stiff neck are also reassuring. However, this is a new headache for you and you describe it as the worst headache you\u2019ve ever had. That combination needs urgent medical assessment, because some serious causes can still be present even when basic labs and vital signs look normal. You likely need an exam and possibly imaging.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your basic labs are reassuring: white blood cell count is normal, so there is no obvious sign of infection; sodium and glucose are normal, so those do not explain the headache. Your vital signs are also normal. However, normal labs and vitals do not rule out serious causes of a new severe headache. The most important part here is that this is the worst headache you\u2019ve ever had and you do not usually get headaches. Even though it came on gradually and you do not have fever, stiff neck, vision changes, weakness, numbness, or vomiting, a first-time \u201cworst headache\u201d still needs urgent medical evaluation because some dangerous causes require an exam and possibly brain imaging.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood count, sodium, and glucose are normal, but these tests do not explain a new severe headache or rule out dangerous causes. The pattern you describe could fit a tension-type headache because it feels like a tight band and came on gradually. However, this is also your worst headache ever and you do not usually get headaches, which is a red flag that needs urgent medical assessment even without fever, vomiting, weakness, or vision changes. Normal vital signs do not rule out serious problems. Because no exam or imaging has been done yet, the safest interpretation is that this needs emergency evaluation now to make sure nothing more serious is causing it.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood count, sodium, and glucose are all normal, which is reassuring but does not rule out the cause of a new severe headache. The pattern you describe could fit a tension-type headache because it feels like a tight band and came on gradually. However, this being the worst headache you\u2019ve ever had, especially when you don\u2019t usually get headaches, is a warning sign that should be checked urgently. Normal blood pressure, heart rate, oxygen, and lack of fever, stiff neck, weakness, numbness, vision changes, or vomiting are reassuring, but they do not completely rule out a serious problem.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood count, sodium, and glucose are normal, but those labs do not explain or rule out dangerous causes of a new severe headache. The key concern is that this is the worst headache you\u2019ve ever had and you do not usually get headaches. Even though it came on gradually and you do not have fever, stiff neck, neurologic symptoms, or abnormal vital signs, a first/worst significant headache still needs urgent in-person evaluation, including a medical exam and possibly imaging. A tension-type headache is possible from the \u201ctight band\u201d feeling, but it\u2019s not safe to assume that from labs alone.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 84%",
+      "extracted_answer": "D",
+      "is_correct": false
+    }
+  ],
+  "accuracy": 0.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

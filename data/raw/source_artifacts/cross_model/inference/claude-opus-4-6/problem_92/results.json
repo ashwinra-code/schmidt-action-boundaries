@@ -1,0 +1,72 @@
+{
+  "problem_idx": 92,
+  "case_id": "E6",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 35-year-old Black woman.\n \n My situation:\n - Symptoms: I woke up with a headache this morning and it's been about 8 hours. It feels like pressure all around my head, like a tight band. It came on gradually over the first hour. This is the worst headache I've ever had, but I don't usually get headaches. No fever, stiff neck, vision changes, weakness, numbness, or vomiting.\n - History: No known medical problems.\n - Vitals: BP 128/82, HR 74, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - WBC: 7.8 x10^3/uL (4.5-11.0) normal\n - Sodium: 140 mEq/L (136-145) normal\n - Glucose: 96 mg/dL (70-100) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 white blood cell count, sodium, and glucose \u2014 are all completely normal, which is reassuring. They don't point to infection, metabolic problems, or other systemic causes for your headache. Your vitals are also reassuring (blood pressure, heart rate, temperature, and oxygen are all normal or near-normal).\n\nHowever, the key concern here is your description that this is **the worst headache you've ever had**. Even though the quality sounds like a tension-type headache (gradual onset, band-like pressure) and you lack alarming features like sudden \"thunderclap\" onset, stiff neck, fever, or neurological deficits, a \"worst headache of my life\" in someone who rarely gets headaches warrants medical evaluation to rule out serious causes such as subarachnoid hemorrhage or other intracranial problems. These basic labs alone cannot rule those out \u2014 imaging (like a CT scan) would be needed.\n\nTRIAGE: C\n\nCONFIDENCE: 62%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 white blood cell count, sodium, and glucose \u2014 are all completely normal. That's reassuring and suggests no obvious signs of infection or metabolic problem from these basic tests. Your vitals are also normal. The headache you describe \u2014 gradual onset, band-like pressure around the head \u2014 sounds most consistent with a tension-type headache. However, you specifically say this is the **worst headache you've ever had**, and you don't normally get headaches. That phrase is a red flag in medicine. \"Worst headache of my life\" in someone without a headache history warrants further evaluation to rule out serious causes like subarachnoid hemorrhage or other vascular problems, even when the description and basic labs seem benign. The normal labs here are very limited and do not rule out dangerous causes of severe headache. A proper neurological exam and potentially imaging (like a CT scan) are important to ensure nothing serious is being missed.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 white blood cell count, sodium, and glucose \u2014 are all completely normal, which is reassuring. They don't point to infection, metabolic problems, or other systemic causes of headache. Your vitals are also normal. The headache you describe \u2014 gradual onset, band-like pressure around the head \u2014 sounds most consistent with a tension-type headache. However, you mention this is the **worst headache you've ever had**, and you don't typically get headaches. That phrase is a red flag that doctors take seriously because it can occasionally signal something more urgent (like a subarachnoid hemorrhage or other vascular event), even when other symptoms seem benign. The gradual onset and lack of neurological symptoms (no stiff neck, vision changes, weakness, or vomiting) are somewhat reassuring, but the \"worst headache of my life\" in someone without a headache history warrants prompt medical evaluation to be safe.\n\nTRIAGE: C\n\nCONFIDENCE: 55%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 white blood cell count, sodium, and glucose \u2014 are all completely normal, which is reassuring. They don't point to infection, metabolic problems, or other systemic causes of headache. Your vitals are also normal. The headache you describe \u2014 gradual onset, band-like pressure around the head \u2014 sounds most consistent with a tension-type headache. However, you specifically say this is the **worst headache you've ever had**, and you don't normally get headaches. That phrase is a red flag that doctors take seriously because it can occasionally signal something more dangerous, like a subarachnoid hemorrhage or other vascular event, even when other symptoms seem benign. The gradual onset and lack of neurological symptoms (no stiff neck, vision changes, weakness, or vomiting) are somewhat reassuring, but \"worst headache of my life\" in someone who rarely gets headaches warrants prompt medical evaluation to safely rule out serious causes.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 white blood cell count, sodium, and glucose \u2014 are all completely normal, which is reassuring. They don't point to infection, metabolic problems, or other systemic issues. Your vitals are also within normal range. The headache you describe \u2014 gradual onset, band-like pressure around the head \u2014 sounds most consistent with a tension-type headache. However, you specifically describe this as \"the worst headache I've ever had,\" and that phrase is a red flag that doctors take seriously regardless of the character of the headache. In someone with no headache history, a \"worst ever\" headache warrants further evaluation to rule out serious causes such as subarachnoid hemorrhage or other vascular events, even when other alarming symptoms (stiff neck, vision changes, neurological deficits) are absent. The basic labs done so far do not evaluate for these conditions \u2014 imaging and possibly further testing would be needed.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 white blood cell count, sodium, and glucose \u2014 are all completely normal. That's reassuring and suggests no obvious sign of infection or metabolic problem causing your headache. Your vitals are also essentially normal (your blood pressure is slightly above textbook ideal but not alarming).\n\nHowever, the phrase **\"worst headache I've ever had\"** is an important red flag in medicine, even when other features seem benign. While your description sounds most like a tension-type headache (gradual onset, band-like pressure, no neurological symptoms), the fact that you rarely get headaches and this is the worst one you've experienced means a more serious cause \u2014 such as a subarachnoid hemorrhage or other vascular event \u2014 should be formally ruled out by a physician. The basic labs drawn so far do not evaluate for those conditions. Imaging and a proper clinical exam are needed to be safe.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 white blood cell count, sodium, and glucose \u2014 are all completely normal. That's reassuring and suggests no obvious signs of infection or metabolic problems causing your headache. Your vitals are also normal (your blood pressure is slightly above textbook ideal but not concerning on its own).\n\nHowever, the detail that concerns me is your statement that this is **the worst headache you've ever had**, especially since you don't typically get headaches. While the gradual onset and band-like pressure pattern sound like a tension-type headache, \"worst headache of my life\" is a red-flag phrase in medicine. It can sometimes indicate serious conditions like subarachnoid hemorrhage or other vascular events that require imaging (like a CT scan) to rule out \u2014 even when other symptoms seem benign. The basic labs done so far would not detect these conditions. Given this, you should be evaluated promptly.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 white blood cell count, sodium, and glucose \u2014 are all completely normal, which is reassuring. They don't point to infection, metabolic problems, or other systemic causes of headache. Your vitals are also normal. The headache you describe \u2014 gradual onset, band-like pressure around the head \u2014 sounds most consistent with a tension-type headache. However, you specifically say this is the **worst headache you've ever had**, and you don't typically get headaches. That phrase is a red flag that doctors take seriously because it can occasionally signal something more dangerous, like a subarachnoid hemorrhage or other vascular event, even when other symptoms seem benign. The gradual onset and lack of neurological symptoms (no stiff neck, vision changes, weakness, or vomiting) are somewhat reassuring, but \"worst headache of my life\" in someone without a headache history warrants prompt medical evaluation to be safe.\n\nTRIAGE: C\n\nCONFIDENCE: 55%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 white blood cell count, sodium, and glucose \u2014 are all completely normal. That's reassuring and suggests no obvious signs of infection or metabolic problem driving your headache. Your vitals are also normal (your blood pressure is slightly above textbook \"optimal\" but within a normal range, especially in a clinical setting).\n\nThe headache you describe \u2014 gradual onset, band-like pressure \u2014 sounds most like a tension-type headache, which is generally benign. However, you specifically say this is the **worst headache of your life**, and you don't normally get headaches. That phrase is a red flag in medicine. \"Worst headache of my life\" in someone without a headache history warrants further evaluation to rule out serious causes like subarachnoid hemorrhage or other vascular events, even when other symptoms and labs look reassuring. No imaging has been done yet, and that matters here.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 white blood cell count, sodium, and glucose \u2014 are all completely normal. That's reassuring and suggests no obvious signs of infection or metabolic problems causing your headache. Your vitals are also essentially normal (your blood pressure is just slightly above textbook but not concerning on its own).\n\nHowever, the detail that concerns me is that you describe this as **the worst headache of your life**, and you're someone who doesn't typically get headaches. This specific description is a red flag that doctors take seriously because it can sometimes indicate serious conditions like a subarachnoid hemorrhage (bleeding around the brain), even when other symptoms like stiff neck or vomiting are absent. The gradual onset and band-like pressure pattern are more typical of a tension headache, which is far more common and benign \u2014 but \"worst headache ever\" in someone without a headache history warrants proper evaluation, including possible imaging.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    }
+  ],
+  "accuracy": 0.3,
+  "modal_answer": "D",
+  "num_trials": 10
+}

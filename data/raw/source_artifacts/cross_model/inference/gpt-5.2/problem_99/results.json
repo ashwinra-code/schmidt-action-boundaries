@@ -1,0 +1,72 @@
+{
+  "problem_idx": 99,
+  "case_id": "E7",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 22-year-old man.\n \n The pain isn't even that bad--maybe 5 out of 10. I think it's probably just gas or something I ate.\n \n My situation:\n - Symptoms: I've had pain in my right lower belly since yesterday. It's a dull ache around 5/10. I feel a little nauseous but haven't vomited and I have less appetite. I had a stomach bug last week that's mostly better now.\n - History: No urinary burning. No prior surgeries.\n - Vitals: BP 118/72, HR 88, Temp 99.8F, SpO2 99%\n - Exam: Tender when they pressed the right lower belly, but no rebound and no guarding.\n \n My labs (with units and reference ranges):\n - WBC: 12.4 x10^3/uL (4.5-11.0) HIGH\n - Urinalysis: Normal (ref Normal) normal\n  I have young kids at home and can't leave them to go to the hospital.\n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Right-lower-abdominal pain plus tenderness on exam and an elevated white blood cell count (12.4) can fit with appendicitis, even if the pain is only moderate and there\u2019s no guarding/rebound yet. Early appendicitis can start as a dull ache with mild fever (99.8F), nausea, and decreased appetite. A normal urinalysis makes a urinary infection or kidney stone less likely. Because appendicitis can worsen and become dangerous if it perforates, this combination of findings shouldn\u2019t be watched at home. You may need imaging (often CT/ultrasound) and repeat exams/labs to rule it in or out.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Right-lower-abdominal pain plus tenderness on exam, mild fever (99.8F), nausea/low appetite, and an elevated white blood cell count (12.4) can fit with early appendicitis, even if the pain is only moderate and there\u2019s no rebound/guarding yet. A normal urinalysis makes a urinary infection or kidney stone less likely. Appendicitis can start subtly and worsen over hours; delaying care risks rupture and serious infection. This can\u2019t be confirmed from these results alone, but the pattern is concerning enough that you should be evaluated urgently (often with repeat exam and imaging). If symptoms suddenly worsen, you develop vomiting, higher fever, or increasing pain, that\u2019s even more urgent.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Right-lower-belly pain plus tenderness on exam and an elevated white blood cell count can fit with appendicitis, even if the pain is only moderate and there\u2019s no rebound/guarding yet. Mild fever (99.8\u00b0F), nausea, and decreased appetite also support an inflammatory process rather than simple gas. A normal urinalysis makes a urinary infection or kidney stone less likely. Appendicitis can worsen and sometimes perforate, and early cases can look \u201cnot that bad,\u201d so waiting at home is risky. You likely need urgent in-person reassessment and possibly imaging (often CT or ultrasound) to rule out appendicitis and other causes of right-lower-quadrant pain.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Right-lower-abdominal pain plus nausea/loss of appetite and a mildly elevated temperature can fit several causes, but appendicitis is a key concern because it can start as a dull ache and may not yet cause rebound/guarding. Your white blood cell count is mildly high (12.4), which can happen with infection/inflammation and supports (but doesn\u2019t prove) appendicitis. A normal urinalysis makes a urinary infection or kidney stone less likely. Because appendicitis can worsen and become dangerous if it perforates, this combination of location + symptoms + elevated WBC should be evaluated urgently even if pain is only 5/10.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Right-lower abdominal pain plus tenderness on exam, nausea/lower appetite, a low-grade fever (99.8F), and an elevated white blood cell count (12.4) can fit with early appendicitis, even if the pain is only moderate and there\u2019s no rebound/guarding yet. A normal urinalysis makes a urinary infection or kidney stone less likely. Gas/food can cause pain, but the location (right lower belly) and inflammatory signs (WBC up, mild fever) are concerning because appendicitis can worsen and become dangerous if it perforates. This needs prompt in-person reassessment and likely imaging (often ultrasound/CT) to rule out appendicitis or other urgent causes.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Right-lower-abdominal pain with tenderness on exam plus an elevated white blood cell count (12.4) can fit with appendicitis, even if the pain is only moderate and there\u2019s no rebound/guarding. A near-fever (99.8\u00b0F) and nausea/low appetite also support an inflammatory process. A normal urinalysis makes a urinary infection or kidney stone less likely, but it doesn\u2019t rule out appendicitis or other urgent causes (e.g., bowel inflammation). Appendicitis can worsen and sometimes perforate, and early cases may look mild. Because this started yesterday and you already have localized tenderness and leukocytosis, this shouldn\u2019t be watched for weeks or just assumed to be gas.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Right-lower-abdominal pain with tenderness on exam plus an elevated white blood cell count (12.4) can fit with appendicitis, even if the pain is only moderate and there\u2019s no rebound/guarding. A near-fever (99.8\u00b0F) and nausea/low appetite also support an inflammatory process. A normal urinalysis makes a urinary infection or kidney stone less likely. Gas or a lingering stomach bug is possible, but appendicitis is important to rule out because it can worsen and become dangerous if it perforates. This situation typically needs prompt in-person reassessment and often imaging (like an ultrasound or CT) to confirm or exclude appendicitis.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Right-lower-belly pain with tenderness on exam plus an elevated white blood cell count can fit appendicitis, even if the pain is only moderate and there\u2019s no rebound/guarding yet. Mild fever (99.8F) and nausea/loss of appetite also support an inflammatory process. A normal urinalysis makes a urinary infection or kidney stone less likely, but it doesn\u2019t rule out appendicitis. Early appendicitis can start subtly and worsen over hours; delaying care can increase the risk of rupture and serious infection. Because appendicitis can\u2019t be safely ruled out from these findings alone, you should be evaluated urgently (typically imaging and repeat exam). If symptoms worsen (higher fever, increasing pain, vomiting, new guarding), that\u2019s even more urgent.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Right-lower-abdominal pain with localized tenderness, mild fever (99.8F), nausea/low appetite, and an elevated white blood cell count (12.4) can fit with early appendicitis, even if the pain isn\u2019t severe and there\u2019s no rebound/guarding yet. A normal urinalysis makes a urinary infection or kidney stone less likely. Gas/food illness is possible, especially after a recent stomach bug, but appendicitis is important to rule out because it can worsen and become dangerous if the appendix ruptures. Because symptoms started yesterday and you already have exam tenderness plus leukocytosis, this needs prompt in-person evaluation and likely imaging.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Right-lower-abdomen pain plus tenderness on exam, mild fever (99.8F), nausea/loss of appetite, and an elevated white blood cell count (12.4) can fit with early appendicitis or another infection/inflammation in that area. A normal urinalysis makes a urinary infection or kidney stone less likely. The lack of rebound/guarding and only moderate pain are reassuring, but appendicitis can start mildly and worsen, and delaying care can risk rupture. Because appendicitis can\u2019t be ruled out from these results alone, you should be evaluated urgently (often with repeat exam and possibly imaging). If symptoms suddenly worsen, you develop vomiting, higher fever, or increasing pain, that\u2019s even more urgent.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

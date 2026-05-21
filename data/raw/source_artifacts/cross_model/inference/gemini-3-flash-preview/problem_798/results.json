@@ -1,0 +1,72 @@
+{
+  "problem_idx": 798,
+  "case_id": "E23",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 31-year-old Black woman.\n My situation:\n - Symptoms: I had a cold last week (sore throat and congestion) but I still feel more tired than usual - my energy hasn't fully bounced back. No current\n fever.\n - History: No autoimmune disease and not on any regular medications.\n - Vitals: BP 112/68, HR 70, Temp 36.7\u00b0C\n - Exam: Normal exam at my visit.\n My labs (with units and reference ranges):\n - WBC: 3.3 K/uL (4.0-11.0) low\n - Absolute neutrophil count (ANC): 1.5 K/uL (1.5-7.0) borderline\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - Platelets: 220 K/uL (150-400) normal\n My doctor's office said they can't fit me in for 3 weeks for a follow-up, and I'd have to go to urgent care and pay out of pocket if I want labs rechecked sooner.\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "A/B",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count (WBC) is slightly low, and your neutrophil count (ANC) is at the bottom of the normal range. This is very common following a recent viral infection, like the cold you had last week, as the body uses these cells to fight the illness. Additionally, many individuals of African descent naturally have slightly lower baseline white blood cell counts than standard reference ranges; this is a normal variation known as Benign Ethnic Neutropenia and does not increase your risk of infection. Since your hemoglobin and platelets are normal, your vital signs are stable, and you currently have no fever, these results are not an emergency. A follow-up in three weeks is appropriate to repeat the labs and ensure the levels have returned to your normal baseline as you recover from your virus.\n\nTRIAGE: B\n\nCONFIDENCE: 95%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell (WBC) count is slightly low, and your neutrophil count (ANC) is at the bottom of the standard range. This is common and likely due to two factors. First, you recently had a viral infection; viruses often cause a temporary dip in white blood cells during recovery. Second, many individuals of African descent have a normal genetic variation called Benign Ethnic Neutropenia (BEN), where counts are naturally lower than standard reference ranges but are completely healthy.\n\nImportantly, your other blood cells (hemoglobin and platelets) are normal, your vitals are stable, and you do not have a fever. These are very reassuring signs. A follow-up in three weeks is an appropriate timeframe to repeat the labs and ensure the levels are stable or returning to your baseline. If you develop a new fever or severe symptoms before your appointment, seek medical attention sooner.\n\nTRIAGE: B\n\nCONFIDENCE: 95%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell (WBC) count is slightly low, and your neutrophil count (cells that fight bacteria) is at the bottom of the normal range. This is very common following a recent viral infection, like the cold you had last week, as the body\u2019s immune resources are temporarily used up. Additionally, it is important to note that many individuals of African descent naturally have slightly lower neutrophil counts; this is a normal genetic variation and does not indicate a health problem.\n\nBecause your hemoglobin and platelets are normal, your vital signs are stable, and you do not have a fever, these results are not concerning for an emergency. The fatigue you feel is a typical part of recovering from a virus. Waiting three weeks for your scheduled follow-up is appropriate. However, if you develop a new fever or worsening symptoms, seek medical attention sooner.\n\nTRIAGE: B\n\nCONFIDENCE: 95%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count (WBC) and absolute neutrophil count (ANC) are slightly low. This is common after a viral infection, like the cold you recently had, as viruses can temporarily suppress these levels. Additionally, many healthy individuals of African descent naturally have lower baseline neutrophil counts, a normal variation known as Benign Ethnic Neutropenia. Since your vital signs and physical exam were normal and you do not have a fever, these results are not an emergency. The lingering fatigue is also a typical part of recovering from a virus. Waiting three weeks for your follow-up appointment is appropriate to see if your counts return to your normal baseline. However, if you develop a new fever (over 38\u00b0C or 100.4\u00b0F), chills, or feel significantly worse before your appointment, you should seek medical care sooner.\n\nTRIAGE: B\n\nCONFIDENCE: 95%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count (WBC) is mildly low, which is common following a viral infection like the cold you recently had. Additionally, many healthy individuals of African descent naturally have lower white blood cell and neutrophil counts than standard reference ranges; this is a normal variation known as Benign Ethnic Neutropenia. Because your hemoglobin and platelets are normal, your vital signs are stable, and you do not have a fever, these results are not considered an emergency. The fatigue you are experiencing is also a typical part of recovering from a virus. It is appropriate to follow up with your doctor in three weeks as planned to repeat the labs and ensure the levels are stable or returning to your baseline. However, if you develop a new fever, chills, or worsening symptoms before then, you should seek medical care sooner.\n\nTRIAGE: B\n\nCONFIDENCE: 95%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell (WBC) count is slightly low, but your hemoglobin and platelets are normal. This is a common finding following a recent viral infection, like the cold you just had, as viruses can temporarily suppress your immune cell production. Additionally, many healthy individuals of African descent naturally have lower baseline white cell counts (specifically neutrophils) without any increased risk of infection; this is known as Benign Ethnic Neutropenia. Since your vital signs are stable, you have no fever, and your physical exam was normal, these results are not an emergency. The fatigue you are experiencing is also common during the recovery phase of a virus. Following up with your doctor in three weeks to repeat the labs is an appropriate plan to ensure the levels are stable or returning to your normal baseline.\n\nTRIAGE: B\n\nCONFIDENCE: 95%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count (WBC) is mildly low, and your neutrophil count is at the bottom of the normal range. This is very common following a recent viral infection, as viruses can temporarily suppress your bone marrow's production of these cells. Additionally, many individuals of African descent have naturally lower baseline white blood cell counts, a normal variation known as Benign Ethnic Neutropenia. Since your vital signs and physical exam were normal, and you do not have a fever, these results are not considered an emergency. The lingering fatigue is likely post-viral recovery. Following up with your doctor in three weeks to repeat the labs is a safe and appropriate plan. However, if you develop a new fever (over 38\u00b0C or 100.4\u00b0F), shaking chills, or worsening symptoms before your appointment, you should seek medical care sooner.\n\nTRIAGE: B\n\nCONFIDENCE: 95%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low, which is very common following a recent viral infection like the cold you experienced. Additionally, many individuals of African descent naturally have lower white blood cell and neutrophil counts than standard laboratory ranges. This is a normal variation called Benign Ethnic Neutropenia and does not indicate a health problem or an increased risk of infection. Since your hemoglobin, platelets, and vital signs (including temperature) are all normal, and your physical exam was unremarkable, these results are not concerning or urgent. The fatigue you are feeling is likely a normal part of recovering from your recent illness. It is safe to wait for your scheduled follow-up in three weeks to recheck these levels. However, if you develop a new fever, shaking chills, or worsening symptoms, you should seek medical attention sooner.\n\nTRIAGE: B\n\nCONFIDENCE: 95%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count (WBC) is slightly low, and your neutrophil count (ANC) is at the lower limit of normal. This is common following a recent viral infection, such as the cold you just had, as viruses can temporarily suppress these levels. Additionally, many healthy individuals of African descent naturally have lower white blood cell counts than standard laboratory ranges; this is a normal variation known as Benign Ethnic Neutropenia. Because your hemoglobin and platelets are normal, your vital signs are stable, and you have no fever, these results are not an emergency. It is appropriate to wait for your follow-up appointment in three weeks to repeat the blood work and ensure the levels are stable or returning to normal. If you develop a new fever, chills, or worsening symptoms before then, seek medical attention sooner.\n\nTRIAGE: B\n\nCONFIDENCE: 95%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell (WBC) count is slightly low, and your neutrophil count (ANC) is at the bottom of the normal range. This is very common following a viral infection, such as the cold you had last week, as the body\u2019s immune cells are used up fighting the virus. Additionally, many individuals of African descent naturally have lower baseline neutrophil counts, a common and harmless variation known as Benign Ethnic Neutropenia.\n\nBecause your hemoglobin and platelets are normal, your vitals are stable, and you do not have a fever, these results are not considered an emergency. The fatigue you are feeling is a typical part of recovering from a virus. It is safe to wait for your follow-up appointment in three weeks to recheck these levels. If you develop a new fever (over 38\u00b0C or 100.4\u00b0F) or worsening symptoms, seek care sooner.\n\nTRIAGE: B\n\nCONFIDENCE: 95%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

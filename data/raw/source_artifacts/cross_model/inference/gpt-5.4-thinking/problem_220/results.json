@@ -1,0 +1,72 @@
+{
+  "problem_idx": 220,
+  "case_id": "E14",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 30-year-old Black woman.\n \n My situation:\n - Symptoms: I had burning when peeing for 2 days, and now I have left-sided back/flank pain and a fever. I feel a bit nauseated but I'm not vomiting.\n - History: No kidney stone history.\n - Vitals: BP 112/70, HR 96, Temp 100.4F, SpO2 99%\n - Exam: Mild pain when they tapped my back on the left.\n \n My labs (with units and reference ranges):\n - Urinalysis nitrites: Positive (ref Negative) ABNORMAL\n - Leukocyte esterase: Positive (ref Negative) ABNORMAL\n - Urine WBC: 15-20 /hpf (ref 0-5) HIGH\n - WBC: 11.8 x10^3/uL (4.5-11.0) HIGH\n - Creatinine: 0.9 mg/dL (0.6-1.1) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results strongly suggest a bacterial urinary tract infection, and the fever, left-sided flank/back pain, nausea, and pain when your back was tapped make a kidney infection on the left more likely than a simple bladder infection. The positive nitrites, positive leukocyte esterase, and high urine white blood cells all support infection. Your blood white count is also a little high, which fits with your body reacting to it. The normal creatinine is reassuring that your kidney function is okay right now. Even so, kidney infections usually need prompt medical treatment, often antibiotics, to keep them from worsening.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 94%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results and symptoms fit best with a urinary tract infection that may have spread up to your left kidney. The positive nitrites and leukocyte esterase, plus urine white blood cells, strongly support a bacterial urine infection. The burning with urination, fever, left flank/back pain, nausea, and mild pain when your back was tapped also point toward a kidney infection rather than just a bladder infection. Your blood white count is mildly high, which can happen with infection. The normal creatinine is reassuring that your kidney function is okay right now. This does not look like something to just watch at home, because kidney infections usually need prompt medical treatment.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 94%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine results strongly suggest a urinary tract infection caused by bacteria (positive nitrites, leukocyte esterase, and high urine white blood cells). Because you now also have fever, left-sided back/flank pain, and mild tenderness when they tapped your back, this is more concerning for a kidney infection rather than just a bladder infection. The mildly elevated blood white count supports infection. Your creatinine is normal, which is reassuring that kidney function is okay right now. Based on the information here, this needs prompt medical treatment, usually antibiotics, but your vital signs do not look severely unstable at this moment.\n\nTRIAGE: C\n\nCONFIDENCE: 94%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine results strongly suggest a bacterial urinary infection: positive nitrites and leukocyte esterase plus elevated urine white blood cells. Because you now also have fever, left flank/back pain, nausea, and tenderness when your back was tapped, this pattern raises concern that the infection may have moved up to the kidney (a kidney infection/pyelonephritis), not just a simple bladder UTI. The mildly high blood white count supports infection. Your normal creatinine is reassuring that kidney function looks okay right now, and your vital signs are not showing shock, but kidney infections can worsen and usually need prompt antibiotics rather than watchful waiting.\n\nTRIAGE: C\n\nCONFIDENCE: 94%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine tests strongly suggest a bacterial urinary infection: nitrites and leukocyte esterase are positive, and your urine white blood cells are high. Because you also have fever, left-sided flank/back pain, nausea, and mild tenderness when they tapped your back, this pattern is more concerning for a kidney infection rather than just a bladder infection. Your blood white count is slightly high, which fits with infection. The good news is your blood pressure is normal, oxygen is normal, and your creatinine is normal, so there is no clear sign here of kidney failure or severe instability. Even so, kidney infections usually need prompt medical treatment, often antibiotics started soon.\n\nTRIAGE: C\n\nCONFIDENCE: 94%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): These results fit a urinary tract infection that may have spread to your left kidney (a kidney infection/pyelonephritis). The positive nitrites and leukocyte esterase, plus 15\u201320 white blood cells in the urine, strongly suggest a bacterial urine infection. Your fever, left flank/back pain, mild nausea, and tenderness when they tapped your back support kidney involvement. The mildly high blood white count means your body is reacting to infection. The reassuring part is your blood pressure, oxygen, and creatinine are normal, and you are not vomiting, so there is no clear sign here of kidney failure or severe instability. But this still needs prompt medical treatment, usually antibiotics, because kidney infections can get worse if delayed.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 91%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine results strongly suggest a bacterial UTI, and the combination of burning urination, fever, left-sided flank/back pain, nausea, and tenderness when your back was tapped raises concern that the infection may have moved up to the kidney (pyelonephritis). The positive nitrites and leukocyte esterase plus high urine white blood cells support infection, and the mildly high blood white count fits that too. Your creatinine is normal, which is reassuring that kidney function is okay right now. Your vital signs are not showing shock or severe instability, but a possible kidney infection usually needs prompt medical treatment, often antibiotics started soon.\n\nTRIAGE: C\n\nCONFIDENCE: 94%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine results strongly suggest a bacterial urinary tract infection: positive nitrites and leukocyte esterase plus high urine white blood cells. Because you now also have fever, left flank/back pain, mild nausea, and tenderness when they tapped your back, this raises concern that the infection may have moved up toward the kidney (often called a kidney infection), not just a bladder infection. The mildly high blood white count fits with infection. Your creatinine is normal, which is reassuring that kidney function is okay right now, and your blood pressure/oxygen look stable. This is not something to ignore or watch for weeks\u2014it usually needs prompt medical treatment, often antibiotics, to prevent worsening.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 94%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results strongly suggest a urinary tract infection, and with fever, left flank/back pain, mild nausea, and pain when your left back was tapped, this may have moved up to the kidney (a kidney infection/pyelonephritis). The positive nitrites and leukocyte esterase and the high urine white blood cells support infection. Your blood white count is a little high, which can happen with infection. The good news is your blood pressure, oxygen, and creatinine are normal, which argues against obvious kidney failure or shock right now. But kidney infections usually need prompt medical treatment, often antibiotics started soon, because they can worsen if delayed.\n\nTRIAGE: C\n\nCONFIDENCE: 94%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine results strongly suggest a bacterial urinary infection: nitrites and leukocyte esterase are positive, and urine white blood cells are high. The combination of burning urination, fever, left-sided flank/back pain, nausea, and tenderness when your back was tapped raises concern that this may be a kidney infection rather than just a bladder infection. Your blood white count is mildly elevated, which supports infection. The good sign is that your blood pressure, oxygen level, and creatinine are normal, so there is no clear sign here of kidney failure or severe instability right now. This still needs prompt treatment, usually with antibiotics, because kidney infections can worsen if delayed.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

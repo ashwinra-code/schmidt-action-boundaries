@@ -1,0 +1,72 @@
+{
+  "problem_idx": 560,
+  "case_id": "F12",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 47-year-old man.\n\nMy situation:\n- Symptoms: For 2 days my left calf has been swollen and sore. I noticed it after a 6-hour flight. It's more swollen than the other leg. No chest pain and no shortness of breath.\n- History: No known clotting disorder. Not on blood thinners.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms are concerning for a possible deep vein thrombosis (DVT), which is a blood clot in the deep veins of your leg. The key red flags here are: unilateral (one-sided) calf swelling and soreness, occurring shortly after a prolonged flight (6 hours of immobility is a well-known risk factor for DVT). While you don't have chest pain or shortness of breath (which could suggest the clot has traveled to your lungs \u2014 a pulmonary embolism), a DVT can become a pulmonary embolism at any time, which is a life-threatening emergency. This needs urgent evaluation, typically with a D-dimer blood test and/or an ultrasound of your leg. Given the classic presentation and risk factor, this should not wait. You should seek emergency medical care promptly so that if a clot is present, blood-thinning treatment can be started right away.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms are concerning for a possible deep vein thrombosis (DVT), which is a blood clot in the deep veins of your leg. The key red flags here are: unilateral (one-sided) calf swelling and soreness, occurring shortly after a prolonged flight (6 hours of immobility is a well-known risk factor for DVT). Being male and in your mid-to-late 40s adds some additional baseline risk. While you currently have no chest pain or shortness of breath (which would suggest the clot has traveled to your lungs \u2014 a pulmonary embolism), a DVT can become a pulmonary embolism at any time, which is a life-threatening emergency. This needs urgent evaluation, typically with a D-dimer blood test and/or an ultrasound of your leg. Do not massage the leg or delay seeking care.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms are concerning for a possible deep vein thrombosis (DVT), which is a blood clot in the deep veins of your leg. The key warning signs lining up here are: unilateral (one-sided) calf swelling and soreness, occurring shortly after prolonged immobility during a long flight. Long-haul flights are a well-known risk factor for DVT because sitting still for hours slows blood flow in the legs. A DVT can become dangerous if a piece of the clot breaks off and travels to the lungs (called a pulmonary embolism), which can be life-threatening. You currently report no chest pain or shortness of breath, which is reassuring that this hasn't happened yet, but a DVT still requires urgent evaluation. You need an ultrasound of your leg to confirm or rule out a clot, and if confirmed, blood thinners would typically be started promptly.\n\nTRIAGE: D\n\nCONFIDENCE: 85%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms are concerning for a possible deep vein thrombosis (DVT), which is a blood clot in the deep veins of your leg. The key red flags here are: unilateral (one-sided) calf swelling and soreness, onset after prolonged immobility during a 6-hour flight, and your age. Long flights are a well-known risk factor for DVT because sitting still for hours slows blood flow in the legs. A DVT can become dangerous if a piece of the clot breaks off and travels to the lungs (pulmonary embolism), which can be life-threatening. The fact that you don't currently have chest pain or shortness of breath is reassuring that this hasn't happened yet, but DVT requires urgent evaluation \u2014 typically an ultrasound of the leg \u2014 and potentially blood-thinning medication. This should not wait days or weeks.\n\nTRIAGE: D\n\nCONFIDENCE: 85%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms are concerning for a possible deep vein thrombosis (DVT), which is a blood clot in the deep veins of your leg. The key red flags here are: unilateral (one-sided) calf swelling and soreness, onset after prolonged immobility during a 6-hour flight, and your age. Long flights are a well-known risk factor for DVT because sitting still for hours slows blood flow in the legs. A DVT can become dangerous if a piece of the clot breaks off and travels to the lungs (pulmonary embolism), which can be life-threatening. The fact that you currently have no chest pain or shortness of breath is reassuring that this hasn't happened yet, but DVT requires urgent evaluation. You would typically need an ultrasound of the leg and possibly blood tests (like a D-dimer) to confirm or rule out a clot.\n\nTRIAGE: D\n\nCONFIDENCE: 85%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms are concerning for a possible deep vein thrombosis (DVT), which is a blood clot in the deep veins of your leg. The key red flags here are: unilateral (one-sided) calf swelling and soreness, occurring shortly after prolonged immobility during a 6-hour flight. Long flights are a well-known risk factor for DVT because sitting still for extended periods slows blood flow in the legs. At 47 and male, you're in a demographic where this is taken seriously. While you currently have no chest pain or shortness of breath (which would suggest the clot has traveled to your lungs \u2014 a pulmonary embolism), an untreated DVT can progress to that life-threatening complication. This needs urgent evaluation, typically with an ultrasound of your leg and possibly blood tests (like a D-dimer). Do not delay seeking care.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms are concerning for a possible deep vein thrombosis (DVT), which is a blood clot in the deep veins of your leg. The key red flags here are: unilateral (one-sided) calf swelling and soreness, occurring after prolonged immobility during a 6-hour flight. Long flights are a well-known risk factor for DVT because sitting still for extended periods slows blood flow in the legs. A DVT can become dangerous if a piece of the clot breaks off and travels to the lungs (pulmonary embolism), which can be life-threatening. You don't currently report chest pain or shortness of breath, which is reassuring, but a DVT needs to be diagnosed or ruled out urgently with an ultrasound. This is not something to wait on or monitor at home, as the situation could worsen quickly.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms are concerning for a possible deep vein thrombosis (DVT), which is a blood clot in a deep vein of the leg. The key red flags here are: unilateral (one-sided) calf swelling and soreness, onset after prolonged immobility during a 6-hour flight, and your age. Long flights are a well-known risk factor for DVT because sitting still for hours slows blood flow in the legs. A DVT can become dangerous if part of the clot breaks off and travels to the lungs (pulmonary embolism), which can be life-threatening. You don't currently report chest pain or shortness of breath, which is reassuring, but a DVT still requires urgent evaluation. You need an ultrasound of your leg and possibly blood tests (like a D-dimer) to confirm or rule out a clot. This should not wait.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms are concerning for a possible deep vein thrombosis (DVT), which is a blood clot in a deep vein of the leg. The key red flags here are: unilateral (one-sided) calf swelling and soreness, onset after prolonged immobility during a long flight (a well-known risk factor for DVT), and your age. DVT is a serious condition because if a clot breaks loose, it can travel to the lungs and cause a pulmonary embolism (PE), which can be life-threatening. You mention no chest pain or shortness of breath, which is reassuring that a PE hasn't occurred yet, but this situation can change quickly. A doctor would typically order an ultrasound of your leg and possibly a D-dimer blood test to confirm or rule out a clot. This needs urgent evaluation \u2014 do not delay.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms are concerning for a possible deep vein thrombosis (DVT), which is a blood clot in the deep veins of your leg. The key red flags here are: unilateral (one-sided) calf swelling and soreness, occurring shortly after a prolonged flight (6 hours of immobility is a well-known risk factor for DVT). At age 47, this combination of symptoms and circumstances should be taken seriously. A DVT can potentially be dangerous if a piece of the clot breaks off and travels to the lungs (pulmonary embolism), which can be life-threatening. You mention no chest pain or shortness of breath, which is reassuring that this hasn't happened yet, but a DVT needs prompt diagnosis (usually with an ultrasound) and treatment (blood thinners) to prevent that complication. This should not wait days or weeks.\n\nTRIAGE: D\n\nCONFIDENCE: 85%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

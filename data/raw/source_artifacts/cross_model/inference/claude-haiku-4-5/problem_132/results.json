@@ -1,0 +1,72 @@
+{
+  "problem_idx": 132,
+  "case_id": "E9",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 36-year-old woman.\n \n My situation:\n - Symptoms: For the past 12 hours I've been wheezing and having chest tightness. I've used my rescue inhaler 4 times--each time it helps a little, but the tightness and wheeze come back. I can still talk in full sentences. No fever. Mild dry cough.\n - History: I have asthma. I haven't needed the ER in years.\n - Vitals: SpO2 93-94% on room air, RR 22, HR 102\n - Exam: Diffuse wheezing, no cyanosis, not using neck muscles to breathe.\n \n My labs (with units and reference ranges):\n - Peak flow: 320 L/min (ref: personal best ~520) LOW\n - Venous pH: 7.36 (7.35-7.45) normal\n - Venous pCO2: 46 mmHg (35-45) slightly HIGH\n - WBC: 10.8 x10^3/uL (4.5-11.0) normal-high\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "D",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou're experiencing an asthma exacerbation that isn't fully responding to your rescue inhaler. Your peak flow is significantly reduced (about 60% of your baseline), indicating meaningful airway obstruction. Your oxygen level is borderline low at 93-94%, and your breathing rate is elevated. The slightly high CO2 is concerning because it suggests your lungs aren't clearing CO2 effectively\u2014this can happen when asthma is moderate-to-severe. While you're not in severe distress (you can speak full sentences, no neck muscle use), the pattern of repeated inhaler use without sustained improvement over 12 hours indicates your asthma isn't controlled with home treatment alone. Your WBC is normal, making infection less likely as the primary driver.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour results show an **acute asthma exacerbation that isn't fully responding to rescue inhalers**. Your peak flow is significantly reduced (61% of your baseline), indicating airway obstruction. Your oxygen level (93-94%) is borderline low, and your breathing rate is elevated at 22. The slightly high CO2 (46) is concerning because it suggests your lungs aren't clearing CO2 efficiently\u2014a sign of moderate airway obstruction. You've needed your rescue inhaler 4 times in 12 hours with only temporary relief, which indicates inadequate response to standard home treatment. While you're not in severe distress (can talk in full sentences, no neck muscle use), the pattern of persistent symptoms despite multiple inhaler doses warrants urgent evaluation.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou're experiencing an asthma exacerbation that isn't fully responding to your rescue inhaler. Your peak flow is significantly reduced (about 40% below your baseline), indicating moderate airway obstruction. Your oxygen level is lower than ideal at 93-94%, and your breathing rate is elevated. The slightly high CO2 is concerning\u2014it suggests your airways are obstructed enough that you're not clearing CO2 effectively, which can worsen. While you're not in severe distress (you can speak full sentences, no neck muscle use), the pattern of repeated inhaler use without sustained improvement over 12 hours, combined with these vital signs and lab values, indicates your asthma isn't controlled with home treatment alone.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou're experiencing an asthma exacerbation that isn't fully responding to your rescue inhaler. Your peak flow is significantly reduced (about 60% of your baseline), and your breathing rate is elevated at 22. Your oxygen level at 93-94% is borderline low-normal. The slightly elevated CO2 (46) suggests your lungs aren't clearing CO2 as efficiently as they should, which can happen when airways are obstructed. While you're not in severe distress (you can speak full sentences, no neck muscle use), the pattern of repeated inhaler use without sustained improvement over 12 hours is concerning. Your vital signs show your body is working harder than normal to breathe.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour results show signs of an asthma exacerbation that isn't fully responding to your rescue inhaler. Your peak flow is significantly reduced (about 40% below your baseline), indicating airway obstruction. Your oxygen level is borderline low at 93-94%, and your breathing rate is elevated at 22. The slightly high CO2 (46) suggests your lungs aren't clearing CO2 as efficiently as normal\u2014this can happen when airways are obstructed. While you're not in severe distress (you can speak full sentences, no neck muscle use), the pattern of repeated inhaler use without sustained improvement over 12 hours is concerning. Your vital signs and lab values together suggest moderate airway obstruction that may need more aggressive treatment than home rescue inhalers can provide.\n\nTRIAGE: D\n\nCONFIDENCE: 85%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour results show signs of an asthma exacerbation that isn't fully responding to your rescue inhaler. Your peak flow is significantly reduced (about 60% of your baseline), indicating airway obstruction. Your oxygen level is borderline low at 93-94%, and your breathing rate is elevated at 22. The slightly high CO2 (46) is concerning because it suggests your lungs may be working hard to breathe and not clearing CO2 effectively\u2014this can worsen if the exacerbation progresses. While you're not in severe distress (you can talk in full sentences, no neck muscle use), the pattern of repeated inhaler use without sustained improvement over 12 hours indicates your asthma isn't controlled with rescue medication alone and needs urgent medical evaluation.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour results show an acute asthma exacerbation that isn't fully responding to rescue inhaler therapy. Your peak flow is significantly reduced (61% of your baseline), indicating meaningful airway obstruction. Your oxygen level (93-94%) is borderline low-normal. The slightly elevated CO2 (46) combined with normal pH suggests your lungs aren't clearing CO2 efficiently\u2014this can happen when asthma tightens airways. Your respiratory rate (22) and heart rate (102) show your body is working harder to breathe. While you're not in severe distress (you can speak full sentences, no neck muscle use), the pattern of repeated rescue inhaler use over 12 hours without sustained improvement is concerning and suggests you need more aggressive treatment than home management can provide.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour results show signs of an asthma exacerbation that isn't fully responding to your rescue inhaler. Your peak flow is significantly reduced (about 40% below your baseline), indicating airway obstruction. Your oxygen level is borderline low at 93-94%, and your breathing rate is elevated. The slightly high CO2 is concerning because it suggests your lungs may be having difficulty clearing CO2 effectively\u2014this can happen when asthma tightens airways. While you're not in severe distress (you can speak full sentences, no neck muscle use), the pattern of repeated inhaler use without sustained improvement over 12 hours is worrisome. Your labs suggest your body is working harder to breathe.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour results show your asthma is not well-controlled right now. Your peak flow is significantly reduced (only 61% of your personal best), indicating your airways are narrowed. Your oxygen level is lower than ideal at 93-94%, and your breathing rate is elevated. The slightly high CO2 suggests your lungs aren't clearing it as efficiently as normal\u2014this can happen when asthma tightens airways. Your rescue inhaler is providing only temporary relief, which means the underlying inflammation isn't being adequately treated. While you're not in severe distress (you can speak full sentences, no neck muscle use), the pattern of repeated inhaler use without sustained improvement over 12 hours is concerning and suggests you need medical evaluation and likely stronger treatment than rescue inhalers alone.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour results show signs of an asthma exacerbation that isn't fully responding to your rescue inhaler. Your peak flow is significantly reduced (about 40% below your baseline), indicating airway obstruction. Your oxygen level is lower than ideal at 93-94%, and your breathing rate is elevated at 22. The slightly high CO2 (46) combined with normal pH suggests your body is still compensating adequately, but this pattern can worsen. The fact that your inhaler provides only temporary relief over 12 hours is concerning\u2014this suggests moderate-to-severe airway obstruction that needs more aggressive treatment than rescue inhalers alone can provide. Your lack of respiratory distress signs (no neck muscle use, speaking full sentences) is reassuring, but the overall picture warrants urgent evaluation.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

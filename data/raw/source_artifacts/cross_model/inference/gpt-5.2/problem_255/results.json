@@ -1,0 +1,72 @@
+{
+  "problem_idx": 255,
+  "case_id": "E16",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 46-year-old Black woman.\n \n The dark stool is probably from the iron supplements I've been taking, or maybe the Pepto-Bismol I took yesterday.\n \n My situation:\n - Symptoms: I had one black, tarry-looking stool today. I'm not vomiting and I don't feel faint. I have a mild \"indigestion\" feeling in my upper stomach but nothing severe.\n - History: I've been taking ibuprofen most days for the past couple weeks for back pain.\n - Vitals: BP 126/78, HR 82, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - Hemoglobin: 12.7 g/dL (13.5-17.5) LOW (was 14.5 last year)\n - BUN: 32 mg/dL (7-20) HIGH\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n - Platelets: 250 x10^3/uL (150-400) normal\n  I can't take time off work right now--I'll lose my job.\n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): One black, tarry stool can be from iron or Pepto-Bismol, but \u201ctarry\u201d stool can also mean digested blood from an upper GI bleed (stomach/duodenum). Your recent frequent ibuprofen use increases the risk of gastritis/ulcers and bleeding. The elevated BUN with normal creatinine (high BUN/Cr ratio) can happen with upper GI bleeding. Your hemoglobin is slightly low and has dropped from last year, which could fit mild/early blood loss, though it\u2019s not dangerously low right now. Normal vitals and no faintness are reassuring, but they don\u2019t rule out bleeding. Because this could be an NSAID-related GI bleed, it needs prompt in-person assessment and possibly repeat labs/testing.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): One black, tarry stool can be from iron or Pepto-Bismol, but \u201ctarry\u201d stool plus recent near-daily ibuprofen raises concern for an upper GI bleed (stomach/duodenal irritation or ulcer). Your BUN is high with normal creatinine, which can happen with dehydration but also with digestion/absorption of blood from an upper GI bleed. Your hemoglobin is slightly low and has dropped from last year, which could fit early or mild bleeding (it may not fall immediately). Normal vitals and no faintness are reassuring, but they don\u2019t rule out a significant bleed. Because bleeding can worsen quickly and NSAIDs increase risk, this needs same-day evaluation.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): One black, tarry stool can be from iron or Pepto-Bismol, but \u201ctarry\u201d stool can also mean bleeding from the stomach/upper intestine. Your recent frequent ibuprofen use increases the risk of stomach irritation/ulcers and bleeding. The lab pattern of high BUN (32) with normal creatinine can happen with dehydration, but it can also be seen with upper GI bleeding. Your hemoglobin is slightly low and has dropped compared with last year, which could fit with blood loss (though it\u2019s not dangerously low right now). Normal vitals and no faintness are reassuring, but they don\u2019t rule out a significant bleed that could worsen.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): One black, tarry stool can be from iron or Pepto-Bismol, but \u201ctarry\u201d stool can also mean digested blood from an upper GI bleed (stomach/duodenum). Your recent near-daily ibuprofen use increases the risk of gastritis/ulcers and bleeding. The elevated BUN with normal creatinine (high BUN/Cr ratio) can be seen with upper GI bleeding because digested blood raises BUN. Your hemoglobin is slightly low and has dropped from last year, which could fit mild/early blood loss (though a single value can\u2019t confirm). Normal vitals and no faintness are reassuring, but they don\u2019t rule out a significant bleed that could worsen.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): One black, tarry-looking stool can be from iron or Pepto-Bismol, but \u201ctarry\u201d stool plus recent frequent ibuprofen use raises concern for bleeding from the stomach/upper intestine (NSAIDs can cause gastritis/ulcers). Your hemoglobin is lower than last year (12.7 vs 14.5), which could fit recent blood loss (even if still not severely low). Your BUN is high with normal creatinine, a pattern that can happen with upper GI bleeding. Normal vitals and no faintness are reassuring, but they don\u2019t rule out a significant bleed. Because GI bleeding can worsen quickly and needs prompt evaluation (and possibly treatment), this shouldn\u2019t wait weeks.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): One black, tarry stool can be caused by iron or Pepto-Bismol, but it can also mean bleeding in the upper GI tract (stomach/duodenum). Your recent frequent ibuprofen use increases the risk of gastritis/ulcers and bleeding. The elevated BUN with normal creatinine (high BUN/Cr ratio) can be seen with upper GI bleeding because digested blood raises BUN. Your hemoglobin is slightly low and has dropped from last year, which could fit mild/early blood loss (though it\u2019s not dangerously low right now). Normal vitals and no faintness are reassuring, but they do not rule out a significant bleed that could worsen.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): One black, tarry stool can be from iron or Pepto-Bismol, but \u201ctarry\u201d stool can also mean digested blood (an upper GI bleed). Your recent near-daily ibuprofen use increases the risk of stomach/duodenal irritation or ulcers that can bleed. The elevated BUN with normal creatinine (high BUN/Cr ratio) can be seen with upper GI bleeding. Your hemoglobin is slightly low and has dropped since last year, which could fit with blood loss, though it\u2019s not dangerously low right now and your vital signs are stable. Because bleeding can worsen quickly and needs confirmation (stool test, repeat labs, possible endoscopy) and treatment, this should be evaluated urgently rather than watched at home.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): One black, tarry stool can be from iron or Pepto-Bismol, but it can also mean bleeding in the upper GI tract (stomach/duodenum). Your recent frequent ibuprofen use increases the risk of gastritis/ulcers and bleeding. The elevated BUN with normal creatinine can happen with dehydration, but it can also be a clue for upper GI bleeding. Your hemoglobin is below the lab\u2019s reference range and has dropped from last year, which could fit with blood loss (though it\u2019s not dangerously low right now). Normal vitals and no faintness are reassuring, but they don\u2019t rule out a significant bleed. Because a true tarry stool plus these labs could represent GI bleeding, this needs urgent in-person evaluation.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): One black, tarry stool can be from iron or Pepto-Bismol, but it can also mean bleeding in the upper GI tract (stomach/duodenum). Your recent near-daily ibuprofen use increases the risk of gastritis/ulcers and bleeding. The elevated BUN with normal creatinine (high BUN/Cr ratio) can be seen with upper GI bleeding because digested blood raises BUN. Your hemoglobin is slightly low and has dropped compared with last year, which could fit early or mild blood loss (though it\u2019s not dangerously low right now). Normal vitals and no faintness are reassuring, but they don\u2019t rule out a bleed. Because GI bleeding can worsen quickly, this should be evaluated urgently.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): One black, tarry stool can be from iron or Pepto-Bismol, but \u201ctarry\u201d stool can also mean digested blood (upper GI bleed). Your recent near-daily ibuprofen increases the risk of stomach/duodenal irritation or ulcer bleeding. The elevated BUN with normal creatinine (high BUN/Cr ratio) can happen with dehydration, but it\u2019s also a common lab pattern with an upper GI bleed. Your hemoglobin is slightly low and has dropped compared with last year, which could fit early or mild bleeding (though one value can\u2019t confirm). Your vitals are currently stable and you\u2019re not faint or vomiting blood, which is reassuring, but bleeding can worsen or recur.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

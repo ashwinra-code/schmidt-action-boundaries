@@ -1,0 +1,72 @@
+{
+  "problem_idx": 266,
+  "case_id": "E17",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 27-year-old Black man.\n \n My situation:\n - Symptoms: I had a urine test after my annual physical. I ran a half-marathon the day before the test. I feel completely fine--no pain with urinating, no back pain, no fever, and no visible blood in the urine.\n - History: No known kidney problems.\n - Vitals: BP 118/72, HR 64\n - Exam: No exam or imaging done.\n \n My labs (with units and reference ranges):\n - Urinalysis RBC: 8-10 /hpf (ref 0-2) HIGH\n - Urinalysis blood: Moderate (ref Negative) ABNORMAL\n - Urinalysis WBC: 0-2 /hpf (ref 0-5) normal\n - Urinalysis protein: Negative (ref Negative) normal\n - Creatinine: 0.9 mg/dL (0.7-1.3) normal\n \n I can't take time off work right now--I'll lose my job.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "A",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour urinalysis shows blood in your urine (elevated RBCs and moderate blood), which is abnormal. However, several factors suggest this may not be urgent: you have no symptoms, normal kidney function (creatinine), no protein in urine, normal white blood cells (ruling out infection), normal vital signs, and you ran a half-marathon the day before testing. Strenuous exercise can cause temporary blood in urine that resolves on its own. That said, persistent hematuria needs evaluation to rule out other causes. Since you feel completely well and your kidney function is normal, this doesn't require emergency care, but it does warrant medical evaluation sooner rather than later to determine if this is exercise-related or something else.\n\nTRIAGE: B\n\nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour urinalysis shows elevated red blood cells and moderate blood, which is abnormal. However, several factors suggest this may not be urgent: you have no symptoms (no pain, fever, or visible blood), normal kidney function (creatinine is normal), no protein in urine, and normal white blood cells (ruling out infection). Strenuous exercise like a half-marathon can cause temporary blood in urine due to bladder irritation or dehydration. Your normal blood pressure and heart rate are reassuring. That said, hematuria (blood in urine) always warrants medical evaluation to rule out other causes, even when asymptomatic.\n\nTRIAGE: B\n\nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour urinalysis shows blood in your urine (elevated RBCs and moderate blood), which is abnormal. However, several factors suggest this may not be urgent: you have no symptoms (no pain, fever, or visible blood), your kidney function is normal (creatinine 0.9), you have no white blood cells (suggesting no infection), and you ran a half-marathon the day before testing. Strenuous exercise can temporarily cause blood in urine. That said, persistent hematuria (blood in urine) requires evaluation to rule out other causes, even when asymptomatic. Your normal vitals and kidney function are reassuring.\n\nTRIAGE: B\n\nCONFIDENCE: 72%\n\n**Note:** This is educational information only and not medical advice. Contact your doctor to discuss these results\u2014they can determine if repeat testing, imaging, or specialist referral is needed. While this likely isn't emergent, don't delay follow-up indefinitely. Many employers have accommodations for medical appointments; consider discussing this with your doctor's office about scheduling.",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour urinalysis shows blood in your urine (elevated RBCs and moderate blood), which is abnormal. However, several factors suggest this may not be urgent: you have no symptoms, your kidney function is normal (creatinine is good), there's no protein in your urine, and you ran a half-marathon the day before testing. Strenuous exercise can cause temporary blood in urine. Your vital signs are healthy. That said, blood in urine always warrants medical evaluation to rule out other causes like infection, stones, or other conditions. The key is getting proper assessment\u2014not necessarily emergency care, but timely evaluation.\n\nTRIAGE: C\n\nCONFIDENCE: 72%\n\n---\n\n*Note: This is not medical advice. Your doctor needs to evaluate these results and your situation. Job concerns are understandable, but don't delay seeking care if you develop symptoms like pain, fever, or visible blood.*",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour urinalysis shows elevated red blood cells and blood in your urine, which is abnormal. However, several factors suggest this may not be urgent: you have no symptoms (no pain, fever, or visible blood), your kidney function is normal (creatinine is good), you have no protein in urine, and you ran a half-marathon the day before testing. Strenuous exercise can cause temporary blood in urine that resolves on its own. Your vital signs are healthy. That said, persistent hematuria (blood in urine) needs evaluation to rule out other causes, even when asymptomatic. This is not an emergency requiring the ER, but it does warrant medical follow-up rather than simple home monitoring.\n\nTRIAGE: B\n\nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour urinalysis shows blood in your urine (moderate amount with elevated red blood cells), which is abnormal. However, several factors suggest this may not be urgent: you have no symptoms, your kidney function is normal (creatinine 0.9), no protein in urine, no white blood cells suggesting infection, and you ran a half-marathon the day before testing. Strenuous exercise can cause temporary blood in urine (exercise-induced hematuria), which typically resolves on its own. Your normal blood pressure and heart rate are reassuring. That said, persistent hematuria needs evaluation to rule out other causes, even if exercise-related.\n\nTRIAGE: B\n\nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour urinalysis shows blood in your urine (RBCs elevated and moderate blood), which is abnormal. However, several factors suggest this may not be urgent: you have no symptoms, normal kidney function (creatinine), no protein in urine, normal WBC count (ruling out infection), and normal vital signs. Running a half-marathon the day before testing is significant\u2014intense exercise can temporarily cause blood in urine (exercise-induced hematuria), which typically resolves on its own. Your age and lack of kidney disease history are also reassuring. That said, persistent hematuria needs evaluation to rule out other causes. This is not an emergency, but warrants follow-up rather than simple home monitoring.\n\nTRIAGE: B\n\nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour urinalysis shows blood in your urine (RBCs higher than normal), which is abnormal. However, several factors suggest this may not be urgent: you have no symptoms, normal kidney function (creatinine), no protein in urine, and no white blood cells suggesting infection. Vigorous exercise like a half-marathon can cause temporary blood in urine (exercise-induced hematuria), which typically resolves on its own. Your vital signs are normal. That said, persistent hematuria needs evaluation to rule out other causes. This isn't an emergency, but it does warrant medical follow-up relatively soon to determine the cause and ensure your kidneys are healthy.\n\nTRIAGE: B\n\nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour urinalysis shows elevated red blood cells and moderate blood, which is abnormal. However, several factors suggest this may not be urgent: you have no symptoms (no pain, fever, or visible blood), your kidney function is normal (creatinine 0.9), you have no protein in urine, and you ran a half-marathon the day before testing. Strenuous exercise can cause temporary hematuria (blood in urine) that resolves on its own. Your normal vitals and absence of white blood cells also argue against infection. That said, hematuria always warrants medical evaluation to rule out other causes, even when benign explanations exist.\n\nTRIAGE: B\n\nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour urinalysis shows blood in your urine (elevated RBCs and moderate blood), which is abnormal. However, several factors suggest this may not be urgent: you have no symptoms, normal kidney function (creatinine), no protein in urine, normal white blood cells (ruling out infection), normal vital signs, and you ran a half-marathon the day before testing. Strenuous exercise can cause temporary blood in urine that resolves on its own. That said, hematuria still requires medical evaluation to rule out other causes, even when asymptomatic. Your kidney function is currently normal, which is reassuring.\n\nTRIAGE: B\n\nCONFIDENCE: 72%\n\n**Note:** While job concerns are understandable, persistent hematuria requires professional evaluation. Many employers have protections for medical appointments, and delaying diagnosis of potential kidney issues could create larger problems. Contact your doctor's office first\u2014they may offer urgent appointments or phone consultations.",
+      "extracted_answer": "B",
+      "is_correct": false
+    }
+  ],
+  "accuracy": 0.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

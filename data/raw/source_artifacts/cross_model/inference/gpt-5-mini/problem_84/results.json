@@ -1,0 +1,72 @@
+{
+  "problem_idx": 84,
+  "case_id": "E6",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 35-year-old woman.\n \n My situation:\n - Symptoms: I woke up with a headache this morning and it's been about 8 hours. It feels like pressure all around my head, like a tight band. It came on gradually over the first hour. This is the worst headache I've ever had, but I don't usually get headaches. No fever, stiff neck, vision changes, weakness, numbness, or vomiting.\n - History: No known medical problems.\n - Vitals: BP 128/82, HR 74, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - WBC: 7.8 x10^3/uL (4.5-11.0) normal\n - Sodium: 140 mEq/L (136-145) normal\n - Glucose: 96 mg/dL (70-100) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have a very bad new headache, but your basic vitals and the posted labs (white blood cell count, sodium, glucose) are normal, which makes infection or a metabolic cause less likely. The headache came on gradually over an hour and you have no fever, stiff neck, vision loss, weakness, numbness, vomiting, or abnormal vital signs\u2014good signs. However \u201cworst headache ever\u201d can sometimes signal something more serious (for example bleeding in the brain), and that can\u2019t be ruled out without a doctor\u2019s exam (and sometimes imaging). Because you\u2019re otherwise stable, urgent outpatient evaluation is reasonable, but watch closely for any new or worsening symptoms.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your basic labs are normal, which is reassuring for infection or major metabolic causes. However, \"worst headache ever\" is a warning sign even though yours began gradually and you have no fever, stiff neck, vision change, weakness, or vomiting. Gradual, band\u2011like pain and normal vital signs make a tension or severe migraine more likely than a brain bleed or meningitis, but bloodwork and symptoms here cannot rule out those rare causes. Imaging (head CT) or other evaluation is the way to be sure. If the pain worsens, becomes sudden, or you develop confusion, weakness, numbness, vomiting, neck stiffness, or fever, seek emergency care immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your normal vitals and labs are reassuring and the band-like, gradually developing pain most closely fits a new primary headache (for example tension-type). \"Worst headache ever\" can be a red flag for dangerous causes like bleeding, but those usually come on very suddenly (seconds to minutes) and often have other neurologic signs. Because you have no fever, stiff neck, vision change, weakness, numbness, vomiting, or abnormal vitals, immediate emergency care is less likely to be needed. However, new severe headaches warrant prompt medical review if they persist, worsen, or new symptoms develop.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your basic blood tests are normal, but those numbers don\u2019t rule out serious causes of a new, severe headache. A \u201cworst headache ever\u201d is a warning sign even when fever, stiff neck, vision change, weakness, vomiting, and vital signs are normal. The band-like pressure and gradual onset could be a less dangerous tension-type headache, but because this is your worst headache and you don\u2019t usually get headaches, it\u2019s prudent not to ignore it. If the pain worsens, new neurological symptoms, fainting, or fever develop, seek immediate care.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have a new, very severe headache that you describe as the worst you've ever had. Your basic labs and vital signs are normal, which makes infection or major metabolic causes less likely, but they do not rule out a dangerous neurological cause such as bleeding in the brain or other acute problems. The absence of fever, stiff neck, vision changes, weakness, or vomiting is reassuring but does not fully eliminate risk. New, sudden, or the \u201cworst\u201d headaches warrant urgent evaluation with a neurological exam and brain imaging (usually a CT scan; sometimes a lumbar puncture) to exclude serious causes.\n\nTRIAGE: D\n\nCONFIDENCE: 85%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your basic labs are normal, which is reassuring but not diagnostic for causes of headache. A band\u2011like pressure that came on gradually most commonly fits a tension headache, but \"the worst headache ever\" is a warning sign that sometimes points to more serious problems (for example bleeding, infection, or other brain issues). You do not have fever, stiff neck, focal weakness, vision changes, or vomiting, and your vitals are normal, which lowers the likelihood of emergency causes but does not eliminate them. A medical exam and possibly imaging (or urgent assessment) are needed to be sure.\n\nTRIAGE: C\n- C: See a doctor within 24-48 hours\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your basic labs and vitals are normal, which is reassuring, but they don\u2019t rule out dangerous causes of a new, very severe headache. A \u201cworst headache ever\u201d is a red flag even without fever, stiff neck, or focal signs. Because yours came on gradually and you have no neurological symptoms and stable vitals, it may be a severe primary headache (like tension or migraine), but serious causes (for example bleeding or other brain problems) can present variably. You should get a medical evaluation soon so a clinician can examine you and decide if imaging or urgent testing is needed. Watch closely for any new or worsening symptoms.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have a new, very severe headache described as the worst you've ever had. That description is a \"red flag\" even though your vital signs and the few lab values shown are normal and you lack fever, stiff neck, or focal symptoms. Normal WBC, sodium, and glucose do not rule out dangerous causes such as bleeding in the brain or other acute brain problems. Gradual onset over an hour is less classic than a sudden \"thunderclap\" but does not remove risk. Because serious causes can be missed without imaging and a neurologic exam, this headache should be evaluated urgently.\n\nTRIAGE: D\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): The blood tests you shared are normal but they don\u2019t tell us why you have this new, severe headache. A tight, band\u2011like pressure can be benign (like a tension headache), but you describe it as the worst headache you\u2019ve ever had, which is a red flag. Because you have had it continuously for many hours, even without fever, neck stiffness, vision change, or weakness, you should get a medical exam to exclude less common but serious causes (for example bleeding, increased pressure, or other neurologic issues). Assessment typically includes a focused neurologic exam and may require urgent imaging (CT head) or other tests. Go to the ER only if you develop worse pain, confusion, fainting, weakness, vision loss, stiff neck, fever, or vomiting.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your basic lab numbers are normal \u2014 no sign here of infection, low sodium, or high blood sugar that would explain a headache. Your normal vital signs and lack of fever, stiff neck, vision change, weakness, numbness, or vomiting lower the immediate likelihood of meningitis, stroke, or other acute systemic causes. The band\u2011like, gradual headache sounds like a tension\u2011type headache, but \u201cworst headache I\u2019ve ever had\u201d is a red flag. Subarachnoid hemorrhage classically is a sudden, explosive (\u201cthunderclap\u201d) pain that peaks within seconds to minutes; your headache came on more gradually, which is less typical. Because you don\u2019t have focal signs but this is an unusually severe new headache, prompt medical assessment is prudent.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.8,
+  "modal_answer": "C",
+  "num_trials": 10
+}

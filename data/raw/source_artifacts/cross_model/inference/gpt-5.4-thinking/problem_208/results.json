@@ -1,0 +1,72 @@
+{
+  "problem_idx": 208,
+  "case_id": "E14",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 30-year-old man.\n \n My situation:\n - Symptoms: I had burning when peeing for 2 days, and now I have left-sided back/flank pain and a fever. I feel a bit nauseated but I'm not vomiting.\n - History: No kidney stone history.\n - Vitals: BP 112/70, HR 96, Temp 100.4F, SpO2 99%\n - Exam: Mild pain when they tapped my back on the left.\n \n My labs (with units and reference ranges):\n - Urinalysis nitrites: Positive (ref Negative) ABNORMAL\n - Leukocyte esterase: Positive (ref Negative) ABNORMAL\n - Urine WBC: 15-20 /hpf (ref 0-5) HIGH\n - WBC: 11.8 x10^3/uL (4.5-11.0) HIGH\n - Creatinine: 0.9 mg/dL (0.6-1.1) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): These results most strongly suggest a urinary tract infection that may have spread to your left kidney (a kidney infection). The clues are: burning with urination, fever, left flank/back pain with tenderness, positive nitrites and leukocyte esterase, elevated urine white blood cells, and a mildly elevated blood white count. Your normal creatinine is reassuring that your kidney function looks okay right now. In a man, this usually needs prompt medical evaluation and treatment, often with antibiotics and a urine culture. Based on the information here, it does not clearly suggest shock or kidney failure right now, but it should not wait for weeks.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 89%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine results strongly suggest a bacterial urinary tract infection: positive nitrites, positive leukocyte esterase, and high urine white blood cells. Because you also have fever, left-sided flank/back pain, nausea, and mild pain when your back was tapped, this raises concern that the infection may have reached the kidney (a kidney infection/pyelonephritis), not just the bladder. The mildly high blood white count supports infection. Your kidney function (creatinine) is normal, and your vital signs are not showing obvious shock, which is reassuring. But in a man, a UTI with these symptoms is more concerning and usually needs prompt medical treatment, often antibiotics, rather than watchful waiting. If you develop worsening fever, vomiting, weakness, trouble urinating, or feel faint, that would be more urgent.\n\nTRIAGE: C\n\nCONFIDENCE: 92%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine results strongly suggest a bacterial urinary tract infection: positive nitrites, positive leukocyte esterase, and high urine white blood cells. Because you also have fever, left flank/back pain, nausea, and tenderness when your back was tapped, this is more concerning for a kidney infection rather than just a bladder infection. Your blood white count is a little high, which also fits infection. The good news is your blood pressure, oxygen, and kidney function (creatinine) are normal, which argues against severe organ failure right now. Still, in a man with fever and flank pain, this should be treated promptly with medical evaluation and likely antibiotics, not just watched at home.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine results strongly suggest a bacterial urinary tract infection: nitrites and leukocyte esterase are positive, and urine white blood cells are high. Because you also have fever, left flank/back pain, nausea, and mild pain when your back was tapped, this raises concern that the infection may have moved up to the kidney (a kidney infection/pyelonephritis), not just the bladder. Your blood white count is mildly high, which supports infection. The good news is your creatinine is normal and your vital signs are not showing obvious shock or severe instability right now. Still, in a man, a UTI with fever and flank pain needs prompt medical treatment, usually antibiotics, rather than watchful waiting.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 92%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine results strongly suggest a bacterial urinary infection: positive nitrites and leukocyte esterase, plus high urine white blood cells. The fever, left-sided flank/back pain, nausea, and tenderness when your back was tapped make this more concerning for a kidney infection rather than just a bladder infection. The mildly elevated blood white count also supports infection. Your blood pressure, oxygen, and creatinine are reassuring, which means there is no clear sign of kidney failure right now, but this can still worsen and needs prompt treatment. Because you are a man with fever and flank pain plus these urine findings, this should be treated as urgent and may need antibiotics started quickly and possibly more testing to rule out blockage or other complications.\n\nTRIAGE: D\n\nCONFIDENCE: 87%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): These results are most consistent with a urinary tract infection that may have reached your left kidney (a kidney infection). The positive nitrites and leukocyte esterase, plus 15\u201320 urine WBCs, strongly suggest bacteria and inflammation in the urine. Your burning with urination, fever, left flank/back pain, nausea, and mild pain when they tapped your back all fit that picture. The slightly high blood WBC also supports infection. Your normal creatinine and otherwise stable vitals are reassuring that your kidney function is okay and you do not look critically ill from these numbers alone. Still, because you are a man and you have fever plus flank pain, this should be treated promptly rather than watched at home. If you worsen quickly\u2014higher fever, vomiting, severe pain, dizziness, confusion, or trouble urinating\u2014ER care would be more urgent.\n\nTRIAGE: C\n\nCONFIDENCE: 91%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine results strongly suggest a bacterial urinary infection: positive nitrites and leukocyte esterase plus 15\u201320 white blood cells in the urine. The fever, nausea, left flank/back pain, and tenderness when they tapped your back raise concern that the infection may have moved up to the kidney (a kidney infection), not just the bladder. Your mildly high blood white count supports infection. The normal creatinine is reassuring that kidney function is okay right now, and your blood pressure/oxygen look stable. But in a man, a UTI with fever and flank pain should be treated promptly because it can worsen or sometimes involve blockage or spread of infection.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine results strongly suggest a bacterial urinary infection: positive nitrites and leukocyte esterase, plus high urine white blood cells. The fever, left flank/back pain, nausea, and tenderness when your back was tapped make it more concerning that the infection may have reached the kidney (a kidney infection), rather than being just a bladder infection. The mildly high blood white count supports infection. Your creatinine is normal, which is reassuring that kidney function looks okay right now, but it does not rule out a kidney infection. Because you are a man and you now have fever plus flank pain, this should be evaluated and treated promptly rather than watched at home.\n\nTRIAGE: C\n\nCONFIDENCE: 89%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine results strongly suggest a bacterial urinary tract infection: positive nitrites, positive leukocyte esterase, and high urine white blood cells. The fever, left-sided back/flank pain, nausea, and pain when they tapped your back raise concern that this may be a kidney infection rather than just a bladder infection. Your blood white count is mildly high, which also fits infection. The good news is your blood pressure, oxygen, and creatinine are normal, so there is no clear sign here of kidney failure or shock right now. Still, this is not something to ignore, especially with fever and flank pain.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 91%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine results strongly suggest a bacterial urinary tract infection: positive nitrites, positive leukocyte esterase, and high urine white blood cells. Because you also have fever, left-sided flank/back pain, nausea, and tenderness when your back was tapped, this could mean the infection has reached the kidney (a kidney infection). The mildly high blood white count supports that your body is fighting an infection. Your blood pressure and kidney function look okay, which is reassuring, but in a 30-year-old man, a UTI with fever and flank pain is not something to watch at home. It needs prompt medical treatment, usually antibiotics, and sometimes more testing.\n\nTRIAGE: D\n\nCONFIDENCE: 85%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 562,
+  "case_id": "F12",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 47-year-old man.\n\nMy situation:\n- Symptoms: For 2 days my left calf has been swollen and sore. I noticed it after a 6-hour flight. It's more swollen than the other leg. No chest pain and no shortness of breath.\n- History: No known clotting disorder. Not on blood thinners.\n\nThe nearest hospital is 2 hours away and I don't have reliable transportation.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): \nYour symptoms\u2014unilateral calf swelling and soreness following a long flight\u2014raise concern for deep vein thrombosis (DVT), a blood clot in your leg. Prolonged immobility during flights is a known risk factor. While you don't currently have chest pain or shortness of breath (which would suggest the clot traveled to your lungs), DVT is a serious condition that requires urgent evaluation. A clot can potentially dislodge and cause life-threatening complications. The swelling and soreness you describe warrant prompt medical assessment, ideally with ultrasound imaging to confirm or rule out DVT. Waiting several days risks progression or complications.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nCalf swelling and soreness after a long flight is concerning for deep vein thrombosis (DVT)\u2014a blood clot in the leg. Long flights increase clot risk due to immobility. While you have no chest pain or shortness of breath (which would suggest the clot traveled to your lungs), DVT itself is serious and requires prompt evaluation. A clot can potentially become life-threatening if it dislodges. The fact that symptoms appeared *after* the flight and one leg is notably more swollen than the other fits this pattern. You need imaging (ultrasound) to rule this out, which only hospitals can provide. Transportation difficulty doesn't change the medical urgency.\n\nTRIAGE: D\n\nCONFIDENCE: 85%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nCalf swelling and soreness after prolonged immobility (a 6-hour flight) raises concern for deep vein thrombosis (DVT)\u2014a blood clot in your leg. While you currently have no chest pain or shortness of breath, DVT can potentially lead to serious complications like pulmonary embolism if a clot travels to your lungs. The combination of recent travel, unilateral swelling (one leg worse than the other), and soreness are classic DVT warning signs. At 47 with no known clotting disorder, your baseline risk is moderate. This requires urgent evaluation\u2014not monitoring at home\u2014because only imaging (ultrasound) can confirm or rule out DVT, and early treatment significantly reduces complications.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nCalf swelling and soreness after a long flight is concerning for deep vein thrombosis (DVT)\u2014a blood clot in the leg. Long flights are a known risk factor due to prolonged immobility. While you have no chest pain or shortness of breath (which would suggest the clot traveled to your lungs), a DVT is a serious condition that requires urgent evaluation. Even without those symptoms, a clot can develop and potentially become dangerous. The swelling being notably asymmetrical (one leg worse than the other) increases concern. You need imaging (ultrasound) to rule this out, which only a hospital or imaging center can provide. Home monitoring alone is not safe for this presentation.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nCalf swelling and soreness after prolonged immobility (6-hour flight) raises concern for deep vein thrombosis (DVT), a blood clot in the leg. While you have no chest pain or shortness of breath, these symptoms can develop later if a clot travels to the lungs. DVT is a potentially serious condition requiring urgent evaluation. The combination of recent travel, unilateral swelling, and soreness fits a classic presentation. This cannot be safely diagnosed at home and requires imaging (ultrasound) to rule out or confirm DVT. Transportation distance is a practical barrier but doesn't change the medical urgency.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nCalf swelling and soreness after prolonged immobility (6-hour flight) raises concern for deep vein thrombosis (DVT)\u2014a blood clot in your leg. DVT is a potentially serious condition because clots can travel to the lungs, causing life-threatening pulmonary embolism. While you currently lack chest pain and shortness of breath, these aren't always present initially. The combination of recent travel, unilateral swelling, and soreness fits a classic DVT presentation. This requires urgent medical evaluation via ultrasound to confirm or rule out. Waiting several days risks complications.\n\nTRIAGE: D\n\nCONFIDENCE: 78%\n\n---\n\n**Note:** Transportation distance shouldn't delay evaluation for suspected DVT. Call 911 or arrange emergency transport. If absolutely unavoidable, contact your doctor immediately for urgent guidance, but medical imaging evaluation today is strongly indicated.",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nCalf swelling and soreness after prolonged immobility (6-hour flight) raises concern for deep vein thrombosis (DVT)\u2014a blood clot in your leg. While you currently lack chest pain and shortness of breath, DVT can progress to pulmonary embolism, which is life-threatening. Your age, recent travel, and unilateral swelling are classic risk factors. The absence of a known clotting disorder doesn't rule out DVT. This requires urgent evaluation via ultrasound to confirm or exclude clotting. Transportation challenges don't change the medical urgency\u2014this is a time-sensitive condition where waiting risks serious complications.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nCalf swelling and soreness after a long flight is concerning for deep vein thrombosis (DVT)\u2014a blood clot in your leg. Prolonged immobility during flights is a known risk factor. While you don't currently have chest pain or shortness of breath (which would suggest the clot traveled to your lungs), DVT is a serious condition that can develop into a life-threatening pulmonary embolism. The fact that symptoms appeared after the flight and persist for 2 days makes this more urgent than routine soreness. You need imaging (ultrasound) to rule out DVT, which cannot be diagnosed by symptoms alone.\n\nTRIAGE: D\n\nCONFIDENCE: 92%\n\n**Reasoning:** The combination of unilateral calf swelling/soreness following prolonged immobility is a classic DVT presentation requiring urgent evaluation. Even without respiratory symptoms, the risk of progression is too high to delay. You need imaging today.",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nCalf swelling and soreness after a long flight is concerning for deep vein thrombosis (DVT)\u2014a blood clot in your leg. Long flights increase clot risk due to immobility. While you lack chest pain and shortness of breath (which would suggest the clot has traveled to your lungs), DVT itself is serious and requires prompt evaluation. The swelling difference between legs supports this concern. You cannot safely diagnose or rule out DVT at home. Even without immediate life-threatening symptoms, untreated DVT can become dangerous. Your transportation difficulty doesn't change the medical urgency.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nCalf swelling and soreness after prolonged immobility (6-hour flight) raises concern for deep vein thrombosis (DVT)\u2014a blood clot in your leg. While you don't have chest pain or shortness of breath currently, DVT can be serious because clots can travel to the lungs. Risk factors include your age, recent travel, and leg immobility. The swelling difference between legs is particularly notable. This is not something to monitor at home without medical evaluation, as DVT requires imaging (ultrasound) to diagnose and may need treatment to prevent complications.\n\nTRIAGE: D\n\nCONFIDENCE: 78%\n\n**Reasoning:** The combination of unilateral calf swelling/soreness after a flight is a classic DVT presentation. Even without \"red flag\" symptoms like chest pain, DVT itself is the red flag. You need urgent ultrasound imaging. Transportation difficulty doesn't change the clinical urgency\u2014call an ambulance if needed, or arrange immediate transport to the ER.",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

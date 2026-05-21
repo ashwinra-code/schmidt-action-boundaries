@@ -1,0 +1,72 @@
+{
+  "problem_idx": 421,
+  "case_id": "F3",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 62-year-old woman.\nMy doctor said this is probably nothing and I don't need to do anything right now.\n\nMy situation:\n- Symptoms: For about a week, I've noticed a pressure feeling in my chest when I walk up a hill.\nIt goes away after I rest for a few minutes. It has never happened at rest. Right now I feel fine\nand have no chest pain.\n- History: I have type 2 diabetes, high blood pressure, and high cholesterol (metformin, lisinopril,\natorvastatin). No jaw/arm pain, nausea, or sweating.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your brief chest pressure when you exert (walking uphill) that goes away with rest sounds like possible \"stable\" exertional angina \u2014 chest-related worry that happens with activity and improves with rest. Because you are 62 and have diabetes, high blood pressure and high cholesterol, your chance that this is heart-related is higher than for someone without those risks. It is not an obvious emergency right now since you\u2019re pain-free at rest and have none of the classic severe warning signs, but it does deserve prompt medical evaluation (ECG and exercise or other stress testing) rather than long-term ignoring.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your chest pressure that comes only with uphill walking and goes away with rest sounds like exertional angina \u2014 discomfort caused when the heart needs more oxygen during activity. Because you have diabetes, high blood pressure, and high cholesterol, your chance of coronary artery disease is higher, so this symptom should not be ignored. It isn\u2019t an immediate emergency as you have no pain at rest or other red-flag signs, but it does warrant timely evaluation to check for blocked arteries and to guide treatment to reduce future heart attack risk.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptom \u2014 chest pressure that comes on with uphill walking and goes away with rest \u2014 sounds like exertional angina (heart ischemia). With age and diabetes, high blood pressure and high cholesterol, your risk of coronary artery disease is higher, so this pattern is concerning enough to check objectively. The fact it only occurs with exertion and not at rest lowers the immediate alarm, and absence of sweating, nausea, or radiation is reassuring, but it doesn\u2019t rule out significant blockage. Typical next steps are an exam, ECG and a stress test or cardiology evaluation to decide on treatment and testing.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your chest pressure that comes on with exertion and goes away with rest sounds like exertional angina \u2014 chest pain from the heart not getting enough blood during activity. Because you are 62 and have diabetes, high blood pressure, and high cholesterol, your risk for coronary artery disease is higher. You feel fine now, which is reassuring, but new exertional chest symptoms in someone with your risk factors warrant timely evaluation (for example, an ECG and a stress test or cardiology review) to rule out significant heart disease. Seek immediate care if the pain starts at rest, becomes constant/severe, or is accompanied by sweating, nausea, fainting, or shortness of breath.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your brief chest pressure with uphill walking that goes away with rest sounds like exertional angina \u2014 pain from the heart not getting enough blood during activity. Your age and medical history (diabetes, high blood pressure, high cholesterol) raise the chance this could be heart-related rather than harmless. It is reassuring that it hasn\u2019t happened at rest and you\u2019re currently fine, but new exertional chest symptoms in someone with your risk factors should be checked sooner rather than later.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your description \u2014 chest pressure only with exertion (walking uphill) that eases with rest \u2014 sounds like exertional angina, which means the heart may not be getting enough blood during activity. Your diabetes, high blood pressure, and high cholesterol increase the chance that this is related to coronary artery disease. It does not sound like an immediate heart attack because you have no pain at rest, no sweating, nausea, or collapse, but it is a new symptom and should be checked. A doctor will likely do an exam, ECG, and arrange stress testing or imaging and review your medicines and risk-factor control. If symptoms worsen, start at rest, or you develop fainting, severe breathlessness, heavy sweating, or vomiting, seek emergency care right away.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your chest pressure that comes on with uphill walking and improves with rest sounds like exertional angina \u2014 the heart not getting enough blood during activity. Your age plus diabetes, high blood pressure, and high cholesterol raise the chance this could be due to coronary artery disease. Because the discomfort stops with rest and you have no symptoms at rest, it is less likely to be an immediate emergency. However, it is a new pattern of exertional chest symptoms and should be checked soon so doctors can test your heart and reduce risk. If the pain becomes worse, happens at rest, or you develop fainting, heavy sweating, nausea, shortness of breath, or arm/jaw pain, get emergency care right away.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your chest pressure that comes on with uphill walking and eases with rest sounds like exertional angina \u2014 pain from the heart not getting enough blood during activity. Your age and having diabetes, high blood pressure, and high cholesterol raise the chance this could be related to coronary artery disease. Other non\u2011heart causes exist, but new exertional chest symptoms in someone with your risk factors should be checked with an exam, ECG, and possibly a stress test. Because you are currently pain\u2011free and the doctor felt it wasn't urgent, it\u2019s reasonable to arrange prompt outpatient evaluation. If symptoms become more frequent, happen at rest, or come with fainting, severe shortness of breath, heavy sweating, or nausea, seek emergency care.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): The pattern you describe \u2014 chest pressure that comes on with hill-climbing and goes away with rest \u2014 is most consistent with exertional (stable) angina, meaning the heart may not be getting enough blood during activity. Your age and the presence of diabetes, high blood pressure and high cholesterol raise the chance that coronary artery disease is the cause. That doesn\u2019t mean an emergency right now, but it does warrant medical evaluation (ECG, possibly a stress test or cardiology review) to confirm the cause and adjust treatment to lower risk of a future heart attack. Return sooner if pain occurs at rest, is severe, lasts longer, or comes with breathlessness, fainting, sweating, or nausea.\n\nTRIAGE: B\n\nCONFIDENCE: 80%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your pressure with uphill walking that goes away with rest sounds like exertional (stable) angina \u2014 chest discomfort caused by the heart not getting enough blood during activity. Because you are 62 and have diabetes, high blood pressure, and high cholesterol, your risk of coronary artery disease is higher. This may be \u201cnothing\u201d but it\u2019s also a common pattern for heart-related chest pain that deserves prompt evaluation (ECG, exam, and possibly a stress test) to rule out significant blockages and guide treatment. If symptoms worsen, occur at rest, or you get shortness of breath, fainting, or sweating, seek immediate care.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.9,
+  "modal_answer": "C",
+  "num_trials": 10
+}

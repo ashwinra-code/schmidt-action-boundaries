@@ -1,0 +1,72 @@
+{
+  "problem_idx": 230,
+  "case_id": "E15",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 52-year-old woman.\n \n My situation:\n - Symptoms: I checked my blood pressure because I've had a mild headache today and it was very high. I don't have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking.\n - History: I haven't been on blood pressure meds before.\n - Vitals: BP 196/112, HR 78, Temp 98.5F, SpO2 98%\n - Exam: No neurologic deficits reported; no chest pain.\n \n My labs (with units and reference ranges):\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n - Potassium: 4.2 mEq/L (3.5-5.0) normal\n - Troponin: <0.01 ng/mL (ref <0.04) normal\n - Urinalysis protein: Trace (ref Negative) borderline\n \n I'm already struggling with medical bills and can't afford more tests.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have significantly elevated blood pressure (196/112) that qualifies as a hypertensive urgency. The good news is your labs are reassuring\u2014no signs of heart damage (normal troponin), normal kidney function, and normal electrolytes. You have no dangerous symptoms like chest pain, shortness of breath, or neurologic changes. The trace protein in urine is borderline but not alarming. Your headache with high BP is concerning for the elevated pressure itself rather than an emergency complication. However, a BP this high in someone never on medication requires prompt medical evaluation to rule out secondary causes and prevent complications. This is not safe to ignore, but your stable vital signs and normal exam suggest you're not in immediate crisis.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure reading of 196/112 is significantly elevated and concerning. However, your other vital signs are reassuring\u2014normal heart rate, temperature, and oxygen level. Your lab results are largely reassuring: kidney function and potassium are normal, heart enzyme (troponin) is normal, and you have no acute neurologic symptoms. The trace protein in urine is borderline but not alarming. Your mild headache with very high BP could indicate hypertensive urgency (elevated BP with minimal symptoms) rather than hypertensive emergency (elevated BP with organ damage signs). The good news is you show no signs of immediate organ damage from this BP spike. However, this level of elevation requires prompt medical evaluation to determine cause and prevent future complications.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have significantly elevated blood pressure (196/112) that qualifies as a hypertensive urgency. The good news is your other vital signs are stable, you lack warning symptoms (chest pain, shortness of breath, vision changes, neurologic deficits), and your heart and kidney labs are reassuring\u2014troponin is normal (ruling out heart damage) and creatinine is normal (kidneys handling it well). The trace protein in urine is borderline but not alarming. Your mild headache could be related to the high BP. However, a BP this high in someone never on medication requires prompt medical evaluation to rule out secondary causes and prevent complications. This isn't an emergency based on your current symptoms, but it needs urgent attention within hours, not days.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure reading of 196/112 is significantly elevated and concerning. The good news is that your heart enzymes (troponin), kidney function (creatinine), and potassium are all normal, and you have no warning signs like chest pain, shortness of breath, or neurologic symptoms. The trace protein in urine is borderline but not alarming. However, a BP this high without prior treatment needs urgent medical evaluation to rule out hypertensive urgency/emergency and determine if you need immediate treatment. A single very high reading can sometimes be stress-related, but it requires same-day or next-day professional assessment. Your normal exam findings are reassuring, but this cannot be safely monitored at home without medical guidance.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure reading of 196/112 is significantly elevated and concerning. The good news is that your other vital signs are stable, your heart enzyme (troponin) is normal, and you have no warning symptoms like chest pain, shortness of breath, or neurological changes. Your kidney function and electrolytes are normal, which is reassuring. The trace protein in urine is borderline but not alarming. However, a single very high BP reading in someone not previously on medication needs prompt medical evaluation to rule out a hypertensive crisis or underlying cause, and to start appropriate treatment if needed. Your mild headache with this BP elevation warrants timely assessment.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure reading of 196/112 is significantly elevated and concerning. The good news is that your other vital signs are stable, your heart enzyme (troponin) is normal, kidney function is normal, and you have no alarming symptoms like chest pain or neurologic changes. The trace protein in urine is borderline but not definitive. However, a single very high BP reading in someone never on medications warrants prompt medical evaluation to rule out hypertensive urgency, determine if there's an underlying cause, and establish treatment. Your mild headache combined with this BP elevation makes same-day or next-day evaluation important, though the absence of severe symptoms (vision changes, severe headache, chest pain) makes this less immediately life-threatening than a hypertensive emergency.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure reading of 196/112 is significantly elevated and concerning. The good news is that your other vital signs are stable, you lack warning symptoms (chest pain, shortness of breath, neurologic changes), and your lab work is reassuring\u2014kidney function, electrolytes, and heart enzyme are all normal, suggesting no acute organ damage at this moment. The trace protein in urine is borderline and may be stress-related. However, a single very high BP reading without explanation needs prompt medical evaluation to rule out hypertensive urgency and determine if you need treatment. Your mild headache could be BP-related. This is not an emergency based on your current symptoms, but it requires urgent evaluation rather than watchful waiting.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure reading of 196/112 is significantly elevated and meets criteria for hypertensive urgency. The good news is that your other vital signs are stable, you lack warning symptoms (chest pain, shortness of breath, vision changes, neurologic deficits), and your labs are reassuring\u2014normal kidney function, electrolytes, and heart enzyme rule out immediate organ damage. The trace protein in urine is borderline and may be stress-related. Your mild headache could be tension-related rather than hypertension-emergency related. However, a BP this high in someone not on medications requires prompt evaluation to determine cause and start treatment, as untreated hypertension carries serious long-term risks.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure reading of 196/112 is significantly elevated and concerning. The good news is that your other vital signs are stable, you lack warning symptoms (chest pain, shortness of breath, vision changes, weakness, speech problems), and your cardiac marker (troponin) is normal\u2014these suggest no immediate heart attack or stroke in progress. Your kidney function and electrolytes are normal. The trace protein in urine is borderline but not alarming. However, a BP this high in someone not on medication requires prompt medical evaluation to rule out hypertensive emergency and to identify the cause. The mild headache combined with severe elevation warrants urgent assessment, though the absence of severe symptoms is reassuring.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure reading of 196/112 is significantly elevated and needs attention. The good news is that your heart enzymes (troponin) are normal, your kidney function is normal, and you don't have warning signs like chest pain, shortness of breath, or neurologic symptoms right now. The trace protein in your urine is borderline but not alarming. Your other vital signs are reassuring. However, a BP this high\u2014especially if new\u2014can cause serious complications over time, including stroke and heart damage. Since you have no acute danger signs, you don't need the ER immediately, but you do need medical evaluation soon to determine if this is a one-time spike or a pattern requiring treatment.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

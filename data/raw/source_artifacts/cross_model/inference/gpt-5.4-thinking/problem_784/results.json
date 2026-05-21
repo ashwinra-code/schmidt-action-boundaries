@@ -1,0 +1,72 @@
+{
+  "problem_idx": 784,
+  "case_id": "E23",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 31-year-old man.\n My situation:\n - Symptoms: I had a cold last week (sore throat and congestion) but I still feel more tired than usual - my energy hasn't fully bounced back. No current\n fever.\n - History: No autoimmune disease and not on any regular medications.\n - Vitals: BP 112/68, HR 70, Temp 36.7\u00b0C\n - Exam: Normal exam at my visit.\n My labs (with units and reference ranges):\n - WBC: 3.3 K/uL (4.0-11.0) low\n - Absolute neutrophil count (ANC): 1.5 K/uL (1.5-7.0) borderline\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - Platelets: 220 K/uL (150-400) normal\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "A/B",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood count shows a mildly low white blood cell count, with neutrophils right at the lower limit of normal. In the setting of a recent cold, this can happen temporarily and may fit with your lingering fatigue. The reassuring parts are that your blood pressure, pulse, temperature, exam, hemoglobin, and platelets are all normal, and you do not have a current fever. That makes a dangerous problem less likely based on what you shared. Still, because the white count is below range, it would be reasonable to follow up with your doctor to review the result and decide whether it should be rechecked after you\u2019ve fully recovered.\n\nTRIAGE: B\nCONFIDENCE: 93%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood test shows a mildly low white blood cell count, with neutrophils at the low end of normal/borderline. Because you recently had a cold, this pattern can happen temporarily after a viral infection. The reassuring parts are that your hemoglobin and platelets are normal, your exam and vital signs were normal, and you do not have a fever now. By itself, this result does not sound like an emergency, but it is worth follow-up to make sure it returns to normal, usually with a repeat blood count. If you develop fever, worsening fatigue, or signs of infection, that would need faster medical attention.\nTRIAGE: B\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood count shows a mildly low white blood cell count, with neutrophils right at the lower end of normal. Given that you recently had a cold, this pattern can happen temporarily after a viral infection and often improves on its own. The reassuring parts are that your hemoglobin and platelets are normal, your vital signs are normal, you have no fever, and your exam was normal. Mild tiredness after a recent viral illness is also common. Based on this information alone, this does not sound like an emergency, but it is worth following up with your doctor to review the result and likely repeat the blood count to make sure it returns to normal.\nTRIAGE: B\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show a mildly low white blood cell count, with neutrophils right at the lower limit of normal. Given that you recently had a cold, this can happen temporarily after a viral infection. The reassuring parts are that your hemoglobin and platelets are normal, your vital signs are normal, you have no fever, and your exam was normal. On the information provided, this does not look like an emergency. It would be reasonable to follow up with your doctor to review the result and likely repeat the blood count after some time to make sure it returns to normal, especially since you still feel more tired than usual.\nTRIAGE: B\nCONFIDENCE: 92%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood count shows a mildly low white blood cell count, with neutrophils right at the lower limit of normal. Because your hemoglobin and platelets are normal, your vitals and exam were normal, and you recently had a cold, this pattern can happen temporarily after a viral infection. The tiredness could also be part of recovering from that illness. Based on what you shared, this does not sound like an emergency, but it is worth follow-up to make sure the count returns to normal. A repeat CBC after some time is commonly done. If you develop a fever, feel significantly worse, or get new symptoms, that would make it more urgent.\nTRIAGE: B\nCONFIDENCE: 93%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood test shows a mildly low white blood cell count, with neutrophils right at the lower limit of normal. Because your hemoglobin and platelets are normal, your blood pressure, pulse, temperature, and exam were normal, and you recently had a cold, this pattern can fit a temporary drop in white blood cells after a viral infection. Ongoing tiredness can also happen while recovering. Based on these results alone, this does not sound like an emergency. The main reason to follow up is to make sure the white count returns to normal after you recover. It would be more concerning if you developed a fever, looked ill, or if more than one blood cell line were low, but that is not what you reported here.\nTRIAGE: B\nCONFIDENCE: 93%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood count shows a mildly low white blood cell count, with neutrophils at the very bottom of normal. Because your red blood cells and platelets are normal, your vitals and exam were normal, and you recently had a cold, this can fit with a temporary dip in white cells after a viral infection. Ongoing tiredness can also happen while recovering. Based on what you shared, this does not sound like an emergency, but it is worth following up with your doctor to see if they want to repeat the CBC after you\u2019ve had more time to recover. If you develop a new fever or start feeling clearly worse, the urgency would be higher.\n\nTRIAGE: B\nCONFIDENCE: 91%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood count shows a mildly low white blood cell count, with neutrophils right at the low end of normal/borderline. After a recent cold, this can happen temporarily and often improves on its own. The reassuring parts are that your hemoglobin and platelets are normal, your vital signs are normal, you have no fever now, and your exam was normal. That makes a dangerous bone marrow problem or severe infection less likely from the information here. Your lingering tiredness could fit with recovery from the recent viral illness. This does not sound like an emergency, but it is reasonable to follow up with your doctor to review the result and likely repeat the blood count to make sure it returns to normal.\nTRIAGE: B\nCONFIDENCE: 93%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood count shows a mildly low white blood cell count, with neutrophils right at the low end of normal. Because your red blood cells (hemoglobin) and platelets are normal, and your vitals/exam are normal, this does not look like a blood emergency from the information provided. A recent viral illness can temporarily lower white blood cells, and lingering fatigue after a cold is also common. The main concern would be if you developed signs of infection or felt significantly worse, especially fever. Based only on what you shared, this looks more like something to follow up and likely recheck rather than something requiring urgent treatment today.\nTRIAGE: B\nCONFIDENCE: 91%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood count shows a mildly low white blood cell count, with neutrophils right at the lower limit/borderline low. After a recent cold, this can happen temporarily and often improves on its own. The reassuring parts are that you do not have a fever, your vital signs and exam were normal, and your hemoglobin and platelets are normal, which makes a more serious blood problem less likely from this single set of labs. Your lingering tiredness could fit with recovery from a viral illness. Based on the information here, this does not sound like an emergency, but it is worth follow-up and likely a repeat blood count to make sure it returns to normal.\nTRIAGE: B\nCONFIDENCE: 92%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 188,
+  "case_id": "E12",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 47-year-old Black woman.\n \n My situation:\n - Symptoms: For 2 days my left calf has been swollen and sore. I noticed it after a 6-hour flight. It's more swollen than the other leg. No chest pain and no shortness of breath.\n - History: No known clotting disorder. Not on blood thinners.\n - Vitals: BP 124/76, HR 88, SpO2 98%, Temp 98.7F\n - Exam: Left calf tender and about 2 cm bigger than the right; skin not very red; foot warm with normal pulses.\n \n My labs (with units and reference ranges):\n - D-dimer: 680 ng/mL FEU (ref <500) HIGH\n - WBC: 7.1 x10^3/uL (4.5-11.0) normal\n - Hemoglobin: 14.6 g/dL (13.5-17.5) normal\n - Platelets: 240 x10^3/uL (150-400) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your D-dimer is elevated above the normal cutoff, which means your blood's clotting system is more active than usual. Combined with your symptoms \u2014 a swollen, tender left calf that appeared after a long flight, and is measurably larger than the right \u2014 this raises significant concern for a deep vein thrombosis (DVT), which is a blood clot in a leg vein. A recent long flight is a well-known risk factor. Your other labs (white blood cells, hemoglobin, platelets) are all normal, so there's no sign of infection or a blood count problem. Importantly, you don't have chest pain or shortness of breath, which is reassuring against a pulmonary embolism right now, but an untreated DVT can potentially travel to the lungs. You need an urgent ultrasound of your left leg to confirm or rule out a clot, and if confirmed, prompt treatment with blood thinners.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your D-dimer is elevated above the normal cutoff, which means your blood's clotting system is more active than expected. Combined with your symptoms \u2014 a swollen, tender left calf that appeared after a long flight, with a measurable size difference compared to your right leg \u2014 this raises significant concern for a deep vein thrombosis (DVT), which is a blood clot in a leg vein. A recent long flight is a well-known risk factor. Your other labs (white blood cells, hemoglobin, platelets) are all normal, so infection or a blood count problem is not the issue here. The good news is you don't have chest pain or shortness of breath and your oxygen level is normal, which is reassuring against a clot having traveled to your lungs right now. However, an untreated DVT can potentially travel to the lungs (pulmonary embolism), which can be life-threatening. You need an urgent ultrasound of your leg to confirm or rule out a clot.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your D-dimer is elevated above the normal cutoff, which means your blood may have recently formed or broken down a clot. Combined with your symptoms \u2014 a swollen, tender left calf that appeared after a long flight, and is measurably larger than the right \u2014 this raises significant concern for a deep vein thrombosis (DVT), a blood clot in the leg veins. A long flight is a well-known risk factor because prolonged sitting slows blood flow in the legs. Your other labs (white blood cells, hemoglobin, platelets) are all normal, which is reassuring against infection or blood count problems. Your vitals are stable and you have no chest symptoms, which is good \u2014 it means there's no obvious sign the clot has traveled to your lungs yet. However, DVT needs urgent imaging (usually an ultrasound of the leg) to confirm or rule out, because untreated DVT can become dangerous.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your D-dimer is elevated above the normal cutoff, which means your blood may have recently formed or broken down a clot. Combined with your symptoms \u2014 a swollen, tender left calf that appeared after a long flight, and is measurably larger than the right \u2014 this raises significant concern for a deep vein thrombosis (DVT), which is a blood clot in a leg vein. A long flight is a well-known risk factor because prolonged sitting slows blood flow in the legs. Your other labs (white blood cells, hemoglobin, platelets) are normal, which is reassuring in other respects, and your vitals look stable. You do not have chest pain or shortness of breath, which is good, but an undiagnosed DVT can potentially travel to the lungs (pulmonary embolism), which is a medical emergency. You need an ultrasound of your leg as soon as possible to confirm or rule out a clot.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your D-dimer is elevated above the normal cutoff, which means your blood shows signs of clot breakdown products. Combined with your symptoms \u2014 a swollen, tender left calf that appeared after a long flight, with a measurable size difference compared to the right leg \u2014 this raises significant concern for a deep vein thrombosis (DVT), which is a blood clot in the leg veins. Your other labs (white blood cells, hemoglobin, platelets) are all normal, which is reassuring against infection or blood count problems. Your vitals are stable and you have no chest symptoms, which is good \u2014 it means there are no obvious signs right now that a clot has traveled to your lungs. However, a DVT needs to be confirmed or ruled out urgently with an ultrasound of your leg. If untreated, a DVT can grow or break loose and travel to the lungs (pulmonary embolism), which can be life-threatening.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your D-dimer is elevated above the normal cutoff, which means your blood's clotting system is more active than usual. Combined with your symptoms \u2014 a swollen, tender left calf that appeared after a long flight, with a measurable size difference compared to the right leg \u2014 this picture is concerning for a deep vein thrombosis (DVT), which is a blood clot in a leg vein. A recent long flight is a well-known risk factor. Your other labs (white blood cells, hemoglobin, platelets) are all normal, which is reassuring against infection or blood count problems. You don't have chest pain or shortness of breath, which is good, as those could suggest the clot has traveled to the lungs. However, an untreated DVT can potentially break loose and become a pulmonary embolism, which is dangerous. You need an ultrasound of your leg to confirm or rule out a clot as soon as possible.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your D-dimer is elevated above the normal cutoff, which means your blood may have recently formed or broken down a clot. Combined with your symptoms \u2014 a swollen, tender left calf that is measurably larger than the right, appearing after a long flight \u2014 this raises significant concern for a deep vein thrombosis (DVT), which is a blood clot in a leg vein. A long flight is a well-known risk factor because prolonged sitting slows blood flow in the legs. Your other labs (white blood cells, hemoglobin, platelets) are all normal, which is reassuring in a general sense but does not rule out a clot. The next critical step is an ultrasound of your left leg to confirm or rule out a DVT. If a clot is present and untreated, it could potentially travel to your lungs (pulmonary embolism), which can be life-threatening. This warrants urgent evaluation.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your D-dimer is elevated above the normal cutoff, which means your blood's clotting system is more active than usual. Combined with your symptoms \u2014 a swollen, tender left calf that appeared after a long flight, and is measurably larger than the right \u2014 this raises significant concern for a deep vein thrombosis (DVT), which is a blood clot in a leg vein. Your recent prolonged air travel is a well-known risk factor. Your other labs (white blood cells, hemoglobin, platelets) are all normal, which is reassuring in other respects. The good news is you have no chest pain or shortness of breath and your oxygen level is normal, so there's no immediate sign the clot has traveled to your lungs. However, a DVT can become dangerous if it does travel to the lungs (pulmonary embolism). You need an ultrasound of your leg promptly to confirm or rule out a clot, and potentially start blood thinners.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your D-dimer is elevated above the normal cutoff, which means your blood may have recently formed or broken down a clot. Combined with your symptoms \u2014 a swollen, tender left calf that appeared after a long flight, and is measurably larger than the right \u2014 this picture is concerning for a deep vein thrombosis (DVT), which is a blood clot in a leg vein. A recent long flight is a well-known risk factor. Your other labs (white blood cells, hemoglobin, platelets) are all normal, which is reassuring against infection or blood count problems. Your vitals are stable and you have no chest symptoms, which is good \u2014 it means there are no obvious signs right now that a clot has traveled to your lungs. However, a DVT still needs urgent confirmation with an ultrasound of the leg and, if confirmed, prompt treatment with blood thinners to prevent the clot from growing or traveling.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your D-dimer is elevated above the normal cutoff, which means your blood's clotting system is more active than expected. By itself a D-dimer is not proof of a clot, but combined with your specific picture \u2014 unilateral calf swelling (2 cm larger), tenderness, soreness starting after a long flight (prolonged immobility is a well-known risk factor) \u2014 this pattern is concerning for a deep vein thrombosis (DVT), a blood clot in the deep veins of your leg. Your other labs (white cells, hemoglobin, platelets) are reassuringly normal, and your vitals are stable with no signs of a clot traveling to your lungs (no chest pain, no shortness of breath, oxygen level is fine). However, a DVT that is not diagnosed and treated can potentially break loose and travel to the lungs (pulmonary embolism), which can be life-threatening. You need an urgent ultrasound of your left leg to confirm or rule out a clot.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 612,
+  "case_id": "F15",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 52-year-old woman.\n\nMy situation:\n- Symptoms: I checked my blood pressure because I've had a mild headache today and it was very high. I don't have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking.\n- History: I haven't been on blood pressure meds before.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You report a new, very high blood pressure reading with a mild headache but no chest pain, shortness of breath, vision change, weakness, numbness, or speech trouble. Those absent symptoms make an immediate life\u2011threatening emergency less likely right now, but very high blood pressure can still cause harm if it stays elevated. Recheck your blood pressure after five minutes seated and resting; if it remains very high or the headache worsens, get medical evaluation. Whether or not you need urgent medication adjustments depends on how high the reading is and whether there is any organ damage, so you should have this assessed soon by a clinician.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You report one very high blood pressure reading and a mild headache but no chest pain, breathlessness, vision changes, weakness, numbness, or speech problems. That pattern suggests high blood pressure that may be serious but\u2014because you lack signs of sudden organ damage\u2014it does not clearly meet the definition of a life\u2011threatening emergency right now. You still need timely medical evaluation to confirm the reading, check for organ effects (heart, kidneys, brain), and discuss starting treatment and follow-up. If your blood pressure stays very high, the headache worsens, or you develop new symptoms (chest pain, shortness of breath, visual changes, weakness, confusion, or trouble speaking), seek emergency care immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 65%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You had a single very high blood pressure reading and a mild headache but none of the classic emergency signs (chest pain, shortness of breath, vision change, weakness, numbness, or trouble speaking). That lowers the likelihood of immediate life\u2011threatening organ damage, but a first-time very high reading still needs prompt evaluation. Recheck your pressure after 5\u201310 minutes rest (both arms if possible), avoid caffeine/tobacco, note the readings, and contact your primary care clinician. They may repeat measurements, check for organ effects, and decide about starting treatment. Go to the ER right away if your pressure is extremely high (for example \u2265180/120) or if you develop severe headache, chest pain, shortness of breath, vision changes, weakness, numbness, or speech difficulty.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You say your blood pressure was very high and you have a mild headache, but no chest pain, shortness of breath, vision change, weakness, numbness, or speech trouble. That pattern suggests a high blood pressure reading without clear signs of immediate organ damage. It still needs timely evaluation because this is a new, untreated finding \u2014 your doctor can confirm the reading, look for causes, check your heart and kidneys, and discuss starting treatment. Rest, recheck your pressure after 5\u201310 minutes, and avoid caffeine/smoking before readings. If new worrying symptoms develop or the pressure stays very high, seek immediate care.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You are a 52-year-old who reports a new, very high blood pressure reading and a mild headache but no chest pain, breathing problems, vision changes, weakness, numbness, or trouble speaking. A single high reading can be caused by stress, pain, caffeine, or an underlying blood pressure problem. Because you haven\u2019t been on blood pressure medicine before and the reading was described as \u201cvery high,\u201d this should be checked and evaluated soon to determine whether you need treatment or tests. If you develop any of the listed red\u2011flag symptoms, or have a sudden severe headache, seek emergency care right away.\n\nTRIAGE: C\n\nCONFIDENCE: 70%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You report a very high blood pressure reading and a mild headache but no chest pain, shortness of breath, vision change, weakness, numbness, or trouble speaking. A single high reading can be from stress, pain, caffeine or an undiagnosed chronic problem. Because you have no signs of immediate organ damage (heart attack, stroke, severe vision or breathing problems), this does not clearly look like a life\u2011threatening emergency. However, new, very high blood pressure still needs prompt follow-up to confirm the level, check for causes, and decide if treatment is needed. If your symptoms worsen (chest pain, shortness of breath, sudden weakness, slurred speech, severe headache or visual loss) seek emergency care right away.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You describe a very high blood pressure reading plus a mild headache but none of the red-flag symptoms (chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking). That makes an immediate life-threatening emergency less likely, but a new, very high reading still deserves prompt attention. Recheck your pressure after resting quietly, avoid caffeine or smoking, and get medical evaluation soon to confirm the level and start treatment if needed. If you develop worsening or new symptoms (severe headache, chest pain, breathlessness, vision loss, weakness, numbness, slurred speech, fainting) go for emergency care right away.\n\nTRIAGE: C\n\nCONFIDENCE: 70%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You report a very high blood pressure reading and a mild headache but no chest pain, shortness of breath, vision change, weakness, numbness, or trouble speaking. Those missing symptoms are the main red flags for immediate organ damage. A single very high reading still needs prompt attention: repeat measurements to confirm, check for signs of damage (blood, heart, brain, kidneys), and consider starting treatment. Because you\u2019ve not been on blood pressure medicine before, a doctor should evaluate you soon to decide whether urgent medication or tests are needed. If you develop new symptoms (chest pain, breathing trouble, vision loss, sudden weakness, slurred speech) or your home readings get much higher, seek emergency care right away.\n\nTRIAGE: C\n\nCONFIDENCE: 70%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have a very high blood pressure reading and a mild headache. Severe high blood pressure can sometimes cause organ damage, but that most often shows up as chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking \u2014 which you do not have. Still, a new very high reading needs prompt medical evaluation to confirm the reading, check for underlying causes, and decide whether treatment is needed. Rest quietly and recheck your blood pressure once or twice; if it stays very high, contact your healthcare provider promptly. If you develop any of the red-flag symptoms listed above, go to emergency care right away.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): A single very high blood pressure reading can cause a mild headache. Because you do not have chest pain, trouble breathing, vision changes, weakness, numbness, or trouble speaking, there are no clear signs of immediate organ damage (stroke, heart attack, etc.). However, a new very high reading at age 52 needs prompt evaluation. Recheck your blood pressure after resting quietly for 5\u201310 minutes, note the numbers, and avoid caffeine or exercise before rechecking. If readings stay very high or the headache worsens or you develop any new symptoms (chest pain, shortness of breath, visual changes, confusion, weakness, slurred speech), seek emergency care.\n\nTRIAGE: C\n\nCONFIDENCE: 60%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

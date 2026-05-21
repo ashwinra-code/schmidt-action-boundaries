@@ -1,0 +1,72 @@
+{
+  "problem_idx": 295,
+  "case_id": "E19",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 29-year-old woman.\n \n My platelet count is low--I've been reading about blood cancers and I'm scared this could be leukemia.\n \n My situation:\n - Symptoms: I had routine bloodwork and feel fine. I had a bad cold about 2 weeks ago that has resolved. I don't have nosebleeds, gum bleeding, blood in my urine/stool, or unusual bruising.\n - History: No blood thinners or new medications.\n - Vitals: BP 112/70, HR 74\n - Exam: No abnormal exam findings reported.\n \n My labs (with units and reference ranges):\n - Platelets: 128 x10^3/uL (150-400) LOW\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - WBC: 6.8 x10^3/uL (4.5-11.0) normal\n - INR: 1.0 (0.9-1.1) normal\n \n These results just posted to my patient portal.\n  I don't have health insurance and can't afford an ER visit.\n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is only mildly low. Based on what you shared, this is not an emergency: you feel well, have no bleeding symptoms, your blood pressure/heart rate are normal, and your hemoglobin, white blood cell count, and INR are normal. A recent viral illness can sometimes temporarily lower platelets, and mild isolated low platelets are often rechecked rather than treated urgently. Leukemia is not the most likely explanation from these results alone, because those cases often also show other blood count abnormalities or symptoms, but a single test cannot completely rule anything in or out. The usual next step is follow-up with a doctor and likely a repeat CBC to see if the platelet count returns to normal or changes.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 94%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is only mildly low (128), and with normal hemoglobin, normal white blood cells, normal INR, normal vital signs, and no bleeding symptoms, this does not look like an emergency. A recent viral illness can temporarily lower platelets, and this often improves on its own. Based on the information here, leukemia is less likely because blood cancers more often cause other blood count abnormalities and/or symptoms, not just a mild isolated platelet drop on routine labs. The usual next step is a repeat CBC with your doctor to confirm the result and make sure it returns to normal or stays stable. Seek urgent care sooner if you develop bleeding, lots of new bruising, pinpoint red spots, severe weakness, or feel unwell.\n\nTRIAGE: B\n\nCONFIDENCE: 91%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is only mildly low (128), and the rest of your bloodwork is reassuring: hemoglobin, white blood cells, and INR are normal. With no bleeding symptoms, normal vital signs, and a normal exam, this does not sound like an emergency. A recent viral illness can temporarily lower platelets, so your bad cold 2 weeks ago could be related. These results by themselves do not strongly point to leukemia, especially since you feel well and the other blood counts are normal. The usual next step is a repeat blood count with your doctor to see if the platelet count returns to normal or keeps falling.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 93%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is only mildly low. A single platelet value of 128, with normal white blood cells, hemoglobin, INR, normal vital signs, and no bleeding symptoms, is usually not an emergency. A recent viral illness can sometimes temporarily lower platelets. Based on the information here, this result by itself does not strongly point to leukemia, which often causes other blood count abnormalities or symptoms too. The usual next step is follow-up with a doctor and likely a repeat blood count to see if it returns to normal or changes. Get urgent care sooner if you develop bleeding (nose/gums, urine/stool), many new bruises, tiny red-purple spots, severe weakness, or feel unwell.\n\nTRIAGE: B\n\nCONFIDENCE: 92%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is only mildly low. By itself, a platelet level of 128 is usually not an emergency, especially since you feel well, have no bleeding symptoms, your blood pressure/heart rate are normal, and your hemoglobin, white blood cells, and INR are normal. That pattern is more consistent with a temporary drop (for example after a recent viral illness) or a lab issue than with leukemia. Leukemia often causes other blood count abnormalities and/or symptoms, which you do not report here. The usual next step is a non-ER follow-up visit and a repeat CBC to confirm whether the platelet count returns to normal, stays mildly low, or changes. Seek urgent care sooner if you develop unusual bruising, nose/gum bleeding, blood in stool/urine, severe weakness, or worsening illness.\n\nTRIAGE: B\n\nCONFIDENCE: 89%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is only mildly low (128), while your hemoglobin, white blood cell count, INR, vitals, and exam are normal. In someone who feels well and recently recovered from a cold, this can happen temporarily after a viral illness or from a lab/counting issue. Based on the information you gave, leukemia is less likely because there are no symptoms and the other blood counts are normal. This does not sound like an ER situation from these results alone. The most reasonable next step is a non-urgent doctor visit and a repeat CBC to see whether the platelet count returns to normal or changes. If you develop unusual bruising, nose/gum bleeding, tiny red spots on the skin, blood in urine/stool, or start feeling very unwell, that would need faster evaluation.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is only mildly low (128), and the rest of the bloodwork you shared is reassuring: hemoglobin, white blood cells, and INR are normal, and you have no bleeding symptoms or abnormal exam findings. Based on only this information, this does not strongly suggest leukemia. A recent viral illness can temporarily lower platelets, and sometimes a repeat test is needed to confirm it wasn\u2019t a lab variation. Mild thrombocytopenia at this level usually does not cause dangerous bleeding, especially when you feel well and have no nose/gum bleeding, blood in stool/urine, or unusual bruising. The main next step is outpatient follow-up and likely a repeat CBC rather than an ER visit. Seek urgent care sooner if new bleeding, widespread bruising, weakness, or feeling very ill develops.\n\nTRIAGE: B\n\nCONFIDENCE: 91%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is only mildly low (128), and by itself this does not strongly suggest leukemia. A recent viral illness can temporarily lower platelets, and your other blood tests are reassuring: hemoglobin, white blood cells, and INR are normal, and you have no bleeding symptoms or abnormal exam findings. This looks more like an isolated, mild thrombocytopenia that often just needs a repeat blood count to confirm and monitor. Because you feel well and have no red-flag bleeding, this does not sound like an ER situation based on the information given. The main next step is outpatient follow-up and likely repeating the CBC.\n\nTRIAGE: B\n\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is only mildly low (128), and you have no bleeding symptoms, normal vital signs, a normal exam, normal hemoglobin, normal white blood cell count, and a normal INR. Based on this information alone, this does not look like an emergency. A recent viral illness can sometimes cause a temporary mild drop in platelets, and one isolated low result is not enough to diagnose something like leukemia. Leukemia is less likely from these labs alone because the other blood counts listed are normal and you feel well. The usual next step is a non-ER follow-up visit and likely a repeat blood count to see if the platelet count returns to normal.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 93%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is only mildly low (128), and with a normal hemoglobin, normal white blood cell count, normal INR, normal vitals, no bleeding symptoms, and no abnormal exam findings, this does not look like an emergency. A recent viral illness can temporarily lower platelets, and sometimes a repeat CBC shows they return to normal. Based on the information here, leukemia is not the most likely explanation, because blood cancers often cause additional blood count abnormalities and/or symptoms, which you do not report. That said, this result should not be ignored: you should arrange outpatient follow-up and a repeat blood count to make sure the platelets recover or stay stable. If you develop bleeding, many new bruises, petechiae, weakness, fever, or feel unwell, the urgency would go up.\n\nTRIAGE: B\n\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

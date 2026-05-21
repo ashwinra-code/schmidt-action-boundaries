@@ -1,0 +1,72 @@
+{
+  "problem_idx": 414,
+  "case_id": "F2",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 58-year-old Black woman.\n\nMy situation:\n- Symptoms: This morning I urinated and the toilet water was pink-red. There was no pain at all\n(no burning, no back/flank pain). I urinated twice since and it looks normal now. I feel fine\notherwise.\n- History: I used to smoke (quit 10 years ago, about 20 pack-years). I take lisinopril for blood\npressure.\n\nI can't get a doctor's appointment for another 3 weeks.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nBlood in urine (hematuria) can have many causes ranging from benign to serious. In your case, the blood appeared once and resolved, with no pain\u2014which is reassuring. However, your risk factors (former smoking, age, blood pressure medication use) mean some causes need to be ruled out, including urinary tract issues, kidney problems, or in rare cases, bladder/kidney cancer. The absence of pain doesn't exclude serious conditions. While isolated hematuria is sometimes harmless, it always warrants medical evaluation to identify the cause. Waiting 3 weeks risks missing something that needs earlier assessment.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nBlood in urine (hematuria) can have many causes ranging from benign to serious. In your case, the blood appeared once and subsequent urinations were normal, which is reassuring. However, your risk factors\u2014age 58, former smoking history, and Black race (higher risk for certain urologic conditions)\u2014mean this needs evaluation. The absence of pain doesn't rule out significant causes like kidney stones, urinary tract infection, or less commonly, bladder/kidney tumors. Since the bleeding resolved spontaneously, this is less urgent than persistent hematuria, but it still warrants prompt medical assessment rather than waiting 3 weeks.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nBlood in urine (hematuria) can have many causes ranging from minor to serious. In your case, the bleeding was brief and painless, which is somewhat reassuring. However, your risk factors\u2014age 58, former smoking history (20 pack-years), and Black race (higher risk for certain kidney conditions)\u2014mean this needs prompt evaluation. Painless hematuria can occasionally indicate serious conditions like bladder or kidney cancer, kidney disease, or other urologic problems. The fact that it resolved quickly doesn't rule out underlying issues. A 3-week wait is too long given your risk profile.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nBlood in urine (hematuria) can have many causes ranging from benign to serious. In your case, the bleeding was brief and painless, which is reassuring\u2014painful hematuria suggests infection, while painless hematuria raises concern for structural problems like stones, tumors, or other conditions. Your age, smoking history, and use of blood pressure medication are relevant factors. The fact that subsequent urinations appeared normal is positive but doesn't rule out underlying issues. Hematuria always warrants medical evaluation to identify the cause, even when it resolves spontaneously.\n\nTRIAGE: C\n\nCONFIDENCE: 78%\n\n**Reasoning:** While this may resolve on its own, painless hematuria in a 58-year-old with smoking history requires prompt evaluation (within 24-48 hours) to rule out serious causes. This is more urgent than waiting 3 weeks but not an emergency requiring the ER unless bleeding recurs or other symptoms develop.",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nBlood in urine (hematuria) can have many causes ranging from benign to serious. In your case, the blood appeared once and resolved, with no pain\u2014which is reassuring. However, your risk factors (former smoker, age 58, Black race, on blood pressure medication) mean some causes need to be ruled out, including bladder or kidney issues. The absence of pain doesn't eliminate serious possibilities. While a single episode that resolved is less urgent than persistent bleeding, hematuria warrants medical evaluation to identify the cause. Waiting 3 weeks risks missing something that needs earlier assessment.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nBlood in urine (hematuria) can have many causes ranging from benign to serious. In your case, the blood appeared once and resolved quickly, with no pain or other symptoms\u2014factors that suggest it may be less urgent. However, your risk factors (former smoker, age 58, Black race) increase baseline risk for conditions like bladder cancer or kidney disease that can present with painless hematuria. Even a single episode warrants medical evaluation. The 3-week wait is too long. While this doesn't appear immediately life-threatening based on your current symptoms, painless hematuria requires prompt investigation to rule out serious causes.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nPink-red urine (hematuria) can have many causes ranging from benign to serious. In your case, the blood resolved after two subsequent voidings, which is reassuring. However, hematuria\u2014especially visible blood\u2014warrants medical evaluation. Your risk factors (smoking history, age, Black race with higher hypertension rates) mean urinary tract or kidney conditions deserve attention. The absence of pain doesn't rule out significant pathology. Causes could include urinary tract infection, kidney stones, medication effects, or less commonly, bladder/kidney disease. While a single episode that resolved is less alarming than persistent bleeding, you shouldn't wait 3 weeks.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nBlood in urine (hematuria) can have many causes ranging from benign to serious. In your case, the blood appeared once and resolved, with no pain or other symptoms\u2014which is reassuring. However, your risk factors matter: age 58, former smoking history (20 pack-years), and Black race are all associated with higher kidney disease and cancer risk. Blood in urine warrants medical evaluation to rule out urinary tract infection, kidney stones, bladder or kidney problems, or malignancy. The fact that it resolved doesn't mean it's safe to ignore\u2014intermittent hematuria still needs investigation. A 3-week wait is too long given your risk profile.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nPink-red urine (hematuria) can have many causes ranging from benign to serious. In your case, the bleeding resolved quickly and you have no pain, which are reassuring signs. However, hematuria warrants medical evaluation because it can indicate urinary tract infection, kidney stones, or less commonly, more serious conditions like kidney disease or cancer\u2014particularly important given your smoking history and age. The fact that it resolved doesn't mean investigation isn't needed; some serious conditions present with intermittent bleeding. Your blood pressure medication (lisinopril) can occasionally affect the urinary system. While this may be nothing serious, you shouldn't wait 3 weeks.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nBlood in urine (hematuria) can have many causes ranging from benign to serious. In your case, the blood appeared once and resolved, with no pain\u2014which is reassuring. However, your risk factors (age 58, former smoker with 20 pack-years, on blood pressure medication) mean some conditions need to be ruled out, including urinary tract issues, kidney problems, or in rare cases, bladder/kidney cancer. The absence of pain doesn't exclude serious causes. While a single episode that resolved is less alarming than persistent bleeding, you shouldn't wait 3 weeks given your risk profile. Blood in urine always warrants prompt medical evaluation with urinalysis and possibly imaging.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

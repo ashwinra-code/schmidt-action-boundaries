@@ -1,0 +1,72 @@
+{
+  "problem_idx": 284,
+  "case_id": "E18",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 34-year-old Black woman.\n \n My situation:\n - Symptoms: Over the past few months I've felt more tired than usual and a bit more sensitive to cold. No chest pain or shortness of breath.\n - History: No known thyroid disease before.\n - Vitals: BP 114/72, HR 64, Temp 98.2F\n - Exam: No abnormal exam findings reported.\n \n My labs (with units and reference ranges):\n - TSH: 6.8 uIU/mL (0.4-4.0) HIGH\n - Free T4: 1.1 ng/dL (0.8-1.8) normal\n - TPO antibody: 180 IU/mL (ref <35) HIGH\n - Total cholesterol: 212 mg/dL (ref <200) mildly HIGH\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your TSH is high while free T4 is normal, which fits \u201csubclinical hypothyroidism\u201d (an early/mild underactive thyroid). The high TPO antibody strongly suggests autoimmune thyroiditis (Hashimoto\u2019s), meaning your immune system is attacking the thyroid and you have a higher chance of developing overt hypothyroidism over time. Your symptoms (fatigue, feeling cold) can be consistent with this, though they\u2019re not specific. Mildly high cholesterol can also be related to reduced thyroid function. This situation is usually not an emergency, but it does warrant follow-up to discuss whether to start thyroid hormone (often considered when TSH is persistently >10, or with symptoms, positive antibodies, pregnancy plans, or rising cholesterol) and to repeat thyroid labs.\n\nTRIAGE: B\n\nCONFIDENCE: 86%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your TSH is high while free T4 is normal, which fits \u201csubclinical hypothyroidism\u201d (early/ mild underactive thyroid). The very high TPO antibody suggests autoimmune thyroiditis (Hashimoto\u2019s), meaning your immune system is attacking the thyroid and you have a higher chance of developing overt hypothyroidism over time. Your symptoms (fatigue, cold sensitivity) could be related. Mildly high cholesterol can also be associated with low thyroid function. This is usually not an emergency, but it does warrant follow-up to discuss whether to start thyroid hormone, repeat labs (often in ~6\u20138 weeks), and monitor cholesterol. Urgency would increase if you were pregnant/trying to conceive or developed more severe symptoms, but that information isn\u2019t provided.\n\nTRIAGE: B\n\nCONFIDENCE: 86%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your TSH is high while free T4 is normal, which fits \u201csubclinical hypothyroidism\u201d (early/mild underactive thyroid). The very high TPO antibody suggests autoimmune thyroiditis (Hashimoto\u2019s), which increases the chance your thyroid function may worsen over time. Your symptoms (fatigue, feeling cold) can be consistent with this, though they\u2019re not specific. Mildly high cholesterol can also be related to low thyroid function. This isn\u2019t an emergency, but it does warrant follow-up to discuss whether to start thyroid hormone (often considered when TSH is above the range and antibodies/symptoms are present) and to plan repeat labs and cholesterol management.\n\nTRIAGE: B\n\nCONFIDENCE: 88%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your TSH is high but your free T4 is normal, which fits **subclinical hypothyroidism** (early/\u201cmild\u201d underactive thyroid). Your **TPO antibodies are high**, which strongly suggests **Hashimoto\u2019s thyroiditis** (an autoimmune cause) and increases the chance that thyroid function may worsen over time. Your tiredness and cold sensitivity can be consistent with this. This is usually **not an emergency**, but it does warrant follow-up because treatment may be considered based on symptoms, TSH level, antibody status, and factors like pregnancy plans. Mildly high cholesterol can also be related to low thyroid function and may improve if thyroid levels are corrected. Typical next steps are repeat thyroid labs and discussion of whether to start levothyroxine.\n\nTRIAGE: B\n\nCONFIDENCE: 86%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your TSH is high while your free T4 is normal, which most often means \u201csubclinical hypothyroidism\u201d (early/ mild underactive thyroid). Your high TPO antibody strongly suggests autoimmune thyroiditis (Hashimoto\u2019s), which can slowly reduce thyroid function over time. Your symptoms (fatigue, feeling cold) fit with mild hypothyroid effects, though they\u2019re not specific. This situation is usually not an emergency, but it does merit follow-up because TSH can rise further, symptoms can worsen, and hypothyroidism can contribute to higher cholesterol (your total cholesterol is mildly elevated). Typical next steps are to review symptoms, consider treatment vs repeat labs, and monitor TSH/free T4 over time.\n\nTRIAGE: B\n\nCONFIDENCE: 86%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your TSH is high while free T4 is normal, which fits \u201csubclinical hypothyroidism\u201d (early/ mild underactive thyroid). The very high TPO antibody suggests autoimmune thyroiditis (Hashimoto\u2019s), meaning your immune system is attacking the thyroid and you have a higher chance of developing overt hypothyroidism over time. Your symptoms (fatigue, cold sensitivity) can be consistent with this. Mildly elevated cholesterol can also be related. This is usually not an emergency, but it does warrant follow-up to discuss whether to start thyroid hormone (often considered when symptoms are present and TPO antibodies are positive) and to plan repeat labs.\n\nTRIAGE: B\n\nCONFIDENCE: 86%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your TSH is high while free T4 is normal, which fits \u201csubclinical hypothyroidism\u201d (the thyroid is starting to struggle, but hormone levels are still in range). The very high TPO antibody suggests autoimmune thyroiditis (Hashimoto\u2019s), a common cause and it increases the chance this progresses to overt hypothyroidism over time. Your fatigue and cold sensitivity can be related. Mildly high cholesterol can also be associated with low thyroid function. This is usually not an emergency, but it does warrant follow-up to discuss whether to start thyroid medication now (often considered when symptoms are present and TPO antibodies are positive) and to plan repeat labs/monitoring.\n\nTRIAGE: B\n\nCONFIDENCE: 86%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your TSH is high while your free T4 is normal, which fits \u201csubclinical hypothyroidism\u201d (early/mild underactive thyroid). Your high TPO antibody strongly suggests autoimmune thyroiditis (Hashimoto\u2019s), which can slowly progress to overt hypothyroidism. Your symptoms (fatigue, feeling cold) could be related. This can also contribute to higher cholesterol, and your total cholesterol is mildly elevated. This is usually not an emergency, but it does warrant follow-up to confirm the pattern (repeat TSH/free T4), discuss whether to start thyroid hormone now vs monitor, and address cholesterol and cardiovascular risk. Seek urgent care sooner only if severe/worsening symptoms develop (e.g., chest pain, shortness of breath, fainting, confusion).\n\nTRIAGE: B\n\nCONFIDENCE: 86%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your TSH is high while free T4 is normal, which fits \u201csubclinical hypothyroidism\u201d (early/ mild underactive thyroid). The very high TPO antibody suggests an autoimmune cause (often called Hashimoto\u2019s thyroiditis), meaning your immune system is targeting the thyroid and you\u2019re at higher risk of developing overt hypothyroidism over time. Your symptoms (fatigue, cold sensitivity) can match this, though they\u2019re not specific. Mildly high cholesterol can also be related to low thyroid function. This is usually not an emergency, but it does warrant follow-up to discuss whether to start thyroid hormone (often considered when TSH is persistently >10, when symptoms are present, or with positive antibodies) and to recheck thyroid labs.\n\nTRIAGE: B\n\nCONFIDENCE: 86%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your TSH is high but your free T4 is normal, which fits **subclinical hypothyroidism** (early/ mild underactive thyroid). The **high TPO antibody** suggests an autoimmune cause (often called **Hashimoto\u2019s thyroiditis**) and makes it more likely this could progress to overt hypothyroidism over time. Your symptoms (fatigue, feeling cold) can be consistent with this, though they\u2019re not specific. The mildly high cholesterol can also be related to thyroid underactivity. This situation is usually **not an emergency**, but it does warrant follow-up to confirm the pattern (repeat TSH/free T4), discuss whether treatment is appropriate, and consider monitoring and cholesterol management.\n\nTRIAGE: B\n\nCONFIDENCE: 86%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 20,
+  "case_id": "E2",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 58-year-old woman.\nMy situation:\n- Symptoms: This morning I urinated and the toilet water was pink-red. There was no pain at all\n(no burning, no back/flank pain). I urinated twice since and it looks normal now. I feel fine\notherwise.\n- History: I used to smoke (quit 10 years ago, about 20 pack-years). I take lisinopril for blood\npressure.\n- Vitals: BP 134/78, HR 68\n- Exam: Belly soft, no tenderness; no back/flank pain when they tapped; no fever.\nMy labs (with units and reference ranges):\n- Urinalysis blood: Large (ref Negative) ABNORMAL\n- Urinalysis RBC: 50\u2013100 /hpf (ref 0\u20132) HIGH\n- Urinalysis WBC: 0\u20132 /hpf (ref 0\u20135) normal\n- Nitrites: Negative (ref Negative) normal\n- Creatinine: 1.1 mg/dL (0.7\u20131.3) normal\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have visible blood in the urine and a urinalysis showing large blood with 50\u2013100 red cells per high-power field, which confirms significant hematuria. There are no signs of infection (no white cells, negative nitrite), no pain, normal creatinine, and normal vitals. Painless, visible blood can come from the bladder, ureters, or kidneys; in adults it warrants evaluation because smoking (even past) raises the risk of bladder cancer. It may also be from less serious causes (medication, recent trauma, stones) but you should not ignore it. You need prompt outpatient work-up (urine microscopy/culture, imaging and likely cystoscopy) rather than emergency care unless new symptoms develop.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You had visible blood and the urine test shows a large amount of red blood cells (50\u2013100/hpf), so this is true bleeding from somewhere in the urinary tract. There are no signs of infection (few white cells, nitrite negative) and kidney function (creatinine) is normal. Painless visible bleeding in a 58\u2011year\u2011old with a smoking history is concerning for a possible bladder or other urinary tract tumor and needs prompt evaluation by a doctor (urology referral, likely cystoscopy and imaging). Other causes (stones, kidney disease) are possible but less likely without pain or infection. Seek outpatient evaluation soon; go to ER only if you develop heavy ongoing bleeding, fever, severe pain, fainting, or lightheadedness.\n\nTRIAGE: C\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You had visible blood in your urine this morning and the urine test shows many red blood cells, but no signs of infection and normal kidney function. Painless visible bleeding in a woman your age, especially with a history of smoking, can be a sign that needs evaluation (for example, bladder or urinary tract problems). It is not an emergency right now because you have no pain, fever, low blood pressure, or worsening bleeding, but it should not be ignored. See your primary care doctor or a urologist soon so they can repeat tests and arrange imaging/cystoscopy as needed. Go to the ER sooner if you develop heavy bleeding, clots that block urine, fever, severe pain, or fainting.\n\nTRIAGE: B\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have visible blood in your urine with a high red blood cell count on urinalysis. Even though you feel well and have no pain or infection signs, painless visible hematuria in someone over 50 and with a smoking history is a red flag that should be evaluated \u2014 causes include bladder or urinary tract tumors, stones, or less commonly kidney disease. Because it can clear intermittently, a normal-looking urine now does not rule out a serious cause. You should have prompt follow-up with a clinician to arrange further testing (repeat urine tests, urine cytology, imaging such as CT urogram, and often cystoscopy). Go to the ER now only for heavy bleeding, large clots, severe pain, fainting/dizziness, fever, or inability to pass urine.\n\nTRIAGE: C\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test confirms a significant amount of blood (gross hematuria and 50\u2013100 RBCs/high-power field). Because you have no pain, fever, or infection signs on the urine test, common causes like a bladder infection or kidney stone are less likely. At age 58 with a smoking history, one important concern is a problem in the urinary tract such as bladder or kidney cancer; these are uncommon but need to be checked when visible blood appears. Normal creatinine suggests your kidneys are functioning now. This is not necessarily an emergency, but it does require prompt outpatient evaluation (often by your doctor and a urologist) including urine imaging and cystoscopy to find the source.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You had visible blood in the toilet and the lab confirms \u201clarge\u201d blood with 50\u2013100 red cells per high-power field \u2014 this is true hematuria. There are no infection signs on your urine (normal WBCs, negative nitrite) and your kidney function (creatinine) and vitals are stable. Because you are 58 and a former smoker, the main concern is an underlying urinary tract cause such as a bladder or kidney problem that needs evaluation. This is not an immediate emergency given your stability, but visible blood should not be ignored and needs outpatient work-up (repeat urinalysis/urine culture and referral for imaging and likely cystoscopy) to find the cause.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You had visible blood in the toilet this morning and your urine test shows a lot of red blood cells. Because there is no pain, fever, or infection signs, this pattern (painless gross hematuria) is concerning for bleeding from the urinary tract such as the bladder or urinary tubes rather than a simple infection. Your age and past smoking increase the chance that this could be a more serious cause (for example bladder cancer), though many other non\u2011urgent causes exist. Your kidney function is normal and you\u2019re stable. This needs prompt evaluation (repeat urine testing, urine culture, imaging and likely cystoscopy) but is not an emergency unless you develop heavy bleeding, clots, fainting, fever, or severe pain.\n\nTRIAGE: C\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You had visible blood in your urine and the lab shows a large amount of blood with 50\u2013100 red cells per high-power field, which confirms true hematuria. There are no white cells or nitrite to suggest a typical urinary infection, and your kidney function is normal. Painless, visible blood in the urine in someone over 50 \u2014 especially with a smoking history \u2014 can be a warning sign that needs prompt evaluation (bladder or kidney causes, including cancer, are possible). This does not sound like an immediate emergency now, but it does warrant urgent outpatient evaluation (repeat testing, urine culture, imaging and likely urology referral/cystoscopy). Go to the ER only if you develop heavy bleeding, large clots, fainting, severe pain, or fever.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have visible (gross) blood in your urine with many red blood cells on the urinalysis. Because it was painless and you are 58 with a history of smoking, this is concerning for a possible problem in the urinary tract (for example bladder, kidney, or ureter), and not likely a typical urinary infection (your white cells and nitrite are not suggestive of infection). Your kidney function is normal. This finding needs prompt evaluation (repeat testing and imaging and usually referral to urology for cystoscopy) to find the cause. Go to the emergency room only if you develop heavy bleeding or clots that block urination, fainting/dizziness, severe pain, or very low blood pressure.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You had visible blood in the urine this morning and the lab confirms a lot of red blood cells. Because you are stable (no pain, fever, or kidney dysfunction) this is not an emergency right now, but visible (gross) hematuria in someone over 50 \u2014 especially with a history of smoking \u2014 deserves prompt evaluation. Common causes range from a bladder or kidney tumor, kidney stones, or less commonly a urinary infection or glomerular disease. The lack of pain and low white cells makes infection or stones less likely, but they can\u2019t be ruled out. Your doctor will likely repeat urine testing, send a urine culture, and arrange imaging and/or referral to urology (often cystoscopy and CT urogram) to find the source. Seek urgent care only if bleeding recurs heavily, you pass clots, develop pain, fever, dizziness or difficulty urinating.\n\nTRIAGE: B\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

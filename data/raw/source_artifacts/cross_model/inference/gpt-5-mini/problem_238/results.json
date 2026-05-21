@@ -1,0 +1,72 @@
+{
+  "problem_idx": 238,
+  "case_id": "E15",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 52-year-old Black woman.\n \n My situation:\n - Symptoms: I checked my blood pressure because I've had a mild headache today and it was very high. I don't have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking.\n - History: I haven't been on blood pressure meds before.\n - Vitals: BP 196/112, HR 78, Temp 98.5F, SpO2 98%\n - Exam: No neurologic deficits reported; no chest pain.\n \n My labs (with units and reference ranges):\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n - Potassium: 4.2 mEq/L (3.5-5.0) normal\n - Troponin: <0.01 ng/mL (ref <0.04) normal\n - Urinalysis protein: Trace (ref Negative) borderline\n \n I'm already struggling with medical bills and can't afford more tests.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure (196/112) is very high and raises the short\u2011term risk of stroke, heart attack, and other problems. The good news: your exam and initial blood tests (creatinine, potassium, troponin) look normal and you have no focal neurologic symptoms or chest pain, which makes an immediate life\u2011threatening emergency less likely right now. This situation is consistent with a severe uncontrolled blood pressure episode that needs prompt treatment and follow\u2011up to lower the risk of complications. If you develop new chest pain, shortness of breath, sudden weakness, vision changes, confusion, or worsening headache, seek emergency care immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure (196/112) is very high and can be dangerous. Current tests (normal creatinine, troponin, oxygen, and only trace urine protein) and your lack of chest pain or neurologic findings suggest there is not clear, immediate organ damage right now. That makes an emergency less likely, but this level of pressure still needs prompt treatment because it raises short\u2011 and long\u2011term risk. Contact a clinician soon to start or adjust blood pressure medication and arrange follow\u2011up and monitoring. If you develop chest pain, shortness of breath, sudden vision change, weakness, numbness, slurred speech, worsening severe headache, vomiting, or confusion, go to the ER immediately.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure of 196/112 is very high. Because your creatinine, potassium, troponin, oxygen level and neurologic exam are normal and you have no chest pain or shortness of breath, there\u2019s no clear evidence here of immediate organ damage. That suggests severe hypertension that usually requires prompt outpatient treatment (starting or adjusting blood pressure medicine and close follow-up) rather than an immediate ER intervention. This still raises short-term risk for stroke, heart problems, or kidney injury, so don\u2019t ignore it. If you develop chest pain, worsening or sudden severe headache, vision changes, weakness/numbness, trouble speaking, vomiting, or breathing difficulty, go to the ER right away.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure of 196/112 is very high and raises the risk of stroke, heart attack, or kidney damage. The basic labs you listed (creatinine, potassium, troponin) are normal and you have no neurologic deficits or chest symptoms, which suggests there is not clear, immediate organ damage right now. Still, this level usually needs prompt evaluation and starting or adjusting blood\u2011pressure treatment to lower risk. Watch for any new chest pain, shortness of breath, sudden weakness/numbness, trouble speaking, vision changes, worsening severe headache, confusion, or vomiting \u2014 those would be reasons to go to the ER immediately.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure is very high (196/112), which raises concern. However, your current symptoms and tests do not show clear signs of sudden organ damage: no chest pain, shortness of breath, stroke-like symptoms, normal troponin and creatinine, and only trace protein in the urine. That pattern suggests a severe high blood pressure episode without immediate organ injury (often called hypertensive urgency). It still needs prompt medical attention because the risk of stroke, heart attack, or kidney injury increases if high BP is left untreated. If new/worse symptoms develop (chest pain, trouble breathing, fainting, sudden weakness, speech/vision changes, severe worsening headache), seek emergency care immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading (196/112) is very high. The basic tests posted here (normal creatinine, normal troponin, normal potassium, only trace protein in urine) do not show clear evidence of organ damage right now, which reduces the likelihood of an immediate life\u2011threatening emergency. Still, such severe hypertension with even a mild headache is serious and usually requires prompt evaluation and treatment because it raises the short\u2011term risk of stroke, heart problems, and kidney injury. If you develop chest pain, shortness of breath, vision changes, weakness, numbness, trouble speaking, confusion, or worsening headache, go to the ER immediately. Otherwise, arrange urgent follow\u2011up today or within 24\u201348 hours to start blood\u2011pressure management and repeat checks.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure of 196/112 is very high. Because your creatinine and troponin are normal and you have no chest pain or neurologic deficits, there is no clear evidence here of immediate organ damage (i.e., not an obvious hypertensive emergency). This pattern is often called severe uncontrolled hypertension or \u201chypertensive urgency.\u201d It still needs prompt attention to start or adjust blood pressure treatment and check for kidney effects (trace protein in urine may warrant follow-up). Arrange to see a clinician within a day or two to avoid complications. If you develop chest pain, shortness of breath, vision changes, weakness, trouble speaking, confusion, worsening or sudden severe headache, vomiting, or fainting, go to the ER now.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure (196/112) is very high and can increase the risk of stroke, heart attack, or kidney injury over time. The reassuring findings: normal creatinine, potassium, and troponin, no neurologic deficits, and no chest pain \u2014 these suggest there is not obvious immediate organ damage right now. A trace of protein in urine is borderline but not clearly alarming given the other normal tests. Because you\u2019ve never been on blood pressure medicine and you have a headache, this level of BP still needs prompt assessment and likely starting treatment, repeat readings, and follow\u2011up. Watch for new chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking \u2014 those would need immediate emergency care.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure is very high (196/112). Your blood tests, oxygen, and exam notes don\u2019t show obvious heart, lung, kidney, or brain damage right now, which suggests severe hypertension without clear acute end\u2011organ injury. That is less likely to be an immediate life\u2011threatening emergency, but it still carries significant short\u2011term risk for stroke, heart attack, or kidney injury if not treated. You should get medical care soon to start or adjust blood\u2011pressure medication and have repeat checks. If you develop chest pain, shortness of breath, vision changes, weakness, numbness, trouble speaking, worsening headache, confusion, or vomiting, go to the ER immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure of 196/112 is very high and needs prompt attention. The good news: normal creatinine and troponin, normal potassium, only trace protein in urine, and no chest pain or neurologic signs make an immediate life\u2011threatening emergency less likely right now. This most closely fits a severe hypertension episode without clear organ damage (often called hypertensive urgency), but it still raises short\u2011term risk for stroke, heart problems, or kidney injury. You should get medical care soon to start or adjust blood\u2011pressure medicine and arrange follow\u2011up. Go to the ER immediately if you develop chest pain, shortness of breath, sudden weakness, numbness, trouble speaking, vision changes, worsening or very severe headache, vomiting, or confusion.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

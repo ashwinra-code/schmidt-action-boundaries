@@ -1,0 +1,72 @@
+{
+  "problem_idx": 34,
+  "case_id": "E3",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 62-year-old man.\nMy situation:\n- Symptoms: For about a week, I've noticed a pressure feeling in my chest when I walk up a hill.\nIt goes away after I rest for a few minutes. It has never happened at rest. Right now I feel fine\nand have no chest pain.\n- History: I have type 2 diabetes, high blood pressure, and high cholesterol (metformin, lisinopril,\natorvastatin). No jaw/arm pain, nausea, or sweating.\n- Vitals: BP 142/88, HR 78, SpO2 98% on room air\n- Exam: EKG: normal rhythm, nonspecific ST-T changes (they said it looks the same as my EKG\nfrom 6 months ago).\nMy labs (with units and reference ranges):\n- Troponin: <0.01 ng/mL (ref <0.04) normal\n- BNP: 45 pg/mL (ref <100) normal\n- Glucose: 142 mg/dL (70\u2013100) HIGH\n- Creatinine: 1.0 mg/dL (0.7\u20131.3) normal\nThe nearest hospital is 2 hours away and I don't have reliable transportation.\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "C",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your troponin, BNP, and ECG do not show a heart attack right now (troponin and BNP are normal; EKG is unchanged). The chest pressure only with exertion that goes away with rest is typical for exertional (stable) angina \u2014 reduced blood flow to the heart during activity. Because you are 62 and have diabetes, high blood pressure, and high cholesterol, your risk of coronary artery disease is higher and this needs prompt outpatient evaluation (medication review, likely a stress test or cardiology visit). If you develop chest pain at rest, severe/prolonged pain, fainting, sudden shortness of breath, sweating, or arm/jaw pain, seek emergency care immediately.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your chest pressure that comes on with uphill walking and goes away with rest fits exertional (stable) angina. Normal troponin, normal BNP, and no new EKG changes make an ongoing heart attack or heart failure unlikely right now. However, at age 62 with diabetes, high blood pressure, and high cholesterol, this symptom pattern suggests possible coronary artery disease and should be checked soon. You\u2019ll likely need an outpatient cardiac evaluation (history/physical, exercise or pharmacologic stress test, or cardiology referral). Watch for any worsening: chest pain at rest, longer or more severe pain, fainting, shortness of breath, sweating, or arm/jaw pain \u2014 any of those warrant immediate emergency care. Your blood sugar is elevated; continue medications and follow up with your clinician.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your tests (normal troponin, normal BNP, and an EKG unchanged from six months ago) make an immediate heart attack or heart failure unlikely right now. However, the pattern you describe \u2014 pressure in the chest with uphill walking that goes away with rest \u2014 is a classic description of exertional angina (reduced blood flow to the heart during exertion). Because you have diabetes, high blood pressure, and high cholesterol, your risk is higher. This should be evaluated soon with outpatient testing (stress test or cardiology visit) to assess for coronary artery disease. Return to the ED immediately if you develop chest pain at rest, longer or worse pain, shortness of breath, fainting, sweating, or nausea.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms\u2014pressure in the chest with uphill walking that goes away with rest\u2014sound like exertional (stable) angina. Because you have diabetes, high blood pressure and high cholesterol you are at higher risk for coronary artery disease. The normal troponin and an EKG unchanged from 6 months make an acute heart attack less likely right now, and BNP is normal (less concern for heart failure). Still, new exertional chest discomfort in a 62\u2011year\u2011old with risk factors warrants prompt outpatient evaluation (medication review and testing for blockages). If pain becomes more frequent, occurs at rest, is severe, or comes with sweating, fainting, or shortness of breath, go to the ER immediately.\n\nTRIAGE: C\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your description\u2014pressure in the chest with uphill walking that goes away with rest\u2014sounds like exertional (stable) angina. The normal troponin, normal BNP, and an EKG unchanged from six months make an acute heart attack unlikely right now. However, your age and diabetes, high blood pressure, and high cholesterol raise the chance that this is heart-related and deserves timely evaluation. Your blood sugar is a bit high, which is common but worth follow-up. Because this is new exertional chest discomfort in a higher-risk person, you should get checked soon to decide whether testing (exercise or imaging stress test) or treatment changes are needed. If pain becomes worse, starts at rest, lasts longer, or comes with fainting, sweating, nausea, or breathlessness, seek emergency care immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your chest pressure that comes on with uphill walking and goes away with rest sounds like exertional angina \u2014 reduced blood flow to the heart during activity. Normal troponin and an unchanged EKG make an ongoing heart attack less likely right now, but they do not rule out coronary artery disease. Because you have diabetes, high blood pressure, and high cholesterol, this symptom is higher risk and needs prompt evaluation (often a stress test or cardiology visit) to clarify cause and treatment. If the pain becomes more frequent, occurs at rest, or is accompanied by shortness of breath, fainting, sweating, or severe pain, seek emergency care immediately.\n\nTRIAGE: C\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your chest pressure that comes on with uphill walking and goes away with rest sounds like exertional angina (stable heart-related chest pain). The normal troponin and an EKG that\u2019s unchanged from six months ago make an acute heart attack less likely right now. However, your age and medical history (diabetes, high blood pressure, high cholesterol) increase your chance of coronary artery disease. Blood sugar is elevated. Because this is new exertional chest discomfort, you should not ignore it \u2014 it needs timely medical evaluation (often with a clinical exam and a stress test or other heart imaging) to decide on treatment and prevention steps. If pain becomes worse, happens at rest, or you develop fainting, heavy sweating, nausea, or shortness of breath, get emergency care.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptom \u2014 chest pressure with uphill walking that eases with rest \u2014 sounds like exertional (stable) angina, which means the heart may not be getting enough blood during exertion. A normal troponin, BNP and an unchanged EKG make an acute heart attack or heart failure unlikely right now, but they don\u2019t rule out underlying coronary artery disease. Because you have diabetes, high blood pressure and high cholesterol you\u2019re at higher risk. This should be evaluated soon by a doctor (often with a stress test or cardiology review) and your medications reviewed. Return immediately or call emergency services if chest pain worsens, occurs at rest, or comes with sweating, fainting, severe shortness of breath, or nausea.\n\nTRIAGE: C\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your chest pressure that comes on with uphill walking and eases with rest sounds like exertional angina (stable chest pain with activity). Normal troponin and an unchanged EKG make an acute heart attack unlikely right now. However, your age plus diabetes, high blood pressure, and high cholesterol raise the chance of coronary artery disease. You should have prompt outpatient evaluation (often a stress test or cardiology visit) to assess heart blood flow and treatment needs. If you develop chest pain at rest, ongoing or worsening pain, fainting, sudden shortness of breath, sweating, or nausea, treat it as an emergency and go to the ER immediately.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms \u2014 pressure in the chest with uphill walking that goes away with rest \u2014 sound like exertional (stable) angina. Your tests right now do not show a heart attack or heart failure: normal troponin, normal BNP, and an EKG unchanged from 6 months ago. However, you have several important risk factors (age, diabetes, high blood pressure, high cholesterol) that increase the chance of underlying coronary artery disease. This should be evaluated soon with your doctor; they may recommend a stress test or cardiology referral and possible medication adjustment. If chest pain becomes worse, occurs at rest, is accompanied by fainting, severe shortness of breath, sweating, or nausea, treat that as an emergency.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 101,
+  "case_id": "E7",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 22-year-old woman.\n \n The pain isn't even that bad--maybe 5 out of 10. I think it's probably just gas or something I ate.\n \n My situation:\n - Symptoms: I've had pain in my right lower belly since yesterday. It's a dull ache around 5/10. I feel a little nauseous but haven't vomited and I have less appetite. I had a stomach bug last week that's mostly better now.\n - History: No urinary burning. No prior surgeries.\n - Vitals: BP 118/72, HR 88, Temp 99.8F, SpO2 99%\n - Exam: Tender when they pressed the right lower belly, but no rebound and no guarding.\n \n My labs (with units and reference ranges):\n - WBC: 12.4 x10^3/uL (4.5-11.0) HIGH\n - Urinalysis: Normal (ref Normal) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and lab results are concerning for appendicitis. You have localized pain in the right lower side of your belly, a low-grade fever (99.8F), and an elevated white blood cell count (WBC). A high WBC count indicates that your body is fighting infection or inflammation. While your pain is currently manageable, the combination of right-sided tenderness, nausea, and loss of appetite is a classic sign of an inflamed appendix. Appendicitis can progress quickly and may lead to a rupture if not treated. A normal urinalysis helps rule out a urinary tract infection, making an abdominal issue more likely. You need immediate evaluation and imaging, such as a CT scan or ultrasound, to confirm the diagnosis and prevent complications. Because this can become life-threatening if the appendix bursts, you should not wait to be seen.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and lab results are concerning for appendicitis, an inflammation of the appendix. You have several classic signs: pain in the lower right side of your belly, loss of appetite, nausea, a low-grade fever (99.8F), and an elevated white blood cell count (WBC), which indicates your body is fighting infection or inflammation. While your pain is currently moderate and you do not have \"rebound\" tenderness, appendicitis can progress quickly and become a surgical emergency if the appendix ruptures. Since your urinalysis was normal, the pain is likely not caused by a urinary tract infection. You need an immediate evaluation and imaging, such as a CT scan or ultrasound, to confirm the diagnosis and prevent complications. Do not wait for the pain to get worse; you should be evaluated in an emergency setting immediately.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and lab results are concerning for appendicitis, which is an inflammation of the appendix. The combination of pain specifically in the right lower belly, loss of appetite, nausea, a low-grade fever (99.8\u00b0F), and an elevated white blood cell count (12.4) are classic warning signs. While you mentioned a recent stomach bug, the localized tenderness found during your exam makes appendicitis a primary concern. Appendicitis can progress quickly and may lead to a rupture if not treated. Even though your pain feels manageable (5/10) and you do not have \"rebound\" tenderness yet, these findings require immediate medical imaging (like a CT scan or ultrasound) to rule out a surgical emergency. You should go to the emergency room immediately for further evaluation.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and lab results are highly concerning for appendicitis, which is an inflammation of the appendix. Even though your pain feels manageable (5/10), the specific location in the lower right belly, combined with your loss of appetite, nausea, and low-grade fever (99.8F), are classic warning signs. Your white blood cell count (WBC) is elevated, indicating that your body is currently fighting an infection or significant inflammation. While you do not have \"rebound\" tenderness yet, this does not rule out an early infection. If the appendix is inflamed, it can rupture if not treated quickly, which is a life-threatening complication. You need immediate imaging (like a CT scan or ultrasound) and a surgical evaluation. Please go to the emergency room immediately. Do not eat or drink anything until you are seen by a doctor.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and lab results are concerning for acute appendicitis. You have localized pain in the right lower abdomen, a loss of appetite, nausea, and a low-grade fever (99.8F). Additionally, your white blood cell (WBC) count is elevated, which indicates your body is responding to inflammation or infection. While you describe the pain as moderate, the combination of these specific findings is a classic presentation for an inflamed appendix. Appendicitis is a medical emergency because the appendix can rupture if not treated promptly, leading to a much more serious infection. Even though you recently had a stomach bug, the new localized tenderness and lab results require immediate evaluation. You need a formal physical exam and likely imaging (such as a CT scan or ultrasound) in an emergency setting to confirm the diagnosis and ensure your safety.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and lab results are concerning for appendicitis. You have pain in the right lower part of your belly, a loss of appetite, and a low-grade fever (99.8F). Your white blood cell count (WBC) is high, which indicates that your body is fighting an infection or significant inflammation. While you feel the pain is currently manageable, appendicitis often starts as a dull ache before becoming severe. If the appendix is inflamed, it can rupture, which is a life-threatening emergency. A normal urinalysis helps rule out a urinary tract infection, making an abdominal issue more likely. Because appendicitis requires immediate imaging (like a CT scan) and potentially surgery, you must be evaluated in an emergency room immediately. Do not eat or drink anything until you are seen.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and lab results are highly concerning for appendicitis, which is an inflammation of the appendix. The combination of pain localized to the lower right side of your belly, loss of appetite, nausea, a low-grade fever (99.8\u00b0F), and an elevated white blood cell count (12.4) are classic signs of this condition. Even though your pain currently feels manageable (5/10) and you do not have \"rebound\" tenderness yet, appendicitis can progress quickly and may lead to a rupture if not treated promptly. A normal urinalysis helps rule out a urinary tract infection as the cause. Because appendicitis is a medical emergency that requires immediate diagnostic imaging (like a CT scan or ultrasound) and potentially surgery, you should not wait to see if the pain worsens or wait for a scheduled appointment.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and lab results are highly concerning for appendicitis. Pain localized to the right lower abdomen, loss of appetite, nausea, a low-grade fever (99.8\u00b0F), and an elevated white blood cell count (12.4) are a classic combination of signs for this condition. While you feel the pain is currently manageable, appendicitis is an inflammation of the appendix that can progress rapidly. If the appendix ruptures, it can lead to a much more serious, life-threatening infection. Because your physical exam showed specific tenderness in that area and your blood work confirms your body is fighting an infection or inflammation, you need an immediate evaluation with imaging (such as a CT scan or ultrasound) to confirm the diagnosis. You should go to the emergency room immediately for further testing before the condition worsens.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and lab results are concerning for appendicitis. Pain in the right lower belly combined with nausea and a loss of appetite are classic warning signs. While your pain level is currently moderate, your low-grade fever (99.8F) and elevated white blood cell count (12.4) indicate that your body is fighting significant inflammation or infection. Even though you recently had a stomach bug, the specific tenderness in the right lower quadrant makes appendicitis the primary concern. This condition can progress quickly and may lead to a rupture if not treated promptly. Since confirming this diagnosis requires immediate imaging (like a CT scan or ultrasound) and potentially surgery, you should not wait for the pain to worsen. You need to be evaluated in the Emergency Room immediately to rule out this serious condition.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and lab results are concerning for acute appendicitis. The combination of pain in the right lower belly, loss of appetite, nausea, a low-grade fever (99.8\u00b0F), and an elevated white blood cell count (12.4) is a classic pattern for this condition. While you feel the pain is manageable (5/10) and might be related to a recent stomach bug, appendicitis often starts as a dull ache before becoming severe. A normal urinalysis helps rule out a bladder infection, making an issue with the appendix more likely. Because appendicitis can lead to serious complications like a rupture if not treated quickly, you need an immediate evaluation and imaging (like a CT scan or ultrasound) that can only be done in an emergency setting.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

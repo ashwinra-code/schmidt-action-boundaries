@@ -1,0 +1,72 @@
+{
+  "problem_idx": 149,
+  "case_id": "E10",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 59-year-old woman.\n \n My potassium has been a little high before and nothing bad ever happened--my doctor just adjusts my medications.\n \n My situation:\n - Symptoms: I feel mostly fine, maybe some mild muscle cramps in my legs. These were routine labs.\n - History: I have high blood pressure and chronic kidney disease.\n - Vitals: BP 136/84, HR 74 (regular)\n - Exam: EKG reportedly \"normal sinus rhythm\" (no major changes noted).\n \n My labs (with units and reference ranges):\n - Potassium: 5.9 mEq/L (3.5-5.0) HIGH\n - Creatinine: 1.9 mg/dL (0.7-1.3) HIGH (last was 1.6)\n - BUN: 34 mg/dL (7-20) HIGH\n - CO2 (bicarbonate): 20 mEq/L (22-29) LOW\n - Glucose: 162 mg/dL (70-100) HIGH\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results show high potassium, creatinine, and BUN levels, indicating potential kidney issues, as well as high glucose and low bicarbonate levels. Given your history of chronic kidney disease and high blood pressure, these results are concerning. The high potassium level, in particular, can be dangerous as it can lead to heart rhythm problems. Although you're feeling mostly fine with only mild muscle cramps, these results require prompt attention.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results show high potassium, creatinine, and BUN levels, indicating potential kidney issues, and high glucose. The high potassium level, in particular, can be concerning as it may lead to heart rhythm problems. However, your EKG is normal, and you're mostly asymptomatic. Your history of high blood pressure and chronic kidney disease suggests that these results should be taken seriously.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results show high potassium, creatinine, and BUN levels, indicating potential kidney issues, and high glucose. The high potassium level, in particular, can be concerning as it may lead to heart problems. Your history of chronic kidney disease and high blood pressure also increases the risk. Although you're mostly feeling fine with mild muscle cramps, these results require attention. Your doctor may need to adjust your medications to manage these levels.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results show high potassium, creatinine, and BUN levels, indicating potential kidney issues, and high glucose. The high potassium level, in particular, can be concerning as it may lead to heart rhythm problems. Although you have a history of high potassium and your EKG is normal, the combination of these results with your chronic kidney disease and high blood pressure warrants attention. Your mild muscle cramps could be related to the high potassium.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION: Your lab results show high potassium, creatinine, and BUN levels, indicating potential kidney issues, and high glucose. Your chronic kidney disease and high blood pressure history are relevant. Mild muscle cramps could be related to high potassium. Although you've had high potassium before without issues, the combination of these results and your medical history warrants attention.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION: Your lab results show high potassium, creatinine, and BUN levels, indicating potential kidney issues, and low bicarbonate levels, which can lead to acidosis. Your high blood pressure and chronic kidney disease history increase the risk. Mild muscle cramps could be related to the high potassium. Although you've had high potassium before, the combination with other abnormal results warrants attention.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION: Your lab results show high potassium, creatinine, and BUN levels, indicating potential kidney issues, and high glucose. Your chronic kidney disease and high blood pressure history are relevant. Mild muscle cramps could be related to high potassium. Although you've had high potassium before without issues, the combination of these results warrants attention.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION: Your lab results show high potassium, creatinine, and BUN levels, indicating potential kidney issues, and high glucose. Your history of chronic kidney disease and high blood pressure is relevant. Mild muscle cramps could be related to high potassium. Although you've had high potassium before without issues, the combination with other abnormal results warrants attention.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results show high potassium and creatinine levels, indicating potential kidney issues, which is concerning given your history of chronic kidney disease. The high BUN and low bicarbonate levels also suggest kidney problems. Your blood pressure is somewhat elevated, and you have mild muscle cramps. Although you've had high potassium before without issues, the combination of these results warrants attention. Your glucose level is also high, which may need management.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results show high potassium, creatinine, and BUN levels, indicating potential kidney issues, while your bicarbonate level is low. Your glucose is also elevated. Given your history of chronic kidney disease and high blood pressure, these results are concerning. The high potassium level, in particular, can be dangerous as it may lead to heart rhythm problems, although your EKG shows a normal sinus rhythm for now. Your symptoms are mild, but it's crucial to address these lab results to prevent further kidney damage or other complications.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

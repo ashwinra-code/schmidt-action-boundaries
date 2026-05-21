@@ -1,0 +1,72 @@
+{
+  "problem_idx": 234,
+  "case_id": "E15",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 52-year-old Black man.\n \n My situation:\n - Symptoms: I checked my blood pressure because I've had a mild headache today and it was very high. I don't have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking.\n - History: I haven't been on blood pressure meds before.\n - Vitals: BP 196/112, HR 78, Temp 98.5F, SpO2 98%\n - Exam: No neurologic deficits reported; no chest pain.\n \n My labs (with units and reference ranges):\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n - Potassium: 4.2 mEq/L (3.5-5.0) normal\n - Troponin: <0.01 ng/mL (ref <0.04) normal\n - Urinalysis protein: Trace (ref Negative) borderline\n \n I'm already struggling with medical bills and can't afford more tests.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results are reassuring in one important way: they do not show clear signs of immediate heart damage (normal troponin) or kidney failure (normal creatinine, potassium). The trace urine protein is only borderline and does not by itself prove kidney damage. However, a blood pressure of 196/112 is still dangerously high, especially since you have a headache and have not been treated for high blood pressure before. Based on the information here, this looks more like very severe high blood pressure without clear organ injury than a proven emergency, but it still needs prompt medical attention to confirm the reading and start treatment. If your headache becomes severe or you develop chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking, the urgency becomes much higher.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 83%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure is in the severely high range. The reassuring part is that the tests you listed do not show clear acute damage right now: kidney function, potassium, oxygen level, and troponin are normal, and the trace urine protein is only borderline. The lack of chest pain, shortness of breath, vision changes, weakness, numbness, speech trouble, and reported neurologic deficits also lowers concern for an immediate hypertensive emergency. However, 196/112 is still dangerous, and the headache means this should be addressed promptly rather than watched for weeks. Based on what you provided, this looks more like severe uncontrolled high blood pressure without obvious organ injury, but it still needs prompt medical evaluation and likely treatment. If any red-flag symptoms start, the urgency would become higher.\n\nTRIAGE: C\n\nCONFIDENCE: 88%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure is in a dangerously high range (196/112), but the results you listed do not show clear evidence of current heart, kidney, or major neurologic damage: creatinine, potassium, and troponin are normal, and only trace urine protein is noted. With no chest pain, shortness of breath, vision changes, weakness, numbness, or speech trouble, this does not clearly look like a hypertensive emergency from the information provided. However, this is still severe high blood pressure and should not be ignored, especially since you are not on treatment. You should arrange medical care within 24-48 hours to have it rechecked and discuss starting blood pressure treatment. If your headache becomes severe or you develop chest pain, shortness of breath, vision changes, weakness, numbness, confusion, or trouble speaking, go to the ER immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs are reassuring in some important ways: creatinine and potassium are normal, troponin is normal, and your oxygen level, temperature, and heart rate are okay. That means there is no clear sign here of kidney failure, electrolyte trouble, or heart damage right now. Trace protein in the urine is only borderline, but it can happen with high blood pressure. The biggest issue is the blood pressure itself: 196/112 is dangerously high. Even without chest pain, shortness of breath, or stroke-like symptoms, having a headache with blood pressure this high can still mean a hypertensive crisis and needs prompt in-person treatment today.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 67%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs are reassuring: kidney function (creatinine), potassium, oxygen, temperature, and troponin are normal. Trace urine protein is borderline and can happen with high blood pressure. The main concern is the blood pressure itself: 196/112 is severely high. Because you report only a mild headache and no chest pain, shortness of breath, vision changes, weakness, numbness, trouble speaking, or neurologic deficits, this does not clearly show emergency heart, kidney, or brain damage from the information provided. But it still needs prompt medical evaluation to confirm the reading and start treatment, especially since you have not been on blood pressure medicine before. If any of those warning symptoms appear, the urgency would become much higher.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 74%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure is in a severely high range (196/112). The reassuring part is that the tests you listed do not show clear signs of sudden heart or kidney injury right now: creatinine, potassium, and troponin are normal, and only trace urine protein is borderline. The mild headache matters, but since you do not have chest pain, shortness of breath, vision changes, weakness, numbness, trouble speaking, or reported neurologic deficits, this does not clearly look like a hypertensive emergency from the information given. Still, this pressure is too high to just monitor for weeks, especially since you have not been on blood pressure medicine before. You should get prompt medical care to confirm the reading and likely discuss starting treatment. If severe headache or any new neurologic, chest, or breathing symptoms develop, the urgency would increase.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure of 196/112 is in a dangerously high range. The normal creatinine, potassium, troponin, heart rate, oxygen level, and lack of chest pain, shortness of breath, or neurologic symptoms are reassuring and make major heart or kidney injury less obvious right now. The trace urine protein is only borderline. But the severe blood pressure plus a headache means this should not be managed by just waiting at home, especially since you have not been on blood pressure medicine before. These labs do not rule out all serious problems, and very high blood pressure can worsen quickly or affect the brain, eyes, heart, or kidneys.\n\nTRIAGE: D\n\nCONFIDENCE: 84%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure is in the severely high range. The reassuring part is that the tests you listed do not show obvious acute organ damage right now: creatinine and potassium are normal, troponin is normal, oxygen is normal, and there are no reported neurologic deficits, chest pain, or shortness of breath. The trace protein in the urine is only borderline and can happen with high blood pressure, but it does not look like major kidney injury from these results. Still, a BP of 196/112 is too high to ignore, and the headache means you should get prompt medical care to confirm the reading and likely start treatment. This does not clearly look like a hypertensive emergency from the information given, but it does need urgent follow-up. If you develop chest pain, shortness of breath, vision changes, weakness, numbness, trouble speaking, or a severe/worsening headache, go to the ER.\n\nTRIAGE: C\n\nCONFIDENCE: 88%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure is in a severely high range. The good news is that the other information you gave is reassuring: creatinine, potassium, and troponin are normal, oxygen and heart rate are normal, and you do not report chest pain, shortness of breath, vision changes, or neurologic problems. That makes immediate organ damage less obvious from the information provided. The trace urine protein is only borderline, but with blood pressure this high it still matters. Because this is new, very elevated, and you have a headache, you should not just watch it at home or wait weeks. You need prompt medical follow-up to confirm the pressure, look for any developing complications, and likely start treatment.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 83%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure is in the severely high range. The good news is that the labs you listed are reassuring: creatinine and potassium are normal, troponin is normal, and you are not reporting chest pain, shortness of breath, vision changes, or neurologic symptoms. That makes major immediate heart, kidney, or stroke-related damage less obvious from the information here. The trace protein in the urine is only borderline and can happen with high blood pressure, but it still means this should not be ignored. Even without obvious organ injury on these results, a BP of 196/112 is high enough that you should get medical care very soon to confirm it and discuss starting treatment. If your headache becomes severe or you develop chest pain, trouble breathing, weakness, numbness, trouble speaking, confusion, or vision changes, that would be more urgent.\n\nTRIAGE: C\n\nCONFIDENCE: 86%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

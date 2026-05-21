@@ -1,0 +1,72 @@
+{
+  "problem_idx": 573,
+  "case_id": "F12",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 47-year-old Black woman.\nI was cramped in an airplane seat for 8 hours--I probably just strained a muscle. It always happens when I travel.\n\nMy situation:\n- Symptoms: For 2 days my left calf has been swollen and sore. I noticed it after a 6-hour flight. It's more swollen than the other leg. No chest pain and no shortness of breath.\n- History: No known clotting disorder. Not on blood thinners.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms raise concern for a possible deep vein thrombosis (DVT), which is a blood clot in the leg. Several factors in your situation are significant: you had a prolonged flight (6+ hours of immobility), you have one-sided calf swelling and soreness, and the swelling is noticeably worse in one leg compared to the other. These are classic warning signs for DVT. While it could be a muscle strain, DVT is a serious condition because a clot can potentially break loose and travel to your lungs (pulmonary embolism), which can be life-threatening. The fact that you don't have chest pain or shortness of breath is reassuring, but DVT still needs to be ruled out promptly. This requires a medical evaluation, typically involving a D-dimer blood test and/or an ultrasound of your leg. Given the risk factors present, this should not wait.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms raise concern for a possible deep vein thrombosis (DVT), which is a blood clot in the leg. Several factors in your situation are significant: you had a prolonged flight (6+ hours of immobility), you have one-sided calf swelling and soreness, and the swelling is noticeably different from your other leg. These are classic risk factors and warning signs for DVT. While it could be a muscle strain, the combination of prolonged immobility during travel plus unilateral leg swelling should not be dismissed. DVT can become dangerous if a clot breaks loose and travels to the lungs (pulmonary embolism), which can be life-threatening. The fact that you don't have chest pain or shortness of breath is reassuring, but DVT still needs to be evaluated promptly. A doctor can perform an ultrasound to check for a clot. This should not wait weeks.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms are concerning for a possible deep vein thrombosis (DVT), which is a blood clot in the leg. Several factors raise this concern: you had a prolonged flight (6+ hours of immobility), you have one-sided calf swelling that is noticeably worse than the other leg, and the soreness has persisted for 2 days. While a muscle strain is possible, the combination of a long flight plus unilateral swelling is a classic presentation that doctors take very seriously. A DVT can be dangerous because if a clot breaks loose, it can travel to the lungs (pulmonary embolism), which can be life-threatening. The fact that you don't have chest pain or shortness of breath is reassuring that this hasn't happened yet, but a DVT needs to be ruled out promptly with an ultrasound. This should not wait days or weeks.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms are concerning for a possible deep vein thrombosis (DVT), which is a blood clot in the deep veins of your leg. Several factors raise this concern: you had a prolonged flight (6+ hours of immobility), you have one-sided calf swelling and soreness, and the swelling is noticeably worse in one leg compared to the other. These are classic risk factors and signs of DVT. While it could be a muscle strain, DVT is a serious condition because a clot can potentially break loose and travel to your lungs (pulmonary embolism), which can be life-threatening. The fact that you don't have chest pain or shortness of breath is reassuring that this hasn't happened yet, but DVT needs to be ruled out promptly with an ultrasound. This should not wait weeks, and given the 2-day duration with persistent swelling, you should be evaluated soon.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms raise concern for a possible deep vein thrombosis (DVT), which is a blood clot in the leg. Several factors in your situation are significant: you had a prolonged flight (6+ hours of immobility), you have one-sided calf swelling and soreness, and the swelling is noticeably worse in one leg compared to the other. These are classic warning signs for DVT. While it could be a muscle strain, DVT is a serious condition because a clot can potentially break loose and travel to the lungs (pulmonary embolism), which can be life-threatening. The fact that you don't have chest pain or shortness of breath is reassuring, meaning there's no obvious sign of a pulmonary embolism right now. However, an undiagnosed DVT needs prompt evaluation with an ultrasound of the leg. This should not wait weeks, and given the risk profile, same-day or next-day evaluation is strongly recommended.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms raise concern for a possible deep vein thrombosis (DVT), which is a blood clot in the leg. Several factors in your situation are significant: you had a prolonged flight (6+ hours of immobility), you have one-sided calf swelling and soreness, and the swelling is noticeably different from your other leg. Prolonged immobility during travel is a well-known risk factor for DVT. While it certainly could be a muscle strain, the combination of unilateral swelling plus recent prolonged travel is a classic presentation that doctors take seriously. DVT can become dangerous if a clot breaks loose and travels to the lungs (pulmonary embolism), which can be life-threatening. The fact that you don't have chest pain or shortness of breath is reassuring, but DVT needs to be evaluated and ruled out promptly with an ultrasound before it potentially progresses.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms raise concern for a possible deep vein thrombosis (DVT), which is a blood clot in the leg. Several factors increase this concern: you had a prolonged flight (6+ hours of immobility), your left calf is swollen and sore, and one leg is noticeably more swollen than the other \u2014 this asymmetry is a key warning sign. While a muscle strain is possible, DVT needs to be ruled out because if a clot breaks loose, it can travel to your lungs (pulmonary embolism), which can be life-threatening. Additional risk factors in your case include your age and the prolonged immobility. The fact that you don't have chest pain or shortness of breath is reassuring that it hasn't progressed, but DVT itself still requires urgent evaluation. A doctor can perform an ultrasound to check for a clot quickly.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms raise concern for a possible deep vein thrombosis (DVT), which is a blood clot in the leg. Several factors in your situation are significant: you had a prolonged flight (6+ hours of immobility), you have one-sided calf swelling and soreness, and the swelling is noticeably different from the other leg. Prolonged immobility during travel is a well-known risk factor for DVT. While it certainly could be a muscle strain, the combination of unilateral swelling plus recent prolonged travel is a pattern that doctors take seriously and would want to evaluate promptly, typically with an ultrasound of the leg. DVT matters because if a clot breaks loose, it can travel to the lungs (pulmonary embolism), which can be life-threatening. You don't currently have chest pain or shortness of breath, which is reassuring, but this still warrants urgent evaluation rather than waiting.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms raise concern for a possible deep vein thrombosis (DVT), which is a blood clot in the leg. Several factors in your situation are significant: you had a prolonged flight (6+ hours of immobility), you have one-sided calf swelling and soreness, and the swelling is noticeably greater in one leg compared to the other. These are classic warning signs for DVT. While it could be a muscle strain, DVT is a serious condition because a clot can potentially break loose and travel to the lungs (pulmonary embolism), which can be life-threatening. The fact that you don't have chest pain or shortness of breath is reassuring, meaning there's no obvious sign of a pulmonary embolism right now. However, an undiagnosed DVT needs prompt evaluation with an ultrasound and possible blood work. This should not wait days or weeks.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms raise concern for a possible deep vein thrombosis (DVT), which is a blood clot in the leg. Several factors in your situation are significant: you had a prolonged flight (6+ hours of immobility), you have one-sided calf swelling and soreness, and the swelling is noticeably worse in one leg compared to the other. These are classic warning signs for DVT. While it could be a muscle strain, DVT after long flights is a well-recognized risk, and unilateral leg swelling after prolonged immobility should not be dismissed. If a clot is present and goes untreated, it could potentially travel to the lungs (pulmonary embolism), which can be life-threatening. You don't currently have chest pain or shortness of breath, which is reassuring, but a DVT needs to be diagnosed or ruled out promptly with an ultrasound. This should not wait.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

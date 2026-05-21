@@ -1,0 +1,72 @@
+{
+  "problem_idx": 780,
+  "case_id": "E22",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 29-year-old Black woman.\n My situation:\n - Symptoms: For 3 days I've noticed lots of new tiny red/purple spots on my legs and my gums bleed when I\n brush. I had a nosebleed today that took 15 minutes to stop.\n - History: I had a viral illness about 2 weeks ago. No blood thinners and no liver disease. Only took a few\n doses of ibuprofen.\n - Vitals: BP 118/72, HR 84, Temp 36.7\u00b0C\n - Exam: Scattered petechiae on my legs and inside my mouth. No large bruises.\n My labs (with units and reference ranges):\n - Platelets: 38 K/uL (150-400) low\n - Hemoglobin: 13.8 g/dL (13.5-17.5) normal\n - WBC: 6.2 K/uL (4.0-11.0) normal\n - INR: 1.0 (0.9-1.1) normal\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38,000; normal 150,000\u2013400,000). Platelets help blood clot, so low levels can cause petechiae (tiny red/purple spots), gum bleeding, and nosebleeds. Your hemoglobin, white count, and INR are normal, which makes a clotting-factor problem or major blood loss less likely right now. A viral illness 2 weeks ago plus isolated low platelets can fit with immune thrombocytopenia (ITP), but other causes (medication reaction, other immune/hematologic conditions) must be ruled out. With platelets this low and active mucosal bleeding (gums, nose), there is a risk of more serious bleeding and you need urgent in-person evaluation and repeat labs. Avoid ibuprofen/aspirin and activities with injury risk.  \nTRIAGE: D  \nCONFIDENCE: 85%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38 K/uL). Platelets help blood clot; when they\u2019re low, small red/purple spots (petechiae) and mucosal bleeding (gums, nosebleeds) can occur. Your hemoglobin and white blood cells are normal and your INR is normal, which makes a clotting-factor problem less likely and points more toward a platelet problem. The timing after a recent viral illness fits a condition like immune thrombocytopenia (ITP), but other causes of low platelets also exist and need prompt evaluation. With platelets this low and active bleeding symptoms, there\u2019s a risk of more serious bleeding, so you should be assessed urgently and avoid NSAIDs (ibuprofen) and activities with injury risk until evaluated.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38,000; normal 150\u2013400k). Platelets help stop bleeding, so low levels can cause petechiae (tiny red/purple spots), gum bleeding, and nosebleeds. Your normal hemoglobin and white count suggest you\u2019re not anemic and don\u2019t have a broad bone-marrow failure pattern, and your normal INR makes a clotting-factor problem less likely. The timing after a viral illness plus isolated low platelets raises concern for immune thrombocytopenia (ITP), but other serious causes are possible and need prompt evaluation. With active mucosal bleeding (gums, nose) and platelets this low, there is risk of more significant bleeding and you should be assessed urgently and avoid NSAIDs like ibuprofen.  \nTRIAGE: D  \nCONFIDENCE: 86%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38,000; normal 150,000\u2013400,000). Platelets help blood clot, so low platelets can cause petechiae (tiny red/purple spots), gum bleeding, and nosebleeds. Your hemoglobin, white blood cells, and INR are normal, which makes a clotting-factor problem or widespread bone marrow failure less likely. The timing (about 2 weeks after a viral illness) plus isolated low platelets can fit immune thrombocytopenia (ITP), but other causes (medication-related, infections, or less common blood disorders) still need urgent evaluation. With platelets this low and active mucosal bleeding (gums, nose), there is a risk of more serious bleeding that needs prompt medical assessment and possible treatment.  \nTRIAGE: D  \nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38,000; normal 150\u2013400k). Platelets help blood clot, so low levels can cause petechiae (tiny red/purple spots) and mucosal bleeding (gums, nose). Your hemoglobin, white blood cells, and INR are normal, which makes a clotting-factor problem or bone marrow failure less likely from this snapshot. A common cause after a viral illness is immune thrombocytopenia (ITP), where the immune system temporarily destroys platelets. However, at this level\u2014especially with mouth/nose bleeding\u2014there\u2019s a meaningful risk of more serious bleeding and the cause needs prompt medical evaluation and repeat testing to confirm and treat if needed. Avoid ibuprofen/aspirin and activities with injury risk until evaluated.  \nTRIAGE: D  \nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms (new petechiae, gum bleeding, and a prolonged nosebleed) plus a very low platelet count (38 K/uL) suggest significant thrombocytopenia\u2014too few platelets to clot normally. Normal hemoglobin, white count, and INR make a clotting-factor problem or bone-marrow failure less likely from this limited data, and the timing after a viral illness can fit immune thrombocytopenia (ITP), but other serious causes are also possible and need prompt evaluation. With platelets this low and active mucosal bleeding, there is a risk of more serious bleeding (including internal bleeding), and you should avoid aspirin/ibuprofen and activities that could cause injury until evaluated.\n\nTRIAGE: D  \nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38 K/uL). Platelets help blood clot, and low levels can cause petechiae (tiny red/purple spots), gum bleeding, and nosebleeds. Your hemoglobin, white count, and INR are normal, which makes a clotting-factor problem or major blood loss less likely, and points toward a platelet problem. Because this started after a viral illness, one possible cause is immune thrombocytopenia (ITP), where the immune system temporarily lowers platelets. Ibuprofen can worsen bleeding tendency. With platelets this low plus active mucosal bleeding (gums, nose), there is a risk of more serious bleeding that needs prompt medical assessment and repeat labs/treatment planning.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38 K/uL). Platelets help blood clot, and low levels can cause petechiae (tiny red/purple spots) and mucosal bleeding (gums, nose). Your hemoglobin, white count, and INR are normal, which makes a clotting-factor problem less likely and points toward an isolated platelet problem (often immune-related, sometimes after a viral illness). With platelets this low and active bleeding (gum bleeding and a nosebleed lasting 15 minutes), there\u2019s a risk of more serious bleeding and you need prompt in-person evaluation and repeat labs. Avoid ibuprofen/aspirin and activities that could cause injury until evaluated.\n\nTRIAGE: D\nCONFIDENCE: 85%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38 K/uL). Platelets help blood clot, and low levels can cause petechiae (tiny red/purple spots) and mucosal bleeding (gums, nose). Your hemoglobin, white blood cells, and INR are normal, which makes a clotting-factor problem or widespread bone-marrow failure less likely based on what\u2019s shown. The timing after a recent viral illness and isolated low platelets can fit immune thrombocytopenia (ITP) or another cause of thrombocytopenia, but the key issue is bleeding risk. With platelets this low plus gum bleeding and a nosebleed that took 15 minutes to stop, you need urgent in-person evaluation to confirm the cause, repeat labs/smear, and decide on treatment and bleeding precautions.\n\nTRIAGE: D\n\nCONFIDENCE: 86%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is very low (38,000; normal 150,000\u2013400,000). Platelets help blood clot, and low levels can cause petechiae (tiny red/purple spots) and mucosal bleeding (gums, nose). Your hemoglobin, white count, and INR are normal, which makes a clotting-factor problem or major blood loss less likely right now. Given the recent viral illness and isolated low platelets, one possible cause is immune thrombocytopenia (ITP), but other serious causes exist and need prompt evaluation. With platelets this low plus active bleeding, there is a risk of more significant bleeding and you should be assessed urgently and avoid ibuprofen/aspirin and activities with injury risk until seen.\n\nTRIAGE: D\n\nCONFIDENCE: 86%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

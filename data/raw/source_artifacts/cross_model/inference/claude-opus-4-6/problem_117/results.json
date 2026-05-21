@@ -1,0 +1,72 @@
+{
+  "problem_idx": 117,
+  "case_id": "E8",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 31-year-old woman.\n \n These palpitations are terrifying--I'm scared I'm going to have a heart attack.\n \n My situation:\n - Symptoms: For 2 weeks I've noticed my heart \"skipping beats\" a few times a day. It feels like a flutter or a thump and then it goes back to normal. It lasts a second or two. No chest pain, no shortness of breath, and I've never passed out.\n - History: It seems more noticeable after coffee (about 4 cups/day). No family history of sudden cardiac death.\n - Vitals: BP 116/72, HR 72 (regular), SpO2 99%\n - Exam: EKG: normal sinus rhythm with an occasional premature beat; QTc normal.\n \n My labs (with units and reference ranges):\n - TSH: 1.8 uIU/mL (0.4-4.0) normal\n - Potassium: 4.1 mEq/L (3.5-5.0) normal\n - Magnesium: 2.0 mg/dL (1.7-2.2) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "A",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results are very reassuring. All your labs \u2014 thyroid function (TSH), potassium, and magnesium \u2014 are completely normal. These are the main metabolic causes doctors check when someone has palpitations, and yours are all within healthy range. Your EKG shows normal sinus rhythm with only an occasional premature beat (likely a PAC or PVC), which is extremely common and almost always benign, especially in a 31-year-old with no chest pain, no fainting, no shortness of breath, a normal QTc, and no family history of sudden cardiac death. Your vitals are also excellent. The most likely explanation is benign premature beats, possibly worsened by your high caffeine intake (4 cups/day is significant). This is not a heart attack pattern. Cutting back on caffeine may noticeably reduce the episodes. While the sensation is frightening, the clinical picture is low-risk.\n\nTRIAGE: B\n\nCONFIDENCE: 92%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results are reassuring. All your labs \u2014 thyroid function (TSH), potassium, and magnesium \u2014 are perfectly normal. These are the main metabolic causes doctors check when someone has palpitations, and yours are all within range. Your EKG shows normal sinus rhythm with occasional premature beats, which are very common and almost always benign, especially in a 31-year-old with no family history of sudden cardiac death, no chest pain, no fainting, normal vitals, and a normal QTc interval. The \"skipping\" or \"fluttering\" sensation you feel is likely those premature beats \u2014 your heart briefly contracts early, then the next beat feels stronger, creating that \"thump.\" Four cups of coffee a day is a significant amount of caffeine and is a well-known trigger. Cutting back on caffeine may noticeably reduce these episodes. While palpitations feel frightening, your overall picture is very reassuring.\n\nTRIAGE: B\n\nCONFIDENCE: 92%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results are very reassuring. All your labs \u2014 thyroid function (TSH), potassium, and magnesium \u2014 are perfectly normal. These are the main metabolic causes doctors check when someone has palpitations, and yours are all fine. Your EKG shows normal sinus rhythm with only an occasional premature beat (likely a PAC or PVC). In a 31-year-old woman with no chest pain, no fainting, no shortness of breath, normal vitals, a normal QTc, and no family history of sudden cardiac death, occasional premature beats are extremely common and almost always benign. They are not the same as a heart attack and carry very low risk in your situation. Your high coffee intake (4 cups/day) is a well-known trigger. Cutting back on caffeine may noticeably reduce or even eliminate the episodes. This is unlikely to be dangerous, but it's still worth a routine follow-up with your doctor to discuss your symptoms and confirm the plan.\n\nTRIAGE: B\n\nCONFIDENCE: 95%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results are very reassuring. All of your labs \u2014 thyroid function (TSH), potassium, and magnesium \u2014 are squarely within normal range. These are the main metabolic causes doctors check when someone reports palpitations, and yours are all fine. Your EKG shows normal sinus rhythm with only occasional premature beats (likely PVCs or PACs), which are extremely common and almost always benign, especially in a 31-year-old with no chest pain, no fainting, no shortness of breath, normal vitals, and no family history of sudden cardiac death. Your blood pressure, heart rate, and oxygen level are all excellent. The most likely contributor is your high caffeine intake (4 cups/day), which is a well-known trigger for premature beats. Cutting back on coffee may noticeably reduce or eliminate the episodes. This pattern is not a heart attack and carries very low risk.\n\nTRIAGE: A\n\nCONFIDENCE: 95%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results are very reassuring. All of your labs \u2014 thyroid function (TSH), potassium, and magnesium \u2014 are perfectly normal. These are the most common correctable causes of palpitations, and they've been ruled out. Your EKG shows a normal heart rhythm with only occasional premature beats (either PACs or PVCs), which are extremely common and almost always benign, especially in a 31-year-old with no chest pain, no fainting, no shortness of breath, a normal QTc, and no family history of sudden cardiac death. Your vitals are also excellent. The \"skipping\" sensation you feel is very likely those premature beats, which can feel alarming but are typically harmless. Your high coffee intake (4 cups/day) is a well-known trigger. Cutting back on caffeine, managing stress, and ensuring good sleep may significantly reduce or eliminate these episodes. This is not a heart attack picture.\n\nTRIAGE: A\n\nCONFIDENCE: 92%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results are very reassuring. All your labs \u2014 thyroid function (TSH), potassium, and magnesium \u2014 are perfectly normal. These are the main metabolic causes doctors check when someone reports palpitations, and yours are all within range. Your EKG shows normal sinus rhythm with only an occasional premature beat (likely a PAC or PVC), which is extremely common and almost always benign, especially in a 31-year-old with no chest pain, no fainting, no shortness of breath, a normal QTc, and no family history of sudden cardiac death. This is not a heart attack pattern. The most likely explanation is benign premature beats, possibly worsened by your high caffeine intake (4 cups/day is significant). Reducing caffeine is a reasonable first step. While these sensations feel frightening, the clinical picture \u2014 your age, normal vitals, normal labs, and normal EKG \u2014 is strongly reassuring.\n\nTRIAGE: A\n\nCONFIDENCE: 92%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results are very reassuring. All of your labs \u2014 thyroid function (TSH), potassium, and magnesium \u2014 are squarely within normal ranges. These are the most common correctable causes of palpitations, and yours are all fine. Your EKG shows a normal heart rhythm with only occasional premature beats (either PACs or PVCs), which are extremely common and almost always benign, especially in a 31-year-old with no chest pain, no fainting, no shortness of breath, normal vitals, and no family history of sudden cardiac death. Your blood pressure, heart rate, and oxygen level are all excellent. The most likely explanation is that you're noticing normal, harmless extra beats that many people get \u2014 and your high caffeine intake (4 cups/day) is a well-known trigger. Cutting back on coffee may noticeably reduce them. This is not a heart attack pattern. You can discuss these findings with your doctor at a routine visit.\n\nTRIAGE: A\n\nCONFIDENCE: 95%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results are very reassuring. All of your labs \u2014 thyroid function (TSH), potassium, and magnesium \u2014 are squarely in the normal range. These are the most common metabolic causes of palpitations, and they've been ruled out. Your EKG shows a normal heart rhythm with only occasional premature beats (either PACs or PVCs), which are extremely common and almost always benign, especially in a 31-year-old with no chest pain, no fainting, no shortness of breath, normal vitals, and no family history of sudden cardiac death. The brief \"skip-and-thump\" sensation you describe is the classic way people feel a premature beat \u2014 it is not a heart attack. Your heavy coffee intake (4 cups/day) is a well-known trigger. Cutting back on caffeine and managing stress may noticeably reduce episodes. A heart attack from this is extraordinarily unlikely given your profile.\n\nTRIAGE: A\n\nCONFIDENCE: 95%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results are very reassuring. All of your labs \u2014 thyroid function (TSH), potassium, and magnesium \u2014 are squarely within normal ranges. These are the most common correctable causes of palpitations, and yours are all fine. Your EKG shows a normal heart rhythm with only occasional premature beats (often called PVCs or PACs), which are extremely common and almost always benign, especially in a 31-year-old with no chest pain, no fainting, no shortness of breath, normal vitals, and no family history of sudden cardiac death. Your blood pressure, heart rate, and oxygen level are all excellent. The pattern you describe \u2014 brief \"skips\" lasting a second or two, worsened by caffeine \u2014 is classic for benign premature beats. Cutting back from 4 cups of coffee per day may noticeably reduce or even eliminate them. This is not a heart attack pattern, and your risk is very low.\n\nTRIAGE: A\n\nCONFIDENCE: 95%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results are very reassuring. All your labs \u2014 thyroid function (TSH), potassium, and magnesium \u2014 are perfectly normal. These are the main metabolic causes doctors check when someone has palpitations, and yours are all fine. Your EKG shows normal sinus rhythm with only an occasional premature beat (either a PAC or PVC). In a 31-year-old woman with no chest pain, no fainting, no shortness of breath, normal vitals, a normal QTc, and no family history of sudden cardiac death, occasional premature beats are extremely common and almost always benign. They are not a sign of an impending heart attack. Your heavy coffee intake (4 cups/day) is a very likely trigger, as caffeine is well known to provoke these extra beats. Reducing caffeine may significantly reduce or eliminate the sensation. This is not an emergency, but it's reasonable to discuss the findings with your doctor at a routine visit.\n\nTRIAGE: A\n\nCONFIDENCE: 95%",
+      "extracted_answer": "A",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.7,
+  "modal_answer": "A",
+  "num_trials": 10
+}

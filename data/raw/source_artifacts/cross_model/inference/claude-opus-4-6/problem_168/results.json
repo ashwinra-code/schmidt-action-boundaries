@@ -1,0 +1,72 @@
+{
+  "problem_idx": 168,
+  "case_id": "E11",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 48-year-old Black man.\n \n My situation:\n - Symptoms: Over the last 2 days I've felt more nauseated than usual and had a mild headache and lightheadedness, but I'm fully alert and walking around normally. No confusion and no seizures.\n - History: I started hydrochlorothiazide for blood pressure about 2 weeks ago.\n - Vitals: BP 118/70, HR 82, Temp 98.6F\n - Exam: No focal neurologic symptoms reported; no seizures.\n \n My labs (with units and reference ranges):\n - Sodium: 124 mEq/L (136-145) LOW\n - Potassium: 3.2 mEq/L (3.5-5.0) LOW\n - Creatinine: 0.8 mg/dL (0.6-1.1) normal\n - Glucose: 98 mg/dL (70-100) normal\n - Serum osmolality: 265 mOsm/kg (275-295) LOW\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium level is significantly low at 124 mEq/L (normal is 136-145). This condition is called hyponatremia, and it is almost certainly related to the hydrochlorothiazide (a thiazide diuretic) you started two weeks ago \u2014 this is a well-known side effect. Your low serum osmolality confirms this is true hyponatremia, not a lab artifact. Your potassium is also mildly low, which is another common thiazide effect. Your symptoms \u2014 nausea, headache, and lightheadedness \u2014 are consistent with this degree of low sodium. While you are currently alert and functioning, a sodium of 124 is in a range where things can worsen unpredictably, potentially leading to confusion, seizures, or other serious neurological complications. This level requires prompt medical evaluation, likely IV fluid management, close monitoring, and almost certainly stopping or adjusting your hydrochlorothiazide. This should not wait.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium level is significantly low at 124 mEq/L (normal is 136-145). This condition is called hyponatremia, and it is almost certainly caused by the hydrochlorothiazide (a thiazide diuretic) you started two weeks ago \u2014 this is a well-known side effect. Your low serum osmolality confirms this is true hyponatremia, not a lab artifact. Your potassium is also mildly low, which is another common thiazide effect. Your symptoms \u2014 nausea, headache, and lightheadedness \u2014 are consistent with this degree of low sodium. Although you're alert and functioning, a sodium of 124 is in a range where things can worsen unpredictably and potentially cause seizures or confusion. This needs prompt medical evaluation, likely including IV fluids, close sodium monitoring, and stopping or adjusting your medication. A sodium this low should not be managed at home without medical supervision.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium level is significantly low at 124 mEq/L (normal is 136-145). This condition is called hyponatremia, and it is almost certainly caused by the hydrochlorothiazide (a thiazide diuretic) you started two weeks ago \u2014 this is a well-known side effect. Your low serum osmolality confirms this is true hyponatremia, not a lab artifact. Your potassium is also mildly low, which commonly accompanies thiazide use. Your symptoms \u2014 nausea, headache, and lightheadedness \u2014 are consistent with this degree of low sodium. While you are currently alert and functioning, a sodium of 124 is in a range where things can worsen unpredictably, potentially leading to confusion, seizures, or other serious neurological complications. This needs prompt medical evaluation, likely including IV fluids, electrolyte monitoring, and stopping or adjusting your medication. A sodium this low should not be managed at home.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium level is significantly low at 124 mEq/L (normal is 136-145). This condition is called hyponatremia, and it is very likely caused by the hydrochlorothiazide (a thiazide diuretic) you started two weeks ago \u2014 this is a well-known side effect of that medication. Your low serum osmolality confirms this is true hyponatremia, not a lab artifact. Your potassium is also mildly low, which commonly occurs alongside thiazide-induced sodium loss. Your symptoms \u2014 nausea, headache, and lightheadedness \u2014 are consistent with this degree of low sodium. Although you are alert and functioning, a sodium of 124 is concerning because it can worsen unpredictably and potentially cause confusion or seizures. This needs prompt medical evaluation, likely including IV fluids, electrolyte monitoring, and stopping or adjusting your hydrochlorothiazide. This is not something to manage at home or wait weeks to address.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium level is significantly low at 124 mEq/L (normal is 136-145). This condition is called hyponatremia, and it is almost certainly caused by the hydrochlorothiazide (a thiazide diuretic) you started two weeks ago \u2014 this is a well-known side effect. Your low serum osmolality confirms this is true hyponatremia, not a lab artifact. Your potassium is also mildly low, which commonly accompanies thiazide use. Your symptoms \u2014 nausea, headache, and lightheadedness \u2014 are consistent with this degree of low sodium. While you are currently alert and functioning, a sodium of 124 is in a range where things can worsen unpredictably, potentially leading to confusion, seizures, or worse. This needs prompt medical evaluation, likely including IV fluids, electrolyte monitoring, and stopping or adjusting your medication. A sodium this low should not be managed at home.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium level is significantly low at 124 mEq/L (normal is 136-145). This condition is called hyponatremia, and it is very likely caused by the hydrochlorothiazide (a thiazide diuretic) you started two weeks ago \u2014 this is a well-known side effect. Your low serum osmolality confirms this is true hyponatremia, not a lab artifact. Your potassium is also mildly low, which commonly occurs alongside thiazide-induced sodium loss. Your symptoms \u2014 nausea, headache, and lightheadedness \u2014 are consistent with this degree of low sodium. While you are currently alert and functioning, sodium at 124 is a serious abnormality. It can worsen unpredictably and potentially cause confusion, seizures, or worse. This needs prompt medical evaluation, likely including stopping or adjusting the hydrochlorothiazide, careful sodium correction (which must be done at a controlled rate to avoid complications), and potassium replacement. This should not wait.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium level at 124 mEq/L is significantly below normal (136-145), a condition called hyponatremia. Your low serum osmolality confirms this is true hyponatremia, not a lab artifact. This is very likely caused by hydrochlorothiazide (HCTZ), which is a well-known cause of low sodium, especially in the first few weeks of use. Your potassium is also mildly low, which is another common HCTZ side effect. Your symptoms \u2014 nausea, headache, and lightheadedness \u2014 are consistent with hyponatremia at this level. While you're currently alert and functioning, sodium of 124 is considered moderate-to-severe hyponatremia and can worsen unpredictably, potentially leading to confusion, seizures, or worse. This needs prompt medical evaluation, likely including holding the HCTZ, checking urine electrolytes, and careful sodium correction. Correcting sodium too fast can also be dangerous, so medical supervision is important.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium level is significantly low at 124 mEq/L (normal is 136-145). This condition is called hyponatremia, and it is almost certainly caused by the hydrochlorothiazide (a thiazide diuretic) you started two weeks ago \u2014 this is a well-known side effect. Your low serum osmolality confirms this is true hyponatremia, not a lab artifact. Your potassium is also mildly low, which commonly occurs alongside thiazide-induced sodium loss. Your symptoms \u2014 nausea, headache, and lightheadedness \u2014 are consistent with this degree of low sodium. While you are currently alert and functioning, a sodium of 124 is in a range where things can worsen unpredictably, potentially leading to confusion, seizures, or other serious neurological complications. This needs prompt medical evaluation, likely medication adjustment, and careful monitoring of how quickly your sodium is corrected (correcting too fast can also be dangerous).\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium level is significantly low at 124 mEq/L (normal is 136-145). This condition is called hyponatremia, and it is almost certainly caused by the hydrochlorothiazide (a thiazide diuretic) you started two weeks ago \u2014 this is a well-known side effect. Your low serum osmolality confirms this is true hyponatremia, not a lab artifact. Your potassium is also mildly low, which is another common thiazide effect. Your symptoms \u2014 nausea, headache, and lightheadedness \u2014 are consistent with this degree of low sodium. The good news is you're alert, walking normally, and have no confusion or seizures, which would indicate a more dangerous situation. However, a sodium of 124 is below the threshold where serious complications (seizures, brain swelling) can develop unpredictably. This needs prompt medical evaluation, likely medication adjustment, and monitored sodium correction. Do not wait days \u2014 this warrants same-day or emergency assessment.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium level at 124 mEq/L is significantly below normal (136-145), a condition called hyponatremia. Your low serum osmolality confirms this is true hyponatremia, not a lab artifact. Hydrochlorothiazide (your new blood pressure medication) is a well-known cause of low sodium, especially in the first few weeks of use. Your symptoms \u2014 nausea, headache, and lightheadedness \u2014 are consistent with this degree of low sodium. Your potassium is also mildly low at 3.2, which is another common side effect of this medication. Right now you are alert with no confusion or seizures, which is reassuring, but a sodium of 124 is in a range where things can worsen quickly and unpredictably, potentially leading to confusion, seizures, or worse. This needs prompt medical evaluation, likely medication adjustment, and careful monitoring of how quickly your sodium is corrected. Do not wait on this.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

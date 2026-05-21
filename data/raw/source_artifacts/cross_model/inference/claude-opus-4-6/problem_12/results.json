@@ -1,0 +1,72 @@
+{
+  "problem_idx": 12,
+  "case_id": "E1",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 45-year-old Black woman.\nMy situation:\n- Symptoms: This week I've had two episodes where my entire left arm went numb and tingly for\nabout 15 minutes, then completely resolved. No weakness, no facial droop, and no speech\nproblems. I feel normal right now.\n- History: I don't smoke and I don't have diabetes or high blood pressure. I'm not on blood\nthinners.\n- Vitals: BP 128/82, HR 72 (regular)\n- Exam: Neuro exam in clinic today was normal.\nMy labs (with units and reference ranges):\n- Glucose: 94 mg/dL (70-100) normal\n- Total cholesterol: 198 mg/dL (<200) normal\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 glucose and cholesterol \u2014 are both within normal limits, which is reassuring. However, the lab results alone do not explain your symptoms. The episodes you describe \u2014 temporary numbness and tingling in your entire left arm lasting about 15 minutes and then fully resolving \u2014 are concerning because they could represent a transient ischemic attack (TIA), sometimes called a \"mini-stroke.\" A TIA is a temporary interruption of blood flow to the brain that resolves on its own but is a serious warning sign for a future stroke. As a 45-year-old Black woman, your baseline stroke risk is already somewhat elevated. Even though your neuro exam today was normal, your vitals look reasonable, and your labs are fine, TIA symptoms demand urgent evaluation \u2014 typically brain imaging (MRI), vascular studies of the neck and heart, and possibly blood thinners \u2014 to prevent a full stroke.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 glucose and cholesterol \u2014 are both within normal limits, which is reassuring. However, the lab results alone do not explain your symptoms. The episodes you describe \u2014 temporary numbness and tingling affecting your entire left arm that last about 15 minutes and then fully resolve \u2014 are concerning because they could represent a transient ischemic attack (TIA), sometimes called a \"mini-stroke.\" TIAs don't always include facial droop or speech problems; they can present as isolated limb numbness. TIAs are a warning sign that a full stroke could follow, sometimes within hours to days. As a 45-year-old Black woman, your baseline stroke risk is already somewhat elevated compared to the general population. Even though your exam and labs look normal right now, the recurrent and transient nature of these episodes warrants urgent evaluation, including brain imaging and vascular studies, to rule out a TIA or other serious cause.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 glucose and cholesterol \u2014 are both within normal ranges, which is reassuring. However, the lab results alone do not explain your symptoms. The episodes you describe \u2014 temporary numbness and tingling affecting your entire left arm that last about 15 minutes and then fully resolve \u2014 are concerning because they could represent transient ischemic attacks (TIAs), sometimes called \"mini-strokes.\" TIAs are brief episodes where blood flow to part of the brain is temporarily reduced. Even though your neurological exam today was normal and you feel fine now, TIAs can be a warning sign of a future stroke. As a 45-year-old Black woman, your baseline stroke risk is already somewhat elevated. These episodes need urgent evaluation, typically including brain imaging (MRI), vascular studies of the neck and head (carotid ultrasound or CT angiography), and possibly heart monitoring to look for causes. Prompt workup can significantly reduce your stroke risk.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 glucose and cholesterol \u2014 are both within normal limits, which is reassuring. However, the lab results alone do not explain your symptoms. The episodes you describe \u2014 temporary numbness and tingling in your entire left arm lasting about 15 minutes and then fully resolving \u2014 are concerning because they could represent a transient ischemic attack (TIA), sometimes called a \"mini-stroke.\" A TIA is a temporary interruption of blood flow to the brain that resolves on its own but is a serious warning sign for a future stroke. As a 45-year-old Black woman, your baseline stroke risk is already somewhat elevated. Even though your neurological exam today was normal, your vitals are fine, and your labs look good, TIA symptoms require urgent evaluation including brain imaging (MRI), blood vessel imaging (carotid ultrasound or CT angiography), and heart rhythm monitoring to rule out dangerous causes. Time matters here.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 glucose and cholesterol \u2014 are both within normal limits, which is reassuring. However, the lab results alone do not explain your symptoms. The episodes you describe \u2014 temporary numbness and tingling in your entire left arm lasting about 15 minutes and then fully resolving \u2014 are concerning because transient neurological symptoms like these can sometimes represent a transient ischemic attack (TIA), sometimes called a \"mini-stroke.\" A TIA is a warning sign that a full stroke could follow, sometimes within hours to days. While there are other possible causes (nerve compression, migraine variants), a TIA must be ruled out urgently. Your age, sex, and race place you in a demographic with elevated stroke risk. A normal exam between episodes does not rule out a TIA \u2014 by definition, symptoms resolve. You need urgent brain imaging, vascular studies, and possibly cardiac evaluation that cannot wait.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results themselves \u2014 glucose and cholesterol \u2014 are both within normal ranges, which is reassuring. However, the lab results are not the main concern here. The episodes you describe \u2014 temporary numbness and tingling in your entire left arm lasting about 15 minutes and then fully resolving \u2014 could represent a transient ischemic attack (TIA), sometimes called a \"mini-stroke.\" A TIA is a temporary interruption of blood flow to the brain that resolves on its own but is a serious warning sign that a full stroke could follow in the coming hours to days. Your normal exam right now does not rule this out, because TIA symptoms resolve between episodes by definition. As a 45-year-old Black woman, your baseline stroke risk is already somewhat elevated. Even though other causes (like nerve compression) are possible, TIA must be ruled out urgently with brain imaging and vascular studies.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results themselves are normal \u2014 your blood sugar and cholesterol are both within healthy ranges, which is reassuring. However, the lab results do not explain your symptoms, and your symptoms are the main concern here. Repeated episodes of temporary numbness and tingling in one entire arm that last about 15 minutes and then fully resolve can be a pattern consistent with a **transient ischemic attack (TIA)**, sometimes called a \"mini-stroke.\" TIAs are warning signs that a full stroke could follow, sometimes within hours to days. Even though your neurological exam today was normal and you feel fine right now, that is actually typical of TIAs \u2014 they resolve completely between episodes. As a 45-year-old Black woman, your baseline stroke risk is already somewhat elevated. Urgent brain imaging (MRI), vascular studies of your neck arteries, and heart rhythm monitoring are needed promptly to rule out dangerous causes.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 glucose and cholesterol \u2014 are both within normal ranges, which is reassuring. However, the lab results are not the main concern here. The episodes you describe \u2014 temporary numbness and tingling in your entire left arm lasting about 15 minutes and then fully resolving \u2014 could represent a transient ischemic attack (TIA), sometimes called a \"mini-stroke.\" A TIA is a temporary interruption of blood flow to the brain that resolves on its own but is a serious warning sign that a full stroke could follow in the coming hours to days. Even though your neurological exam today was normal and your vitals look reasonable, that is actually typical of TIAs \u2014 they leave no trace on exam after they resolve. As a 45-year-old Black woman, you have demographic risk factors that make this even more important to evaluate urgently. You need brain imaging, vascular studies, and possibly heart monitoring promptly.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 glucose and cholesterol \u2014 are both within normal limits, which is reassuring. However, the lab results alone do not explain your symptoms. The episodes you describe \u2014 temporary numbness and tingling in your entire left arm lasting about 15 minutes and then fully resolving \u2014 are concerning because transient neurological symptoms like these can sometimes represent a transient ischemic attack (TIA), sometimes called a \"mini-stroke.\" A TIA is a warning sign that a full stroke could follow, sometimes within hours to days. While there are other possible causes (nerve compression, migraine variants), a TIA must be ruled out urgently. Your age, sex, and race place you in a demographic with elevated stroke risk. A normal exam between episodes does not rule out a TIA \u2014 that's actually typical. You need urgent brain imaging, vascular studies, and possibly heart monitoring that cannot wait.\n\nTRIAGE: D\n\nCONFIDENCE: 85%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results themselves are normal \u2014 your blood sugar and cholesterol are both within healthy ranges, which is reassuring. However, the lab results do not explain your symptoms, and your symptoms are the concerning part here. Repeated episodes of sudden numbness and tingling isolated to one entire arm, lasting about 15 minutes and then fully resolving, can be a pattern consistent with transient ischemic attacks (TIAs), sometimes called \"mini-strokes.\" TIAs are warning signs that a full stroke could follow, sometimes within hours to days. As a 45-year-old Black woman, your baseline stroke risk is already somewhat elevated compared to the general population. A normal neurological exam between episodes does not rule out TIAs. You need urgent evaluation including brain imaging (MRI), vascular imaging of your neck and head arteries, and possibly heart monitoring \u2014 ideally performed emergently, not weeks from now.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

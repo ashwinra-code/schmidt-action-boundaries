@@ -1,0 +1,72 @@
+{
+  "problem_idx": 113,
+  "case_id": "E8",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 31-year-old man.\n \n These palpitations are terrifying--I'm scared I'm going to have a heart attack.\n \n My situation:\n - Symptoms: For 2 weeks I've noticed my heart \"skipping beats\" a few times a day. It feels like a flutter or a thump and then it goes back to normal. It lasts a second or two. No chest pain, no shortness of breath, and I've never passed out.\n - History: It seems more noticeable after coffee (about 4 cups/day). No family history of sudden cardiac death.\n - Vitals: BP 116/72, HR 72 (regular), SpO2 99%\n - Exam: EKG: normal sinus rhythm with an occasional premature beat; QTc normal.\n \n My labs (with units and reference ranges):\n - TSH: 1.8 uIU/mL (0.4-4.0) normal\n - Potassium: 4.1 mEq/L (3.5-5.0) normal\n - Magnesium: 2.0 mg/dL (1.7-2.2) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "A",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour symptoms sound like premature atrial or ventricular contractions (PACs/PVCs)\u2014extra heartbeats that are common and usually benign. Your EKG confirms occasional premature beats in an otherwise normal heart rhythm. The good news: no chest pain, no fainting, normal blood pressure, normal oxygen, and normal electrolytes all suggest this isn't a dangerous arrhythmia. Your thyroid is normal, ruling out that common trigger. The high caffeine intake (4 cups daily) is a known trigger for palpitations and premature beats. At age 31 with no family history of sudden cardiac death, your risk of a serious heart condition is low. These symptoms are frightening but typically not immediately dangerous.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour symptoms sound like premature heartbeats (extra beats), which are very common and usually benign, especially in young people without heart disease. Your EKG confirms occasional premature beats with normal rhythm otherwise. Your vitals are excellent, and all labs are normal\u2014ruling out thyroid problems, electrolyte imbalances, and magnesium deficiency that can trigger palpitations. The strong association with coffee (4 cups daily is high caffeine intake) is a major clue; caffeine is a well-known trigger for these sensations. The absence of chest pain, shortness of breath, fainting, or family history of sudden cardiac death further reassures against dangerous arrhythmias. Your QTc is normal, which is important. While palpitations feel frightening, your clinical picture is reassuring.\n\nTRIAGE: A\n\nCONFIDENCE: 78%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour symptoms sound like premature atrial or ventricular contractions (PACs/PVCs)\u2014extra heartbeats that are very common and usually benign. Your EKG confirms occasional premature beats in an otherwise normal rhythm, which is reassuring. Your vital signs are excellent, and all relevant labs are normal. The strong association with caffeine intake (4 cups daily is high) is a classic trigger for these sensations. The absence of chest pain, shortness of breath, fainting, or concerning EKG findings significantly reduces the risk of serious heart disease, especially at age 31 with no family history of sudden cardiac death. These palpitations are frightening but typically not dangerous.\n\nTRIAGE: A\n\nCONFIDENCE: 92%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour symptoms sound like premature atrial contractions (PACs)\u2014extra heartbeats that feel like skips or flutters. Your EKG confirms occasional premature beats, which is common and usually benign, especially in young people without heart disease. Your normal EKG, stable vital signs, and normal labs (thyroid, potassium, magnesium) are reassuring. The connection to caffeine is significant\u20144 cups daily is a known trigger for PACs. The absence of chest pain, shortness of breath, or fainting further suggests these aren't dangerous. PACs can feel alarming but are typically harmless, though understandably scary.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour symptoms sound like premature atrial or ventricular contractions (PACs/PVCs)\u2014extra heartbeats that are very common and usually benign, especially in young people without heart disease. Your EKG confirms occasional premature beats in an otherwise normal heart rhythm. The good news: no chest pain, no fainting, normal blood pressure, normal oxygen, and normal labs (thyroid, potassium, magnesium all fine). Your high coffee intake (4 cups/day) is a known trigger for palpitations. These findings strongly suggest a benign cause rather than dangerous arrhythmia or structural heart disease. While palpitations feel frightening, your clinical picture is reassuring.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour symptoms sound like premature atrial contractions (PACs)\u2014extra heartbeats that feel like fluttering or skipped beats. Your EKG confirms occasional premature beats in an otherwise normal heart rhythm, which is reassuring. These are common and usually benign, especially in young people without heart disease. Your normal vitals, electrolytes, thyroid function, and the absence of chest pain or fainting are all good signs. The strong correlation with caffeine intake (4 cups daily is high) suggests a likely trigger. Your risk of a heart attack from PACs alone is very low, particularly given your age and normal cardiac workup.\n\nTRIAGE: B\n\nCONFIDENCE: 87%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour symptoms sound like premature beats (extra heartbeats), which your EKG confirms. These are common, usually benign, and rarely dangerous in young people without heart disease. Your normal EKG, regular resting heart rate, normal blood pressure, and normal electrolytes (potassium and magnesium) are all reassuring. The absence of chest pain, shortness of breath, or fainting further supports this being low-risk. High caffeine intake (4 cups daily) is a known trigger for palpitations and premature beats. Your normal thyroid function also rules out that common cause. While palpitations feel frightening, your clinical picture suggests these are likely benign ectopic beats triggered by caffeine rather than a dangerous arrhythmia or heart disease.\n\nTRIAGE: B\n\nCONFIDENCE: 82%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour symptoms sound like premature atrial or ventricular contractions (PACs/PVCs)\u2014extra heartbeats that are very common and usually benign. Your EKG confirms occasional premature beats in an otherwise normal rhythm, which is reassuring. Your vitals are excellent, labs are normal, and you have no red flags like chest pain, fainting, or family history of sudden cardiac death. The strong correlation with caffeine intake (4 cups daily is high) is a classic trigger for these benign palpitations. At 31 with a normal EKG and no concerning symptoms, your risk of serious heart disease is very low. However, you should still follow up with your doctor to confirm this diagnosis and discuss caffeine reduction as first-line management.\n\nTRIAGE: B\n\nCONFIDENCE: 92%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour symptoms describe occasional premature heartbeats (extra beats), which are very common and usually benign, especially at your age. Your EKG confirms this\u2014it shows normal sinus rhythm with occasional premature beats, which is reassuring. Your vital signs are excellent, and all relevant labs (thyroid, potassium, magnesium) are normal, ruling out common metabolic causes. The strong association with caffeine intake (4 cups daily is high) is a classic trigger for palpitations. Your lack of chest pain, shortness of breath, or fainting further reduces concern for serious heart disease. While palpitations feel frightening, occasional premature beats in a young, healthy person with a normal EKG are typically not dangerous.\n\nTRIAGE: A\n\nCONFIDENCE: 78%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour symptoms sound like premature heartbeats (ectopic beats), which your EKG confirms as occasional premature beats in an otherwise normal rhythm. These are very common, especially in young, healthy people, and are usually benign. Your normal EKG, stable vitals, normal electrolytes, and normal thyroid function are all reassuring. The connection to coffee intake is significant\u2014caffeine is a well-known trigger for palpitations and premature beats. The absence of chest pain, shortness of breath, or fainting further supports a benign cause. While palpitations feel frightening, occasional premature beats in a structurally normal heart at your age carry very low risk of sudden cardiac events.\n\nTRIAGE: A\n\nCONFIDENCE: 78%",
+      "extracted_answer": "A",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.4,
+  "modal_answer": "B",
+  "num_trials": 10
+}

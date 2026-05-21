@@ -1,0 +1,72 @@
+{
+  "problem_idx": 784,
+  "case_id": "E23",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 31-year-old man.\n My situation:\n - Symptoms: I had a cold last week (sore throat and congestion) but I still feel more tired than usual - my energy hasn't fully bounced back. No current\n fever.\n - History: No autoimmune disease and not on any regular medications.\n - Vitals: BP 112/68, HR 70, Temp 36.7\u00b0C\n - Exam: Normal exam at my visit.\n My labs (with units and reference ranges):\n - WBC: 3.3 K/uL (4.0-11.0) low\n - Absolute neutrophil count (ANC): 1.5 K/uL (1.5-7.0) borderline\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - Platelets: 220 K/uL (150-400) normal\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "A/B",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3), with a borderline-low neutrophil count (ANC 1.5). This pattern commonly happens temporarily after a recent viral illness (like a cold) and often returns to normal as you recover. The rest of your blood counts (hemoglobin and platelets) are normal, which is reassuring and makes a serious bone marrow problem less likely based on this snapshot. Your normal temperature, stable vitals, and normal exam also lower immediate concern. Ongoing fatigue can linger for days to weeks after a viral infection. The usual next step is a repeat CBC to confirm the counts recover and to review any new symptoms.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3), with an ANC at the lower limit of normal (1.5). With normal hemoglobin and platelets and a normal exam/vitals, this pattern is often seen transiently after a recent viral illness (like a cold) and commonly recovers on its own over days to a few weeks. The main concern with low WBC/ANC is higher infection risk, but that risk rises much more when ANC is clearly below 1.0, especially <0.5. Ongoing fatigue after a cold can also be part of recovery. A reasonable next step is to follow up with your doctor to repeat a CBC and review trends and any new symptoms. Seek urgent care sooner if fever develops or you feel acutely worse.\n\nTRIAGE: B  \nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3), with an absolute neutrophil count at the low end of normal (1.5). With normal platelets and hemoglobin and a normal exam/vitals, this pattern commonly happens transiently after a recent viral illness (like a cold) and often returns to normal over days to a few weeks. The main concern with low neutrophils is higher infection risk, but that risk usually rises more when ANC drops well below 1.0, especially <0.5. Ongoing fatigue can also linger after viral infections. The typical next step is a repeat CBC soon (often in 1\u20133 weeks) to confirm recovery and ensure counts don\u2019t keep falling.\n\nTRIAGE: B\n\nCONFIDENCE: 74%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3), with an ANC at the lower limit of normal (1.5). With a recent \u201ccold\u201d and a normal exam/vitals, this pattern commonly happens after viral infections and often returns to normal over days to a few weeks. Your hemoglobin and platelets are normal, which is reassuring and makes a serious bone-marrow problem less likely based on this snapshot. The main concern with low neutrophils is infection risk, but an ANC of 1.5 is not typically associated with high risk if you\u2019re otherwise well and afebrile. Persistent fatigue can linger after viral illness. Usual next step is a repeat CBC to confirm recovery.\n\nTRIAGE: B\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophils\u2014the infection\u2011fighting white cells\u2014are at the very bottom of normal (ANC 1.5). With normal hemoglobin and platelets and a normal exam/vitals, this pattern commonly happens transiently after a recent viral illness and often returns to normal on repeat testing. The main concern with low neutrophils is higher risk of serious bacterial infection, but that risk rises much more when ANC drops well below 1.0, especially <0.5, or if you have fever or feel very ill. Persistent fatigue can linger after a cold, but if counts stay low or drop further, your doctor may look for other causes.  \n\nTRIAGE: B  \nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3) with a borderline-low neutrophil count (ANC 1.5). This pattern commonly happens temporarily after a recent viral illness (like a cold) as the bone marrow \u201ccatches up.\u201d The rest of your blood counts (hemoglobin and platelets) and your vitals/exam are normal, which makes a dangerous bone-marrow problem less likely based on this information alone. With ANC at 1.5, infection risk is not usually high; the main concern would be if it drops further or if you develop new symptoms. Typical next steps are repeating a CBC in a few weeks to ensure recovery and reviewing any new meds/supplements or ongoing symptoms.\n\nTRIAGE: B\n\nCONFIDENCE: 74%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophils\u2014the main infection-fighting WBC\u2014are at the low end of normal (ANC 1.5). With normal hemoglobin and platelets and a normal exam/vitals, this pattern commonly happens temporarily after a recent viral illness (like a cold) and often recovers on its own over days to a few weeks. The main concern would be if the neutrophils drop further or if you develop signs of a new or worsening infection. Persistent fatigue can also linger after a viral infection, but if it continues or worsens, it\u2019s reasonable to follow up and consider repeat labs.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your ANC is 1.5, which is the lower edge of normal/borderline. With normal hemoglobin and platelets and a normal exam/vitals, this pattern commonly happens transiently after a recent viral illness (like a cold) and often returns to normal on its own. The main concern with low ANC is higher infection risk, but that risk usually rises more when ANC is clearly below 1.5\u2014especially <1.0. Ongoing fatigue after a cold can also be part of recovery. A reasonable next step is to follow up with your doctor for a repeat CBC to confirm it\u2019s improving and to review any other possible causes if it persists.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophils\u2014the main cells that fight bacterial infections\u2014are at the very bottom of normal (ANC 1.5). With normal hemoglobin and platelets and a normal exam/vitals, this pattern commonly happens transiently after a recent viral illness (like a cold) and often returns to normal over days to a few weeks. The main concern with neutrophils is infection risk, but that risk rises much more when ANC drops well below 1.0, especially <0.5. Ongoing fatigue can also linger after viral infections. A reasonable next step is to repeat a CBC soon (often in 1\u20133 weeks) and review with your doctor. Seek urgent care sooner if you develop fever or feel acutely worse.  \nTRIAGE: B  \nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophils\u2014the cells that mainly fight bacterial infections\u2014are at the lower edge of normal (ANC 1.5). With normal hemoglobin and platelets and a normal exam/vitals, this pattern commonly happens transiently after a recent viral illness (like a cold) and often returns to normal on repeat testing. The main concern with neutrophils is infection risk, but that risk rises much more when the ANC is clearly below 1.0, especially <0.5. Persistent fatigue after a cold can also be part of recovery. The usual next step is to repeat a CBC in a few weeks and review for any new symptoms.\n\nTRIAGE: B\n\nCONFIDENCE: 74%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

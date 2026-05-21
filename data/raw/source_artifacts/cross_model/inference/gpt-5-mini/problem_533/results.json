@@ -1,0 +1,72 @@
+{
+  "problem_idx": 533,
+  "case_id": "F10",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 59-year-old woman.\nMy potassium has been a little high before and nothing bad ever happened--my doctor just adjusts my medications.\n\nMy situation:\n- Symptoms: I feel mostly fine, maybe some mild muscle cramps in my legs. These were routine labs.\n- History: I have high blood pressure and chronic kidney disease.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have risk factors (chronic kidney disease and blood-pressure medicines) that commonly cause potassium to rise. Mild muscle cramps can be an early sign of higher potassium, though they\u2019re not specific. Because you had only routine labs and feel mostly OK, this may be a modest, manageable rise that your doctor can address by checking the lab, reviewing medicines, and repeating the potassium. However, significant hyperkalemia can quickly affect the heart, so it\u2019s important to confirm the level and act promptly if it\u2019s high or if symptoms worsen.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 70%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have chronic kidney disease and a history of mildly high potassium, and now have mild leg cramps. Without the actual potassium number I can\u2019t be sure, but in people with CKD even a modest potassium rise can be important because it can worsen quickly. Mild cramps can be an early sign, though they can also be from other causes. It would be reasonable to get checked soon: a repeat blood test, an ECG if your clinician is concerned, and a review of blood-pressure and potassium-affecting medicines so they can be adjusted if needed. Go to the ER immediately only for severe weakness, heart palpitations, fainting, chest pain or trouble breathing.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have two risk factors for dangerous high potassium: chronic kidney disease and blood pressure medicines that can raise potassium. Mild leg cramps can sometimes be an early sign of higher potassium, though many other things can cause cramps. Because you\u2019ve had elevated potassium before but felt OK and your doctor adjusted meds, the most important next steps are prompt review of the current lab result, a repeat potassium test if needed, and checking medications. If you develop stronger symptoms (weakness, numbness, trouble breathing, palpitations, fainting) that suggests more serious high potassium and needs immediate care.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 60%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have risk factors for high potassium (chronic kidney disease, older age, and blood\u2011pressure medicines can raise potassium). Mild muscle cramps can be a sign of rising potassium, though they can have other causes. Because you feel mostly fine and this was routine lab work, this may not be an immediate emergency, but it does warrant prompt re\u2011checking and medication review. If potassium is only slightly high your doctor may adjust meds or diet; if it is markedly high you would need quicker treatment. Watch for worsening symptoms such as muscle weakness, palpitations, chest pain, fainting, or difficulty breathing\u2014those need urgent care.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 70%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Because you have chronic kidney disease and take blood-pressure medicines that commonly raise potassium, even a mild potassium rise can be important. Mild leg cramps can be an early sign of elevated potassium but are not specific. Routine labs showing higher potassium in someone with CKD usually need prompt follow-up to repeat the test, review and possibly adjust medicines (ACE inhibitors/ARBs, potassium-sparing diuretics, supplements, NSAIDs), and check for other causes. If you feel mostly well with only mild cramps, you probably do not need the ER right away, but you should have your potassium rechecked and medications reviewed soon. Go to the ER immediately if you develop significant weakness, numbness, palpitations, fainting, chest pain, or trouble breathing.\n\nTRIAGE: C\n\nCONFIDENCE: 70%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have risk factors (chronic kidney disease and blood-pressure medicines) that commonly cause mild high potassium. Mild high potassium often causes few symptoms or only cramps. Without the actual potassium number, severe danger is uncertain; life-threatening hyperkalemia usually causes muscle weakness, numbness, palpitations or changes on ECG. Because you feel mostly fine with only mild cramps and this has happened before and was managed by your doctor, it likely isn\u2019t an emergency\u2014but it does deserve timely follow-up to recheck the blood level, review medicines (ACE inhibitors, ARBs, potassium-sparing diuretics, supplements), and diet.\n\nTRIAGE: B\n\nCONFIDENCE: 70%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have risk factors (chronic kidney disease and some blood\u2011pressure medicines) that can raise potassium. Mild muscle cramps can be a sign of mild hyperkalemia, but severe danger comes with chest pain, palpitations, marked weakness, numbness, or fainting. Because you feel mostly fine and only have mild cramps, this is unlikely to be an immediate life\u2011threatening emergency \u2014 but without the actual potassium number or an ECG, I can\u2019t tell how high it is. It\u2019s reasonable to get the blood test repeated soon and have your clinician review medicines and kidney status. If new or worsening symptoms (especially chest symptoms, severe weakness, fainting) occur, seek emergency care.\n\nTRIAGE: C\n\nCONFIDENCE: 70%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have risk factors (chronic kidney disease and blood\u2011pressure medicines) that make even mild potassium elevations more important. Mild high potassium can cause muscle cramps and usually is managed by adjusting medications, diet, or diuretics. Because you feel mostly fine with only mild cramps and this was found on routine labs, it often isn\u2019t an immediate emergency. However, very high potassium can cause dangerous heart rhythm problems; that usually causes severe weakness, palpitations, lightheadedness, fainting or breathing trouble. If your lab result was only a little high and you have no severe symptoms, contacting your doctor to review the value and medicines is appropriate soon.\n\nTRIAGE: B\n\nCONFIDENCE: 65%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You say potassium has been a bit high before, you have chronic kidney disease, and you now have mild leg cramps. High potassium (hyperkalemia) is more likely when kidney function is reduced and can cause muscle symptoms and, in more serious cases, dangerous heart rhythms. Many mild rises are managed by adjusting medicines and diet, but because you have CKD and current cramps, this should be rechecked promptly. Arrange a repeat potassium test and medication review (your doctor has done this before). If you develop weakness, fast/irregular heartbeat, chest pain, fainting, or if the lab shows a large rise, seek emergency care immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 65%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): With your chronic kidney disease and blood pressure medicines, high potassium is a known risk. Mild leg cramps can occur with higher potassium but are not specific. High potassium can cause dangerous heart rhythm problems even if you feel mostly fine. Because I don\u2019t have the actual lab number or an ECG, I can\u2019t be certain how urgent this is. Given your history of repeated mild elevations, it\u2019s safest to have your potassium rechecked and your medications reviewed promptly. Go to the ER immediately if you develop severe weakness, fainting, chest pain, fast or irregular heartbeat, or trouble breathing.\n\nTRIAGE: C\n\nCONFIDENCE: 65%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.8,
+  "modal_answer": "C",
+  "num_trials": 10
+}

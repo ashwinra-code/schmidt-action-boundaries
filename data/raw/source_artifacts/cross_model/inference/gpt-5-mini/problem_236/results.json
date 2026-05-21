@@ -1,0 +1,72 @@
+{
+  "problem_idx": 236,
+  "case_id": "E15",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 52-year-old Black woman.\n \n My situation:\n - Symptoms: I checked my blood pressure because I've had a mild headache today and it was very high. I don't have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking.\n - History: I haven't been on blood pressure meds before.\n - Vitals: BP 196/112, HR 78, Temp 98.5F, SpO2 98%\n - Exam: No neurologic deficits reported; no chest pain.\n \n My labs (with units and reference ranges):\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n - Potassium: 4.2 mEq/L (3.5-5.0) normal\n - Troponin: <0.01 ng/mL (ref <0.04) normal\n - Urinalysis protein: Trace (ref Negative) borderline\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You had a very high blood pressure reading (196/112). Your blood tests and exam do not show clear signs of immediate organ damage \u2014 creatinine and troponin are normal, no neurologic deficits, no chest pain; trace urine protein is nonspecific. That pattern most closely fits a severe elevation without obvious acute organ injury (often called hypertensive urgency rather than emergency). It still needs prompt attention because the level is risky and may require starting or adjusting medication and close follow\u2011up. If you develop chest pain, shortness of breath, fainting, sudden severe headache, vision changes, weakness, numbness, or speech problems, go to the ER right away.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure (196/112) is very high. Your labs (creatinine, potassium, troponin) look normal and urinalysis only shows trace protein, which suggests there is no obvious heart attack or kidney injury right now. Because you have a mild headache but no chest pain, shortness of breath, vision change, weakness, numbness, or trouble speaking, this most closely fits a severe high blood pressure episode without clear organ damage. That still needs prompt care to lower risk of stroke or other complications. Recheck your blood pressure, avoid caffeine or alcohol, and arrange urgent medical review to start treatment and follow-up. If new or worse symptoms appear, seek emergency care immediately.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading (196/112) is very high. The good news from these results is there\u2019s no clear sign of immediate organ damage: kidney function (creatinine) and heart injury marker (troponin) are normal, no neurologic deficits were found, and urine shows only trace protein. That makes a hypertensive urgency more likely than an emergency. It still needs prompt attention \u2014 people with pressures this high typically need medication and close follow\u2011up to reduce risk. Recheck your pressure after resting 5\u201310 minutes, contact your primary care clinician today or within 24\u201348 hours to arrange treatment, and follow their advice.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure of 196/112 is very high and puts you at risk for organ injury. The normal creatinine and troponin and lack of chest pain or neurologic deficits are reassuring that there is no clear heart or kidney damage right now; trace protein in the urine is not a major abnormality. However this is a new, severe elevation and your headache could be related. You need prompt medical evaluation to recheck the pressure, assess for evolving problems, and likely begin treatment or close follow-up. If you develop chest pain, shortness of breath, confusion, weakness, vision changes, worsening headache, or vomiting, seek emergency care immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading (196/112) is very high. The normal labs \u2014 creatinine, potassium, troponin \u2014 and the absence of chest pain, shortness of breath, vision change, or neurologic deficits reduce concern for immediate organ damage right now. Trace protein in the urine is a mild, nonspecific finding. Even without current evidence of emergency, such a high pressure raises short-term risk of stroke or heart problems and usually requires prompt evaluation and likely starting or adjusting blood\u2011pressure treatment. If you develop chest pain, worsening headache, vision loss, weakness, numbness, trouble speaking, confusion, or shortness of breath, seek emergency care immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure (196/112) is very high. The tests shown (normal creatinine, normal potassium, normal troponin, only trace protein in urine) do not show clear evidence of acute heart or kidney damage right now. You have a mild headache but no chest pain, shortness of breath, vision change, or neurologic problems, which is reassuring. However, pressures this high increase short\u2011term risk and usually need prompt treatment and closer monitoring to prevent complications. Because there is no current lab or symptom evidence of organ damage, urgent outpatient evaluation and treatment is appropriate unless new or worsening symptoms appear.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure is very high (196/112). The available tests do not show clear organ damage right now: creatinine and potassium are normal, troponin is normal, and urine shows only trace protein. That suggests you are not having a heart attack or acute kidney failure at this moment, but severe hypertension can still cause harm and should not be left untreated. Because you\u2019ve never been on blood pressure medicine and your reading is markedly elevated, you need prompt evaluation to start treatment and monitor for complications. If you develop chest pain, shortness of breath, vision changes, weakness, numbness, trouble speaking, fainting, worsening headache, or vomiting, seek emergency care immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure of 196/112 is very high. However, your tests and exam (normal creatinine, potassium, troponin, SpO2; no chest pain, shortness of breath, or neurologic deficits) do not show clear signs of immediate organ damage right now. Trace protein in the urine is not definitive for acute kidney injury. This pattern fits a hypertensive urgency (severely elevated BP without evident organ injury). You should recheck your BP, avoid caffeine/smoking, and arrange prompt medical evaluation to start or adjust blood pressure treatment. Seek emergency care immediately if you develop chest pain, trouble breathing, severe/worsening headache, vision changes, weakness, numbness, or trouble speaking.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure is very high (196/112), which raises concern. The good news: your heart marker (troponin) and kidney blood test (creatinine) are normal, and you have no chest pain or neurologic deficits\u2014these findings make an immediate life\u2011threatening emergency less likely. Trace protein in the urine is nonspecific. This pattern is most consistent with a hypertensive urgency (very high BP without clear organ damage), which still needs prompt medical attention to prevent harm. Recheck your blood pressure after resting, avoid sudden BP-lowering at home without guidance, and get medical evaluation soon to decide on treatment and follow-up tests.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood pressure reading of 196/112 is very high and puts you at risk for complications. The good news: your creatinine, potassium, and troponin are normal and there are no neurologic deficits or chest symptoms reported, so there is no clear evidence here of immediate life\u2011threatening organ damage. Trace protein on urine alone is not definitive for acute kidney injury. Because this is a new, severe elevation (you\u2019ve not been on BP medicine), it needs prompt evaluation and likely treatment to lower and control your blood pressure safely and to check for causes.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

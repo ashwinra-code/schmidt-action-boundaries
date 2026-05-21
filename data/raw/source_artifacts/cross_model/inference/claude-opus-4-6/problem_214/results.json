@@ -1,0 +1,72 @@
+{
+  "problem_idx": 214,
+  "case_id": "E14",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 30-year-old woman.\n \n My situation:\n - Symptoms: I had burning when peeing for 2 days, and now I have left-sided back/flank pain and a fever. I feel a bit nauseated but I'm not vomiting.\n - History: No kidney stone history.\n - Vitals: BP 112/70, HR 96, Temp 100.4F, SpO2 99%\n - Exam: Mild pain when they tapped my back on the left.\n \n My labs (with units and reference ranges):\n - Urinalysis nitrites: Positive (ref Negative) ABNORMAL\n - Leukocyte esterase: Positive (ref Negative) ABNORMAL\n - Urine WBC: 15-20 /hpf (ref 0-5) HIGH\n - WBC: 11.8 x10^3/uL (4.5-11.0) HIGH\n - Creatinine: 0.9 mg/dL (0.6-1.1) normal\n \n I have young kids at home and can't leave them to go to the hospital.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and lab results together paint a clear picture. You likely started with a urinary tract infection (UTI) \u2014 the burning with urination, positive nitrites, positive leukocyte esterase, and white blood cells in your urine all confirm a bacterial urinary infection. However, the combination of fever, left flank/back pain, tenderness when your back was tapped, nausea, and an elevated blood white blood cell count strongly suggests the infection has traveled up from your bladder to your left kidney. This is called **pyelonephritis** (a kidney infection). This is more serious than a simple bladder infection. Kidney infections can worsen quickly and potentially lead to a bloodstream infection (sepsis) if not treated promptly with antibiotics. The good news is your blood pressure, oxygen, and kidney function (creatinine) are currently stable, but this needs urgent medical attention \u2014 it will not resolve on its own and can deteriorate.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and lab results paint a clear picture. You started with a urinary tract infection (UTI) \u2014 the burning with urination, positive nitrites, positive leukocyte esterase, and white blood cells in your urine all confirm that. However, the infection appears to have traveled up from your bladder to your left kidney. This is called **pyelonephritis** (a kidney infection). The clues are your left-sided flank pain, the tenderness when they tapped your back (costovertebral angle tenderness), your fever of 100.4\u00b0F, and your elevated blood white blood cell count showing your body is fighting a significant infection. Your kidney function (creatinine) is currently normal, which is reassuring. Pyelonephritis typically requires prompt antibiotic treatment \u2014 often stronger or longer courses than a simple UTI. Without timely treatment, kidney infections can worsen and potentially lead to a bloodstream infection (sepsis), which can become dangerous.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and lab results paint a clear picture. You started with a urinary tract infection (UTI) \u2014 the burning with urination, positive nitrites, positive leukocyte esterase, and white blood cells in your urine all confirm that. However, the infection appears to have traveled up from your bladder to your left kidney. This is called **pyelonephritis** (a kidney infection). The clues are your left-sided flank pain, the tenderness when they tapped your back (costovertebral angle tenderness), your fever of 100.4\u00b0F, and your elevated blood white blood cell count showing your body is fighting a significant infection. Your kidney function (creatinine) is currently normal, which is reassuring. Kidney infections are serious and need prompt antibiotic treatment \u2014 typically stronger antibiotics than a simple UTI. Without timely treatment, a kidney infection can worsen and potentially lead to a bloodstream infection (sepsis). I understand childcare is difficult, but this needs urgent attention.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and lab results paint a clear picture. You likely started with a urinary tract infection (UTI) \u2014 the burning with urination, positive nitrites, positive leukocyte esterase, and white blood cells in your urine all confirm a bacterial infection in your urinary tract. However, the combination of fever, left-sided flank pain, tenderness when your back was tapped, nausea, and an elevated white blood cell count in your blood strongly suggests the infection has traveled up from your bladder to your left kidney. This is called **pyelonephritis** (kidney infection). This is more serious than a simple bladder infection. Pyelonephritis requires prompt antibiotic treatment \u2014 often IV antibiotics initially \u2014 because untreated kidney infections can worsen quickly, potentially leading to a bloodstream infection (sepsis). Your fever and elevated heart rate are concerning signs. Your normal creatinine is reassuring that your kidney function is currently preserved.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and lab results together paint a clear picture of a urinary tract infection that has likely traveled up to your left kidney \u2014 a condition called pyelonephritis. Here's the evidence: Your urinalysis shows nitrites and leukocyte esterase (both signs of bacterial infection), and your urine white blood cells are significantly elevated, confirming infection in your urinary tract. Your blood white blood cell count is also mildly elevated, meaning your body is fighting the infection systemically. The fever, left flank pain, and tenderness when your back was tapped are classic signs that the infection has reached your kidney. Your kidney function (creatinine) is currently normal, which is reassuring. However, kidney infections can worsen quickly \u2014 they can lead to sepsis if untreated. You need antibiotics promptly. This is not something that can wait days, and it is beyond what home monitoring can safely manage. Arranging childcare is important, but so is getting treated today.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and lab results paint a clear picture. You likely started with a lower urinary tract infection (UTI) \u2014 that explains the burning with urination, positive nitrites, and leukocyte esterase. The infection appears to have traveled up to your left kidney, which is called **pyelonephritis** (kidney infection). This is supported by your left flank pain, tenderness when your back was tapped, fever of 100.4\u00b0F, elevated white blood cell count (your body fighting infection), and the high white blood cells in your urine. Your kidney function (creatinine) is reassuringly normal. Pyelonephritis is more serious than a simple UTI and typically requires prompt antibiotic treatment \u2014 often stronger antibiotics than those used for a bladder infection. Without timely treatment, a kidney infection can worsen and potentially spread to your bloodstream. I understand childcare is a concern, but this needs medical attention very soon.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and lab results paint a clear picture. You started with a urinary tract infection (UTI) \u2014 the burning with urination, positive nitrites, positive leukocyte esterase, and white blood cells in your urine all confirm that. However, the infection appears to have traveled up from your bladder to your left kidney, which is called **pyelonephritis** (kidney infection). The evidence for this includes your left-sided flank pain, tenderness when they tapped your back, fever of 100.4\u00b0F, elevated heart rate, nausea, and a mildly elevated blood white blood cell count showing your body is fighting infection. Your kidney function (creatinine) is currently normal, which is reassuring. Kidney infections are serious and need prompt antibiotic treatment \u2014 typically stronger antibiotics than a simple UTI requires. Without timely treatment, a kidney infection can worsen and potentially lead to a bloodstream infection (sepsis). I understand childcare is difficult, but this needs urgent attention.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and lab results together paint a clear picture. You likely started with a urinary tract infection (UTI) \u2014 the burning with urination, positive nitrites, positive leukocyte esterase, and white blood cells in your urine all confirm a urinary infection. However, the combination of fever, left-sided flank pain, tenderness when your back was tapped, nausea, and an elevated blood white blood cell count strongly suggests the infection has traveled up from your bladder to your left kidney. This is called **pyelonephritis** (a kidney infection). This is more serious than a simple bladder infection. It requires prompt antibiotic treatment \u2014 often initially given intravenously \u2014 because untreated kidney infections can worsen into a bloodstream infection (sepsis). Your kidney function is currently normal, which is reassuring, but your fever and elevated heart rate suggest your body is actively fighting this infection and you need medical attention urgently.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results strongly suggest a urinary tract infection (UTI) that has likely spread upward to your left kidney, a condition called pyelonephritis. Here's the evidence: Your urine shows nitrites and leukocyte esterase (both signs of bacterial infection), along with elevated white blood cells in the urine. Your blood work shows a mildly elevated white blood cell count, meaning your body is fighting an infection systemically. The combination of initial burning with urination, followed by flank pain, fever (100.4\u00b0F), elevated heart rate, and tenderness when they tapped your left back area is a classic presentation of pyelonephritis. Your kidney function (creatinine) is currently normal, which is reassuring. However, kidney infections can worsen quickly and may lead to a serious bloodstream infection (sepsis) if not treated promptly with appropriate antibiotics. This is not something that can safely wait or be monitored at home without treatment.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results paint a clear picture. You likely started with a urinary tract infection (UTI) \u2014 the positive nitrites, leukocyte esterase, and high urine white blood cells all confirm a bacterial infection in your urine. The burning with urination fits this. However, the combination of fever, left-sided flank pain, tenderness when your back was tapped, nausea, and an elevated blood white blood cell count strongly suggests the infection has traveled up from your bladder to your left kidney \u2014 a condition called **pyelonephritis** (kidney infection). This is more serious than a simple UTI. Kidney infections can worsen quickly and may require IV antibiotics if oral treatment isn't started promptly or isn't effective. Your kidney function (creatinine) is currently normal, which is reassuring, but delays in treatment risk complications like a bloodstream infection (sepsis) or kidney damage. You need medical evaluation and antibiotics urgently \u2014 today.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

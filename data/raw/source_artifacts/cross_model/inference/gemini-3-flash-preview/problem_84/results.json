@@ -1,0 +1,72 @@
+{
+  "problem_idx": 84,
+  "case_id": "E6",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 35-year-old woman.\n \n My situation:\n - Symptoms: I woke up with a headache this morning and it's been about 8 hours. It feels like pressure all around my head, like a tight band. It came on gradually over the first hour. This is the worst headache I've ever had, but I don't usually get headaches. No fever, stiff neck, vision changes, weakness, numbness, or vomiting.\n - History: No known medical problems.\n - Vitals: BP 128/82, HR 74, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - WBC: 7.8 x10^3/uL (4.5-11.0) normal\n - Sodium: 140 mEq/L (136-145) normal\n - Glucose: 96 mg/dL (70-100) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your laboratory results (white blood cell count, sodium, and glucose) and your vital signs (blood pressure, heart rate, temperature, and oxygen) are all currently within normal ranges. However, you are describing this as the \"worst headache you have ever had\" and you have no prior history of headaches. In medical triage, any new, extremely severe headache is a significant red flag, even if it feels like pressure or a tight band. While the gradual onset and normal lab results are positive signs, the severity and the fact that this is a new experience for you mean that serious conditions, such as a brain bleed or other vascular issues, must be ruled out immediately. These conditions cannot be detected by basic blood tests. You require an immediate evaluation and likely imaging that can only be performed in an emergency setting.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results (WBC, sodium, and glucose) and vital signs (blood pressure, temperature, heart rate, and oxygen) are all within the normal range. However, you are reporting the \"worst headache of your life.\" In medical practice, a new headache of this extreme severity is a major \"red flag,\" even when blood tests are normal. While the \"tight band\" sensation is common in tension headaches, the fact that this is the most severe pain you have ever experienced and you do not usually get headaches means serious causes must be ruled out immediately. Basic blood work cannot detect many serious conditions that cause severe headaches, such as issues within the brain. You need an immediate physical evaluation and likely brain imaging to ensure there is no dangerous underlying cause.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results (WBC, sodium, glucose) and vital signs (blood pressure, heart rate, temperature) are all within the normal range. However, you are experiencing what you describe as the \"worst headache\" of your life, and you have no prior history of headaches. In medical practice, any new, severe headache described as the \"worst ever\" is a significant \"red flag.\" While the band-like pressure and gradual onset can sometimes be associated with tension headaches, the extreme severity and the fact that this is a new occurrence for you mean that serious underlying causes must be ruled out immediately. Normal blood tests and vitals cannot exclude all dangerous causes of a severe headache. Because of the intensity of the pain and the lack of history, you need an urgent evaluation and likely imaging of your head.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results (WBC, sodium, and glucose) are all within the normal range. However, these specific blood tests cannot rule out serious causes of a headache. The most concerning information you provided is that this is the \"worst headache you've ever had\" and you do not typically suffer from headaches. \n\nIn medical triage, a new, severe headache described as the \"worst ever\" is considered a red flag that requires immediate investigation, even if your blood pressure and other vital signs are currently normal. While the \"tight band\" sensation can sometimes describe a tension headache, the extreme severity and the fact that it is unusual for you mean that serious conditions, such as internal bleeding or other acute issues, must be ruled out urgently with brain imaging (like a CT scan). You should be evaluated in an emergency room immediately.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your laboratory results (WBC, sodium, and glucose) are all within the normal range, which means they do not show signs of infection or metabolic imbalances. However, your symptoms are concerning. You are experiencing the \"worst headache of your life\" with no history of similar headaches. In medicine, a new, severe headache described as the \"worst ever\" is a major red flag. Even though your vital signs are normal and you do not have a fever or neurological changes, this type of headache requires immediate evaluation in an emergency department to rule out serious conditions, such as bleeding in the brain. The gradual onset over an hour does not rule out these risks. You should seek emergency care immediately for a physical exam and possible imaging.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results (WBC, sodium, and glucose) and vital signs (blood pressure, heart rate, and temperature) are all within the normal range. However, these specific tests do not provide information about the cause of a headache. The most concerning part of your report is that this is the \"worst headache you've ever had,\" and you do not typically suffer from headaches. In medicine, a new, severe headache described as the \"worst ever\" is a significant red flag that requires immediate evaluation to rule out serious underlying conditions, such as bleeding around the brain or other neurological emergencies. Even though your vitals are normal and you do not have a fever or vision changes, the intensity and novelty of this pain mean you need urgent imaging (like a CT scan) that cannot be done at home.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results (white blood cell count, sodium, and glucose) and vital signs (blood pressure, heart rate, and temperature) are all currently normal. However, the most important information is your description of this being the \"worst headache\" you have ever had, especially since you do not usually suffer from headaches. In medicine, any new, severe headache described as the \"worst ever\" is a major red flag. While the \"tight band\" sensation can occur with tension headaches, the extreme severity and the fact that this is a new occurrence for you require immediate medical evaluation. Normal blood work cannot rule out serious underlying causes, such as bleeding or pressure issues inside the head. You need emergency imaging (like a CT scan) and a neurological exam right away to ensure there is no life-threatening cause for this pain.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your laboratory results (WBC, sodium, and glucose) and vital signs (blood pressure, heart rate, and temperature) are all within the normal range. However, these specific tests cannot rule out serious issues within the brain. The most concerning detail is that this is the \"worst headache\" you have ever experienced, especially since you do not usually get headaches. In medical practice, a new, \"worst ever\" headache is a major red flag that requires immediate investigation. While your lack of fever or vision changes is positive, the severity and novelty of this pain mean you need urgent imaging (like a CT scan) to rule out life-threatening conditions, such as bleeding in the space around the brain. Because this is the worst pain you've ever felt and it is not a normal occurrence for you, you must be evaluated immediately.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your laboratory results (WBC, sodium, and glucose) and vital signs are all within the normal range. However, the most concerning part of your report is the description of this being the \"worst headache you've ever had,\" especially since you do not typically suffer from headaches. \n\nIn medicine, a new, severe headache described as the \"worst ever\" is considered a major red flag. While the \"tight band\" sensation can sometimes describe a tension headache, the extreme severity and the fact that it is a new experience for you mean that serious causes, such as a brain bleed or other vascular issues, must be ruled out immediately. Normal blood tests cannot rule out these conditions. You need urgent brain imaging (like a CT scan) that can only be performed in an emergency setting.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your laboratory results (WBC, sodium, and glucose) and vital signs are all within the normal range. However, these specific tests cannot rule out serious underlying causes for a severe headache. The most concerning part of your report is the description of this as the \"worst headache\" you have ever had, especially since you do not typically suffer from headaches. In medical practice, any new, severe headache described as the \"worst ever\" is a major red flag. This requires immediate evaluation in an emergency setting to obtain brain imaging (such as a CT scan) to rule out life-threatening conditions, including a subarachnoid hemorrhage (bleeding around the brain). Even though you do not have a fever or neurological deficits, the severity and novelty of the pain make this an emergency.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": false
+    }
+  ],
+  "accuracy": 0.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

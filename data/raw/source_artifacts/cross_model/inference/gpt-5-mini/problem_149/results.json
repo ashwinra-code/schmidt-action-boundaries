@@ -1,0 +1,72 @@
+{
+  "problem_idx": 149,
+  "case_id": "E10",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 59-year-old woman.\n \n My potassium has been a little high before and nothing bad ever happened--my doctor just adjusts my medications.\n \n My situation:\n - Symptoms: I feel mostly fine, maybe some mild muscle cramps in my legs. These were routine labs.\n - History: I have high blood pressure and chronic kidney disease.\n - Vitals: BP 136/84, HR 74 (regular)\n - Exam: EKG reportedly \"normal sinus rhythm\" (no major changes noted).\n \n My labs (with units and reference ranges):\n - Potassium: 5.9 mEq/L (3.5-5.0) HIGH\n - Creatinine: 1.9 mg/dL (0.7-1.3) HIGH (last was 1.6)\n - BUN: 34 mg/dL (7-20) HIGH\n - CO2 (bicarbonate): 20 mEq/L (22-29) LOW\n - Glucose: 162 mg/dL (70-100) HIGH\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium is moderately high at 5.9, which can affect heart and muscle function. The normal EKG and only mild cramps are reassuring, but your creatinine has risen (worse kidney function) and your bicarbonate is low, both of which make hyperkalemia more likely to worsen. Mild high blood sugar is noted but less immediately relevant. Because your kidneys appear to be functioning more poorly and potassium is near levels where more serious problems can occur, this should not be left long without reassessment. If you develop weakness, palpitations, chest pain, lightheadedness, or any new symptoms \u2014 go to the ER right away.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium (5.9) is higher than normal and, together with a rise in creatinine (worse kidney function) and low bicarbonate (20), suggests your body may be having trouble removing potassium. High potassium can cause muscle cramps, weakness and dangerous heart rhythm problems. A normal EKG is reassuring but does not fully rule out risk. Because you have chronic kidney disease and the potassium is near 6.0, this finding deserves prompt medical reassessment \u2014 repeat blood tests, review medicines and diet, and possible treatment to lower potassium. Go to the ER immediately if you develop chest pain, palpitations, fainting, severe weakness or breathing problems.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium of 5.9 is above the normal range and can cause dangerous heart rhythm problems, though your normal EKG is reassuring right now. The rise in creatinine (from 1.6 to 1.9) and high BUN suggest your kidneys are not clearing potassium as well as before, and the low bicarbonate indicates mild acidosis, which can raise potassium levels further. Mild leg cramps fit with mild hyperkalemia. Your elevated glucose is a separate abnormality that can reflect diabetes or stress. Because potassium can change quickly and kidney function is worse, this needs prompt medical evaluation and likely repeat bloodwork and possible adjustment of medications or treatment to lower potassium. Seek immediate care if you develop weakness, palpitations, chest pain, fainting, or if the EKG changes.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium (5.9) is higher than normal and can cause muscle weakness or dangerous heart rhythm problems. Your kidney function has worsened (creatinine up to 1.9, BUN high) which makes it harder for your body to remove potassium. The low CO2 (bicarbonate) suggests mild metabolic acidosis, which can raise potassium further. You feel mostly well and your EKG is reported as normal, which is reassuring, but rising creatinine plus K nearly 6.0 is concerning because it can worsen quickly. This should not be ignored and needs prompt medical review to check causes, medications, repeat labs, and consider treatment.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium (5.9) is clearly high and with chronic kidney disease and a rising creatinine (1.9 from 1.6) your kidneys are not clearing potassium as well. The low bicarbonate (CO2 20) suggests some acidosis, which can push potassium up further. A normal EKG is reassuring but does not completely rule out danger \u2014 high potassium can cause life\u2011threatening heart rhythms, especially with worsening kidney function. Mild leg cramps may be related. You should not ignore this: it needs prompt medical review to repeat labs, check medications, and start treatment if needed.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium (5.9) is moderately high and can cause dangerous heart rhythm problems; a normal EKG is reassuring but doesn\u2019t completely rule out risk. Your creatinine has risen (1.9 from 1.6) and BUN is elevated, showing your kidneys aren\u2019t clearing waste as well, and the low bicarbonate (20) suggests mild acidosis \u2014 both of which make high potassium more likely and harder to correct. Mild leg cramps can be a symptom. Given the combination of moderately high potassium, worsening kidney function, and acidosis, you should have prompt medical evaluation to decide if urgent treatment is needed.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium of 5.9 is above normal and can affect muscles and the heart. Because you have chronic kidney disease and your creatinine rose (1.6 \u2192 1.9), your kidneys may be clearing less potassium. The low bicarbonate (20) suggests a mild acid imbalance that can raise potassium further. A normal EKG is reassuring, but EKGs can miss early or evolving changes. Mild leg cramps could be related. Overall this is concerning and needs prompt review and likely medication or dietary changes, but it does not clearly meet the usual immediate-emergency criteria based on the information you gave.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium of 5.9 mEq/L is above normal and can affect heart rhythm and muscles. A normal EKG right now is reassuring but does not completely rule out danger. Your creatinine has risen (1.9 from 1.6) and BUN is high, which suggests your kidneys are not clearing potassium as well as before. Low bicarbonate (20) shows mild acidosis, which also tends to raise blood potassium. Mild leg cramps can be a symptom of elevated potassium. Because of the combination of moderately high potassium, worsening kidney function, and acidosis, this is a potentially serious situation that deserves prompt medical attention. If you have new chest pain, palpitations, fainting, severe weakness, or shortness of breath, seek emergency care immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium (5.9) is higher than normal and can affect the heart and muscles. Your kidney numbers (creatinine up to 1.9, BUN 34) and a low bicarbonate (20) suggest your kidney function may be worsening and you may have mild metabolic acidosis\u2014both can raise potassium. You have only mild cramps and a reported normal EKG now, which is reassuring, but the combination of rising creatinine, low CO2, and potassium near 6.0 increases the risk that potassium could rise further or cause dangerous heart rhythm changes. This needs prompt medical review, medication check, and repeat labs soon.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium (5.9) is above the normal range and, with chronic kidney disease and a rise in creatinine (1.6 \u2192 1.9), suggests your kidneys are clearing potassium less well. Mild muscle cramps can be linked to high potassium. The low bicarbonate (20) suggests a mild metabolic acid picture that often accompanies worsening kidney function. A normal EKG lowers immediate concern for a dangerous heart rhythm but does not rule it out. Because potassium at this level in the setting of worsening kidney function can worsen relatively quickly, it usually merits prompt medical reassessment, repeat labs, and medication review rather than waiting weeks.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

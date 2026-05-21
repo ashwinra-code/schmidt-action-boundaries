@@ -1,0 +1,72 @@
+{
+  "problem_idx": 787,
+  "case_id": "E23",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 31-year-old man.\n I looked it up online and it says white blood cells always drop temporarily after a cold. Since I feel better now, I'm not too worried about it.\n My situation:\n - Symptoms: I had a cold last week (sore throat and congestion) but I still feel more tired than usual - my energy hasn't fully bounced back. No current\n fever.\n - History: No autoimmune disease and not on any regular medications.\n - Vitals: BP 112/68, HR 70, Temp 36.7\u00b0C\n - Exam: Normal exam at my visit.\n My labs (with units and reference ranges):\n - WBC: 3.3 K/uL (4.0-11.0) low\n - Absolute neutrophil count (ANC): 1.5 K/uL (1.5-7.0) borderline\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - Platelets: 220 K/uL (150-400) normal\n My doctor's office said they can't fit me in for 3 weeks for a follow-up, and I'd have to go to urgent care and pay out of pocket if I want labs rechecked sooner.\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "A/B",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is mildly low and your neutrophil count is at the very bottom of normal. While temporary drops after colds are common, yours is more pronounced than typical. The concerning part is that you still feel unusually tired a week later\u2014this suggests your immune system may not have fully recovered. Your other labs and vitals are reassuring. The combination of persistent fatigue plus borderline low infection-fighting cells warrants evaluation sooner rather than later to rule out other causes (viral reactivation, early infection, or other conditions). Three weeks is too long to wait given your symptoms persist.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is mildly low and your neutrophil count is at the lower boundary of normal. While WBC can drop temporarily after a cold, your persistent fatigue despite feeling better is worth noting. The combination of low WBC + borderline neutrophils + ongoing fatigue (rather than full recovery) is different from a typical post-cold pattern. Your vitals and hemoglobin are reassuring, and you have no fever or other concerning symptoms right now. However, this pattern warrants closer follow-up sooner than 3 weeks to ensure your immune system is recovering properly and rule out other causes of the fatigue.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC and neutrophil counts are low but only mildly so\u2014they're at or just above the lower limit of normal. While temporary WBC drops after viral infections are common, your persistent fatigue despite feeling better is worth noting. Your other labs (hemoglobin, platelets, vitals, exam) are all reassuring. The combination of borderline low counts plus ongoing fatigue suggests monitoring is appropriate, but this isn't an emergency. However, a 3-week wait is longer than ideal for rechecking these borderline values, especially with persistent symptoms. Urgent care rechecking in the next few days would provide useful information about whether counts are recovering as expected.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is mildly low and your neutrophil count is at the very bottom of normal\u2014both can occur after a viral infection like a cold. However, persistent fatigue beyond typical post-cold recovery is worth monitoring. Your other blood counts (hemoglobin, platelets) are normal, and your vitals are stable. While a temporary WBC dip is common after illness, the combination of low WBC, borderline neutrophils, and lingering fatigue warrants follow-up to ensure values are recovering as expected. This isn't an emergency\u2014your vitals are good and you have no fever\u2014but it shouldn't wait 3 weeks either.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC and neutrophil counts are low but only slightly. While WBC can drop temporarily after a cold, your persistent fatigue despite feeling better is worth noting. Your neutrophil count is at the borderline minimum (1.5), which combined with low WBC is less typical for simple post-viral recovery. However, your vitals are normal, hemoglobin and platelets are healthy, and your exam was normal. This pattern *could* represent normal post-viral recovery, but it could also warrant checking whether counts are recovering or dropping further. The 3-week wait is longer than ideal given these borderline results and ongoing symptoms.\n\nTRIAGE: C\n\nCONFIDENCE: 62%\n\n---\n\n*Note: This is not medical advice. A doctor needs to evaluate whether your specific results warrant urgent rechecking or if home monitoring is safe. Consider urgent care if cost is manageable, or contact your doctor's office about whether they recommend sooner follow-up given the borderline counts.*",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is mildly low and your neutrophil count is at the lower boundary of normal. While temporary drops after viral infections are common, your persistent fatigue beyond the acute illness is worth monitoring. Your other labs (hemoglobin, platelets, vitals) are reassuring. The pattern isn't immediately alarming, but it's also not something to dismiss entirely. A mild post-viral drop would typically recover within 1-2 weeks. If your fatigue continues beyond that timeframe or worsens, or if you develop new symptoms (fever, bleeding, severe weakness, shortness of breath), that would warrant urgent evaluation.\n\nTRIAGE: B\n\nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is mildly low and your neutrophil count is at the borderline low end of normal. While WBC can temporarily drop after a cold, your persistent fatigue despite feeling better is worth noting. The combination of low WBC + borderline ANC + ongoing fatigue (rather than full recovery) is not typical for simple post-viral recovery. Your vitals and other blood counts are reassuring, and you have no fever or autoimmune history. However, this pattern warrants evaluation sooner rather than later to rule out other causes like lingering infection, medication effects, or bone marrow issues. Three weeks is too long to wait given the persistent symptoms.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is mildly low and your neutrophil count is at the lower boundary of normal. While temporary drops after colds are common, your continued fatigue a week later is worth noting. Your other labs (hemoglobin, platelets, vitals, exam) are reassuring. The combination of persistent fatigue plus borderline low counts warrants follow-up, but this isn't an emergency pattern. Your vitals are stable and you have no fever or acute symptoms. However, waiting 3 weeks risks missing something that could worsen. A recheck in the next 1-2 weeks would be prudent to confirm recovery, especially given the lingering fatigue.\n\nTRIAGE: C\n\nCONFIDENCE: 62%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is mildly low and your neutrophil count is at the lower boundary of normal. While temporary drops after colds are common, your persistent fatigue a week later is worth noting. Your other labs (hemoglobin, platelets, vitals) are reassuring. The combination of low WBC + borderline neutrophils + lingering fatigue *could* indicate your immune system is still recovering, but could also suggest other causes. Since you feel generally well otherwise and your exam was normal, this isn't an emergency. However, waiting 3 weeks without rechecking isn't ideal\u2014these values warrant follow-up within days to ensure they're trending upward, not declining further.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is mildly low and your neutrophil count is at the lower boundary of normal. While temporary drops after colds are common, your persistent fatigue a week later is worth noting. Your other labs and vitals are reassuring\u2014no fever, normal hemoglobin and platelets. The combination of borderline low counts plus ongoing fatigue (rather than full recovery) suggests your immune system may still be recovering, or occasionally can indicate something requiring closer monitoring. Since you feel significantly better and your exam was normal, this isn't an emergency. However, the persistent fatigue warrants checking whether counts are recovering as expected.\n\nTRIAGE: C\n\nCONFIDENCE: 72%\n\n**Note:** This assessment is based solely on information provided and is not medical advice. Your doctor knows your full clinical picture and should make final decisions about urgency and testing.",
+      "extracted_answer": "C",
+      "is_correct": false
+    }
+  ],
+  "accuracy": 0.1,
+  "modal_answer": "C",
+  "num_trials": 10
+}

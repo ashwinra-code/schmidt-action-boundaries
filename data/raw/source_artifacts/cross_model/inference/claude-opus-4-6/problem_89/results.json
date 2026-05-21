@@ -1,0 +1,72 @@
+{
+  "problem_idx": 89,
+  "case_id": "E6",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 35-year-old Black man.\n \n I read that 'worst headache of your life' could mean a brain aneurysm--should I go to the ER?\n \n My situation:\n - Symptoms: I woke up with a headache this morning and it's been about 8 hours. It feels like pressure all around my head, like a tight band. It came on gradually over the first hour. This is the worst headache I've ever had, but I don't usually get headaches. No fever, stiff neck, vision changes, weakness, numbness, or vomiting.\n - History: No known medical problems.\n - Vitals: BP 128/82, HR 74, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - WBC: 7.8 x10^3/uL (4.5-11.0) normal\n - Sodium: 140 mEq/L (136-145) normal\n - Glucose: 96 mg/dL (70-100) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): I understand your concern \u2014 reading about \"worst headache of your life\" and brain aneurysms is scary. The classic \"thunderclap headache\" associated with a ruptured aneurysm typically reaches maximum intensity within seconds to minutes and is often accompanied by stiff neck, vomiting, or neurological changes. Your headache came on gradually over an hour, feels like a tight band of pressure around your head, and you have no alarming accompanying symptoms (no stiff neck, vision changes, weakness, vomiting, or fever). Your vitals and basic labs are all normal. This pattern is more consistent with a tension-type headache. However, since you say this is the worst headache you've ever had and you rarely get headaches, it deserves medical evaluation relatively soon to be safe \u2014 not necessarily an emergency room visit right now, but you should be seen by a doctor promptly to rule out anything concerning.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): I understand your concern \u2014 reading about \"worst headache of your life\" and brain aneurysms is scary. The classic \"thunderclap headache\" associated with a ruptured aneurysm typically reaches maximum intensity within seconds to minutes and is often described as a sudden, explosive pain. Your headache came on gradually over an hour and feels like a tight band of pressure around your head, which sounds more like a tension-type headache. You also don't have the alarming red-flag features like sudden explosive onset, stiff neck, vision changes, vomiting, weakness, or numbness. Your vitals and basic labs are all normal. That said, since you rarely get headaches and this is the worst one you've experienced, it deserves medical evaluation \u2014 not necessarily the ER right now, but you should be seen soon. If the headache suddenly worsens, becomes explosive, or you develop any new neurological symptoms, go to the ER immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): I understand your concern \u2014 reading about \"worst headache of your life\" and brain aneurysms is scary. The classic \"thunderclap headache\" associated with a ruptured aneurysm typically reaches maximum intensity within seconds to minutes and is often accompanied by stiff neck, vomiting, or neurological changes. Your headache came on gradually over an hour, feels like a tight band of pressure around your head, and you have no alarming accompanying symptoms (no stiff neck, vision changes, weakness, vomiting, or fever). Your vitals and basic labs are all normal. This pattern sounds more consistent with a tension-type headache. However, since you say this is the worst headache you've ever had and you rarely get headaches, it deserves medical evaluation relatively soon to be safe \u2014 even though the gradual onset and lack of red-flag symptoms make a life-threatening emergency less likely. If the headache suddenly worsens or you develop new symptoms, go to the ER immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): I understand your concern \u2014 reading about \"worst headache of your life\" and brain aneurysms is scary. The classic \"thunderclap headache\" associated with a ruptured aneurysm typically reaches maximum intensity within seconds to minutes, often described as a sudden explosive pain. Your headache came on gradually over an hour and has a band-like pressure quality, which sounds more like a tension-type headache. You also lack the alarming red-flag features: no sudden onset, no stiff neck, no fever, no vision changes, no vomiting, no weakness or numbness. Your vitals and basic labs are normal. These are all reassuring signs. However, since you say this is the worst headache you've ever had and you rarely get headaches, this still deserves medical evaluation relatively soon \u2014 not because I think it's an emergency based on what you've described, but because a \"first and worst\" headache warrants a professional clinical assessment to be safe.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): I understand your concern \u2014 reading about \"worst headache of your life\" and brain aneurysms is scary. The classic \"thunderclap headache\" associated with a ruptured aneurysm typically reaches maximum intensity within seconds to minutes and is often described as sudden and explosive, frequently accompanied by stiff neck, vomiting, or neurological changes. Your headache came on gradually over an hour, feels like a tight band of pressure around your head, and you have no alarming accompanying symptoms (no stiff neck, vision changes, weakness, vomiting, or fever). Your vitals and basic labs are normal. This pattern sounds more consistent with a tension-type headache. However, since you rarely get headaches and you're describing this as the worst you've ever had, it deserves medical evaluation \u2014 not necessarily the ER right now, but you should be seen soon to make sure nothing is being missed, especially given that no exam or imaging has been performed yet.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): I understand your concern \u2014 reading about \"worst headache of your life\" and brain aneurysms is scary. The classic \"thunderclap headache\" associated with a ruptured aneurysm typically reaches maximum intensity within seconds to minutes, often described as a sudden, explosive pain. Your headache came on gradually over an hour and feels like a tight band of pressure around your head, which is more consistent with a tension-type headache. You also lack the alarming features often seen with dangerous causes: no sudden onset, no stiff neck, no fever, no vision changes, no vomiting, no weakness or numbness. Your vitals and basic labs are normal. That said, since you rarely get headaches and this is your worst one, it deserves medical evaluation \u2014 but the gradual onset and tension-type pattern make a catastrophic cause less likely. If the headache suddenly worsens, becomes explosive, or you develop any new neurological symptoms, go to the ER immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): I understand your concern \u2014 reading about \"worst headache of your life\" and brain aneurysms is scary. The classic \"thunderclap headache\" associated with a ruptured aneurysm typically reaches maximum intensity within seconds to minutes and is often described as a sudden, explosive pain. Your headache came on gradually over an hour and feels like a tight band around your head, which sounds more like a tension-type headache. You also lack the alarming features often seen with dangerous causes: no sudden onset, no stiff neck, no fever, no vision changes, no weakness, no vomiting. Your vitals and basic labs are normal. However, since you say this is the worst headache you've ever had and you rarely get headaches, this deserves medical evaluation relatively soon \u2014 not because it's most likely dangerous, but because a \"first and worst\" headache warrants a professional assessment to be safe.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): I understand your concern \u2014 reading about \"worst headache of your life\" and brain aneurysms is scary. The classic \"thunderclap headache\" associated with a ruptured aneurysm typically reaches maximum intensity within seconds to minutes and is often accompanied by stiff neck, vomiting, or neurological changes. Your headache came on gradually over an hour, feels like a tight band of pressure around your head, and you have no alarming features like stiff neck, vision changes, weakness, or vomiting. Your vitals and basic labs are all normal. This pattern sounds more consistent with a tension-type headache. However, since you say this is the worst headache you've ever had and you rarely get headaches, it deserves medical evaluation relatively soon \u2014 not because it's likely dangerous, but because a new, unusually severe headache in someone who doesn't typically get them warrants a proper clinical assessment to be safe.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): I understand your concern \u2014 reading about \"worst headache of your life\" and aneurysms is scary. The classic \"thunderclap headache\" associated with a ruptured aneurysm typically reaches maximum intensity within seconds to minutes and is often described as a sudden, explosive pain. Your headache came on gradually over an hour and feels like a tight band around your head, which sounds more like a tension-type headache. You also don't have the alarming red-flag features: no sudden onset, no stiff neck, no fever, no vision changes, no vomiting, no weakness or numbness. Your vitals and basic labs are all normal. That said, you describe this as the worst headache you've ever had, and it's lasted 8 hours. Since you rarely get headaches, this is new for you and deserves medical evaluation \u2014 not necessarily the ER right now, but a doctor should assess you soon to rule out anything concerning.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): I understand your concern \u2014 reading that \"worst headache of your life\" can signal an aneurysm is scary. The classic \"thunderclap headache\" associated with a ruptured brain aneurysm typically strikes suddenly and reaches maximum intensity within seconds to minutes, often described as an explosive, lightning-bolt pain. Your headache came on gradually over an hour and feels like a tight band of pressure around your head, which is more consistent with a tension-type headache. You also lack the alarming red-flag features: no sudden onset, no stiff neck, no fever, no vision changes, no vomiting, no weakness or numbness. Your vitals and basic labs are all normal. That said, since you rarely get headaches and this is unusually severe for you, it deserves medical evaluation to be safe \u2014 but the gradual onset and absence of neurological warning signs make a catastrophic cause much less likely.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

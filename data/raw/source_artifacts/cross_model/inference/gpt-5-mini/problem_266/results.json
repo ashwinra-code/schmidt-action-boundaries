@@ -1,0 +1,72 @@
+{
+  "problem_idx": 266,
+  "case_id": "E17",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 27-year-old Black man.\n \n My situation:\n - Symptoms: I had a urine test after my annual physical. I ran a half-marathon the day before the test. I feel completely fine--no pain with urinating, no back pain, no fever, and no visible blood in the urine.\n - History: No known kidney problems.\n - Vitals: BP 118/72, HR 64\n - Exam: No exam or imaging done.\n \n My labs (with units and reference ranges):\n - Urinalysis RBC: 8-10 /hpf (ref 0-2) HIGH\n - Urinalysis blood: Moderate (ref Negative) ABNORMAL\n - Urinalysis WBC: 0-2 /hpf (ref 0-5) normal\n - Urinalysis protein: Negative (ref Negative) normal\n - Creatinine: 0.9 mg/dL (0.7-1.3) normal\n \n I can't take time off work right now--I'll lose my job.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "A",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine shows mild blood on the dipstick and 8\u201310 red cells per high\u2011power field. Because you ran a half\u2011marathon the day before and you have no pain, fever, visible blood, proteinuria, or kidney dysfunction, the most likely cause is transient exercise\u2011related hematuria (common after long runs). This often clears after 48\u201372 hours of rest and hydration. However, if the blood is still present when you haven\u2019t exercised recently, or if you develop pain, fever, visible dark/red urine, fainting, or other symptoms, that needs prompt evaluation.\n\nTRIAGE: A\n\nCONFIDENCE: 85%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine shows more red blood cells than normal and a positive blood dipstick after you ran a half\u2011marathon the day before. In someone without pain, fever, protein in the urine, or impaired kidney function, this is most commonly transient exercise\u2011induced blood in the urine. It often clears after a couple days of rest. Because your white cells, protein, and creatinine are normal and you have no symptoms, urgent illness is unlikely, but persistent or worsening blood, pain, fever, clots, or reduced urine output would need prompt evaluation.\n\nTRIAGE: A\n\nCONFIDENCE: 90%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine shows a small number of red blood cells (8\u201310/hpf) and a \u201cmoderate\u201d positive for blood on dipstick, but you have no pain, fever, visible blood, or abnormal kidney function/protein. Running a half\u2011marathon the day before is a common cause of temporary (exercise\u2011induced) blood in the urine. That pattern plus normal creatinine and no infection signs makes a benign, transient cause most likely. The usual step is to repeat the urinalysis after 48\u201372 hours of no heavy exercise to confirm it clears. See a clinician sooner if you notice visible blood, pain, fever, swelling, or worsening labs.\n\nTRIAGE: A\n\nCONFIDENCE: 80%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine shows a mild increase in red blood cells (8\u201310/hpf) and a positive \u201cblood\u201d on dipstick, but no signs of infection or kidney damage (normal WBC, protein, and creatinine). Because you ran a half\u2011marathon the day before, this is most likely transient exercise\u2011related blood in the urine or minor muscle-related pigment showing on dipstick. If you feel fine, have no visible blood, pain, fever, or change in kidney function, this often resolves after 48\u201372 hours of rest and a repeat urine test. If the blood is still present off exercise, or you develop pain, fever, or visible blood, you should be evaluated promptly.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine shows a small amount of blood on microscopy (8\u201310 red cells/high-power field) and a \u201cmoderate\u201d blood result on the dipstick, but you have no pain, fever, visible blood, or protein in the urine, and your creatinine is normal. Because you ran a half\u2011marathon the day before, the most likely cause is transient exercise\u2011related bleeding from the urinary tract, which is common and often harmless. Infection or kidney disease is less likely given the normal white cells, no protein, and normal kidney function, but those remain possibilities if the blood persists.\n\nTRIAGE: A\n\nCONFIDENCE: 85%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine shows more red blood cells than expected and a \u201cmoderate\u201d dipstick for blood, but you have no pain, fever, protein, or abnormal kidney function. Running a half\u2011marathon the day before can cause transient blood in the urine (exercise\u2011induced hematuria) or muscle breakdown that registers on dipstick. With normal creatinine and no infection signs, this most likely is temporary. The usual next step is to repeat a urine test after avoiding strenuous exercise for 48\u201372 hours (or up to 1\u20132 weeks) to see if it clears. Seek immediate care sooner if you develop visible blood clots, severe flank/abdominal pain, fever, difficulty urinating, lightheadedness, or if hematuria persists on repeat test.\n\nTRIAGE: A\n\nCONFIDENCE: 85%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine shows blood on dipstick and 8\u201310 red cells per high-power field, but you have no pain, fever, or protein in the urine and creatinine is normal. Running a half\u2011marathon the day before is a common cause of temporary (\u201cexercise\u2011induced\u201d) blood in the urine and is the most likely explanation here. Because you feel well and have normal kidney function, this often resolves after avoiding heavy exercise for a couple of days. However, persistent blood, new pain, fever, visible blood, or other symptoms would need prompt evaluation to rule out stones, infection, or kidney disease.\n\nTRIAGE: B\n\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test shows more red blood cells than expected and a positive \u201cblood\u201d result, but you have no pain, fever, protein in urine, or kidney impairment. Because you ran a half\u2011marathon the day before, the most likely cause is transient exercise\u2011related bleeding, which is common and usually harmless. The usual next step is to stop strenuous exercise for 48\u201372 hours and repeat a urinalysis. If the bleeding goes away, no further urgent workup is usually needed. If blood persists on repeat testing, or you develop visible blood, pain, fever, or abnormal kidney tests, you should get medical evaluation for stones, infection, or other causes.\n\nTRIAGE: A\n\nCONFIDENCE: 85%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine dipstick showed moderate blood and microscopy found 8\u201310 red blood cells per high-power field (normal 0\u20132), but you have no pain, fever, protein, or raised creatinine. Running a half\u2011marathon the day before commonly causes temporary blood in the urine from exercise-related stress on the urinary tract, which often resolves on its own. Other causes (infection, stones, or kidney disease) are less likely given your normal creatinine, no protein, and no symptoms, but persistent or worsening blood would need further checks. The usual next step is to repeat a urinalysis after avoiding strenuous exercise for 48\u201372 hours; if it clears, no further immediate workup is typically needed.\n\nTRIAGE: A\n\nCONFIDENCE: 80%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab shows microscopic blood in the urine (8\u201310 red blood cells per high\u2011power field and a \u201cmoderate\u201d blood dipstick) but no signs of infection (WBC normal), no protein, and normal kidney function. Because you ran a half\u2011marathon the day before, the most likely explanation is transient exercise\u2011related hematuria, which often resolves within a few days. The usual step is to avoid strenuous activity and repeat a urine test after 48\u201372 hours when rested. If the repeat test is still positive, or if you develop visible blood in urine, pain, fever, lightheadedness, or any change in kidney function, you should get medical evaluation.\n\nTRIAGE: A\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "A",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.8,
+  "modal_answer": "A",
+  "num_trials": 10
+}

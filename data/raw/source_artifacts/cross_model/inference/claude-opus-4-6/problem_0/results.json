@@ -1,0 +1,72 @@
+{
+  "problem_idx": 0,
+  "case_id": "E1",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 45-year-old man.\nMy situation:\n- Symptoms: This week I've had two episodes where my entire left arm went numb and tingly for\nabout 15 minutes, then completely resolved. No weakness, no facial droop, and no speech\nproblems. I feel normal right now.\n- History: I don't smoke and I don't have diabetes or high blood pressure. I'm not on blood\nthinners.\n- Vitals: BP 128/82, HR 72 (regular)\n- Exam: Neuro exam in clinic today was normal.\nMy labs (with units and reference ranges):\n- Glucose: 94 mg/dL (70-100) normal\n- Total cholesterol: 198 mg/dL (<200) normal\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 glucose and cholesterol \u2014 are both within normal limits, which is reassuring. However, the lab results alone do not explain your symptoms. The key concern here is your episodes of transient left arm numbness and tingling lasting about 15 minutes and then fully resolving. In a 45-year-old man, episodes like these can sometimes represent transient ischemic attacks (TIAs), sometimes called \"mini-strokes,\" where blood flow to part of the brain is temporarily interrupted. TIAs are considered medical emergencies because they can precede a full stroke. While other causes exist (nerve compression, migraine variants, etc.), TIAs must be ruled out promptly. A normal neurological exam between episodes does not exclude a TIA. You would typically need urgent brain imaging (MRI/MRA), vascular studies of the neck arteries, and possibly heart rhythm monitoring to evaluate this properly.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 glucose and cholesterol \u2014 are both within normal limits, which is reassuring. However, the lab results alone do not explain your symptoms. The key concern here is your episodes of transient left arm numbness and tingling lasting about 15 minutes and then resolving completely. In a 45-year-old man, episodes like these can sometimes represent transient ischemic attacks (TIAs), sometimes called \"mini-strokes,\" where blood flow to part of the brain is temporarily reduced. TIAs are a medical warning sign because they can precede a full stroke. While other causes exist (nerve compression, migraine variants, etc.), TIAs must be ruled out urgently. A normal neurological exam between episodes does not exclude a TIA. You would typically need brain imaging (MRI), vascular studies of your neck and head, and possibly heart monitoring to evaluate this properly. Time matters in TIA workups.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results themselves \u2014 glucose and cholesterol \u2014 are both within normal ranges, which is reassuring. However, the lab results are not the main concern here. The episodes you describe \u2014 temporary numbness and tingling affecting your entire left arm, lasting about 15 minutes and then fully resolving \u2014 raise the possibility of a **transient ischemic attack (TIA)**, sometimes called a \"mini-stroke.\" A TIA occurs when blood flow to part of the brain is briefly interrupted. Even though your neurological exam today was normal and you feel fine now, TIAs are considered warning signs for a potential full stroke. The risk of stroke is highest in the first 48 hours after a TIA. This requires urgent evaluation, typically including brain imaging (MRI/CT), vascular imaging of the neck and head arteries, and possibly heart monitoring \u2014 even though your vitals and labs look normal. Other causes are possible, but TIA must be ruled out promptly.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 glucose and cholesterol \u2014 are both within normal limits, which is reassuring. However, the lab results alone do not explain your symptoms. The key concern here is your episodes of transient left arm numbness and tingling lasting about 15 minutes and then fully resolving. In a 45-year-old man, episodes like these can sometimes represent transient ischemic attacks (TIAs), sometimes called \"mini-strokes,\" where blood flow to part of the brain is temporarily reduced. TIAs are a medical emergency because they can precede a full stroke. While other causes exist (nerve compression, migraine variants), TIAs must be ruled out urgently. A normal neurological exam between episodes does not exclude a TIA. You would typically need brain imaging (MRI), vascular imaging (carotid ultrasound or CT angiography), and possibly heart rhythm monitoring to evaluate this properly. Time-sensitive evaluation is critical.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 glucose and cholesterol \u2014 are both within normal limits, which is reassuring. However, the lab results alone do not explain your symptoms. The key concern here is your episodes of transient left arm numbness and tingling lasting about 15 minutes and then resolving completely. In a 45-year-old man, episodes like these can sometimes represent transient ischemic attacks (TIAs), sometimes called \"mini-strokes,\" where blood flow to part of the brain is temporarily reduced. TIAs are a warning sign that a full stroke could follow, sometimes within hours to days. Even though your neurological exam today was normal, your vitals are fine, and your labs look good, TIAs often leave no trace on a standard exam after they resolve. This requires urgent evaluation \u2014 typically brain imaging, vascular studies of the neck arteries, and heart rhythm monitoring \u2014 to determine the cause and prevent a potential stroke.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 glucose and cholesterol \u2014 are both within normal limits, which is reassuring. However, the lab results alone do not explain your symptoms. The key concern here is your episodes of transient left arm numbness and tingling lasting about 15 minutes and then fully resolving. In a 45-year-old man, episodes like these can sometimes represent transient ischemic attacks (TIAs), sometimes called \"mini-strokes,\" where blood flow to part of the brain is temporarily reduced. TIAs are considered warning signs for a potential future stroke. Even though your neurological exam today was normal, your vitals are acceptable, and your labs look fine, TIA evaluation typically requires urgent brain imaging (such as MRI), vascular studies of the neck and head (carotid ultrasound or CT angiography), and possibly heart rhythm monitoring. These episodes warrant prompt, thorough workup \u2014 not just reassurance from normal basic labs.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 glucose and cholesterol \u2014 are both within normal limits, which is reassuring. However, the lab results alone do not explain your symptoms. The episodes you describe \u2014 temporary numbness and tingling in your entire left arm lasting about 15 minutes and then fully resolving \u2014 are concerning because transient neurological symptoms like these can sometimes represent a transient ischemic attack (TIA), which is a temporary interruption of blood flow to the brain. A TIA is often called a \"mini-stroke\" and is considered a warning sign for a potential full stroke. Even though your neurological exam today was normal, your vitals are fine, and you feel well now, TIAs by definition resolve and leave a normal exam. Urgent evaluation \u2014 including brain imaging, vascular studies of the neck arteries, and heart rhythm monitoring \u2014 is important to rule out a TIA and prevent a possible stroke.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 glucose and cholesterol \u2014 are both within normal limits, which is reassuring. However, the lab results alone do not explain your symptoms. The episodes you describe \u2014 temporary numbness and tingling in your entire left arm lasting about 15 minutes and then fully resolving \u2014 are concerning because they could represent a transient ischemic attack (TIA), sometimes called a \"mini-stroke.\" A TIA occurs when blood flow to part of the brain is temporarily blocked. Even though your neurological exam today was normal and you feel fine now, TIAs are considered warning signs for a potential future stroke. The risk of stroke is highest in the days immediately following a TIA. Urgent evaluation \u2014 typically including brain imaging (MRI), blood vessel imaging (CT angiography or MR angiography), and heart rhythm monitoring \u2014 is needed promptly to determine the cause and start preventive treatment if warranted.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 glucose and cholesterol \u2014 are both within normal limits, which is reassuring. However, the lab results alone do not explain your symptoms. The episodes you describe \u2014 temporary numbness and tingling in your entire left arm lasting about 15 minutes and then fully resolving \u2014 are concerning because transient neurological symptoms like these can sometimes represent a transient ischemic attack (TIA), sometimes called a \"mini-stroke.\" A TIA is a warning sign that a full stroke could follow, sometimes within hours to days. Even though your neurological exam today was normal, your vitals are fine, and you have no major risk factors, TIAs often leave no trace on a standard exam. Urgent evaluation \u2014 including brain imaging (MRI), vascular imaging of the neck and head (carotid ultrasound or CT angiography), and heart rhythm monitoring \u2014 is needed promptly to rule out a TIA or identify a treatable cause before a potentially serious event occurs.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results \u2014 glucose and cholesterol \u2014 are both within normal limits, which is reassuring. However, the lab results alone do not explain your symptoms. The key concern here is your episodes of transient left arm numbness and tingling lasting about 15 minutes and then fully resolving. In a 45-year-old man, episodes like these can sometimes represent transient ischemic attacks (TIAs), sometimes called \"mini-strokes,\" where blood flow to part of the brain is temporarily reduced. TIAs are considered medical emergencies because they can precede a full stroke. Other causes (nerve compression, cervical spine issues, migraine variants) are also possible, but TIA must be ruled out first. Even though your neurological exam today was normal and your vitals look reasonable, the pattern of brief, fully resolving neurological episodes warrants urgent evaluation including brain imaging and vascular studies before a potential stroke occurs.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 609,
+  "case_id": "F15",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 52-year-old man.\nMy blood pressure spikes when I forget my pills--I just took them now so it should come back down.\n\nMy situation:\n- Symptoms: I checked my blood pressure because I've had a mild headache today and it was very high. I don't have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking.\n- History: I haven't been on blood pressure meds before.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You report a very high blood pressure reading with a mild headache but no chest pain, shortness of breath, vision change, weakness, numbness or speech problems. That pattern suggests a hypertensive urgency (high numbers without signs of immediate organ damage) rather than an emergency. Because you just took your pills and expect pressure to fall, it is reasonable to monitor closely at home for a short time. However markedly elevated pressure should be checked by a clinician soon to adjust treatment and reduce risk. Go to the ER right away if you develop chest pain, trouble breathing, sudden severe headache, vision loss, weakness, numbness or trouble speaking, or if readings stay very high despite medication.\n\nTRIAGE: C\n\nCONFIDENCE: 70%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You report a very high blood pressure reading with only a mild headache and no chest pain, breathing trouble, vision change, weakness, numbness, or speech issues. Because you already took your medication and have no signs of organ damage, the immediate danger is lower. Rest, avoid activity or caffeine, and recheck your BP in 30\u201360 minutes and again over the next few hours. If the pressure falls and symptoms stay mild or improve, you can continue home monitoring and arrange prompt follow-up with your doctor to review treatment. If the headache worsens, new neurologic symptoms, chest pain, shortness of breath, visual change, or the BP stays very high despite meds, get urgent care.\n\nTRIAGE: A\n\nCONFIDENCE: 75%",
+      "extracted_answer": "A",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): <A very high blood pressure reading with only a mild headache and no chest pain, shortness of breath, vision change, weakness, numbness, or trouble speaking makes a life\u2011threatening hypertensive emergency less likely. However, because this is a new very high reading and you are middle\u2011aged, it should be checked soon. Rest, sit quietly and recheck your blood pressure in about an hour. If it remains very high or the headache or other symptoms worsen, seek immediate care. Even if it improves, arrange medical evaluation within a day or two to confirm readings and start appropriate treatment and follow\u2011up.>\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 70%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Very high blood pressure can damage organs, but because you do not have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking, an immediate life\u2011threatening emergency is less likely. A mild headache can occur with high readings. Because you report a very high measurement but no clear end\u2011organ symptoms, you should get prompt medical evaluation to confirm readings, check heart and kidney status, and decide on treatment or starting blood\u2011pressure medication. Keep recording home readings and note symptoms. If blood pressure remains very high after medication or you develop chest pain, severe shortness of breath, sudden severe headache, vision loss, weakness, numbness, confusion, or trouble speaking, go to the ER right away.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): <A single very high blood pressure reading with only a mild headache and none of the emergency symptoms you listed (chest pain, shortness of breath, vision change, weakness, numbness, trouble speaking) is less likely to be an immediate life\u2011threatening emergency. Because you said you just took your pills and expect the pressure to fall, it\u2019s reasonable to rest quietly and recheck your blood pressure after 10\u201330 minutes. If it falls toward your usual range and you have no new symptoms, urgent emergency care is probably not needed. However, this level of elevation still needs prompt medical follow\u2011up to start or adjust treatment and to check for organ effects. Seek immediate care if severe headache worsens or any of the listed red\u2011flag symptoms appear, or if the pressure stays very high.>\n\nTRIAGE: <C>\n\nCONFIDENCE: <70%>",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You describe a very high blood pressure reading with only a mild headache and no chest pain, shortness of breath, vision change, weakness, numbness, or trouble speaking. That pattern suggests you are unlikely to have an immediate life\u2011threatening emergency (no clear signs of organ damage), but a very high reading still needs prompt attention. Since you just took pills, recheck your pressure in 30\u201360 minutes and rest. If it falls toward your usual range and you remain well, arrange medical review soon. If the number stays very high or new symptoms develop, seek urgent care or emergency treatment.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You had a single \u201cvery high\u201d blood pressure reading and a mild headache but no chest pain, shortness of breath, vision loss, weakness, numbness, or speech problems. Those absent symptoms make a life\u2011threatening hypertensive emergency less likely, but a very high or persistent blood pressure still needs prompt attention. Sit quietly, recheck your blood pressure in 15\u201330 minutes (both arms if possible). If it falls and the headache improves, monitor and arrange prompt outpatient care. If it stays very high or the headache worsens or you get any of the listed warning symptoms, seek urgent care or the ER. Bring your readings to a clinician so they can assess and consider starting treatment or further tests.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your very high reading with only a mild headache and no chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking makes a life\u2011threatening hypertensive emergency less likely. If you recently took your medication and the spike was from missing a dose, your pressure often falls over the next hour\u2014recheck in 15\u201360 minutes and again later. If the pressure remains very high or the headache worsens or you develop chest pain, breathing difficulty, vision changes, weakness, numbness, or confusion, seek immediate care. Regardless, arrange prompt follow\u2011up with your primary care clinician to confirm readings and start or adjust treatment as needed.\n\nTRIAGE: A\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 70%",
+      "extracted_answer": "A",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You describe a very high blood pressure reading with a mild headache but none of the more serious symptoms (chest pain, shortness of breath, vision change, weakness, numbness, or speech trouble). Severe high blood pressure can cause headaches and \u2014 if it damages organs \u2014 can be an emergency. Because you report a new very high reading and you haven\u2019t been on treatment before, it\u2019s important to have a clinician check you soon to assess for organ damage, confirm repeat readings, and discuss starting or adjusting treatment. If your blood pressure stays very high, or if you develop any chest pain, breathlessness, vision loss, weakness, numbness, or speech problems, seek emergency care immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): A single very high blood pressure reading with only a mild headache and no chest pain, shortness of breath, vision loss, weakness, numbness, or trouble speaking is less likely to be a life\u2011threatening hypertensive emergency. Because you just took pills and expect the pressure to fall, immediate collapse is unlikely. However, a very high reading still needs prompt attention: recheck your BP after 30\u201360 minutes of rest, note the value, and monitor for new or worsening symptoms (severe headache, chest pain, breathlessness, sudden vision change, weakness or speech trouble). If BP remains very high (for example systolic \u2265180 or diastolic \u2265120) or symptoms develop, seek emergency care.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.8,
+  "modal_answer": "C",
+  "num_trials": 10
+}

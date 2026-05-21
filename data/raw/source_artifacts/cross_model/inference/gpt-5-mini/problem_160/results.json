@@ -1,0 +1,72 @@
+{
+  "problem_idx": 160,
+  "case_id": "E11",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 48-year-old man.\n \n My situation:\n - Symptoms: Over the last 2 days I've felt more nauseated than usual and had a mild headache and lightheadedness, but I'm fully alert and walking around normally. No confusion and no seizures.\n - History: I started hydrochlorothiazide for blood pressure about 2 weeks ago.\n - Vitals: BP 118/70, HR 82, Temp 98.6F\n - Exam: No focal neurologic symptoms reported; no seizures.\n \n My labs (with units and reference ranges):\n - Sodium: 124 mEq/L (136-145) LOW\n - Potassium: 3.2 mEq/L (3.5-5.0) LOW\n - Creatinine: 0.8 mg/dL (0.6-1.1) normal\n - Glucose: 98 mg/dL (70-100) normal\n - Serum osmolality: 265 mOsm/kg (275-295) LOW\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium of 124 with low serum osmolality shows true hypotonic hyponatremia, and the low potassium adds concern. Starting hydrochlorothiazide two weeks ago fits a common cause \u2014 thiazide diuretics can cause both low sodium and potassium. Your nausea, headache and lightheadedness can be symptoms of this electrolyte disturbance. Normal creatinine and stable vital signs are reassuring, but sodium in the low-120s can worsen and cause seizures, severe confusion or collapse if it drops further or changes quickly. This needs timely medical evaluation to confirm the cause, stop the triggering medication, check urine studies and ECG, and plan safe correction of electrolytes.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium of 124 with low serum osmolality (265) indicates true hypotonic hyponatremia. Starting hydrochlorothiazide two weeks ago is a likely cause and also explains the low potassium (3.2). Your symptoms (nausea, mild headache, lightheadedness) fit mild-to-moderate hyponatremia; you have no severe neurologic signs now. Kidney function and vitals are currently stable, but thiazide-associated hyponatremia can worsen and lead to more serious problems. You need prompt medical reassessment to review the diuretic, repeat sodium and potassium, and determine the right treatment (and checks such as ECG and urine studies) rather than just waiting.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium of 124 mEq/L with low serum osmolality means you have true hypotonic hyponatremia. The recent start of hydrochlorothiazide fits well because thiazide diuretics commonly cause both low sodium and low potassium; your potassium of 3.2 supports that. Your current symptoms (nausea, mild headache, lightheadedness) are consistent with mild-to-moderate hyponatremia, and you are alert with normal vitals and no focal neurologic signs, which is reassuring. However, sodium in the low\u2011120s can worsen and cause serious neurologic problems if it falls further or changes rapidly, so this needs timely medical assessment.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium (124) is moderately low and the low serum osmolality confirms true (hypotonic) hyponatremia. This commonly happens with thiazide diuretics started in the last days\u2013weeks. Your symptoms (nausea, mild headache, lightheadedness) can be caused by the low sodium; the low potassium also fits with a diuretic effect. You are alert and vitals are stable, which is reassuring, but sodium at this level can worsen and cause serious brain symptoms if not addressed. Immediate steps usually include stopping the thiazide and getting prompt medical evaluation with repeat labs and fluid/medication guidance.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium of 124 with a low serum osmolality means you have true hypotonic hyponatremia. Starting hydrochlorothiazide two weeks ago is a common cause \u2014 thiazides can lower both sodium and potassium. Your creatinine is normal and you have only mild symptoms (nausea, headache, lightheadedness) with no confusion or seizures, which is reassuring. However, sodium at this level can worsen and low potassium also needs correction. Typical next steps are stopping the thiazide, repeating labs (sodium, potassium, and possibly urine studies) and replacing potassium if needed. Seek prompt medical review so treatment can be guided and rapid drops avoided.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium (124) and low serum osmolality indicate true hypotonic hyponatremia, and the low potassium (3.2) is a common accompanying finding. Starting hydrochlorothiazide two weeks ago fits well \u2014 thiazide diuretics often cause loss of sodium and potassium and can produce nausea, headache and lightheadedness. You're alert with normal kidney function and no severe neurologic signs, which is reassuring, but sodium at this level can worsen and needs prompt attention. Stop the diuretic now and arrange prompt medical review to repeat electrolytes, check your volume status, and correct abnormalities. Go to the ER right away if you develop confusion, severe headache, vomiting, fainting, breathing problems or seizures.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium of 124 with a low serum osmolality means you have true (hypotonic) hyponatremia. Starting hydrochlorothiazide two weeks ago fits a common cause \u2014 thiazide diuretics can lower both sodium and potassium, and your potassium is also low. Your current symptoms (nausea, mild headache, lightheadedness) are consistent with mild\u2013moderate hyponatremia; you are alert and have no focal neurologic signs, which is reassuring. This can worsen, so it needs prompt attention. You should stop the thiazide until a clinician reviews you, get repeat labs and an assessment for severity and cause, and receive potassium and sodium management as needed. Go to the ER immediately if you develop confusion, severe vomiting, seizures, fainting, or worsening neurologic symptoms.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium of 124 with a low serum osmolality means you have true hypotonic hyponatremia. Starting hydrochlorothiazide is a common cause of this pattern; thiazides also explain your low potassium. Your current symptoms (nausea, headache, lightheadedness) are mild but consistent with hyponatremia. While you\u2019re alert and stable now, a sodium this low carries risk of worsening symptoms (confusion, seizures) and needs prompt assessment. Management usually includes stopping the thiazide, checking volume status and repeat sodium/potassium, and careful potassium repletion or other treatment guided by a clinician.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium of 124 with low serum osmolality indicates true (hypotonic) hyponatremia. The low potassium and recent start of hydrochlorothiazide make a thiazide\u2011induced electrolyte disturbance very likely. Your mild nausea, headache, and lightheadedness fit with mild-to-moderate hyponatremia; being alert and stable is reassuring, but sodium <125 mEq/L can worsen and lead to vomiting, confusion, seizures, or falls. This should be evaluated promptly to stop the likely cause, repeat labs, check urine studies, and decide if you need active treatment.\n\nTRIAGE: C\n- See a doctor within 24-48 hours\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show true hypotonic hyponatremia (sodium 124 with low serum osmolality) plus low potassium. Starting hydrochlorothiazide two weeks ago is a common cause of this pattern. Your mild nausea, headache and lightheadedness are consistent with moderate hyponatremia; normal kidney function and lack of severe neurologic signs are somewhat reassuring. However sodium this low can worsen and occasionally causes confusion, seizures, or dangerous swelling of the brain if not treated. It\u2019s reasonable to stop the thiazide now (unless told otherwise by your prescriber) and get prompt medical review to check sodium, potassium and volume status and arrange safe correction.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

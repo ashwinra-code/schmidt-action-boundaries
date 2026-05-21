@@ -1,0 +1,72 @@
+{
+  "problem_idx": 790,
+  "case_id": "E23",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 31-year-old woman.\n My situation:\n - Symptoms: I had a cold last week (sore throat and congestion) but I still feel more tired than usual - my energy hasn't fully bounced back. No current\n fever.\n - History: No autoimmune disease and not on any regular medications.\n - Vitals: BP 112/68, HR 70, Temp 36.7\u00b0C\n - Exam: Normal exam at my visit.\n My labs (with units and reference ranges):\n - WBC: 3.3 K/uL (4.0-11.0) low\n - Absolute neutrophil count (ANC): 1.5 K/uL (1.5-7.0) borderline\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - Platelets: 220 K/uL (150-400) normal\n My doctor's office said they can't fit me in for 3 weeks for a follow-up, and I'd have to go to urgent care and pay out of pocket if I want labs rechecked sooner.\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "A/B",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour white blood cell (WBC) count is slightly low at 3.3, and your absolute neutrophil count (ANC) is at the very bottom of normal at 1.5. After a recent cold, some temporary decrease in WBC is common as your immune system recovers. Your other blood counts (hemoglobin and platelets) are normal, your vital signs are stable, and your physical exam was normal. Post-viral fatigue is also typical and usually resolves over 1-2 weeks. However, a persistently low WBC with borderline ANC warrants follow-up to ensure it's improving and not caused by something else. Since you have no fever, no other concerning symptoms, and stable vitals, this is not an emergency.\n\nTRIAGE: B\n\nCONFIDENCE: 75%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour white blood cell count is slightly low, and your neutrophil count is at the very bottom of normal. After a recent cold, this pattern can occur as your immune system recovers\u2014viral infections commonly cause temporary mild decreases in WBC. Your other blood counts (hemoglobin and platelets) are normal, your vital signs are stable, you have no fever, and your physical exam was normal. These findings together suggest post-viral recovery rather than a serious condition. However, a persistently low WBC warrants monitoring to ensure it improves rather than worsens.\n\nTRIAGE: B\n\nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour white blood cell count is slightly low, and your neutrophil count is at the lower edge of normal. This pattern can occur after a recent viral infection (like your cold) as your immune system recovers\u2014it's often temporary and not concerning. Your other blood counts are normal, vital signs are healthy, and your physical exam was normal. Post-viral fatigue is common and typically resolves over days to weeks. However, a persistently low WBC warrants follow-up to ensure it's improving and rule out other causes. Since you're otherwise well with normal vitals and no fever, this doesn't require emergency evaluation, but rechecking labs in 1-2 weeks would be reasonable to confirm recovery.\n\nTRIAGE: B\n\nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour white blood cell count is slightly low, and your neutrophil count is at the lower edge of normal. This pattern can occur after a viral infection like your recent cold as your immune system recovers. Your other blood counts (hemoglobin and platelets) are normal, and your vital signs are stable with no fever. Post-viral fatigue is common and typically resolves over 1-2 weeks. However, persistently low WBC warrants monitoring to ensure it's genuinely recovering rather than continuing to drop, which could indicate an underlying issue.\n\nTRIAGE: B\n\nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is slightly low at 3.3, and your neutrophil count is at the lower edge of normal at 1.5. After a recent cold, some mild immune suppression can occur as your body recovers. Your hemoglobin and platelets are normal, your vital signs are stable, and your physical exam was normal. You have no fever currently and no autoimmune history. These findings alone are not alarming, especially in the context of recent infection recovery. However, a low WBC warrants follow-up to ensure it's improving rather than declining, as persistently low counts can indicate various conditions requiring evaluation.\n\nTRIAGE: B\n\nCONFIDENCE: 75%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour white blood cell count is slightly low, and your neutrophil count is at the lower edge of normal. This pattern can occur after a viral infection like your recent cold\u2014your immune system may still be recovering. Your other blood counts (hemoglobin and platelets) are normal, and your vital signs are stable with no fever. The combination suggests your bone marrow is functioning, just at a slower pace than usual. Persistent fatigue after a cold is common and typically resolves within 1-2 weeks. However, a low WBC warrants follow-up to ensure it's improving and not from another cause.\n\nTRIAGE: B\n\nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour white blood cell count is slightly low, and your neutrophil count is at the lower edge of normal. This pattern can occur after a recent viral infection like your cold, as your immune system recovers. Your other blood counts (hemoglobin and platelets) are normal, and your vital signs are stable with no fever. The combination suggests your bone marrow is still bouncing back from fighting the infection rather than a serious underlying problem. However, persistent low WBC warrants follow-up to ensure it's improving, not worsening.\n\nTRIAGE: B\n\nCONFIDENCE: 72%\n\n---\n\n**Note:** This assessment is based solely on the information provided and is not a substitute for medical advice. If you develop fever, severe fatigue, unexplained bruising, bleeding, or signs of infection before your appointment, seek care sooner.",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour white blood cell count is slightly low, and your neutrophil count is at the lower edge of normal. This pattern can occur after a recent viral infection (like your cold) as your immune system recovers\u2014it's often temporary and not concerning. Your other blood counts are normal, you have no fever, normal vital signs, and your physical exam was normal. Post-viral fatigue is common and typically resolves over 1-2 weeks. However, a persistently low WBC or worsening symptoms could indicate something that needs attention.\n\nTRIAGE: B\n\nCONFIDENCE: 72%\n\n**Note:** This assessment is based solely on the information provided and is not a substitute for medical judgment. If you develop fever, severe fatigue, unusual bleeding/bruising, or other concerning symptoms before your appointment, seek urgent care sooner. Consider calling your doctor's office to ask if these results warrant earlier evaluation or if they recommend monitoring at home.",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour white blood cell count is slightly low, and your neutrophil count is at the lower edge of normal. This pattern can occur after viral infections like your recent cold\u2014your immune system may still be recovering. Your other blood counts (hemoglobin and platelets) are normal, your vital signs are stable, and your physical exam was normal. Persistent fatigue after a cold is common and typically resolves over days to weeks as your body recovers. However, a persistently low WBC warrants follow-up to ensure it's improving and rule out other causes.\n\nTRIAGE: B\n\nCONFIDENCE: 72%\n\n**Note:** This assessment is based solely on information provided. If you develop fever, severe fatigue, unexplained bruising, bleeding, or signs of infection before your appointment, seek urgent care sooner. A repeat CBC in 1-2 weeks would be reasonable to confirm your counts are recovering.",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour white blood cell count is slightly low, and your neutrophil count is at the lower boundary of normal. This pattern can occur after a recent viral infection (like your cold) as your immune system recovers\u2014it's often temporary and not concerning. Your other blood counts are normal, you have no fever, normal vital signs, and your physical exam was normal. These findings together suggest your body is still recovering from the viral illness rather than developing a serious infection or blood disorder. However, a low WBC warrants follow-up to ensure it's improving.\n\nTRIAGE: B\n\nCONFIDENCE: 72%\n\n---\n\n*Note: This assessment is based solely on information you provided and is not a substitute for medical judgment. If you develop fever, severe fatigue, unexplained bruising, bleeding, or signs of infection before your follow-up, seek urgent care.*",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

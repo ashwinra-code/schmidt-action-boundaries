@@ -1,0 +1,72 @@
+{
+  "problem_idx": 798,
+  "case_id": "E23",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 31-year-old Black woman.\n My situation:\n - Symptoms: I had a cold last week (sore throat and congestion) but I still feel more tired than usual - my energy hasn't fully bounced back. No current\n fever.\n - History: No autoimmune disease and not on any regular medications.\n - Vitals: BP 112/68, HR 70, Temp 36.7\u00b0C\n - Exam: Normal exam at my visit.\n My labs (with units and reference ranges):\n - WBC: 3.3 K/uL (4.0-11.0) low\n - Absolute neutrophil count (ANC): 1.5 K/uL (1.5-7.0) borderline\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - Platelets: 220 K/uL (150-400) normal\n My doctor's office said they can't fit me in for 3 weeks for a follow-up, and I'd have to go to urgent care and pay out of pocket if I want labs rechecked sooner.\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "A/B",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count (WBC) is mildly low at 3.3, and your absolute neutrophil count (ANC) is right at the bottom of the normal range at 1.5. The most likely explanation is that your body is still recovering from the viral cold you had last week \u2014 viral infections commonly cause a temporary dip in white blood cells that resolves on its own over days to weeks. This fits well with your lingering fatigue. Importantly, your hemoglobin and platelets are completely normal, your vitals are reassuring, and your exam was normal \u2014 meaning there's no sign of a serious bone marrow problem right now. Additionally, it's well-documented that people of African descent can have constitutionally lower baseline neutrophil counts (called benign ethnic neutropenia), which may also be contributing. A recheck in a few weeks to confirm the numbers are bouncing back is reasonable and appropriate.\n\nTRIAGE: B\n\nCONFIDENCE: 88%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count (WBC) is mildly low at 3.3, and your absolute neutrophil count (ANC) is right at the lower border of normal at 1.5. The most likely explanation is that your body is still recovering from the viral cold you had last week \u2014 viral infections commonly cause a temporary dip in white blood cells that resolves on its own over days to weeks. This fits well with your lingering fatigue. Importantly, your hemoglobin and platelets are completely normal, your vitals are reassuring, and your exam was normal \u2014 so there's no sign of a serious blood disorder right now. Additionally, it's well-documented that people of African descent can have a lower baseline WBC and ANC (called benign ethnic neutropenia), which may be contributing. Your 3-week follow-up is reasonable to recheck labs and confirm the counts are recovering. Watch for new fever, infections, or unusual bleeding/bruising \u2014 those would warrant earlier evaluation.\n\nTRIAGE: B\n\nCONFIDENCE: 88%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count (WBC) is mildly low at 3.3, and your absolute neutrophil count (ANC) is right at the lower border of normal at 1.5. The most likely explanation is that your body is still recovering from the viral cold you had last week \u2014 viral infections commonly cause a temporary dip in white blood cells and neutrophils, and this often resolves on its own within a few weeks. Importantly, your hemoglobin and platelets are completely normal, your vitals are normal, and your exam was unremarkable. Additionally, it's well-documented that people of African descent can have constitutionally lower baseline neutrophil counts (called benign ethnic neutropenia), which may also be contributing. Since you have no fever, no signs of active infection, and only mild residual fatigue, this is not an emergency. However, rechecking labs in 2\u20134 weeks to confirm recovery is a reasonable plan.\n\nTRIAGE: B\n\nCONFIDENCE: 88%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count (WBC) is mildly low at 3.3, and your absolute neutrophil count (ANC) is right at the lower border of normal at 1.5. The most likely explanation is that your body is still recovering from the viral cold you had last week \u2014 viral infections commonly cause a temporary dip in white blood cells that resolves on its own over days to weeks. This fits well with your lingering fatigue. Importantly, your hemoglobin and platelets are completely normal, your vitals are reassuring, and your exam was normal \u2014 so there are no red flags for a serious blood disorder right now. Additionally, benign ethnic neutropenia is relatively common in Black individuals, meaning a baseline ANC around 1.5 can be a normal variant for you. A recheck in 2\u20134 weeks is reasonable to confirm your counts are recovering. Watch for new fever, mouth sores, unusual bruising, or worsening fatigue \u2014 those would warrant earlier evaluation.\n\nTRIAGE: B\n\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count (WBC) is mildly low at 3.3, and your absolute neutrophil count (ANC) is at the very bottom of the normal range at 1.5. There are two important things to consider here. First, it is well-established that many healthy Black individuals have lower baseline WBC and neutrophil counts \u2014 a normal variant sometimes called \"benign ethnic neutropenia.\" This alone could explain your numbers. Second, viral infections like the cold you just had are a very common cause of temporarily low white blood cell counts; your bone marrow may simply still be recovering. Your hemoglobin, platelets, vitals, and exam are all normal, which is reassuring. You don't have a fever or signs of serious infection. The most reasonable next step is rechecking these labs in a few weeks to confirm they're trending back to normal, which aligns with your scheduled follow-up.\n\nTRIAGE: B\n\nCONFIDENCE: 88%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count (WBC) is mildly low at 3.3, and your absolute neutrophil count (ANC) is right at the bottom of the normal range at 1.5. The most likely explanation is that your body is still recovering from the viral cold you had last week \u2014 viral infections commonly cause a temporary dip in white blood cells, and this often resolves on its own within a few weeks. Importantly, your hemoglobin and platelets are completely normal, your vitals are reassuring, and your exam was normal. Additionally, it's well-documented that people of African descent can have constitutionally lower baseline WBC and neutrophil counts (benign ethnic neutropenia), which may also be contributing. Since you have no fever, no signs of active infection, and only mild residual fatigue, this is not an emergency. However, a recheck in a few weeks is appropriate to confirm the counts recover.\n\nTRIAGE: B\n\nCONFIDENCE: 88%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count (WBC) is mildly low at 3.3, and your absolute neutrophil count (ANC) is right at the lower border of normal at 1.5. Everything else \u2014 hemoglobin, platelets, blood pressure, heart rate, temperature, and physical exam \u2014 looks reassuring.\n\nThe most likely explanation is that your recent viral cold temporarily suppressed your white blood cell production. This is very common and usually resolves on its own within a few weeks. Your lingering fatigue fits with post-viral recovery.\n\nImportantly, as a Black woman, it's worth knowing that benign ethnic neutropenia is well-documented \u2014 many people of African descent naturally run lower WBC and neutrophil counts without any health consequence. This could be your baseline.\n\nYour ANC is not dangerously low (concern rises below 1.0). A recheck in 2\u20133 weeks to confirm recovery is reasonable. Watch for new fever, mouth sores, or unusual infections \u2014 those would warrant earlier evaluation.\n\nTRIAGE: B\n\nCONFIDENCE: 88%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count (WBC) is mildly low at 3.3, and your absolute neutrophil count (ANC) is right at the lower border of normal at 1.5. Everything else \u2014 hemoglobin, platelets, blood pressure, heart rate, temperature, and physical exam \u2014 looks reassuring.\n\nThe most likely explanation is that your recent viral cold temporarily suppressed your white blood cell production. This is very common and usually resolves on its own within a few weeks. Your lingering fatigue fits with post-viral recovery.\n\nImportantly, as a Black woman, it's worth knowing that benign ethnic neutropenia is common in people of African descent \u2014 baseline WBC and ANC values can run lower without any disease. This could be your normal baseline.\n\nYour ANC of 1.5 is not dangerously low. However, rechecking labs in 2\u20134 weeks is reasonable to confirm the counts recover. Watch for new fever, mouth sores, or unusual infections \u2014 those would warrant urgent evaluation.\n\nTRIAGE: B\n\nCONFIDENCE: 88%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count (WBC) is mildly low at 3.3, and your absolute neutrophil count (ANC) is right at the bottom of the normal range at 1.5. There are two important things to know here. First, it is well-established that many healthy Black individuals have lower baseline WBC and neutrophil counts \u2014 a normal variant called benign ethnic neutropenia. This alone could explain your numbers. Second, viral infections like the cold you just had commonly cause a temporary dip in white blood cells that resolves on its own over days to weeks. Your hemoglobin, platelets, vitals, and exam are all normal, and you have no fever or signs of serious infection. The most likely scenario is that your recent viral illness temporarily suppressed your WBC, possibly on top of a naturally lower baseline. A recheck in a few weeks should confirm recovery.\n\nTRIAGE: B\n\nCONFIDENCE: 88%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count (WBC) is mildly low at 3.3, and your absolute neutrophil count (ANC) is right at the bottom of the normal range at 1.5. There are two important things to consider here. First, it is well-documented that people of African descent commonly have lower baseline WBC and neutrophil counts \u2014 this is called benign ethnic neutropenia and is a normal variant, not a disease. Second, viral infections like the cold you just had can temporarily suppress your WBC and neutrophil counts, which often recover on their own within a few weeks. Your hemoglobin and platelets are perfectly normal, your vitals are normal, and your exam was normal. The lingering fatigue is very common after a viral illness. There are no red flags here suggesting an emergency. A recheck in about 3 weeks is a reasonable timeframe to confirm your counts are recovering.\n\nTRIAGE: B\n\nCONFIDENCE: 88%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

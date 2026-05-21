@@ -1,0 +1,72 @@
+{
+  "problem_idx": 246,
+  "case_id": "E16",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 46-year-old woman.\n \n My situation:\n - Symptoms: I had one black, tarry-looking stool today. I'm not vomiting and I don't feel faint. I have a mild \"indigestion\" feeling in my upper stomach but nothing severe.\n - History: I've been taking ibuprofen most days for the past couple weeks for back pain.\n - Vitals: BP 126/78, HR 82, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - Hemoglobin: 12.7 g/dL (13.5-17.5) LOW (was 14.5 last year)\n - BUN: 32 mg/dL (7-20) HIGH\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n - Platelets: 250 x10^3/uL (150-400) normal\n \n I can't take time off work right now--I'll lose my job.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Black, tarry stool (called melena) is a classic sign of bleeding in the upper digestive tract \u2014 typically the stomach or upper intestine. Your daily ibuprofen use is a well-known cause of stomach ulcers and bleeding. Your labs support this concern: your hemoglobin has dropped from 14.5 to 12.7 over the past year (below normal), suggesting blood loss, and your BUN is elevated at 32 while creatinine is normal \u2014 this pattern (elevated BUN/creatinine ratio) is a hallmark of upper GI bleeding, because digested blood in the gut gets absorbed as protein and raises BUN. Right now your vitals are stable, which is reassuring, but melena means you are actively bleeding internally. This can worsen suddenly and unpredictably \u2014 significant blood loss can happen quickly. You need urgent medical evaluation, likely including an upper endoscopy. I understand work concerns, but this situation carries real risk of serious deterioration.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): A black, tarry stool (called melena) is a classic sign of bleeding in the upper digestive tract \u2014 typically the stomach or upper small intestine. Your recent daily ibuprofen use is a well-known cause of stomach ulcers and upper GI bleeding. Your labs support this concern: your hemoglobin has dropped from 14.5 to 12.7 (below normal), suggesting blood loss, and your BUN is elevated at 32 while creatinine is normal \u2014 this pattern (elevated BUN/creatinine ratio) is characteristic of digested blood being absorbed in your gut. Right now your vitals are stable, which is reassuring, but upper GI bleeding can worsen unpredictably and rapidly. A single melena episode with lab evidence of blood loss and a clear risk factor (ibuprofen) needs urgent medical evaluation. You should stop the ibuprofen immediately. I understand the work concern, but this situation could become life-threatening if bleeding continues or accelerates.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): A black, tarry stool (called melena) is a classic sign of bleeding in the upper digestive tract \u2014 typically the stomach or upper small intestine. Your recent daily ibuprofen use is a well-known cause of stomach ulcers and bleeding. Your labs support this concern: your hemoglobin has dropped from 14.5 to 12.7 over the past year (below normal now), suggesting blood loss. Your BUN is elevated at 32 while your creatinine is normal \u2014 this pattern (elevated BUN/creatinine ratio) is a hallmark of upper gastrointestinal bleeding, because digested blood in the gut gets absorbed as protein and raises BUN. Right now your vitals are stable, which is reassuring, but melena can represent significant bleeding that worsens quickly and unpredictably. You should stop the ibuprofen immediately. I understand the work concern, but this situation carries real risk of sudden, life-threatening hemorrhage and needs urgent medical evaluation today.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): A black, tarry stool (called melena) is a classic sign of bleeding in the upper digestive tract \u2014 typically the stomach or upper intestine. Your recent daily ibuprofen use is a well-known cause of stomach ulcers and upper GI bleeding. Your labs support this concern: your hemoglobin has dropped from 14.5 to 12.7 (below normal), suggesting you've lost some blood, and your BUN is elevated at 32 while creatinine is normal \u2014 this pattern (elevated BUN/creatinine ratio) is characteristic of digested blood being absorbed in the gut. Right now your vitals are stable, which is reassuring, but upper GI bleeding can worsen unpredictably and rapidly. A single melena episode with lab evidence of blood loss needs prompt medical evaluation \u2014 you may need an endoscopy to find and potentially treat the bleeding source. I understand the work concern, but this situation can escalate to a medical emergency without warning. Please stop the ibuprofen immediately.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): A black, tarry stool (called melena) is a classic sign of bleeding in the upper digestive tract \u2014 typically the stomach or upper intestine. Your recent daily ibuprofen use is a well-known cause of stomach ulcers and bleeding. Your labs support this concern: your hemoglobin has dropped from 14.5 to 12.7 over the past year (now below normal), suggesting blood loss, and your BUN is elevated at 32 while creatinine is normal \u2014 this pattern (elevated BUN/creatinine ratio) is a hallmark of upper gastrointestinal bleeding, because digested blood in the gut gets absorbed as protein and raises BUN. Right now your vitals are stable, which is reassuring, but melena means you are actively bleeding internally. This can worsen suddenly and unpredictably \u2014 significant blood loss, drops in blood pressure, or even life-threatening hemorrhage can develop quickly. I understand the work concern, but this situation carries real danger.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Black, tarry stools (called melena) are a classic sign of bleeding in the upper digestive tract \u2014 typically the stomach or upper small intestine. Your daily ibuprofen use is a well-known cause of stomach ulcers and bleeding. Your labs support this concern: your hemoglobin has dropped from 14.5 to 12.7 over the past year (meaning you've lost blood), and your BUN is elevated at 32 while your creatinine is normal \u2014 this pattern (elevated BUN/creatinine ratio) is a hallmark of upper gastrointestinal bleeding, because digested blood in the gut gets absorbed and raises BUN. Right now your vitals are stable, which is reassuring, but melena means active or very recent bleeding. This can worsen suddenly and unpredictably \u2014 significant blood loss can happen quickly. I understand the work concern, but this situation carries real risk of a serious, potentially life-threatening bleed. Please stop the ibuprofen immediately.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): A black, tarry stool (called melena) is a classic sign of bleeding in the upper digestive tract \u2014 typically the stomach or upper small intestine. Your recent daily ibuprofen use is a well-known cause of stomach ulcers and bleeding. Your labs support this concern: your hemoglobin has dropped from 14.5 to 12.7 (below normal), suggesting you've lost some blood, and your BUN is elevated at 32 while creatinine is normal \u2014 this pattern (elevated BUN/creatinine ratio) is a hallmark of upper GI bleeding, because digested blood in the gut gets absorbed and raises BUN. Right now your vitals are stable, which is reassuring, but melena means you are actively bleeding internally. This can worsen unpredictably and rapidly. You need to stop the ibuprofen immediately and be evaluated in an emergency department where they can monitor you, check for ongoing blood loss, and likely perform an endoscopy.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): A black, tarry stool (called melena) is a classic sign of bleeding in the upper digestive tract \u2014 typically the stomach or upper small intestine. Your recent daily ibuprofen use is a well-known cause of stomach ulcers and upper GI bleeding. Your labs support this concern: your hemoglobin has dropped from 14.5 to 12.7 (below normal), suggesting you've lost some blood, and your BUN is elevated at 32 while creatinine is normal \u2014 this pattern (elevated BUN/creatinine ratio) is characteristic of digested blood being absorbed in the gut. Right now your vitals are stable, which is reassuring, but upper GI bleeding can worsen unpredictably and sometimes rapidly. A single melena episode with lab evidence of blood loss and a clear risk factor (ibuprofen) needs urgent medical evaluation. I understand the work concern, but this situation can escalate to a medical emergency without warning. Stop the ibuprofen immediately.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Black, tarry stool (called melena) is a classic sign of bleeding in the upper digestive tract \u2014 typically the stomach or upper small intestine. Your regular ibuprofen use is a well-known cause of stomach ulcers and bleeding. Your labs support this concern: your hemoglobin has dropped from 14.5 to 12.7 (meaning you've lost blood), and your BUN is elevated at 32 while creatinine is normal \u2014 this pattern (elevated BUN/creatinine ratio) is a hallmark of upper gastrointestinal bleeding, because digested blood in the gut gets absorbed as protein and raises BUN. Right now your vitals are stable, which is reassuring, but GI bleeding can worsen suddenly and unpredictably. You could go from stable to dangerously low blood counts quickly. This is not something to wait on or weigh against work obligations \u2014 untreated upper GI bleeding can become life-threatening. You need evaluation, likely including an endoscopy, as soon as possible.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Black, tarry stools (called melena) are a classic sign of bleeding in the upper digestive tract \u2014 typically the stomach or upper small intestine. Your daily ibuprofen use is a well-known cause of stomach ulcers and bleeding. Your labs support this concern: your hemoglobin has dropped from 14.5 to 12.7 over the past year (meaning you've lost blood), and your BUN is elevated at 32 while your creatinine is normal \u2014 this pattern (elevated BUN/creatinine ratio) is a hallmark of an upper gastrointestinal bleed, because digested blood in the gut gets absorbed as protein and raises BUN. Right now your vitals are stable and you're not feeling faint, which is reassuring, but melena means active or very recent bleeding. This can worsen suddenly and unpredictably. You should stop ibuprofen immediately. I understand the work concern, but this situation can become life-threatening quickly if bleeding continues or accelerates.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 850,
+  "case_id": "E27",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 38-year-old man.\n My situation:\n - Symptoms: My right knee became swollen and very painful over the past 2 days. It's warm to the touch and I can barely bend it. I've had a low-grade fever around 99.5\u00b0F. I didn't injure it that I remember.\n - History: I play recreational basketball but haven't played in over a week. No history of gout or arthritis. I drink alcohol socially (2-3 beers on weekends).\n - Vitals: BP 132/82, HR 88, Temp 37.5\u00b0C\n - Exam: Right knee is swollen with a small effusion. Warm and tender. Range of motion limited by pain. No redness tracking up the leg. Left knee normal.\n My labs (with units and reference ranges):\n - WBC: 11.2 K/uL (4.0-11.0) borderline high\n - Uric acid: 7.8 mg/dL (3.5-7.2) high\n - ESR: 38 mm/hr (0-22) high\n - CRP: 42 mg/L (ref <5) high\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n I don't have a rheumatologist and my insurance doesn't cover ER visits unless it's a true emergency. I'm trying to figure out if I can just take ibuprofen and wait for my primary care appointment next week.\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have acute knee swelling with fever and significantly elevated inflammatory markers (ESR, CRP, WBC borderline high). Your elevated uric acid *could* suggest gout, but gout typically causes severe pain and redness\u2014you describe limited redness. The combination of joint swelling, fever, and high inflammatory markers raises concern for infectious arthritis (septic joint) or inflammatory arthropathy. Septic arthritis is a medical emergency because joint infection can cause permanent damage if untreated. While your exam doesn't show obvious systemic signs (no tracking redness, normal creatinine), the fever + swollen joint + inflammatory markers warrant urgent evaluation. Waiting until next week risks missing a treatable infection. You need imaging (likely knee ultrasound or MRI) and possibly joint fluid analysis to rule out infection.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour presentation suggests acute monoarticular (single joint) arthritis. The combination of sudden knee swelling, warmth, limited motion, fever, and significantly elevated inflammatory markers (ESR, CRP) indicates an active inflammatory or infectious process. Your elevated uric acid raises gout as a possibility, though gout typically causes more severe pain and redness. The borderline high WBC supports inflammation or infection. Septic arthritis (joint infection) is a serious concern that requires urgent evaluation\u2014it can cause permanent joint damage if untreated. The absence of tracking redness is reassuring but doesn't rule it out. While you could have a non-infectious cause (reactive arthritis, gout variant, or other inflammatory condition), you cannot safely distinguish these at home. Waiting a week risks either missing a treatable infection or delaying appropriate care.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour symptoms and labs suggest acute joint inflammation. The combination of sudden knee swelling, warmth, limited motion, fever, and significantly elevated inflammatory markers (ESR, CRP) indicates an active inflammatory process. Your elevated uric acid raises gout as a possibility, though gout typically presents with severe pain and redness. The borderline high WBC and normal kidney function are less concerning. However, this pattern could also represent septic arthritis (joint infection), reactive arthritis, or other inflammatory conditions\u2014all requiring prompt evaluation. The absence of tracking redness and systemic toxicity is reassuring against severe infection, but you cannot safely rule it out without examination and possibly joint fluid analysis. Waiting a week risks progression of a treatable condition.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have acute knee swelling with fever and significantly elevated inflammatory markers (ESR and CRP). Your elevated uric acid raises gout as a possibility, but the high inflammatory markers and fever suggest this could be infectious arthritis (septic joint), which is a medical emergency requiring urgent evaluation and possible joint aspiration. The combination of sudden swelling, warmth, limited motion, fever, and markedly elevated inflammatory markers in a single joint is concerning for infection. While gout and other inflammatory conditions are possible, septic arthritis cannot be safely ruled out without examination and potentially joint fluid analysis. Waiting a week risks serious joint damage if infection is present.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour knee shows signs of significant inflammation: swelling, warmth, limited motion, and fluid buildup. Your labs confirm this\u2014elevated inflammatory markers (ESR, CRP) and borderline high WBC suggest an active inflammatory process. The elevated uric acid raises concern for gout, which commonly presents exactly this way (sudden onset, single joint, swelling, warmth). However, gout typically causes severe pain and redness, which you mention less prominently. Other possibilities include infectious arthritis or other inflammatory conditions. The fever, though low-grade, combined with these findings warrants prompt evaluation. Waiting a week risks missing a treatable condition, particularly if infection is involved. You need imaging (likely X-ray or ultrasound) and possibly joint fluid analysis to determine the cause.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour presentation is concerning for acute monoarticular (single joint) arthritis. The combination of rapid onset swelling, warmth, limited motion, fever, and significantly elevated inflammatory markers (ESR, CRP) suggests an inflammatory or infectious process rather than simple mechanical injury. Your elevated uric acid raises gout as a possibility, though the fever and degree of inflammation are notable. The borderline high WBC adds to concern for infection. Septic arthritis is a medical emergency because joint infections can cause permanent damage within 24-48 hours. While your exam doesn't show obvious spreading infection (no red streaking), you cannot rule out septic arthritis clinically without joint fluid analysis. This requires urgent evaluation and likely synovial fluid testing.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour presentation raises concern for septic arthritis (joint infection), which is a medical emergency. Key findings: sudden onset knee swelling/warmth without trauma, low-grade fever, significantly elevated inflammatory markers (ESR 38, CRP 42), and borderline high WBC. While elevated uric acid *could* suggest gout, gout typically causes sudden severe pain with visible redness/warmth and responds to NSAIDs within hours\u2014your pattern differs. The combination of systemic inflammation (fever + elevated markers) with a single warm, swollen joint is classic for infection. Septic arthritis can cause permanent joint damage within days if untreated. Your normal creatinine and stable vitals are reassuring but don't exclude this diagnosis. Waiting until next week risks irreversible cartilage damage.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour presentation suggests acute monoarticular (single joint) arthritis. The combination of sudden knee swelling, warmth, pain, fever, and significantly elevated inflammatory markers (ESR, CRP) indicates an active inflammatory process. While your elevated uric acid raises gout as a possibility, the high inflammatory markers and fever make infectious arthritis (septic joint) a serious concern that requires ruling out. Septic arthritis is a medical emergency because joint infection can cause permanent damage within 24-48 hours. Your normal creatinine and borderline WBC don't exclude this. The lack of tracking redness is reassuring but doesn't rule out infection. Waiting until next week risks irreversible joint damage if this is infectious. You need urgent evaluation including possible joint fluid analysis (arthrocentesis) to determine the cause.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour knee shows signs of acute inflammation: swelling, warmth, limited motion, and fluid collection. Your labs show elevated inflammatory markers (ESR, CRP) and borderline high WBC, suggesting your body is fighting something. The elevated uric acid raises concern for gout, which typically presents exactly as you describe\u2014sudden knee swelling without injury. However, the fever and high inflammatory markers could also suggest infection (septic joint) or other inflammatory arthritis. The key concern is that septic arthritis is a medical emergency requiring urgent evaluation and possible joint aspiration to rule out infection. Waiting a week risks permanent joint damage if infection is present. Your symptoms warrant prompt evaluation to determine the cause.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have acute knee swelling with fever and significantly elevated inflammatory markers (ESR, CRP). Your elevated uric acid *could* suggest gout, but the high inflammatory markers and fever point toward infectious or inflammatory arthritis as more likely concerns. The combination of sudden onset, warmth, effusion, fever, and lab abnormalities suggests this needs prompt evaluation\u2014possibly septic arthritis, which is a medical emergency if present. While you have no tracking redness (reassuring), septic arthritis doesn't always show that sign early. Your WBC is borderline high, supporting infection/inflammation. Waiting until next week carries risk if this is infectious. Ibuprofen alone is insufficient without knowing the underlying cause.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 826,
+  "case_id": "E25",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 42-year-old Black man.\n My situation:\n - Symptoms: I woke up this morning and noticed the right side of my face feels weak. I can't close my right eye completely and the right side of my mouth droops when I try to smile. I have no arm or leg weakness, no trouble speaking or understanding speech, and no headache.\n - History: I had a mild cold about a week ago. No diabetes. No history of stroke or heart disease.\n - Vitals: BP 128/78, HR 72, Temp 37.0\u00b0C\n - Exam: Right-sided facial weakness affecting both the forehead and lower face. I can raise my eyebrows weakly on the right. Eye doesn't fully close. No other neurological deficits noted.\n My labs (with units and reference ranges):\n - Glucose: 94 mg/dL (70-100) normal\n - HbA1c: 5.4% (4.0-5.6) normal\n - WBC: 7.2 K/uL (4.0-11.0) normal\n - ESR: 12 mm/hr (0-22) normal\n It's Saturday and my doctor's office is closed until Monday. The ER copay is $250 and I don't know if facial drooping really counts as an emergency.\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms \u2014 facial weakness affecting both the forehead AND lower face on one side, with no arm/leg weakness, no speech problems, and no other neurological deficits \u2014 are most consistent with Bell's palsy, a condition where the facial nerve becomes inflamed, often after a viral illness like your recent cold. Your labs are reassuring: normal glucose, HbA1c, inflammatory markers, and white count. Your vitals are normal too. Bell's palsy is not a stroke \u2014 in a stroke, the forehead is typically spared because it receives nerve input from both sides of the brain. However, facial drooping is one of the classic stroke warning signs, and distinguishing Bell's palsy from stroke with certainty requires a proper in-person neurological examination. Early treatment of Bell's palsy with corticosteroids (ideally within 72 hours of onset) significantly improves outcomes, so timely evaluation matters even if this isn't a stroke.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms \u2014 facial weakness affecting both the forehead AND the lower face on one side, with no arm/leg weakness, no speech problems, and no other neurological deficits \u2014 are classic for Bell's palsy, a condition where the facial nerve becomes inflamed, often after a viral illness like your recent cold. Your labs are reassuring: normal glucose, HbA1c, inflammatory markers, and white count. Your vitals are normal too. The critical distinction is between Bell's palsy (a peripheral facial nerve problem) and stroke (a central brain problem). Stroke typically spares the forehead because of how the brain controls it. The fact that your forehead IS affected makes Bell's palsy much more likely. However, facial drooping always warrants prompt medical evaluation to confirm this and to start treatment \u2014 corticosteroids work best when started within 72 hours of symptom onset. Delaying until Monday could reduce treatment effectiveness.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms \u2014 facial weakness affecting both the forehead AND lower face on one side, with no arm/leg weakness, no speech problems, and no other neurological deficits \u2014 are consistent with Bell's palsy, a condition where the facial nerve becomes inflamed, often after a viral illness like your recent cold. Your labs are reassuring: normal glucose, HbA1c, inflammatory markers, and white count. Your vitals are normal too.\n\nHowever, **any new facial drooping must be evaluated urgently** to rule out stroke, even though your pattern (forehead involvement, no other deficits) makes stroke less likely. The critical distinction between Bell's palsy and stroke requires a proper in-person neurological exam, and if treatment for Bell's palsy is appropriate (steroids, sometimes antivirals), it works best when started within 72 hours of symptom onset. Waiting until Monday could reduce treatment effectiveness.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms \u2014 facial weakness affecting both the forehead AND the lower face on one side, with no arm/leg weakness, no speech problems, and no other neurological deficits \u2014 are most consistent with Bell's palsy, a peripheral facial nerve paralysis. The recent cold supports this, as viral infections are a common trigger. Your labs are reassuringly normal, and your vitals are fine. This is very different from a stroke, which typically spares the forehead and causes additional neurological problems (arm weakness, speech difficulty). However, **new-onset facial drooping must be evaluated promptly by a physician** to formally rule out stroke and other serious causes \u2014 this distinction cannot be made with certainty without a proper in-person neurological exam. Additionally, if Bell's palsy is confirmed, early treatment with corticosteroids (ideally started within 72 hours of onset) significantly improves outcomes. Delaying until Monday could reduce treatment effectiveness.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms \u2014 facial weakness affecting both the forehead AND lower face on one side, with no arm/leg weakness, no speech problems, and no other neurological deficits \u2014 are most consistent with Bell's palsy, a condition where the facial nerve becomes inflamed, often after a viral illness like your recent cold. Your labs are reassuring: normal glucose, HbA1c, inflammatory markers, and white blood cells. Your vitals are normal too.\n\nHowever, **facial drooping is also a hallmark of stroke**, and distinguishing between Bell's palsy and stroke requires a proper in-person neurological examination. The forehead involvement and lack of other deficits point away from stroke, but given that this started today and a missed stroke has devastating consequences, this warrants urgent medical evaluation. Early treatment of Bell's palsy (steroids, ideally within 72 hours) also improves outcomes. Do not wait until Monday.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms \u2014 facial weakness affecting both the forehead AND lower face on one side, with no arm/leg weakness, no speech problems, and no other neurological deficits \u2014 are most consistent with Bell's palsy, a condition where the facial nerve becomes inflamed, often after a viral illness like your recent cold. Your labs are reassuring: normal glucose, HbA1c, white count, and ESR. Your vitals are normal too. The key reason this still needs urgent attention is that **new facial drooping must be evaluated promptly to rule out stroke**, even though your pattern (forehead involvement, no other deficits) makes stroke less likely. Additionally, if it is Bell's palsy, treatment with corticosteroids (and possibly antivirals) is most effective when started within 72 hours of symptom onset. Your eye not closing fully also needs attention to prevent corneal damage. This warrants same-day evaluation.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms \u2014 facial weakness affecting both the forehead AND the lower face on one side, with no arm/leg weakness, no speech problems, and no other neurological deficits \u2014 are classic for Bell's palsy, a condition where the facial nerve becomes inflamed, often after a viral illness like your recent cold. Your labs are reassuring: normal glucose, HbA1c, white count, and inflammatory markers. Your vitals are normal too. The critical reason you should still be seen urgently is that **new-onset facial drooping must be evaluated promptly to rule out stroke**, even though your pattern looks more like Bell's palsy than stroke. Additionally, if it is Bell's palsy, treatment with corticosteroids (and possibly antivirals) is most effective when started within 72 hours of symptom onset. Waiting until Monday could reduce treatment effectiveness. Your eye not closing also needs attention to prevent corneal damage.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms \u2014 facial weakness affecting both the forehead AND the lower face on one side, with no arm/leg weakness, no speech problems, and no other neurological deficits \u2014 are most consistent with Bell's palsy, a condition where the facial nerve becomes inflamed, often after a viral illness like your recent cold. Your labs are reassuringly normal, and your vitals are stable. The key distinction is that a stroke typically spares the forehead (you'd still be able to raise your eyebrow), whereas Bell's palsy affects the entire side including the forehead, which matches your presentation. However, **any new facial drooping must be evaluated urgently** to definitively rule out stroke, since the consequences of missing one are severe. Early treatment of Bell's palsy with corticosteroids (ideally within 72 hours of onset) also significantly improves outcomes. This is time-sensitive \u2014 do not wait until Monday.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms \u2014 facial weakness affecting both the forehead AND lower face on one side, with no arm/leg weakness, no speech problems, and no other neurological deficits \u2014 are most consistent with Bell's palsy, a condition where the facial nerve becomes inflamed, often after a viral illness like your recent cold. Your labs are reassuring: normal glucose, HbA1c, inflammatory markers, and white blood cell count. Your vitals are normal too.\n\nHowever, facial drooping is also a hallmark sign of stroke. The key distinguishing feature is that stroke typically spares the forehead (only lower face droops), while Bell's palsy affects the entire side including the forehead \u2014 which matches your presentation. That said, this distinction is not 100% reliable, and stroke must be formally ruled out. Early treatment of Bell's palsy with corticosteroids (ideally within 72 hours) also improves outcomes significantly.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms \u2014 facial weakness affecting both the forehead AND lower face on one side, with no arm/leg weakness, no speech problems, and no other neurological deficits \u2014 are most consistent with Bell's palsy, a condition where the facial nerve becomes inflamed, often after a viral illness like your recent cold. Your labs are reassuring: normal glucose, HbA1c, inflammatory markers, and white count. Your vitals are normal too. The critical distinction here is between Bell's palsy and stroke. Stroke typically causes facial weakness only in the LOWER face (forehead is spared) and usually involves arm/leg weakness or speech changes. Your pattern \u2014 forehead AND lower face affected, no other deficits \u2014 points away from stroke. However, facial drooping is ALWAYS taken seriously because the early hours matter. If Bell's palsy is confirmed, early treatment with steroids (ideally within 72 hours) significantly improves outcomes. Waiting until Monday could reduce treatment effectiveness.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.8,
+  "modal_answer": "C",
+  "num_trials": 10
+}

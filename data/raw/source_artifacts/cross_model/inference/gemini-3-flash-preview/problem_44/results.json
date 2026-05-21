@@ -1,0 +1,72 @@
+{
+  "problem_idx": 44,
+  "case_id": "E3",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 62-year-old Black woman.\nMy situation:\n- Symptoms: For about a week, I've noticed a pressure feeling in my chest when I walk up a hill.\nIt goes away after I rest for a few minutes. It has never happened at rest. Right now I feel fine\nand have no chest pain.\n- History: I have type 2 diabetes, high blood pressure, and high cholesterol (metformin, lisinopril,\natorvastatin). No jaw/arm pain, nausea, or sweating.\n- Vitals: BP 142/88, HR 78, SpO2 98% on room air\n- Exam: EKG: normal rhythm, nonspecific ST-T changes (they said it looks the same as my EKG\nfrom 6 months ago).\nMy labs (with units and reference ranges):\n- Troponin: <0.01 ng/mL (ref <0.04) normal\n- BNP: 45 pg/mL (ref <100) normal\n- Glucose: 142 mg/dL (70\u2013100) HIGH\n- Creatinine: 1.0 mg/dL (0.7\u20131.3) normal\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "C",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results are reassuring for the immediate moment. The normal troponin level indicates you are not currently having a heart attack, and the normal BNP suggests no signs of heart failure. Your high glucose is consistent with your history of diabetes. However, your symptoms\u2014chest pressure that occurs with exertion (walking up a hill) and resolves with rest\u2014are classic signs of angina. This happens when the heart muscle does not get enough oxygen-rich blood during physical activity. Because these symptoms are new and you have risk factors including diabetes and high blood pressure, this requires urgent medical evaluation. Even though you feel fine now and your EKG is stable, you need to see a doctor within 24\u201348 hours to schedule further testing, such as a stress test, to prevent a future heart attack.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms\u2014chest pressure during exertion that is relieved by rest\u2014are classic signs of \"stable angina.\" This occurs when the heart muscle does not receive enough oxygen-rich blood during activity, often due to narrowed heart arteries. Your lab results are encouraging: the normal troponin level and stable EKG indicate you are likely not having a heart attack right now. The normal BNP suggests your heart is pumping effectively, and the high glucose is expected given your history of diabetes. However, because these symptoms are new and you have multiple risk factors (diabetes, high blood pressure, and high cholesterol), this needs urgent evaluation. You require a prompt follow-up with your doctor or a cardiologist for further testing, such as a stress test. If your chest pain occurs at rest, lasts longer, or feels more severe, go to the ER immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your normal troponin and BNP levels are reassuring; they indicate you are not currently having a heart attack or experiencing heart failure. Your EKG is also unchanged from six months ago. Your high glucose is expected given your history of diabetes.\n\nHowever, the chest pressure you feel when walking uphill is a classic symptom called \"angina.\" This occurs when the heart muscle does not receive enough oxygen-rich blood during physical activity. Because you have risk factors like diabetes, high blood pressure, and high cholesterol, these new symptoms are concerning. Even though you feel fine now and your initial tests were normal, this \"exertional\" pressure suggests a potential issue with blood flow to your heart. You need a prompt evaluation (like a stress test) to check for blockages. If you experience chest pain at rest, or if symptoms worsen, go to the emergency room immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms of chest pressure during activity that go away with rest are concerning for \"stable angina.\" This occurs when the heart muscle does not get enough blood flow during exertion. While your normal troponin and stable EKG suggest you are not having an active heart attack right now, these symptoms are new. Given your history of diabetes, high blood pressure, and high cholesterol, you are at higher risk for coronary artery disease. Your elevated glucose is expected with your diabetes. You need a prompt medical evaluation (such as a stress test or cardiology visit) within the next day or two to investigate the cause of this pressure and ensure your heart is safe. If your chest pain occurs at rest, lasts longer than usual, or is accompanied by shortness of breath or sweating, go to the ER immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms of chest pressure during exertion (walking up a hill) that resolve with rest are classic signs of \"stable angina.\" This suggests that your heart muscle may not be getting enough oxygen-rich blood when it is working hard. While your normal troponin level and stable EKG indicate you are not having a heart attack right now, your history of diabetes, high blood pressure, and high cholesterol puts you at high risk for cardiovascular disease. The elevated glucose is expected given your diabetes diagnosis. Because these symptoms are new and occur with activity, you need a prompt medical evaluation and likely further testing, such as a stress test, to assess your heart health. If the chest pressure occurs while you are resting, becomes more severe, or lasts longer than a few minutes, go to the emergency room immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms describe \"exertional chest pressure,\" which occurs when the heart works harder but may not be getting enough oxygen. This is often caused by narrowed heart arteries. Your normal troponin and stable EKG are very reassuring; they indicate you are not having a heart attack right now and there is no current damage to the heart muscle. However, because these symptoms are new and you have several risk factors (diabetes, high blood pressure, and high cholesterol), they must be addressed quickly. This pattern is consistent with stable angina. While you feel fine at rest, you need a more detailed evaluation\u2014such as a stress test\u2014within the next day or two to ensure this does not progress to a heart attack. Your high glucose is consistent with your history of diabetes but should also be monitored.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms\u2014chest pressure during exertion that goes away with rest\u2014are classic signs of \"stable angina.\" This suggests your heart muscle may not be getting enough oxygen-rich blood when it works hard, likely due to narrowing in the heart's arteries. Your risk factors (age, diabetes, high blood pressure, and high cholesterol) significantly increase your risk for heart disease. Your normal troponin and stable EKG indicate you are not having a heart attack right now, and your normal BNP suggests no acute heart failure. However, because these symptoms are new, you need a prompt medical evaluation to prevent a future heart attack. If you experience chest pain at rest, pain that lasts longer than a few minutes, or severe shortness of breath, go to the emergency room immediately. Otherwise, you must see a doctor within 24\u201348 hours for further testing.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your normal troponin level and EKG are very good signs; they indicate you are not having a heart attack right now and have no immediate heart muscle damage. Your BNP is also normal, which means there are no signs of heart failure. Your high glucose is related to your diabetes. However, the chest pressure you feel when walking uphill is a classic symptom called angina. This happens when the heart muscle does not get enough oxygen during physical activity. Because this is a new symptom and you have risk factors like diabetes and high blood pressure, it must be evaluated quickly. Even though your current tests are normal and you feel fine at rest, you need further testing, such as a stress test, to check for blockages. If you experience chest pain that does not go away with rest, go to the ER immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms of chest pressure during exertion (walking uphill) that improve with rest are classic signs of \"stable angina.\" This occurs when the heart muscle does not receive enough oxygen-rich blood during physical activity. Your normal troponin and stable EKG results indicate that you are not currently having a heart attack, and your normal BNP rules out heart failure. Your glucose is high, which is consistent with your history of diabetes. While your labs are currently reassuring, these symptoms are new and occur in the context of several risk factors (diabetes, high blood pressure, and age). You need a prompt medical evaluation to determine if there is a blockage in your heart's arteries. If you experience chest pain at rest, or if the pain becomes more severe or lasts longer, go to the emergency room immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results are reassuring in the short term: the normal Troponin indicates you are not having a heart attack right now, and the normal BNP suggests no active heart failure. Your high glucose is expected given your history of diabetes. However, the chest pressure you feel when walking uphill that goes away with rest is a classic symptom of \"stable angina.\" This means your heart may not be getting enough oxygen-rich blood during physical exertion. Because you have multiple risk factors\u2014including diabetes, high blood pressure, and high cholesterol\u2014this new symptom is a significant warning sign of potential heart disease. While you are currently stable and pain-free, you need a prompt medical evaluation and likely further testing (like a stress test) to prevent a future heart attack. If chest pain occurs at rest or worsens, go to the ER immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

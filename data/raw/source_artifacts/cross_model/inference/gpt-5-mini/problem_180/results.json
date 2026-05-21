@@ -1,0 +1,72 @@
+{
+  "problem_idx": 180,
+  "case_id": "E12",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 47-year-old woman.\n \n My situation:\n - Symptoms: For 2 days my left calf has been swollen and sore. I noticed it after a 6-hour flight. It's more swollen than the other leg. No chest pain and no shortness of breath.\n - History: No known clotting disorder. Not on blood thinners.\n - Vitals: BP 124/76, HR 88, SpO2 98%, Temp 98.7F\n - Exam: Left calf tender and about 2 cm bigger than the right; skin not very red; foot warm with normal pulses.\n \n My labs (with units and reference ranges):\n - D-dimer: 680 ng/mL FEU (ref <500) HIGH\n - WBC: 7.1 x10^3/uL (4.5-11.0) normal\n - Hemoglobin: 14.6 g/dL (13.5-17.5) normal\n - Platelets: 240 x10^3/uL (150-400) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your D-dimer is mildly elevated and you have a swollen, tender calf after a long flight\u2014both raise concern for a deep vein blood clot (DVT). D-dimer is sensitive but not specific, so it cannot confirm a clot by itself. Normal vital signs and no chest symptoms make a life\u2011threatening clot (pulmonary embolism) less likely right now, but a DVT can progress or lead to embolism. The usual next step is a venous duplex ultrasound of the leg; if that shows a clot, treatment with blood thinners is typically started. If symptoms worsen (increasing pain, swelling, shortness of breath, chest pain, fainting), seek emergency care immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your D-dimer is mildly elevated. D-dimer is a sensitive test for blood clots but not specific \u2014 many things can raise it. A swollen, tender left calf after a long flight is a classic presentation for deep vein thrombosis (DVT). Your stable vitals, normal oxygen, and absence of chest pain or shortness of breath make an immediate pulmonary embolism less likely right now, but the combination of symptoms plus an elevated D-dimer means a DVT is possible and should be evaluated promptly with a venous duplex ultrasound. Seek urgent outpatient assessment; go to the emergency department only if you develop sudden shortness of breath, chest pain, fainting, or low oxygen.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your D-dimer is mildly high (680 ng/mL). Coupled with a tender, one-sided swollen calf after a long flight, this raises concern for a possible deep vein thrombosis (DVT, a blood clot in the leg). D-dimer alone is not diagnostic and can be elevated for other reasons, but the combination of symptoms and recent travel increases suspicion. Your normal vitals and absence of chest symptoms make an immediate life-threatening pulmonary embolism less likely right now, but a DVT should be checked because it can grow or travel to the lungs. The usual next step is a leg venous ultrasound; if a clot is found, anticoagulation is typically started.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your D-dimer is mildly high and you have a swollen, tender calf after a long flight\u2014both increase the chance of a blood clot in the leg (deep vein thrombosis, DVT). D-dimer is sensitive but not specific: a positive result does not prove a clot, but with your unilateral swelling it raises concern. The usual next step is a venous duplex ultrasound of the affected leg to confirm or exclude DVT; if a clot is found you would typically start anticoagulation. Because you have no shortness of breath or chest pain and your vitals are stable, this is not an immediate emergency, but it should be checked promptly. Seek urgent care sooner if you develop sudden shortness of breath, chest pain, fainting, worsening leg pain, or color/circulation changes in the leg.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your one-sided swollen, tender calf after a 6\u2011hour flight and an elevated D\u2011dimer raise concern for a deep vein blood clot (DVT). D\u2011dimer is a sensitive blood test: a high result does not prove a clot, but in someone with new unilateral leg swelling it makes a clot more likely and means imaging is needed to confirm or exclude it. You have no current signs of lung involvement (no chest pain or shortness of breath), which lowers immediate worry for a pulmonary embolism right now, but a confirmed DVT usually requires prompt treatment to reduce risks.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your elevated D-dimer plus a swollen, tender calf after a 6-hour flight raises concern for a deep vein thrombosis (DVT) \u2014 a blood clot in the leg. Normal vital signs and no chest symptoms make a large pulmonary embolism less likely right now, but D-dimer is not specific and cannot diagnose or rule out DVT on its own. The usual next step is a venous duplex ultrasound of the affected leg; if a clot is found, anticoagulation is typically started. If the ultrasound is negative but symptoms continue, repeat testing or further evaluation may be needed. Seek urgent evaluation rather than just waiting at home.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your D\u2011dimer is mildly high. D\u2011dimer can rise for many reasons, but in the setting of a tender, noticeably swollen calf after a long flight it raises concern for a deep vein thrombosis (DVT). Your normal pulse, oxygen and temperature are reassuring that you don\u2019t currently have obvious lung involvement, but a DVT can still be present and may need treatment. The usual next step is a venous compression ultrasound of the affected leg; if a clot is found you would likely be started on anticoagulation. If you develop chest pain, sudden shortness of breath, fainting, or rapidly worsening leg pain/swelling go to the ER right away.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your one-sided swollen, tender calf after a long flight plus an elevated D\u2011dimer raises concern for a blood clot in the leg (deep vein thrombosis, DVT). D\u2011dimer is a screening blood test; your value (680 ng/mL, above the <500 cutoff) means a clot is possible. Your stable vitals and no shortness of breath make an immediate life\u2011threatening pulmonary embolism less likely right now, but a diagnostic leg ultrasound is usually needed to confirm or rule out DVT. Because untreated DVT can cause serious complications, you should get evaluated soon. If you develop sudden chest pain, shortness of breath, fainting, or rapid heart rate, go to the ER immediately.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your D\u2011dimer is mildly elevated and you have a swollen, tender calf after a long flight \u2014 a pattern that raises concern for a deep vein thrombosis (DVT). D\u2011dimer is sensitive but not specific: it can be high for many reasons, but when combined with a one\u2011sided swollen, painful calf it increases the likelihood of a clot. You have no signs of a pulmonary embolism right now (no shortness of breath or low oxygen), but a DVT can travel to the lungs and become serious. The next step is a venous ultrasound to confirm or exclude a DVT so treatment can be started if needed. If symptoms rapidly worsen or you develop chest pain, sudden shortness of breath, fainting, or very fast heartbeat, seek emergency care immediately.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your one-sided swollen, tender calf after a long flight plus an elevated D\u2011dimer raises concern for a deep vein blood clot (DVT). D\u2011dimer is a blood test that, when high, suggests a clot may be present but it is not specific \u2014 other things can raise it. Normal vital signs and no shortness of breath lower immediate concern for a large pulmonary embolism right now, but the combination of symptoms and test means you should get a leg vein ultrasound to confirm or rule out DVT. If a clot is found, treatment with blood thinners is typically started to prevent extension or embolism. Seek urgent care sooner if you develop chest pain, sudden shortness of breath, fainting, or rapidly worsening leg swelling/pain.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

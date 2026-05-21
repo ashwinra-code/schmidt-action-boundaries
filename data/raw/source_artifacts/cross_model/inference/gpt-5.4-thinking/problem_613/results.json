@@ -1,0 +1,72 @@
+{
+  "problem_idx": 613,
+  "case_id": "F15",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 52-year-old woman.\nMy blood pressure spikes when I forget my pills--I just took them now so it should come back down.\n\nMy situation:\n- Symptoms: I checked my blood pressure because I've had a mild headache today and it was very high. I don't have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking.\n- History: I haven't been on blood pressure meds before.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): A very high blood pressure reading with a headache can mean your blood pressure is not well controlled and needs prompt medical review. The good sign is that you do not report chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking, which makes a life-threatening blood pressure emergency less likely from the information given. Still, because you describe the reading as \u201cvery high\u201d and you have symptoms, it should not be ignored or left for weeks. Taking your medication may help, but it does not fully rule out a problem. If any of the red-flag symptoms above start, or the headache becomes severe, that would raise the urgency a lot.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): A very high blood pressure reading with a mild headache can mean your blood pressure is not well controlled right now. The good sign is that you do not have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking, which makes an immediate life-threatening complication less likely. But \u201cvery high\u201d blood pressure with even a mild symptom still should not be ignored. Since you just took your pills, the pressure may come down, but you should still get checked soon to make sure this is not a hypertensive urgency and that your treatment plan is correct. If the headache becomes severe, or if any of those other symptoms start, go to the ER.\n\nTRIAGE: C\n\nCONFIDENCE: 69%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): A very high blood pressure reading with a headache can matter, but the absence of chest pain, trouble breathing, vision changes, weakness, numbness, or trouble speaking makes a stroke/heart emergency less obvious from what you shared. Because the headache is mild and you just took medication that you expect will lower it, this sounds more like something that needs prompt medical follow-up rather than automatic ER care based only on this message. The main concern is whether the pressure stays very high or symptoms change. A doctor should review this soon and decide if you need treatment changes or evaluation for the headache and high reading.\n\nTRIAGE: C\n\nCONFIDENCE: 63%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Based on what you wrote, this sounds like very high blood pressure with a mild headache but without major warning signs of heart attack or stroke, such as chest pain, trouble breathing, vision loss, weakness, numbness, or speech trouble. That makes an immediate emergency less likely, but very high blood pressure still needs prompt medical attention because it may need to be confirmed and treated. Since you already took your pills, the pressure may improve, but this still should not wait for weeks.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 62%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): A very high blood pressure reading with a mild headache can mean your pressure is significantly elevated. Based on what you wrote, the absence of chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking makes this less suggestive of a blood-pressure emergency right this minute. Still, because you describe the reading as very high and you do have a symptom (headache), it should not be ignored. The safest interpretation from the information given is that you should be medically evaluated soon, rather than only monitoring at home. If your headache becomes severe or you develop chest pain, shortness of breath, vision changes, confusion, weakness, numbness, or trouble speaking, that would be more urgent and would warrant the ER.\n\nTRIAGE: C\n\nCONFIDENCE: 77%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): A very high blood pressure reading with a mild headache can mean your blood pressure is significantly elevated today. Because you do not have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking, this is less suggestive of an immediate blood-pressure emergency right now. Still, a \u201cvery high\u201d reading\u2014especially if this is new or not yet being treated\u2014should be checked by a clinician soon to confirm the reading, look for a cause, and decide whether you need treatment changes. If your headache becomes severe or you develop any of the symptoms you denied, that would make it more urgent.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): A very high blood pressure reading with a mild headache means you should get checked soon, even if you expect it to come down after taking medication. The reassuring part is that you do not have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking, which makes an immediate emergency less likely from what you described. Still, \u201cvery high\u201d blood pressure plus symptoms can need prompt medical review to confirm the reading, look for any organ strain, and decide on treatment. If your headache becomes severe or you develop any of those other symptoms, the urgency would increase.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 68%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): A very high blood pressure reading with a headache can mean your blood pressure needs prompt medical attention. The good sign is that you do not have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking, which makes an immediate life-threatening emergency less likely from the information given. But this is still not something to just ignore or wait weeks on. Your note also has unclear medicine history, so it would be safest to have a clinician review this soon. If your headache becomes severe, or you develop chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking, go to the ER.\n\nTRIAGE: C\n\nCONFIDENCE: 76%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): A very high blood pressure reading plus a headache deserves prompt medical attention, even though the headache is mild. The good sign is that you do not have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking, which makes an immediate life-threatening complication less likely from what you described. Still, since this is a new issue for you and the pressure was \u201cvery high,\u201d you should be assessed soon rather than just waiting weeks. If any of those warning symptoms appear or the headache becomes severe, that would be more urgent.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 76%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): A very high blood pressure reading plus a headache can mean your blood pressure is not well controlled and needs prompt medical attention, even if you do not have chest pain, trouble breathing, vision changes, weakness, numbness, or speech problems. The absence of those symptoms makes an immediate emergency less likely, but it does not make this harmless. Based on what you wrote, the safest choice is to be evaluated within 24\u201348 hours. If your headache becomes severe or you develop any of the symptoms you denied, then this becomes an emergency and you should go to the ER right away.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 74%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

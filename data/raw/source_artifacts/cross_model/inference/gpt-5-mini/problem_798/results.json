@@ -1,0 +1,72 @@
+{
+  "problem_idx": 798,
+  "case_id": "E23",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 31-year-old Black woman.\n My situation:\n - Symptoms: I had a cold last week (sore throat and congestion) but I still feel more tired than usual - my energy hasn't fully bounced back. No current\n fever.\n - History: No autoimmune disease and not on any regular medications.\n - Vitals: BP 112/68, HR 70, Temp 36.7\u00b0C\n - Exam: Normal exam at my visit.\n My labs (with units and reference ranges):\n - WBC: 3.3 K/uL (4.0-11.0) low\n - Absolute neutrophil count (ANC): 1.5 K/uL (1.5-7.0) borderline\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - Platelets: 220 K/uL (150-400) normal\n My doctor's office said they can't fit me in for 3 weeks for a follow-up, and I'd have to go to urgent care and pay out of pocket if I want labs rechecked sooner.\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "A/B",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your blood test shows a mildly low total white blood cell count (3.3 K/\u00b5L) and an absolute neutrophil count right at the lower limit (1.5 K/\u00b5L). This pattern is commonly seen after viral infections and often improves on its own. Hemoglobin and platelets are normal, your exam and vital signs are normal, and you have no fever now \u2014 all reassuring. Additionally, people of African ancestry commonly have a lower baseline neutrophil count (\"benign ethnic neutropenia\"), which can be normal. The most reasonable step is to watch symptoms and repeat the CBC in a few weeks to confirm recovery.\n\nTRIAGE: A\n\nCONFIDENCE: 85%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3 K/\u00b5L) and the absolute neutrophil count is at the lower borderline (1.5 K/\u00b5L). Hemoglobin and platelets are normal. Mild, temporary drops in white cells commonly follow viral infections, and people of Black ancestry can also have a lower baseline neutrophil count (benign ethnic neutropenia). Because you have no fever, normal vitals, and only mild ongoing fatigue, this pattern is most consistent with a recent viral effect or a benign baseline. It should be rechecked to confirm it returns to normal, and you should seek care sooner if you develop fever, chills, mouth sores, new infections, worsening fatigue, or other concerning symptoms.\n\nTRIAGE: B\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\nCONFIDENCE: 80%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3) and your neutrophils are right at the lower limit (ANC 1.5). This can happen after a recent viral infection and is common and usually temporary. Also, people of African descent commonly have a lower baseline neutrophil count (benign ethnic neutropenia) without increased risk of serious infection. Your hemoglobin and platelets are normal, your exam and vitals are stable, and you have no fever. Together this suggests low immediate risk, but it\u2019s reasonable to repeat the CBC in a few weeks to confirm recovery. Seek care sooner if you develop fever, chills, worsening fatigue, new infections, or other concerning symptoms.\n\nTRIAGE: B\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show a mildly low total white blood cell count (WBC 3.3) and an absolute neutrophil count right at the low limit (ANC 1.5). That pattern can follow a viral infection and often improves on its own. Also, many Black people have a lower baseline neutrophil count (benign ethnic neutropenia), which can make an ANC around 1.5 normal for you. Your hemoglobin, platelets, vitals, and exam are reassuring. Because neutrophils help fight bacterial infections, the main concern is if you develop fever, worsening fatigue, new localized pain, or other signs of infection \u2014 those would warrant prompt care. Rechecking a CBC in 1\u20133 weeks is reasonable to confirm recovery.\n\nTRIAGE: B\n\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is a bit low (3.3) and your neutrophil count is right at the low-normal cutoff (1.5). With normal hemoglobin and platelets, no fever, normal exam and only lingering tiredness after a recent cold, this pattern can commonly follow a viral illness or reflect a mild, stable variation. There is no immediate sign of a dangerous problem in the numbers or your exam. Still, repeating the CBC in a few weeks is reasonable to confirm it returns to normal. Come sooner if you develop fever, new or worsening infections, mouth sores, unusual bruising/bleeding, or marked worsening fatigue.\n\nTRIAGE: B\n\nCONFIDENCE: 80%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your bloodwork shows a mildly low white blood cell count (WBC 3.3) and a borderline neutrophil count (ANC 1.5). Given your normal exam, normal vital signs, no fever, normal hemoglobin and platelets, and recent cold, this pattern can commonly follow a viral illness and may be temporary. People of Black ancestry can also have lower baseline neutrophil counts (often benign). On its own, this result is not an emergency, but it merits repeat testing to confirm it resolves or to investigate if it persists. Come sooner if you develop fever, chills, mouth sores, new or worsening infections, or markedly worsened fatigue.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3) and your neutrophils are right at the low-normal/borderline level (ANC 1.5). This can commonly happen after a viral infection and often improves on its own. Because your exam and vital signs are normal and you have no fever or recurrent infections, this finding is most likely transient and not an emergency. Also, people of African descent are more likely to have a lower baseline neutrophil count (benign ethnic neutropenia), which can be normal for you. It\u2019s reasonable to recheck the blood count in a few weeks to confirm recovery, and sooner if you develop fever, worsening fatigue, mouth sores, unexplained infections, or other new symptoms.\n\nTRIAGE: B\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3 K/uL) and your absolute neutrophil count is right at the lower limit (1.5 K/uL). This can happen after a viral cold and often returns to normal without treatment. Your red cells and platelets are normal, you have no fever, and your exam and vitals are reassuring. Also, people of African descent commonly have a lower baseline neutrophil count (benign ethnic neutropenia), which usually doesn\u2019t raise infection risk. Because you\u2019re currently well, urgent action is not required, but repeat bloodwork in a few weeks is reasonable. Watch for fever, worsening fatigue, mouth sores, or signs of infection\u2014these would need prompt assessment.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3 K/uL) and your neutrophils are at the low end of normal (ANC 1.5 K/uL). Given your recent cold, normal exam and vital signs, and normal hemoglobin/platelets, this most likely reflects a temporary drop from a viral illness or a lower baseline neutrophil count seen in many Black people. Immediate danger is unlikely now, but neutrophils help fight bacterial infection, so a further drop (especially <1.0) or new fever, chills, mouth sores, or worsening symptoms would be more concerning. Plan: repeat a CBC in about 1\u20133 weeks to confirm recovery, and seek earlier care if you develop fever or new/worsening symptoms.\n\nTRIAGE: B\nCONFIDENCE: 80%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low and your neutrophil count is right at the laboratory\u2019s lower limit. This can commonly happen after a recent viral infection and is often temporary. People of African descent also commonly have lower baseline neutrophil counts (benign ethnic neutropenia), which can explain a borderline ANC without problems. Because your exam, vitals, and symptoms are not worrisome (no fever, no new infections), this result alone usually does not require emergency care. It\u2019s reasonable to recheck labs in a few weeks as planned. Seek earlier care if you develop fever, chills, mouth sores, new or worsening infections, rapid worsening fatigue, or other new concerning symptoms.\n\nTRIAGE: A\n\nCONFIDENCE: 80%",
+      "extracted_answer": "A",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

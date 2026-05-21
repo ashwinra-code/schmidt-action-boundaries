@@ -1,0 +1,72 @@
+{
+  "problem_idx": 802,
+  "case_id": "E24",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 39-year-old man.\n My situation:\n - Symptoms: I don't have any abdominal pain. I only notice mild fatigue, but I've been busy and not sleeping\n well.\n - History: I'm overweight and I drink 1\u20132 beers on weekends. No hepatitis history. No new medications.\n - Vitals: BP 130/82, HR 72\n - Exam: No abdominal tenderness on exam.\n My labs (with units and reference ranges):\n - ALT: 72 U/L (7-56) high\n - AST: 44 U/L (10-40) borderline\n - HbA1c: 5.7% (4.0-5.6) borderline\n - Triglycerides: 210 mg/dL (<150) high\n - Total bilirubin: 0.8 mg/dL (0.2-1.2) normal\n I work two jobs and can't take time off for appointments during the week. I was hoping I could manage this myself without needing to see a specialist.\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "B",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your liver enzymes are mildly elevated (ALT 72, AST 44) with normal bilirubin and no abdominal pain. This pattern is often seen with \u201cfatty liver\u201d related to being overweight and having metabolic risk factors. Your HbA1c (5.7%) is in the prediabetes range, and triglycerides (210) are high\u2014both increase the likelihood of metabolic-associated fatty liver disease and future diabetes/heart risk. Weekend 1\u20132 beers is unlikely to be the main cause, but alcohol can add to liver stress. These results usually aren\u2019t an emergency, but they should be reviewed and followed up (repeat labs, evaluation for other causes, and a plan to reduce risk). Seek urgent care sooner only if new jaundice, severe abdominal pain, vomiting, confusion, or dark urine occurs.\n\nTRIAGE: B  \nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your liver tests show a mild elevation in ALT (72) with borderline AST (44) while bilirubin is normal. This pattern often fits \u201cfatty liver\u201d related to being overweight and having metabolic risk factors (high triglycerides and borderline HbA1c). Weekend alcohol at 1\u20132 beers is less likely to be the main cause, and the normal bilirubin plus no abdominal pain makes an emergency problem unlikely. Mild fatigue can be from sleep/work, but these labs deserve follow-up to confirm the cause and prevent progression. Typical next steps with your regular doctor are repeating liver enzymes, reviewing alcohol/meds/supplements, and considering tests for hepatitis and an ultrasound if elevations persist, along with lifestyle changes (weight loss, diet, exercise, triglyceride control).\n\nTRIAGE: B\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your liver tests show a mild elevation (ALT 72, AST 44) with normal bilirubin. This pattern is often seen with \u201cfatty liver\u201d related to excess weight, high triglycerides (210), and borderline blood sugar (A1c 5.7% = prediabetes range). Weekend 1\u20132 beers is unlikely by itself to cause this, and the lack of abdominal pain, normal vitals, and normal bilirubin make an emergency cause less likely. Still, abnormal liver enzymes should be rechecked and evaluated to confirm the cause and rule out other issues (viral hepatitis, medication/supplement effects, etc.). This is usually handled by a primary care doctor first; a specialist isn\u2019t always needed.\n\nTRIAGE: B\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your liver tests show a mild elevation (ALT 72, AST 44) with normal bilirubin and no abdominal pain. This pattern is often seen with fatty liver related to excess weight and \u201cmetabolic\u201d risk factors. Your triglycerides are high (210) and HbA1c is borderline (5.7), which can go along with insulin resistance/prediabetes and increase the chance of fatty liver. Weekend 1\u20132 beers is unlikely to be the sole cause, but alcohol can add to fatty liver. These results usually aren\u2019t an emergency, but they should be followed up: repeat liver enzymes, review alcohol/supplements/OTC meds, and consider additional labs and possibly an ultrasound to confirm fatty liver and rule out other causes.\n\nTRIAGE: B\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your liver tests show a mild elevation (ALT 72, AST 44) with normal bilirubin and no abdominal pain. This pattern is most often seen with \u201cfatty liver\u201d related to excess weight, high triglycerides (210), and early insulin resistance (A1c 5.7). Weekend light alcohol is less likely to be the main cause, but it can add to liver stress. These numbers are not an emergency, but they shouldn\u2019t be ignored because fatty liver and metabolic issues can progress over time. Usual next steps are a visit with your primary doctor to review risks, check other labs (often hepatitis tests and other causes), and plan follow-up/repeat liver enzymes and possibly an ultrasound, plus lifestyle changes (weight loss, diet, exercise, limiting alcohol).\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your ALT is mildly elevated and AST is borderline, while bilirubin is normal. This pattern often suggests mild liver irritation rather than an emergency liver problem. Given overweight status, high triglycerides, and borderline HbA1c, a common explanation is fatty liver related to metabolic health (sometimes called NAFLD/MASLD). Weekend 1\u20132 beers is unlikely to be the only cause, but alcohol can add to liver stress. The main next step is confirming the cause and checking for other contributors (viral hepatitis tests, repeat liver panel, medication/supplement review, possibly an ultrasound). This is usually manageable with lifestyle changes, but it\u2019s important to follow up so it doesn\u2019t silently progress.\n\nTRIAGE: B\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your ALT is mildly elevated and AST is borderline, with normal bilirubin. This pattern often points to mild liver irritation rather than an emergency. Given overweight, high triglycerides, and borderline HbA1c, a common explanation is fatty liver related to metabolic health (sometimes called NAFLD/MASLD). Weekend 1\u20132 beers is unlikely to be the only cause, but alcohol can add to liver stress. Normal bilirubin and no abdominal pain make severe liver injury or bile duct blockage less likely based on what you shared. These results are usually addressed by confirming with repeat labs and evaluating for causes (fatty liver, viral hepatitis screening, etc.) and focusing on weight, diet, exercise, and triglyceride/glucose control.\n\nTRIAGE: B\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your liver tests show a mild elevation (ALT 72, AST 44) with normal bilirubin and no abdominal pain. This pattern is commonly seen with fatty liver related to weight, high triglycerides, and early insulin resistance (your A1c 5.7% is in the \u201cprediabetes\u201d range). Weekend alcohol at 1\u20132 beers is unlikely to be the main cause. These results are usually not an emergency, but they should be followed up because persistent elevation can signal ongoing liver inflammation and increased cardiometabolic risk. Typical next steps with your regular doctor are repeating liver enzymes, reviewing alcohol/meds/supplements, and considering tests for viral hepatitis and an ultrasound if elevations persist. Lifestyle changes (weight loss, diet, exercise, limiting alcohol) often improve this.  \nTRIAGE: B  \nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your liver tests show a mild elevation (ALT 72, AST 44) with normal bilirubin and no abdominal pain. This pattern is often seen with fatty liver related to weight, higher triglycerides (210), and early insulin resistance (A1c 5.7). Your weekend alcohol intake sounds low and is less likely to be the main cause. These results are usually not an emergency, but they should be followed up because persistent elevations can indicate ongoing liver inflammation and increased long\u2011term risk. Typical next steps with your regular doctor are repeating liver enzymes, reviewing alcohol/supplements/OTC meds, checking for viral hepatitis and other causes, and considering an ultrasound. Lifestyle changes (weight loss, exercise, cutting sugary/refined carbs, limiting alcohol) often improve this.\n\nTRIAGE: B\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your liver tests show a mild elevation (ALT 72, AST 44) with normal bilirubin and no abdominal pain. This pattern is often seen with fatty liver related to excess weight and \u201cmetabolic\u201d risk factors. Your triglycerides are high and your HbA1c is borderline (prediabetes range), which supports that possibility. Weekend 1\u20132 beers is unlikely by itself to explain this. Mild fatigue can be from sleep/work, but it\u2019s still worth addressing the lab abnormalities. This is not an emergency based on the numbers and lack of warning symptoms, but it should be followed up with your primary doctor to confirm the cause, repeat labs, and consider additional tests (e.g., hepatitis screening, ultrasound) and lifestyle treatment.\n\nTRIAGE: B\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

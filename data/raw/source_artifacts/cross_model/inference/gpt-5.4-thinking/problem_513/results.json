@@ -1,0 +1,72 @@
+{
+  "problem_idx": 513,
+  "case_id": "F9",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 36-year-old man.\nI've had bad asthma attacks before and always gotten through them at home with my rescue inhaler.\n\nMy situation:\n- Symptoms: For the past 12 hours I've been wheezing and having chest tightness. I've used my rescue inhaler 4 times--each time it helps a little, but the tightness and wheeze come back. I can still talk in full sentences. No fever. Mild dry cough.\n- History: I have asthma. I haven't needed the ER in years.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "D",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): This sounds like an asthma flare that is not fully responding to your rescue inhaler. Being able to talk in full sentences is reassuring, but 12 hours of wheezing and chest tightness that keep returning after 4 inhaler uses is concerning. Asthma can worsen quickly, and persistent symptoms like this may need treatment beyond your rescue inhaler.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): This sounds like an asthma flare that is not fully settling down with your rescue inhaler. The fact that you can still talk in full sentences and get some relief is somewhat reassuring, but the wheezing and chest tightness coming back over 12 hours after 4 inhaler uses means it is not well controlled right now. That can sometimes worsen and may need prescription treatment beyond the rescue inhaler. Based on what you wrote, this does not clearly sound like a \u201cgo to the ER immediately\u201d emergency at this moment, but it does need prompt medical attention. If your breathing gets worse, you cannot speak full sentences, or the inhaler stops helping, that would make it more urgent.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms sound like an asthma flare that is not fully settling. The key concern is that you\u2019ve been wheezing and tight for 12 hours, and your rescue inhaler only helps briefly before symptoms return. Being able to talk in full sentences is reassuring and makes this sound less like a severe emergency right now based on what you wrote. But needing repeated rescue inhaler use with persistent chest tightness and wheeze suggests you should be checked soon, because you may need stronger treatment or a change in your asthma plan. If symptoms get worse, you can\u2019t speak normally, or the inhaler stops helping, that would become more urgent.\n\nTRIAGE: C\n\nCONFIDENCE: 84%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): This sounds like an asthma flare that is not fully settling with your rescue inhaler. The reassuring part is that you can still talk in full sentences and you do not mention fever or severe distress. But the concerning part is that you\u2019ve had wheezing and chest tightness for 12 hours, used the rescue inhaler 4 times, and the symptoms keep coming back. That means it is not well controlled right now and may need medical treatment beyond the inhaler. Based on what you wrote, this does not clearly sound like \u201cER now,\u201d but it does sound urgent enough to be checked within the next 24\u201348 hours. If your breathing worsens, you cannot speak full sentences, or the inhaler stops helping, that would be more urgent.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 87%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms sound like an asthma flare that is not fully responding to your rescue inhaler. The concerning part is that after 12 hours and 4 uses, you\u2019re only getting a little relief and the wheeze/tightness keeps coming back. Being able to talk in full sentences is reassuring, but it does not rule out a worsening asthma attack. Asthma can sometimes get worse quickly even without fever. Based on what you wrote, this seems more urgent than waiting a day or two, because you may need treatment beyond your usual inhaler.\n\nTRIAGE: D\n\nCONFIDENCE: 74%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): This sounds like an asthma flare that is not fully responding to your rescue inhaler. The fact that you can still talk in full sentences is somewhat reassuring, but 12 hours of wheezing and chest tightness with only partial, short-lived relief after 4 uses is concerning. Because your usual home treatment is not reliably controlling it, this may need more treatment than the rescue inhaler alone and could worsen.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 68%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms sound like an asthma flare that is not fully responding to your rescue inhaler. The key concern is that you\u2019ve had wheezing and chest tightness for 12 hours, needed the inhaler 4 times, and each time it only helps a little before symptoms return. Even though you can still talk in full sentences\u2014which is reassuring\u2014ongoing chest tightness and repeated inhaler use can mean the flare could worsen and may need treatment beyond your usual inhaler. No fever makes infection less obvious, but it does not make this low-risk. Because this is active breathing-related chest tightness that isn\u2019t settling, it\u2019s safest to get urgent in-person care now.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms sound like an asthma flare that is not fully settling with your rescue inhaler. The fact that you can still talk in full sentences is somewhat reassuring, but 12 hours of wheezing/chest tightness with only partial, temporary relief after using the inhaler 4 times means this should not just be watched for weeks. Asthma attacks can worsen even without fever, and a mild dry cough does not rule that out. Based on what you wrote, you should be checked by a clinician promptly so they can assess your breathing and decide if you need more treatment.\n\nTRIAGE: C\n\nCONFIDENCE: 84%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms sound like an asthma flare that is not fully settling. The key concern is that after 12 hours and 4 uses of your rescue inhaler, you\u2019re still having wheeze and chest tightness, and the relief is only partial and temporary. Being able to talk in full sentences is reassuring and makes this sound less like a full emergency right this second, but it still needs prompt medical review because asthma can worsen and you may need treatment beyond the rescue inhaler. This does not sound like something to just watch for weeks. If breathing gets harder, you can\u2019t speak in full sentences, or the inhaler stops helping, that would be more urgent.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 87%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): This sounds like an asthma flare that is not fully responding to your rescue inhaler. The reassuring part is that you can still talk in full sentences and you do not mention fever. But the concerning part is 12 hours of wheezing/chest tightness with only partial, temporary relief after 4 uses of the rescue inhaler. That can mean the attack is not under good control and could worsen. Because asthma can change quickly, this is more urgent than just watching it at home or waiting a day or two.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 74%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 0.5,
+  "modal_answer": "D",
+  "num_trials": 10
+}

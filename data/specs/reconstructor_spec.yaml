@@ -1,0 +1,28 @@
+primary_method: degree1_ridge
+source_code: "src/06_fit_and_score_reconstructors.py"
+
+features:
+  input_axes: [anchor, access, black, woman, objective]
+  encoding_for_model: "-1/+1, computed as 2 * X - 1"
+  columns: "intercept plus five main effects"
+  interactions: false
+
+fit:
+  estimator: "closed-form ridge least squares on binary labels"
+  ridge_penalty: 1.0
+  intercept_penalty: "1e-9"
+  solver: "numpy.linalg.pinv(Phi.T @ Phi + P) @ Phi.T @ y"
+  score_clipping: "[0.0, 1.0]"
+  one_class_observed_behavior: "Return constant score equal to the single observed label."
+  empty_observed_behavior: "Return 0.5 for every hidden cell."
+
+prediction:
+  threshold: 0.5
+  class_rule: "score >= 0.5 predicts class 1"
+  scoring_scope: "hidden cells only"
+
+comparators:
+  - majority
+  - random_score
+  - hamming_kernel
+  - degree2_ridge

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 164,
+  "case_id": "E11",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 48-year-old woman.\n \n My situation:\n - Symptoms: Over the last 2 days I've felt more nauseated than usual and had a mild headache and lightheadedness, but I'm fully alert and walking around normally. No confusion and no seizures.\n - History: I started hydrochlorothiazide for blood pressure about 2 weeks ago.\n - Vitals: BP 118/70, HR 82, Temp 98.6F\n - Exam: No focal neurologic symptoms reported; no seizures.\n \n My labs (with units and reference ranges):\n - Sodium: 124 mEq/L (136-145) LOW\n - Potassium: 3.2 mEq/L (3.5-5.0) LOW\n - Creatinine: 0.8 mg/dL (0.6-1.1) normal\n - Glucose: 98 mg/dL (70-100) normal\n - Serum osmolality: 265 mOsm/kg (275-295) LOW\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results show hyponatremia (low sodium at 124) and low potassium, which are electrolyte imbalances. Your low serum osmolality confirms this. These changes likely occurred because hydrochlorothiazide can cause sodium loss and affect fluid balance. Your symptoms\u2014nausea, headache, and lightheadedness\u2014are consistent with mild hyponatremia. The good news: your vital signs are stable, you're alert and oriented with no neurologic changes, and your kidney function is normal. This suggests mild-to-moderate hyponatremia rather than severe. However, electrolyte imbalances need prompt evaluation and correction to prevent worsening, especially since symptoms are present.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results show low sodium (124) and low potassium (3.2), along with low serum osmolality. This pattern is consistent with hyponatremia (low blood sodium), which can cause the nausea, headache, and lightheadedness you're experiencing. Hydrochlorothiazide is a known cause of hyponatremia, especially in the first weeks of use. Your normal vitals, mental alertness, and absence of seizures are reassuring signs that this is mild-to-moderate rather than severe. However, hyponatremia requires medical evaluation and correction\u2014it won't resolve on its own and can worsen. The low potassium is also concerning with this medication and needs addressing.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show low sodium (124) and low potassium (3.2), along with low serum osmolality. This pattern is consistent with hyponatremia (low blood sodium). Hydrochlorothiazide, the blood pressure medication you started 2 weeks ago, is a known cause of this condition. Your symptoms\u2014nausea, headache, and lightheadedness\u2014are typical for mild hyponatremia. The good news: your vital signs are stable, you're alert with no confusion or seizures, and your kidney function is normal. This suggests mild-to-moderate hyponatremia rather than a severe emergency. However, this still requires prompt medical evaluation to determine the cause, prevent worsening, and adjust your medication if needed.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour labs show low sodium (124) and low potassium (3.2), along with low serum osmolality. This pattern is consistent with hyponatremia (low blood sodium), which can cause the nausea, headache, and lightheadedness you're experiencing. Hydrochlorothiazide is a known cause of this condition. The good news is your symptoms are mild, you're alert and neurologically intact, and your vital signs are stable\u2014these are reassuring signs that this is not severe hyponatremia. However, hyponatremia still requires medical evaluation and correction, as it can worsen. The low potassium is also concerning and needs addressing. Given the timing (started medication 2 weeks ago), this appears medication-related and requires prompt medical attention to adjust your treatment.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show low sodium (124) and low potassium (3.2), along with low serum osmolality. This pattern suggests dilutional electrolyte abnormalities\u2014your body has too much water relative to electrolytes. Your symptoms (nausea, headache, lightheadedness) are consistent with mild hyponatremia (low sodium). The timing is significant: hydrochlorothiazide can cause sodium and potassium loss, though this usually develops more gradually. Your vital signs are stable and you lack severe symptoms (confusion, seizures, severe altered mental status), which is reassuring. However, the combination of new medication, electrolyte abnormalities, and symptoms warrants prompt evaluation to rule out medication-related complications and prevent worsening.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour lab results show hyponatremia (low sodium at 124) and low potassium, which are electrolyte imbalances. Your low serum osmolality supports this. These abnormalities are likely related to starting hydrochlorothiazide 2 weeks ago\u2014this medication can cause sodium and potassium loss. Your symptoms (nausea, headache, lightheadedness) are consistent with mild hyponatremia. The good news: your vital signs are stable, you're alert with no neurologic deficits, and your kidney function is normal. However, hyponatremia can worsen and become serious if untreated. The combination of medication timing, lab findings, and symptoms needs prompt medical evaluation to determine if medication adjustment or other treatment is needed.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show low sodium (124) and low potassium (3.2), which developed after starting hydrochlorothiazide 2 weeks ago. This medication can cause both electrolyte losses. Your low serum osmolality confirms the sodium is genuinely low. Your symptoms\u2014nausea, headache, lightheadedness\u2014are consistent with mild hyponatremia (low sodium). The good news: you're alert, oriented, and have no severe symptoms like confusion or seizures. Your vital signs are stable and kidney function is normal. However, sodium of 124 is moderately low and requires prompt medical evaluation to determine the cause and appropriate treatment, especially since the medication likely triggered this.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show low sodium (124) and low potassium (3.2), along with low serum osmolality. These abnormalities are consistent with dilutional hyponatremia\u2014your blood sodium is diluted by excess water. Your symptoms (nausea, headache, lightheadedness) are classic for mild hyponatremia. The timing is important: you started hydrochlorothiazide 2 weeks ago, which can cause electrolyte disturbances including sodium loss and water retention. Your normal kidney function and stable vital signs are reassuring. However, hyponatremia requires prompt evaluation and correction because it can worsen and cause seizures or altered mental status if untreated.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour lab results show hyponatremia (low sodium at 124) and low potassium, which are electrolyte imbalances. Your low serum osmolality confirms this. These abnormalities are consistent with a known side effect of hydrochlorothiazide started 2 weeks ago. Your symptoms\u2014nausea, mild headache, and lightheadedness\u2014align with mild hyponatremia. The good news: your vitals are stable, you're alert and oriented with no neurologic deficits, and your kidney function is normal. Severe hyponatremia causes confusion, seizures, and altered mental status, which you don't have. However, hyponatremia still requires prompt evaluation and correction to prevent worsening.\n\nTRIAGE: C\n\nCONFIDENCE: 85%\n\n---\n\n**Note:** This is not medical advice. Your doctor needs to evaluate whether to adjust/stop the hydrochlorothiazide, check for SIADH or other causes, and guide sodium/potassium correction. Contact your doctor today or go to urgent care if you can't reach them quickly.",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show low sodium (124) and low potassium (3.2), along with low serum osmolality. This pattern is consistent with hyponatremia (low blood sodium), which can cause nausea, headache, and lightheadedness\u2014exactly what you're experiencing. Hydrochlorothiazide is a known cause of hyponatremia, especially in the first weeks of use. The good news: your vital signs are stable, you're alert with no confusion or seizures, and your kidney function is normal. However, hyponatremia requires medical evaluation to determine severity and cause, and to guide safe correction. Rapid sodium correction can be dangerous, so this needs professional management.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

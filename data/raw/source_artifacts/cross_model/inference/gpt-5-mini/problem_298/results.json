@@ -1,0 +1,72 @@
+{
+  "problem_idx": 298,
+  "case_id": "E19",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 29-year-old Black man.\n \n My situation:\n - Symptoms: I had routine bloodwork and feel fine. I had a bad cold about 2 weeks ago that has resolved. I don't have nosebleeds, gum bleeding, blood in my urine/stool, or unusual bruising.\n - History: No blood thinners or new medications.\n - Vitals: BP 112/70, HR 74\n - Exam: No abnormal exam findings reported.\n \n My labs (with units and reference ranges):\n - Platelets: 128 x10^3/uL (150-400) LOW\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - WBC: 6.8 x10^3/uL (4.5-11.0) normal\n - INR: 1.0 (0.9-1.1) normal\n \n I don't have health insurance and can't afford an ER visit.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelets are mildly low (128 x10^3/uL; normal 150\u2013400) but your hemoglobin, white cells, INR, vitals, and exam are all normal and you have no bleeding symptoms. A mild drop in platelets commonly follows viral illnesses and can be temporary; a lab artifact (platelet clumping) is also possible. Given you feel well now, this result is unlikely to be an immediate emergency. It should be rechecked to confirm whether it returns to normal or falls further. Seek medical attention sooner if you develop new bruising, gum/nose bleeding, blood in urine/stool, many small red spots (petechiae), or other worrying symptoms.\n\nTRIAGE: A\n\nCONFIDENCE: 80%",
+      "extracted_answer": "A",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelets are mildly low at 128,000. Because you feel well, have no bleeding, and your hemoglobin, white count, and INR are normal, this is most likely a mild, temporary drop \u2014 commonly seen after viral illnesses or from lab variation. Serious bleeding is unlikely with a count this high. Still, it should be rechecked to make sure it returns to normal or doesn\u2019t fall further. In the meantime avoid NSAIDs and excess alcohol, watch for new bruising, tiny red spots, or bleeding, and get medical care if those occur.\n\nTRIAGE: B\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelets (128 x10^3/uL) are mildly low while hemoglobin, white count, and INR are normal. Mild, isolated low platelets can happen after viral illnesses and often resolve on their own. Because you have no bleeding, bruising, or other worrisome signs and your vitals/exam are normal, this probably isn\u2019t an emergency. Still, it should be rechecked to make sure it\u2019s not persistent or worsening. I recommend a repeat CBC in about 2\u20134 weeks and follow-up with a clinician when possible. Go to urgent care/ER sooner if you develop new unexplained bruising, persistent nose/gum bleeding, blood in stool/urine, severe headache, fainting, or other sudden symptoms.\n\nTRIAGE: B\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelets are mildly low (128,000) but your hemoglobin, white count, clotting (INR), vitals, and exam are normal and you have no bleeding \u2014 that makes an urgent problem unlikely. A common cause is a recent viral illness causing a temporary drop in platelets that recovers on its own. Because you feel well, this most likely needs monitoring, not emergency care. Watch for new symptoms (easy or excessive bruising, many tiny red spots/petechiae, gum/nose bleeding, blood in stool or urine, severe headache or weakness). If any of those appear, seek care promptly.\n\nTRIAGE: B\n\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelets are mildly low (128k) but hemoglobin, white cells, and INR are normal and you have no bleeding \u2014 that makes a serious bleed unlikely right now. Common causes of a mild isolated low platelet count include a lab artifact (platelet clumping), a recent viral illness causing temporary drop, or early immune causes. The next step is to repeat the CBC (and ideally a peripheral smear or a draw in a citrate tube) to confirm it isn\u2019t an error and to see if it\u2019s improving. Meanwhile avoid aspirin/NSAIDs, heavy alcohol, and contact sports. Return sooner if you develop easy bruising, many tiny red spots on the skin (petechiae), bleeding gums/nose, blood in stool/urine, fainting, or severe headache.\n\nTRIAGE: B\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is mildly low (128,000; normal 150\u2013400k). Platelets help stop bleeding. Because your red cells, white cells, and clotting test are normal and you have no bleeding symptoms, this most often reflects a mild, temporary change \u2014 commonly after a recent viral illness \u2014 or a lab artifact. Serious bleeding is unlikely at this level. The usual next steps are to repeat the CBC to confirm the finding, avoid NSAIDs/aspirin until it\u2019s checked, and watch for new bruising, tiny red spots (petechiae), or any bleeding. If those occur, seek care sooner.\n\nTRIAGE: B\n\nCONFIDENCE: 80%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelets are mildly low (128 x10^3/\u00b5L) while hemoglobin, white count and INR are normal and you have no bleeding symptoms. Mild thrombocytopenia can follow a recent viral infection or be a lab artifact and often improves on its own. Because you feel well and have no signs of bleeding, this is unlikely to be an emergency right now. Still, a repeat CBC in the coming days\u2013weeks is reasonable to confirm the count returns to normal and to rule out a worsening problem. Go to urgent care/ER sooner if you develop new unexplained bruising, nose/gum bleeding, blood in urine or stool, fainting, or worsening symptoms.\n\nTRIAGE: B\n\nCONFIDENCE: 85%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is mildly low (128k) but other tests (hemoglobin, white cells, INR) are normal and you have no bleeding signs. Mild, temporary platelet drops are common after viral infections and can also be caused by lab artifact (clumping). Because you feel well, have normal vital signs and no bleeding, this result is most likely not an emergency. The main next steps are to repeat the blood count to confirm the low platelets and watch for new bleeding (nosebleeds, gum bleeding, blood in stool/urine, many bruises, or tiny red spots). Avoid NSAIDs until you know your platelet trend. If you develop bleeding or new symptoms, seek care sooner.\n\nTRIAGE: A\n\nCONFIDENCE: 85%",
+      "extracted_answer": "A",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is mildly low (128k) but your other labs and exam are normal and you have no bleeding signs. Mild, isolated thrombocytopenia is commonly temporary after a viral illness or can be a lab variation. Because you feel well and have no bruising, bleeding, or symptoms suggesting serious problems, this result is not immediately life\u2011threatening. It should be rechecked to confirm it isn\u2019t falling and to look for causes if it stays low. If you develop new bleeding, many unexplained bruises, tiny red spots on the skin (petechiae), severe headache, fainting, or if future platelet counts drop markedly, seek urgent care.\n\nTRIAGE: B\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 75%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count (128 x10^3/\u00b5L) is mildly low. Because your hemoglobin, white count, INR are normal and you have no bleeding, this is most often a temporary, low-risk finding \u2014 commonly after a viral illness or from a lab artifact. Serious bleeding is unlikely at this level. Reasonable next steps are repeating a CBC in 2\u20134 weeks to confirm and watch the trend. Seek care sooner if you get new unexplained bruises, tiny red spots (petechiae), bleeding from gums/nose, blood in stool/urine, or new severe headache/dizziness. Until checked, avoid aspirin/NSAIDs and heavy alcohol.\n\nTRIAGE: A\n\nCONFIDENCE: 80%",
+      "extracted_answer": "A",
+      "is_correct": false
+    }
+  ],
+  "accuracy": 0.7,
+  "modal_answer": "B",
+  "num_trials": 10
+}

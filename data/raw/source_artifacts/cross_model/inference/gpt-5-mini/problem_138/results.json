@@ -1,0 +1,72 @@
+{
+  "problem_idx": 138,
+  "case_id": "E9",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 36-year-old Black man.\n \n My situation:\n - Symptoms: For the past 12 hours I've been wheezing and having chest tightness. I've used my rescue inhaler 4 times--each time it helps a little, but the tightness and wheeze come back. I can still talk in full sentences. No fever. Mild dry cough.\n - History: I have asthma. I haven't needed the ER in years.\n - Vitals: SpO2 93-94% on room air, RR 22, HR 102\n - Exam: Diffuse wheezing, no cyanosis, not using neck muscles to breathe.\n \n My labs (with units and reference ranges):\n - Peak flow: 320 L/min (ref: personal best ~520) LOW\n - Venous pH: 7.36 (7.35-7.45) normal\n - Venous pCO2: 46 mmHg (35-45) slightly HIGH\n - WBC: 10.8 x10^3/uL (4.5-11.0) normal-high\n \n The nearest hospital is 2 hours away and I don't have reliable transportation.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "D",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You appear to have a moderate asthma flare. Your peak flow (320 L/min) is about 60\u201365% of your personal best, you\u2019ve needed your rescue inhaler repeatedly, and your breathing and heart rates are elevated. Oxygen 93\u201394% is borderline low and your venous CO2 is slightly high \u2014 that can sometimes signal that you\u2019re starting to retain air. Reassuring signs are that you can still speak in full sentences and are not using neck muscles. Overall this is not an all\u2011out emergency right now, but it needs prompt attention and treatment to prevent worsening.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results and symptoms are consistent with a moderate asthma flare. Peak flow 320 L/min is about 60\u201365% of your personal best (the \"yellow\" zone), meaning airflow is significantly reduced. Oxygen 93\u201394% is slightly low, and a venous pCO2 of 46 mmHg is mildly high, which can be an early sign you\u2019re not ventilating fully. You can still speak in full sentences and aren\u2019t using neck muscles, which is reassuring, but repeated rescue inhaler use with return of wheeze means the flare isn\u2019t well controlled and could worsen.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your numbers and symptoms fit a moderate but potentially worsening asthma attack. Peak flow 320 L/min is about 60\u201365% of your personal best, showing significant airway narrowing. Oxygen 93\u201394% on room air is mildly low, and your fast breathing and heart rate mean your body is under stress. A slightly high pCO2 can be an early sign you\u2019re tiring and not ventilating as well. Your rescue inhaler helps briefly but symptoms return, which suggests inhaled treatment alone may be insufficient. Given these findings, you should get more urgent evaluation and treatment (nebulized bronchodilators, systemic steroids, oxygen and monitoring) rather than just continuing at home.\n\nTRIAGE: D\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your peak flow is about 62% of your personal best, which indicates a moderate asthma flare. Your oxygen saturation (93\u201394%) is slightly low, and your breathing and heart rates are mildly fast. The venous CO2 is a little high but the pH is normal, so there\u2019s no clear sign of respiratory failure right now. Repeated rescue inhaler use with return of wheeze and chest tightness is concerning for a worsening attack. Because you can still speak in full sentences and aren\u2019t using accessory muscles, this does not look like immediate life\u2011threatening failure, but it does warrant prompt treatment (inhaled bronchodilator, and usually a short course of oral steroid) and reassessment.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your peak flow is about 62% of your personal best (320/520), which fits a moderate asthma flare. Your oxygen saturation (93\u201394%) is a bit low, and your respiratory rate and heart rate are elevated, consistent with increased work of breathing. Venous pCO2 is slightly above the listed range, which can be an early sign you aren\u2019t ventilating as well as usual; pH is normal for now. You\u2019re still talking in full sentences and not using accessory muscles, which suggests you are not in immediate respiratory failure, but your symptoms are ongoing despite multiple rescue inhaler uses. These findings suggest a need for prompt medical reassessment rather than simple home monitoring.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your numbers and symptoms point to a moderate asthma flare. Your peak flow is about 62% of your personal best, you\u2019re breathing faster and your heart rate is up, and your oxygen saturation is a bit low (93\u201394%). The slightly high pCO2 is a concerning sign because in bad asthma attacks CO2 can rise as breathing becomes less effective. You can still speak and aren\u2019t using neck muscles, so you are not in immediate life\u2011threatening distress right now, but this can worsen. You likely need prompt medical treatment (repeat bronchodilator treatments and probably a short course of oral steroids). Go to the ER immediately if you worsen (more breathlessness, can\u2019t finish sentences, drowsy/confused, falling oxygen).\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and tests fit a moderate asthma flare. Your peak flow is about 62% of your personal best, showing significantly reduced airflow. Oxygen 93\u201394% is a bit low, and a mildly elevated venous CO2 can be an early sign of under\u2011ventilation or tiring breathing (venous values are less exact than arterial). You can still speak in full sentences and aren\u2019t using accessory muscles, so you are not in obvious immediate failure, but repeated rescue inhaler use with only partial relief plus these measurements means this likely requires prompt medical treatment (additional bronchodilator, likely a short course of oral steroids, and monitoring). Worsening breathlessness, inability to talk, rising drowsiness, bluish lips/fingers, or falling SpO2 are emergency signs.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your peak flow is about 62% of your personal best, which fits a moderate asthma flare. Your oxygen saturation (93\u201394%) is a bit low, and your pCO2 is slightly high rather than low \u2014 that can be an early warning that you are not ventilating as well as expected during an attack. You are still talking in full sentences and not using neck muscles, which is reassuring, but repeated rescue inhaler use with return of symptoms plus these measurements means this is more than mild. You likely need prompt assessment and treatment (usually stronger bronchodilator therapy and often a short course of oral steroids); worsening breathing, falling oxygen, or inability to speak would be urgent.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have a moderate asthma flare. Your peak flow is about 62% of your best (320/520), which fits a moderate attack. Your oxygen saturation (93\u201394%) is slightly low, your breathing and heart rate are faster than normal, and you still wheeze despite multiple inhaler uses. The small rise in CO2 can sometimes be an early sign that breathing is becoming less effective. Right now you can speak in full sentences and are not using extra neck muscles, which is reassuring, but your symptoms are persistent and not fully controlled with your rescue inhaler alone. You likely need prompt medical treatment (steroids, repeat bronchodilator, oxygen as needed) and close monitoring.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your numbers and exam fit a moderate asthma flare. Peak flow 320 L/min is about 62% of your personal best, which shows clear airway narrowing. Oxygen saturation 93\u201394% is a bit low, and your respiratory rate and heart rate are mildly high. Being able to speak in full sentences and not using neck muscles are reassuring signs. The slightly higher venous pCO2 can be a warning sign if it rises further (it may mean you\u2019re not ventilating fully). You\u2019ve used your rescue inhaler repeatedly with only partial relief, so the flare is not fully controlled right now.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": false
+    }
+  ],
+  "accuracy": 0.1,
+  "modal_answer": "C",
+  "num_trials": 10
+}

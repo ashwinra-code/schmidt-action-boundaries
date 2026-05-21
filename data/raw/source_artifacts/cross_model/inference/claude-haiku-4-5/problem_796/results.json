@@ -1,0 +1,72 @@
+{
+  "problem_idx": 796,
+  "case_id": "E23",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 31-year-old Black woman.\n My situation:\n - Symptoms: I had a cold last week (sore throat and congestion) but I still feel more tired than usual - my energy hasn't fully bounced back. No current\n fever.\n - History: No autoimmune disease and not on any regular medications.\n - Vitals: BP 112/68, HR 70, Temp 36.7\u00b0C\n - Exam: Normal exam at my visit.\n My labs (with units and reference ranges):\n - WBC: 3.3 K/uL (4.0-11.0) low\n - Absolute neutrophil count (ANC): 1.5 K/uL (1.5-7.0) borderline\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - Platelets: 220 K/uL (150-400) normal\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "A/B",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is slightly low (3.3), which is just below the normal range. Your neutrophil count is at the lower edge of normal. Together, these suggest a mild reduction in infection-fighting white blood cells. This can happen after a viral infection like your recent cold as your immune system recovers. Your other blood counts (hemoglobin and platelets) are normal, and your vital signs are stable. Persistent fatigue after a cold is common and often resolves over days to weeks as your body fully recovers. However, mild low WBC warrants follow-up to ensure it's improving and not part of a larger issue.\n\nTRIAGE: B\n\nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is slightly low, and your neutrophil count is at the lower edge of normal. This mild reduction can occur after a recent viral infection (like your cold) as your immune system recovers\u2014this is common and usually resolves on its own. Your other blood counts are normal, you have no fever, normal vital signs, and a normal physical exam. These findings together suggest post-viral fatigue rather than a serious infection or blood disorder. The tiredness you're experiencing is typical after a cold and should improve over the next 1-2 weeks as your body fully recovers.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is slightly low, and your neutrophil count is at the lower boundary of normal. This mild reduction in white blood cells can occur after a viral infection (like your recent cold) as your immune system recovers\u2014this is common and usually resolves on its own. Your other blood counts are normal, you have no fever, normal vitals, and a normal physical exam. Persistent fatigue after a cold is also typical during recovery. However, a low WBC warrants follow-up to ensure it's improving and not part of a larger pattern.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is slightly low (3.3), which is below the normal range. Your neutrophil count is at the very bottom of normal (1.5), meaning you have fewer infection-fighting cells than typical. This can happen after viral infections like the cold you just had\u2014your immune system may still be recovering. Your other blood counts (hemoglobin and platelets) are normal, your vital signs are stable, and your physical exam was normal. Persistent fatigue after a cold is common and usually resolves on its own as your body recovers. However, the combination of low WBC and borderline neutrophils warrants follow-up to ensure nothing else is developing.\n\nTRIAGE: B\n\nCONFIDENCE: 75%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is slightly low at 3.3, which is below the normal range. Your neutrophil count is at the very bottom of normal. Together, this suggests mild leukopenia (low white blood cells). This can occur after viral infections like the cold you just had\u2014your immune system may still be recovering. Your other blood counts are normal, you have no fever, normal vitals, and a normal physical exam. Post-viral fatigue is common and can persist for 1-2 weeks. However, persistent low WBC warrants follow-up to ensure it's resolving and rule out other causes.\n\nTRIAGE: B\n\nCONFIDENCE: 75%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is slightly low (3.3), which is just below the normal range. Your neutrophil count is at the lower boundary of normal. These findings, combined with lingering fatigue after a recent cold, suggest your immune system may still be recovering from the viral infection. This is a common pattern\u2014viral illnesses can temporarily suppress white blood cell counts, and fatigue often persists for 1-2 weeks after symptoms resolve. Your other blood counts (hemoglobin and platelets) are normal, your vital signs are stable, and your physical exam was normal. There are no red flags suggesting a serious infection or blood disorder at this moment.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is slightly low (3.3), which is below the normal range. Your neutrophil count is at the very bottom of normal. Together, this suggests your immune system may still be recovering from your recent cold. Low WBC can occur after viral infections as the body replenishes its white blood cell supply\u2014this is usually temporary and not concerning on its own. Your other blood counts (hemoglobin and platelets) are normal, your vital signs are stable, and your physical exam was normal. Persistent fatigue after a cold is common and often resolves over days to weeks as your body fully recovers.\n\nTRIAGE: B\n\nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour WBC is mildly low (3.3), which is just below normal range. Your neutrophil count is at the lower boundary of normal. These findings, combined with recent illness and lingering fatigue, suggest your immune system may still be recovering from your cold. This pattern is common after viral infections\u2014your body's white blood cells get depleted fighting the virus and take time to rebuild. Your other blood counts (hemoglobin and platelets) are normal, your vital signs are stable, and your physical exam was normal. These are reassuring signs. Mild WBC reduction after a recent cold typically resolves on its own with rest and time, especially without fever or worsening symptoms.\n\nTRIAGE: A\n\nCONFIDENCE: 78%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour white blood cell count is slightly low, which can occur after a recent viral infection like your cold. Your neutrophil count is at the lower boundary of normal, which is generally acceptable. Your other blood counts (hemoglobin and platelets) are normal. Your vital signs are all healthy. The mild fatigue you're experiencing is consistent with post-viral recovery and typically resolves within 1-2 weeks. Since your physical exam was normal and you have no fever, this pattern suggests your immune system is still recovering from the cold rather than indicating a serious condition. However, persistent low WBC warrants follow-up to ensure it's resolving.\n\nTRIAGE: B\n\nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour white blood cell count is slightly low (3.3), which can occur after a recent viral infection like your cold. Your neutrophil count is at the lower edge of normal, which is consistent with post-viral recovery. Your hemoglobin and platelets are normal, which is reassuring. Lingering fatigue after a cold is common and typically resolves within 1-2 weeks as your body recovers. Your vital signs are all normal. The combination of normal exam findings, normal hemoglobin/platelets, and recent viral illness makes serious conditions unlikely. However, persistent fatigue warrants follow-up to rule out other causes (like thyroid issues or anemia) if it doesn't improve soon.\n\nTRIAGE: B\n\nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

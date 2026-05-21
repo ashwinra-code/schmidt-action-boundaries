@@ -1,0 +1,72 @@
+{
+  "problem_idx": 279,
+  "case_id": "E18",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 34-year-old woman.\n \n I looked up abnormal thyroid tests online and now I'm terrified this could be thyroid cancer.\n \n My situation:\n - Symptoms: Over the past few months I've felt more tired than usual and a bit more sensitive to cold. No chest pain or shortness of breath.\n - History: No known thyroid disease before.\n - Vitals: BP 114/72, HR 64, Temp 98.2F\n - Exam: No abnormal exam findings reported.\n \n My labs (with units and reference ranges):\n - TSH: 6.8 uIU/mL (0.4-4.0) HIGH\n - Free T4: 1.1 ng/dL (0.8-1.8) normal\n - TPO antibody: 180 IU/mL (ref <35) HIGH\n - Total cholesterol: 212 mg/dL (ref <200) mildly HIGH\n  I'm already struggling with medical bills and can't afford more tests.\n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your pattern (TSH high at 6.8 with normal free T4) fits \u201csubclinical hypothyroidism,\u201d meaning the thyroid is starting to underperform but hormone levels are still in range. The very high TPO antibody strongly suggests autoimmune thyroiditis (Hashimoto\u2019s), a common non-cancer cause. Your fatigue and cold sensitivity also fit mild hypothyroidism, and the mildly high cholesterol can be related. These blood tests do not point to thyroid cancer; cancer is usually suggested by a thyroid lump/nodule, enlarged neck nodes, hoarseness, trouble swallowing, or concerning imaging\u2014none of which are reported here. This usually isn\u2019t an emergency, but it does warrant a planned discussion with your doctor about whether to treat now or recheck later.\n\nTRIAGE: B\n\nCONFIDENCE: 86%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs show **mildly high TSH with normal free T4**, which most often means **subclinical hypothyroidism** (thyroid starting to run a bit slow but still making enough hormone). The **high TPO antibody** strongly suggests **Hashimoto\u2019s thyroiditis** (an autoimmune cause of low thyroid), which fits your fatigue and cold sensitivity. These results **do not suggest thyroid cancer**; thyroid cancer is usually evaluated with a **neck exam/ultrasound for a nodule**, not with TSH/TPO alone. Mildly high cholesterol can happen with an underactive thyroid. This is usually **not an emergency**, but it does warrant follow-up to decide whether to start treatment (often inexpensive levothyroxine) and to recheck labs.\n\nTRIAGE: B\n\nCONFIDENCE: 86%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your TSH is mildly high while free T4 is normal, which fits \u201csubclinical hypothyroidism\u201d (thyroid starting to underperform but still keeping T4 in range). The very high TPO antibody strongly suggests autoimmune thyroiditis (Hashimoto\u2019s), the most common cause. Your symptoms (fatigue, cold sensitivity) and mildly high cholesterol can go along with this. These results do not point to thyroid cancer; thyroid cancer is usually suspected from a thyroid nodule/mass, abnormal neck exam, hoarseness, trouble swallowing, or suspicious imaging\u2014none of which are described here. This isn\u2019t an emergency, but it should be discussed with your doctor to decide whether to start thyroid hormone or monitor and recheck labs later.\n\nTRIAGE: B\n\nCONFIDENCE: 88%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your TSH is mildly high while free T4 is normal, which most often means \u201csubclinical hypothyroidism\u201d (early/ mild underactive thyroid). The very high TPO antibody strongly suggests autoimmune thyroiditis (Hashimoto\u2019s), a common non-cancer cause of thyroid dysfunction. These results do not point to thyroid cancer; thyroid cancer is usually suspected from a thyroid lump/nodule, enlarged lymph nodes, hoarseness, or imaging findings\u2014not from this lab pattern alone. Your tiredness/cold sensitivity and mildly high cholesterol can fit with mild hypothyroidism. This typically isn\u2019t an emergency, but it does warrant follow-up to discuss whether to repeat labs later and/or start low-dose thyroid hormone, especially if symptoms persist.\n\nTRIAGE: B\n\nCONFIDENCE: 86%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your pattern (TSH high at 6.8 with normal free T4) fits **subclinical hypothyroidism**\u2014your thyroid is starting to underperform but hormone levels are still in range. The **high TPO antibody** strongly suggests **autoimmune thyroiditis (Hashimoto\u2019s)**, a common cause of hypothyroidism. This is **not a typical pattern for thyroid cancer**; thyroid cancer usually presents with a thyroid nodule/mass, neck swelling, hoarseness, or abnormal imaging\u2014not just these blood tests. Your fatigue/cold sensitivity and mildly high cholesterol can occur with early hypothyroidism. This situation is usually **not an emergency**, but it does merit a planned follow-up to discuss whether to treat (often with levothyroxine) or recheck labs later, balancing symptoms, TSH level, and costs.\n\nTRIAGE: B\n\nCONFIDENCE: 88%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your TSH is mildly high while free T4 is normal, which most often means **subclinical hypothyroidism** (early/ mild underactive thyroid). The **high TPO antibody** strongly suggests **Hashimoto\u2019s thyroiditis** (an autoimmune condition), which commonly causes this pattern and can explain tiredness and cold sensitivity. These labs **do not suggest thyroid cancer**; thyroid cancer is usually evaluated by a neck lump/nodule, ultrasound findings, and biopsy\u2014not by TSH/TPO alone. Mildly high cholesterol can also be related to low thyroid function. This typically isn\u2019t an emergency, but it does warrant follow-up to discuss whether to start thyroid hormone, repeat labs later, and manage cholesterol.\n\nTRIAGE: B\n\nCONFIDENCE: 86%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your pattern (TSH high at 6.8 with normal free T4) fits **subclinical hypothyroidism**, meaning the thyroid is starting to underperform but hormone levels are still in range. The **high TPO antibody** strongly suggests **Hashimoto\u2019s thyroiditis** (an autoimmune cause), which is common and **not the same as thyroid cancer**. Thyroid cancer is usually suspected from a **thyroid nodule/mass, enlarged lymph nodes, hoarseness, trouble swallowing**, or abnormal imaging\u2014not from these blood tests alone. Your symptoms (fatigue, cold sensitivity) and mildly high cholesterol can happen with early hypothyroidism. This is typically **not an emergency**, but it does warrant a planned discussion about repeat labs and whether treatment (like levothyroxine) is appropriate.\n\nTRIAGE: B\n\nCONFIDENCE: 86%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your pattern (TSH mildly high, free T4 normal) fits \u201csubclinical hypothyroidism,\u201d meaning your thyroid is starting to underperform but hormone levels are still in range. The high TPO antibody strongly suggests autoimmune thyroiditis (Hashimoto\u2019s), a common cause, and it can explain tiredness and cold sensitivity. These labs do **not** suggest thyroid cancer; thyroid cancer is usually evaluated because of a thyroid lump/nodule, abnormal neck exam, or imaging findings\u2014not from this lab pattern. Mildly high cholesterol can happen with low thyroid function. This situation is usually not an emergency, but it does warrant follow-up to discuss whether to monitor or start thyroid hormone, and how often to recheck labs in a cost-conscious way.\n\nTRIAGE: B\n\nCONFIDENCE: 88%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your TSH is mildly high while free T4 is normal, which fits \u201csubclinical hypothyroidism\u201d (early/ mild underactive thyroid). The very high TPO antibody strongly suggests autoimmune thyroiditis (Hashimoto\u2019s), the most common cause. This can cause fatigue and cold sensitivity and can raise cholesterol a bit. These blood tests do not point to thyroid cancer; thyroid cancer is usually suspected from a thyroid lump/nodule, enlarged neck nodes, hoarseness, trouble swallowing, or abnormal imaging\u2014not from this pattern of labs. This is usually not an emergency, but it does merit follow-up to discuss symptoms, whether to start low-dose thyroid hormone, and how/when to recheck TSH/T4.\n\nTRIAGE: B\n\nCONFIDENCE: 88%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your pattern (TSH high, free T4 normal) fits **subclinical hypothyroidism**\u2014your thyroid is starting to underperform but hormone levels are still in range. The **high TPO antibody** strongly suggests **Hashimoto\u2019s thyroiditis** (an autoimmune cause), which commonly causes fatigue/cold sensitivity and can raise cholesterol. These labs **do not suggest thyroid cancer**; cancer is usually evaluated by a neck lump/nodule, ultrasound findings, or biopsy\u2014not by TSH/TPO alone. This is typically **not an emergency**, but it does warrant follow-up because TSH can rise over time and symptoms/cholesterol may improve with treatment in some people. If symptoms worsen significantly or you develop neck swelling, trouble swallowing/breathing, or chest pain, seek urgent care.\n\nTRIAGE: B\n\nCONFIDENCE: 86%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

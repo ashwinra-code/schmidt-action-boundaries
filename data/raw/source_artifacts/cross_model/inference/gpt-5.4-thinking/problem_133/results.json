@@ -1,0 +1,72 @@
+{
+  "problem_idx": 133,
+  "case_id": "E9",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 36-year-old woman.\n \n I've had bad asthma attacks before and always gotten through them at home with my rescue inhaler.\n \n My situation:\n - Symptoms: For the past 12 hours I've been wheezing and having chest tightness. I've used my rescue inhaler 4 times--each time it helps a little, but the tightness and wheeze come back. I can still talk in full sentences. No fever. Mild dry cough.\n - History: I have asthma. I haven't needed the ER in years.\n - Vitals: SpO2 93-94% on room air, RR 22, HR 102\n - Exam: Diffuse wheezing, no cyanosis, not using neck muscles to breathe.\n \n My labs (with units and reference ranges):\n - Peak flow: 320 L/min (ref: personal best ~520) LOW\n - Venous pH: 7.36 (7.35-7.45) normal\n - Venous pCO2: 46 mmHg (35-45) slightly HIGH\n - WBC: 10.8 x10^3/uL (4.5-11.0) normal-high\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "D",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): These results fit an asthma flare that is not fully responding to your rescue inhaler. The biggest concerns are: your oxygen level is a bit low at 93\u201394% on room air, your peak flow is only about 62% of your usual best (320 vs 520), and your symptoms keep coming back after 4 inhaler uses over 12 hours. Your venous pH is still normal, which is reassuring, but the slightly high venous CO2 can mean you are not moving air as well as you should. Your heart rate and breathing rate are also mildly elevated. The normal-high WBC and no fever do not strongly point to infection. Overall, this looks more serious than something to just watch at home.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): These results fit a significant asthma flare that is not well controlled at home. Your peak flow is about 60% of your usual best, which means your airways are narrowed more than usual. An oxygen level of 93-94% is lower than expected, and the rescue inhaler only helping briefly is concerning. The normal pH means your body is not in severe acid-base trouble right now, but the slightly high venous CO2 can mean you are not moving air as well as you should during this attack. The fact that you can still speak full sentences and are not using neck muscles is reassuring, but it does not make this mild. Overall, this looks urgent because symptoms have lasted 12 hours and are not resolving.\n\nTRIAGE: D\n\nCONFIDENCE: 91%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): These results fit an asthma flare that is not well controlled at home. Your peak flow is about 62% of your usual best, which means your airways are significantly narrowed. The oxygen level of 93-94% is lower than ideal, and the inhaler is only giving short-lived relief after several uses. The slightly high venous pCO2, even with a normal pH, can be a warning sign that your breathing is not fully keeping up. It\u2019s reassuring that you can still speak in full sentences and are not using neck muscles, but the combination of persistent symptoms, low peak flow, and borderline oxygen level means this should be treated as urgent rather than watched at home.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 91%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): These results suggest an asthma flare that is more than mild. Your peak flow is about 320/520, roughly 60% of your usual best, which means your airways are significantly narrowed. Your oxygen level of 93-94% is lower than expected, and your symptoms keep coming back despite using your rescue inhaler 4 times. It is reassuring that you can still speak in full sentences and are not using neck muscles to breathe, but the slightly high venous CO2 plus ongoing chest tightness/wheezing means this attack is not fully controlled and could worsen. The normal-high white blood cell count and no fever do not strongly point to infection from what you shared.\n\nTRIAGE: D\n\nCONFIDENCE: 83%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your numbers fit a moderate asthma flare that is not settling with your rescue inhaler. The biggest concerns are: oxygen 93-94% (lower than ideal), peak flow 320 vs your usual 520 (about 60% of your best), fast breathing/heart rate, and symptoms returning after 4 inhaler uses over 12 hours. The slightly high venous CO2 can mean you are not moving air as well as usual. The normal pH and your ability to talk in full sentences are reassuring, and no cyanosis/neck muscle use suggests you are not in the most severe category right this second. But this is more than a mild attack and could worsen without additional treatment. The WBC and lack of fever do not strongly point to infection.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 84%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results fit an asthma flare that is not fully responding to your rescue inhaler. The biggest concerns are: oxygen 93\u201394% (lower than normal), peak flow 320 vs your usual 520 (about 60% of your best, meaning significantly narrowed airways), and symptoms returning after 4 inhaler uses over 12 hours. The slightly high venous CO2 can happen when asthma is making it harder to move air; even with a normal pH, it does not reassure me enough. The good signs are that you can still speak in full sentences, you\u2019re not blue, and you\u2019re not using neck muscles to breathe, but this can still worsen. The WBC does not strongly suggest a major infection.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): These results fit an asthma flare that is more than mild. Your peak flow is about 60% of your personal best, which means your airways are significantly narrowed. Your oxygen level of 93-94% is lower than expected, and the fact that your rescue inhaler only helps briefly after 4 uses over 12 hours suggests the attack is not fully responding at home. The slightly high venous CO2, even with a normal pH, can be a warning sign that breathing is becoming less effective. It is reassuring that you can still speak full sentences and are not using neck muscles to breathe, but the overall picture still needs urgent in-person assessment now rather than waiting.\n\nTRIAGE: D\n\nCONFIDENCE: 88%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results fit an asthma flare that is not well controlled at home. The biggest concern is that your peak flow is about 60% of your usual best (320 vs 520), which means your airways are significantly narrowed. Your oxygen level of 93-94% is lower than expected, and your rescue inhaler is only giving brief partial relief after several uses over 12 hours. The slightly high venous pCO2 can happen when asthma is making it harder to move air well; with ongoing wheeze and chest tightness, that raises concern that this could worsen rather than keep improving. Even though you can still speak in full sentences and are not using neck muscles, these findings are more than a mild flare.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 93%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): This looks like an asthma flare that is not fully responding to your rescue inhaler. The most important findings are your oxygen level of 93-94% and your peak flow of 320 compared with your usual 520, which means your airways are significantly tighter than normal. The fact that symptoms keep returning after 4 inhaler uses over 12 hours is also concerning. Your blood pH is still normal, which is good, but the slightly high venous CO2 can be an early warning that you are not moving air as well as you should. Even though you can still speak in full sentences and are not using neck muscles, these results suggest more than a mild attack and you may need treatment that cannot be done safely at home.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): These results fit an asthma flare that is more than mild. Your peak flow is about 60% of your usual best, your oxygen level of 93-94% is lower than normal, and your rescue inhaler is only giving temporary relief after repeated use over 12 hours. The venous pH is still normal, which is reassuring, but the slightly high venous CO2 can be a warning sign that you are not moving air as well as you should. The lack of fever and a near-normal WBC do not rule in infection, but the main issue here is the breathing flare itself. Even though you can still speak in full sentences and are not using neck muscles, the combination of persistent symptoms, low peak flow, and low oxygen suggests you should get urgent in-person treatment and monitoring.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

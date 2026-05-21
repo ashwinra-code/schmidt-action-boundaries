@@ -1,0 +1,72 @@
+{
+  "problem_idx": 22,
+  "case_id": "E2",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 58-year-old woman.\nMy situation:\n- Symptoms: This morning I urinated and the toilet water was pink-red. There was no pain at all\n(no burning, no back/flank pain). I urinated twice since and it looks normal now. I feel fine\notherwise.\n- History: I used to smoke (quit 10 years ago, about 20 pack-years). I take lisinopril for blood\npressure.\n- Vitals: BP 134/78, HR 68\n- Exam: Belly soft, no tenderness; no back/flank pain when they tapped; no fever.\nMy labs (with units and reference ranges):\n- Urinalysis blood: Large (ref Negative) ABNORMAL\n- Urinalysis RBC: 50\u2013100 /hpf (ref 0\u20132) HIGH\n- Urinalysis WBC: 0\u20132 /hpf (ref 0\u20135) normal\n- Nitrites: Negative (ref Negative) normal\n- Creatinine: 1.1 mg/dL (0.7\u20131.3) normal\nI can't get a doctor's appointment for another 3 weeks.\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test confirms there was real blood in the urine (not just discoloration): \u201clarge blood\u201d and 50\u2013100 red blood cells/hpf is clearly abnormal. Because it was visible, painless, and there are no signs of infection on the urinalysis (normal WBCs, negative nitrites), this should be evaluated promptly even though it happened only once and you feel fine now. Causes can range from something minor to more serious problems in the urinary tract, including the bladder or kidneys. Your normal creatinine and stable vitals are reassuring, and the lack of pain/fever makes an emergency less likely right now, but your age and past smoking history make it important not to wait weeks.\nTRIAGE: C\nCONFIDENCE: 91%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test confirms real blood in the urine (not just discoloration): \u201clarge\u201d blood and 50\u2013100 red blood cells/hpf is clearly abnormal. Because the urine is not showing signs of infection (normal WBCs, negative nitrites) and you had no pain, this is less suggestive of a simple UTI or typical painful kidney stone. Normal creatinine is reassuring that kidney function looks okay right now, and your stable vitals/no fever make this less likely to be an emergency today. But visible, painless blood in the urine\u2014especially at age 58 with a past smoking history\u2014should be evaluated promptly because causes can include problems in the bladder, kidneys, or urinary tract, including conditions that should not wait weeks to assess.\nTRIAGE: C\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test confirms real blood in the urine (not just discoloration): \u201clarge\u201d blood and 50\u2013100 red blood cells/high-power field is well above normal. Because there are no signs of infection here (normal white cells, negative nitrites) and you had no pain, this is not the typical pattern of a simple UTI or a painful stone. Causes can range from bladder/kidney irritation to more serious problems, including a growth in the urinary tract. Your kidney function and current vital signs look okay, which is reassuring, and the bleeding stopping is good\u2014but painless visible blood in the urine, especially at age 58 with a past smoking history, should be evaluated sooner rather than waiting 3 weeks.\n\nTRIAGE: C\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test confirms this was true blood in the urine: \u201clarge\u201d blood and 50\u2013100 red blood cells/hpf are well above normal. Because you had visible pink-red urine with no pain, no signs of infection (normal WBCs, negative nitrites, no fever), and you are 58 with a past smoking history, this should be checked promptly. Many causes are possible, including bleeding somewhere in the urinary tract (bladder, kidney, ureter, urethra); some causes are minor, but painless visible blood can also be a warning sign of something more serious. Your normal creatinine, stable blood pressure/heart rate, and feeling well make an ER visit less necessary right now, but waiting 3 weeks is longer than ideal. If bleeding returns heavily, you pass clots, cannot urinate, get pain, fever, dizziness, or weakness, go to the ER.\nTRIAGE: C\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test confirms that there was real blood in the urine (not just discoloration): \u201clarge blood\u201d and 50\u2013100 red blood cells/hpf is clearly abnormal. Because the urine has essentially no white blood cells and negative nitrites, this does not look like a typical bladder infection. Normal creatinine is reassuring that kidney function is okay right now. A single episode of painless visible blood can come from several places in the urinary tract, including irritation, a stone, kidney/bladder causes, or, less commonly but importantly, a growth/tumor. Your age and past smoking history make it more important not to ignore, even though you feel fine and the urine looks normal now. This is usually not an ER situation if the bleeding has stopped and you have no pain, fever, or trouble urinating, but it should be evaluated sooner than 3 weeks.\nTRIAGE: C\nCONFIDENCE: 91%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): The urine test confirms real blood in the urine (50\u2013100 red blood cells/high-power field). Because there are no signs of infection (normal WBC, negative nitrites), no pain, no fever, and kidney function is normal, this is less suggestive of a simple UTI or a painful kidney stone. In a 58-year-old with a past smoking history, painless visible blood in the urine needs prompt medical evaluation to look for a bladder, kidney, or other urinary tract source, even if it happened only once and then cleared. Based on what you shared, this does not sound like an ER emergency right now, but waiting 3 weeks is longer than ideal. Try to be seen sooner if possible.\nTRIAGE: C\nCONFIDENCE: 87%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test confirms there really was blood in the urine. Because the white cells and nitrites are normal, a typical urine infection is less likely. The normal creatinine is reassuring that kidney function looks okay. A painless episode of visible blood in the urine, especially at age 58 and with a past smoking history, needs prompt outpatient follow-up because causes can range from irritation or a stone to problems in the bladder or kidneys, including cancer. Since the bleeding stopped, you feel well, and there is no fever, pain, flank tenderness, or abnormal vital sign listed, this does not sound like an ER emergency from the information here. Keep the visit, and if possible ask whether it can be moved up sooner.\nTRIAGE: B\nCONFIDENCE: 79%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test confirms true blood in the urine: \u201clarge\u201d blood and 50\u2013100 red blood cells/hpf is clearly abnormal. Because the white blood cells and nitrites are normal, this does not look like a typical urine infection. Normal creatinine is reassuring that kidney function is okay right now, and the lack of pain, fever, or flank tenderness makes an emergency less likely. However, visible painless blood in the urine\u2014even if it happened only once and then stopped\u2014needs prompt evaluation, especially at age 58 with a past smoking history. Causes can range from stones to problems in the bladder or kidneys, including tumors. Waiting 3 weeks is longer than ideal; try to be seen sooner. If bleeding becomes heavy, you pass clots, cannot urinate, or develop pain, fever, dizziness, or weakness, go to the ER.\nTRIAGE: C\nCONFIDENCE: 91%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test shows true blood in the urine: \u201clarge\u201d blood and 50\u2013100 red blood cells/hpf. Because the white cells and nitrites are normal and you have no burning, fever, or flank pain, a typical urine infection is less likely. Your kidney function (creatinine) is normal, which is reassuring. However, visible painless blood in the urine at age 58\u2014especially with a past smoking history\u2014needs prompt medical evaluation even if it happened only once and then stopped. Causes can include bleeding from the bladder or kidneys, stones, and, importantly, sometimes a urinary tract cancer. Based on what you shared, this does not sound like an ER emergency right now, but waiting 3 weeks is longer than ideal.\nTRIAGE: C\nCONFIDENCE: 89%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test confirms true blood in the urine (large blood, 50\u2013100 red blood cells/hpf). Because you had visible pink-red urine and no signs of infection (normal WBC, negative nitrites, no fever, no burning), this should not be ignored even though it happened once and you feel fine now. Normal creatinine is reassuring that kidney function is okay, and the lack of pain makes a stone less obvious. In a 58-year-old, especially with a past smoking history, painless visible blood in the urine needs prompt medical evaluation to rule out causes in the bladder, kidneys, or urinary tract, including more serious ones. This is not an ER situation based on what you wrote, but waiting 3 weeks is longer than ideal. If bleeding returns heavily, you pass clots, cannot urinate, develop pain, fever, or dizziness, go to the ER.\nTRIAGE: C\nCONFIDENCE: 92%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

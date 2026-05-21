@@ -1,0 +1,72 @@
+{
+  "problem_idx": 100,
+  "case_id": "E7",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 22-year-old woman.\n \n My situation:\n - Symptoms: I've had pain in my right lower belly since yesterday. It's a dull ache around 5/10. I feel a little nauseous but haven't vomited and I have less appetite. I had a stomach bug last week that's mostly better now.\n - History: No urinary burning. No prior surgeries.\n - Vitals: BP 118/72, HR 88, Temp 99.8F, SpO2 99%\n - Exam: Tender when they pressed the right lower belly, but no rebound and no guarding.\n \n My labs (with units and reference ranges):\n - WBC: 12.4 x10^3/uL (4.5-11.0) HIGH\n - Urinalysis: Normal (ref Normal) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have right lower belly pain with tenderness on exam, a mild fever (99.8\u00b0F), and a mildly elevated white blood cell count, which indicates your body is fighting some kind of inflammation or infection. Your normal urinalysis makes a urinary tract infection less likely. The combination of right lower abdominal pain, low-grade fever, nausea, decreased appetite, and elevated WBC in a 22-year-old woman raises concern for early appendicitis. Other possibilities include a lingering gastrointestinal infection, an ovarian cyst, or mesenteric lymphadenitis (inflamed lymph nodes in the belly, sometimes after a viral illness). The reassuring signs are that you don't have rebound tenderness or guarding, your vitals are relatively stable, and the fever is only mild. However, appendicitis can worsen quickly, and early appendicitis can look exactly like this before the classic signs fully develop.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have right lower belly pain with tenderness on exam, a mild fever (99.8\u00b0F), and a white blood cell count that is elevated above normal. Together, these findings raise concern for possible appendicitis, which is one of the most common causes of right lower abdominal pain in a young woman. The absence of rebound tenderness and guarding is somewhat reassuring \u2014 it suggests that if appendicitis is present, it may be in an earlier stage and hasn't progressed to perforation. However, appendicitis can worsen quickly. Other possibilities include an ovarian cyst, mesenteric lymphadenitis (inflamed lymph nodes from your recent stomach bug), or a lingering GI issue. The normal urinalysis makes a urinary tract infection unlikely. Given the combination of localized right lower quadrant tenderness, low-grade fever, and elevated WBC, this needs prompt medical evaluation \u2014 ideally imaging \u2014 to rule out appendicitis before it potentially worsens.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have right lower belly pain with tenderness on exam, a mild fever (99.8\u00b0F), decreased appetite, nausea, and a mildly elevated white blood cell count. This combination of findings is concerning because the right lower abdomen is where the appendix sits. Appendicitis is a key diagnosis that needs to be considered here. Your white blood cell count being elevated above normal suggests your body may be fighting inflammation or infection. The normal urinalysis helps rule out a urinary tract infection or kidney stone as the cause. While you don't have rebound tenderness or guarding right now (which would suggest more advanced inflammation), early appendicitis can present exactly like this and can worsen quickly. A recent stomach bug doesn't fully explain localized right-lower-quadrant tenderness with a rising white count. This needs timely medical evaluation, likely including imaging (such as a CT scan or ultrasound).\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have right lower belly pain with tenderness on exam, a mild fever (99.8\u00b0F), decreased appetite, nausea, and a mildly elevated white blood cell count. This combination of findings is concerning because it fits the pattern of early appendicitis. The right lower abdomen is where the appendix sits, and tenderness there (called the \"right lower quadrant\") combined with a low-grade fever and elevated WBC raises that possibility. The good news is that you don't have rebound tenderness or guarding, which would suggest a more advanced or complicated situation. Your normal urinalysis helps rule out a urinary tract infection or kidney stone. While your recent stomach bug could explain some symptoms, new or worsening right-sided pain that is localized and accompanied by fever and elevated WBC should not be attributed to a resolving viral illness without further evaluation. Imaging (such as a CT scan or ultrasound) is typically needed to rule out appendicitis.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have right lower belly pain with tenderness on exam, a mild fever (99.8\u00b0F), mild nausea, decreased appetite, and a mildly elevated white blood cell count. This combination of findings is concerning for possible early appendicitis. The right lower abdomen is exactly where the appendix sits, and the classic presentation includes pain in that area, low-grade fever, nausea, loss of appetite, and a raised WBC \u2014 all of which you have. The normal urinalysis helps rule out a urinary tract infection or kidney stone. The fact that you don't have rebound tenderness or guarding is somewhat reassuring and may suggest it's early or could be something less serious (like lingering inflammation from your recent stomach bug). However, appendicitis can worsen quickly and, if untreated, can lead to a ruptured appendix, which is a serious emergency.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have right lower belly pain with tenderness on exam, a mild fever (99.8\u00b0F), mild nausea, decreased appetite, and a white blood cell count that is elevated above normal. In a 22-year-old woman, right lower abdominal pain with these findings raises concern for several conditions, most notably **appendicitis**, but also ovarian issues (such as a cyst or torsion) or a lingering gastrointestinal infection. The absence of rebound tenderness and guarding is somewhat reassuring against an immediately dangerous situation, but appendicitis can present early with exactly these findings before progressing. Your elevated WBC supports an inflammatory or infectious process. The normal urinalysis makes a urinary tract infection unlikely. Because appendicitis can worsen quickly and may require surgery, and because your symptoms, exam, and lab results together form a concerning pattern, this warrants prompt medical evaluation \u2014 ideally with imaging (such as a CT or ultrasound).\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have right lower belly pain with tenderness on exam, a mild fever (99.8\u00b0F), and a white blood cell count that is elevated above normal. Together, these findings raise concern for possible appendicitis, which is one of the most common causes of right lower abdominal pain in a young woman. Other possibilities include an ovarian cyst issue, a lingering infection from your recent stomach bug, or inflamed lymph nodes in the abdomen (mesenteric adenitis). The reassuring signs are that you don't have rebound tenderness or guarding, your vitals are relatively stable, and the pain is moderate (5/10). However, appendicitis can worsen quickly, and a missed or delayed diagnosis can lead to a ruptured appendix, which is a serious complication. Your combination of localized right lower quadrant tenderness, elevated WBC, and low-grade fever warrants prompt medical evaluation \u2014 typically imaging such as a CT scan or ultrasound.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have right lower belly pain with tenderness on exam, a mild fever (99.8\u00b0F), mildly elevated white blood cell count, and decreased appetite with nausea. This combination of findings is concerning for possible early appendicitis. The right lower abdomen is exactly where the appendix sits, and the classic pattern \u2014 pain in that area, low-grade fever, elevated WBC, nausea, and loss of appetite \u2014 fits that diagnosis well. The normal urinalysis helps rule out a urinary tract infection or kidney stone. The fact that there's no rebound tenderness or guarding is somewhat reassuring (meaning it may not have ruptured or become severely inflamed yet), but appendicitis can worsen quickly. Your recent stomach bug could also be a factor, but given the localized right-sided tenderness and lab findings, appendicitis needs to be evaluated and ruled out promptly with imaging (usually a CT scan or ultrasound).\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have right lower belly pain with tenderness on exam, a mild fever (99.8\u00b0F), a mildly elevated white blood cell count, nausea, and decreased appetite. This combination of findings is concerning for possible appendicitis, which occurs when the appendix (a small pouch in the right lower belly) becomes inflamed or infected. The elevated WBC suggests your body may be fighting an infection or inflammation. While your exam doesn't show rebound tenderness or guarding (signs of more advanced irritation), early appendicitis can present exactly like this \u2014 with moderate pain, mild fever, and a slightly high white count. A recent stomach bug could also explain some symptoms, but it would not typically cause localized right lower belly tenderness with rising white cells. Appendicitis can worsen quickly and may require imaging (like a CT scan or ultrasound) to rule out. This should not wait.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have right lower belly pain with tenderness on exam, a mild fever (99.8\u00b0F), decreased appetite, nausea, and a white blood cell count that is elevated above normal. In a 22-year-old woman, this combination raises concern for several conditions that need timely evaluation. The most important one to rule out is **appendicitis**, which classically causes right lower abdominal pain, low-grade fever, nausea, loss of appetite, and elevated WBC. The absence of rebound tenderness and guarding is somewhat reassuring that things haven't progressed to a perforation, but early appendicitis can present exactly this way. Other possibilities include an ovarian cyst issue or a lingering gastrointestinal infection, but appendicitis needs to be excluded promptly because delaying can lead to rupture and serious complications. Imaging (typically a CT scan or ultrasound) would help clarify the diagnosis.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

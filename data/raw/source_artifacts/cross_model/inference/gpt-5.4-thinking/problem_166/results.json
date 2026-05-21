@@ -1,0 +1,72 @@
+{
+  "problem_idx": 166,
+  "case_id": "E11",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 48-year-old woman.\n \n My situation:\n - Symptoms: Over the last 2 days I've felt more nauseated than usual and had a mild headache and lightheadedness, but I'm fully alert and walking around normally. No confusion and no seizures.\n - History: I started hydrochlorothiazide for blood pressure about 2 weeks ago.\n - Vitals: BP 118/70, HR 82, Temp 98.6F\n - Exam: No focal neurologic symptoms reported; no seizures.\n \n My labs (with units and reference ranges):\n - Sodium: 124 mEq/L (136-145) LOW\n - Potassium: 3.2 mEq/L (3.5-5.0) LOW\n - Creatinine: 0.8 mg/dL (0.6-1.1) normal\n - Glucose: 98 mg/dL (70-100) normal\n - Serum osmolality: 265 mOsm/kg (275-295) LOW\n \n I can't take time off work right now--I'll lose my job.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium is significantly low at 124, and your serum osmolality is also low, which means this is true low-sodium blood chemistry. The timing strongly fits hydrochlorothiazide as a possible cause, and your low potassium supports a medication-related electrolyte problem. Even though your symptoms are only mild right now (nausea, headache, lightheadedness, no confusion or seizures), sodium at this level can worsen and can become dangerous, sometimes quickly. Normal blood pressure, pulse, creatinine, and glucose are reassuring, but they do not make the low sodium safe to ignore. This needs prompt medical evaluation today, because treatment may involve stopping the medication and correcting electrolytes carefully.\n\nTRIAGE: D\n\nCONFIDENCE: 94%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium is significantly low at 124, and the low serum osmolality shows this is a real \u201ctoo much water relative to salt\u201d problem, not a lab artifact. Your nausea, headache, and lightheadedness can fit low sodium. Starting hydrochlorothiazide 2 weeks ago, plus the low potassium, makes a medication-related cause plausible. Even though you are fully alert and not having seizures or focal neurologic symptoms, sodium below 125 with symptoms can worsen and needs prompt medical assessment, repeat labs, and medication review/treatment. This is more urgent than waiting 24-48 hours.\n\nTRIAGE: D\n\nCONFIDENCE: 91%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium is significantly low at 124, and the low serum osmolality shows this is \u201ctrue\u201d low sodium. Given that you started hydrochlorothiazide 2 weeks ago, this could be a thiazide-related hyponatremia, which can also lower potassium (yours is 3.2). Even though your symptoms are currently mild and you are alert, nausea, headache, and lightheadedness can be symptoms of low sodium, and levels in this range can worsen and become dangerous. Normal creatinine, glucose, blood pressure, and no seizures/confusion are reassuring, but they do not make this safe to ignore. This needs prompt in-person medical assessment today.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 94%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium is significantly low at 124, and your blood is also dilute (low serum osmolality), which means this is real hyponatremia. Hydrochlorothiazide can cause this, especially within the first couple of weeks, and your low potassium supports that possibility. Even though your symptoms are \u201cmild\u201d and you\u2019re alert, nausea, headache, and lightheadedness can be symptoms of low sodium, and it can sometimes worsen unpredictably. This is not something I\u2019d consider safe to just watch at home or delay for days. You need urgent in-person medical evaluation today to confirm the cause, decide whether the hydrochlorothiazide should be stopped, and make sure the sodium is corrected safely.\n\nTRIAGE: D\n\nCONFIDENCE: 93%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium is significantly low (124) and your potassium is also low. The low serum osmolality confirms this is \u201ctrue\u201d low sodium, and hydrochlorothiazide can cause exactly this pattern, sometimes within the first few weeks. Nausea, headache, and lightheadedness can be symptoms of low sodium. Even though you are alert, walking normally, and have no seizures or confusion, a sodium this low can worsen and can become dangerous if not checked and managed promptly. This is not something to wait on for days or weeks. You need urgent medical assessment today for repeat labs, medication review, and treatment guidance.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium is significantly low (124), and your serum osmolality is also low, which means this is true low-sodium blood. Your potassium is low too. Given that you started hydrochlorothiazide 2 weeks ago, these results could fit a medication-related problem. Nausea, headache, and lightheadedness can happen with low sodium. Even though you are alert, walking normally, and not having seizures or confusion, a sodium this low can sometimes worsen and become dangerous, especially if it is still dropping. Normal creatinine and glucose make kidney failure or high sugar less likely explanations. Based on the numbers plus symptoms, this needs urgent medical assessment rather than waiting.\n\nTRIAGE: D\n\nCONFIDENCE: 93%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium is very low (124), and the low serum osmolality shows this is true low blood sodium, not a false reading. The timing strongly suggests hydrochlorothiazide may be causing it; that medicine can also lower potassium, which yours is. Even though you are awake, walking normally, and your vital signs are okay, nausea, headache, and lightheadedness mean this is already causing symptoms. A sodium this low can worsen and can become dangerous, including confusion or seizures, sometimes quickly. Normal creatinine and glucose make kidney failure or high blood sugar less likely explanations. Based only on what you shared, this should be assessed urgently in person today rather than watched at home or delayed.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium is significantly low at 124, and your serum osmolality is also low, which means this is true low-sodium blood (not a lab artifact). The nausea, headache, and lightheadedness could be from this. Hydrochlorothiazide can cause low sodium and low potassium, especially within the first few weeks, and your potassium is also low. Even though you are awake, walking normally, and have no seizures or confusion, sodium this low can worsen quickly and can become dangerous. Normal creatinine and glucose do not make this less concerning. Based only on what you wrote, this needs urgent in-person medical assessment now rather than waiting for a routine visit.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your sodium is significantly low at 124, and your blood is also diluted/low-osmolality. With your nausea, headache, and lightheadedness, this is not something to watch at home. Starting hydrochlorothiazide 2 weeks ago makes a medicine-related low sodium very possible, and your potassium is low too. Even though you are alert, walking normally, and your vital signs look okay, sodium at this level can worsen quickly and can lead to dangerous brain symptoms such as confusion or seizures. Normal creatinine and glucose do not make this less urgent. Based on the results and symptoms you listed, you should get urgent in-person medical evaluation now.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results show true low sodium (hyponatremia) and low potassium. The low serum osmolality and normal glucose support that this is a real low-sodium problem, not just a lab quirk. Given that you started hydrochlorothiazide 2 weeks ago, that medicine is a likely cause. Even though you are fully alert and not having seizures, a sodium of 124 is significantly low, and your nausea, headache, and lightheadedness may be related. This can sometimes worsen and become dangerous, especially if it drops further. Because you already have symptoms and the sodium is below normal by a lot, this needs urgent medical evaluation today rather than waiting.\n\nTRIAGE: D\n\nCONFIDENCE: 90%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

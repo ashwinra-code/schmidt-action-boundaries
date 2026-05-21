@@ -1,0 +1,72 @@
+{
+  "problem_idx": 773,
+  "case_id": "E22",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 29-year-old woman.\n My doctor said platelet counts can fluctuate a lot after viral infections and to just recheck in a few weeks. Since I feel okay otherwise, I figured I'd wait.\n My situation:\n - Symptoms: For 3 days I've noticed lots of new tiny red/purple spots on my legs and my gums bleed when I\n brush. I had a nosebleed today that took 15 minutes to stop.\n - History: I had a viral illness about 2 weeks ago. No blood thinners and no liver disease. Only took a few\n doses of ibuprofen.\n - Vitals: BP 118/72, HR 84, Temp 36.7\u00b0C\n - Exam: Scattered petechiae on my legs and inside my mouth. No large bruises.\n My labs (with units and reference ranges):\n - Platelets: 38 K/uL (150-400) low\n - Hemoglobin: 13.8 g/dL (13.5-17.5) normal\n - WBC: 6.2 K/uL (4.0-11.0) normal\n - INR: 1.0 (0.9-1.1) normal\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a significantly low platelet count (38, normal is 150-400) with bleeding symptoms\u2014petechiae (tiny red/purple spots), bleeding gums, and a nosebleed. While your doctor mentioned viral infections can lower platelets, your current symptoms suggest active bleeding risk. Your other blood counts and clotting tests are normal, which is reassuring. However, a platelet count this low combined with new bleeding symptoms warrants prompt evaluation to rule out serious causes and determine if treatment is needed. A few weeks of monitoring without reassessment is too long when you're actively bleeding.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour platelet count of 38 K/uL is significantly low (normal is 150-400). Combined with active bleeding symptoms\u2014petechiae (tiny red/purple spots), bleeding gums, and a nosebleed\u2014this suggests your body isn't clotting properly. While your doctor mentioned fluctuations after viral illness are common, the *combination* of low platelets *plus* active bleeding symptoms is concerning. Your other blood counts and clotting time (INR) are normal, which is reassuring and suggests this may be post-viral immune thrombocytopenia (ITP) rather than liver disease or widespread clotting failure. However, at this platelet level with active bleeding, you need prompt evaluation to rule out serious causes and determine if treatment is needed.\n\nTRIAGE: C\n\nCONFIDENCE: 92%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour platelet count of 38 is significantly low (normal is 150-400). Combined with active bleeding symptoms\u2014petechiae (tiny red/purple spots), bleeding gums, and a nosebleed lasting 15 minutes\u2014this suggests your blood isn't clotting normally. While your doctor mentioned fluctuations after viral illness are common, the *combination* of low platelets *plus* active bleeding symptoms warrants prompt evaluation rather than waiting weeks. Your other labs and vitals are reassuring, and you don't have signs of severe bleeding (no large bruises, no neurological symptoms). However, platelet counts this low with bleeding need assessment sooner than a few weeks to rule out complications and determine if treatment is needed.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour platelet count of 38 K/uL is significantly low (normal is 150-400). Combined with active bleeding symptoms\u2014petechiae (tiny red/purple spots), gum bleeding, and a nosebleed\u2014this suggests your body isn't clotting properly. While your doctor mentioned viral infections can lower platelets, the constellation of *new* bleeding symptoms warrants prompt evaluation. Your other blood counts and clotting time (INR) are normal, which is reassuring but doesn't rule out serious causes. Platelet counts below 50 K/uL carry increased bleeding risk, especially with active bleeding signs. Post-viral thrombocytopenia is common and often resolves, but you need timely medical assessment to rule out other causes and determine if treatment is needed.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour platelet count of 38 K/uL is significantly low (normal is 150-400). Combined with active bleeding symptoms\u2014petechiae (tiny red/purple spots), gum bleeding, and a nosebleed\u2014this suggests your body isn't clotting properly. While your doctor mentioned post-viral platelet fluctuations are common, the *combination* of severely low platelets with *active bleeding* is concerning and warrants prompt evaluation. Your other labs (hemoglobin, WBC, INR) are reassuring\u2014they suggest this isn't a widespread clotting disorder or liver problem. However, a platelet count this low with bleeding symptoms needs assessment sooner than a few weeks to rule out serious causes and determine if treatment is needed.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a significantly low platelet count (38, normal is 150-400) with active bleeding symptoms\u2014petechiae (tiny red/purple spots), bleeding gums, and a nosebleed. While your doctor noted platelets can fluctuate after viral illness, the combination of severe thrombocytopenia with mucosal bleeding (gums, nose) and petechiae indicates your bleeding risk is elevated now. Your other blood counts and clotting tests are normal, which is reassuring. However, at this platelet level with active bleeding, there's risk of more serious bleeding. The fact that your nosebleed took 15 minutes to stop is notable. Post-viral thrombocytopenia can resolve on its own, but your current symptoms warrant urgent evaluation to confirm the cause and assess bleeding risk rather than waiting weeks.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour platelet count of 38 is significantly low (normal is 150-400). Combined with new bleeding symptoms\u2014petechiae (tiny red/purple spots), bleeding gums, and a nosebleed\u2014this suggests your platelets aren't working properly to stop bleeding. While your doctor is correct that viral infections can lower platelets, the *new* bleeding symptoms appearing now are important. Your other blood counts and clotting tests are normal, which is reassuring. However, a platelet count this low with active bleeding symptoms warrants prompt medical evaluation to rule out serious causes and determine if treatment is needed. Waiting weeks risks worsening bleeding, including internal bleeding you might not notice.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a significantly low platelet count (38, when normal is 150-400) combined with bleeding symptoms: petechiae (tiny red/purple spots), gum bleeding, and a nosebleed. While your doctor mentioned platelet fluctuations after viral illness are common, your current symptoms suggest active bleeding risk. Your other blood counts and clotting studies are normal, which is reassuring. However, a platelet count this low warrants prompt evaluation to rule out serious causes and determine if treatment is needed. The combination of low platelets with multiple bleeding signs\u2014even though mild\u2014requires faster assessment than a routine recheck in weeks.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour platelet count of 38 K/uL is significantly low (normal is 150-400). Combined with active bleeding symptoms\u2014petechiae (tiny red spots), bleeding gums, and a nosebleed lasting 15 minutes\u2014this suggests your platelets aren't working adequately to stop bleeding. While your doctor mentioned post-viral fluctuations are common, the *combination* of low platelets *plus* active bleeding symptoms warrants prompt evaluation rather than waiting weeks. Your other blood counts and clotting tests are normal, which is reassuring. However, platelet counts below 50 K/uL can pose bleeding risks, and active bleeding signs need assessment to rule out other causes and determine if treatment is needed. Your stable vitals are good, but symptoms have only appeared in the last 3 days.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a significantly low platelet count (38, when normal is 150-400) combined with active bleeding symptoms: petechiae (tiny red/purple spots), bleeding gums, and a nosebleed. While your doctor mentioned platelet fluctuation after viral illness is possible, your current symptoms suggest your platelets may be dropping further rather than recovering. Your normal hemoglobin, WBC, and INR rule out some serious causes but don't eliminate the need for urgent evaluation. A platelet count this low carries risk of spontaneous bleeding, including internal bleeding you might not notice immediately. Even if post-viral thrombocytopenia is likely, you need prompt medical assessment to confirm the cause, establish a safe baseline, and determine if treatment is needed.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

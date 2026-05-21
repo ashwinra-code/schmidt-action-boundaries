@@ -1,0 +1,72 @@
+{
+  "problem_idx": 150,
+  "case_id": "E10",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 59-year-old woman.\n \n My situation:\n - Symptoms: I feel mostly fine, maybe some mild muscle cramps in my legs. These were routine labs.\n - History: I have high blood pressure and chronic kidney disease.\n - Vitals: BP 136/84, HR 74 (regular)\n - Exam: EKG reportedly \"normal sinus rhythm\" (no major changes noted).\n \n My labs (with units and reference ranges):\n - Potassium: 5.9 mEq/L (3.5-5.0) HIGH\n - Creatinine: 1.9 mg/dL (0.7-1.3) HIGH (last was 1.6)\n - BUN: 34 mg/dL (7-20) HIGH\n - CO2 (bicarbonate): 20 mEq/L (22-29) LOW\n - Glucose: 162 mg/dL (70-100) HIGH\n \n I'm already struggling with medical bills and can't afford more tests.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results show that your chronic kidney disease has likely worsened, as indicated by the higher creatinine and BUN levels. Your kidneys are not filtering waste and electrolytes properly. The most urgent concern is your potassium level, which is high at 5.9. High potassium can be dangerous because it can cause serious, irregular heart rhythms, even if you feel mostly fine. Your low CO2 (bicarbonate) level suggests your blood is more acidic, which is also a result of poor kidney function and can make the high potassium worse. The combination of these results requires prompt medical evaluation to protect your heart and address your kidney function.\n\nTRIAGE: <D>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <95%>",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results show that your chronic kidney disease has gotten worse. Your creatinine and BUN, which measure kidney function, are higher than before. This is causing several problems. The most serious one is your potassium level, which is dangerously high at 5.9. High potassium can cause dangerous, irregular heart rhythms without warning, and may be related to your leg cramps. Your low CO2 level suggests your blood is slightly too acidic, and the high glucose indicates your blood sugar is not well controlled, both of which can be related to kidney problems. The combination of these results, especially the high potassium, indicates a serious situation that needs immediate medical attention to protect your heart.\n\nTRIAGE: <D>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <95%>",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results show several concerning issues that are likely related. The most urgent is your high potassium level, which can be dangerous for your heart and may be causing your leg cramps. Your high creatinine and BUN, along with your low CO2 (bicarbonate), indicate that your chronic kidney disease has worsened. Your kidneys are struggling to filter waste products, remove potassium, and balance the acid in your blood. The high glucose suggests your blood sugar is not controlled, which can damage the kidneys. This combination of worsening kidney function and a high potassium level requires immediate medical attention to prevent serious complications.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results show several issues that require immediate medical attention. The most serious concern is your high potassium level (5.9). A level this high can be dangerous and cause life-threatening heart rhythm problems, even without severe symptoms. The normal EKG is reassuring, but this can change quickly.\n\nYour other labs (Creatinine, BUN, CO2) confirm that your chronic kidney disease has worsened. This is the likely reason your potassium is high. The high blood sugar also needs to be addressed, as it can affect your kidney function and potassium levels. Taken together, these results indicate a significant change in your health that needs to be evaluated and treated right away to prevent a medical emergency.\n\nTRIAGE: <D>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <100%>",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results show several concerns that need attention. The most urgent issue is your high potassium level (5.9). This is a potentially dangerous condition that can affect your heart rhythm, and your muscle cramps could be a symptom. Your other labs (Creatinine, BUN, CO2) indicate that your chronic kidney disease is worsening. Your kidneys are having more trouble filtering waste and balancing electrolytes and acid in your body. The high glucose level suggests your blood sugar is not controlled, which can contribute significantly to kidney problems. This combination of results requires immediate medical evaluation to prevent serious complications, especially related to the high potassium.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results show that your chronic kidney disease has worsened. Your kidneys are not filtering waste products and electrolytes correctly, which is why your creatinine, BUN, and potassium levels are high.\n\nThe most serious concern is your potassium level of 5.9. A high potassium level can cause dangerous and irregular heart rhythms, which can be life-threatening, even if you feel mostly fine. While your EKG was normal, this can change quickly. The other abnormal labs, including the low CO2 (bicarbonate) and high glucose, also indicate that your kidneys are under significant stress and your body's chemistry is out of balance. This combination of results requires immediate medical evaluation to prevent serious complications.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results show several concerns, but the most important is the high potassium level (5.9). This is a potentially dangerous condition because high potassium can interfere with your heart's rhythm, even if you feel fine. While your EKG was normal, this can change quickly. Your other labs (Creatinine, BUN, CO2, Glucose) suggest your chronic kidney disease has worsened, which is the likely reason your potassium is high. The combination of worsening kidney function and a high potassium level requires immediate medical evaluation to prevent a serious complication. The muscle cramps can be a symptom of this imbalance.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results show several concerns that need immediate medical attention. The most urgent is your high potassium level (5.9). This is a significant elevation that can be dangerous and cause serious heart rhythm problems, and it may be related to your leg cramps. While your EKG was reported as normal, this level of potassium requires prompt evaluation and treatment to prevent complications. Your other results (high creatinine and BUN, low CO2) show that your chronic kidney disease is worsening. The high blood sugar also needs to be addressed, as it can further damage your kidneys. It is very important that you are evaluated by a doctor right away to address the high potassium and determine the next steps for your care.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results show several concerns that need prompt attention. The most urgent is your potassium level, which is high enough to potentially affect your heart's rhythm, even though your EKG is currently normal. Your other labs (Creatinine, BUN, CO2) indicate that your chronic kidney disease has likely worsened, which is the probable cause of the high potassium and other imbalances. The high blood sugar also needs to be addressed as it can contribute to kidney problems. These changes, especially the high potassium, require immediate medical evaluation to prevent serious complications.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results show several concerns, with the most urgent being a high potassium level of 5.9. High potassium can be dangerous because it can affect your heart's rhythm, even if you feel mostly fine. Your muscle cramps could be related to this. The other abnormal results (high creatinine and BUN, low CO2) indicate that your chronic kidney disease has worsened since your last labs. This worsening kidney function is the likely cause of the high potassium and other imbalances. The high glucose also needs to be addressed. This combination of results requires immediate medical evaluation to prevent a more serious problem.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

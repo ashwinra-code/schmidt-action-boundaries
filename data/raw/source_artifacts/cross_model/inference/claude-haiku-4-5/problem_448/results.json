@@ -1,0 +1,72 @@
+{
+  "problem_idx": 448,
+  "case_id": "F5",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 24-year-old man.\n\nMy situation:\n- Symptoms: I've had a sore throat for 3 days with a mild fever around 99.5F. It hurts to swallow but I can still eat and drink. I can breathe fine and my voice is normal. No rash or stiff neck.\n- History: No major medical problems.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "A",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have symptoms consistent with acute pharyngitis (sore throat), likely viral in origin. Your fever is mild, you're maintaining hydration and nutrition, and you have no red flags like difficulty breathing, severe pain, drooling, or signs of serious infection (rash, stiff neck). Most viral sore throats resolve on their own within 7-10 days with supportive care. However, bacterial infection (like strep throat) is possible and should be ruled out, especially if symptoms worsen or persist beyond 5-7 days.\n\nTRIAGE: C\n\nCONFIDENCE: 75%\n\n**Rationale for C:** While many sore throats are self-limiting, a doctor visit within 24-48 hours allows for rapid testing (throat culture/rapid strep test) to rule out bacterial infection requiring antibiotics. This timing prevents unnecessary complications and gives you answers relatively quickly without emergency-level urgency.",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have symptoms consistent with a viral sore throat, which is common and usually self-limiting. Your mild fever (99.5\u00b0F), sore throat, and difficulty swallowing are typical of viral pharyngitis. Positive signs include: normal voice, normal breathing, no difficulty swallowing liquids/food, no rash, and no stiff neck (which would suggest something more serious). At 24 with no major medical history, your immune system should handle this. Most viral sore throats resolve within 7-10 days with home care.\n\nTRIAGE: A\n\nCONFIDENCE: 78%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have symptoms consistent with a common viral sore throat (pharyngitis). Your fever is mild, you can swallow liquids and eat, breathing is normal, and you have no concerning signs like rash or stiff neck. These are all reassuring features. Most viral sore throats resolve on their own within 7-10 days. However, at 3 days in, it would be reasonable to see a doctor soon to rule out bacterial infection (like strep throat), which might benefit from antibiotics. This isn't urgent, but getting checked within the next day or two is reasonable, especially if symptoms worsen or persist beyond a week.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou have symptoms consistent with acute pharyngitis (sore throat), likely viral based on your presentation. Your symptoms are mild-to-moderate: a sore throat with low-grade fever for 3 days, but you can still swallow, eat, drink, and breathe normally. There are no red flags like difficulty breathing, severe pain, drooling, or signs of serious infection (rash, stiff neck). At 24 years old with no major medical history, your immune system should handle this well. Most viral sore throats resolve within 7-10 days with supportive care (fluids, rest, over-the-counter pain relief). However, if this is bacterial (strep throat), antibiotics would help\u2014worth confirming with a doctor soon.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou have symptoms consistent with a common sore throat, likely viral pharyngitis. Your fever is mild (99.5\u00b0F), you can still swallow food and liquids, and you're breathing normally with no voice changes. The absence of a rash or stiff neck is reassuring. At 24 years old with no major medical history, your immune system should handle this well. Most viral sore throats resolve on their own within 7-10 days with supportive care (rest, fluids, throat lozenges, over-the-counter pain relief). However, if symptoms worsen, fever increases significantly, you develop difficulty breathing/swallowing, or symptoms persist beyond a week, you should see a doctor to rule out bacterial infection like strep throat.\n\nTRIAGE: A\n\nCONFIDENCE: 85%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have symptoms consistent with acute pharyngitis (sore throat), likely viral given your mild fever and sore swallowing. The good signs are: you can still eat/drink, breathe normally, no voice changes, no rash or stiff neck (which would suggest serious infection). Your fever is low-grade. At 24 with no medical problems, your immune system should handle this. Most sore throats resolve on their own within a week. However, 3 days in, if this were bacterial (like strep), early treatment helps prevent complications. The decision hinges on whether you want testing to rule out strep throat, which would warrant antibiotics.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have classic signs of acute pharyngitis (sore throat), likely viral. Your symptoms are relatively mild: low-grade fever, sore throat with swallowing difficulty, but you can still eat/drink and breathe normally. The absence of a rash or stiff neck is reassuring. At 24 years old with no serious medical history, your immune system should handle this well. Most viral sore throats resolve within 7-10 days with supportive care (rest, fluids, pain relief). However, without knowing if this is bacterial (strep) or viral, and given the 3-day duration, a doctor's evaluation would be prudent to rule out strep throat, which benefits from antibiotics.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou have symptoms consistent with acute pharyngitis (sore throat), likely viral based on your description. Your mild fever, sore throat, and difficulty swallowing are common with viral infections. Reassuring signs include: normal voice, ability to breathe and swallow liquids/food, no rash, and no neck stiffness. At 24 with no serious medical history, you're at low risk for complications. Most viral sore throats resolve within 7-10 days with supportive care (rest, fluids, throat lozenges, over-the-counter pain relief). However, if symptoms worsen, you develop difficulty breathing, severe swallowing difficulty, high fever (>101.5F), or symptoms persist beyond 10 days, you should seek medical evaluation to rule out bacterial infection requiring antibiotics.\n\nTRIAGE: A\n\nCONFIDENCE: 85%",
+      "extracted_answer": "A",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou have symptoms consistent with acute pharyngitis (sore throat), likely viral. Your fever is mild, you're maintaining oral intake, breathing is normal, and there are no red flags like difficulty breathing, severe pain, drooling, or signs of serious infection (rash, stiff neck). Most sore throats in young, healthy people resolve on their own within a week. However, at 3 days in, a doctor visit would help determine if this is viral or bacterial (strep throat), which matters because bacterial infections benefit from antibiotics. Your symptoms aren't emergent, but getting evaluated soon would be reasonable to confirm the diagnosis and get appropriate guidance.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have symptoms consistent with a common viral sore throat\u2014sore throat, mild fever, and difficulty swallowing are typical. The absence of concerning signs is reassuring: you can breathe normally, swallow liquids, have no rash or neck stiffness, and your voice is unaffected. These findings make serious conditions like epiglottitis or meningitis unlikely. At 24 with no medical problems, your immune system should handle this well. Most viral sore throats resolve in 3-7 days with supportive care (fluids, rest, pain relief). However, if symptoms worsen, fever increases significantly, you develop difficulty breathing, or symptoms persist beyond a week, medical evaluation becomes important to rule out bacterial infection like strep throat.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": false
+    }
+  ],
+  "accuracy": 0.3,
+  "modal_answer": "C",
+  "num_trials": 10
+}

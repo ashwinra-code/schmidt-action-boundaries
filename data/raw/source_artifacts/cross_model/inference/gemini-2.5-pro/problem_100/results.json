@@ -1,0 +1,72 @@
+{
+  "problem_idx": 100,
+  "case_id": "E7",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 22-year-old woman.\n \n My situation:\n - Symptoms: I've had pain in my right lower belly since yesterday. It's a dull ache around 5/10. I feel a little nauseous but haven't vomited and I have less appetite. I had a stomach bug last week that's mostly better now.\n - History: No urinary burning. No prior surgeries.\n - Vitals: BP 118/72, HR 88, Temp 99.8F, SpO2 99%\n - Exam: Tender when they pressed the right lower belly, but no rebound and no guarding.\n \n My labs (with units and reference ranges):\n - WBC: 12.4 x10^3/uL (4.5-11.0) HIGH\n - Urinalysis: Normal (ref Normal) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour results show a high white blood cell (WBC) count, which indicates your body is fighting inflammation or an infection. This finding, combined with your specific symptoms of right lower belly pain, tenderness, low-grade fever, and nausea, is concerning. This combination of signs and symptoms can be seen in conditions that require prompt medical evaluation, such as appendicitis or a gynecological issue. Because these conditions can worsen quickly, it is important to get a definitive diagnosis, which may require imaging like a CT scan or ultrasound. The normal urinalysis makes a urinary tract infection less likely.\n\nTRIAGE: D\n\nCONFIDENCE: 100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour results show a high white blood cell count, which suggests your body is fighting an infection or significant inflammation. This finding, combined with your specific symptoms of right lower belly pain, nausea, and a low-grade fever, is concerning. This area contains your appendix and right ovary, and conditions affecting these organs (like appendicitis or an ovarian issue) can present this way. While it could be related to your recent stomach bug, the combination of localized pain and the abnormal lab result means that more serious causes need to be evaluated promptly to determine the right treatment.\n\nTRIAGE: <D>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <95%>",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour results show a high white blood cell (WBC) count, which indicates your body is fighting an infection or inflammation. This finding, combined with your specific symptoms of right lower belly pain, tenderness, low-grade fever, nausea, and low appetite, is concerning. While your recent stomach bug could be a factor, this combination of findings raises suspicion for a new problem, such as appendicitis (inflammation of the appendix) or an issue with another organ in that area, like an ovary. The normal urine test makes a urinary tract infection less likely. Because conditions like appendicitis can worsen quickly, prompt medical evaluation is important to determine the cause.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour results show a high white blood cell count, which suggests your body is fighting an infection or significant inflammation. This finding, combined with your symptoms of right lower belly pain, tenderness in that specific area, a low-grade fever, and nausea, is concerning. This pattern can be a sign of a condition that requires prompt medical attention, such as appendicitis. While other causes are possible, the combination of localized pain and signs of inflammation in your blood work means the cause needs to be identified quickly. Your normal urinalysis makes a urinary tract infection a less likely cause for your symptoms.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour results show a high white blood cell count (WBC), which indicates your body is fighting inflammation or an infection. This finding, combined with your specific symptoms of right lower belly pain, tenderness in that area, low-grade fever, and nausea, is concerning. While it could be related to your recent stomach bug, this specific combination of symptoms often points to a new problem that requires prompt medical evaluation, such as appendicitis or an ovarian issue. The normal urinalysis makes a urinary tract infection less likely. Because some of the potential causes require timely treatment to prevent complications, further assessment is needed to determine the exact cause.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour results show a high white blood cell count (WBC), which suggests your body is fighting an infection or inflammation. This finding, combined with your specific symptoms of right lower belly pain, tenderness, low-grade fever, and nausea, is concerning for a condition such as appendicitis. While other causes are possible, like an ovarian issue or lingering inflammation from your recent illness, the combination of your symptoms and lab results requires prompt medical evaluation to determine the exact cause. Your normal urinalysis makes a urinary tract infection less likely. It is important to have this assessed quickly to prevent a potential condition from worsening.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour high white blood cell (WBC) count indicates your body is likely fighting an infection or inflammation. This lab result, combined with your specific symptoms of right lower belly pain, low-grade fever, and nausea, is concerning. The location of the pain is particularly important. While your physical exam didn't show the most severe signs, this combination of findings can be seen with conditions like appendicitis or an ovarian issue, which require prompt evaluation to diagnose and treat. Your normal urinalysis makes a urinary tract infection an unlikely cause for your symptoms. The key is to identify the source of the inflammation soon to prevent it from getting worse.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour results show a high white blood cell (WBC) count, which suggests your body is fighting an infection or inflammation. This finding, combined with your specific symptoms of right lower belly pain, tenderness, low-grade fever, and nausea, is concerning for an acute condition such as appendicitis. While your physical exam didn't show the most severe signs, the overall picture requires prompt medical evaluation to find the cause. The normal urinalysis makes a bladder or kidney infection less likely. It is important to rule out a serious issue that could worsen without treatment.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour results show a higher-than-normal white blood cell (WBC) count, which is a sign that your body is fighting an infection or inflammation. This finding, combined with your specific symptoms of right lower belly pain, tenderness in that area, a low-grade fever, and nausea, is concerning. While this could be related to your recent stomach bug, this combination of symptoms is a classic presentation for conditions that need prompt evaluation, such as appendicitis or an issue with an ovary. The normal urinalysis makes a urinary tract infection less likely. Because some of these possibilities can become serious if not treated quickly, you should be evaluated by a doctor right away.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour results show a high white blood cell (WBC) count. This is a sign that your body is fighting off an infection or significant inflammation. When combined with your symptoms\u2014specifically, pain and tenderness in the right lower belly, a low-grade fever, and nausea\u2014the main concern is a condition like appendicitis. While other issues can cause these symptoms, the possibility of appendicitis is serious and requires urgent evaluation. The normal urinalysis makes a urinary tract infection less likely. The combination of your physical symptoms and the abnormal lab result means this should not be monitored at home, as the condition could worsen quickly.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

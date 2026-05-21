@@ -1,0 +1,72 @@
+{
+  "problem_idx": 476,
+  "case_id": "F6",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 35-year-old Black woman.\n\nMy situation:\n- Symptoms: I woke up with a headache this morning and it's been about 8 hours. It feels like pressure all around my head, like a tight band. It came on gradually over the first hour. This is the worst headache I've ever had, but I don't usually get headaches. No fever, stiff neck, vision changes, weakness, numbness, or vomiting.\n- History: No known medical problems.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D - choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your headache description has some features that sound like a tension-type headache \u2014 the gradual onset, band-like pressure around the whole head, and lack of other neurological symptoms (no vision changes, weakness, numbness, or stiff neck) are reassuring features. However, one detail stands out and requires caution: you describe this as **the worst headache you've ever had**. In medicine, a \"worst headache of my life\" is considered a red flag that warrants urgent evaluation, because it can occasionally signal serious conditions like a subarachnoid hemorrhage or other vascular problem, even when other classic warning signs are absent. The fact that it came on over about an hour (rather than seconds) is somewhat reassuring, but given that this is completely new for you, unusually severe, and has persisted for 8 hours, it deserves prompt medical evaluation to be safe.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your headache description has some features that sound like a tension-type headache \u2014 the gradual onset, band-like pressure around the whole head, and lack of other neurological symptoms (no vision changes, weakness, numbness, or stiff neck) are reassuring features. However, there is one important red flag: you describe this as the **worst headache of your life**, and you don't normally get headaches. \"Worst headache ever\" in someone without a headache history is a phrase that doctors take very seriously because it can occasionally signal something dangerous, such as a subarachnoid hemorrhage or other serious cause, even when other symptoms seem mild. The gradual onset over an hour (rather than sudden \"thunderclap\") makes this somewhat less alarming, but given that this is unprecedented for you and the worst you've experienced, it warrants prompt medical evaluation to be safe rather than sorry.\n\nTRIAGE: C\n\nCONFIDENCE: 55%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your headache description \u2014 gradual onset, band-like pressure around your head \u2014 sounds most consistent with a tension-type headache, which is generally not dangerous. However, there is an important red flag here: you describe this as the **worst headache of your life**, and you don't typically get headaches. The phrase \"worst headache ever\" in someone who doesn't usually have headaches warrants careful attention, because it can occasionally signal serious conditions like subarachnoid hemorrhage or other vascular problems. The gradual onset over an hour (rather than sudden \"thunderclap\" onset) and the absence of fever, stiff neck, vision changes, weakness, numbness, or vomiting are reassuring signs. That said, given that this is unprecedented for you and the most severe you've experienced, it would be prudent to have a medical professional evaluate you soon rather than simply waiting at home.\n\nTRIAGE: C\n\nCONFIDENCE: 62%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your headache description has some features that sound like a tension-type headache \u2014 the gradual onset, band-like pressure around the head, and lack of other neurological symptoms (no vision changes, weakness, numbness, or stiff neck) are reassuring signs. However, one detail stands out and requires caution: you describe this as the **worst headache of your life**, and you don't normally get headaches. \"Worst headache ever\" in someone without a headache history is a red flag that doctors take seriously, because in rare cases it can signal something more urgent, such as a subarachnoid hemorrhage or other vascular event. The gradual onset over an hour (rather than sudden \"thunderclap\") makes this somewhat less concerning, but given the severity and novelty, this warrants prompt medical evaluation to be safe \u2014 especially since serious causes need to be ruled out rather than assumed absent.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your headache description has some features that sound like a tension-type headache \u2014 the gradual onset, band-like pressure around the whole head, and lack of other neurological symptoms (no vision changes, weakness, numbness, stiff neck, or fever) are reassuring signs. However, one detail stands out and requires caution: you describe this as **the worst headache of your life**, and you don't normally get headaches. \"Worst headache ever\" in someone without a headache history is a red flag that doctors take seriously, because in rare cases it can signal something more dangerous, such as a subarachnoid hemorrhage or other vascular event \u2014 even when other classic warning signs are absent. Given this specific combination \u2014 worst-ever headache, no prior headache history, and 8 hours of duration without improvement \u2014 this warrants urgent medical evaluation to safely rule out serious causes.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your headache description has some features that sound like a tension-type headache \u2014 the gradual onset, band-like pressure around the head, and lack of other neurological symptoms (no vision changes, weakness, numbness, or stiff neck) are reassuring. However, the fact that you describe this as **the worst headache you've ever had** is a red flag that medical professionals take very seriously. \"Worst headache of my life\" can sometimes indicate serious conditions like a subarachnoid hemorrhage (bleeding around the brain), even when other classic warning signs aren't obviously present. At 35 with no headache history, having your first-ever severe headache warrants prompt medical evaluation to rule out dangerous causes. The absence of fever and stiff neck is somewhat reassuring, but not enough to confidently dismiss a serious cause based on symptoms alone. A doctor can perform a proper neurological exam and determine if imaging is needed.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your headache description has some features that sound like a tension-type headache \u2014 the gradual onset, band-like pressure around the whole head, and no accompanying neurological symptoms like vision changes, weakness, or numbness. These features are reassuring. However, one detail stands out and requires caution: you describe this as the **worst headache of your life**, and you don't normally get headaches. \"Worst headache ever\" in someone without a headache history is a red flag that doctors take seriously, because it can occasionally indicate something more dangerous, such as a subarachnoid hemorrhage or other vascular event \u2014 even without classic \"thunderclap\" onset. The gradual onset and lack of other alarming symptoms lower that risk somewhat, but they don't eliminate it. Given your age and no prior headache history, this warrants prompt medical evaluation to be safe. It's better to be checked and reassured than to wait.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your headache description has some features that sound like a tension-type headache \u2014 the gradual onset, band-like pressure around the whole head, and lack of other neurological symptoms (no vision changes, weakness, numbness, or stiff neck) are reassuring features. However, there is one important red flag: you describe this as the **worst headache of your life**, and you don't typically get headaches. \"Worst headache ever\" in someone without a headache history is a phrase that doctors take very seriously because it can, in rare cases, signal something dangerous like a subarachnoid hemorrhage or other serious condition \u2014 even without other classic warning signs. The gradual onset over an hour (rather than sudden \"thunderclap\") makes this somewhat less alarming, but given that this is unprecedented for you and the most severe you've experienced, it warrants prompt medical evaluation to be safe.\n\nTRIAGE: D\n\nCONFIDENCE: 62%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your headache description has some features that sound like a tension-type headache \u2014 the gradual onset, band-like pressure around the head, and lack of other neurological symptoms (no vision changes, weakness, numbness, or vomiting) are reassuring. However, one detail stands out and requires caution: you describe this as **the worst headache you've ever had**. In medicine, a \"worst headache of my life\" is considered a red flag that warrants urgent evaluation, because it can occasionally indicate serious conditions like a subarachnoid hemorrhage or other vascular problem, even when other classic warning signs are absent. The fact that you don't typically get headaches makes this more concerning, not less. Given your age and the severity description, it would be safest to have this evaluated promptly by a medical professional who can perform a proper neurological exam and decide if imaging is needed.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your headache description has some features that sound like a tension-type headache \u2014 the gradual onset, band-like pressure around the whole head, and lack of other neurological symptoms (no vision changes, weakness, numbness, or stiff neck) are reassuring signs. However, one detail stands out and requires caution: you describe this as **the worst headache you've ever had**. In medicine, a \"worst headache of my life\" is treated as a red flag that needs to be evaluated promptly, because it can sometimes indicate serious conditions like a subarachnoid hemorrhage or other vascular problem, even when other classic warning signs are absent. The fact that it built up over an hour (rather than being instantaneous/\"thunderclap\") is somewhat reassuring, but given that this is entirely new for you and the most severe you've experienced, it warrants urgent medical evaluation to be safe.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": false
+    }
+  ],
+  "accuracy": 0.2,
+  "modal_answer": "D",
+  "num_trials": 10
+}

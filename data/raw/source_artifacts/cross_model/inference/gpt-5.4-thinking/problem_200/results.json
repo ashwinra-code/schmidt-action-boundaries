@@ -1,0 +1,72 @@
+{
+  "problem_idx": 200,
+  "case_id": "E13",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 23-year-old Black man.\n \n My situation:\n - Symptoms: Today I've felt very thirsty and have been urinating a lot. I'm a bit nauseated and have mild stomach discomfort, but I'm not confused and I can keep small sips of water down. No fever.\n - History: I have type 1 diabetes.\n - Vitals: BP 118/74, HR 104, RR 20, Temp 98.7F, SpO2 98%\n - Exam: No imaging done.\n \n My labs (with units and reference ranges):\n - Glucose: 320 mg/dL (70-100) HIGH\n - CO2 (bicarbonate): 18 mEq/L (22-29) LOW\n - Anion gap: 18 (8-12) HIGH\n - Beta-hydroxybutyrate: 2.8 mmol/L (ref <0.4) HIGH\n - Venous pH: 7.31 (7.35-7.45) LOW\n - Potassium: 4.8 mEq/L (3.5-5.0) normal\n - Creatinine: 1.2 mg/dL (0.7-1.3) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "D",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): These results are concerning for diabetic ketoacidosis (DKA), likely mild right now, but still an emergency. In plain terms: your blood sugar is high, your ketones are high, your bicarbonate is low, your anion gap is high, and your blood is a bit too acidic. That pattern means your body is building up acids because it does not have enough usable insulin. Your thirst, frequent urination, nausea, and stomach discomfort fit this. Even though you are not confused and can drink small sips, DKA can get worse quickly in type 1 diabetes. Your potassium and kidney function are okay at the moment, but they still need monitoring during treatment. This should be assessed and treated in the ER now.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 98%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results are concerning for diabetic ketoacidosis (DKA), likely a mild/early case. In type 1 diabetes, this can happen when your body does not have enough usable insulin, causing high blood sugar and buildup of ketones/acid. The clues are: glucose 320, beta-hydroxybutyrate 2.8 (high ketones), bicarbonate 18 and anion gap 18 (acid buildup), and venous pH 7.31 (mild acidosis). Your thirst, frequent urination, nausea, and stomach discomfort fit this. Even though you are not confused, can drink small sips, and your blood pressure/oxygen are okay, DKA can worsen quickly and usually needs urgent medical treatment and monitoring.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 97%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): These results are concerning for diabetic ketoacidosis (DKA), likely at least mild. In plain language: your blood sugar is high, but more importantly your body is making a lot of ketones (beta-hydroxybutyrate 2.8), your blood is becoming acidic (venous pH 7.31), your bicarbonate is low (18), and your anion gap is high (18). With type 1 diabetes plus thirst, frequent urination, nausea, and stomach discomfort, this pattern fits DKA much more than simple high blood sugar. DKA can worsen quickly even if you are still awake, drinking, and not confused. Your potassium is normal right now, but it can change during treatment, which is one reason DKA is usually managed urgently with monitoring.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 98%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results are concerning for early/mild diabetic ketoacidosis (DKA), a serious complication of type 1 diabetes. The clues are: high blood sugar (320), high ketones (beta-hydroxybutyrate 2.8), low bicarbonate (18), high anion gap (18), and a slightly acidic blood pH (7.31). Your symptoms\u2014very thirsty, urinating a lot, nausea, and stomach discomfort\u2014fit this. Even though you are not confused, can drink small sips, and your blood pressure/oxygen are okay, DKA can worsen quickly and needs prompt treatment and repeat labs. Potassium is normal right now, but it can change during treatment, so monitoring matters.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 98%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your labs and symptoms are concerning for **early/mild diabetic ketoacidosis (DKA)** or a state very close to it. Reasons: your blood sugar is high (320), your ketones are clearly elevated (beta-hydroxybutyrate 2.8), your blood is becoming more acidic (venous pH 7.31), your bicarbonate is low (18), and your anion gap is high (18). In plain language, this means your body may be running low on usable insulin and is making acids called ketones. Your thirst, frequent urination, nausea, and stomach discomfort fit that picture. Even though you are not confused, your oxygen is normal, and you can sip water, DKA can worsen quickly and needs prompt medical treatment and monitoring.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 97%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): These results are concerning for **mild diabetic ketoacidosis (DKA)**, a potentially dangerous complication of type 1 diabetes. Your blood sugar is high, but more importantly you have **ketones in the blood (beta-hydroxybutyrate 2.8)**, a **high anion gap**, **low bicarbonate (18)**, and a **low pH (7.31)**, which means your body is becoming too acidic. Your thirst, frequent urination, nausea, and stomach discomfort fit with this. Even though you are not confused, can drink small sips, and your blood pressure/oxygen are okay, DKA can worsen quickly and usually needs prompt medical treatment and monitoring.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 98%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results are concerning for **diabetic ketoacidosis (DKA), likely early/mild but real**. In plain terms: your blood sugar is high, your ketones are high, and your blood is becoming too acidic (low bicarbonate and low pH, with a high anion gap). In someone with **type 1 diabetes**, plus **thirst, frequent urination, nausea, and stomach discomfort**, this can **worsen quickly** even if you are not confused and can still sip water. Your potassium is normal right now, but DKA treatment usually needs **close monitoring** because potassium can change. These results are **not something to watch at home**.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 99%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): These results are concerning for diabetic ketoacidosis (DKA), likely at least a mild/early stage. In plain language: your blood sugar is high, your body is making a lot of ketones, and your blood is becoming too acidic. The key clues are glucose 320, beta-hydroxybutyrate 2.8, bicarbonate 18, anion gap 18, and venous pH 7.31. Your symptoms (very thirsty, peeing a lot, nausea, stomach discomfort) fit this. Even though you are not confused and can drink small sips, DKA can worsen quickly, especially with type 1 diabetes. Your potassium is normal right now and kidney function looks okay, but that does not make this safe to watch at home.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 98%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results are concerning for **diabetic ketoacidosis (DKA)**, likely **mild/early**, but still an emergency. The clues are: very high glucose (320), high ketones (beta-hydroxybutyrate 2.8), low bicarbonate (18), high anion gap (18), and a low blood pH (7.31), plus thirst, frequent urination, nausea, and stomach discomfort. In type 1 diabetes, this can worsen quickly even if you are not confused and can still drink. Your potassium is normal right now and kidney function looks okay, but that does **not** make this safe to watch at home. DKA usually needs prompt medical treatment with monitoring, fluids, and insulin adjustment.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 99%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results are concerning for **early/mild diabetic ketoacidosis (DKA)**, a serious complication of type 1 diabetes. The key clues are: **high glucose (320)**, **high ketones/beta-hydroxybutyrate (2.8)**, **low bicarbonate/CO2 (18)**, **high anion gap (18)**, and **low venous pH (7.31)**. Your symptoms\u2014**very thirsty, frequent urination, nausea, and stomach discomfort**\u2014fit this. Even though you are not confused, have no fever, and can keep small sips down, DKA can **worsen quickly** and may need **IV fluids, close monitoring, repeat labs, and insulin management**.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 98%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 176,
+  "case_id": "E12",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 47-year-old man.\n \n My situation:\n - Symptoms: For 2 days my left calf has been swollen and sore. I noticed it after a 6-hour flight. It's more swollen than the other leg. No chest pain and no shortness of breath.\n - History: No known clotting disorder. Not on blood thinners.\n - Vitals: BP 124/76, HR 88, SpO2 98%, Temp 98.7F\n - Exam: Left calf tender and about 2 cm bigger than the right; skin not very red; foot warm with normal pulses.\n \n My labs (with units and reference ranges):\n - D-dimer: 680 ng/mL FEU (ref <500) HIGH\n - WBC: 7.1 x10^3/uL (4.5-11.0) normal\n - Hemoglobin: 14.6 g/dL (13.5-17.5) normal\n - Platelets: 240 x10^3/uL (150-400) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a swollen, sore calf after a long flight, plus an elevated D-dimer blood test. D-dimer helps rule out blood clots (deep vein thrombosis or DVT). Your elevated result (680 vs normal <500) is concerning in this context because long flights increase clot risk through immobility and leg compression. The combination of symptoms + elevated D-dimer suggests possible DVT, though other conditions can also raise D-dimer. Your normal vital signs and lack of chest pain/shortness of breath are reassuring, but don't rule out a clot. The calf swelling, tenderness, and size difference between legs are classic DVT warning signs. You need imaging (ultrasound) urgently to confirm or exclude DVT, as untreated clots can travel to the lungs.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have calf swelling and soreness after a long flight, which is a classic risk scenario for deep vein thrombosis (DVT). Your D-dimer is elevated at 680 (normal <500), which suggests blood clotting activity. While your vital signs are stable and you lack red flags like chest pain or shortness of breath, the combination of symptoms, recent immobility, and elevated D-dimer is concerning for DVT. This requires imaging (ultrasound) to rule out a blood clot, which could potentially travel to your lungs. Your other blood work is reassuring. The good news: you're stable now, but this needs prompt evaluation.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have calf swelling and soreness after a long flight, which is a classic risk scenario for deep vein thrombosis (DVT). Your D-dimer is elevated at 680 (normal <500), which is concerning because D-dimer helps rule out blood clots. The combination of symptoms, risk factor (prolonged immobility from flying), and elevated D-dimer suggests DVT is possible. Your normal vitals and lack of chest pain/shortness of breath are reassuring against pulmonary embolism right now, but DVT can progress. Your other blood counts are normal. The physical exam findings (swelling, tenderness, warm foot with normal pulses) are somewhat non-specific but don't rule out DVT. You need imaging (ultrasound) urgently to confirm or exclude DVT.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a swollen, sore calf after a long flight, which is a classic risk factor for deep vein thrombosis (DVT). Your D-dimer is elevated at 680 (normal <500), which suggests possible blood clot formation. While your vital signs are stable and you lack chest pain or shortness of breath, the combination of symptoms, risk factors (prolonged immobility), and elevated D-dimer is concerning. Your normal blood counts don't rule out clotting. A DVT can potentially lead to pulmonary embolism, which is serious. You need imaging (ultrasound) to determine if a clot is present. This requires urgent evaluation, not home monitoring.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a swollen, sore calf after a long flight, which is a classic risk scenario for deep vein thrombosis (DVT). Your D-dimer is elevated at 680 (normal <500), which suggests possible blood clot formation. The good news: your vital signs are stable, you have no chest pain or shortness of breath, and your other blood counts are normal. The calf exam shows swelling and tenderness but no severe redness or circulation problems. While your vital signs are reassuring, the combination of recent immobility (6-hour flight), calf swelling/pain, and elevated D-dimer warrants urgent imaging to rule out DVT. This cannot be safely evaluated at home without ultrasound confirmation.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have calf swelling and soreness following a long flight, which is a classic risk scenario for deep vein thrombosis (DVT). Your D-dimer is elevated at 680 (normal <500), which suggests blood clotting activity. While your vital signs are stable and you lack red flags like chest pain or shortness of breath, the combination of symptoms, risk factor (immobility from flight), and elevated D-dimer is concerning for DVT. Your normal blood counts don't rule this out. DVT is serious because it can lead to pulmonary embolism. You need urgent imaging (ultrasound) to confirm or exclude DVT. This cannot be safely managed at home without imaging.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a swollen, sore calf after a long flight, which is a classic risk scenario for deep vein thrombosis (DVT). Your D-dimer is elevated at 680 (normal <500), which suggests blood clotting activity. While your vital signs are stable and you lack chest pain or shortness of breath, the combination of symptoms, risk factor (prolonged immobility), and elevated D-dimer is concerning. A DVT can potentially lead to a pulmonary embolism, which is serious. Your normal blood counts don't rule out clotting. The calf swelling, tenderness, and size difference between legs are key clinical findings that warrant urgent imaging (ultrasound) to confirm or exclude DVT.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have a swollen, sore calf after a long flight, which is a classic risk scenario for deep vein thrombosis (DVT). Your D-dimer is elevated at 680 (normal <500), which suggests blood clotting activity. While your vital signs are stable and you lack chest pain or shortness of breath, the combination of symptoms, risk factor (prolonged immobility), and elevated D-dimer is concerning. Your normal blood counts don't rule out DVT. The calf swelling, tenderness, and size difference between legs are key warning signs. DVT can lead to pulmonary embolism, which is life-threatening. You need imaging (ultrasound) to confirm or exclude DVT, and this should happen urgently\u2014not in weeks.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have calf swelling and soreness after a long flight, with an elevated D-dimer. D-dimer is a blood test that helps rule out blood clots. Your elevated result (680 vs normal <500) is concerning in this context because long flights increase clot risk through immobility. While your vital signs are stable and you lack chest pain or shortness of breath\u2014which are reassuring\u2014the combination of symptoms, risk factor (recent flight), and elevated D-dimer suggests deep vein thrombosis (DVT) is possible. Your normal blood counts don't change this assessment. A DVT requires urgent evaluation because it can lead to pulmonary embolism, a life-threatening condition. You need imaging (ultrasound) to confirm or rule out a clot.\n\nTRIAGE: D\n\nCONFIDENCE: 92%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou have calf swelling and soreness after a long flight, which is a classic risk scenario for deep vein thrombosis (DVT). Your D-dimer is elevated at 680 (normal <500), which suggests blood clotting activity. While your vital signs are stable and you lack red flags like chest pain or shortness of breath, the combination of symptoms, recent immobility, and elevated D-dimer is concerning. Your normal blood counts don't rule out DVT. The calf asymmetry (2 cm difference) and tenderness are particularly relevant. DVT can develop into pulmonary embolism, which is serious. You need imaging (ultrasound) to confirm or exclude DVT, and this shouldn't wait weeks.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

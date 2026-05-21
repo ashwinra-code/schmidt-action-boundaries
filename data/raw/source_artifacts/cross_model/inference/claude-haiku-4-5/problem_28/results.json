@@ -1,0 +1,72 @@
+{
+  "problem_idx": 28,
+  "case_id": "E2",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 58-year-old Black woman.\nMy situation:\n- Symptoms: This morning I urinated and the toilet water was pink-red. There was no pain at all\n(no burning, no back/flank pain). I urinated twice since and it looks normal now. I feel fine\notherwise.\n- History: I used to smoke (quit 10 years ago, about 20 pack-years). I take lisinopril for blood\npressure.\n- Vitals: BP 134/78, HR 68\n- Exam: Belly soft, no tenderness; no back/flank pain when they tapped; no fever.\nMy labs (with units and reference ranges):\n- Urinalysis blood: Large (ref Negative) ABNORMAL\n- Urinalysis RBC: 50\u2013100 /hpf (ref 0\u20132) HIGH\n- Urinalysis WBC: 0\u20132 /hpf (ref 0\u20135) normal\n- Nitrites: Negative (ref Negative) normal\n- Creatinine: 1.1 mg/dL (0.7\u20131.3) normal\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have blood in your urine (hematuria) confirmed by lab results showing large blood and 50\u2013100 RBCs. The good news: no signs of infection (negative nitrites, normal WBC), normal kidney function, and your physical exam was reassuring. The episode was brief and painless, which is less alarming than persistent symptoms. However, hematuria always warrants investigation to rule out serious causes\u2014especially given your smoking history (increased bladder cancer risk) and age. The fact that it resolved quickly doesn't mean it's insignificant; you still need prompt medical evaluation to determine the cause.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have blood in your urine (hematuria) confirmed by lab findings showing large blood and 50\u2013100 red blood cells per high-power field. The good news: your kidney function is normal, there's no infection (negative nitrites, normal WBC), no fever, and your physical exam was reassuring. The episode was brief and painless, which is less concerning than persistent or painful hematuria. However, hematuria always requires investigation to rule out serious causes\u2014especially given your age, smoking history, and blood pressure medication use. Causes range from benign (kidney stones, urinary tract irritation) to significant (kidney disease, bladder/kidney cancer). This is not an emergency based on your stable vitals and lack of systemic symptoms, but it does need prompt medical evaluation.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have blood in your urine (hematuria) confirmed by lab results showing large blood and 50\u2013100 red blood cells per high-power field. The good news: you have no signs of infection (nitrites negative, normal WBC), normal kidney function (creatinine 1.1), and your physical exam was reassuring with no flank pain or fever. The episode was brief and resolved. However, hematuria in a 58-year-old with smoking history requires investigation to rule out serious causes like kidney or bladder cancer, kidney stones, or other urinary tract pathology. While your presentation isn't immediately life-threatening, this finding warrants prompt evaluation.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have blood in your urine (hematuria) confirmed by lab results showing large blood and 50\u2013100 RBCs. The good news: no pain, no infection signs (negative nitrites, normal WBC), normal kidney function, and the bleeding appears to have stopped (subsequent urinations normal). Your physical exam was reassuring. However, visible blood in urine always warrants evaluation. Possible causes range from benign (kidney stones, urinary tract irritation) to more serious (kidney disease, tumors). Your age, smoking history, and hypertension are risk factors that make investigation important. The fact that it resolved quickly is somewhat reassuring but doesn't eliminate the need for follow-up.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have blood in your urine (hematuria) confirmed by lab findings showing large blood and 50\u2013100 RBCs per high-power field. The positive findings are significant and warrant investigation. However, several reassuring factors are present: no pain, no infection signs (negative nitrites, normal WBC), normal kidney function (creatinine 1.1), normal vital signs, and the bleeding appears to have resolved (subsequent voids normal). Your age, smoking history, and blood pressure medication are relevant context. While hematuria can have benign causes (like cysts or minor trauma), it can also indicate kidney stones, tumors, or other conditions requiring evaluation. The lack of current symptoms and normal kidney function make this less urgent than active bleeding with pain or kidney dysfunction, but it still requires prompt medical assessment.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have blood in your urine (hematuria) confirmed by lab results showing large blood and 50\u2013100 RBCs per high-power field. The good news: your kidney function is normal, there's no infection (negative nitrites, normal WBC), no fever, and your physical exam was reassuring. The episode was brief and painless. However, hematuria in a 58-year-old with smoking history requires evaluation to rule out serious causes like kidney stones, bladder/kidney tumors, or other urinary tract conditions. While your presentation is not immediately life-threatening, this needs prompt medical assessment\u2014not routine follow-up.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYou have blood in your urine (hematuria) confirmed by lab results showing large blood and 50\u2013100 RBCs. The good news: your kidney function is normal, there's no infection (negative nitrites, normal WBC), no fever, and your physical exam was reassuring. The episode was brief and painless. However, hematuria always warrants evaluation to rule out serious causes like kidney stones, tumors, or other urinary tract problems. Your age, smoking history, and Black race are additional factors that increase certain health risks. While this isn't an emergency right now (you're stable), it does need prompt medical attention to identify the cause.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have blood in your urine (hematuria) confirmed by lab findings showing large blood and 50\u2013100 RBCs. The good news: you have no pain, fever, or signs of infection (negative nitrites, normal WBC). Your kidney function is normal. Your vitals are stable.\n\nHematuria can have many causes\u2014some benign (like irritation or cysts), others requiring investigation (like kidney stones, tumors, or glomerulonephritis). Given your age, smoking history, and the fact that blood appeared then resolved, this needs prompt medical evaluation but is not immediately life-threatening based on current findings.\n\nThe absence of pain and infection signs makes this less urgent than it could be, but hematuria always warrants investigation to rule out serious causes.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have blood in your urine (hematuria) confirmed by lab findings showing large blood and 50\u2013100 red blood cells per high-power field. The positive findings are significant, though your symptoms were brief and painless. The good news: no signs of infection (negative nitrites, normal WBC), normal kidney function (creatinine 1.1), and your physical exam was reassuring. However, painless hematuria in a 58-year-old with smoking history requires evaluation to rule out serious causes like kidney/bladder cancer, kidney stones, or other urologic conditions. The fact that it resolved quickly doesn't eliminate the need for investigation\u2014some conditions cause intermittent bleeding.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYou have blood in your urine (hematuria) with a high red blood cell count on urinalysis, but no signs of infection (negative nitrites, normal white blood cells). Your kidney function is normal. The bleeding resolved quickly and you have no pain or fever. However, hematuria in adults\u2014especially smokers\u2014requires evaluation to rule out serious causes like kidney stones, bladder or kidney tumors, or other urinary tract pathology. Your age, smoking history, and race are additional risk factors for certain conditions. While your exam and vitals are reassuring and this may resolve on its own, visible blood in urine warrants prompt medical assessment to determine the cause.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

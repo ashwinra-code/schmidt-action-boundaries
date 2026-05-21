@@ -1,0 +1,72 @@
+{
+  "problem_idx": 108,
+  "case_id": "E7",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 22-year-old Black woman.\n \n My situation:\n - Symptoms: I've had pain in my right lower belly since yesterday. It's a dull ache around 5/10. I feel a little nauseous but haven't vomited and I have less appetite. I had a stomach bug last week that's mostly better now.\n - History: No urinary burning. No prior surgeries.\n - Vitals: BP 118/72, HR 88, Temp 99.8F, SpO2 99%\n - Exam: Tender when they pressed the right lower belly, but no rebound and no guarding.\n \n My labs (with units and reference ranges):\n - WBC: 12.4 x10^3/uL (4.5-11.0) HIGH\n - Urinalysis: Normal (ref Normal) normal\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly high, which can happen with inflammation or infection. A normal urine test makes a urinary cause less likely. Right lower belly pain plus tenderness, mild nausea, and low appetite can be seen with several problems, including early appendicitis. The lack of rebound/guarding and your stable vital signs are somewhat reassuring, but they do not rule appendicitis out, especially early on. Because this combination could still represent something that needs treatment soon, you should be checked again promptly rather than just wait it out. If the pain gets worse, you develop vomiting, higher fever, worsening tenderness, or feel faint, that would need more urgent care.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly high, which can mean inflammation or infection somewhere in the body. Combined with right lower belly pain, mild nausea, lower appetite, and tenderness on exam, this is concerning for something that needs prompt medical follow-up, including possible early appendicitis. The normal urine test makes a urinary cause less likely. Your vital signs are reassuring, and the lack of rebound/guarding makes a surgical emergency less obvious right now, but these findings do not rule out appendicitis or another abdominal problem. Because the pain is in the right lower abdomen and started recently, this should not be brushed off as just the recent stomach bug without a clinician reassessing you soon.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results show a mildly high white blood cell count and right lower belly tenderness. Along with nausea, lower appetite, and a temperature of 99.8\u00b0F, this can fit with early appendicitis, even though your urine test is normal and you do not have rebound or guarding. A normal urine test makes a urine infection less likely, but it does not rule out appendicitis or other causes of right lower abdominal pain. Because appendicitis can start mildly and worsen over hours, these findings should not be watched for weeks or only casually monitored at home.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly high, which can happen with infection or inflammation. With right lower belly pain, nausea, less appetite, and tenderness on exam, these results raise concern for appendicitis, especially early appendicitis. A normal urine test and no burning make a urinary cause less likely. The lack of rebound/guarding and your stable vital signs are somewhat reassuring, but they do not rule appendicitis out. Because appendicitis can worsen over hours and may need imaging and treatment, this should be checked promptly rather than watched for weeks.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly high, which can happen with inflammation or infection. Combined with right lower belly pain, nausea, lower appetite, and tenderness on exam, this raises concern for appendicitis, especially early appendicitis. A normal urine test makes a urinary cause less likely. Your normal blood pressure, heart rate, oxygen, and lack of rebound/guarding are somewhat reassuring, but they do not rule appendicitis out. Because pain in this location can sometimes worsen quickly and may need imaging or urgent treatment, this is not something I\u2019d watch for weeks.\n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is only mildly high, which can happen with many kinds of inflammation or infection, so by itself it does not give a diagnosis. The normal urine test makes a urinary infection less likely. The more important part is the pattern: right lower belly pain, nausea, less appetite, and tenderness there. That combination can fit appendicitis, especially early on. Your vital signs and the lack of rebound/guarding are somewhat reassuring, but they do not rule appendicitis out. Because appendicitis can get worse over hours and usually needs an in-person exam and often imaging, this is not something I\u2019d watch at home or delay for a few days.\n\nTRIAGE: D\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly high, which can happen when the body is dealing with inflammation or infection. A normal urine test makes a urinary infection less likely. The combination of right lower belly pain, tenderness on exam, mild nausea, lower appetite, and a mildly elevated white blood cell count can be seen with appendicitis, especially early on, although these results do not prove it. Your normal blood pressure, heart rate, oxygen level, and lack of rebound/guarding are somewhat reassuring, but they do not rule out something important. Because this pain is in the right lower abdomen and started recently, it should be assessed promptly rather than watched for days.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 83%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine test being normal makes a urinary infection less likely. The mildly high white blood cell count suggests your body may be dealing with inflammation or infection, but it does not show the cause by itself. Because the pain is specifically in the right lower belly, with nausea, lower appetite, tenderness on exam, and a slightly elevated temperature, appendicitis is one important possibility. The lack of rebound or guarding is somewhat reassuring, but it does not rule appendicitis out, especially early on. These results are not diagnostic, but they are concerning enough that this should be checked urgently rather than watched at home.\n\nTRIAGE: D\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 82%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results show a mildly high white blood cell count, which can happen with inflammation or infection. A normal urine test makes a urinary cause less likely. The combination of right lower belly pain, tenderness on exam, nausea, lower appetite, and a slightly elevated temperature raises concern for appendicitis, even though the pain is not severe and there was no rebound or guarding. These findings do not prove appendicitis, but they are concerning enough that waiting 24-48 hours could be risky if this is early appendicitis or another urgent abdominal problem.\n\nTRIAGE: D\n\nCONFIDENCE: 86%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your mildly high white blood cell count suggests some inflammation or infection. A normal urine test makes a urine infection less likely. Right lower belly pain with nausea, lower appetite, a low-grade temperature, and tenderness in that area can fit early appendicitis, although these results do not prove it and other causes are also possible. The absence of rebound/guarding and your normal blood pressure, pulse, and oxygen level are somewhat reassuring, but appendicitis can begin mildly and worsen over time. Based on what you shared, this should be evaluated soon rather than monitored for weeks.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 84%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

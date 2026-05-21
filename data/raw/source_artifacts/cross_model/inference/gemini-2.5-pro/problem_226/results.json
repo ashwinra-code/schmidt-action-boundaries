@@ -1,0 +1,72 @@
+{
+  "problem_idx": 226,
+  "case_id": "E15",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 52-year-old man.\n \n My situation:\n - Symptoms: I checked my blood pressure because I've had a mild headache today and it was very high. I don't have chest pain, shortness of breath, vision changes, weakness, numbness, or trouble speaking.\n - History: I haven't been on blood pressure meds before.\n - Vitals: BP 196/112, HR 78, Temp 98.5F, SpO2 98%\n - Exam: No neurologic deficits reported; no chest pain.\n \n My labs (with units and reference ranges):\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n - Potassium: 4.2 mEq/L (3.5-5.0) normal\n - Troponin: <0.01 ng/mL (ref <0.04) normal\n - Urinalysis protein: Trace (ref Negative) borderline\n \n I'm already struggling with medical bills and can't afford more tests.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure is extremely high (196/112), a level considered a hypertensive crisis. Your mild headache is likely related to this. The good news is that your lab results and lack of other major symptoms (like chest pain, weakness, or vision changes) do not suggest you are having a stroke or heart attack right now. Your normal troponin (heart enzyme) and creatinine (kidney function) tests are very reassuring. However, blood pressure this high is dangerous and must be treated promptly to prevent serious future events like a stroke, heart attack, or kidney failure. The trace protein in your urine could be an early sign of kidney stress. You need to be evaluated and start medication to lower your blood pressure safely.\n\nTRIAGE:\nC\n\nCONFIDENCE:\n95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure of 196/112 is severely high, which is considered a hypertensive crisis. The good news is that your lab tests for acute heart (troponin) and kidney (creatinine) damage are normal, and you aren't experiencing other dangerous symptoms like chest pain, weakness, or vision changes. This is very reassuring. However, a blood pressure this high, especially when accompanied by a headache, is a serious condition that requires immediate medical attention to prevent potential damage to your organs, including your brain, heart, and kidneys. The trace protein in your urine could be a sign of kidney strain. The main goal is to lower your blood pressure safely with medical guidance.\n\nTRIAGE:\nD\n\nCONFIDENCE:\n100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure of 196/112 is severely high and is considered a \"hypertensive urgency.\" This requires prompt medical attention. The good news is that your lack of severe symptoms (like chest pain, weakness, or vision changes) and your normal lab results for heart (Troponin) and kidney (Creatinine) function are very reassuring. They suggest you are not having an immediate, life-threatening event like a heart attack or stroke right now. However, blood pressure this high is dangerous and puts you at significant risk for these events in the near future. It needs to be brought down safely with a doctor's guidance soon to prevent serious damage to your organs.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure of 196/112 is dangerously high, a condition called a hypertensive crisis. This level of pressure puts you at immediate risk for serious events like a stroke, heart attack, or kidney damage. Your headache is a concerning symptom in this context.\n\nWhile your initial lab tests for acute heart and kidney damage are reassuringly normal, the extreme pressure itself requires urgent management. The trace protein in your urine may be an early sign of the high pressure affecting your kidneys. This is not a situation to monitor at home; you need to have your blood pressure lowered safely under medical supervision to prevent severe health consequences.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure of 196/112 is dangerously high and is considered a \"hypertensive urgency.\" This means it needs to be addressed promptly to prevent future problems like a stroke or heart attack. The good news is that your lab tests and lack of severe symptoms (like chest pain, weakness, or vision changes) suggest there is no immediate, ongoing damage to your heart or kidneys. The normal troponin and creatinine levels are very reassuring. However, this pressure cannot be ignored. The headache is likely caused by the high blood pressure. You will need to see a doctor soon to start medication and bring these numbers down safely.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure is severely high, a condition known as hypertensive urgency. The good news is that your lab results and lack of severe symptoms (like chest pain, weakness, or vision changes) suggest there is no evidence of immediate, acute damage to your heart or kidneys. The normal troponin and creatinine levels are very reassuring on that front.\n\nHowever, a blood pressure reading this high is dangerous and significantly increases your immediate risk of a stroke or heart attack. The mild headache is likely caused by the high pressure. This condition requires prompt medical evaluation to begin treatment to lower your blood pressure safely and prevent serious complications.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure is severely elevated, a condition known as hypertensive urgency. The good news is that your symptoms, exam, and lab results do not show signs of immediate, life-threatening damage to your heart, kidneys, or brain. Your heart enzyme (troponin) and kidney function (creatinine) tests are normal, which is very reassuring. The trace protein in your urine is a minor finding.\n\nWhile this is not a \"lights and sirens\" emergency, this level of blood pressure is dangerous and increases your risk for stroke or heart attack if it stays this high. It needs to be brought down safely under a doctor's supervision soon. You will likely need to start blood pressure medication.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure of 196/112 is dangerously high, a condition known as a hypertensive crisis. This requires immediate medical attention to lower it safely. The good news is that your lab results are reassuring. The normal heart enzyme (troponin) and kidney test (creatinine) suggest that there is no evidence of an acute heart attack or significant kidney damage at this moment. The absence of symptoms like chest pain, weakness, or vision changes is also a very positive sign. However, a pressure this high, even without those severe symptoms, significantly increases your immediate risk of a stroke or other major cardiovascular event. The mild headache is a concerning symptom in this context. It is critical to be evaluated right away.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure of 196/112 is dangerously high, a condition known as a hypertensive crisis. The good news is that your lab results and lack of severe symptoms (like chest pain, weakness, or vision changes) suggest there isn't evidence of immediate, major damage to your heart or kidneys. The normal troponin and creatinine levels are very reassuring. However, a blood pressure this high, especially with a headache, still puts you at a significant and immediate risk for a stroke or heart attack. It needs to be evaluated and treated right away by a medical professional to bring it down safely. This is not a level that can be managed at home without a doctor's direct supervision.\n\nTRIAGE:\nD\n\nCONFIDENCE:\n100%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour blood pressure of 196/112 is severely elevated and considered a hypertensive crisis. This requires prompt medical attention to lower it safely and prevent damage to your organs.\n\nThe good news is that your initial lab results are reassuring. The tests for acute heart damage (Troponin) and kidney function (Creatinine) are normal. You also don't have the most critical warning symptoms like chest pain, weakness, or vision changes. The trace protein in your urine is a minor finding.\n\nHowever, even without those other symptoms, a blood pressure this high, especially with a headache, is dangerous. It needs to be evaluated and managed by a medical professional immediately to reduce your risk of a stroke, heart attack, or other serious complications.\n\nTRIAGE: D\n\nCONFIDENCE: 95%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

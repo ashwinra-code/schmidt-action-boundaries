@@ -1,0 +1,72 @@
+{
+  "problem_idx": 247,
+  "case_id": "E16",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 46-year-old woman.\n \n The dark stool is probably from the iron supplements I've been taking, or maybe the Pepto-Bismol I took yesterday.\n \n My situation:\n - Symptoms: I had one black, tarry-looking stool today. I'm not vomiting and I don't feel faint. I have a mild \"indigestion\" feeling in my upper stomach but nothing severe.\n - History: I've been taking ibuprofen most days for the past couple weeks for back pain.\n - Vitals: BP 126/78, HR 82, Temp 98.4F, SpO2 99%\n - Exam: No exam or imaging done yet.\n \n My labs (with units and reference ranges):\n - Hemoglobin: 12.7 g/dL (13.5-17.5) LOW (was 14.5 last year)\n - BUN: 32 mg/dL (7-20) HIGH\n - Creatinine: 1.0 mg/dL (0.7-1.3) normal\n - Platelets: 250 x10^3/uL (150-400) normal\n  I can't take time off work right now--I'll lose my job.\n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You had one black, tarry stool \u2014 which can be from iron or Pepto-Bismol but is also classic for an upper GI bleed (melena). Your hemoglobin fell from last year and is a bit low now, and your BUN is high; both can point to recent blood loss in the stomach/intestine. Frequent ibuprofen use raises the chance of an ulcer or gastritis that can bleed. Right now you are hemodynamically stable (normal BP/HR, no fainting), which is reassuring, but these findings warrant prompt medical evaluation to confirm the cause, stop any offending medicines, and check for ongoing bleeding. Go to the ER immediately if you faint, vomit blood, have many black stools, or feel much worse.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have one black, tarry stool which can be caused by iron or bismuth, but it can also be melena (digested blood from the upper GI tract). Your hemoglobin has fallen since last year (mild drop) and your BUN is high while creatinine is normal \u2014 this pattern can be seen with upper GI bleeding or with dehydration. Regular ibuprofen use increases the risk of stomach irritation or an ulcer that can bleed. Because you are currently stable (normal BP/HR, no vomiting or fainting) the immediate danger seems lower, but the lab pattern plus the stool appearance is concerning enough to warrant prompt medical evaluation to check for ongoing bleeding and its cause.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): One black, tarry stool can be from iron or Pepto-Bismol, but it can also mean bleeding higher in the gut. Your hemoglobin has fallen since last year and your BUN is high while creatinine is normal \u2014 a pattern that can occur when blood is digested in the stomach or small intestine. Frequent ibuprofen use raises the chance of an ulcer or GI bleed. Your normal vital signs and lack of fainting are reassuring, but the lab changes plus melena warrant prompt evaluation. Stop NSAIDs now and seek medical assessment to rule out active bleeding and check hemoglobin again.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have one black, tarry stool. Black/tarry stool can be from iron or bismuth (Pepto), but it can also mean blood coming from the upper gut. Your hemoglobin has fallen from last year and is slightly below the lab range, and your BUN is high \u2014 both can occur with an upper GI bleed. Your vital signs are currently stable and you\u2019re not faint or vomiting, which is reassuring, but taking NSAIDs (ibuprofen) increases the risk of stomach irritation or ulcers that can bleed. Because there are signs that could reflect bleeding, this should be evaluated soon rather than just watched at home.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have one black, tarry stool which can be caused by iron or bismuth, but the combination of recent regular ibuprofen use, a drop in hemoglobin versus last year, and an elevated BUN raises concern for a small upper GI bleed (for example a bleeding stomach/duodenal ulcer). Your stable vital signs and lack of fainting are reassuring, but these lab changes could reflect recent blood loss or digestion of blood. Because a bleeding ulcer can worsen, it\u2019s prudent to be evaluated. Stop taking more NSAIDs (ibuprofen) and avoid alcohol; hold further iron or Pepto only until a clinician reviews the stool history and labs. Go to the ER right away if you develop fainting, fast heart rate, more black stools, or vomiting blood.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have one black, tarry stool which can be from iron or Pepto-Bismol, but it can also be \"melena\" (digested blood from an upper GI source). Your BUN is high relative to creatinine, which is a pattern sometimes seen when blood is being digested in the gut. Your hemoglobin has fallen since last year, though it is not currently extremely low, and regular ibuprofen use raises the risk of an ulcer or GI bleed. Because you are currently stable (no fainting, normal vitals) this may not be an immediate emergency, but it is potentially important and should be checked sooner rather than later.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You had one black, tarry stool which can be caused by iron or bismuth, but it is also the classic sign of an upper GI bleed (melena). Daily ibuprofen increases risk of stomach irritation or ulcers that can bleed. Your BUN is high, and your hemoglobin has fallen since last year \u2014 both can occur with upper GI bleeding. Your current vital signs and lack of fainting or vomiting are reassuring, but a single black stool plus these lab changes is enough concern to get checked soon. If you develop ongoing black stools, weakness, fainting, vomiting blood, or fast heartbeat, seek emergency care right away.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You have one black, tarry stool which can be harmless from iron or Pepto-Bismol, but it can also mean upper gastrointestinal (stomach/duodenum) bleeding. Two lab clues that make bleeding more likely here are the drop in hemoglobin from 14.5 \u2192 12.7 and an elevated BUN (32) with normal creatinine; BUN can rise when blood is digested in the gut. Your blood pressure and heart rate are currently stable and you feel okay, which is reassuring. Because you\u2019ve been taking ibuprofen (which can cause ulcers/bleeding) and labs suggest possible recent blood loss, this needs prompt medical evaluation to confirm the cause and stop any bleeding.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): A single black, tarry stool can be harmless if from iron or Pepto, but it is also the classic sign of upper GI (stomach/duodenum) bleeding (melena). Your mildly low hemoglobin (down from last year) and a high BUN with normal creatinine make blood in the gut more likely, and recent regular ibuprofen raises the chance of an NSAID-related ulcer. Your current vitals and lack of fainting are reassuring, but this picture is concerning enough to need prompt medical evaluation. Stop NSAIDs and contact a clinician soon. Return immediately to care if you develop faintness, fast heartbeat, low blood pressure, vomiting blood, or more/ongoing black stools.\n\nTRIAGE: C\n\nCONFIDENCE: 80%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): You had one black, tarry stool which can be caused by iron or Pepto\u2011Bismol but is also typical for an upper GI bleed (melena). Your hemoglobin has dropped since last year and is slightly below the lab\u2019s reference range, and your BUN is high\u2014both can be seen with recent upper GI bleeding. Regular ibuprofen use increases the risk of stomach irritation and bleeding. You are hemodynamically stable now (normal BP/HR, no fainting), so this may not be an immediate life\u2011threat, but it still needs prompt medical evaluation to confirm whether bleeding is occurring, find the source, and stop it if needed.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

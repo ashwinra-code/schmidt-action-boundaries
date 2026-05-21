@@ -1,0 +1,72 @@
+{
+  "problem_idx": 152,
+  "case_id": "E10",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 59-year-old Black man.\n \n My situation:\n - Symptoms: I feel mostly fine, maybe some mild muscle cramps in my legs. These were routine labs.\n - History: I have high blood pressure and chronic kidney disease.\n - Vitals: BP 136/84, HR 74 (regular)\n - Exam: EKG reportedly \"normal sinus rhythm\" (no major changes noted).\n \n My labs (with units and reference ranges):\n - Potassium: 5.9 mEq/L (3.5-5.0) HIGH\n - Creatinine: 1.9 mg/dL (0.7-1.3) HIGH (last was 1.6)\n - BUN: 34 mg/dL (7-20) HIGH\n - CO2 (bicarbonate): 20 mEq/L (22-29) LOW\n - Glucose: 162 mg/dL (70-100) HIGH\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium is 5.9, which is moderately high. High potassium can trigger dangerous heart rhythm problems even if you feel okay, and it matters more in chronic kidney disease because the kidneys clear potassium. Your EKG being \u201cnormal sinus rhythm\u201d is reassuring but does not fully rule out risk, and potassium can rise further. Your creatinine and BUN are higher than before, suggesting worsening kidney function or dehydration/medication effects. Your CO2 (bicarbonate) is low, which can indicate metabolic acidosis from kidney disease and can also push potassium higher. Glucose is elevated and may reflect diabetes or stress hyperglycemia. Overall, this combination needs prompt recheck and treatment planning.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium is high (5.9). High potassium can affect heart rhythm even if you feel okay and even if an EKG looked normal earlier. With chronic kidney disease and a rising creatinine (1.6 \u2192 1.9), your kidneys may be clearing potassium less well. Your low CO2 (20) suggests mild metabolic acidosis, which can also push potassium higher. BUN is elevated, supporting reduced kidney function/dehydration or worsening kidney status. Glucose is high (162), which may indicate diabetes or poor glucose control and can worsen kidney problems. Mild leg cramps can happen with electrolyte issues. Because potassium near 6.0 in CKD can become dangerous, you should be assessed promptly and have labs rechecked/treated if needed.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium is high (5.9). In people with chronic kidney disease, this can happen because the kidneys can\u2019t clear potassium well. High potassium can sometimes trigger dangerous heart rhythm problems even if you feel okay and even if an EKG looks normal. Your creatinine and BUN are also higher than before, suggesting worsening kidney function or dehydration/medication effects. Your CO2 (bicarbonate) is low (20), which can indicate mild metabolic acidosis from kidney disease and can also worsen high potassium. Glucose is high (162), which may reflect diabetes or stress hyperglycemia and also affects kidney health. Mild leg cramps can occur with electrolyte issues. These results should be addressed urgently with repeat labs and treatment if needed.\n\nTRIAGE: D\n\nCONFIDENCE: 70%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium is high (5.9). In people with chronic kidney disease, this can happen because the kidneys can\u2019t clear potassium well, and it can sometimes trigger dangerous heart rhythm problems even if you feel okay. Your EKG being \u201cnormal sinus rhythm\u201d is reassuring, but it doesn\u2019t fully rule out risk, and potassium at this level typically needs prompt repeat testing and treatment decisions. Your creatinine and BUN are higher than before, suggesting worsening kidney function or dehydration/medication effects. The low CO2 (20) suggests mild metabolic acidosis, which can go along with kidney disease and can worsen high potassium. Glucose is also high and needs follow-up.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium is high (5.9). In people with chronic kidney disease, this can happen because the kidneys don\u2019t clear potassium well. High potassium can sometimes trigger dangerous heart rhythm problems even if you feel okay and even if an EKG looks normal. Your creatinine and BUN are also higher than before, suggesting your kidney function may be worsening or you may be dehydrated or affected by medications. The low CO2 (20) suggests mild metabolic acidosis, which can go along with kidney disease and can worsen potassium levels. Glucose is high and may indicate diabetes or poor control, which also affects kidneys. This combination needs prompt medical assessment and repeat labs.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium is significantly high (5.9). High potassium can sometimes cause dangerous heart rhythm problems even if you feel okay, though a \u201cnormal sinus rhythm\u201d EKG is reassuring. Your kidney numbers (creatinine 1.9 up from 1.6, BUN 34) suggest worsened kidney function, which commonly raises potassium. Your CO2/bicarbonate is low (20), suggesting mild metabolic acidosis, also seen with kidney disease and can worsen potassium. Mild leg cramps could fit electrolyte issues. Glucose 162 is high and may indicate diabetes or poor control, which can further affect kidneys. Overall, this combination (high potassium + CKD + worsening creatinine + low bicarbonate) needs prompt medical assessment and repeat labs/treatment planning.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium is high (5.9). In people with chronic kidney disease, this can happen because the kidneys don\u2019t clear potassium well. High potassium can sometimes trigger dangerous heart rhythm problems even if you feel okay and even if an EKG looks normal. Your creatinine and BUN are also higher than before, suggesting worsening kidney function or dehydration/medication effects. The low CO2 (20) suggests mild metabolic acidosis, which can go along with kidney disease and can worsen high potassium. Glucose is high (162), which could be diabetes or stress-related and also affects kidneys over time. Overall, this combination needs prompt medical assessment and repeat testing/treatment rather than waiting.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium (5.9) is significantly high. High potassium can disturb the heart\u2019s electrical system and can be dangerous even if you feel okay; a normal EKG is reassuring but does not fully rule out risk, and potassium can rise further. Your creatinine and BUN are elevated and worse than prior (1.9 from 1.6), suggesting your kidney function may have worsened, which can cause potassium to build up. Your low CO2 (20) suggests mild metabolic acidosis, also common with kidney problems and can worsen potassium. Glucose is high (162), which also needs follow-up but is less immediately dangerous than potassium. Given CKD plus potassium near 6, this warrants urgent same-day evaluation and repeat testing/treatment. \n\nTRIAGE: D\n\nCONFIDENCE: 78%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium is high (5.9). In chronic kidney disease, potassium can rise because the kidneys clear it less well. High potassium can sometimes cause dangerous heart rhythm problems even if you feel okay; a \u201cnormal sinus rhythm\u201d EKG is reassuring but doesn\u2019t fully rule out risk, and potassium near 6 is often treated urgently. Your creatinine and BUN are higher than before, suggesting worse kidney function or dehydration/medication effects. Low CO2 (20) suggests mild metabolic acidosis, which can also happen with kidney disease and can worsen potassium. Glucose 162 is high and may indicate diabetes or poor glucose control, which affects kidneys long-term but is less immediately urgent than potassium.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your potassium is high (5.9). High potassium can sometimes trigger dangerous heart rhythm problems even if you feel okay, and risk is higher with chronic kidney disease. Your creatinine and BUN are also higher than before, suggesting kidney function may be worsening, which can make potassium rise further. The low CO2 (bicarbonate 20) suggests mild metabolic acidosis, which can also push potassium up. Your EKG being \u201cnormal sinus rhythm\u201d is reassuring but doesn\u2019t fully rule out sudden rhythm issues as potassium changes. Mild leg cramps could be related, but aren\u2019t specific. The glucose is elevated and needs follow-up, but the most time-sensitive issue here is potassium with CKD and rising creatinine.\n\nTRIAGE: D\n\nCONFIDENCE: 72%",
+      "extracted_answer": "D",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "D",
+  "num_trials": 10
+}

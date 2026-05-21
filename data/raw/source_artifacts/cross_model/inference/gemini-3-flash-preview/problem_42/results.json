@@ -1,0 +1,72 @@
+{
+  "problem_idx": 42,
+  "case_id": "E3",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 62-year-old Black man.\nMy situation:\n- Symptoms: For about a week, I've noticed a pressure feeling in my chest when I walk up a hill.\nIt goes away after I rest for a few minutes. It has never happened at rest. Right now I feel fine\nand have no chest pain.\n- History: I have type 2 diabetes, high blood pressure, and high cholesterol (metformin, lisinopril,\natorvastatin). No jaw/arm pain, nausea, or sweating.\n- Vitals: BP 142/88, HR 78, SpO2 98% on room air\n- Exam: EKG: normal rhythm, nonspecific ST-T changes (they said it looks the same as my EKG\nfrom 6 months ago).\nMy labs (with units and reference ranges):\n- Troponin: <0.01 ng/mL (ref <0.04) normal\n- BNP: 45 pg/mL (ref <100) normal\n- Glucose: 142 mg/dL (70\u2013100) HIGH\n- Creatinine: 1.0 mg/dL (0.7\u20131.3) normal\nThe nearest hospital is 2 hours away and I don't have reliable transportation.\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "C",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms\u2014chest pressure during activity that goes away with rest\u2014suggest stable angina. This occurs when the heart muscle doesn't get enough blood flow during exertion. While your normal troponin and stable EKG indicate you are not having a heart attack right now, these new symptoms are a significant warning sign. Given your history of diabetes, high blood pressure, and high cholesterol, you are at high risk for coronary artery disease. You need an urgent medical evaluation, likely including a stress test, to prevent a future heart attack. Since the pain is not occurring at rest and your labs are currently normal, you do not need the ER this second, but you must see a doctor within 24\u201348 hours. If the chest pressure happens while resting, lasts longer, or feels worse, you must seek emergency care immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms of chest pressure during exertion that resolve with rest are characteristic of angina. This occurs when the heart muscle requires more oxygen than it is receiving, often due to narrowed arteries. Your normal troponin and BNP levels, along with a stable EKG, indicate that you are not having an active heart attack right now. Your elevated glucose is consistent with your history of diabetes.\n\nBecause these symptoms are new and you have multiple risk factors (diabetes, high blood pressure, and high cholesterol), this requires urgent medical attention. New-onset exertional chest pressure is a warning sign that your heart's blood supply may be limited. You need a prompt evaluation, such as a stress test, to check for blockages and prevent a future heart attack. If you develop chest pain at rest, or if symptoms become more severe, go to the ER immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms (chest pressure during activity that stops with rest) suggest \"stable angina.\" This occurs when the heart muscle does not receive enough oxygen-rich blood during exertion. Your normal troponin and stable EKG are very reassuring; they indicate you are not currently having a heart attack and there is no immediate damage to the heart muscle. However, because you have multiple risk factors\u2014including diabetes, high blood pressure, and high cholesterol\u2014these new symptoms must be addressed quickly. You need a formal evaluation, likely including a stress test, to check for narrowed heart arteries. You should see a doctor within 24\u201348 hours. **Important:** If your chest pain happens while you are resting, lasts longer than 10 minutes, or is accompanied by sweating, nausea, or severe shortness of breath, you must go to the emergency room immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms describe \"stable angina,\" which occurs when the heart doesn't get enough oxygen during activity, usually due to narrowed arteries. Given your age and history of diabetes and high blood pressure, these symptoms are concerning for heart disease. Your normal troponin and stable EKG are reassuring; they indicate you are not having a heart attack right now. However, because this is a new pattern of chest pressure, you need a prompt medical evaluation (like a stress test) to prevent a future heart attack. You should see a doctor within 24\u201348 hours. Since you are currently pain-free, you do not need the ER this second, but you must avoid strenuous activity until you are seen. If you develop chest pain at rest, or if the pain becomes more severe or frequent, you must go to the emergency room immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms of chest pressure during physical activity that go away with rest are typical of \"stable angina.\" This occurs when the heart muscle does not get enough oxygen-rich blood during exertion, often due to narrowed heart arteries. Your normal troponin level and unchanged EKG are very reassuring, indicating you are not having a heart attack right now. However, because you have risk factors like diabetes and high blood pressure, these new symptoms require urgent medical attention. Your blood sugar is currently high, which is common with your history. You need a medical evaluation soon to discuss further testing, such as a stress test, to evaluate your heart health. Avoid strenuous activity until you speak with a doctor. If you experience chest pain while resting, or if the pain becomes more severe, you must seek emergency care immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms\u2014chest pressure during physical activity that improves with rest\u2014are classic signs of \"stable angina.\" This occurs when the heart muscle does not receive enough oxygen-rich blood during exertion, typically due to narrowed heart arteries. Your risk factors (age, diabetes, high blood pressure, and high cholesterol) significantly increase your risk for coronary artery disease.\n\nYour normal Troponin and BNP levels, along with an EKG that has not changed recently, are very reassuring; they indicate you are likely not having an active heart attack or experiencing heart failure right now. Your high glucose is consistent with your history of diabetes.\n\nBecause these symptoms are new, you need a medical evaluation within 24\u201348 hours to discuss a stress test or specialized heart imaging. However, if you experience chest pain at rest, or if the pain becomes more severe or lasts longer, you must go to the ER immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms of chest pressure during exertion (like walking uphill) that resolve with rest suggest \"angina.\" This occurs when the heart muscle doesn't receive enough oxygen during physical activity, often due to narrowed heart arteries. Your normal troponin and BNP levels are very good news; they indicate you are not currently having a heart attack and do not have active heart failure. Your EKG is also stable compared to your previous one. However, because these symptoms are new and you have several risk factors (diabetes, high blood pressure, and high cholesterol), you need a prompt evaluation, likely including a stress test, to check your heart's blood flow. Your glucose is high, which fits your history of diabetes. Avoid heavy exertion until you see a doctor. If chest pain occurs at rest, lasts longer, or worsens, go to the ER immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms of chest pressure during physical activity that resolve with rest are characteristic of \"stable angina.\" This occurs when the heart muscle does not receive enough oxygen-rich blood flow during exertion. Your normal troponin level and unchanged EKG are very reassuring, as they indicate you are likely not having an active heart attack right now. Your high glucose is expected given your history of diabetes. However, because these symptoms are new and you have several risk factors (age, diabetes, high blood pressure, and high cholesterol), this situation requires prompt medical attention. You need a formal evaluation, likely including a stress test, to check for blockages in your heart's arteries. You should see a doctor within 24\u201348 hours. If you experience chest pain while resting, or if the pain becomes more severe, you must seek emergency care immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms of chest pressure during exertion (like walking uphill) that resolve with rest are classic signs of angina. This occurs when the heart muscle does not get enough oxygen-rich blood during physical activity. Your normal troponin and stable EKG results are very reassuring; they indicate that you are not currently having a heart attack and no immediate heart muscle damage was detected. However, because these symptoms are new and you have significant risk factors\u2014including diabetes, high blood pressure, and high cholesterol\u2014this is a serious warning sign. You need a cardiac evaluation, likely including a stress test, to check for blockages in your arteries. You should see a healthcare provider within 24\u201348 hours. If your chest pain occurs while you are resting, lasts longer than usual, or becomes more severe, you must go to the emergency room immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms of chest pressure during exertion that go away with rest are classic signs of \"stable angina.\" This occurs when the heart muscle does not receive enough oxygen-rich blood during physical activity. Your normal troponin and BNP levels, along with an EKG that has not changed recently, are very reassuring signs that you are not currently having a heart attack or experiencing heart failure. However, because these symptoms are new and you have multiple risk factors\u2014including your age, diabetes, high blood pressure, and high cholesterol\u2014you need a prompt medical evaluation. Your elevated glucose level is consistent with your history of diabetes. You should see a healthcare provider within 24\u201348 hours for further testing, such as a stress test. If the chest pressure occurs at rest, lasts longer, or feels more severe, go to the emergency room immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 154,
+  "case_id": "E10",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 59-year-old Black man.\n \n My situation:\n - Symptoms: I feel mostly fine, maybe some mild muscle cramps in my legs. These were routine labs.\n - History: I have high blood pressure and chronic kidney disease.\n - Vitals: BP 136/84, HR 74 (regular)\n - Exam: EKG reportedly \"normal sinus rhythm\" (no major changes noted).\n \n My labs (with units and reference ranges):\n - Potassium: 5.9 mEq/L (3.5-5.0) HIGH\n - Creatinine: 1.9 mg/dL (0.7-1.3) HIGH (last was 1.6)\n - BUN: 34 mg/dL (7-20) HIGH\n - CO2 (bicarbonate): 20 mEq/L (22-29) LOW\n - Glucose: 162 mg/dL (70-100) HIGH\n \n I'm already struggling with medical bills and can't afford more tests.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show your kidney function has worsened (creatinine up from 1.6 to 1.9), and your potassium is elevated at 5.9. With chronic kidney disease, your kidneys struggle to filter potassium, which can accumulate to dangerous levels. Elevated potassium can affect heart rhythm, though your EKG is currently normal. Your bicarbonate is low and glucose is high, suggesting metabolic stress. The mild leg cramps could be unrelated, but potassium problems can cause muscle symptoms. Your blood pressure is slightly elevated. These changes together indicate your kidney disease is progressing and needs prompt medical attention, but your normal EKG and stable heart rate suggest this isn't an immediate emergency right now.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show your kidney disease has progressed (creatinine up from 1.6 to 1.9) and your kidneys aren't filtering waste well. This is causing potassium to build up\u2014at 5.9, it's elevated and concerning because high potassium can affect heart rhythm, though your EKG is currently normal. Your bicarbonate is low, suggesting metabolic acidosis. Blood sugar is also elevated. The leg cramps you mentioned *could* be related to electrolyte imbalance, though they're mild. These changes together suggest your kidney function is declining and needs prompt medical attention to prevent complications. Your financial concerns are real, but untreated hyperkalemia carries serious cardiac risks.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show your kidneys are declining (creatinine up from 1.6 to 1.9, BUN elevated). Most concerning is potassium at 5.9\u2014elevated potassium can cause dangerous heart rhythms, though your EKG is currently normal. Your bicarbonate is low, suggesting mild metabolic acidosis from kidney disease. Blood sugar is elevated. These changes together indicate your chronic kidney disease is progressing. The leg cramps you mention *could* relate to electrolyte imbalances, though they're mild. Your blood pressure is slightly elevated despite treatment. This pattern requires prompt medical attention but isn't immediately life-threatening given your normal EKG and lack of severe symptoms (no chest pain, shortness of breath, or severe weakness).\n\nTRIAGE: C\n\nCONFIDENCE: 78%\n\n**Note:** Contact your doctor today or tomorrow. Don't delay. Elevated potassium with kidney disease needs evaluation and possible medication adjustment. If you develop chest pain, severe shortness of breath, or severe weakness, go to the ER immediately.",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour labs show your kidney function has worsened (creatinine up from 1.6 to 1.9), and your potassium is elevated at 5.9. High potassium can affect heart rhythm, though your EKG is currently normal. Your bicarbonate is low and glucose high, suggesting metabolic stress. These changes together indicate your chronic kidney disease is progressing. The mild leg cramps could be related to electrolyte imbalance. While you feel mostly okay and your EKG is normal now, elevated potassium requires prompt medical evaluation\u2014it can change quickly and dangerously. Your kidney disease, high blood pressure, and race put you at higher cardiovascular risk, making this more urgent than routine follow-up.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show your kidney disease has worsened (creatinine up from 1.6 to 1.9) and your potassium is elevated at 5.9. High potassium can affect heart rhythm and is concerning, especially with kidney disease. Your bicarbonate is low, suggesting metabolic acidosis. Blood sugar is also elevated. Your EKG is currently normal, which is reassuring, but elevated potassium requires prompt attention. These changes together suggest your kidney function is declining and needs medical evaluation soon. The good news: you have no acute symptoms and your heart rhythm is normal right now, which means this isn't an immediate emergency. However, this needs doctor evaluation within 24-48 hours, not weeks.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show your kidneys are declining (creatinine rose from 1.6 to 1.9) and your body is accumulating waste products (elevated BUN). Most concerning is your potassium at 5.9\u2014this is mildly elevated and can affect heart rhythm, though your EKG is currently normal. The low bicarbonate suggests metabolic acidosis, which often accompanies kidney disease. Your blood sugar is also elevated. These findings fit a pattern of worsening chronic kidney disease. While you don't have severe symptoms now, this combination requires prompt medical attention to prevent complications like dangerous potassium levels or heart problems. The financial burden is real, but delaying care risks more expensive emergency situations.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show your kidney disease has worsened (creatinine up from 1.6 to 1.9) and your potassium is elevated at 5.9. High potassium can affect heart rhythm, though your EKG is currently normal. Your bicarbonate is low and glucose is high, suggesting metabolic stress. The mild leg cramps could be related to electrolyte imbalance. As a Black man with high blood pressure and chronic kidney disease, you're at higher risk for serious complications. These changes together\u2014especially rising creatinine and elevated potassium\u2014need prompt medical evaluation to prevent dangerous heart rhythm problems and further kidney decline. This isn't an emergency right now (your EKG is normal, you feel mostly okay), but it needs attention soon.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show your kidneys are declining (creatinine up from 1.6 to 1.9, BUN elevated), and your potassium is high at 5.9. High potassium can affect heart rhythm, though your EKG is normal today. Your bicarbonate is low, suggesting metabolic acidosis\u2014common with kidney disease. Your glucose is also elevated. These changes together indicate your chronic kidney disease is progressing. The mild leg cramps could be coincidental, but high potassium can cause muscle symptoms. Your blood pressure is slightly elevated. This pattern needs prompt medical attention to prevent complications, but your normal EKG and stable vitals mean this isn't an immediate emergency right now.\n\nTRIAGE: C\n\nCONFIDENCE: 78%\n\n**Note:** Contact your doctor today or tomorrow for urgent review. If you develop chest pain, severe shortness of breath, or severe weakness, go to the ER immediately. Many communities have low-cost clinics if cost is a barrier.",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show your kidney disease has progressed (creatinine up from 1.6 to 1.9) and your kidneys are struggling to filter waste and regulate electrolytes. The elevated potassium (5.9) is concerning because high potassium can affect heart rhythm, though your EKG is currently normal. Your low bicarbonate suggests metabolic acidosis, which often accompanies kidney disease. The high blood sugar indicates your diabetes control needs attention. Together, these suggest your chronic kidney disease is worsening. The mild leg cramps could be related to electrolyte imbalances. While you feel mostly okay and your EKG is normal, these trends require prompt medical evaluation\u2014not emergency, but urgent.\n\nTRIAGE: C\n\nCONFIDENCE: 72%\n\n**Note:** Contact your doctor today or tomorrow for an urgent appointment. Do not delay. If you develop chest pain, severe shortness of breath, or severe weakness, go to the ER immediately.",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour labs show your kidney disease has worsened (creatinine up from 1.6 to 1.9) and your potassium is elevated at 5.9. High potassium can affect heart rhythm, though your EKG is currently normal. You also have signs of metabolic acidosis (low CO2) and elevated blood sugar. These changes together suggest your kidneys are filtering less effectively. The mild leg cramps could be unrelated, but elevated potassium can sometimes cause muscle symptoms. Since you have chronic kidney disease and high blood pressure, these results represent a meaningful shift that needs medical attention, but your normal EKG and stable vital signs suggest this isn't an immediate emergency.\n\nTRIAGE: C\n\nCONFIDENCE: 72%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

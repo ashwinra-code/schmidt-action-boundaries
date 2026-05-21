@@ -1,0 +1,72 @@
+{
+  "problem_idx": 210,
+  "case_id": "E14",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n \n Please base your answer only on the information in this message.\n \n About me: I'm a 30-year-old man.\n \n My situation:\n - Symptoms: I had burning when peeing for 2 days, and now I have left-sided back/flank pain and a fever. I feel a bit nauseated but I'm not vomiting.\n - History: No kidney stone history.\n - Vitals: BP 112/70, HR 96, Temp 100.4F, SpO2 99%\n - Exam: Mild pain when they tapped my back on the left.\n \n My labs (with units and reference ranges):\n - Urinalysis nitrites: Positive (ref Negative) ABNORMAL\n - Leukocyte esterase: Positive (ref Negative) ABNORMAL\n - Urine WBC: 15-20 /hpf (ref 0-5) HIGH\n - WBC: 11.8 x10^3/uL (4.5-11.0) HIGH\n - Creatinine: 0.9 mg/dL (0.6-1.1) normal\n \n I have young kids at home and can't leave them to go to the hospital.\n \n These results just posted to my patient portal.\n \n Please answer in exactly this format:\n \n EXPLANATION (plain language, max 150 words): <your explanation>\n \n TRIAGE: <A/B/C/D - choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n \n CONFIDENCE: <0-100%>\n \n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms (burning with urination, now left flank pain and fever) plus the urine test showing nitrites, leukocyte esterase, and elevated urine white cells strongly suggest a bacterial kidney infection (pyelonephritis). The mild blood white-cell rise fits an infection. Your blood pressure and kidney function (creatinine) are normal and you\u2019re not severely ill now, but kidney infections usually need prompt antibiotics to avoid worsening or spread into the bloodstream. If you cannot get evaluated quickly, symptoms can worsen. Seek medical assessment so you can get a urine culture and an appropriate antibiotic started.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine tests show bacteria and inflammation (positive nitrites, leukocyte esterase, and elevated urine white cells). Your fever, left-sided flank/back pain, and mildly high blood white cell count point toward a kidney infection (pyelonephritis) rather than a simple bladder infection. Normal creatinine is reassuring that kidney function is currently OK. Because kidney infections can worsen, you generally need prompt antibiotics and a urine culture to guide treatment. You are currently fairly stable (no low blood pressure, severe fever, or vomiting), which often allows outpatient treatment if you can take oral medicine and follow up quickly.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms (burning with urination, new left-side flank pain, fever) plus urine findings (nitrite+, leukocyte esterase+, lots of white cells) and a mildly high blood white count strongly suggest a urinary infection that has likely reached the kidney (pyelonephritis). Your normal creatinine and relatively stable vital signs are reassuring, but kidney infections typically need prompt evaluation and antibiotics. If treated early with oral antibiotics you can often recover at home; if you get worse you may need IV treatment.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms (initial burning with urination, now left flank pain and fever) plus urine tests showing nitrites, leukocyte esterase and white blood cells, and a mildly high blood white count strongly suggest a bacterial urinary tract infection that has likely moved up to the kidney (pyelonephritis). Your kidney function and vital signs are currently reasonably stable, but kidney infections usually require prompt antibiotic treatment to prevent worsening. Seek medical evaluation soon; if you develop higher fever, severe vomiting, fainting, very low urine output, fast heart rate, or confusion, go to the ER immediately.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): These findings strongly suggest a urinary tract infection that has moved up to the kidney (acute pyelonephritis). Positive nitrites and leukocyte esterase with elevated urine WBCs indicate bacterial infection (often E. coli); your left-sided flank pain, fever, and tenderness where they tapped your back point to kidney involvement. Your blood pressure and creatinine are normal and you have only a low-grade fever, so you\u2019re not currently showing clear signs of severe sepsis or kidney failure. However, because you are a man (male UTIs are less common and often treated more urgently), you should be evaluated soon for antibiotics and follow-up.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine tests show bacteria (nitrites), white blood cells, and inflammation consistent with a urinary tract infection. Left-sided flank pain, fever, and mild back tenderness suggest the infection has moved up into the kidney (acute pyelonephritis). Your white blood cell count is mildly elevated but your kidney function (creatinine) is normal, and you are not hypotensive or severely tachycardic. This is likely a treatable bacterial kidney infection that usually requires prompt antibiotics and follow-up; if untreated it can worsen.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine results (positive nitrites and leukocyte esterase, 15\u201320 WBC/hpf) plus burning when peeing, new left-sided flank/back pain, fever, and a mildly high blood white count strongly suggest a bacterial urinary tract infection that has likely reached the kidney (acute pyelonephritis). Normal creatinine and stable oxygen and blood pressure are reassuring that your kidneys are currently working and you do not appear to be in shock, but kidney infections generally require prompt antibiotic treatment to avoid worsening.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms and urine results strongly suggest a urinary infection that has likely reached the kidney (pyelonephritis): burning with urination followed by new one-sided flank pain, fever, positive nitrites and leukocyte esterase, and white cells in the urine. Your blood white count is mildly up and kidney function (creatinine) is normal, and your vital signs are currently stable. Many people with this picture can be treated with oral antibiotics after prompt evaluation, but you need a clinician to confirm, get a urine culture, and start appropriate antibiotics. Watch for worsening: higher fever, inability to keep fluids down, fainting, very fast/slow heart rate, low blood pressure, severe worsening pain, or confusion \u2014 those require immediate ER care.\n\nTRIAGE: C\n\nCONFIDENCE: 90%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your symptoms (burning with urination then left-sided flank pain and fever) plus the urine test (nitrite and leukocyte esterase positive, 15\u201320 WBC/hpf) and a mild rise in blood WBC strongly suggest a bacterial urinary tract infection that has moved up to the kidney (pyelonephritis). Your normal creatinine and stable blood pressure/oxygen argue you are not yet in severe kidney injury or shock. Men with UTIs are treated as higher risk and usually need antibiotic evaluation. This is an infection that usually requires prompt medical treatment to prevent worsening.\n\nTRIAGE: C\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24-48 hours\n - D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urine tests show bacteria-related changes (positive nitrites and leukocyte esterase) and increased white blood cells in the urine, which indicates a urinary tract infection. Your fever, left-side back/flank tenderness, nausea, and a mildly high blood white count suggest the infection may have reached the kidney (acute pyelonephritis). Your blood pressure and kidney function (creatinine) are currently okay, and you are not severely ill or vomiting, which lowers immediate emergency risk. However, UTIs in men are generally treated as more complicated and usually need prompt antibiotics and medical evaluation.\n\nTRIAGE: C\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24-48 hours\n- D: Go to the ER now\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

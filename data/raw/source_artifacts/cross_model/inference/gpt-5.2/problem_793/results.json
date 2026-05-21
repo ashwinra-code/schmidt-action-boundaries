@@ -1,0 +1,72 @@
+{
+  "problem_idx": 793,
+  "case_id": "E23",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 31-year-old Black man.\n I looked it up online and it says white blood cells always drop temporarily after a cold. Since I feel better now, I'm not too worried about it.\n My situation:\n - Symptoms: I had a cold last week (sore throat and congestion) but I still feel more tired than usual - my energy hasn't fully bounced back. No current\n fever.\n - History: No autoimmune disease and not on any regular medications.\n - Vitals: BP 112/68, HR 70, Temp 36.7\u00b0C\n - Exam: Normal exam at my visit.\n My labs (with units and reference ranges):\n - WBC: 3.3 K/uL (4.0-11.0) low\n - Absolute neutrophil count (ANC): 1.5 K/uL (1.5-7.0) borderline\n - Hemoglobin: 13.1 g/dL (12.0-16.0) normal\n - Platelets: 220 K/uL (150-400) normal\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "A/B",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophil count is at the lower limit of normal (ANC 1.5), which is the main number that predicts infection risk. With ANC \u22651.5 and normal hemoglobin/platelets, the immediate risk of serious infection is low, especially since you\u2019re afebrile, vitals are normal, and your exam was normal. A recent viral illness can temporarily lower WBC/ANC, and fatigue can linger after a cold. Also, some healthy Black people have chronically lower neutrophil counts (\u201cbenign ethnic neutropenia\u201d), which can make results look borderline without causing problems. Still, this should be rechecked to confirm it returns to your usual baseline and isn\u2019t trending down.\n\nTRIAGE: B  \nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophils\u2014the infection-fighting type\u2014are at the very bottom of normal/borderline (ANC 1.5). After a recent viral illness, it\u2019s common for WBC/ANC to dip for days to a few weeks and then recover. The reassuring parts are: you\u2019re afebrile, vitals and exam were normal, and your hemoglobin and platelets are normal (so this isn\u2019t affecting multiple blood cell lines). In some Black individuals, a naturally lower baseline ANC can also occur. Because you still feel unusually tired and the counts are low/borderline, it\u2019s reasonable to follow up and likely recheck a CBC to confirm recovery and rule out other causes if it persists.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophils\u2014the main infection-fighting white cells\u2014are at the very bottom of normal (ANC 1.5). After a recent viral illness, it\u2019s common for WBC/ANC to dip temporarily and then recover over days to a few weeks. The reassuring parts are: you\u2019re afebrile, your vitals and exam were normal, and your hemoglobin and platelets are normal (so this doesn\u2019t look like a broad bone marrow problem from these data). In Black patients, a naturally lower baseline neutrophil count can also occur (benign ethnic neutropenia), which can make \u201cborderline\u201d results less concerning. Still, because you remain unusually fatigued and the low WBC is new/unexplained here, it\u2019s reasonable to follow up and likely repeat a CBC soon.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophils\u2014the cells that fight bacterial infections\u2014are at the low end of normal/borderline (ANC 1.5). After a recent viral illness, WBC/ANC can dip temporarily and then recover over days to a few weeks. Your other blood lines (hemoglobin and platelets) are normal, your vitals and exam were normal, and you have no fever now\u2014these are reassuring. In Black individuals, a persistently lower baseline neutrophil count (\u201cbenign ethnic neutropenia\u201d) is also common and usually not dangerous. Still, because you\u2019re more fatigued than usual and the WBC is below range, it\u2019s reasonable to follow up and likely repeat a CBC to confirm it\u2019s improving and not trending down.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophil count is at the lower limit of normal (ANC 1.5). This pattern can happen after a recent viral illness and often improves over 1\u20133 weeks, especially when hemoglobin and platelets are normal (which argues against a broader bone marrow problem). In Black individuals, a lower baseline neutrophil count can also be normal (\u201cbenign ethnic neutropenia\u201d), but that can\u2019t be confirmed from one test. The main concern with neutropenia is infection risk, which rises more when ANC is <1.0 and especially <0.5. Since you\u2019re afebrile, improving, and otherwise stable, this is usually not an emergency\u2014but it should be rechecked to ensure it returns to your baseline.\n\nTRIAGE: B  \nCONFIDENCE: 74%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophils\u2014the infection-fighting white cells\u2014are at the low end of normal/borderline (ANC 1.5). After a recent viral illness, it\u2019s common for WBC/ANC to dip temporarily and then recover over days to a few weeks. The reassuring parts are: normal temperature and vitals, normal exam, and normal hemoglobin and platelets (so this doesn\u2019t look like a broad bone-marrow problem). In Black men, a naturally lower baseline neutrophil count (\u201cbenign ethnic neutropenia\u201d) is also relatively common, and an ANC around this level can be normal for some people. Because you\u2019re still more tired than usual and the WBC is below range, it\u2019s reasonable to arrange follow-up and likely a repeat CBC to confirm it\u2019s improving.\n\nTRIAGE: B\nCONFIDENCE: 74%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophils\u2014the infection-fighting white cells\u2014are at the very bottom of normal (ANC 1.5). After a recent viral illness, temporary lowering of WBC/ANC can happen and often recovers over days to a few weeks. The reassuring parts are: you\u2019re afebrile, vitals and exam were normal, and your hemoglobin and platelets are normal (so this isn\u2019t a broad \u201cbone marrow\u201d problem based on these labs alone). However, because the WBC is below range and you still feel unusually tired, it\u2019s worth follow-up to repeat the CBC and ensure the count returns to your baseline. Seek urgent care sooner if you develop fever, worsening illness, or recurrent infections.\n\nTRIAGE: B  \nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your WBC is mildly low (3.3) and your ANC is at the low end of normal (1.5). This pattern can happen after a recent viral illness and often returns to normal over days to a few weeks. The reassuring parts are: you\u2019re afebrile, vitals/exam are normal, and your hemoglobin and platelets are normal (so this isn\u2019t a broader bone marrow problem based on what\u2019s shown). Ongoing fatigue can also linger after a cold. However, because the WBC is below range and the ANC is borderline, it\u2019s reasonable to follow up and repeat a CBC to confirm it\u2019s recovering and to rule out other causes. Seek urgent care sooner if you develop fever or feel significantly worse.\n\nTRIAGE: B\nCONFIDENCE: 74%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophils\u2014the infection\u2011fighting white cells\u2014are at the very bottom of normal/borderline (ANC 1.5). After a recent viral illness, it\u2019s common for WBC/ANC to dip for days to a few weeks and then recover. The reassuring parts are: you\u2019re afebrile, vitals and exam are normal, and your hemoglobin and platelets are normal (so this looks isolated rather than a broad bone\u2011marrow problem). In Black patients, a naturally lower baseline neutrophil count (\u201cbenign ethnic neutropenia\u201d) is also common and can make results look concerning when they aren\u2019t. Because you\u2019re still unusually fatigued and the count is low, it\u2019s reasonable to follow up and likely recheck a CBC soon.  \n\nTRIAGE: B  \nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your white blood cell count is mildly low (3.3). Your neutrophil count is at the lower limit of normal (ANC 1.5). After a recent viral illness, it\u2019s common for WBC/ANC to dip temporarily and recover over days to a few weeks. The reassuring parts are: you\u2019re afebrile, vitals are normal, exam was normal, and your hemoglobin and platelets are normal (so this looks isolated rather than a broader bone marrow problem). In Black individuals, a lower baseline neutrophil count can also be normal (benign ethnic neutropenia), which can make \u201cborderline\u201d results less concerning. Persistent fatigue can happen after viral infections, but if counts stay low or drop further, it needs follow-up.\n\nTRIAGE: B\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

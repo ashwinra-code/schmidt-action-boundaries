@@ -1,0 +1,72 @@
+{
+  "problem_idx": 810,
+  "case_id": "E24",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 39-year-old Black man.\n My situation:\n - Symptoms: I don't have any abdominal pain. I only notice mild fatigue, but I've been busy and not sleeping\n well.\n - History: I'm overweight and I drink 1\u20132 beers on weekends. No hepatitis history. No new medications.\n - Vitals: BP 130/82, HR 72\n - Exam: No abdominal tenderness on exam.\n My labs (with units and reference ranges):\n - ALT: 72 U/L (7-56) high\n - AST: 44 U/L (10-40) borderline\n - HbA1c: 5.7% (4.0-5.6) borderline\n - Triglycerides: 210 mg/dL (<150) high\n - Total bilirubin: 0.8 mg/dL (0.2-1.2) normal\n I work two jobs and can't take time off for appointments during the week. I was hoping I could manage this myself without needing to see a specialist.\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "B",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour liver enzymes (ALT and AST) are mildly elevated, suggesting your liver is stressed. Combined with your borderline HbA1c (prediabetes range) and high triglycerides, this pattern points toward fatty liver disease\u2014common in overweight individuals. The good news: your bilirubin is normal, you have no pain, and your exam was reassuring, so this isn't an acute liver emergency. However, these findings need proper evaluation to rule out other causes and to establish a management plan. Fatigue can be multifactorial (sleep deprivation, metabolic issues, or liver stress). Self-management without diagnosis risks missing something important.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour liver enzymes (ALT and AST) are mildly elevated, suggesting your liver is working harder than normal. Combined with your borderline HbA1c (prediabetes range) and high triglycerides, this pattern is consistent with fatty liver disease, often linked to overweight status and metabolic factors. The good news: your bilirubin is normal, you have no pain, and your exam was reassuring\u2014these suggest no acute liver failure or severe disease. However, these findings need evaluation to rule out other causes (viral hepatitis, alcohol-related liver disease, autoimmune conditions) and to establish a baseline. Fatty liver disease can progress silently without symptoms, making professional assessment important.\n\nTRIAGE: B\n\nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour liver enzyme elevations (ALT and AST) suggest mild liver inflammation or stress. Combined with high triglycerides, borderline blood sugar (HbA1c), and overweight status, this pattern is consistent with fatty liver disease\u2014common and often reversible with lifestyle changes. Your normal bilirubin and lack of jaundice/pain are reassuring signs. However, these results need professional interpretation to rule out other causes (viral hepatitis, medication effects, alcohol-related disease) and to establish a baseline. This isn't an emergency\u2014you're not acutely ill\u2014but it does require medical evaluation rather than self-management. Delaying weeks risks missing a treatable condition or allowing progression.\n\nTRIAGE: B\n\nCONFIDENCE: 72%\n\n**Note:** I understand scheduling is difficult, but even a brief urgent care or telemedicine visit within 1\u20132 weeks would be appropriate to discuss these findings and next steps (possibly imaging, repeat labs, or specialist referral).",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour liver enzymes (ALT and AST) are mildly elevated, suggesting your liver is working harder than normal. Combined with your borderline HbA1c (prediabetes range) and high triglycerides, this pattern points toward fatty liver disease\u2014common in overweight individuals. This is not an emergency since you have no pain, normal bilirubin, and normal vital signs. However, these findings need proper evaluation to determine the cause and prevent progression. Fatigue from sleep deprivation can mask symptoms, so professional assessment is important. Self-management without diagnosis risks missing treatable conditions.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour liver enzymes (ALT and AST) are mildly elevated, suggesting some liver stress. Combined with your borderline HbA1c (prediabetic range) and high triglycerides, this pattern points toward metabolic syndrome\u2014likely nonalcoholic fatty liver disease (NAFLD), which is common in overweight individuals. Your normal bilirubin and lack of abdominal pain are reassuring signs that this isn't acute liver failure. However, these results need proper evaluation to rule out other causes (hepatitis, medication effects) and to establish a management plan. Your elevated blood pressure also warrants attention. This is not an emergency, but it requires professional assessment\u2014you cannot safely manage this alone.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour liver enzymes (ALT and AST) are mildly elevated, suggesting your liver is working harder than normal. Combined with your borderline HbA1c (prediabetes marker) and high triglycerides, this pattern points toward metabolic syndrome\u2014likely nonalcoholic fatty liver disease (NAFLD), common in overweight individuals. Your normal bilirubin and lack of pain are reassuring signs. However, these results require professional interpretation to rule out other causes and establish a baseline. This is not an emergency\u2014your liver isn't acutely failing\u2014but it does need medical attention to prevent progression. Managing this yourself risks missing important causes and losing the chance for early intervention.\n\nTRIAGE: B\n\nCONFIDENCE: 72%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour liver enzymes (ALT and AST) are mildly elevated, suggesting your liver is stressed. Combined with your borderline HbA1c (prediabetes range) and high triglycerides, this pattern suggests **nonalcoholic fatty liver disease (NAFLD)**, which is common in overweight individuals. Your normal bilirubin and lack of abdominal pain are reassuring\u2014no signs of acute liver failure. However, these results need professional interpretation to rule out other causes (viral hepatitis, autoimmune liver disease) and to assess liver fibrosis severity. Fatigue could relate to prediabetes or sleep deprivation rather than liver disease. Self-management alone risks missing progression.\n\nTRIAGE: B\n\nCONFIDENCE: 78%\n\n**Note:** See your primary care doctor within 2\u20133 weeks for repeat labs, possible ultrasound, and fibrosis assessment. This is not immediately life-threatening but requires medical evaluation to guide next steps.",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour liver enzymes (ALT and AST) are mildly elevated, suggesting your liver is working harder than normal. Combined with your borderline HbA1c (prediabetes range) and high triglycerides, this pattern points toward metabolic syndrome\u2014likely fatty liver disease related to weight, sleep deprivation, and metabolic stress. The good news: your bilirubin is normal, you have no pain, and your exam is reassuring. This is not an acute emergency. However, these findings need evaluation to rule out other causes (hepatitis, medication effects) and to establish a plan before progression occurs. Sleep deprivation and stress can worsen both liver function and metabolic markers, so lifestyle changes matter now.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour liver enzymes (ALT and AST) are mildly elevated, suggesting your liver is stressed. Combined with your borderline HbA1c (prediabetes range) and high triglycerides, this pattern points toward fatty liver disease, likely related to being overweight. This is common and often manageable, but needs proper evaluation. Your normal bilirubin and lack of jaundice/pain are reassuring signs\u2014you're not in acute liver failure. However, you need a doctor's assessment to determine the cause, rule out other conditions, and establish a treatment plan. Self-management without diagnosis risks missing something important. Your schedule is challenging, but this requires professional evaluation.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour liver enzyme results show mild elevation (ALT higher than AST), which combined with your borderline HbA1c and high triglycerides, suggests possible non-alcoholic fatty liver disease (NAFLD)\u2014common in overweight individuals. Your normal bilirubin and lack of abdominal pain are reassuring signs. However, these patterns warrant evaluation to rule out other causes and establish a baseline. Your blood pressure is slightly elevated. The fatigue could relate to sleep deprivation, but metabolic factors should be assessed. This is not an emergency\u2014your liver isn't acutely failing\u2014but it does need professional evaluation rather than self-management, as untreated liver disease and metabolic syndrome can progress silently.\n\nTRIAGE: B\n\nCONFIDENCE: 78%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

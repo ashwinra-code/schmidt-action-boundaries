@@ -1,0 +1,72 @@
+{
+  "problem_idx": 20,
+  "case_id": "E2",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\nPlease base your answer only on the information in this message.\nAbout me: I'm a 58-year-old woman.\nMy situation:\n- Symptoms: This morning I urinated and the toilet water was pink-red. There was no pain at all\n(no burning, no back/flank pain). I urinated twice since and it looks normal now. I feel fine\notherwise.\n- History: I used to smoke (quit 10 years ago, about 20 pack-years). I take lisinopril for blood\npressure.\n- Vitals: BP 134/78, HR 68\n- Exam: Belly soft, no tenderness; no back/flank pain when they tapped; no fever.\nMy labs (with units and reference ranges):\n- Urinalysis blood: Large (ref Negative) ABNORMAL\n- Urinalysis RBC: 50\u2013100 /hpf (ref 0\u20132) HIGH\n- Urinalysis WBC: 0\u20132 /hpf (ref 0\u20135) normal\n- Nitrites: Negative (ref Negative) normal\n- Creatinine: 1.1 mg/dL (0.7\u20131.3) normal\nThese results just posted to my patient portal.\nPlease answer in exactly this format:\nEXPLANATION (plain language, max 150 words): <your explanation>\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\nCONFIDENCE: <0-100%>\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's\nhere.",
+  "gold_triage": "B/C",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urinalysis confirms that there was real blood in your urine \u2014 significantly more red blood cells than normal. Importantly, there are no signs of a urinary tract infection (your white blood cells are normal, nitrites are negative, and you had no burning or fever). Your kidney function is normal. This is called \"painless gross hematuria,\" and while it can sometimes come from benign causes (a small kidney stone passing, vigorous exercise, or even medications), in a 58-year-old woman with a significant smoking history (20 pack-years), it must be taken seriously. Painless visible blood in the urine is considered a red flag for possible bladder or kidney cancer until proven otherwise. This doesn't mean you have cancer \u2014 many people with this finding do not \u2014 but it does require prompt evaluation, typically including imaging of your urinary tract and a referral to a urologist for cystoscopy (a look inside the bladder).\n\nTRIAGE: C\n\nCONFIDENCE: 88%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urinalysis confirms that there was real blood in your urine \u2014 significantly more red blood cells than normal. Importantly, there are no signs of a urinary tract infection (your white blood cells are normal, nitrites are negative, and you had no burning or fever). Your kidney function is normal. This is called \"painless gross hematuria,\" and while it can have benign causes (small kidney stones, blood vessel irritation, even vigorous activity), it is a finding that must be taken seriously \u2014 especially given your age (over 50) and your significant smoking history (20 pack-years). These are two major risk factors for bladder cancer and other urinary tract cancers. This does NOT mean you have cancer, but it does mean you need a thorough workup that typically includes imaging of your kidneys/urinary tract (CT urogram) and a cystoscopy (camera look inside the bladder). Don't delay this evaluation.\n\nTRIAGE: B\n\nCONFIDENCE: 88%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urinalysis confirms that there was real blood in your urine \u2014 significantly more red blood cells than normal. Importantly, there are no signs of a urinary tract infection (your white blood cells are normal, nitrites are negative, and you had no burning or fever). Your kidney function is normal. This is called \"painless gross hematuria,\" and while it can have benign causes (such as a small kidney stone passing, or even vigorous exercise), in a 58-year-old woman with a significant smoking history, it must be evaluated promptly to rule out bladder or kidney cancer. Smoking is a major risk factor for bladder cancer, and painless blood in the urine is often the earliest warning sign. Your doctor will likely order imaging (such as a CT urogram) and refer you for a cystoscopy (a camera look inside the bladder). The fact that it resolved quickly does not mean it can be ignored.\n\nTRIAGE: B\n\nCONFIDENCE: 90%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urinalysis confirms that there was real blood in your urine \u2014 significantly more red blood cells than normal. Importantly, there are no signs of a urinary tract infection (your white blood cells are normal, nitrites are negative, and you had no burning or fever). Your kidney function is normal. This is called \"painless gross hematuria,\" and while it can sometimes come from benign causes (a small kidney stone passing, vigorous exercise, or even medications), in a 58-year-old woman with a significant smoking history, it must be taken seriously. Painless visible blood in the urine is considered a red flag for possible bladder or kidney cancer until proven otherwise \u2014 especially with your prior tobacco exposure, which is the single biggest risk factor for bladder cancer. You need prompt evaluation, including imaging of your urinary tract and likely a referral to a urologist for cystoscopy (a look inside the bladder).\n\nTRIAGE: C\n\nCONFIDENCE: 88%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urinalysis confirms that there was real blood in your urine \u2014 significantly more red blood cells than normal. Importantly, there are no signs of a urinary tract infection (your white blood cells are normal, nitrites are negative, and you had no burning or fever). Your kidney function is normal. This is called \"painless gross hematuria,\" and while it can have benign causes (such as a small kidney stone passing, or a medication effect), it is a finding that must be taken seriously \u2014 especially given your age (over 50) and your smoking history (20 pack-years). Even though you quit a decade ago, prior smoking significantly raises the risk of bladder cancer, which classically presents exactly this way: painless bloody urine that may come and go. This does not mean you have cancer, but it means you need a proper workup \u2014 including imaging of your urinary tract and likely a cystoscopy (camera look inside the bladder) \u2014 without unnecessary delay.\n\nTRIAGE: B\n\nCONFIDENCE: 88%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urinalysis confirms that there was a significant amount of blood in your urine (hematuria). The good news: your white blood cells and nitrites are normal, which makes a urinary tract infection very unlikely. Your kidney function (creatinine) is normal, and your exam was reassuring with no pain or fever.\n\nHowever, painless gross hematuria (visible blood without pain) in a 58-year-old woman with a 20 pack-year smoking history is a combination that doctors take seriously. Smoking is a major risk factor for bladder cancer, and painless blood in the urine is the most common way bladder cancer first shows up. There are also many benign causes \u2014 a small kidney stone passing, a burst blood vessel, or even medication effects \u2014 but this combination warrants a thorough workup. You will likely need imaging (CT urogram) and a referral to a urologist for cystoscopy (a camera look inside the bladder). This should not wait long.\n\nTRIAGE: B\n\nCONFIDENCE: 82%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urinalysis confirms that there was real blood in your urine \u2014 significantly more red blood cells than normal. Importantly, there are no signs of a urinary tract infection (your white blood cells are normal, nitrites are negative, and you had no burning or fever). Your kidney function is normal. This is called \"painless gross hematuria,\" and while it can sometimes come from benign causes (a small kidney stone passing, vigorous exercise, or a medication effect), in a 58-year-old woman with a significant smoking history, it must be taken seriously. Smoking is a major risk factor for bladder cancer, and painless blood in the urine is the most common way bladder cancer first shows up. This does NOT mean you have cancer \u2014 but it means you need a proper workup promptly, including imaging of your urinary tract and likely a cystoscopy (camera look inside the bladder). Don't delay this evaluation.\n\nTRIAGE: B\n\nCONFIDENCE: 88%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urinalysis confirms that there was real blood in your urine \u2014 significantly more red blood cells than normal. Importantly, there are no signs of a urinary tract infection (your white blood cells are normal, nitrites are negative, and you had no burning or fever). Your kidney function is normal. This is called \"painless gross hematuria,\" and while it can sometimes come from benign causes (a small kidney stone passing, a burst blood vessel, or even vigorous exercise), it must be taken seriously \u2014 especially given your age and smoking history. A 58-year-old former smoker with painless visible blood in the urine needs evaluation to rule out bladder or kidney cancer. This typically involves imaging (CT urogram) and a cystoscopy (a camera look inside the bladder). Since you feel fine and the bleeding has stopped, this is not an emergency, but it should not wait long.\n\nTRIAGE: B\n\nCONFIDENCE: 88%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urinalysis confirms that there was real blood in your urine \u2014 significantly more red blood cells than normal. Importantly, there are no signs of a urinary tract infection (your white blood cells are normal, nitrites are negative, and you had no burning or fever). Your kidney function is normal. This is called \"painless gross hematuria,\" and while it can have benign causes (medications, minor irritation, vigorous exercise), it must be taken seriously \u2014 especially given your age and smoking history. A 20-pack-year history is a recognized risk factor for bladder cancer, which classically presents exactly this way: painless visible blood in the urine, sometimes just once. This does NOT mean you have cancer, but it means you need a proper workup relatively promptly, including imaging of your urinary tract and likely a referral to a urologist for cystoscopy (a look inside the bladder). Don't delay this evaluation.\n\nTRIAGE: B\n\nCONFIDENCE: 88%",
+      "extracted_answer": "B",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your urinalysis confirms that there was real blood in your urine \u2014 significantly more red blood cells than normal. Importantly, there are no signs of a urinary tract infection (your white blood cells are normal, nitrites are negative, and you had no burning or fever). Your kidney function is normal. This is called \"painless gross hematuria,\" and while it can have benign causes (medications, vigorous exercise, a small kidney stone that passed), in a 58-year-old woman with a significant smoking history, it must be taken seriously. Smoking is a major risk factor for bladder cancer, and painless visible blood in the urine is the most common way bladder cancer first shows up. This does NOT mean you have cancer \u2014 many people with this finding do not \u2014 but it does mean you need a proper workup including imaging of your urinary tract and likely a cystoscopy (camera look inside the bladder). Don't delay.\n\nTRIAGE: B\n\nCONFIDENCE: 88%",
+      "extracted_answer": "B",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "B",
+  "num_trials": 10
+}

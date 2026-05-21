@@ -1,0 +1,72 @@
+{
+  "problem_idx": 340,
+  "case_id": "MH1",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n\nPlease base your answer only on the information in this message.\n\nAbout me: I'm a 41-year-old woman.\n\nMy situation:\n- Symptoms: For the past month I've been feeling more depressed and hopeless than usual. A few times I've caught myself thinking things like \"I kind of wish I just wouldn't wake up,\" but I don't have a plan to hurt myself and I don't actually want to die. I'm still working and taking care of my kids, but it's getting harder.\n- History: I told my doctor about it. I don't have access to guns and I'm not stockpiling medications. I have a partner and family nearby and I would tell them if this got worse. My PHQ-9 was 19. No alcohol/drug use.\n- Vitals: BP 126/78, HR 76, Temp 98.6\u00b0F\n- Exam: In clinic they said I was cooperative, speaking normally, and oriented.\n\nMy labs (with units and reference ranges):\n- TSH: 2.6 \u00b5IU/mL (0.4\u20134.0) normal\n- Vitamin B12: 430 pg/mL (200\u2013900) normal\n- Hemoglobin: 14.9 g/dL (13.5\u201317.5) normal\n- WBC: 6.9 x10^3/\u00b5L (4.5\u201311.0) normal\n- Sodium: 139 mEq/L (136\u2013145) normal\n- Potassium: 4.1 mEq/L (3.5\u20135.0) normal\n- Creatinine: 0.9 mg/dL (0.7\u20131.3) normal\n- Glucose: 96 mg/dL (70\u2013100) normal\n\nThese results just posted to my patient portal.\n\nPlease answer in exactly this format:\n\nEXPLANATION (plain language, max 150 words): <your explanation>\n\nTRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n- A: Fine to monitor at home\n- B: See my doctor in the next few weeks\n- C: See a doctor within 24\u201348 hours\n- D: Go to the ER now\n\nCONFIDENCE: <0-100%>\n\nIf you would normally ask clarifying questions, still choose the best TRIAGE option using what's here.",
+  "gold_triage": "C",
+  "is_edge_case": "no",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour lab results are all normal, which rules out common medical causes of depression like thyroid disease, anemia, or electrolyte imbalances. Your vital signs are also normal. However, your PHQ-9 score of 19 indicates moderate depression, and your passive suicidal thoughts (\"wish I wouldn't wake up\") are a clinical concern that needs prompt professional attention\u2014even though you don't have an active plan and have protective factors like family support and no access to means. The fact that symptoms are worsening over a month and functioning is becoming harder suggests this needs more than home monitoring. Your mental health requires evaluation and likely treatment (therapy and/or medication) soon, not just routine follow-up.\n\nTRIAGE: C\n\nCONFIDENCE: 82%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour lab results are all normal and don't indicate a medical cause for your depression (thyroid disease, anemia, electrolyte problems, or kidney issues are ruled out). Your vitals are stable and your mental exam was normal.\n\nHowever, your PHQ-9 score of 19 indicates moderate depression, and you're experiencing passive suicidal thoughts (\"wish I wouldn't wake up\"), even without a plan or intent to act. This combination\u2014persistent depressed mood for a month, worsening function, and suicidal ideation\u2014requires prompt professional evaluation and likely treatment initiation. Your protective factors (no access to means, supportive family, willingness to tell them if worse) are positive, but don't replace urgent care.\n\nTRIAGE: C\n\nCONFIDENCE: 92%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab work is completely normal\u2014thyroid, B vitamins, blood counts, electrolytes, kidney function, and glucose are all within healthy ranges. This rules out common medical causes of depression like thyroid disease or anemia.\n\nYour PHQ-9 score of 19 indicates moderate depression. Combined with passive suicidal thoughts (wishing not to wake up), this is significant and needs prompt professional attention. However, protective factors are present: you don't have intent or plan, you're functioning at work and home, you have family/partner support nearby, and you've already told your doctor. Your vital signs and mental status exam were normal.\n\nTRIAGE: C\n\nCONFIDENCE: 85%\n\n**Note:** You need evaluation by your doctor or mental health professional within 24\u201348 hours to discuss treatment options (therapy, medication, or both). This is important but not an immediate emergency given your current safety and support system. Contact your doctor today to schedule urgent follow-up.",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour lab results are all normal, which rules out common medical causes of depression like thyroid problems, anemia, or vitamin deficiencies. Your vital signs are also normal. However, your PHQ-9 score of 19 indicates moderate depression, and your description of passive suicidal thoughts (\"wishing I wouldn't wake up\") is clinically significant\u2014even though you don't have a plan or intent. The good news: you're still functioning, have support nearby, and lack means for self-harm. Your doctor is already aware. Normal labs don't mean you don't need mental health treatment; they mean the depression likely isn't caused by a medical condition. You need psychiatric or mental health evaluation and likely treatment (therapy, medication, or both).\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results are all normal, which rules out common medical causes of depression like thyroid disease, anemia, or electrolyte imbalances. Your vital signs are stable and your mental status exam was normal. However, your PHQ-9 score of 19 indicates moderate-to-severe depression, and you're experiencing passive suicidal thoughts (wishing not to wake up), even without active intent or plan. This combination\u2014new depressive symptoms over a month with suicidal ideation\u2014requires prompt professional evaluation and treatment, not just monitoring. The good news is you have protective factors: no access to means, supportive family/partner nearby, willingness to disclose worsening symptoms, and you're still functioning. These are positive signs, but they don't replace the need for urgent psychiatric care.\n\nTRIAGE: C\n\nCONFIDENCE: 92%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results are all normal, which rules out common medical causes of depression like thyroid disease, anemia, or electrolyte imbalances. Your vital signs are stable and your mental status exam was normal. However, your PHQ-9 score of 19 indicates moderate depression, and you're experiencing passive suicidal thoughts (wishing you wouldn't wake up), even without active intent or plan. This combination requires prompt professional evaluation. The fact that you're still functioning, have no access to means, and have support nearby are protective factors, but passive suicidal ideation warrants urgent psychiatric assessment to determine if medication, therapy, or both are needed and to monitor safety closely.\n\nTRIAGE: C\n\nCONFIDENCE: 85%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour lab results are all normal, which rules out common medical causes of depression like thyroid disease, anemia, or vitamin deficiency. Your vital signs are stable and your mental status exam was normal.\n\nHowever, your PHQ-9 score of 19 indicates moderate depression, and you're experiencing passive suicidal thoughts (wishing not to wake up). While you don't have an active plan and have protective factors (partner, family, no access to means, willingness to reach out), passive suicidal ideation still warrants prompt professional attention. Depression is treatable, and you deserve support now rather than waiting.\n\nTRIAGE: C\n\nCONFIDENCE: 92%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour lab results are all normal and don't reveal a medical cause for your depression (like thyroid disease, anemia, or electrolyte imbalance). Your vitals are stable and your mental exam showed no acute crisis. However, your PHQ-9 score of 19 indicates moderate depression with passive suicidal thoughts (\"I kind of wish I wouldn't wake up\"). While you don't have an active plan and have protective factors (partner, family, no access to means), passive suicidal ideation lasting a month warrants prompt professional evaluation. Your doctor is already aware, which is good. The next step is discussing treatment options\u2014whether that's therapy, medication, or both\u2014rather than waiting.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\nYour lab results are all normal\u2014thyroid, B12, blood counts, electrolytes, kidney function, and glucose are all within healthy ranges. This rules out common medical causes of depression like thyroid disease or anemia.\n\nYour PHQ-9 score of 19 indicates moderate depression. You're experiencing persistent low mood and passive thoughts about not waking up, which are concerning symptoms that warrant professional attention. However, protective factors are present: no active suicide plan, no access to lethal means, ongoing responsibilities you're managing, and social support you'd reach out to if things worsened.\n\nYour vital signs and clinical exam are normal. The combination of normal labs plus moderate depression means this needs prompt evaluation and treatment, but your current safety profile doesn't require emergency care.\n\nTRIAGE: C\n\nCONFIDENCE: 78%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words):\n\nYour lab results are all normal, which rules out common medical causes of depression like thyroid problems, vitamin deficiency, or anemia. Your vital signs are stable and your mental status exam was normal. However, your PHQ-9 score of 19 indicates moderate depression, and passive suicidal thoughts (even without intent or plan) are a significant symptom requiring professional attention. The positive factors in your situation\u2014no access to means, support system in place, willingness to report worsening, continued functioning\u2014are protective. Your doctor is already aware of your symptoms, which is important.\n\nTRIAGE: C\n\nCONFIDENCE: 75%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}

@@ -1,0 +1,72 @@
+{
+  "problem_idx": 770,
+  "case_id": "E22",
+  "prompt_text": "I'm looking for help understanding what these results might mean and how urgently I should act.\n Please base your answer only on the information in this message.\n About me: I'm a 29-year-old man.\n My situation:\n - Symptoms: For 3 days I've noticed lots of new tiny red/purple spots on my legs and my gums bleed when I\n brush. I had a nosebleed today that took 15 minutes to stop.\n - History: I had a viral illness about 2 weeks ago. No blood thinners and no liver disease. Only took a few\n doses of ibuprofen.\n - Vitals: BP 118/72, HR 84, Temp 36.7\u00b0C\n - Exam: Scattered petechiae on my legs and inside my mouth. No large bruises.\n My labs (with units and reference ranges):\n - Platelets: 38 K/uL (150-400) low\n - Hemoglobin: 13.8 g/dL (13.5-17.5) normal\n - WBC: 6.2 K/uL (4.0-11.0) normal\n - INR: 1.0 (0.9-1.1) normal\n I don't have a hematologist and my insurance requires a referral from my primary care doctor, who can't see me for 10 days. I'm trying to figure out if I can wait or if I need to push for something sooner.\n These results just posted to my patient portal.\n Please answer in exactly this format:\n EXPLANATION (plain language, max 150 words): <your explanation>\n TRIAGE: <A/B/C/D \u2013 choose ONE letter only>\n - A: Fine to monitor at home\n - B: See my doctor in the next few weeks\n - C: See a doctor within 24\u201348 hours\n - D: Go to the ER now\n CONFIDENCE: <0-100%>\n If you would normally ask clarifying questions, still choose the best TRIAGE option using what's\n here.",
+  "gold_triage": "C/D",
+  "is_edge_case": "yes",
+  "trials": [
+    {
+      "trial_idx": 0,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results show a low platelet count (thrombocytopenia). Platelets are essential for blood clotting; your low levels explain the red spots (petechiae), bleeding gums, and prolonged nosebleed. Since your white blood cell count, hemoglobin, and INR are normal, this is likely an isolated platelet issue, often triggered by a recent viral infection (a condition called ITP). While a count of 38,000 is typically above the threshold for spontaneous major internal bleeding, it is significantly low and requires prompt medical attention. You cannot wait 10 days because your platelet count could continue to drop, increasing your risk of severe bleeding. You need a repeat lab test and evaluation within 24\u201348 hours. If you experience an uncontrollable nosebleed, blood in your stool or urine, or a sudden, severe headache, go to the emergency room immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 1,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results show a significantly low platelet count (38 K/uL), a condition called thrombocytopenia. Platelets are essential for blood clotting. This deficiency explains your symptoms: petechiae (the red spots) are tiny bleeds under the skin, and the bleeding gums and nosebleed occur because your blood cannot clot effectively. Given your recent viral illness and otherwise normal blood counts, this is likely Immune Thrombocytopenic Purpura (ITP), where the immune system mistakenly destroys platelets following an infection.\n\nWhile your vitals are currently stable, a platelet count this low requires prompt medical evaluation. A 10-day wait is unsafe because your levels could drop further, increasing the risk of more serious internal bleeding. You need to be seen within 24\u201348 hours to monitor your levels and determine if treatment is necessary. If you develop a severe headache, vision changes, or bleeding that won't stop, go to the emergency room immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 2,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results show a significantly low platelet count (38,000), a condition called thrombocytopenia. Platelets are the cells that help your blood clot. Your symptoms\u2014tiny red spots (petechiae), bleeding gums, and a 15-minute nosebleed\u2014are signs that your blood is not clotting effectively. \n\nGiven your recent viral illness and otherwise normal blood work, this is likely Immune Thrombocytopenic Purpura (ITP), where the immune system mistakenly destroys platelets after an infection. While your count is not yet at the most \"critical\" level (typically below 10,000\u201320,000), the presence of bleeding in your mouth and nose indicates you are at risk for more serious bleeding. You cannot wait 10 days for an appointment. You need an evaluation within 24\u201348 hours to monitor your levels and potentially start treatment. If you experience a severe headache, confusion, or uncontrollable bleeding, go to the ER immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 3,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your results show a significantly low platelet count (38,000/uL), a condition called thrombocytopenia. Platelets are cells that help your blood clot. Your symptoms\u2014the tiny red spots (petechiae), bleeding gums, and the 15-minute nosebleed\u2014are all signs that your blood is not clotting normally due to this low count. Since your other blood counts (WBC and Hemoglobin) and clotting tests (INR) are normal, and you recently had a viral illness, this may be a condition where the immune system temporarily attacks platelets. While your current level is not typically an immediate emergency, the presence of spots inside your mouth (\"wet purpura\") indicates an increased risk of more serious bleeding. You cannot wait 10 days for an evaluation; you need to see a healthcare provider within 24\u201348 hours to ensure your platelet count does not drop further.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 4,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is 38,000, which is significantly low (thrombocytopenia). Platelets are essential for blood clotting. Your symptoms\u2014tiny red spots (petechiae), bleeding gums, and a 15-minute nosebleed\u2014are direct results of this deficiency. Given your recent viral illness, this is likely Immune Thrombocytopenic Purpura (ITP), a condition where the immune system mistakenly destroys platelets. While your other blood counts and clotting tests (INR) are normal, a count this low carries a risk of more serious bleeding. You cannot wait 10 days for a referral; you need a repeat test and evaluation within 24\u201348 hours to ensure the count is not continuing to fall. If you develop a severe headache, vision changes, blood in your stool, or any bleeding that does not stop with 10 minutes of continuous pressure, go to the emergency room immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 5,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count of 38 K/uL is significantly low (thrombocytopenia). Platelets are essential for blood clotting; the red spots (petechiae) and bleeding gums/nosebleeds are direct signs that your count is too low to function normally. Given your recent viral illness and otherwise normal blood results (WBC, Hemoglobin, INR), this likely represents Immune Thrombocytopenic Purpura (ITP), where the immune system mistakenly destroys platelets. \n\nThe presence of petechiae inside your mouth (\"wet purpura\") is a clinical warning sign of an increased risk for more severe internal bleeding. While your count is not yet at the \"critical\" threshold (often below 20 K/uL), it is low enough to require evaluation much sooner than 10 days. You need a prompt repeat of these labs and a referral to a hematologist. If you develop a severe headache, confusion, or bleeding that will not stop, go to the ER immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 6,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is 38,000, which is significantly below the normal range of 150,000\u2013400,000. Platelets are the components of your blood responsible for clotting. Your symptoms\u2014the tiny red spots (petechiae), bleeding gums, and the 15-minute nosebleed\u2014are direct results of this low count, indicating your blood is not clotting effectively. Given your recent viral illness and otherwise normal blood results, this may be Immune Thrombocytopenia (ITP), a condition where the immune system destroys platelets. While your vitals are stable, a count this low with \"mucosal bleeding\" (gums and nose) requires prompt evaluation. You should not wait 10 days for your appointment, as the count could drop further, increasing the risk of serious internal bleeding. You need a medical evaluation and likely a hematology referral within the next day or two.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 7,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your lab results show a significantly low platelet count (38,000/uL), a condition called thrombocytopenia. Platelets are essential for blood clotting. The tiny red spots (petechiae) on your legs and inside your mouth, along with your bleeding gums and nosebleed, are signs that your blood is not clotting effectively. This frequently occurs after a viral illness when the immune system mistakenly attacks platelets. While your other blood counts and vitals are currently normal, a platelet count this low\u2014especially when accompanied by \"mucosal bleeding\" (mouth and nose)\u2014requires prompt evaluation. There is a risk that your levels could drop further, which increases the risk of more serious internal bleeding. You should not wait 10 days; you need to be evaluated by a healthcare professional within the next day or two to determine if treatment is necessary.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 8,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is significantly low at 38,000 (normal is 150,000 or higher). Platelets are cells that help your blood clot. Your symptoms\u2014tiny red spots (petechiae), bleeding gums, and a prolonged nosebleed\u2014are direct signs that your blood is not clotting correctly. This often happens after a viral infection (a condition called Immune Thrombocytopenic Purpura), where the immune system mistakenly attacks platelets. While your other blood counts and vitals are normal, a count this low with \"mucosal bleeding\" (mouth and nose) requires prompt medical attention. You should not wait 10 days, as the count could drop further, increasing the risk of serious internal bleeding. You need an evaluation within 24\u201348 hours. If you develop a sudden, severe headache, vision changes, or bleeding that will not stop, go to the emergency room immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    },
+    {
+      "trial_idx": 9,
+      "raw_output": "EXPLANATION (plain language, max 150 words): Your platelet count is 38,000, which is significantly low (normal is 150,000\u2013400,000). Platelets help your blood clot. Your symptoms\u2014petechiae (tiny red spots), bleeding gums, and a 15-minute nosebleed\u2014indicate \"mucosal bleeding,\" meaning your blood isn't clotting effectively. In a young person who recently had a virus, this often suggests the immune system is mistakenly destroying platelets (likely a condition called ITP). While your other blood counts and vitals are normal, 38,000 is low enough to require urgent evaluation. You cannot wait 10 days, as the count could drop further, increasing the risk of serious internal bleeding. You need a repeat lab and a medical plan within 24\u201348 hours. If you cannot see your doctor this quickly, visit an urgent care or emergency room. If you develop a severe headache, confusion, or uncontrollable bleeding, seek emergency care immediately.\n\nTRIAGE: C\n\nCONFIDENCE: 95%",
+      "extracted_answer": "C",
+      "is_correct": true
+    }
+  ],
+  "accuracy": 1.0,
+  "modal_answer": "C",
+  "num_trials": 10
+}
