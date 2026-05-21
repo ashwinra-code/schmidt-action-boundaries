@@ -1,4 +1,4 @@
-# Retrospective Triage Response-Surface Reproduction
+# Reproducing a Retrospective Triage Response-Surface Analysis
 
 This repository reproduces a retrospective proof-of-concept analysis of model triage behavior.
 
@@ -7,6 +7,10 @@ The analysis asks a simple question:
 > If we observe part of a structured grid of model responses, can we predict how the same model behaves on the hidden parts of that grid?
 
 The repository starts from package-local raw and structured response files, rebuilds the analysis tables, reruns the hidden-cell prediction experiment, recomputes the shuffle null, and checks that the final numbers match the reported result.
+
+## Key term
+
+This repository focuses on the endpoint `acceptable_floor_choice`, abbreviated as `AFC` in file names and reports. In this analysis, AFC is a binary label derived from the model's triage recommendation.
 
 ## Main result reproduced by this repository
 
@@ -69,8 +73,8 @@ The full reproduction pipeline:
 1. validates the included source files;
 2. rebuilds the trial-level response extract;
 3. parses 87,360 model responses;
-4. reconstructs 4,789 analysis cells;
-5. verifies that the reconstructed cells match the locked reference artifact;
+4. reconstructs 4,789 AFC analysis cells;
+5. verifies that the reconstructed cells match the reference analysis file;
 6. rebuilds the denominator flow:
 
    ```text
@@ -85,13 +89,13 @@ The full reproduction pipeline:
 9. recomputes the 5,000-replicate label-shuffle null;
 10. checks that the headline metrics match the expected values.
 
+A "nonconstant" surface is one where the AFC label varies across the 32 cells. Constant surfaces are reported in the denominator but are not used for boundary-recovery analysis because there is no boundary to recover.
+
 ## What this analysis means
 
 The reproduced result supports a narrow retrospective claim:
 
 > In this retrospective triage dataset, hidden model behavior on a structured 32-cell response surface could be predicted above baseline from partial observation.
-
-The primary endpoint is `acceptable_floor_choice` (AFC), a binary label derived from the model's triage recommendation. The AFC acronym appears throughout the codebase, file names, and audit reports.
 
 The experiment observes 12 cells from each eligible 32-cell surface and predicts the remaining 20 hidden cells.
 
@@ -105,7 +109,7 @@ It also does not establish:
 - active-search performance;
 - intervention or repair success;
 - clinical validity in a new prospective domain;
-- scaling to larger surfaces (k=10 / q=128);
+- scaling to larger prospective 1,024-cell surfaces;
 - general safety of any model.
 
 Those are separate prospective claims and are not tested by this reproduction package.
@@ -232,7 +236,11 @@ bash code/run_full_repro.sh --strict
 
 ## Git LFS note
 
-Three reference outputs in `results/expected/` are stored with Git LFS because of file size (`hidden_predictions.csv`, `parsed_responses.csv`, `null_permutation_manifest.csv`).
+Three reference outputs in `results/expected/` are stored with Git LFS because of file size:
+
+- `hidden_predictions.csv`
+- `parsed_responses.csv`
+- `null_permutation_manifest.csv`
 
 After cloning, run:
 
@@ -241,7 +249,7 @@ git lfs install
 git lfs pull
 ```
 
-The strict reproduction can regenerate the large outputs in `results/full_repro/`. The LFS files are primarily useful for comparing regenerated outputs against the shipped reference outputs.
+The strict reproduction can regenerate the large outputs in `results/full_repro/`. The Git LFS files are shipped reference outputs for comparison, not required inputs for recomputing the analysis.
 
 ## Expected final console output
 
