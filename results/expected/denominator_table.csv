@@ -1,0 +1,10 @@
+stage,count,inclusion_rule,exclusion_rule,notes
+raw responses,87360,all rows emitted by parser replay from raw-response artifacts,none,"Includes 86,400 cross-model trial responses plus 960 GPT-Health rows."
+parsed responses,86891,parser emitted A/B/C/D label or structured GPT-Health fallback,parser_error_flag=1,Parser failures are retained in parsed_responses.csv.
+AFC candidate cells,4789,modal prediction on gold range with lower and upper acceptable labels,fixed-gold/non-AFC rows and invalid modal labels,One row per model-scenario-cell.
+AFC model-scenario groups,150,at least one AFC cell in model-scenario group,none,Incomplete groups are preserved separately.
+complete 32-cell AFC surfaces,146,32 rows and 32 unique cell IDs,incomplete groups,
+incomplete AFC surfaces,4,model-scenario groups with fewer than 32 unique cells,excluded from boundary-recovery estimand,Preserved in surface_assembly_table.csv.
+constant complete AFC surfaces,69,complete surfaces with all labels identical,excluded from nonconstant boundary-recovery estimand,Counted as flat surfaces.
+nonconstant complete AFC surfaces,77,complete surfaces with at least one positive and one negative label,flat/constant complete surfaces,
+eligible AFC recovery surfaces,77,nonconstant complete AFC surfaces,incomplete and constant surfaces,Primary recovery estimand denominator.
