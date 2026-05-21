@@ -1,8 +1,8 @@
 # Retrospective POC AFC Reproduction Capsule
 
-Self-contained, byte-deterministic reproduction of the retrospective dense-posture **AFC (axis-by-fold-by-cell) proof-of-concept** result. Starting from raw per-problem response JSON, the capsule rebuilds the trial-level extract, parses 87,360 responses, constructs 4,789 AFC cells, replays q=12 split masks, re-scores 1,540,000 hidden predictions, and recomputes the 5,000-replicate prevalence-preserving shuffle null — recovering the reported headline metrics row-for-row.
+Self-contained, deterministic reproduction of the retrospective dense-posture **AFC (acceptable-floor-choice) proof-of-concept** result. Starting from raw per-problem response JSON, the capsule rebuilds the trial-level extract, parses 87,360 responses, constructs 4,789 AFC cells, replays 77,000 q=12 split masks, re-scores 1,540,000 hidden predictions, and recomputes the 5,000-replicate prevalence-preserving shuffle null — recovering the reported headline metrics within `1e-6` and matching the frozen workbench null row-for-row to `1e-12`.
 
-**Reproduction status:** Tier 2B (strict raw-response-to-result). Tier 3 requires an independent clean-environment rerun.
+**Reproduction status:** Tier 2B (strict raw-response-to-result). Tier 3 is achieved when an external runner reproduces Tier 2B in a clean environment.
 
 ---
 
@@ -13,26 +13,28 @@ Self-contained, byte-deterministic reproduction of the retrospective dense-postu
 | Mean hidden balanced accuracy | `0.74693002007556464` |
 | Implemented majority baseline | `0.52508604978354989` |
 | Mean lift over majority | `0.22184397029201483` |
-| Shuffle null mean | `0.52255857026230850` |
+| Shuffle null mean | `0.5225585702623085` |
 | Shuffle exceedances | `0 / 5,000` |
 | Models with positive lift | `10 / 10` |
 
-The strict runner re-derives these from raw inputs and asserts equality against `data/canonical/` to floating-point tolerance `1e-12`. See `docs/REPRODUCTION_CLAIM.md` for the full set of passed checks.
+These full-precision values are the targets the strict runner regenerates. The assertion bar in `code/src/09_assert_final_reproduction.py` is `FLOAT_TOLERANCE = 1e-6` for floating-point metrics, exact (`COUNT_TOLERANCE = 0`) for integer counts (parsed responses, AFC cells, split masks, hidden predictions, denominator categories), and `1e-12` row-for-row for the recomputed shuffle null against the frozen workbench artifact. See `docs/REPRODUCTION_CLAIM.md` for the full passed-checks list.
 
 ---
 
 ## Quick Reference — where to find what
 
-### Reviewer entry points (read in this order)
+### Reviewer entry points
 
 | File | Purpose |
 |---|---|
-| `docs/SUMMARY_FOR_REVIEWERS.md` | One-page reviewer summary: claim, command, passed checks, reproduced values |
+| `docs/SUMMARY_FOR_REVIEWERS.md` | **Start here.** One-page summary: claim, command, passed checks, reproduced values |
 | `docs/REPRODUCTION_CLAIM.md` | Full claim statement, passed-checks list, denominator flow, source-of-truth files |
 | `docs/CLAIM_BOUNDARY.md` | Tier definitions (1 / 2A / 2B / 3); explicit "do not claim" language |
 | `docs/LIMITATIONS_CLAIM_BOUNDARY.md` | What this reproduction does **not** show |
 | `docs/METHODS_QA_CHECKLIST.md` | Reviewer QA checklist |
 | `docs/INDEPENDENT_REPRODUCTION_INSTRUCTIONS.md` | Instructions for an external clean-environment rerun (Tier 3) |
+| `docs/DATA_USE.md` | Permissible use of the released data |
+| `docs/CODEBOOK.md` | Variable-level codebook for released CSVs |
 | `MANIFEST.md` | Capsule layout and artifact-role definitions |
 | `REPRODUCING.md` | Short reproduction recipe |
 
@@ -45,7 +47,8 @@ The strict runner re-derives these from raw inputs and asserts equality against 
 | `null_distribution.csv` | Frozen 5,000-replicate shuffle null distribution |
 | `null_distribution_raw_recomputed.csv` | Same null **recomputed** from raw-rebuilt labels (matches frozen to 1e-12) |
 | `null_recompute_vs_frozen_summary.csv` | Row-for-row comparison summary |
-| `surface_assembly_table.csv` | 4,789 AFC cells → response surfaces |
+| `afc_cell_table_from_raw.csv` | 4,789 AFC cells rebuilt from raw responses |
+| `surface_assembly_table.csv` | 150 model-scenario rows classified `incomplete` / `complete` / `nonconstant_eligible` |
 | `hidden_predictions.csv` | 1,540,000 hidden-cell predictions (Git LFS) |
 | `parsed_responses.csv` | 87,360 parsed responses from raw JSON (Git LFS) |
 | `null_permutation_manifest.csv` | Permutation index manifest for the shuffle null (Git LFS) |
@@ -55,8 +58,9 @@ The strict runner re-derives these from raw inputs and asserts equality against 
 | Report | What it certifies |
 |---|---|
 | `raw_input_validation_report.md` | Raw inputs hash-validated against `data/raw/raw_input_manifest.csv` |
-| `cell_construction_report.md` | 4,789 / 4,789 AFC cells match canonical artifact |
-| `endpoint_attempt_ledger.md` | Endpoint mismatches: 0 |
+| `cell_construction_report.md` | AFC cell construction from parsed raw responses |
+| `raw_rebuild_vs_canonical_artifact_report.md` | 4,789 / 4,789 cell match; 0 endpoint mismatches; 0 axis mismatches |
+| `endpoint_attempt_ledger.md` | Per-response endpoint-extraction attempt ledger |
 | `surface_assembly_report.md` | Surface assembly diagnostics |
 | `null_recompute_report.md` | Shuffle-null recomputation from raw labels |
 | `null_recompute_vs_frozen_report.md` | Raw-recomputed null vs frozen workbench null |
@@ -80,6 +84,7 @@ The strict runner re-derives these from raw inputs and asserts equality against 
 | `split_mask_spec.yaml` | q=12 split-mask generation |
 | `reconstructor_spec.yaml` | Hidden-cell reconstructor contract |
 | `null_spec.yaml` | Prevalence-preserving shuffle-null contract |
+| `model_snapshot_manifest.yaml` | Model snapshots covered by the reproduction |
 
 ---
 
@@ -131,7 +136,7 @@ Equivalent Makefile targets:
 ```bash
 make preflight     # raw input validation
 make strict        # full strict reproduction
-make assert        # post-hoc assertion against canonical
+make assert        # post-hoc assertion against EXPECTED targets
 make smoke         # clean-environment probe
 make clean         # remove regenerated outputs only (results/full_repro, audit/full_repro)
 ```
@@ -140,9 +145,10 @@ make clean         # remove regenerated outputs only (results/full_repro, audit/
 
 1. Validates package-local raw inputs against `data/raw/raw_input_manifest.csv` hashes.
 2. Removes and regenerates **only** `results/full_repro/`, `audit/full_repro/`, and `data/splits/full_repro/`. The shipped reference trees `results/expected/` and `audit/expected/` are preserved untouched.
-3. Re-derives the headline metrics and asserts row-for-row equality against `data/canonical/` to `1e-12`.
+3. Runs the numbered pipeline `00..12` end-to-end (parser → AFC cell rebuild → surface assembly → canonical-artifact comparison → denominator/eligibility → split-mask replay → reconstructor fit/score → metric-anomaly replay → baselines and null recompute → sensitivity/robustness → provenance write → endpoint ledger → handoff manifest).
+4. Asserts pass/fail in `code/src/09_assert_final_reproduction.py` against the hardcoded `EXPECTED` targets (floats to `1e-6`, counts exact, row-wise null match to `1e-12`).
 
-If any step fails, the runner halts and the failing report appears in `audit/full_repro/`.
+The runner is `set -euo pipefail`; failures halt immediately. Partial reports appear in `audit/full_repro/`.
 
 ### Alternate run modes
 
@@ -222,22 +228,24 @@ If any step fails, the runner halts and the failing report appears in `audit/ful
         └── 77 nonconstant eligible surfaces  → used for boundary recovery
 ```
 
-q=12 split masks × 77 surfaces × ~20 models × trials = 77,000 mask replays → 1,540,000 hidden-cell predictions.
+Downstream of the 77 eligible surfaces, the strict run replays 77,000 q=12 split masks, re-scores 1,540,000 hidden-cell predictions, and recomputes a 5,000-replicate prevalence-preserving shuffle null indexed across the 77 surfaces (385,000-row permutation manifest, 5,000 × 77).
 
 ---
 
 ## Scope and Claim Boundary
 
-**This capsule supports:** retrospective dense-posture AFC constructibility from raw responses — i.e., that the reported headline metrics are byte-deterministically recoverable from the per-problem JSON tree under `data/raw/source_artifacts/cross_model/inference`.
+**This capsule supports:** retrospective dense-posture AFC constructibility from raw responses — i.e., that the reported headline metrics are deterministically recoverable (within the tolerances above) from the per-problem JSON tree under `data/raw/source_artifacts/cross_model/inference`.
 
 **This capsule does not support:**
 - Sparse high-harm recovery
-- Active search
-- Intervention repair
-- Prospective clinical validity
-- Larger-budget scaling (k=10 / q=128)
+- Prospective urology validity
+- Active-search success
+- Repair success
+- k=10 / q=128 scaling
+- Universal low-degree structure
+- Population-level inference over all frontier models
 
-See `docs/CLAIM_BOUNDARY.md` for the formal tier definitions and `docs/LIMITATIONS_CLAIM_BOUNDARY.md` for the full "do-not-claim" list.
+See `docs/CLAIM_BOUNDARY.md` for the formal tier definitions and forbidden-phrase list, and `docs/LIMITATIONS_CLAIM_BOUNDARY.md` for the scope-boundary statement and wording constraint.
 
 ---
 
